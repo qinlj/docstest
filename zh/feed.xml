@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SuperMap iDesktop .NET – 帮助文档</title>
-    <link>https://docstest.github.io/zh/</link>
+    <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/</link>
     <description>The Kubernetes project blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 21 Mar 2019 14:42:09 +0800</lastBuildDate>
     <image>
       <url>https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png</url>
       <title>Kubernetes.io</title>
-      <link>https://docstest.github.io/zh/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/</link>
     </image>
     
-	<atom:link href="https://docstest.github.io/zh/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blog: 新贡献者工作坊上海站</title>
-      <link>https://docstest.github.io/zh/blog/2018/12/05/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E4%B8%8A%E6%B5%B7%E7%AB%99/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/12/05/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E4%B8%8A%E6%B5%B7%E7%AB%99/</link>
       <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/zh/blog/2018/12/05/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E4%B8%8A%E6%B5%B7%E7%AB%99/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/12/05/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E4%B8%8A%E6%B5%B7%E7%AB%99/</guid>
       <description>
         
         
@@ -40,7 +40,7 @@ date: 2018-12-05
 
 &lt;!-- 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/attendees.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/attendees.png&#34;
          alt=&#34;KubeCon Shanghai New Contributor Summit attendees. Photo by Jerry Zhang&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;KubeCon Shanghai New Contributor Summit attendees. Photo by Jerry Zhang&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -49,7 +49,7 @@ date: 2018-12-05
  --&gt;
 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/attendees.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/attendees.png&#34;
          alt=&#34;KubeCon 上海站新贡献者峰会与会者，摄影：Jerry Zhang&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;KubeCon 上海站新贡献者峰会与会者，摄影：Jerry Zhang&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -70,7 +70,7 @@ This was our second New Contributor Workshop (NCW), building on the one created 
 
 &lt;!-- 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/noahabrahams.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/noahabrahams.png&#34;
          alt=&#34;Noah Abrahams explains Kubernetes communications channels. Photo by Jerry Zhang&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Noah Abrahams explains Kubernetes communications channels. Photo by Jerry Zhang&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -79,7 +79,7 @@ This was our second New Contributor Workshop (NCW), building on the one created 
  --&gt;
 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/noahabrahams.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/noahabrahams.png&#34;
          alt=&#34;Noah Abrahams 讲解 Kubernetes 沟通渠道。摄影：Jerry Zhang&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Noah Abrahams 讲解 Kubernetes 沟通渠道。摄影：Jerry Zhang&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -100,7 +100,7 @@ Those hands-on exercises use a repository known as [the contributor playground](
 
 &lt;!-- 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/yangli.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/yangli.png&#34;
          alt=&#34;Yang Li talks about getting your PRs reviewed. Photo by Josh Berkus&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Yang Li talks about getting your PRs reviewed. Photo by Josh Berkus&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -109,7 +109,7 @@ Those hands-on exercises use a repository known as [the contributor playground](
  --&gt;
 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/yangli.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/yangli.png&#34;
          alt=&#34;Yang Li 讲到如何让你的 PR 通过评审。摄影：Josh Berkus&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Yang Li 讲到如何让你的 PR 通过评审。摄影：Josh Berkus&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -136,7 +136,7 @@ Chinese engineers are eager to participate in the development of Kubernetes, but
 
 &lt;!-- 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/panel.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/panel.png&#34;
          alt=&#34;Panel of contributors. Photo by Jerry Zhang&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Panel of contributors. Photo by Jerry Zhang&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -145,7 +145,7 @@ Chinese engineers are eager to participate in the development of Kubernetes, but
  --&gt;
 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/panel.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/panel.png&#34;
          alt=&#34;贡献者圆桌讨论。摄影：Jerry Zhang&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;贡献者圆桌讨论。摄影：Jerry Zhang&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -193,10 +193,10 @@ Links:
     
     <item>
       <title>Blog: IPVS-Based In-Cluster Load Balancing Deep Dive</title>
-      <link>https://docstest.github.io/zh/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</link>
       <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/zh/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</guid>
       <description>
         
         
@@ -608,10 +608,10 @@ Share your Kubernetes story
     
     <item>
       <title>Blog: Airflow在Kubernetes中的使用（第一部分）：一种不同的操作器</title>
-      <link>https://docstest.github.io/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/</guid>
       <description>
         
         
@@ -1134,10 +1134,10 @@ Special thanks to the Apache Airflow and Kubernetes communities, particularly Gr
     
     <item>
       <title>Blog: Principles of Container-based Application Design</title>
-      <link>https://docstest.github.io/blog/2018/03/principles-of-container-app-design/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/03/principles-of-container-app-design/</link>
       <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/03/principles-of-container-app-design/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/03/principles-of-container-app-design/</guid>
       <description>
         
         
@@ -1222,10 +1222,10 @@ Linkedin:&lt;/p&gt;
     
     <item>
       <title>Blog: </title>
-      <link>https://docstest.github.io/zh/blog/1/01/01/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/1/01/01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/zh/blog/1/01/01/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/1/01/01/</guid>
       <description>
         
         
@@ -1406,10 +1406,10 @@ Romana 和 Calico 已经在最近的 KubeCon 中展示了如何在 Kubernetes 1.
     
     <item>
       <title>Blog: </title>
-      <link>https://docstest.github.io/zh/blog/1/01/01/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/1/01/01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/zh/blog/1/01/01/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/1/01/01/</guid>
       <description>
         
         

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SuperMap iDesktop .NET – 운영 수준의 컨테이너 오케스트레이션</title>
-    <link>https://docstest.github.io/ko/</link>
+    <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/</link>
     <description>The Kubernetes project blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 30 Jan 2019 00:07:30 +0900</lastBuildDate>
     <image>
       <url>https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png</url>
       <title>Kubernetes.io</title>
-      <link>https://docstest.github.io/ko/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/</link>
     </image>
     
-	<atom:link href="https://docstest.github.io/ko/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/feed.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

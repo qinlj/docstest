@@ -14,37 +14,37 @@
 <meta charset="utf-8">
 <title>Buffer Case Study - SuperMap iDesktop .NET</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/Test_hugo/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylsheet" href="/css/case-study-styles.css">
-<link rel="stylesheet" href="/css/jquery-ui.min.css">
-<link rel="stylesheet" href="/css/sweetalert.min.css">
-<link rel="stylesheet" href="/css/callouts.css">
-<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="/css/style_buffer.css">
+<link rel="stylesheet" href="/Test_hugo/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/Test_hugo/css/sweetalert.min.css">
+<link rel="stylesheet" href="/Test_hugo/css/callouts.css">
+<link rel="stylesheet" href="/Test_hugo/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="/Test_hugo/css/style_buffer.css">
 
 
 
 <meta name="description" content="CASE STUDY: Making Deployments Easy for a Small, Distributed TeamCompany&nbsp;Buffer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location &nbsp;Around the World&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industry &nbsp;Social Media TechnologyChallengeWith a small but fully distributed team of 80 working across almost a dozen time zones, Buffer—which offers social media management to agencies and marketers—was looking to solve its &#34;classic monolithic code base problem,&#34; says Architect Dan Farrelly. &#34;We wanted to have the kind of liquid infrastructure where a developer could create an app and deploy it and scale it horizontally as&nbsp;necessary.">
 <meta property="og:description" content="CASE STUDY: Making Deployments Easy for a Small, Distributed TeamCompany&nbsp;Buffer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location &nbsp;Around the World&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industry &nbsp;Social Media TechnologyChallengeWith a small but fully distributed team of 80 working across almost a dozen time zones, Buffer—which offers social media management to agencies and marketers—was looking to solve its &#34;classic monolithic code base problem,&#34; says Architect Dan Farrelly. &#34;We wanted to have the kind of liquid infrastructure where a developer could create an app and deploy it and scale it horizontally as&nbsp;necessary.">
 <meta name="twitter:description" content="CASE STUDY: Making Deployments Easy for a Small, Distributed TeamCompany&nbsp;Buffer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location &nbsp;Around the World&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industry &nbsp;Social Media TechnologyChallengeWith a small but fully distributed team of 80 working across almost a dozen time zones, Buffer—which offers social media management to agencies and marketers—was looking to solve its &#34;classic monolithic code base problem,&#34; says Architect Dan Farrelly. &#34;We wanted to have the kind of liquid infrastructure where a developer could create an app and deploy it and scale it horizontally as&nbsp;necessary.">
-<meta property="og:url" content="https://docstest.github.io/ko/case-studies/buffer/">
+<meta property="og:url" content="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/case-studies/buffer/">
 <meta property="og:title" content="Buffer Case Study">
 <meta name="twitter:title" content="Buffer Case Study">
 
 <meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
 
-<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+<meta property="og:image" content="/Test_hugo/images/kubernetes-horizontal-color.png">
 
 <meta property="og:type" content="article">
-<script src="/js/anchor-4.1.1.min.js"></script>
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script src="/js/jquery-ui-1.12.1.min.js"></script>
-<script src="/js/bootstrap-3.3.7.min.js"></script>
-<script src="/js/sweetalert-1.1.3.min.js"></script>
-<script src="/js/script.js"></script>
-<script src="/js/custom-jekyll/tags.js"></script>
+<script src="/Test_hugo/js/anchor-4.1.1.min.js"></script>
+<script src="/Test_hugo/js/jquery-3.2.1.min.js"></script>
+<script src="/Test_hugo/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/Test_hugo/js/bootstrap-3.3.7.min.js"></script>
+<script src="/Test_hugo/js/sweetalert-1.1.3.min.js"></script>
+<script src="/Test_hugo/js/script.js"></script>
+<script src="/Test_hugo/js/custom-jekyll/tags.js"></script>
 
 
 	</head>
@@ -52,12 +52,12 @@
 		<div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
-    <a href="/ko/" class="logo"></a>
+    <a href="/Test_hugo/ko/" class="logo"></a>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
             
-            <li><a href="/ko/docs/">문서</a></li>
+            <li><a href="/Test_hugo/ko/docs/">문서</a></li>
             
             
             
@@ -65,7 +65,7 @@
             
             
             
-            <li><a href="/ko/case-studies/" class="active">사례 연구</a></li>
+            <li><a href="/Test_hugo/ko/case-studies/" class="active">사례 연구</a></li>
             
             
             
@@ -75,7 +75,7 @@
                 </a>
                 <ul>
                 
-                    <li><a href="/case-studies/buffer/">English</a></li>
+                    <li><a href="/Test_hugo/case-studies/buffer/">English</a></li>
                 
                 </ul>
             </li>
@@ -110,13 +110,13 @@
         <main data-auto-burger="primary">
          
            <div class="nav-box">
-            <h3><a href="/ko/docs/tutorials/hello-minikube/">Get Started</a></h3>
+            <h3><a href="/Test_hugo/ko/docs/tutorials/hello-minikube/">Get Started</a></h3>
            <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
 
         </div>
          
            <div class="nav-box">
-            <h3><a href="/ko/docs/home/">문서</a></h3>
+            <h3><a href="/Test_hugo/ko/docs/home/">문서</a></h3>
            <p>개념, 튜토리얼 및 참조 문서와 함께 쿠버네티스 사용하는 방법을 익힐 수 있다. 또한, <a href="/editdocs/" data-auto-burger-exclude>문서에 기여하는 것도 도움을 줄 수 있다</a>!</p>
 
         </div>
@@ -252,13 +252,13 @@
 </div>
 </section>
 
-<nav class="pagination"><a class="nav nav-prev" href="/ko/case-studies/box/" title="Box Case Study"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Box Case Study</a>
-<a class="nav nav-next" href="/ko/case-studies/ccp-games/" title="CCP Games">Next - CCP Games <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination"><a class="nav nav-prev" href="/Test_hugo/ko/case-studies/box/" title="Box Case Study"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Box Case Study</a>
+<a class="nav nav-next" href="/Test_hugo/ko/case-studies/ccp-games/" title="CCP Games">Next - CCP Games <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
-    <nav class="pagination"><a class="nav nav-prev" href="/ko/case-studies/box/" title="Box Case Study"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Box Case Study</a>
-<a class="nav nav-next" href="/ko/case-studies/ccp-games/" title="CCP Games">Next - CCP Games <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    <nav class="pagination"><a class="nav nav-prev" href="/Test_hugo/ko/case-studies/box/" title="Box Case Study"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Box Case Study</a>
+<a class="nav nav-next" href="/Test_hugo/ko/case-studies/ccp-games/" title="CCP Games">Next - CCP Games <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 		<footer>
     <main class="light-text">
@@ -266,7 +266,7 @@
             
             
             
-            <a href="/ko/docs/home/">홈</a>
+            <a href="/Test_hugo/ko/docs/home/">홈</a>
             
             
             
@@ -274,7 +274,7 @@
             
             
             
-            <a href="/ko/case-studies/">사례 연구</a>
+            <a href="/Test_hugo/ko/case-studies/">사례 연구</a>
             
         </nav>
         <div class="social">

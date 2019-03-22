@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes – Production-Grade Container Orchestration</title>
-    <link>https://docstest.github.io/ja/</link>
+    <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/</link>
     <description>The Kubernetes project blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 08 Mar 2019 16:09:26 +0900</lastBuildDate>
     <image>
       <url>https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png</url>
       <title>Kubernetes.io</title>
-      <link>https://docstest.github.io/ja/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/</link>
     </image>
     
-	<atom:link href="https://docstest.github.io/ja/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/feed.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SuperMap iDesktop .NET – Production-Grade Container Orchestration</title>
-    <link>https://docstest.github.io/</link>
+    <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/</link>
     <description>The Kubernetes project blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 07 Mar 2019 15:46:10 -0800</lastBuildDate>
     <image>
       <url>https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png</url>
       <title>Kubernetes.io</title>
-      <link>https://docstest.github.io/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/</link>
     </image>
     
-	<atom:link href="https://docstest.github.io/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://SuperMap_iDesktop.gitee.io/Test_hugo/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blog: Raw Block Volume support to Beta</title>
-      <link>https://docstest.github.io/blog/2019/03/07/raw-block-volume-support-to-beta/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/03/07/raw-block-volume-support-to-beta/</link>
       <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2019/03/07/raw-block-volume-support-to-beta/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/03/07/raw-block-volume-support-to-beta/</guid>
       <description>
         
         
@@ -159,10 +159,10 @@ spec:
     
     <item>
       <title>Blog: Automate Operations on your Cluster with OperatorHub.io</title>
-      <link>https://docstest.github.io/blog/2019/02/28/automate-operations-on-your-cluster-with-operatorhub.io/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/02/28/automate-operations-on-your-cluster-with-operatorhub.io/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2019/02/28/automate-operations-on-your-cluster-with-operatorhub.io/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/02/28/automate-operations-on-your-cluster-with-operatorhub.io/</guid>
       <description>
         
         
@@ -236,10 +236,10 @@ spec:
     
     <item>
       <title>Blog: Building a Kubernetes Edge (Ingress) Control Plane for Envoy v2</title>
-      <link>https://docstest.github.io/blog/2019/02/12/building-a-kubernetes-edge-control-plane-for-envoy-v2/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/02/12/building-a-kubernetes-edge-control-plane-for-envoy-v2/</link>
       <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2019/02/12/building-a-kubernetes-edge-control-plane-for-envoy-v2/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/02/12/building-a-kubernetes-edge-control-plane-for-envoy-v2/</guid>
       <description>
         
         
@@ -346,10 +346,10 @@ spec:
     
     <item>
       <title>Blog: Runc and CVE-2019-5736</title>
-      <link>https://docstest.github.io/blog/2019/02/11/runc-and-cve-2019-5736/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/02/11/runc-and-cve-2019-5736/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2019/02/11/runc-and-cve-2019-5736/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/02/11/runc-and-cve-2019-5736/</guid>
       <description>
         
         
@@ -446,10 +446,10 @@ spec:
     
     <item>
       <title>Blog: Poseidon-Firmament Scheduler – Flow Network Graph Based Scheduler</title>
-      <link>https://docstest.github.io/blog/2019/02/06/poseidon-firmament-scheduler-flow-network-graph-based-scheduler/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/02/06/poseidon-firmament-scheduler-flow-network-graph-based-scheduler/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2019/02/06/poseidon-firmament-scheduler-flow-network-graph-based-scheduler/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/02/06/poseidon-firmament-scheduler-flow-network-graph-based-scheduler/</guid>
       <description>
         
         
@@ -494,7 +494,7 @@ spec:
 &lt;p&gt;Figure 1 below shows an example of a flow network for a cluster with two tasks (workloads or pods) and four machines (nodes) – each workload on the left hand side, is a source of one unit of flow. All such flow must be drained into the sink node (S) for a feasible solution to the optimization problem.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2019-02-03-poseidon-firmament-scheduler/example-of-a-flow-network.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2019-02-03-poseidon-firmament-scheduler/example-of-a-flow-network.png&#34;
          alt=&#34;Figure 1. Example of a Flow Network&#34; width=&#34;600&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Figure 1. Example of a Flow Network&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -506,7 +506,7 @@ spec:
 &lt;p&gt;Poseidon is a service that acts as the integration glue for the Firmament scheduler with Kubernetes. It augments the current Kubernetes scheduling capabilities by incorporating new flow network graph based Firmament scheduling capabilities alongside the default Kubernetes Scheduler; multiple schedulers running simultaneously. Figure 2 below describes the high level overall design as far as how Poseidon integration glue works in conjunction with the underlying Firmament flow network graph based scheduler.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2019-02-03-poseidon-firmament-scheduler/firmament-kubernetes-integration-overview.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2019-02-03-poseidon-firmament-scheduler/firmament-kubernetes-integration-overview.png&#34;
          alt=&#34;Figure 2. Firmament Kubernetes Integration Overview&#34; width=&#34;600&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Figure 2. Firmament Kubernetes Integration Overview&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -541,10 +541,10 @@ spec:
     
     <item>
       <title>Blog: Update on Volume Snapshot Alpha for Kubernetes</title>
-      <link>https://docstest.github.io/blog/2019/01/17/update-on-volume-snapshot-alpha-for-kubernetes/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/01/17/update-on-volume-snapshot-alpha-for-kubernetes/</link>
       <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2019/01/17/update-on-volume-snapshot-alpha-for-kubernetes/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/01/17/update-on-volume-snapshot-alpha-for-kubernetes/</guid>
       <description>
         
         
@@ -723,17 +723,17 @@ spec:
     
     <item>
       <title>Blog: Container Storage Interface (CSI) for Kubernetes GA</title>
-      <link>https://docstest.github.io/blog/2019/01/15/container-storage-interface-ga/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/01/15/container-storage-interface-ga/</link>
       <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2019/01/15/container-storage-interface-ga/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/01/15/container-storage-interface-ga/</guid>
       <description>
         
         
         
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog-logging/2018-04-10-container-storage-interface-beta/csi-kubernetes.png&#34; alt=&#34;Kubernetes Logo&#34; /&gt;
-&lt;img src=&#34;https://docstest.github.io/images/blog-logging/2018-04-10-container-storage-interface-beta/csi-logo.png&#34; alt=&#34;CSI Logo&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog-logging/2018-04-10-container-storage-interface-beta/csi-kubernetes.png&#34; alt=&#34;Kubernetes Logo&#34; /&gt;
+&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog-logging/2018-04-10-container-storage-interface-beta/csi-logo.png&#34; alt=&#34;CSI Logo&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Author:&lt;/strong&gt; Saad Ali, Senior Software Engineer, Google&lt;/p&gt;
 
@@ -976,10 +976,10 @@ spec:
     
     <item>
       <title>Blog: APIServer dry-run and kubectl diff</title>
-      <link>https://docstest.github.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/</link>
       <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/</guid>
       <description>
         
         
@@ -1095,10 +1095,10 @@ to filter by label, or to display pruned resources.&lt;/li&gt;
     
     <item>
       <title>Blog: Kubernetes Federation Evolution</title>
-      <link>https://docstest.github.io/blog/2018/12/12/kubernetes-federation-evolution/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/12/kubernetes-federation-evolution/</link>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/12/12/kubernetes-federation-evolution/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/12/kubernetes-federation-evolution/</guid>
       <description>
         
         
@@ -1122,7 +1122,7 @@ to filter by label, or to display pruned resources.&lt;/li&gt;
 
 &lt;p&gt;Because Federation attempts to address a complex set of problems, it pays to break the different parts of those problems down. Let’s take a look at the different high-level areas involved:
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-11-Kubernetes-Federation-Evolution/concepts.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-11-Kubernetes-Federation-Evolution/concepts.png&#34;
          alt=&#34;Kubernetes Federation v2 Concepts&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Kubernetes Federation v2 Concepts&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1240,10 +1240,10 @@ More details can be found at the &lt;a href=&#34;https://github.com/kubernetes-s
     
     <item>
       <title>Blog: etcd: Current status and future roadmap</title>
-      <link>https://docstest.github.io/blog/2018/12/11/etcd-current-status-and-future-roadmap/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/11/etcd-current-status-and-future-roadmap/</link>
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/12/11/etcd-current-status-and-future-roadmap/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/11/etcd-current-status-and-future-roadmap/</guid>
       <description>
         
         
@@ -1330,17 +1330,17 @@ More details can be found at the &lt;a href=&#34;https://github.com/kubernetes-s
     
     <item>
       <title>Blog: New Contributor Workshop Shanghai</title>
-      <link>https://docstest.github.io/blog/2018/12/05/new-contributor-workshop-shanghai/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/05/new-contributor-workshop-shanghai/</link>
       <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/12/05/new-contributor-workshop-shanghai/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/05/new-contributor-workshop-shanghai/</guid>
       <description>
         
         
         &lt;p&gt;&lt;strong&gt;Authors&lt;/strong&gt;: Josh Berkus (Red Hat), Yang Li (The Plant), Puja Abbassi (Giant Swarm), XiangPeng Zhao (ZTE)&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/attendees.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/attendees.png&#34;
          alt=&#34;Kubecon Shanghai New Contributor Summit attendees. Photo by Jerry Zhang&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Kubecon Shanghai New Contributor Summit attendees. Photo by Jerry Zhang&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1352,7 +1352,7 @@ More details can be found at the &lt;a href=&#34;https://github.com/kubernetes-s
 &lt;p&gt;This was our second New Contributor Workshop (NCW), building on the one created and led by SIG Contributor Experience members in Copenhagen. Because of the audience, it was held in both Chinese and English, taking advantage of the superb simultaneous interpretation services the CNCF sponsored. Likewise, the NCW team included both English and Chinese-speaking members of the community: Yang Li, XiangPeng Zhao, Puja Abbassi, Noah Abrahams, Tim Pepper, Zach Corleissen, Sen Lu, and Josh Berkus. In addition to presenting and helping students, the bilingual members of the team translated all of the slides into Chinese. Fifty-one students attended.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/noahabrahams.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/noahabrahams.png&#34;
          alt=&#34;Noah Abrahams explains Kubernetes communications channels. Photo by Jerry Zhang&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Noah Abrahams explains Kubernetes communications channels. Photo by Jerry Zhang&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1364,7 +1364,7 @@ More details can be found at the &lt;a href=&#34;https://github.com/kubernetes-s
 &lt;p&gt;Those hands-on exercises use a repository known as &lt;a href=&#34;https://github.com/kubernetes-sigs/contributor-playground&#34; target=&#34;_blank&#34;&gt;the contributor playground&lt;/a&gt;, created by SIG Contributor Experience as a place for new contributors to try out performing various actions on a Kubernetes repo. It has modified Prow and Tide automation, uses Owners files like in the real repositories. This lets students learn how the mechanics of contributing to our repositories work without disrupting normal development.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/yangli.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/yangli.png&#34;
          alt=&#34;Yang Li talks about getting your PRs reviewed. Photo by Josh Berkus&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Yang Li talks about getting your PRs reviewed. Photo by Josh Berkus&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1378,7 +1378,7 @@ More details can be found at the &lt;a href=&#34;https://github.com/kubernetes-s
 &lt;p&gt;&amp;ldquo;I have been participating in the Kubernetes community for about three years,&amp;rdquo; said XiangPeng Zhao. &amp;ldquo;In the community, I notice that more and more Chinese developers are showing their interest in contributing to Kubernetes. However, it&amp;rsquo;s not easy to start contributing to such a project. I tried my best to help those who I met in the community, but I think there might still be some new contributors leaving the community due to not knowing where to get help when in trouble. Fortunately, the community initiated NCW at KubeCon Copenhagen and held a second one at KubeCon Shanghai. I was so excited to be invited by Josh Berkus to help organize this workshop. During the workshop, I met community friends in person, mentored attendees in the exercises, and so on. All of this was a memorable experience for me. I also learned a lot as a contributor who already has years of contributing experience. I wish I had attended such a workshop when I started contributing to Kubernetes years ago.&amp;rdquo;&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&#34;https://docstest.github.io/images/blog/2018-12-05-new-contributor-shanghai/panel.png&#34;
+    &lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-12-05-new-contributor-shanghai/panel.png&#34;
          alt=&#34;Panel of contributors. Photo by Jerry Zhang&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Panel of contributors. Photo by Jerry Zhang&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1404,10 +1404,10 @@ More details can be found at the &lt;a href=&#34;https://github.com/kubernetes-s
     
     <item>
       <title>Blog: Production-Ready Kubernetes Cluster Creation with kubeadm</title>
-      <link>https://docstest.github.io/blog/2018/12/04/production-ready-kubernetes-cluster-creation-with-kubeadm/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/04/production-ready-kubernetes-cluster-creation-with-kubeadm/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/12/04/production-ready-kubernetes-cluster-creation-with-kubeadm/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/04/production-ready-kubernetes-cluster-creation-with-kubeadm/</guid>
       <description>
         
         
@@ -1599,10 +1599,10 @@ More details can be found at the &lt;a href=&#34;https://github.com/kubernetes-s
     
     <item>
       <title>Blog: Kubernetes 1.13: Simplified Cluster Management with Kubeadm, Container Storage Interface (CSI), and CoreDNS as Default DNS are Now Generally Available</title>
-      <link>https://docstest.github.io/blog/2018/12/03/kubernetes-1-13-release-announcement/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/03/kubernetes-1-13-release-announcement/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/12/03/kubernetes-1-13-release-announcement/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/03/kubernetes-1-13-release-announcement/</guid>
       <description>
         
         
@@ -1726,10 +1726,10 @@ More details can be found at the &lt;a href=&#34;https://github.com/kubernetes-s
     
     <item>
       <title>Blog: Kubernetes Docs Updates, International Edition</title>
-      <link>https://docstest.github.io/blog/2018/11/08/kubernetes-docs-updates-international-edition/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/11/08/kubernetes-docs-updates-international-edition/</link>
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/11/08/kubernetes-docs-updates-international-edition/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/11/08/kubernetes-docs-updates-international-edition/</guid>
       <description>
         
         
@@ -1791,10 +1791,10 @@ More details can be found at the &lt;a href=&#34;https://github.com/kubernetes-s
     
     <item>
       <title>Blog: gRPC Load Balancing on Kubernetes without Tears</title>
-      <link>https://docstest.github.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/</link>
       <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/</guid>
       <description>
         
         
@@ -1807,7 +1807,7 @@ balancing often doesn&amp;rsquo;t work out of the box with gRPC. For example, he
 happens when you take a &lt;a href=&#34;https://github.com/sourishkrout/nodevoto&#34; target=&#34;_blank&#34;&gt;simple gRPC Node.js microservices
 app&lt;/a&gt; and deploy it on Kubernetes:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/grpc-load-balancing-with-linkerd/Screenshot2018-11-0116-c4d86100-afc1-4a08-a01c-16da391756dd.34.36.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/grpc-load-balancing-with-linkerd/Screenshot2018-11-0116-c4d86100-afc1-4a08-a01c-16da391756dd.34.36.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;While the &lt;code&gt;voting&lt;/code&gt; service displayed here has several pods, it&amp;rsquo;s clear from
 Kubernetes&amp;rsquo;s CPU graphs that only one of the pods is actually doing any
@@ -1836,7 +1836,7 @@ it reduces the overhead of connection management. However, it also means that
 connection is established, there&amp;rsquo;s no more balancing to be done. All requests
 will get pinned to a single destination pod, as shown below:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/grpc-load-balancing-with-linkerd/Mono-8d2e53ef-b133-4aa0-9551-7e36a880c553.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/grpc-load-balancing-with-linkerd/Mono-8d2e53ef-b133-4aa0-9551-7e36a880c553.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;why-doesn-t-this-affect-http-1-1&#34;&gt;Why doesn&amp;rsquo;t this affect HTTP/1.1?&lt;/h1&gt;
 
@@ -1866,7 +1866,7 @@ do gRPC load balancing, we need to shift from connection balancing to &lt;em&gt;
 balancing. In other words, we need to open an HTTP/2 connection to each
 destination, and balance &lt;em&gt;requests&lt;/em&gt; across these connections, as shown below:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/grpc-load-balancing-with-linkerd/Stereo-09aff9d7-1c98-4a0a-9184-9998ed83a531.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/grpc-load-balancing-with-linkerd/Stereo-09aff9d7-1c98-4a0a-9184-9998ed83a531.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In network terms, this means we need to make decisions at L5/L7 rather than
 L3/L4, i.e. we need to understand the protocol sent over the TCP connections.&lt;/p&gt;
@@ -1901,7 +1901,7 @@ service, it adds a tiny, ultra-fast proxy to each pod, and these proxies watch
 the Kubernetes API and do gRPC load balancing automatically. Our deployment
 then looks like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/grpc-load-balancing-with-linkerd/Linkerd-8df1031c-cdd1-4164-8e91-00f2d941e93f.io.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/grpc-load-balancing-with-linkerd/Linkerd-8df1031c-cdd1-4164-8e91-00f2d941e93f.io.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Using Linkerd has a couple advantages. First, it works with services written in
 any language, with any gRPC client, and any deployment model (headless or not).
@@ -1931,7 +1931,7 @@ service in no time, and should see proper gRPC balancing immediately.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s take a look at our sample &lt;code&gt;voting&lt;/code&gt; service again, this time after
 installing Linkerd:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/grpc-load-balancing-with-linkerd/Screenshot2018-11-0116-24b8ee81-144c-4eac-b73d-871bbf0ea22e.57.42.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/grpc-load-balancing-with-linkerd/Screenshot2018-11-0116-24b8ee81-144c-4eac-b73d-871bbf0ea22e.57.42.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As we can see, the CPU graphs for all pods are active, indicating that all pods
 are now taking traffic&amp;mdash;without having to change a line of code. Voila,
@@ -1942,7 +1942,7 @@ to guess what&amp;rsquo;s happening from CPU charts any more. Here&amp;rsquo;s a
 that&amp;rsquo;s showing the success rate, request volume, and latency percentiles of
 each pod:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/grpc-load-balancing-with-linkerd/Screenshot2018-11-0212-15ed0448-5424-4e47-9828-20032de868b5.08.38.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/grpc-load-balancing-with-linkerd/Screenshot2018-11-0212-15ed0448-5424-4e47-9828-20032de868b5.08.38.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We can see that each pod is getting around 5 RPS. We can also see that, while
 we&amp;rsquo;ve solved our load balancing problem, we still have some work to do on our
@@ -1972,10 +1972,10 @@ join the fun!&lt;/p&gt;
     
     <item>
       <title>Blog: Tips for Your First Kubecon Presentation - Part 2</title>
-      <link>https://docstest.github.io/blog/2018/10/26/tips-for-your-first-kubecon-presentation-part-2/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/26/tips-for-your-first-kubecon-presentation-part-2/</link>
       <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/26/tips-for-your-first-kubecon-presentation-part-2/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/26/tips-for-your-first-kubecon-presentation-part-2/</guid>
       <description>
         
         
@@ -1985,10 +1985,10 @@ join the fun!&lt;/p&gt;
     
     <item>
       <title>Blog: Tips for Your First Kubecon Presentation - Part 1</title>
-      <link>https://docstest.github.io/blog/2018/10/18/tips-for-your-first-kubecon-presentation-part-1/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/18/tips-for-your-first-kubecon-presentation-part-1/</link>
       <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/18/tips-for-your-first-kubecon-presentation-part-1/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/18/tips-for-your-first-kubecon-presentation-part-1/</guid>
       <description>
         
         
@@ -1998,10 +1998,10 @@ join the fun!&lt;/p&gt;
     
     <item>
       <title>Blog: Kubernetes 2018 North American Contributor Summit</title>
-      <link>https://docstest.github.io/blog/2018/10/16/kubernetes-2018-north-american-contributor-summit/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/16/kubernetes-2018-north-american-contributor-summit/</link>
       <pubDate>Tue, 16 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/16/kubernetes-2018-north-american-contributor-summit/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/16/kubernetes-2018-north-american-contributor-summit/</guid>
       <description>
         
         
@@ -2065,10 +2065,10 @@ the Contributor Summit Events Team at community@kubernetes.io.&lt;/p&gt;
     
     <item>
       <title>Blog: 2018 Steering Committee Election Results</title>
-      <link>https://docstest.github.io/blog/2018/10/15/2018-steering-committee-election-results/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/15/2018-steering-committee-election-results/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/15/2018-steering-committee-election-results/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/15/2018-steering-committee-election-results/</guid>
       <description>
         
         
@@ -2117,10 +2117,10 @@ the Contributor Summit Events Team at community@kubernetes.io.&lt;/p&gt;
     
     <item>
       <title>Blog: Topology-Aware Volume Provisioning in Kubernetes</title>
-      <link>https://docstest.github.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/</link>
       <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/</guid>
       <description>
         
         
@@ -2289,10 +2289,10 @@ logs-web-1      us-central1-a
     
     <item>
       <title>Blog: Kubernetes v1.12: Introducing RuntimeClass</title>
-      <link>https://docstest.github.io/blog/2018/10/10/kubernetes-v1.12-introducing-runtimeclass/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/10/kubernetes-v1.12-introducing-runtimeclass/</link>
       <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/10/kubernetes-v1.12-introducing-runtimeclass/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/10/kubernetes-v1.12-introducing-runtimeclass/</guid>
       <description>
         
         
@@ -2351,10 +2351,10 @@ logs-web-1      us-central1-a
     
     <item>
       <title>Blog: Introducing Volume Snapshot Alpha for Kubernetes</title>
-      <link>https://docstest.github.io/blog/2018/10/09/introducing-volume-snapshot-alpha-for-kubernetes/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/09/introducing-volume-snapshot-alpha-for-kubernetes/</link>
       <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/09/introducing-volume-snapshot-alpha-for-kubernetes/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/09/introducing-volume-snapshot-alpha-for-kubernetes/</guid>
       <description>
         
         
@@ -2624,7 +2624,7 @@ spec:
 
 &lt;p&gt;In order to support snapshot feature, it is recommended that storage vendors deploy the external-snapshotter sidecar containers in addition to the external provisioner the external attacher, along with their CSI driver in a statefulset as shown in the following diagram.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-10-09-volume-snapshot-alpha/snapshot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-10-09-volume-snapshot-alpha/snapshot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In this &lt;a href=&#34;https://github.com/kubernetes-csi/external-snapshotter/blob/e011fe31df548813d2eb6dacb278c0ca58533b34/deploy/kubernetes/setup-csi-snapshotter.yaml&#34; target=&#34;_blank&#34;&gt;example deployment yaml&lt;/a&gt; file, two sidecar containers, the external provisioner and the external snapshotter, and CSI drivers are deployed together with the hostpath CSI plugin in the statefulset pod. Hostpath CSI plugin is a sample plugin, not for production.&lt;/p&gt;
 
@@ -2687,10 +2687,10 @@ spec:
     
     <item>
       <title>Blog: Support for Azure VMSS,  Cluster-Autoscaler and User Assigned Identity</title>
-      <link>https://docstest.github.io/blog/2018/10/08/support-for-azure-vmss-cluster-autoscaler-and-user-assigned-identity/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/08/support-for-azure-vmss-cluster-autoscaler-and-user-assigned-identity/</link>
       <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/08/support-for-azure-vmss-cluster-autoscaler-and-user-assigned-identity/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/08/support-for-azure-vmss-cluster-autoscaler-and-user-assigned-identity/</guid>
       <description>
         
         
@@ -2732,7 +2732,7 @@ spec:
 
 &lt;p&gt;Compute in cloud k8s cluster consists of the VMs. These VMs are created by provisioning tools such as acs-engine or AKS (in case of managed service). Eventually, they run various system daemons such as kubelet, kube-api server etc. either as a process (in some versions) or as a docker container.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-10-08-support-for-azure-vmss/sample-azure-cluster.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-10-08-support-for-azure-vmss/sample-azure-cluster.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;networking&#34;&gt;Networking&lt;/h2&gt;
 
@@ -2744,7 +2744,7 @@ spec:
 
 &lt;h2 id=&#34;cloud-provider-components&#34;&gt;Cloud provider components&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-10-08-support-for-azure-vmss/cloud-provider-components.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-10-08-support-for-azure-vmss/cloud-provider-components.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Kubernetes cloud provider interface provides interactions with clouds for managing cloud-specific resources, e.g. public IPs and routes. A good overview of these components is given in &lt;a href=&#34;https://kubernetes.io/docs/concepts/architecture/cloud-controller/&#34; target=&#34;_blank&#34;&gt;[2]&lt;/a&gt;. In case of Azure Kubernetes cluster, the Kubernetes interactions go through the Azure cloud provider layer and contact the various services running in the cloud.&lt;/p&gt;
 
@@ -2843,7 +2843,7 @@ ProviderID:                  azure:///subscriptions/&amp;lt;subscription id&amp;
 
 &lt;p&gt;The cluster autoscaler itself runs as a pod within the kubernetes cluster. The following figure illustrates the high level view of the setup with respect to the k8s cluster:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-10-08-support-for-azure-vmss/cluster-autoscaler.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-10-08-support-for-azure-vmss/cluster-autoscaler.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Since Cluster Autoscaler is a pod within the k8s cluster, it can use the in-cluster config and the Kubernetes go client &lt;a href=&#34;https://github.com/kubernetes/client-go&#34; target=&#34;_blank&#34;&gt;[10]&lt;/a&gt; to contact the API server.&lt;/p&gt;
 
@@ -2853,7 +2853,7 @@ ProviderID:                  azure:///subscriptions/&amp;lt;subscription id&amp;
 
 &lt;p&gt;In order to simplify our discussion let’s divide the CA functionality into 3 parts as given below:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-10-08-support-for-azure-vmss/ca-functionality.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-10-08-support-for-azure-vmss/ca-functionality.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The main portion of the CA is a control loop which keeps running at every scan interval. This loop is responsible for updating the autoscaler metrics and health probes. Before this loop is entered auto scaler performs various operations such as claiming the leader state after performing a Kubernetes leader election. The main loop initializes static autoscaler component. This component initializes the underlying cloud provider based on the parameters passed onto the CA.&lt;/p&gt;
 
@@ -3030,10 +3030,10 @@ config.UserAssignedIdentityID)
     
     <item>
       <title>Blog: Introducing the Non-Code Contributor’s Guide</title>
-      <link>https://docstest.github.io/blog/2018/10/04/introducing-the-non-code-contributors-guide/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/04/introducing-the-non-code-contributors-guide/</link>
       <pubDate>Thu, 04 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/04/introducing-the-non-code-contributors-guide/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/04/introducing-the-non-code-contributors-guide/</guid>
       <description>
         
         
@@ -3086,10 +3086,10 @@ config.UserAssignedIdentityID)
     
     <item>
       <title>Blog: KubeDirector: The easy way to run complex stateful applications on Kubernetes</title>
-      <link>https://docstest.github.io/blog/2018/10/03/kubedirector-the-easy-way-to-run-complex-stateful-applications-on-kubernetes/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/03/kubedirector-the-easy-way-to-run-complex-stateful-applications-on-kubernetes/</link>
       <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/03/kubedirector-the-easy-way-to-run-complex-stateful-applications-on-kubernetes/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/03/kubedirector-the-easy-way-to-run-complex-stateful-applications-on-kubernetes/</guid>
       <description>
         
         
@@ -3236,7 +3236,7 @@ svc-spark221e2-worker-d9892-1       NodePort     10.110.88.221     &amp;lt;none&
 
 &lt;p&gt;Pointing the browser at port 31533 connects to the Spark Master UI:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-10-03-kubedirector/kubedirector.png&#34; alt=&#34;kubedirector&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-10-03-kubedirector/kubedirector.png&#34; alt=&#34;kubedirector&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;That’s all there is to it!
 In fact, in the example above we also deployed a Jupyter notebook along with the Spark cluster.&lt;/p&gt;
@@ -3296,10 +3296,10 @@ Follow &lt;a href=&#34;https://twitter.com/BlueK8s/&#34; target=&#34;_blank&#34;
     
     <item>
       <title>Blog: Building a Network Bootable Server Farm for Kubernetes with LTSP</title>
-      <link>https://docstest.github.io/blog/2018/10/02/building-a-network-bootable-server-farm-for-kubernetes-with-ltsp/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/02/building-a-network-bootable-server-farm-for-kubernetes-with-ltsp/</link>
       <pubDate>Tue, 02 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/02/building-a-network-bootable-server-farm-for-kubernetes-with-ltsp/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/02/building-a-network-bootable-server-farm-for-kubernetes-with-ltsp/</guid>
       <description>
         
         
@@ -3307,7 +3307,7 @@ Follow &lt;a href=&#34;https://twitter.com/BlueK8s/&#34; target=&#34;_blank&#34;
 
 &lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt;: Andrei Kvapil (WEDOS)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-10-01-network-bootable-farm-with-ltsp/k8s+ltsp.svg&#34; alt=&#34;k8s+ltsp&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-10-01-network-bootable-farm-with-ltsp/k8s+ltsp.svg&#34; alt=&#34;k8s+ltsp&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In this post, I&amp;rsquo;m going to introduce you to a cool technology for Kubernetes, LTSP. It is useful for large baremetal Kubernetes deployments.&lt;/p&gt;
 
@@ -3783,10 +3783,10 @@ Feel free to look into the source code and you can find many answers there.&lt;/
     
     <item>
       <title>Blog: Health checking gRPC servers on Kubernetes</title>
-      <link>https://docstest.github.io/blog/2018/10/01/health-checking-grpc-servers-on-kubernetes/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/01/health-checking-grpc-servers-on-kubernetes/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/10/01/health-checking-grpc-servers-on-kubernetes/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/10/01/health-checking-grpc-servers-on-kubernetes/</guid>
       <description>
         
         
@@ -3801,7 +3801,7 @@ configure health checks. In this article, we will talk about
 &lt;a href=&#34;https://github.com/grpc-ecosystem/grpc-health-probe/&#34; target=&#34;_blank&#34;&gt;grpc-health-probe&lt;/a&gt;, a
 Kubernetes-native way to health check gRPC apps.&lt;/p&gt;
 
-&lt;p&gt;If you&amp;rsquo;re unfamiliar, Kubernetes &lt;a href=&#34;https://docstest.github.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/&#34;&gt;health
+&lt;p&gt;If you&amp;rsquo;re unfamiliar, Kubernetes &lt;a href=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/&#34;&gt;health
 checks&lt;/a&gt;
 (liveness and readiness probes) is what&amp;rsquo;s keeping your applications available
 while you&amp;rsquo;re sleeping. They detect unresponsive pods, mark them unhealthy, and
@@ -3812,7 +3812,7 @@ support&lt;/a&gt; gRPC health
 checks natively. This leaves the gRPC developers with the following three
 approaches when they deploy to Kubernetes:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://docstest.github.io/images/blog/2019-09-30-health-checking-grpc/options.png&#34;&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2019-09-30-health-checking-grpc/options.png&#34; alt=&#34;options for health checking grpc on kubernetes today&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2019-09-30-health-checking-grpc/options.png&#34;&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2019-09-30-health-checking-grpc/options.png&#34; alt=&#34;options for health checking grpc on kubernetes today&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;httpGet probe:&lt;/strong&gt; Cannot be natively used with gRPC. You need to refactor
@@ -3851,9 +3851,9 @@ tool to invoke this &lt;code&gt;Check()&lt;/code&gt; method to determine server 
 &lt;p&gt;The next thing you need is the &amp;ldquo;standard tool&amp;rdquo;, and it&amp;rsquo;s the
 &lt;a href=&#34;https://github.com/grpc-ecosystem/grpc-health-probe/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;grpc-health-probe&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#39;https://docstest.github.io/images/blog/2019-09-30-health-checking-grpc/grpc_health_probe.png&#39;&gt;
+&lt;p&gt;&lt;a href=&#39;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2019-09-30-health-checking-grpc/grpc_health_probe.png&#39;&gt;
     &lt;img width=&#34;768&#34;  title=&#39;grpc-health-probe on kubernetes&#39;
-        src=&#39;https://docstest.github.io/images/blog/2019-09-30-health-checking-grpc/grpc_health_probe.png&#39;/&gt;
+        src=&#39;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2019-09-30-health-checking-grpc/grpc_health_probe.png&#39;/&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;With this tool, you can use the same health check configuration in all your gRPC
@@ -3896,10 +3896,10 @@ feedback&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Blog: Kubernetes 1.12: Kubelet TLS Bootstrap and Azure Virtual Machine Scale Sets (VMSS) Move to General Availability</title>
-      <link>https://docstest.github.io/blog/2018/09/27/kubernetes-1.12-kubelet-tls-bootstrap-and-azure-virtual-machine-scale-sets-vmss-move-to-general-availability/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/09/27/kubernetes-1.12-kubelet-tls-bootstrap-and-azure-virtual-machine-scale-sets-vmss-move-to-general-availability/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/09/27/kubernetes-1.12-kubelet-tls-bootstrap-and-azure-virtual-machine-scale-sets-vmss-move-to-general-availability/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/09/27/kubernetes-1.12-kubelet-tls-bootstrap-and-azure-virtual-machine-scale-sets-vmss-move-to-general-availability/</guid>
       <description>
         
         
@@ -4028,10 +4028,10 @@ feedback&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Blog: Hands On With Linkerd 2.0</title>
-      <link>https://docstest.github.io/blog/2018/09/18/hands-on-with-linkerd-2.0/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/09/18/hands-on-with-linkerd-2.0/</link>
       <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/09/18/hands-on-with-linkerd-2.0/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/09/18/hands-on-with-linkerd-2.0/</guid>
       <description>
         
         
@@ -4115,7 +4115,7 @@ Server version: unavailable
 
 &lt;p&gt;If you see something like below, Linkerd is now running on your cluster. 🎉&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-09-18-2018-linkerd-2.0/1-dashboard.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-09-18-2018-linkerd-2.0/1-dashboard.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;step-4-add-linkerd-to-the-web-service&#34;&gt;Step 4: Add Linkerd to the web service&lt;/h2&gt;
 
@@ -4137,25 +4137,25 @@ Server version: unavailable
 
 &lt;p&gt;If you glance at the Linkerd dashboard (the &lt;code&gt;linkerd dashboard&lt;/code&gt; command), you should see all services in the “emojivoto” namespace show up. Since “web” has the Linkerd service sidecar installed on it, you’ll also see success rate, requests per second, and latency percentiles show up.&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-09-18-2018-linkerd-2.0/2-web-overview.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-09-18-2018-linkerd-2.0/2-web-overview.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;That’s pretty neat, but the first thing you might notice is that success rate is well below 100%! Click on “web” and let’s dig in.&lt;/p&gt;
 
 &lt;p&gt;You should now be looking at the Deployment page for the web service. The first thing you’ll see here is that web is taking traffic from vote-bot (a service included in the Emojivoto manifest to continually generate a low level of live traffic), and has two outgoing dependencies, emoji and voting.&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-09-18-2018-linkerd-2.0/3-web-detail.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-09-18-2018-linkerd-2.0/3-web-detail.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;The emoji service is operating at 100%, but the voting service is failing! A failure in a dependent service may be exactly what’s causing the errors that web is returning.&lt;/p&gt;
 
 &lt;p&gt;Let’s scroll a little further down the page, we’ll see a live list of all traffic endpoints that “web” is receiving. This is interesting:&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-09-18-2018-linkerd-2.0/4-web-top.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-09-18-2018-linkerd-2.0/4-web-top.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;There are two calls that are not at 100%: the first is vote-bot’s call the “/api/vote” endpoint. The second is the “VotePoop” call from the web service to the voting service. Very interesting! Since /api/vote is an incoming call, and “/VotePoop” is an outgoing call, this is a good clue that the failure of the vote service’s VotePoop endpoint is what’s causing the problem!&lt;/p&gt;
 
 &lt;p&gt;Finally, if we click on the “tap” icon for that row in the far right column, we’ll be taken to live list of requests that match this endpoint. This allows us to confirm that the requests are failing (they all have &lt;a href=&#34;https://godoc.org/google.golang.org/grpc/codes#Code&#34; target=&#34;_blank&#34;&gt;gRPC status code 2&lt;/a&gt;, indicating an error).&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-09-18-2018-linkerd-2.0/5-web-tap.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-09-18-2018-linkerd-2.0/5-web-tap.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;At this point we have the ammunition we need to talk to the owners of the vote “voting” service. We’ve identified an endpoint on their service that consistently returns an error, and have found no other obvious sources of failures in the system.&lt;/p&gt;
 
@@ -4163,7 +4163,7 @@ Server version: unavailable
 
 &lt;p&gt;Also, did you notice the little Grafana icon on the very first page we looked at? Linkerd ships with automatic Grafana dashboards for all those metrics, allowing you to view everything you’re seeing in the Linkerd dashboard in a time series format. Check it out!&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-09-18-2018-linkerd-2.0/6-grafana.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-09-18-2018-linkerd-2.0/6-grafana.png&#34; width=&#34;700&#34;&gt;&lt;/center&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;want-more&#34;&gt;Want more?&lt;/h2&gt;
 
@@ -4176,10 +4176,10 @@ Server version: unavailable
     
     <item>
       <title>Blog: 2018 Steering Committee Election Cycle Kicks Off</title>
-      <link>https://docstest.github.io/blog/2018/09/06/2018-steering-committee-election-cycle-kicks-off/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/09/06/2018-steering-committee-election-cycle-kicks-off/</link>
       <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/09/06/2018-steering-committee-election-cycle-kicks-off/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/09/06/2018-steering-committee-election-cycle-kicks-off/</guid>
       <description>
         
         
@@ -4207,7 +4207,7 @@ Server version: unavailable
 
 &lt;p&gt;To those who are running:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-09-06-2018-steering-committee-election-cycle-kicks-off/sc-elections.png&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-09-06-2018-steering-committee-election-cycle-kicks-off/sc-elections.png&#34; width=&#34;400&#34;&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;helpful-resources&#34;&gt;Helpful resources&lt;/h3&gt;
 
@@ -4223,10 +4223,10 @@ Server version: unavailable
     
     <item>
       <title>Blog: The Machines Can Do the Work, a Story of Kubernetes Testing, CI, and Automating the Contributor Experience</title>
-      <link>https://docstest.github.io/blog/2018/08/29/the-machines-can-do-the-work-a-story-of-kubernetes-testing-ci-and-automating-the-contributor-experience/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/08/29/the-machines-can-do-the-work-a-story-of-kubernetes-testing-ci-and-automating-the-contributor-experience/</link>
       <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/08/29/the-machines-can-do-the-work-a-story-of-kubernetes-testing-ci-and-automating-the-contributor-experience/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/08/29/the-machines-can-do-the-work-a-story-of-kubernetes-testing-ci-and-automating-the-contributor-experience/</guid>
       <description>
         
         
@@ -4346,10 +4346,10 @@ Server version: unavailable
     
     <item>
       <title>Blog: Introducing Kubebuilder: an SDK for building Kubernetes APIs using CRDs</title>
-      <link>https://docstest.github.io/blog/2018/08/10/introducing-kubebuilder-an-sdk-for-building-kubernetes-apis-using-crds/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/08/10/introducing-kubebuilder-an-sdk-for-building-kubernetes-apis-using-crds/</link>
       <pubDate>Fri, 10 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/08/10/introducing-kubebuilder-an-sdk-for-building-kubernetes-apis-using-crds/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/08/10/introducing-kubebuilder-an-sdk-for-building-kubernetes-apis-using-crds/</guid>
       <description>
         
         
@@ -4405,10 +4405,10 @@ After adding their implementation to the project, users create the artifacts to 
     
     <item>
       <title>Blog: Out of the Clouds onto the Ground: How to Make Kubernetes Production Grade Anywhere</title>
-      <link>https://docstest.github.io/blog/2018/08/03/out-of-the-clouds-onto-the-ground-how-to-make-kubernetes-production-grade-anywhere/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/08/03/out-of-the-clouds-onto-the-ground-how-to-make-kubernetes-production-grade-anywhere/</link>
       <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/08/03/out-of-the-clouds-onto-the-ground-how-to-make-kubernetes-production-grade-anywhere/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/08/03/out-of-the-clouds-onto-the-ground-how-to-make-kubernetes-production-grade-anywhere/</guid>
       <description>
         
         
@@ -4438,7 +4438,7 @@ After adding their implementation to the project, users create the artifacts to 
 
 &lt;p&gt;This blog offers some guidance on achieving a production worthy Kubernetes deployment, even when dealing with some resource constraints.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/without-incidence.png&#34; alt=&#34;without incidence&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/without-incidence.png&#34; alt=&#34;without incidence&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;critical-components-in-a-kubernetes-cluster&#34;&gt;Critical components in a Kubernetes cluster&lt;/h2&gt;
 
@@ -4446,7 +4446,7 @@ After adding their implementation to the project, users create the artifacts to 
 
 &lt;p&gt;A Kubernetes cluster is a highly distributed system based on a control plane and clustered worker node architecture as depicted below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/api-server.png&#34; alt=&#34;api server&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/api-server.png&#34; alt=&#34;api server&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Typically the API server, Controller Manager and Scheduler components are co-located within multiple instances of control plane (aka Master) nodes. Master nodes usually include etcd too, although there are high availability and large cluster scenarios that call for running etcd on independent hosts. The components can be run as containers, and optionally be supervised by Kubernetes, i.e. running as statics pods.&lt;/p&gt;
 
@@ -4454,7 +4454,7 @@ After adding their implementation to the project, users create the artifacts to 
 
 &lt;h3 id=&#34;kubernetes-components-from-an-ha-perspective&#34;&gt;Kubernetes components from an HA perspective&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/kubernetes-components-ha.png&#34; alt=&#34;kubernetes components HA&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/kubernetes-components-ha.png&#34; alt=&#34;kubernetes components HA&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Risks to these components include hardware failures, software bugs, bad updates, human errors, network outages, and overloaded systems resulting in resource exhaustion. Redundancy can mitigate the impact of many of these hazards. In addition, the resource scheduling and high availability features of a hypervisor platform can be useful to surpass what can be achieved using the Linux operating system, Kubernetes, and a container runtime alone.&lt;/p&gt;
 
@@ -4486,7 +4486,7 @@ After adding their implementation to the project, users create the artifacts to 
 
 &lt;h3 id=&#34;single-host-deployment-options-least-production-worthy-to-better&#34;&gt;Single host deployment options, least production worthy to better&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/single-host-deployment.png&#34; alt=&#34;single host deployment&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/single-host-deployment.png&#34; alt=&#34;single host deployment&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;dual-host-deployments&#34;&gt;Dual host deployments&lt;/h2&gt;
 
@@ -4498,7 +4498,7 @@ After adding their implementation to the project, users create the artifacts to 
 
 &lt;h3 id=&#34;dual-host-deployment-options-least-production-worthy-to-better&#34;&gt;Dual host deployment options, least production worthy to better&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/dual-host-deployment.png&#34; alt=&#34;dual host deployment&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/dual-host-deployment.png&#34; alt=&#34;dual host deployment&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Triple (or larger) host deployments &amp;ndash; Moving into uncompromised production-grade service
 Splitting etcd across three hosts is recommended. A single hardware failure will reduce application workload capacity, but should not result in a complete service outage.&lt;/p&gt;
@@ -4509,7 +4509,7 @@ Splitting etcd across three hosts is recommended. A single hardware failure will
 
 &lt;h3 id=&#34;triple-or-more-host-options-least-production-worthy-to-better&#34;&gt;Triple (or more) host options, least production worthy to better&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/triple-host-deployment.png&#34; alt=&#34;triple host deployment&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/triple-host-deployment.png&#34; alt=&#34;triple host deployment&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;kubernetes-configuration-settings&#34;&gt;Kubernetes configuration settings&lt;/h2&gt;
 
@@ -4544,7 +4544,7 @@ Splitting etcd across three hosts is recommended. A single hardware failure will
 
 &lt;h2 id=&#34;disaster-recovery-and-backup&#34;&gt;Disaster Recovery and Backup&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/disaster-recovery.png&#34; alt=&#34;disaster recovery&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/disaster-recovery.png&#34; alt=&#34;disaster recovery&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Utilizing redundancy through the use of multiple hosts and VMs helps reduce some classes of outages, but scenarios such as a sitewide natural disaster, a bad update, getting hacked, software bugs, or human error could still result in an outage.&lt;/p&gt;
 
@@ -4605,7 +4605,7 @@ Splitting etcd across three hosts is recommended. A single hardware failure will
 
 &lt;h2 id=&#34;final-thoughts&#34;&gt;Final thoughts&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/airplane.png&#34; alt=&#34;airplane&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-08-03-make-kubernetes-production-grade-anywhere/airplane.png&#34; alt=&#34;airplane&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Buying a ticket on a commercial airline is convenient and safe. But when you travel to a remote location with a short runway, that commercial Airbus A320 flight isn’t an option. This doesn’t mean that air travel is off the table. It does mean that some compromises are necessary.&lt;/p&gt;
 
@@ -4618,10 +4618,10 @@ Splitting etcd across three hosts is recommended. A single hardware failure will
     
     <item>
       <title>Blog: Dynamically Expand Volume with CSI and Kubernetes</title>
-      <link>https://docstest.github.io/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/</link>
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/</guid>
       <description>
         
         
@@ -4665,7 +4665,7 @@ Splitting etcd across three hosts is recommended. A single hardware failure will
 
 &lt;p&gt;This diagram depicts a kind of high-level Kubernetes archetypes integrated with CSI:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-08-02-dynamically-expand-volume-csi/csi-diagram.png&#34; alt=&#34;csi diagram&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-08-02-dynamically-expand-volume-csi/csi-diagram.png&#34; alt=&#34;csi diagram&#34; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Three new external components are introduced to decouple Kubernetes and Storage Provider logic&lt;/li&gt;
@@ -4776,7 +4776,7 @@ VolumePlugin
 
 &lt;p&gt;The Prometheus and Grafana integration allows us to visualize corresponding critical metrics.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-08-02-dynamically-expand-volume-csi/prometheus-grafana.png&#34; alt=&#34;prometheus grafana&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-08-02-dynamically-expand-volume-csi/prometheus-grafana.png&#34; alt=&#34;prometheus grafana&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We notice that the middle reading shows MySQL datafile size increasing slowly during bulk inserting. At the same time, the bottom reading shows file system expanding twice in about 20 minutes, from 300 GiB to 400 GiB and then 500 GiB. Meanwhile, the upper reading shows the whole process of expanding volume immediately completes and hardly impacts MySQL QPS.&lt;/p&gt;
 
@@ -4789,10 +4789,10 @@ VolumePlugin
     
     <item>
       <title>Blog: KubeVirt: Extending Kubernetes with CRDs for Virtualized Workloads</title>
-      <link>https://docstest.github.io/blog/2018/07/27/kubevirt-extending-kubernetes-with-crds-for-virtualized-workloads/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/27/kubevirt-extending-kubernetes-with-crds-for-virtualized-workloads/</link>
       <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/27/kubevirt-extending-kubernetes-with-crds-for-virtualized-workloads/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/27/kubevirt-extending-kubernetes-with-crds-for-virtualized-workloads/</guid>
       <description>
         
         
@@ -4903,10 +4903,10 @@ Error from server: error when creating &amp;quot;my-vm.yaml&amp;quot;: admission
     
     <item>
       <title>Blog: Feature Highlight: CPU Manager</title>
-      <link>https://docstest.github.io/blog/2018/07/24/feature-highlight-cpu-manager/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/24/feature-highlight-cpu-manager/</link>
       <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/24/feature-highlight-cpu-manager/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/24/feature-highlight-cpu-manager/</guid>
       <description>
         
         
@@ -4916,7 +4916,7 @@ Error from server: error when creating &amp;quot;my-vm.yaml&amp;quot;: admission
 
 &lt;p&gt;This blog post describes the &lt;a href=&#34;https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/&#34; target=&#34;_blank&#34;&gt;CPU Manager&lt;/a&gt;, a beta feature in &lt;a href=&#34;https://kubernetes.io/&#34; target=&#34;_blank&#34;&gt;Kubernetes&lt;/a&gt;. The CPU manager feature enables better placement of workloads in the &lt;a href=&#34;https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/&#34; target=&#34;_blank&#34;&gt;Kubelet&lt;/a&gt;, the Kubernetes node agent, by allocating exclusive CPUs to certain pod containers.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-07-24-cpu-manager/cpu-manager.png&#34; alt=&#34;cpu manager&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-07-24-cpu-manager/cpu-manager.png&#34; alt=&#34;cpu manager&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;sounds-good-but-does-the-cpu-manager-help-me&#34;&gt;Sounds Good! But Does the CPU Manager Help Me?&lt;/h2&gt;
 
@@ -4972,7 +4972,7 @@ spec:
 
 &lt;h2 id=&#34;more-details-please&#34;&gt;More Details Please &amp;hellip;&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-07-24-cpu-manager/cpu-manager-anatomy.png&#34; alt=&#34;cpu manager&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-07-24-cpu-manager/cpu-manager-anatomy.png&#34; alt=&#34;cpu manager&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The figure above shows the anatomy of the CPU manager. The CPU Manager uses the Container Runtime Interface&amp;rsquo;s &lt;code&gt;UpdateContainerResources&lt;/code&gt; method to modify the CPUs on which containers can run. The Manager periodically reconciles the current State of the CPU resources of each running container with &lt;code&gt;cgroupfs&lt;/code&gt;.&lt;/p&gt;
 
@@ -5009,7 +5009,7 @@ spec:
 
 &lt;p&gt;We ran six benchmarks from the &lt;a href=&#34;http://parsec.cs.princeton.edu/&#34; target=&#34;_blank&#34;&gt;PARSEC benchmark suite&lt;/a&gt; (the victim workloads) co-located with a CPU stress container (the aggressor workload) with and without the CPU Manager feature enabled. The CPU stress container is run &lt;a href=&#34;https://gist.github.com/balajismaniam/7c2d57b2f526a56bb79cf870c122a34c&#34; target=&#34;_blank&#34;&gt;as a pod&lt;/a&gt; in the Burstable QoS class requesting 23 CPUs with &lt;code&gt;--cpus 48&lt;/code&gt; flag. &lt;a href=&#34;https://gist.github.com/balajismaniam/fac7923f6ee44f1f36969c29354e3902&#34; target=&#34;_blank&#34;&gt;The benchmarks are run as pods&lt;/a&gt; in the Guaranteed QoS class requesting a full socket worth of CPUs (24 CPUs on this system). The figure below plots the normalized execution time of running a benchmark pod co-located with the stress pod, with and without the CPU Manager static policy enabled. We see improved performance and reduced performance variability when static policy is enabled for all test cases.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-07-24-cpu-manager/execution-time.png&#34; alt=&#34;execution time&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-07-24-cpu-manager/execution-time.png&#34; alt=&#34;execution time&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;performance-isolation-for-co-located-workloads&#34;&gt;Performance Isolation for Co-located Workloads&lt;/h3&gt;
 
@@ -5019,13 +5019,13 @@ spec:
 
 &lt;p&gt;There is better performance and less performance variation for both the co-located workloads in all the tests. For example, consider the case of Bu-blackscholes-Gu-canneal (top left) and Gu-canneal-Bu-blackscholes (bottom right). They show the performance of Blackscholes and Canneal run simultaneously with and without the CPU manager enabled. In this particular case, Canneal gets exclusive cores due to CPU manager since it is in the Gu QoS class and requesting integer number of CPU cores. But Blackscholes also gets exclusive set of CPUs as it is the only workload in the shared pool. As a result, both Blackscholes and Canneal get some performance isolation benefits due to the CPU manager.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-07-24-cpu-manager/performance-comparison.png&#34; alt=&#34;performance comparison&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-07-24-cpu-manager/performance-comparison.png&#34; alt=&#34;performance comparison&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;performance-isolation-for-stand-alone-workloads&#34;&gt;Performance Isolation for Stand-Alone Workloads&lt;/h3&gt;
 
 &lt;p&gt;This section shows the performance improvement and isolation provided by the CPU manager for stand-alone real-world workloads. We use two workloads from the &lt;a href=&#34;https://github.com/tensorflow/models/tree/master/official&#34; target=&#34;_blank&#34;&gt;TensorFlow official models&lt;/a&gt;: &lt;a href=&#34;https://github.com/tensorflow/models/tree/master/official/wide_deep&#34; target=&#34;_blank&#34;&gt;wide and deep&lt;/a&gt; and &lt;a href=&#34;https://github.com/tensorflow/models/tree/master/official/resnet&#34; target=&#34;_blank&#34;&gt;ResNet&lt;/a&gt;. We use the census and CIFAR10 dataset for the wide and deep and ResNet models respectively. In each case the &lt;a href=&#34;https://gist.github.com/balajismaniam/941db0d0ec14e2bc93b7dfe04d1f6c58&#34; target=&#34;_blank&#34;&gt;pods&lt;/a&gt; (&lt;a href=&#34;https://gist.github.com/balajismaniam/9953b54dd240ecf085b35ab1bc283f3c&#34; target=&#34;_blank&#34;&gt;wide and deep&lt;/a&gt;, &lt;a href=&#34;https://gist.github.com/balajismaniam/a1919010fe9081ca37a6e1e7b01f02e3&#34; target=&#34;_blank&#34;&gt;ResNet&lt;/a&gt; request 24 CPUs which corresponds to a whole socket worth of cores. As shown in the plots, CPU manager enables better performance isolation in both cases.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-07-24-cpu-manager/performance-comparison-2.png&#34; alt=&#34;performance comparison&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-07-24-cpu-manager/performance-comparison-2.png&#34; alt=&#34;performance comparison&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;limitations&#34;&gt;Limitations&lt;/h2&gt;
 
@@ -5078,16 +5078,16 @@ OS/Kernel
     
     <item>
       <title>Blog: The History of Kubernetes &amp; the Community Behind It</title>
-      <link>https://docstest.github.io/blog/2018/07/20/the-history-of-kubernetes-the-community-behind-it/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/20/the-history-of-kubernetes-the-community-behind-it/</link>
       <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/20/the-history-of-kubernetes-the-community-behind-it/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/20/the-history-of-kubernetes-the-community-behind-it/</guid>
       <description>
         
         
         &lt;p&gt;&lt;strong&gt;Authors&lt;/strong&gt;: Brendan Burns (Distinguished Engineer, Microsoft)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-07-20-history-kubernetes-community.png&#34; alt=&#34;oscon award&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-07-20-history-kubernetes-community.png&#34; alt=&#34;oscon award&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;It is remarkable to me to return to Portland and OSCON to stand on stage with members of the Kubernetes community and accept this award for Most Impactful Open Source Project. It was scarcely three years ago, that on this very same stage we declared Kubernetes 1.0 and the project was added to the newly formed Cloud Native Computing Foundation.&lt;/p&gt;
 
@@ -5147,10 +5147,10 @@ OS/Kernel
     
     <item>
       <title>Blog: Kubernetes Wins the 2018 OSCON Most Impact Award</title>
-      <link>https://docstest.github.io/blog/2018/07/19/kubernetes-wins-2018-oscon-most-impact-award/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/19/kubernetes-wins-2018-oscon-most-impact-award/</link>
       <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/19/kubernetes-wins-2018-oscon-most-impact-award/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/19/kubernetes-wins-2018-oscon-most-impact-award/</guid>
       <description>
         
         
@@ -5181,10 +5181,10 @@ OS/Kernel
     
     <item>
       <title>Blog: 11 Ways (Not) to Get Hacked</title>
-      <link>https://docstest.github.io/blog/2018/07/18/11-ways-not-to-get-hacked/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/18/11-ways-not-to-get-hacked/</link>
       <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/18/11-ways-not-to-get-hacked/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/18/11-ways-not-to-get-hacked/</guid>
       <description>
         
         
@@ -5237,17 +5237,17 @@ OS/Kernel
 
 &lt;p&gt;This network diagram by &lt;a href=&#34;https://docs.google.com/presentation/d/1Gp-2blk5WExI_QR59EUZdwfO2BWLJqa626mK2ej-huo/edit#slide=id.g1e639c415b_0_56&#34; target=&#34;_blank&#34;&gt;Lucas Käldström&lt;/a&gt; demonstrates some of the places TLS should ideally be applied: between every component on the master, and between the Kubelet and API server. &lt;a href=&#34;https://twitter.com/kelseyhightower/&#34; target=&#34;_blank&#34;&gt;Kelsey Hightower&lt;/a&gt;&amp;#39;s canonical &lt;a href=&#34;https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/1.9.0/docs/04-certificate-authority.md&#34; target=&#34;_blank&#34;&gt;Kubernetes The Hard Way&lt;/a&gt; provides detailed manual instructions, as does &lt;a href=&#34;https://coreos.com/etcd/docs/latest/op-guide/security.html&#34; target=&#34;_blank&#34;&gt;etcd&amp;#39;s security model&lt;/a&gt; documentation.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-06-05-11-ways-not-to-get-hacked/kubernetes-control-plane.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-06-05-11-ways-not-to-get-hacked/kubernetes-control-plane.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Autoscaling Kubernetes nodes was historically difficult, as each node requires a TLS key to connect to the master, and baking secrets into base images is not good practice. &lt;a href=&#34;https://medium.com/@toddrosner/kubernetes-tls-bootstrapping-cf203776abc7&#34; target=&#34;_blank&#34;&gt;Kubelet TLS bootstrapping&lt;/a&gt; provides the ability for a new kubelet to create a certificate signing request so that certificates are generated at boot time.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-06-05-11-ways-not-to-get-hacked/node-tls-bootstrap.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-06-05-11-ways-not-to-get-hacked/node-tls-bootstrap.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;2-enable-rbac-with-least-privilege-disable-abac-and-monitor-logs&#34;&gt;2. Enable RBAC with Least Privilege, Disable ABAC, and Monitor Logs&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;Role-based access control provides fine-grained policy management for user access to resources, such as access to namespaces.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-06-05-11-ways-not-to-get-hacked/rbac2.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-06-05-11-ways-not-to-get-hacked/rbac2.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Kubernetes&amp;rsquo; ABAC (Attribute Based Access Control) has been &lt;a href=&#34;http://kubernetes.io/blog/2017/04/rbac-support-in-kubernetes.html&#34; target=&#34;_blank&#34;&gt;superseded by RBAC&lt;/a&gt; since release 1.6, and should not be enabled on the API server. Use RBAC instead:&lt;/p&gt;
 
@@ -5379,7 +5379,7 @@ test_for_team_label()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;By default, Kubernetes networking allows all pod to pod traffic; this can be restricted using a&lt;/strong&gt; &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/network-policies/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Network Policy&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-06-05-11-ways-not-to-get-hacked/kubernetes-networking.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-06-05-11-ways-not-to-get-hacked/kubernetes-networking.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Traditional services are restricted with firewalls, which use static IP and port ranges for each service. As these IPs very rarely change they have historically been used as a form of identity. Containers rarely have static IPs - they are built to fail fast, be rescheduled quickly, and use service discovery instead of static IP addresses. These properties mean that firewalls become much more difficult to configure and review.&lt;/p&gt;
 
@@ -5433,7 +5433,7 @@ test_for_team_label()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Kubernetes permits pods into the cluster through a series of &lt;a href=&#34;https://kubernetes.io/docs/admin/admission-controllers/&#34; target=&#34;_blank&#34;&gt;admission controller&lt;/a&gt; gates, which are applied to pods and other resources like deployments. These gates can validate each pod for admission or change its contents, and they now support backend webhooks.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-06-05-11-ways-not-to-get-hacked/admission-controllers.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-06-05-11-ways-not-to-get-hacked/admission-controllers.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;These webhooks can be used by container image scanning tools to validate images before they are deployed to the cluster. Images that have failed checks can be refused admission.&lt;/p&gt;
 
@@ -5447,7 +5447,7 @@ test_for_team_label()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The next stage of security&amp;#39;s &amp;quot;cloud native evolution&amp;quot; looks to be the service mesh, although adoption may take time - migration involves shifting complexity from applications to the mesh infrastructure, and organisations will be keen to understand best-practice.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-06-05-11-ways-not-to-get-hacked/service-mesh-@sebiwicb.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-06-05-11-ways-not-to-get-hacked/service-mesh-@sebiwicb.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;11-run-a-service-mesh&#34;&gt;11. Run a Service Mesh&lt;/h2&gt;
 
@@ -5482,10 +5482,10 @@ test_for_team_label()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     
     <item>
       <title>Blog: How the sausage is made: the Kubernetes 1.11 release interview, from the Kubernetes Podcast</title>
-      <link>https://docstest.github.io/blog/2018/07/16/how-the-sausage-is-made-the-kubernetes-1.11-release-interview-from-the-kubernetes-podcast/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/16/how-the-sausage-is-made-the-kubernetes-1.11-release-interview-from-the-kubernetes-podcast/</link>
       <pubDate>Mon, 16 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/16/how-the-sausage-is-made-the-kubernetes-1.11-release-interview-from-the-kubernetes-podcast/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/16/how-the-sausage-is-made-the-kubernetes-1.11-release-interview-from-the-kubernetes-podcast/</guid>
       <description>
         
         
@@ -5762,10 +5762,10 @@ test_for_team_label()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     
     <item>
       <title>Blog: Resizing Persistent Volumes using Kubernetes</title>
-      <link>https://docstest.github.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/</link>
       <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/</guid>
       <description>
         
         
@@ -5795,7 +5795,7 @@ reclaimPolicy: Delete
 
 &lt;p&gt;Any PVC created from this &lt;code&gt;StorageClass&lt;/code&gt; can be edited (as illustrated below) to request more space. Kubernetes will interpret a change to the storage field as a request for more space, and will trigger automatic volume resizing.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-07-12-resizing-persistent-volumes-using-kubernetes/pvc-storageclass.png&#34; alt=&#34;PVC StorageClass&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-07-12-resizing-persistent-volumes-using-kubernetes/pvc-storageclass.png&#34; alt=&#34;PVC StorageClass&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;file-system-expansion&#34;&gt;File System Expansion&lt;/h2&gt;
 
@@ -5860,10 +5860,10 @@ status:
     
     <item>
       <title>Blog: Dynamic Kubelet Configuration</title>
-      <link>https://docstest.github.io/blog/2018/07/11/dynamic-kubelet-configuration/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/11/dynamic-kubelet-configuration/</link>
       <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/11/dynamic-kubelet-configuration/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/11/dynamic-kubelet-configuration/</guid>
       <description>
         
         
@@ -5908,7 +5908,7 @@ status:
 
 &lt;p&gt;See the following diagram for a high-level overview of a configuration update for a single Node:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-07-11-dynamic-kubelet-configuration/kubelet-diagram.png&#34; alt=&#34;kubelet-diagram&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-07-11-dynamic-kubelet-configuration/kubelet-diagram.png&#34; alt=&#34;kubelet-diagram&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;how-can-i-learn-more&#34;&gt;How can I learn more?&lt;/h2&gt;
 
@@ -5919,10 +5919,10 @@ status:
     
     <item>
       <title>Blog: CoreDNS GA for Kubernetes Cluster DNS</title>
-      <link>https://docstest.github.io/blog/2018/07/10/coredns-ga-for-kubernetes-cluster-dns/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/10/coredns-ga-for-kubernetes-cluster-dns/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/10/coredns-ga-for-kubernetes-cluster-dns/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/10/coredns-ga-for-kubernetes-cluster-dns/</guid>
       <description>
         
         
@@ -6115,16 +6115,16 @@ You can find out more on the &lt;a href=&#34;https://coredns.io/blog&#34; target
     
     <item>
       <title>Blog: Meet Our Contributors - Monthly Streaming YouTube Mentoring Series</title>
-      <link>https://docstest.github.io/blog/2018/07/10/meet-our-contributors-monthly-streaming-youtube-mentoring-series/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/10/meet-our-contributors-monthly-streaming-youtube-mentoring-series/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/10/meet-our-contributors-monthly-streaming-youtube-mentoring-series/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/10/meet-our-contributors-monthly-streaming-youtube-mentoring-series/</guid>
       <description>
         
         
         &lt;p&gt;&lt;strong&gt;Author&lt;/strong&gt;: Paris Pittman (Google)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-06-05-meet-our-contributors-youtube-mentoring-series/meet-our-contributors.png&#34; alt=&#34;meet_our_contributors&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-06-05-meet-our-contributors-youtube-mentoring-series/meet-our-contributors.png&#34; alt=&#34;meet_our_contributors&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;July 11th at 2:30pm and 8pm UTC kicks off our next installment of Meet Our Contributors YouTube series. This month is special: members of the steering committee will be on to answer any and all questions from the community on the first 30 minutes of the 8pm UTC session. More on submitting questions below.&lt;/p&gt;
 
@@ -6148,10 +6148,10 @@ You can find out more on the &lt;a href=&#34;https://coredns.io/blog&#34; target
     
     <item>
       <title>Blog: IPVS-Based In-Cluster Load Balancing Deep Dive</title>
-      <link>https://docstest.github.io/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</link>
       <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</guid>
       <description>
         
         
@@ -6404,10 +6404,10 @@ Share your Kubernetes &lt;a href=&#34;https://docs.google.com/a/linuxfoundation.
     
     <item>
       <title>Blog: Airflow on Kubernetes (Part 1): A Different Kind of Operator</title>
-      <link>https://docstest.github.io/blog/2018/06/28/airflow-on-kubernetes-part-1-a-different-kind-of-operator/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/06/28/airflow-on-kubernetes-part-1-a-different-kind-of-operator/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/06/28/airflow-on-kubernetes-part-1-a-different-kind-of-operator/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/06/28/airflow-on-kubernetes-part-1-a-different-kind-of-operator/</guid>
       <description>
         
         
@@ -6423,8 +6423,8 @@ Share your Kubernetes &lt;a href=&#34;https://docs.google.com/a/linuxfoundation.
 
 &lt;p&gt;Apache Airflow is one realization of the DevOps philosophy of &amp;ldquo;Configuration As Code.&amp;rdquo; Airflow allows users to launch multi-step pipelines using a simple Python object DAG (Directed Acyclic Graph). You can define dependencies, programmatically construct complex workflows, and monitor scheduled jobs in an easy to read UI.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-05-25-Airflow-Kubernetes-Operator/2018-05-25-airflow_dags.png&#34; width=&#34;85%&#34; alt=&#34;Airflow DAGs&#34; /&gt;
-&lt;img src=&#34;https://docstest.github.io/images/blog/2018-05-25-Airflow-Kubernetes-Operator/2018-05-25-airflow.png&#34; width=&#34;85%&#34; alt=&#34;Airflow UI&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-05-25-Airflow-Kubernetes-Operator/2018-05-25-airflow_dags.png&#34; width=&#34;85%&#34; alt=&#34;Airflow DAGs&#34; /&gt;
+&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-05-25-Airflow-Kubernetes-Operator/2018-05-25-airflow.png&#34; width=&#34;85%&#34; alt=&#34;Airflow UI&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;why-airflow-on-kubernetes&#34;&gt;Why Airflow on Kubernetes?&lt;/h2&gt;
 
@@ -6451,7 +6451,7 @@ Handling sensitive data is a core responsibility of any DevOps engineer. At ever
 
 &lt;h1 id=&#34;architecture&#34;&gt;Architecture&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-05-25-Airflow-Kubernetes-Operator/2018-05-25-airflow-architecture.png&#34; width=&#34;85%&#34; alt=&#34;Airflow Architecture&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-05-25-Airflow-Kubernetes-Operator/2018-05-25-airflow-architecture.png&#34; width=&#34;85%&#34; alt=&#34;Airflow Architecture&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The Kubernetes Operator uses the &lt;a href=&#34;https://github.com/kubernetes-client/Python&#34; target=&#34;_blank&#34;&gt;Kubernetes Python Client&lt;/a&gt; to generate a request that is processed by the APIServer (1). Kubernetes will then launch your pod with whatever specs you&amp;rsquo;ve defined (2). Images will be loaded with all the necessary environment variables, secrets and dependencies, enacting a single command. Once the job is launched, the operator only needs to monitor the health of track logs (3). Users will have the choice of gathering logs locally to the scheduler or to any distributed logging service currently in their Kubernetes cluster.&lt;/p&gt;
 
@@ -6507,7 +6507,7 @@ failing &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; KubernetesPodOpera
 
 passing&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;set_upstream(start)
 failing&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;set_upstream(start)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-05-25-Airflow-Kubernetes-Operator/2018-05-25-basic-dag-run.png&#34; width=&#34;85%&#34; alt=&#34;Basic DAG Run&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-05-25-Airflow-Kubernetes-Operator/2018-05-25-basic-dag-run.png&#34; width=&#34;85%&#34; alt=&#34;Basic DAG Run&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;but-how-does-this-relate-to-my-workflow&#34;&gt;But how does this relate to my workflow?&lt;/h2&gt;
 
@@ -6609,10 +6609,10 @@ kubectl port-forward $WEB 8080:8080
     
     <item>
       <title>Blog: Kubernetes 1.11: In-Cluster Load Balancing and CoreDNS Plugin Graduate to General Availability</title>
-      <link>https://docstest.github.io/blog/2018/06/27/kubernetes-1.11-release-announcement/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/06/27/kubernetes-1.11-release-announcement/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/06/27/kubernetes-1.11-release-announcement/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/06/27/kubernetes-1.11-release-announcement/</guid>
       <description>
         
         
@@ -6671,10 +6671,10 @@ kubectl port-forward $WEB 8080:8080
 &lt;p&gt;If you’re interested in exploring these features more in depth, check back in two weeks for our 4 Days of Kubernetes series where we’ll highlight detailed walkthroughs of the following features:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Day 1: &lt;a href=&#34;https://docstest.github.io/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/&#34;&gt;IPVS-Based In-Cluster Service Load Balancing Graduates to General Availability&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Day 2: &lt;a href=&#34;https://docstest.github.io/blog/2018/07/10/coredns-ga-for-kubernetes-cluster-dns/&#34;&gt;CoreDNS Promoted to General Availability&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Day 3: &lt;a href=&#34;https://docstest.github.io/blog/2018/07/11/dynamic-kubelet-configuration/&#34;&gt;Dynamic Kubelet Configuration Moves to Beta&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Day 4: &lt;a href=&#34;https://docstest.github.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/&#34;&gt;Resizing Persistent Volumes using Kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Day 1: &lt;a href=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/&#34;&gt;IPVS-Based In-Cluster Service Load Balancing Graduates to General Availability&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Day 2: &lt;a href=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/10/coredns-ga-for-kubernetes-cluster-dns/&#34;&gt;CoreDNS Promoted to General Availability&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Day 3: &lt;a href=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/11/dynamic-kubelet-configuration/&#34;&gt;Dynamic Kubelet Configuration Moves to Beta&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Day 4: &lt;a href=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/&#34;&gt;Resizing Persistent Volumes using Kubernetes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;release-team&#34;&gt;Release team&lt;/h2&gt;
@@ -6736,10 +6736,10 @@ kubectl port-forward $WEB 8080:8080
     
     <item>
       <title>Blog: Dynamic Ingress in Kubernetes</title>
-      <link>https://docstest.github.io/blog/2018/06/07/dynamic-ingress-in-kubernetes/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/06/07/dynamic-ingress-in-kubernetes/</link>
       <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/06/07/dynamic-ingress-in-kubernetes/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/06/07/dynamic-ingress-in-kubernetes/</guid>
       <description>
         
         
@@ -6780,7 +6780,7 @@ spec:
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/kubeflow/kubeflow&#34; target=&#34;_blank&#34;&gt;Kubeflow&lt;/a&gt; provides a simple way to easily deploy machine learning infrastructure on Kubernetes. The Kubeflow team needed a proxy that provided a central point of authentication and routing to the wide range of services used in Kubeflow, many of which are ephemeral in nature.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-06-01-dynamic-ingress-kubernetes/kubeflow.png&#34; alt=&#34;kubeflow&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-06-01-dynamic-ingress-kubernetes/kubeflow.png&#34; alt=&#34;kubeflow&#34; /&gt;
 &lt;center&gt;&lt;i&gt;Kubeflow architecture, pre-Ambassador&lt;/center&gt;&lt;/i&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;service-configuration&#34;&gt;Service configuration&lt;/h2&gt;
@@ -6801,7 +6801,7 @@ service: test.kubeflow:8000
 
 &lt;h2 id=&#34;kubeflow-and-ambassador&#34;&gt;Kubeflow and Ambassador&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-06-01-dynamic-ingress-kubernetes/kubeflow-ambassador.png&#34; alt=&#34;kubeflow-ambassador&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-06-01-dynamic-ingress-kubernetes/kubeflow-ambassador.png&#34; alt=&#34;kubeflow-ambassador&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;With Ambassador, Kubeflow manages routing easily with Kubernetes annotations. Kubeflow configures a single ingress object that directs traffic to Ambassador, then creates services with Ambassador annotations as needed to direct traffic to specific backends. For example, when deploying TensorFlow services,  Kubeflow creates and annotates a K8s service so that the model will be served at https://&lt;ingress host&gt;/models/&lt;model name&gt;/. Kubeflow can also use the Envoy Proxy to do the actual L7 routing. Using Ambassador, Kubeflow takes advantage of additional routing configuration like URL rewriting and method-based routing.&lt;/p&gt;
 
@@ -6814,10 +6814,10 @@ service: test.kubeflow:8000
     
     <item>
       <title>Blog: 4 Years of K8s</title>
-      <link>https://docstest.github.io/blog/2018/06/06/4-years-of-k8s/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/06/06/4-years-of-k8s/</link>
       <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/06/06/4-years-of-k8s/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/06/06/4-years-of-k8s/</guid>
       <description>
         
         
@@ -6825,7 +6825,7 @@ service: test.kubeflow:8000
 
 &lt;p&gt;On June 6, 2014 I checked in the &lt;a href=&#34;https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56&#34; target=&#34;_blank&#34;&gt;first commit&lt;/a&gt; of what would become the public repository for Kubernetes. Many would assume that is where the story starts. It is the beginning of history, right? But that really doesn’t tell the whole story.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-06-06-4-years-of-k8s/k8s-first-commit.png&#34; alt=&#34;k8s_first_commit&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-06-06-4-years-of-k8s/k8s-first-commit.png&#34; alt=&#34;k8s_first_commit&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The cast leading up to that commit was large and the success for Kubernetes since then is owed to an ever larger cast.&lt;/p&gt;
 
@@ -6848,10 +6848,10 @@ service: test.kubeflow:8000
     
     <item>
       <title>Blog: Say Hello to Discuss Kubernetes</title>
-      <link>https://docstest.github.io/blog/2018/05/30/say-hello-to-discuss-kubernetes/</link>
+      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/05/30/say-hello-to-discuss-kubernetes/</link>
       <pubDate>Wed, 30 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://docstest.github.io/blog/2018/05/30/say-hello-to-discuss-kubernetes/</guid>
+      <guid>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/05/30/say-hello-to-discuss-kubernetes/</guid>
       <description>
         
         
@@ -6863,7 +6863,7 @@ service: test.kubeflow:8000
 
 &lt;p&gt;While our current assortment of communication channels are valuable in their own rights, we found that there was still a gap between email and real time chat. Across the rest of the web, many other open source projects like Docker, Mozilla, Swift, Ghost, and Chef have had success building communities on top of &lt;a href=&#34;https://www.discourse.org/features&#34; target=&#34;_blank&#34;&gt;Discourse&lt;/a&gt;, an open source discussion platform. So what if we could use this tool to bring our discussions together under a modern roof, with an open API, and perhaps not let so much of our information fade into the ether? There&amp;rsquo;s only one way to find out: Welcome to &lt;a href=&#34;https://discuss.kubernetes.io&#34; target=&#34;_blank&#34;&gt;discuss.kubernetes.io&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://docstest.github.io/images/blog/2018-05-30-say-hello-to-discuss-kubernetes.png&#34; alt=&#34;discuss_screenshot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://SuperMap_iDesktop.gitee.io/Test_hugo/images/blog/2018-05-30-say-hello-to-discuss-kubernetes.png&#34; alt=&#34;discuss_screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Right off the bat we have categories that users can browse. Checking and posting in these categories allow users to participate in things they might be interested in without having to commit to subscribing to a list. Granular notification controls allow the users to subscribe to just the category or tag they want, and allow for responding to topics via email.&lt;/p&gt;
 

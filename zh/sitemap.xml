@@ -3,3023 +3,3023 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/</loc>
     <lastmod>2018-11-19T20:58:50+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/workloads/pods/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/pods/</loc>
     <lastmod>2018-11-20T11:08:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/workloads/pods/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/workloads/pods/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/workloads/pods/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/workloads/pods/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/workloads/pods/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/pods/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/job/automated-tasks-with-cron-jobs/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/job/automated-tasks-with-cron-jobs/</loc>
     <lastmod>2018-11-19T16:49:05+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/job/automated-tasks-with-cron-jobs/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/job/automated-tasks-with-cron-jobs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/job/automated-tasks-with-cron-jobs/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/job/automated-tasks-with-cron-jobs/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/setup-tools/kubeadm/kubeadm/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/setup-tools/kubeadm/kubeadm/</loc>
     <lastmod>2019-01-11T17:13:35+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/reference/setup-tools/kubeadm/kubeadm/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/setup-tools/kubeadm/kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/reference/setup-tools/kubeadm/kubeadm/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/setup-tools/kubeadm/kubeadm/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/home/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/home/</loc>
     <lastmod>2018-11-23T20:51:57+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/home/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/home/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/home/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/home/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/docs/home/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/home/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/home/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/home/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/home/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/home/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-kubernetes-api/setup-extension-api-server/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-kubernetes-api/setup-extension-api-server/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-kubernetes-api/setup-extension-api-server/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-kubernetes-api/setup-extension-api-server/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-kubernetes-api/setup-extension-api-server/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-kubernetes-api/setup-extension-api-server/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/dataconversion/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/dataconversion/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/access-cluster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/access-cluster/</loc>
     <lastmod>2019-01-28T01:32:01-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-application-cluster/access-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-application-cluster/access-cluster/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-application-cluster/access-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/access-cluster/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/</loc>
     <lastmod>2018-11-19T21:00:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/configure-pod-container/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/configure-pod-container/</loc>
     <lastmod>2018-11-18T21:33:46+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/configure-pod-container/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/configure-pod-container/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/configure-pod-container/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/configure-pod-container/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/workloads/controllers/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/controllers/</loc>
     <lastmod>2018-11-20T11:16:10+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/workloads/controllers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/workloads/controllers/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/workloads/controllers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/controllers/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/</loc>
     <lastmod>2018-11-18T18:24:34+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/manage-resources/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/manage-resources/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/setup-tools/kubeadm/kubeadm-init/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/setup-tools/kubeadm/kubeadm-init/</loc>
     <lastmod>2018-12-03T19:21:11-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/reference/setup-tools/kubeadm/kubeadm-init/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/setup-tools/kubeadm/kubeadm-init/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/reference/setup-tools/kubeadm/kubeadm-init/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/setup-tools/kubeadm/kubeadm-init/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/setup/independent/install-kubeadm/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/setup/independent/install-kubeadm/</loc>
     <lastmod>2018-12-13T14:07:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/setup/independent/install-kubeadm/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/install-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/docs/setup/independent/install-kubeadm/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/install-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/setup/independent/install-kubeadm/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/install-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/setup/independent/install-kubeadm/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/setup/independent/install-kubeadm/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/</loc>
     <lastmod>2018-11-20T13:30:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/inject-data-application/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/</loc>
     <lastmod>2018-11-19T09:00:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/inject-data-application/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/inject-data-application/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/inject-data-application/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/</loc>
     <lastmod>2018-11-19T16:10:05+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/network-policy-provider/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/network-policy-provider/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/setup/independent/create-cluster-kubeadm/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/setup/independent/create-cluster-kubeadm/</loc>
     <lastmod>2018-12-03T19:21:11-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/setup/independent/create-cluster-kubeadm/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/create-cluster-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/docs/setup/independent/create-cluster-kubeadm/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/create-cluster-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/setup/independent/create-cluster-kubeadm/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/create-cluster-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/setup/independent/create-cluster-kubeadm/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/setup/independent/create-cluster-kubeadm/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/</loc>
     <lastmod>2018-11-20T11:32:49+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/configuration/taint-and-toleration/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/configuration/taint-and-toleration/</loc>
     <lastmod>2018-11-06T11:33:04-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/configuration/taint-and-toleration/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/configuration/taint-and-toleration/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/configuration/taint-and-toleration/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/configuration/taint-and-toleration/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/port-forward-access-application-cluster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/port-forward-access-application-cluster/</loc>
     <lastmod>2018-11-06T11:33:04-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-application-cluster/port-forward-access-application-cluster/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-application-cluster/port-forward-access-application-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/port-forward-access-application-cluster/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/</loc>
     <lastmod>2018-10-30T17:05:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/job/fine-parallel-processing-work-queue/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/job/fine-parallel-processing-work-queue/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/job/fine-parallel-processing-work-queue/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/job/fine-parallel-processing-work-queue/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/job/fine-parallel-processing-work-queue/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/job/fine-parallel-processing-work-queue/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/</loc>
     <lastmod>2018-11-26T22:05:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/docs/concepts/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/concepts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/concepts/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/</loc>
     <lastmod>2018-11-20T13:31:55+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/load-balance-access-application-cluster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/load-balance-access-application-cluster/</loc>
     <lastmod>2018-11-06T11:33:04-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/job/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/job/</loc>
     <lastmod>2018-11-18T21:50:20+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/job/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/job/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/job/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/job/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/workloads/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/</loc>
     <lastmod>2018-11-23T21:22:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/workloads/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/workloads/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/workloads/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/workloads/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/workloads/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/service-access-application-cluster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/service-access-application-cluster/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-application-cluster/service-access-application-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-application-cluster/service-access-application-cluster/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-application-cluster/service-access-application-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/service-access-application-cluster/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/run-application/delete-stateful-set/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/run-application/delete-stateful-set/</loc>
     <lastmod>2018-11-18T09:37:37+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/run-application/delete-stateful-set/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/run-application/delete-stateful-set/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/run-application/delete-stateful-set/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/run-application/delete-stateful-set/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/access-authn-authz/authorization/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/access-authn-authz/authorization/</loc>
     <lastmod>2018-11-06T11:33:04-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/reference/access-authn-authz/authorization/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/access-authn-authz/authorization/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/reference/access-authn-authz/authorization/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/access-authn-authz/authorization/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/getting-started-guides/fedora/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/getting-started-guides/fedora/</loc>
     <lastmod>2018-11-23T21:27:07+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/getting-started-guides/fedora/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/getting-started-guides/fedora/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/getting-started-guides/fedora/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/getting-started-guides/fedora/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/setup/salt/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/setup/salt/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/storage/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/storage/</loc>
     <lastmod>2018-11-24T10:17:54+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/storage/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/storage/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/storage/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/storage/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/create-external-load-balancer/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/create-external-load-balancer/</loc>
     <lastmod>2018-11-06T11:33:04-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-application-cluster/create-external-load-balancer/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-application-cluster/create-external-load-balancer/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-application-cluster/create-external-load-balancer/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/create-external-load-balancer/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/debug-application-cluster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/</loc>
     <lastmod>2018-11-19T10:29:44+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/debug-application-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/debug-application-cluster/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/debug-application-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/</loc>
     <lastmod>2018-12-15T17:17:15+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/list-all-running-container-images/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/list-all-running-container-images/</loc>
     <lastmod>2018-11-06T11:33:04-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-application-cluster/list-all-running-container-images/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-application-cluster/list-all-running-container-images/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-application-cluster/list-all-running-container-images/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/list-all-running-container-images/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/configure-dns-cluster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/configure-dns-cluster/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-application-cluster/configure-dns-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-application-cluster/configure-dns-cluster/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-application-cluster/configure-dns-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/configure-dns-cluster/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/federation/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/federation/</loc>
     <lastmod>2018-11-18T21:42:49+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/federation/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/federation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/federation/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/federation/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/configure-pod-container/assign-pods-nodes/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/configure-pod-container/assign-pods-nodes/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/configure-pod-container/assign-pods-nodes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/configure-pod-container/assign-pods-nodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/configure-pod-container/assign-pods-nodes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/configure-pod-container/assign-pods-nodes/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-federation/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-federation/</loc>
     <lastmod>2018-11-19T09:47:13+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/blog/2018/12/05/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E4%B8%8A%E6%B5%B7%E7%AB%99/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/12/05/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E4%B8%8A%E6%B5%B7%E7%AB%99/</loc>
     <lastmod>2019-01-02T17:14:56+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/blog/2018/12/05/new-contributor-workshop-shanghai/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/12/05/new-contributor-workshop-shanghai/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/blog/2018/12/05/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E4%B8%8A%E6%B5%B7%E7%AB%99/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/12/05/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E4%B8%8A%E6%B5%B7%E7%AB%99/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/blog/2018/06/28/airflow-on-kubernetes-part-1-a-different-kind-of-operator/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/06/28/airflow-on-kubernetes-part-1-a-different-kind-of-operator/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/blog/2018/03/principles-of-container-app-design/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/2018/03/principles-of-container-app-design/</loc>
     <lastmod>2018-12-14T10:36:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/blog/1/01/01/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/1/01/01/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/blog/1/01/01/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/1/01/01/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/dataconversion/vctconfig/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/dataconversion/vctconfig/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/recalculateraster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/recalculateraster/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/architecture/cloud-controller/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/architecture/cloud-controller/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/architecture/cloud-controller/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/architecture/cloud-controller/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/architecture/cloud-controller/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/architecture/cloud-controller/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/architecture/cloud-controller/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/architecture/cloud-controller/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/overview/kubernetes-api/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/overview/kubernetes-api/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/overview/kubernetes-api/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/overview/kubernetes-api/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/overview/kubernetes-api/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/overview/kubernetes-api/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/overview/kubernetes-api/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/overview/kubernetes-api/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/setup-tools/kubeadm/generated/kubeadm_init/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/setup-tools/kubeadm/generated/kubeadm_init/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/reference/setup-tools/kubeadm/generated/kubeadm_init/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/setup-tools/kubeadm/generated/kubeadm_init/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/reference/setup-tools/kubeadm/generated/kubeadm_init/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/setup-tools/kubeadm/generated/kubeadm_init/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/scale/scale-intro/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/scale/scale-intro/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tutorials/kubernetes-basics/scale/scale-intro/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tutorials/kubernetes-basics/scale/scale-intro/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/tutorials/kubernetes-basics/scale/scale-intro/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/tutorials/kubernetes-basics/scale/scale-intro/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/docs/tutorials/kubernetes-basics/scale/scale-intro/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/tutorials/kubernetes-basics/scale/scale-intro/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/scale/scale-intro/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/scale/scale-intro/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/authorization/abac/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/authorization/abac/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/debug-application-cluster/audit/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/audit/</loc>
     <lastmod>2018-11-06T11:33:04-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/debug-application-cluster/audit/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/debug-application-cluster/audit/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/debug-application-cluster/audit/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/audit/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/case-studies/comcast/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/comcast/</loc>
     <lastmod>2018-11-25T20:43:19+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/case-studies/comcast/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/case-studies/comcast/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/case-studies/comcast/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/case-studies/comcast/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://docstest.github.io/it/case-studies/comcast/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/it/case-studies/comcast/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/case-studies/comcast/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/comcast/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/case-studies/concur/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/concur/</loc>
     <lastmod>2018-11-25T20:43:19+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/case-studies/concur/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/case-studies/concur/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/case-studies/concur/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/case-studies/concur/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/case-studies/concur/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/concur/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/workloads/controllers/cron-jobs/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/controllers/cron-jobs/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/workloads/controllers/cron-jobs/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/workloads/controllers/cron-jobs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/workloads/controllers/cron-jobs/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/controllers/cron-jobs/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/terrainbuilderclip/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/terrainbuilderclip/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/terrainbuilderclip/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/terrainbuilderclip/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/terrainbuilderclip/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/terrainbuilderclip/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/calculatecurvature/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/calculatecurvature/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/calculatecurvature/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/calculatecurvature/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/calculatecurvature/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/calculatecurvature/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/services-networking/dns-pod-service/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/services-networking/dns-pod-service/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/services-networking/dns-pod-service/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/services-networking/dns-pod-service/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/services-networking/dns-pod-service/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/services-networking/dns-pod-service/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/workloads/controllers/daemonset/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/controllers/daemonset/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/workloads/controllers/daemonset/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/workloads/controllers/daemonset/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/workloads/controllers/daemonset/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/controllers/daemonset/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/workloads/controllers/deployment/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/controllers/deployment/</loc>
     <lastmod>2019-02-16T02:26:48+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/workloads/controllers/deployment/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/workloads/controllers/deployment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/workloads/controllers/deployment/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/controllers/deployment/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/user-guide/docker-cli-to-kubectl/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/user-guide/docker-cli-to-kubectl/</loc>
     <lastmod>2019-03-15T11:42:56+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/case-studies/ebay/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/ebay/</loc>
     <lastmod>2018-11-25T20:41:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/case-studies/ebay/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/case-studies/ebay/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/case-studies/ebay/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/case-studies/ebay/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/case-studies/ebay/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/ebay/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/encrypt-data/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/encrypt-data/</loc>
     <lastmod>2018-12-03T19:21:11-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/encrypt-data/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/encrypt-data/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/encrypt-data/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/encrypt-data/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/</loc>
     <lastmod>2019-03-21T14:42:09+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/docs/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://docstest.github.io/it/docs/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/it/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/getting-started-guides/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/getting-started-guides/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/getting-started-guides/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/getting-started-guides/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/getting-started-guides/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/getting-started-guides/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/case-studies/homeoffice/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/homeoffice/</loc>
     <lastmod>2018-11-25T20:43:19+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/case-studies/homeoffice/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/case-studies/homeoffice/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/case-studies/homeoffice/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/case-studies/homeoffice/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/case-studies/homeoffice/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/homeoffice/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/workloads/pods/init-containers/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/pods/init-containers/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/workloads/pods/init-containers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/workloads/pods/init-containers/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/workloads/pods/init-containers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/workloads/pods/init-containers/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/workloads/pods/init-containers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/pods/init-containers/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/case-studies/jd/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/jd/</loc>
     <lastmod>2018-11-25T20:41:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/case-studies/jd/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/case-studies/jd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/case-studies/jd/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/case-studies/jd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/case-studies/jd/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/jd/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/user-guide/jsonpath/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/user-guide/jsonpath/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/kubelet-authentication-authorization/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/kubelet-authentication-authorization/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/accessing-the-api/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/accessing-the-api/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/ovs-networking/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/ovs-networking/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/cluster-administration/proxies/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/proxies/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/cluster-administration/proxies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/cluster-administration/proxies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/cluster-administration/proxies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/proxies/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/object-management-kubectl/object-management/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/object-management-kubectl/object-management/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/overview/components/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/overview/components/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/overview/components/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/overview/components/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/overview/components/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/overview/components/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/overview/components/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/overview/components/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/cluster-administration/sysctl-cluster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/sysctl-cluster/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/configuration/manage-compute-resources-container/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/configuration/manage-compute-resources-container/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/configuration/manage-compute-resources-container/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/configuration/manage-compute-resources-container/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/configuration/manage-compute-resources-container/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/configuration/manage-compute-resources-container/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/architecture/master-node-communication/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/architecture/master-node-communication/</loc>
     <lastmod>2018-11-11T11:55:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/architecture/master-node-communication/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/architecture/master-node-communication/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/architecture/master-node-communication/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/architecture/master-node-communication/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/concepts/architecture/master-node-communication/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/architecture/master-node-communication/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/architecture/master-node-communication/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/architecture/master-node-communication/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/architecture/nodes/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/architecture/nodes/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/architecture/nodes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/architecture/nodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/architecture/nodes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/architecture/nodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/concepts/architecture/nodes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/architecture/nodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/architecture/nodes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/architecture/nodes/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/workloads/pods/podpreset/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/pods/podpreset/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/workloads/pods/podpreset/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/workloads/pods/podpreset/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/workloads/pods/podpreset/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/workloads/pods/podpreset/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/workloads/pods/podpreset/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/pods/podpreset/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/policy/pod-security-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/policy/pod-security-policy/</loc>
     <lastmod>2018-10-27T15:14:22+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/policy/pod-security-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/policy/pod-security-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/policy/pod-security-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/policy/pod-security-policy/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/workloads/pods/pod-lifecycle/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/pods/pod-lifecycle/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/workloads/pods/pod-lifecycle/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/workloads/pods/pod-lifecycle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/workloads/pods/pod-lifecycle/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/workloads/pods/pod-lifecycle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/workloads/pods/pod-lifecycle/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/pods/pod-lifecycle/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/case-studies/sap/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/sap/</loc>
     <lastmod>2018-11-25T20:41:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/case-studies/sap/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/case-studies/sap/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/case-studies/sap/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/case-studies/sap/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/case-studies/sap/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/sap/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/configuration/secret/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/configuration/secret/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/configuration/secret/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/configuration/secret/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/configuration/secret/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/configuration/secret/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/services-networking/service/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/services-networking/service/</loc>
     <lastmod>2018-11-17T16:11:53+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/services-networking/service/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/services-networking/service/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/services-networking/service/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/services-networking/service/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/stateful-application/basic-stateful-set/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/stateful-application/basic-stateful-set/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tutorials/stateful-application/basic-stateful-set/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tutorials/stateful-application/basic-stateful-set/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tutorials/stateful-application/basic-stateful-set/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/stateful-application/basic-stateful-set/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/kubelet-tls-bootstrapping/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/kubelet-tls-bootstrapping/</loc>
     <lastmod>2018-11-06T11:33:04-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/tasks/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/tasks/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/tools/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/tools/</loc>
     <lastmod>2018-11-03T19:34:25+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/reference/tools/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/tools/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/reference/tools/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/tools/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tutorials/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tutorials/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/tutorials/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/tutorials/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/docs/tutorials/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/tutorials/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tutorials/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/authorization/webhook/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/authorization/webhook/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/case-studies/zulily/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/zulily/</loc>
     <lastmod>2018-11-24T23:42:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/case-studies/zulily/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/case-studies/zulily/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/case-studies/zulily/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/case-studies/zulily/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/case-studies/zulily/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/zulily/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/kube-apiserver/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/kube-apiserver/</loc>
     <lastmod>2018-11-09T01:45:30+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/command-line-tools-reference/kube-proxy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/command-line-tools-reference/kube-proxy/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/reference/command-line-tools-reference/kube-proxy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/command-line-tools-reference/kube-proxy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/reference/command-line-tools-reference/kube-proxy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/command-line-tools-reference/kube-proxy/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/command-line-tools-reference/kube-scheduler/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/command-line-tools-reference/kube-scheduler/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/reference/command-line-tools-reference/kube-scheduler/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/command-line-tools-reference/kube-scheduler/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/reference/command-line-tools-reference/kube-scheduler/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/command-line-tools-reference/kube-scheduler/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/kubectl/kubectl/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/kubectl/kubectl/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/reference/kubectl/kubectl/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/kubectl/kubectl/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/reference/kubectl/kubectl/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/kubectl/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/reference/kubectl/kubectl/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/kubectl/kubectl/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/user-guide/kubectl-overview/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/user-guide/kubectl-overview/</loc>
     <lastmod>2019-01-15T02:28:04+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/command-line-tools-reference/kubelet/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/command-line-tools-reference/kubelet/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/reference/command-line-tools-reference/kubelet/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/command-line-tools-reference/kubelet/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/reference/command-line-tools-reference/kubelet/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/command-line-tools-reference/kubelet/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/stateful-application/cassandra/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/stateful-application/cassandra/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tutorials/stateful-application/cassandra/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tutorials/stateful-application/cassandra/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tutorials/stateful-application/cassandra/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/stateful-application/cassandra/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/case-studies/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/</loc>
     <lastmod>2019-03-21T14:42:09+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/case-studies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/case-studies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/case-studies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/case-studies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/case-studies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/case-studies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/case-studies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/case-studies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://docstest.github.io/it/case-studies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/it/case-studies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/case-studies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/hillshade/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/hillshade/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/hillshade/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/hillshade/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/hillshade/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/hillshade/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/inject-data-application/define-command-argument-container/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/define-command-argument-container/</loc>
     <lastmod>2018-12-24T21:11:47+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/inject-data-application/define-command-argument-container/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/inject-data-application/define-command-argument-container/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/inject-data-application/define-command-argument-container/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/define-command-argument-container/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/inject-data-application/define-environment-variable-container/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/define-environment-variable-container/</loc>
     <lastmod>2019-01-13T09:40:55+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/inject-data-application/define-environment-variable-container/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/inject-data-application/define-environment-variable-container/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/inject-data-application/define-environment-variable-container/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/define-environment-variable-container/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/cluster-administration/cloud-providers/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/cloud-providers/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/cluster-administration/cloud-providers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/cluster-administration/cloud-providers/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/cluster-administration/cloud-providers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/cloud-providers/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/cluster-interactive/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/cluster-interactive/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/expose-interactive/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/expose-interactive/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/explore-interactive/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/explore-interactive/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/scale-interactive/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/scale-interactive/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/update-interactive/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/update-interactive/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/deploy-interactive/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/deploy-interactive/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/calico-network-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/calico-network-policy/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/cluster-intro/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/cluster-intro/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/inject-data-application/podpreset/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/podpreset/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/inject-data-application/podpreset/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/inject-data-application/podpreset/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/inject-data-application/podpreset/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/podpreset/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/romana-network-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/romana-network-policy/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/inject-data-application/distribute-credentials-secure/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/distribute-credentials-secure/</loc>
     <lastmod>2019-01-13T09:40:55+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/inject-data-application/distribute-credentials-secure/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/inject-data-application/distribute-credentials-secure/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/inject-data-application/distribute-credentials-secure/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/distribute-credentials-secure/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/connecting-frontend-backend/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/connecting-frontend-backend/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-application-cluster/connecting-frontend-backend/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-application-cluster/connecting-frontend-backend/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-application-cluster/connecting-frontend-backend/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/connecting-frontend-backend/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/services/source-ip/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/services/source-ip/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tutorials/services/source-ip/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tutorials/services/source-ip/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tutorials/services/source-ip/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/services/source-ip/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/weave-network-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/weave-network-policy/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/deploy-intro/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/deploy-intro/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/configuration/configure-redis-using-configmap/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/configuration/configure-redis-using-configmap/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tutorials/configuration/configure-redis-using-configmap/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tutorials/configuration/configure-redis-using-configmap/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/tutorials/configuration/configure-redis-using-configmap/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/tutorials/configuration/configure-redis-using-configmap/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tutorials/configuration/configure-redis-using-configmap/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/configuration/configure-redis-using-configmap/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/run-application/run-stateless-application-deployment/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/run-application/run-stateless-application-deployment/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/run-application/run-stateless-application-deployment/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/run-application/run-stateless-application-deployment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/run-application/run-stateless-application-deployment/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/run-application/run-stateless-application-deployment/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/access-authn-authz/admission-controllers/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/access-authn-authz/admission-controllers/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/reference/access-authn-authz/admission-controllers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/access-authn-authz/admission-controllers/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/reference/access-authn-authz/admission-controllers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/access-authn-authz/admission-controllers/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/bootstrap-tokens/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/bootstrap-tokens/</loc>
     <lastmod>2018-11-09T01:45:30+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/object-management-kubectl/imperative-object-management-command/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/object-management-kubectl/imperative-object-management-command/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/expose-intro/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/expose-intro/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/cluster-large/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/cluster-large/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/profile/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/profile/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/profile/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/profile/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/profile/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/profile/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/inversecutfill/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/inversecutfill/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/inversecutfill/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/inversecutfill/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/inversecutfill/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/inversecutfill/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/</loc>
     <lastmod>2018-11-14T18:01:44-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/dns-custom-nameservers/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/dns-custom-nameservers/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/dns-custom-nameservers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/dns-custom-nameservers/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/dns-custom-nameservers/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/dns-custom-nameservers/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/sysctl-cluster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/sysctl-cluster/</loc>
     <lastmod>2018-11-06T11:33:04-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/sysctl-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/sysctl-cluster/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/sysctl-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/sysctl-cluster/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/aspect/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/aspect/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/aspect/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/aspect/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/aspect/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/aspect/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/slope/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/slope/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/slope/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/slope/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/slope/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/slope/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/workloads/controllers/garbage-collection/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/controllers/garbage-collection/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/workloads/controllers/garbage-collection/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/workloads/controllers/garbage-collection/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/workloads/controllers/garbage-collection/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/workloads/controllers/garbage-collection/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/</loc>
     <lastmod>2018-12-22T18:36:59-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/run-application/rolling-update-replication-controller/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/run-application/rolling-update-replication-controller/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/run-application/rolling-update-replication-controller/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/run-application/rolling-update-replication-controller/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/run-application/rolling-update-replication-controller/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/run-application/rolling-update-replication-controller/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/cutfill/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/cutfill/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/cutfill/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/cutfill/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/cutfill/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/cutfill/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/declare-network-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/declare-network-policy/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/declare-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/declare-network-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/declare-network-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/declare-network-policy/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/multiple-zones/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/multiple-zones/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/getting-started-guides/ubuntu/security/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/getting-started-guides/ubuntu/security/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/getting-started-guides/ubuntu/security/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/getting-started-guides/ubuntu/security/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/getting-started-guides/ubuntu/security/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/getting-started-guides/ubuntu/security/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/cluster-administration/addons/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/addons/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/cluster-administration/addons/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/cluster-administration/addons/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/cluster-administration/addons/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/addons/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/containers/container-environment-variables/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/containers/container-environment-variables/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/containers/container-environment-variables/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/containers/container-environment-variables/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/containers/container-environment-variables/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/containers/container-environment-variables/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/concepts/containers/container-environment-variables/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/containers/container-environment-variables/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/containers/container-environment-variables/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/containers/container-environment-variables/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/manage-daemon/rollback-daemon-set/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/manage-daemon/rollback-daemon-set/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/manage-daemon/rollback-daemon-set/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/manage-daemon/rollback-daemon-set/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/manage-daemon/rollback-daemon-set/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/manage-daemon/rollback-daemon-set/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/objectedit/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/objectedit/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/objectdraw/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/objectdraw/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-9/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-9/</loc>
     <lastmod>2018-11-06T11:33:04-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/</loc>
     <lastmod>2019-03-21T14:42:09+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://docstest.github.io/it/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/it/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/debug-application-cluster/debug-application/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/debug-application/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/debug-application-cluster/debug-application/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/debug-application-cluster/debug-application/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/debug-application-cluster/debug-application/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/debug-application/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/apply-resource-quota-limit/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/apply-resource-quota-limit/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/services-networking/connect-applications-service/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/services-networking/connect-applications-service/</loc>
     <lastmod>2018-11-14T18:01:44-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/services-networking/connect-applications-service/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/services-networking/connect-applications-service/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/services-networking/connect-applications-service/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/services-networking/connect-applications-service/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/run-application/scale-stateful-set/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/run-application/scale-stateful-set/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/run-application/scale-stateful-set/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/run-application/scale-stateful-set/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/run-application/scale-stateful-set/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/run-application/scale-stateful-set/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/update-intro/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/update-intro/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/blog/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/</loc>
     <lastmod>2019-03-21T14:42:09+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/blog/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://docstest.github.io/it/blog/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/it/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/blog/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/blog/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/cpu-management-policies/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/cpu-management-policies/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/cpu-management-policies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/cpu-management-policies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/cpu-management-policies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/cpu-management-policies/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/drivecontourall/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/drivecontourall/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/drivecontourall/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/drivecontourall/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/drivecontourall/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/drivecontourall/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/driveregionall/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/driveregionall/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/driveregionall/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/driveregionall/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/driveregionall/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/driveregionall/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/drivecontourspecific/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/drivecontourspecific/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/drivecontourspecific/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/drivecontourspecific/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/drivecontourspecific/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/drivecontourspecific/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/driveregionspecific/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/driveregionspecific/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/driveregionspecific/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/driveregionspecific/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/driveregionspecific/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/driveregionspecific/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/drivecontour/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/drivecontour/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/drivecontour/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/drivecontour/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/drivecontour/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/drivecontour/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/</loc>
     <lastmod>2019-03-21T14:42:09+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tutorials/kubernetes-basics/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tutorials/kubernetes-basics/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/tutorials/kubernetes-basics/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/tutorials/kubernetes-basics/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/docs/tutorials/kubernetes-basics/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/tutorials/kubernetes-basics/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/change-default-storage-class/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/change-default-storage-class/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/change-default-storage-class/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/change-default-storage-class/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/change-default-storage-class/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/change-default-storage-class/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/enginetype/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/enginetype/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/encodetype/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/encodetype/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/change-pv-reclaim-policy/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/change-pv-reclaim-policy/</loc>
     <lastmod>2019-01-15T09:26:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/change-pv-reclaim-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/change-pv-reclaim-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/change-pv-reclaim-policy/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/change-pv-reclaim-policy/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/high-availability/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/high-availability/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/findextreme/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/findextreme/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/findextreme/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/findextreme/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/findextreme/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/findextreme/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/explore-intro/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/explore-intro/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/example-concept-template/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/example-concept-template/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/example-concept-template/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/example-concept-template/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/example-concept-template/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/example-concept-template/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/authorization/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/authorization/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/orthoimage/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/orthoimage/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/orthoimage/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/orthoimage/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/orthoimage/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/orthoimage/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/extractisoline/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/extractisoline/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/extractisoline/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/extractisoline/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/extractisoline/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/extractisoline/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/overview/working-with-objects/kubernetes-objects/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/overview/working-with-objects/kubernetes-objects/</loc>
     <lastmod>2019-01-26T21:04:21-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/overview/working-with-objects/kubernetes-objects/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/overview/working-with-objects/kubernetes-objects/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/overview/working-with-objects/kubernetes-objects/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/overview/working-with-objects/kubernetes-objects/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/overview/working-with-objects/kubernetes-objects/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/overview/working-with-objects/kubernetes-objects/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/catalogmanagement/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/catalogmanagement/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/reference/labels-annotations-taints/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/labels-annotations-taints/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/service-accounts-admin/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/service-accounts-admin/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/workspacemanagent/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/workspacemanagent/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/manage-hugepages/scheduling-hugepages/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/manage-hugepages/scheduling-hugepages/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/manage-hugepages/scheduling-hugepages/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/manage-hugepages/scheduling-hugepages/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/manage-hugepages/scheduling-hugepages/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/manage-hugepages/scheduling-hugepages/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/pyramidmanage/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/pyramidmanage/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/databasemanagement/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/databasemanagement/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/datasetmanagement/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/datasetmanagement/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/spatialindexmanage/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/spatialindexmanage/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/dataconversion/geoformates2/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/dataconversion/geoformates2/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/text/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/text/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/point/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/point/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/drawcurve/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/drawcurve/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/drawquadrangle/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/drawquadrangle/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/configure-pod-container/opaque-integer-resource/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/configure-pod-container/opaque-integer-resource/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/services-networking/network-policies/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/services-networking/network-policies/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/services-networking/network-policies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/services-networking/network-policies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/services-networking/network-policies/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/services-networking/network-policies/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/cluster-administration/federation/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/federation/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/cluster-administration/federation/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/cluster-administration/federation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/cluster-administration/federation/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/federation/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/admin/node-conformance/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/admin/node-conformance/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/overview/what-is-kubernetes/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/overview/what-is-kubernetes/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/overview/what-is-kubernetes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/overview/what-is-kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/overview/what-is-kubernetes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/overview/what-is-kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docstest.github.io/ja/docs/concepts/overview/what-is-kubernetes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/concepts/overview/what-is-kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/concepts/overview/what-is-kubernetes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/overview/what-is-kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://docstest.github.io/it/docs/concepts/overview/what-is-kubernetes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/it/docs/concepts/overview/what-is-kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/overview/what-is-kubernetes/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/overview/what-is-kubernetes/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/whatisk8s/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/whatisk8s/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/cluster-administration/device-plugins/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/device-plugins/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/cpu-memory-limit/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/cpu-memory-limit/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/access-cluster-services/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/access-cluster-services/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/access-cluster-services/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/access-cluster-services/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/access-cluster-services/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/access-cluster-services/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/cluster-administration/certificates/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/certificates/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/cluster-administration/certificates/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/cluster-administration/certificates/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/concepts/cluster-administration/certificates/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/cluster-administration/certificates/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/cluster-administration/certificates/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/certificates/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/tls/certificate-rotation/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/tls/certificate-rotation/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/tls/certificate-rotation/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/tls/certificate-rotation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/tls/certificate-rotation/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/tls/certificate-rotation/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/manage-gpus/scheduling-gpus/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/manage-gpus/scheduling-gpus/</loc>
     <lastmod>2018-11-22T14:23:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/manage-gpus/scheduling-gpus/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/manage-gpus/scheduling-gpus/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/manage-gpus/scheduling-gpus/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/manage-gpus/scheduling-gpus/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/debug-application-cluster/debug-pod-replication-controller/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/debug-pod-replication-controller/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/debug-application-cluster/debug-pod-replication-controller/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/debug-application-cluster/debug-pod-replication-controller/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/debug-application-cluster/debug-pod-replication-controller/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/debug-pod-replication-controller/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/debug-application-cluster/debug-stateful-set/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/debug-stateful-set/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/debug-application-cluster/debug-stateful-set/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/debug-application-cluster/debug-stateful-set/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/debug-application-cluster/debug-stateful-set/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/debug-stateful-set/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/policy/resource-quotas/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/policy/resource-quotas/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/policy/resource-quotas/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/policy/resource-quotas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/policy/resource-quotas/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/policy/resource-quotas/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/stateful-application/zookeeper/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/stateful-application/zookeeper/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tutorials/stateful-application/zookeeper/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tutorials/stateful-application/zookeeper/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tutorials/stateful-application/zookeeper/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/stateful-application/zookeeper/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/run-application/run-single-instance-stateful-application/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/run-application/run-single-instance-stateful-application/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/run-application/run-single-instance-stateful-application/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/run-application/run-single-instance-stateful-application/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/run-application/run-single-instance-stateful-application/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/run-application/run-single-instance-stateful-application/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/scale-intro/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/scale-intro/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/</loc>
     <lastmod>2018-12-24T21:11:47+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/inject-data-application/environment-variable-expose-pod-information/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/kubelet-config-file/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/kubelet-config-file/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/kubelet-config-file/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/kubelet-config-file/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/kubelet-config-file/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/kubelet-config-file/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/quota-pod-namespace/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/quota-pod-namespace/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/access-application-cluster/configure-access-multiple-clusters/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/configure-access-multiple-clusters/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/access-application-cluster/configure-access-multiple-clusters/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/access-application-cluster/configure-access-multiple-clusters/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/access-application-cluster/configure-access-multiple-clusters/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/datamanage/recalculatevector/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/datamanage/recalculatevector/</loc>
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/containers/images/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/containers/images/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/containers/images/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/containers/images/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://docstest.github.io/ko/docs/concepts/containers/images/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/containers/images/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/containers/images/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/containers/images/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/debug-application-cluster/debug-cluster/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/debug-cluster/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/debug-application-cluster/debug-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/debug-application-cluster/debug-cluster/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/debug-application-cluster/debug-cluster/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/debug-application-cluster/debug-cluster/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/cluster-management/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/cluster-management/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/cluster-management/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/cluster-management/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/cluster-management/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/cluster-management/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/concepts/cluster-administration/cluster-administration-overview/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/cluster-administration-overview/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/concepts/cluster-administration/cluster-administration-overview/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/cluster-administration/cluster-administration-overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://docstest.github.io/fr/docs/concepts/cluster-administration/cluster-administration-overview/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/cluster-administration/cluster-administration-overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/concepts/cluster-administration/cluster-administration-overview/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/cluster-administration-overview/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/tasks/administer-cluster/static-pod/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/static-pod/</loc>
     <lastmod>2018-10-12T14:25:01-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/tasks/administer-cluster/static-pod/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tasks/administer-cluster/static-pod/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/tasks/administer-cluster/static-pod/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tasks/administer-cluster/static-pod/"
                 />
   </url>
   
   <url>
-    <loc>https://docstest.github.io/zh/docs/surfaceanalyst/cutfillregion/</loc>
+    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/cutfillregion/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docstest.github.io/docs/surfaceanalyst/cutfillregion/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/surfaceanalyst/cutfillregion/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://docstest.github.io/zh/docs/surfaceanalyst/cutfillregion/"
+                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/cutfillregion/"
                 />
   </url>
   

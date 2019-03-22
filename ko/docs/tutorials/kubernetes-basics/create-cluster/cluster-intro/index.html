@@ -14,35 +14,35 @@
 <meta charset="utf-8">
 <title>Minikube를 사용해서 클러스터 생성하기 - SuperMap iDesktop .NET</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/Test_hugo/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/jquery-ui.min.css">
-<link rel="stylesheet" href="/css/sweetalert.min.css">
-<link rel="stylesheet" href="/css/callouts.css">
-<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="/Test_hugo/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/Test_hugo/css/sweetalert.min.css">
+<link rel="stylesheet" href="/Test_hugo/css/callouts.css">
+<link rel="stylesheet" href="/Test_hugo/css/custom-jekyll/tags.css">
 
 
 
 <meta name="description" content="목표쿠버네티스 클러스터가 무엇인지 배운다.Minikube가 무엇인지 배운다.온라인 터미널을 사용해서 쿠버네티스 클러스터를 시작한다.쿠버네티스 클러스터쿠버네티스는 서로 연결되어서 단일 유닛처럼 동작하는 고가용성의 컴퓨터 클러스터를 상호조정한다.쿠버네티스의 추상화된 개념을 통해 개별 머신에 얽매이지 않고 컨테이너화된 애플리케이션을 클러스터에배포할 수 있다. 이렇게 새로운 배포 모델을 활용하려면, 애플리케이션을 개별 호스트에 결합되지 않는방식으로 패키지할 필요가 있다. 즉, 컨테이너화 해야 한다. 컨테이너화된 애플리케이션은 호스트에매우 깊이 통합된 패키지로써, 특정 머신에 직접 설치되는 예전의 배포 모델보다 유연하고 가용성이 높다.">
 <meta property="og:description" content="목표쿠버네티스 클러스터가 무엇인지 배운다.Minikube가 무엇인지 배운다.온라인 터미널을 사용해서 쿠버네티스 클러스터를 시작한다.쿠버네티스 클러스터쿠버네티스는 서로 연결되어서 단일 유닛처럼 동작하는 고가용성의 컴퓨터 클러스터를 상호조정한다.쿠버네티스의 추상화된 개념을 통해 개별 머신에 얽매이지 않고 컨테이너화된 애플리케이션을 클러스터에배포할 수 있다. 이렇게 새로운 배포 모델을 활용하려면, 애플리케이션을 개별 호스트에 결합되지 않는방식으로 패키지할 필요가 있다. 즉, 컨테이너화 해야 한다. 컨테이너화된 애플리케이션은 호스트에매우 깊이 통합된 패키지로써, 특정 머신에 직접 설치되는 예전의 배포 모델보다 유연하고 가용성이 높다.">
 <meta name="twitter:description" content="목표쿠버네티스 클러스터가 무엇인지 배운다.Minikube가 무엇인지 배운다.온라인 터미널을 사용해서 쿠버네티스 클러스터를 시작한다.쿠버네티스 클러스터쿠버네티스는 서로 연결되어서 단일 유닛처럼 동작하는 고가용성의 컴퓨터 클러스터를 상호조정한다.쿠버네티스의 추상화된 개념을 통해 개별 머신에 얽매이지 않고 컨테이너화된 애플리케이션을 클러스터에배포할 수 있다. 이렇게 새로운 배포 모델을 활용하려면, 애플리케이션을 개별 호스트에 결합되지 않는방식으로 패키지할 필요가 있다. 즉, 컨테이너화 해야 한다. 컨테이너화된 애플리케이션은 호스트에매우 깊이 통합된 패키지로써, 특정 머신에 직접 설치되는 예전의 배포 모델보다 유연하고 가용성이 높다.">
-<meta property="og:url" content="https://docstest.github.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/">
+<meta property="og:url" content="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/">
 <meta property="og:title" content="Minikube를 사용해서 클러스터 생성하기">
 <meta name="twitter:title" content="Minikube를 사용해서 클러스터 생성하기">
 
 <meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
 
-<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+<meta property="og:image" content="/Test_hugo/images/kubernetes-horizontal-color.png">
 
 <meta property="og:type" content="article">
-<script src="/js/anchor-4.1.1.min.js"></script>
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script src="/js/jquery-ui-1.12.1.min.js"></script>
-<script src="/js/bootstrap-3.3.7.min.js"></script>
-<script src="/js/sweetalert-1.1.3.min.js"></script>
-<script src="/js/script.js"></script>
-<script src="/js/custom-jekyll/tags.js"></script>
+<script src="/Test_hugo/js/anchor-4.1.1.min.js"></script>
+<script src="/Test_hugo/js/jquery-3.2.1.min.js"></script>
+<script src="/Test_hugo/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/Test_hugo/js/bootstrap-3.3.7.min.js"></script>
+<script src="/Test_hugo/js/sweetalert-1.1.3.min.js"></script>
+<script src="/Test_hugo/js/script.js"></script>
+<script src="/Test_hugo/js/custom-jekyll/tags.js"></script>
 
 
 </head>
@@ -50,12 +50,12 @@
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
-    <a href="/ko/" class="logo"></a>
+    <a href="/Test_hugo/ko/" class="logo"></a>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
             
-            <li><a href="/ko/docs/" class="active">문서</a></li>
+            <li><a href="/Test_hugo/ko/docs/" class="active">문서</a></li>
             
             
             
@@ -63,7 +63,7 @@
             
             
             
-            <li><a href="/ko/case-studies/">사례 연구</a></li>
+            <li><a href="/Test_hugo/ko/case-studies/">사례 연구</a></li>
             
             
             
@@ -73,9 +73,9 @@
                 </a>
                 <ul>
                 
-                    <li><a href="/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/">English</a></li>
+                    <li><a href="/Test_hugo/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/">English</a></li>
                 
-                    <li><a href="/ja/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/">日本語 Japanese</a></li>
+                    <li><a href="/Test_hugo/ja/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/">日本語 Japanese</a></li>
                 
                 </ul>
             </li>
@@ -110,13 +110,13 @@
         <main data-auto-burger="primary">
          
            <div class="nav-box">
-            <h3><a href="/ko/docs/tutorials/hello-minikube/">Get Started</a></h3>
+            <h3><a href="/Test_hugo/ko/docs/tutorials/hello-minikube/">Get Started</a></h3>
            <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
 
         </div>
          
            <div class="nav-box">
-            <h3><a href="/ko/docs/home/">문서</a></h3>
+            <h3><a href="/Test_hugo/ko/docs/home/">문서</a></h3>
            <p>개념, 튜토리얼 및 참조 문서와 함께 쿠버네티스 사용하는 방법을 익힐 수 있다. 또한, <a href="/editdocs/" data-auto-burger-exclude>문서에 기여하는 것도 도움을 줄 수 있다</a>!</p>
 
         </div>
@@ -173,25 +173,25 @@
 	<ul>
 		
 		
-		<li><a href="/ko/docs/home/">홈</a></li>
+		<li><a href="/Test_hugo/ko/docs/home/">홈</a></li>
 		
 		
-		<li><a href="/ko/docs/setup/">설치</a></li>
+		<li><a href="/Test_hugo/ko/docs/setup/">설치</a></li>
 		
 		
-		<li><a href="/ko/docs/concepts/">개념</a></li>
+		<li><a href="/Test_hugo/ko/docs/concepts/">개념</a></li>
 		
 		
-		<li><a href="/ko/docs/tasks/">태스크</a></li>
+		<li><a href="/Test_hugo/ko/docs/tasks/">태스크</a></li>
 		
 		
-		<li><a href="/ko/docs/tutorials/" class="YAH">튜토리얼</a></li>
+		<li><a href="/Test_hugo/ko/docs/tutorials/" class="YAH">튜토리얼</a></li>
 		
 		
-		<li><a href="/ko/docs/reference/">레퍼런스</a></li>
+		<li><a href="/Test_hugo/ko/docs/reference/">레퍼런스</a></li>
 		
 		
-		<li><a href="/ko/docs/contribute/">기여</a></li>
+		<li><a href="/Test_hugo/ko/docs/contribute/">기여</a></li>
 		
 	</ul>
 	<form id="searchBox" action="/docs/search/">
@@ -243,7 +243,7 @@
          
          
         
-        <a class="item" data-title="튜토리얼" href="/ko/docs/tutorials/"></a>
+        <a class="item" data-title="튜토리얼" href="/Test_hugo/ko/docs/tutorials/"></a>
 
 	
 	
@@ -259,7 +259,7 @@
 		
 			
 
-<a class="item" data-title="Hello Minikube" href="/ko/docs/tutorials/hello-minikube/"></a>
+<a class="item" data-title="Hello Minikube" href="/Test_hugo/ko/docs/tutorials/hello-minikube/"></a>
 
 		
 	
@@ -270,7 +270,7 @@
 		
 		
 		
-		<a class="item" data-title="쿠버네티스 기초 학습" href="/ko/docs/tutorials/kubernetes-basics/"></a>
+		<a class="item" data-title="쿠버네티스 기초 학습" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/"></a>
 		
 		
 	
@@ -304,14 +304,14 @@
 		
 			
 
-<a class="item" data-title="Minikube를 사용해서 클러스터 생성하기" href="/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/"></a>
+<a class="item" data-title="Minikube를 사용해서 클러스터 생성하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="대화형 튜토리얼 - 클러스터 생성하기" href="/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/"></a>
+<a class="item" data-title="대화형 튜토리얼 - 클러스터 생성하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/"></a>
 
 		
 	
@@ -341,14 +341,14 @@
 		
 			
 
-<a class="item" data-title="kubectl을 사용해서 디플로이먼트 생성하기" href="/ko/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/"></a>
+<a class="item" data-title="kubectl을 사용해서 디플로이먼트 생성하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="대화형 튜토리얼 - 앱 배포하기" href="/ko/docs/tutorials/kubernetes-basics/deploy-app/deploy-interactive/"></a>
+<a class="item" data-title="대화형 튜토리얼 - 앱 배포하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/deploy-app/deploy-interactive/"></a>
 
 		
 	
@@ -378,14 +378,14 @@
 		
 			
 
-<a class="item" data-title="파드와 노드 보기" href="/ko/docs/tutorials/kubernetes-basics/explore/explore-intro/"></a>
+<a class="item" data-title="파드와 노드 보기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/explore/explore-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="대화형 튜토리얼 - 앱 조사하기" href="/ko/docs/tutorials/kubernetes-basics/explore/explore-interactive/"></a>
+<a class="item" data-title="대화형 튜토리얼 - 앱 조사하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/explore/explore-interactive/"></a>
 
 		
 	
@@ -415,14 +415,14 @@
 		
 			
 
-<a class="item" data-title="앱 노출을 위해 서비스 이용하기" href="/ko/docs/tutorials/kubernetes-basics/expose/expose-intro/"></a>
+<a class="item" data-title="앱 노출을 위해 서비스 이용하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/expose/expose-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="대화형 튜토리얼 - 앱 노출하기" href="/ko/docs/tutorials/kubernetes-basics/expose/expose-interactive/"></a>
+<a class="item" data-title="대화형 튜토리얼 - 앱 노출하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/expose/expose-interactive/"></a>
 
 		
 	
@@ -452,14 +452,14 @@
 		
 			
 
-<a class="item" data-title="복수의 앱 인스턴스를 구동하기" href="/ko/docs/tutorials/kubernetes-basics/scale/scale-intro/"></a>
+<a class="item" data-title="복수의 앱 인스턴스를 구동하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/scale/scale-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="대화형 튜토리얼 - 앱 스케일링하기" href="/ko/docs/tutorials/kubernetes-basics/scale/scale-interactive/"></a>
+<a class="item" data-title="대화형 튜토리얼 - 앱 스케일링하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/scale/scale-interactive/"></a>
 
 		
 	
@@ -489,14 +489,14 @@
 		
 			
 
-<a class="item" data-title="롤링 업데이트 수행하기" href="/ko/docs/tutorials/kubernetes-basics/update/update-intro/"></a>
+<a class="item" data-title="롤링 업데이트 수행하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/update/update-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="대화형 튜토리얼 - 앱 업데이트 하기" href="/ko/docs/tutorials/kubernetes-basics/update/update-interactive/"></a>
+<a class="item" data-title="대화형 튜토리얼 - 앱 업데이트 하기" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/update/update-interactive/"></a>
 
 		
 	
@@ -532,7 +532,7 @@
 		
 			
 
-<a class="item" data-title="쿠버네티스 온라인 트레이닝 개요" href="/ko/docs/tutorials/online-training/overview/"></a>
+<a class="item" data-title="쿠버네티스 온라인 트레이닝 개요" href="/Test_hugo/ko/docs/tutorials/online-training/overview/"></a>
 
 		
 	
@@ -562,7 +562,7 @@
 		
 			
 
-<a class="item" data-title="컨피그 맵을 사용해서 Redis 설정하기" href="/ko/docs/tutorials/configuration/configure-redis-using-configmap/"></a>
+<a class="item" data-title="컨피그 맵을 사용해서 Redis 설정하기" href="/Test_hugo/ko/docs/tutorials/configuration/configure-redis-using-configmap/"></a>
 
 		
 	
@@ -592,14 +592,14 @@
 		
 			
 
-<a class="item" data-title="외부 IP 주소를 노출하여 클러스터의 애플리케이션에 접속하기" href="/ko/docs/tutorials/stateless-application/expose-external-ip-address/"></a>
+<a class="item" data-title="외부 IP 주소를 노출하여 클러스터의 애플리케이션에 접속하기" href="/Test_hugo/ko/docs/tutorials/stateless-application/expose-external-ip-address/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="예시: Redis를 사용한 PHP 방명록 애플리케이션 배포하기" href="/ko/docs/tutorials/stateless-application/guestbook/"></a>
+<a class="item" data-title="예시: Redis를 사용한 PHP 방명록 애플리케이션 배포하기" href="/Test_hugo/ko/docs/tutorials/stateless-application/guestbook/"></a>
 
 		
 	
@@ -626,28 +626,28 @@
 		
 			
 
-<a class="item" target="_blank" data-title="StatefulSet Basics <small>(EN)</small>" href="/docs/tutorials/stateful-application/basic-stateful-set/"></a>
+<a class="item" target="_blank" data-title="StatefulSet Basics <small>(EN)</small>" href="/Test_hugo/docs/tutorials/stateful-application/basic-stateful-set/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Example: Deploying WordPress and MySQL with Persistent Volumes <small>(EN)</small>" href="/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/"></a>
+<a class="item" target="_blank" data-title="Example: Deploying WordPress and MySQL with Persistent Volumes <small>(EN)</small>" href="/Test_hugo/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Example: Deploying Cassandra with Stateful Sets <small>(EN)</small>" href="/docs/tutorials/stateful-application/cassandra/"></a>
+<a class="item" target="_blank" data-title="Example: Deploying Cassandra with Stateful Sets <small>(EN)</small>" href="/Test_hugo/docs/tutorials/stateful-application/cassandra/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Running ZooKeeper, A Distributed System Coordinator <small>(EN)</small>" href="/docs/tutorials/stateful-application/zookeeper/"></a>
+<a class="item" target="_blank" data-title="Running ZooKeeper, A Distributed System Coordinator <small>(EN)</small>" href="/Test_hugo/docs/tutorials/stateful-application/zookeeper/"></a>
 
 		
 	
@@ -674,7 +674,7 @@
 		
 			
 
-<a class="item" target="_blank" data-title="AppArmor <small>(EN)</small>" href="/docs/tutorials/clusters/apparmor/"></a>
+<a class="item" target="_blank" data-title="AppArmor <small>(EN)</small>" href="/Test_hugo/docs/tutorials/clusters/apparmor/"></a>
 
 		
 	
@@ -701,7 +701,7 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Using Source IP <small>(EN)</small>" href="/docs/tutorials/services/source-ip/"></a>
+<a class="item" target="_blank" data-title="Using Source IP <small>(EN)</small>" href="/Test_hugo/docs/tutorials/services/source-ip/"></a>
 
 		
 	
@@ -866,8 +866,8 @@
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/ko/docs/tutorials/kubernetes-basics/create-cluster/" title="클러스터 생성하기"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 클러스터 생성하기</a>
-<a class="nav nav-next" href="/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/" title="대화형 튜토리얼 - 클러스터 생성하기">Next - 대화형 튜토리얼 - 클러스터 생성하기 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination"><a class="nav nav-prev" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/create-cluster/" title="클러스터 생성하기"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 클러스터 생성하기</a>
+<a class="nav nav-next" href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/" title="대화형 튜토리얼 - 클러스터 생성하기">Next - 대화형 튜토리얼 - 클러스터 생성하기 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -928,9 +928,9 @@
     <script type="text/javascript">
     PDRTJS_settings_8345992 = {
     "id" : "8345992",
-    "unique_id" : "\/ko\/docs\/tutorials\/kubernetes-basics\/create-cluster\/cluster-intro\/",
+    "unique_id" : "\/Test_hugo\/ko\/docs\/tutorials\/kubernetes-basics\/create-cluster\/cluster-intro\/",
     "title" : "Minikube를 사용해서 클러스터 생성하기",
-    "permalink" : "https:\/\/docstest.github.io\/ko\/docs\/tutorials\/kubernetes-basics\/create-cluster\/cluster-intro\/"
+    "permalink" : "https:\/\/SuperMap_iDesktop.gitee.io\/Test_hugo\/ko\/docs\/tutorials\/kubernetes-basics\/create-cluster\/cluster-intro\/"
     };
     (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
     </script>
@@ -982,7 +982,7 @@
             
             
             
-            <a href="/ko/docs/home/">홈</a>
+            <a href="/Test_hugo/ko/docs/home/">홈</a>
             
             
             
@@ -990,7 +990,7 @@
             
             
             
-            <a href="/ko/case-studies/">사례 연구</a>
+            <a href="/Test_hugo/ko/case-studies/">사례 연구</a>
             
         </nav>
         <div class="social">

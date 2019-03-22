@@ -14,13 +14,13 @@
 <meta charset="utf-8">
 <title>搜索 - SuperMap iDesktop .NET</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/Test_hugo/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/jquery-ui.min.css">
-<link rel="stylesheet" href="/css/sweetalert.min.css">
-<link rel="stylesheet" href="/css/callouts.css">
-<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="/Test_hugo/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/Test_hugo/css/sweetalert.min.css">
+<link rel="stylesheet" href="/Test_hugo/css/callouts.css">
+<link rel="stylesheet" href="/Test_hugo/css/custom-jekyll/tags.css">
 
 
 
@@ -39,22 +39,22 @@
  在集群上部署容器化应用程序 弹性部署 使用新的软件版本，更新容器化应用程序 调试容器化应用程序  教程 Katacoda 在您的浏览器中运行一个虚拟终端，在浏览器中运行 Minikube，这是一个可在任何地方小规模本地部署的 Kubernetes 集群。不需要安装任何软件或进行任何配置; 每个交互性教程都直接从您的网页浏览器上运行。
   Kubernetes 可以为您做些什么? 通过现代的 Web 服务，用户希望应用程序能够 24/7 全天候使用，开发人员希望每天可以多次发布部署新版本的应用程序。 容器化可以帮助软件包达成这些目标，使应用程序能够以简单快速的方式发布和更新，而无需停机。Kubernetes 帮助您确保这些容器化的应用程序在您想要的时间和地点运行，并帮助应用程序找到它们需要的资源和工具。 Kubernetes 是一个可用于生产的开源平台，根据 Google 容器集群方面积累的经验，以及来自社区的最佳实践而设计。
   Kubernetes 基础模块  1. 创建一个 Kubernetes 集群     2. 部署应用程序     3. 应用程序探索     4. 应用外部可见     5. 应用可扩展     6.">
-<meta property="og:url" content="https://docstest.github.io/zh/docs/tutorials/kubernetes-basics/">
+<meta property="og:url" content="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/tutorials/kubernetes-basics/">
 <meta property="og:title" content="搜索">
 <meta name="twitter:title" content="搜索">
 
 <meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
 
-<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+<meta property="og:image" content="/Test_hugo/images/kubernetes-horizontal-color.png">
 
 <meta property="og:type" content="article">
-<script src="/js/anchor-4.1.1.min.js"></script>
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script src="/js/jquery-ui-1.12.1.min.js"></script>
-<script src="/js/bootstrap-3.3.7.min.js"></script>
-<script src="/js/sweetalert-1.1.3.min.js"></script>
-<script src="/js/script.js"></script>
-<script src="/js/custom-jekyll/tags.js"></script>
+<script src="/Test_hugo/js/anchor-4.1.1.min.js"></script>
+<script src="/Test_hugo/js/jquery-3.2.1.min.js"></script>
+<script src="/Test_hugo/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/Test_hugo/js/bootstrap-3.3.7.min.js"></script>
+<script src="/Test_hugo/js/sweetalert-1.1.3.min.js"></script>
+<script src="/Test_hugo/js/script.js"></script>
+<script src="/Test_hugo/js/custom-jekyll/tags.js"></script>
 
 
 </head>
@@ -62,20 +62,20 @@
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
-    <a href="/zh/" class="logo"></a>
+    <a href="/Test_hugo/zh/" class="logo"></a>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
             
-            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            <li><a href="/Test_hugo/zh/docs/" class="active">GIS 百科</a></li>
             
-            <li><a href="/zh/blog/">技术专题</a></li>
-            
-            
+            <li><a href="/Test_hugo/zh/blog/">技术专题</a></li>
             
             
             
-            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            <li><a href="/Test_hugo/zh/case-studies/">三维技术专题</a></li>
             
             
             
@@ -85,11 +85,11 @@
                 </a>
                 <ul>
                 
-                    <li><a href="/docs/tutorials/kubernetes-basics/">English</a></li>
+                    <li><a href="/Test_hugo/docs/tutorials/kubernetes-basics/">English</a></li>
                 
-                    <li><a href="/ko/docs/tutorials/kubernetes-basics/">한국어 Korean</a></li>
+                    <li><a href="/Test_hugo/ko/docs/tutorials/kubernetes-basics/">한국어 Korean</a></li>
                 
-                    <li><a href="/ja/docs/tutorials/kubernetes-basics/">日本語 Japanese</a></li>
+                    <li><a href="/Test_hugo/ja/docs/tutorials/kubernetes-basics/">日本語 Japanese</a></li>
                 
                 </ul>
             </li>
@@ -124,13 +124,13 @@
         <main data-auto-burger="primary">
          
            <div class="nav-box">
-            <h3><a href="/zh/docs/home/">文档</a></h3>
+            <h3><a href="/Test_hugo/zh/docs/home/">文档</a></h3>
            <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
 
         </div>
          
            <div class="nav-box">
-            <h3><a href="/zh/blog/">技术专题</a></h3>
+            <h3><a href="/Test_hugo/zh/blog/">技术专题</a></h3>
            <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
 
         </div>
@@ -180,19 +180,19 @@
 	<ul>
 		
 		
-		<li><a href="/zh/docs/home/">主页</a></li>
+		<li><a href="/Test_hugo/zh/docs/home/">主页</a></li>
 		
 		
-		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		<li><a href="/Test_hugo/zh/docs/surfaceanalyst/">表面分析</a></li>
 		
 		
-		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		<li><a href="/Test_hugo/zh/docs/datamanage/">数据管理</a></li>
 		
 		
-		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		<li><a href="/Test_hugo/zh/docs/dataconversion/">数据转换</a></li>
 		
 		
-		<li><a href="/zh/docs/concepts/">概念</a></li>
+		<li><a href="/Test_hugo/zh/docs/concepts/">概念</a></li>
 		
 	</ul>
 	<form id="searchBox" action="/docs/search/">
@@ -256,7 +256,7 @@
          
          
         
-        <a class="item" data-title="Tutorials" href="/zh/docs/tutorials/"></a>
+        <a class="item" data-title="Tutorials" href="/Test_hugo/zh/docs/tutorials/"></a>
 
 	
 	
@@ -272,7 +272,7 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Hello Minikube <small>(EN)</small>" href="/docs/tutorials/hello-minikube/"></a>
+<a class="item" target="_blank" data-title="Hello Minikube <small>(EN)</small>" href="/Test_hugo/docs/tutorials/hello-minikube/"></a>
 
 		
 	
@@ -293,7 +293,7 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Overview of Kubernetes Online Training <small>(EN)</small>" href="/docs/tutorials/online-training/overview/"></a>
+<a class="item" target="_blank" data-title="Overview of Kubernetes Online Training <small>(EN)</small>" href="/Test_hugo/docs/tutorials/online-training/overview/"></a>
 
 		
 	
@@ -320,7 +320,7 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Configuring Redis using a ConfigMap <small>(EN)</small>" href="/docs/tutorials/configuration/configure-redis-using-configmap/"></a>
+<a class="item" target="_blank" data-title="Configuring Redis using a ConfigMap <small>(EN)</small>" href="/Test_hugo/docs/tutorials/configuration/configure-redis-using-configmap/"></a>
 
 		
 	
@@ -347,14 +347,14 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Exposing an External IP Address to Access an Application in a Cluster <small>(EN)</small>" href="/docs/tutorials/stateless-application/expose-external-ip-address/"></a>
+<a class="item" target="_blank" data-title="Exposing an External IP Address to Access an Application in a Cluster <small>(EN)</small>" href="/Test_hugo/docs/tutorials/stateless-application/expose-external-ip-address/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Example: Deploying PHP Guestbook application with Redis <small>(EN)</small>" href="/docs/tutorials/stateless-application/guestbook/"></a>
+<a class="item" target="_blank" data-title="Example: Deploying PHP Guestbook application with Redis <small>(EN)</small>" href="/Test_hugo/docs/tutorials/stateless-application/guestbook/"></a>
 
 		
 	
@@ -381,28 +381,28 @@
 		
 			
 
-<a class="item" target="_blank" data-title="StatefulSet Basics <small>(EN)</small>" href="/docs/tutorials/stateful-application/basic-stateful-set/"></a>
+<a class="item" target="_blank" data-title="StatefulSet Basics <small>(EN)</small>" href="/Test_hugo/docs/tutorials/stateful-application/basic-stateful-set/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Example: Deploying WordPress and MySQL with Persistent Volumes <small>(EN)</small>" href="/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/"></a>
+<a class="item" target="_blank" data-title="Example: Deploying WordPress and MySQL with Persistent Volumes <small>(EN)</small>" href="/Test_hugo/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Example: Deploying Cassandra with Stateful Sets <small>(EN)</small>" href="/docs/tutorials/stateful-application/cassandra/"></a>
+<a class="item" target="_blank" data-title="Example: Deploying Cassandra with Stateful Sets <small>(EN)</small>" href="/Test_hugo/docs/tutorials/stateful-application/cassandra/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Running ZooKeeper, A Distributed System Coordinator <small>(EN)</small>" href="/docs/tutorials/stateful-application/zookeeper/"></a>
+<a class="item" target="_blank" data-title="Running ZooKeeper, A Distributed System Coordinator <small>(EN)</small>" href="/Test_hugo/docs/tutorials/stateful-application/zookeeper/"></a>
 
 		
 	
@@ -429,7 +429,7 @@
 		
 			
 
-<a class="item" target="_blank" data-title="AppArmor <small>(EN)</small>" href="/docs/tutorials/clusters/apparmor/"></a>
+<a class="item" target="_blank" data-title="AppArmor <small>(EN)</small>" href="/Test_hugo/docs/tutorials/clusters/apparmor/"></a>
 
 		
 	
@@ -456,7 +456,7 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Using Source IP <small>(EN)</small>" href="/docs/tutorials/services/source-ip/"></a>
+<a class="item" target="_blank" data-title="Using Source IP <small>(EN)</small>" href="/Test_hugo/docs/tutorials/services/source-ip/"></a>
 
 		
 	
@@ -473,7 +473,7 @@
 		
 		
 		
-		<a class="item" data-title="搜索" href="/zh/docs/tutorials/kubernetes-basics/"></a>
+		<a class="item" data-title="搜索" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/"></a>
 		
 		
 	
@@ -504,14 +504,14 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Using Minikube to Create a Cluster <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/"></a>
+<a class="item" target="_blank" data-title="Using Minikube to Create a Cluster <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Interactive Tutorial - Creating a Cluster <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/"></a>
+<a class="item" target="_blank" data-title="Interactive Tutorial - Creating a Cluster <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/"></a>
 
 		
 	
@@ -538,14 +538,14 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Using kubectl to Create a Deployment <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/"></a>
+<a class="item" target="_blank" data-title="Using kubectl to Create a Deployment <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Interactive Tutorial - Deploying an App <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/deploy-app/deploy-interactive/"></a>
+<a class="item" target="_blank" data-title="Interactive Tutorial - Deploying an App <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/deploy-app/deploy-interactive/"></a>
 
 		
 	
@@ -572,14 +572,14 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Viewing Pods and Nodes <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/explore/explore-intro/"></a>
+<a class="item" target="_blank" data-title="Viewing Pods and Nodes <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/explore/explore-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Interactive Tutorial - Exploring Your App <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/explore/explore-interactive/"></a>
+<a class="item" target="_blank" data-title="Interactive Tutorial - Exploring Your App <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/explore/explore-interactive/"></a>
 
 		
 	
@@ -606,14 +606,14 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Using a Service to Expose Your App <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/expose/expose-intro/"></a>
+<a class="item" target="_blank" data-title="Using a Service to Expose Your App <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/expose/expose-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Interactive Tutorial - Exposing Your App <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/expose/expose-interactive/"></a>
+<a class="item" target="_blank" data-title="Interactive Tutorial - Exposing Your App <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/expose/expose-interactive/"></a>
 
 		
 	
@@ -640,14 +640,14 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Running Multiple Instances of Your App <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/scale/scale-intro/"></a>
+<a class="item" target="_blank" data-title="Running Multiple Instances of Your App <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/scale/scale-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Interactive Tutorial - Scaling Your App <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/scale/scale-interactive/"></a>
+<a class="item" target="_blank" data-title="Interactive Tutorial - Scaling Your App <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/scale/scale-interactive/"></a>
 
 		
 	
@@ -674,14 +674,14 @@
 		
 			
 
-<a class="item" target="_blank" data-title="Performing a Rolling Update <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/update/update-intro/"></a>
+<a class="item" target="_blank" data-title="Performing a Rolling Update <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/update/update-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Interactive Tutorial - Updating Your App <small>(EN)</small>" href="/docs/tutorials/kubernetes-basics/update/update-interactive/"></a>
+<a class="item" target="_blank" data-title="Interactive Tutorial - Updating Your App <small>(EN)</small>" href="/Test_hugo/docs/tutorials/kubernetes-basics/update/update-interactive/"></a>
 
 		
 	
@@ -694,91 +694,91 @@
 		
 			
 
-<a class="item" data-title="" href="/zh/docs/tutorials/kubernetes-basics/scale/scale-intro/"></a>
+<a class="item" data-title="" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/scale/scale-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="互动教程 - 创建集群" href="/zh/docs/tutorials/kubernetes-basics/cluster-interactive/"></a>
+<a class="item" data-title="互动教程 - 创建集群" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/cluster-interactive/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="互动教程 - 应用外部可见" href="/zh/docs/tutorials/kubernetes-basics/expose-interactive/"></a>
+<a class="item" data-title="互动教程 - 应用外部可见" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/expose-interactive/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="互动教程 - 应用程序探索" href="/zh/docs/tutorials/kubernetes-basics/explore-interactive/"></a>
+<a class="item" data-title="互动教程 - 应用程序探索" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/explore-interactive/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="互动教程 - 扩展您的应用程序" href="/zh/docs/tutorials/kubernetes-basics/scale-interactive/"></a>
+<a class="item" data-title="互动教程 - 扩展您的应用程序" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/scale-interactive/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="互动教程 - 更新您的应用程序" href="/zh/docs/tutorials/kubernetes-basics/update-interactive/"></a>
+<a class="item" data-title="互动教程 - 更新您的应用程序" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/update-interactive/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="互动教程 - 部署应用程序" href="/zh/docs/tutorials/kubernetes-basics/deploy-interactive/"></a>
+<a class="item" data-title="互动教程 - 部署应用程序" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/deploy-interactive/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="使用 Minikube 创建一个集群" href="/zh/docs/tutorials/kubernetes-basics/cluster-intro/"></a>
+<a class="item" data-title="使用 Minikube 创建一个集群" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/cluster-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="使用 kubectl 创建部署" href="/zh/docs/tutorials/kubernetes-basics/deploy-intro/"></a>
+<a class="item" data-title="使用 kubectl 创建部署" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/deploy-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="使用服务发布您的应用程序" href="/zh/docs/tutorials/kubernetes-basics/expose-intro/"></a>
+<a class="item" data-title="使用服务发布您的应用程序" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/expose-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="执行滚动更新" href="/zh/docs/tutorials/kubernetes-basics/update-intro/"></a>
+<a class="item" data-title="执行滚动更新" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/update-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="查看 Pods 和节点" href="/zh/docs/tutorials/kubernetes-basics/explore-intro/"></a>
+<a class="item" data-title="查看 Pods 和节点" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/explore-intro/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="运行应用程序的多个实例" href="/zh/docs/tutorials/kubernetes-basics/scale-intro/"></a>
+<a class="item" data-title="运行应用程序的多个实例" href="/Test_hugo/zh/docs/tutorials/kubernetes-basics/scale-intro/"></a>
 
 		
 	
@@ -791,56 +791,56 @@
 		
 			
 
-<a class="item" data-title="Kubernetes 对象管理" href="/zh/docs/tutorials/object-management-kubectl/object-management/"></a>
+<a class="item" data-title="Kubernetes 对象管理" href="/Test_hugo/zh/docs/tutorials/object-management-kubectl/object-management/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="StatefulSet基本使用" href="/zh/docs/tutorials/stateful-application/basic-stateful-set/"></a>
+<a class="item" data-title="StatefulSet基本使用" href="/Test_hugo/zh/docs/tutorials/stateful-application/basic-stateful-set/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="“示例：使用 Stateful Sets 部署 Cassandra”" href="/zh/docs/tutorials/stateful-application/cassandra/"></a>
+<a class="item" data-title="“示例：使用 Stateful Sets 部署 Cassandra”" href="/Test_hugo/zh/docs/tutorials/stateful-application/cassandra/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="使用 Source IP" href="/zh/docs/tutorials/services/source-ip/"></a>
+<a class="item" data-title="使用 Source IP" href="/Test_hugo/zh/docs/tutorials/services/source-ip/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="使用ConfigMap来配置Redis" href="/zh/docs/tutorials/configuration/configure-redis-using-configmap/"></a>
+<a class="item" data-title="使用ConfigMap来配置Redis" href="/Test_hugo/zh/docs/tutorials/configuration/configure-redis-using-configmap/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="使用命令式的方式管理 Kubernetes 对象" href="/zh/docs/tutorials/object-management-kubectl/imperative-object-management-command/"></a>
+<a class="item" data-title="使用命令式的方式管理 Kubernetes 对象" href="/Test_hugo/zh/docs/tutorials/object-management-kubectl/imperative-object-management-command/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="基于 Persistent Volumes 搭建 WordPress 和 MySQL 应用" href="/zh/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/"></a>
+<a class="item" data-title="基于 Persistent Volumes 搭建 WordPress 和 MySQL 应用" href="/Test_hugo/zh/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="运行 ZooKeeper， 一个 CP 分布式系统" href="/zh/docs/tutorials/stateful-application/zookeeper/"></a>
+<a class="item" data-title="运行 ZooKeeper， 一个 CP 分布式系统" href="/Test_hugo/zh/docs/tutorials/stateful-application/zookeeper/"></a>
 
 		
 	
@@ -1036,9 +1036,9 @@
     <script type="text/javascript">
     PDRTJS_settings_8345992 = {
     "id" : "8345992",
-    "unique_id" : "\/zh\/docs\/tutorials\/kubernetes-basics\/",
+    "unique_id" : "\/Test_hugo\/zh\/docs\/tutorials\/kubernetes-basics\/",
     "title" : "搜索",
-    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/tutorials\/kubernetes-basics\/"
+    "permalink" : "https:\/\/SuperMap_iDesktop.gitee.io\/Test_hugo\/zh\/docs\/tutorials\/kubernetes-basics\/"
     };
     (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
     </script>
@@ -1090,15 +1090,15 @@
             
             
             
-            <a href="/zh/docs/home/">主页</a>
+            <a href="/Test_hugo/zh/docs/home/">主页</a>
             
-            <a href="/zh/blog/">技术专题</a>
-            
-            
+            <a href="/Test_hugo/zh/blog/">技术专题</a>
             
             
             
-            <a href="/zh/case-studies/">三维技术专题</a>
+            
+            
+            <a href="/Test_hugo/zh/case-studies/">三维技术专题</a>
             
         </nav>
         <div class="social">
