@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>CRIのインストール - Kubernetes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/ja/docs/setup/cri/">
+<meta property="og:title" content="CRIのインストール">
+<meta name="twitter:title" content="CRIのインストール">
+
+<meta name="twitter:image:alt"   content="Kubernetes">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/ja/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/ja/docs/" class="active">ドキュメント</a></li>
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="/ja/case-studies/">ケーススタディ</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    日本語 Japanese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/setup/cri/">English</a></li>
+                
+                    <li><a href="/ko/docs/setup/cri/">한국어 Korean</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="検索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/ja/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>手を動かす準備はできていますか？本チュートリアルでは、Node.jsを使った簡単な"Hello World"を実行するKubernetesクラスタをビルドします。</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/ja/docs/home/">ドキュメント</a></h3>
+           <p>チュートリアル、サンプルやドキュメントのリファレンスを使って Kubernetes の利用方法を学んでください。あなたは<a href="/editdocs/" data-auto-burger-exclude>ドキュメントへコントリビュートをする</a>こともできます!</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">Kubernetesのコードを編集することに興味がありますか？</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>Githubで参照する</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">コミュニティを探す</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>フォーラム</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>イベントカレンダー</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>セットアップ</h1>
+<h5></h5>
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/ja/docs/home/">ホーム</a></li>
+		
+		
+		<li><a href="/ja/docs/setup/" class="YAH">セットアップ</a></li>
+		
+		
+		<li><a href="/ja/docs/concepts/">コンセプト</a></li>
+		
+		
+		<li><a href="/ja/docs/tutorials/">チュートリアル</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="検索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="セットアップ" href="/ja/docs/setup/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="正しいソリューションの選択" href="/ja/docs/setup/pick-right-solution/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Kubernetesのダウンロード">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="v1.13 Release Notes <small>(EN)</small>" href="/docs/setup/release/notes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="ソースからのビルド" href="/ja/docs/setup/release/building-from-source/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="kubeadmによるClusterのブートストラッピング">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="kubeadmのインストール" href="/ja/docs/setup/independent/install-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用したシングルマスタークラスターの作成" href="/ja/docs/setup/independent/create-cluster-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使ったコントロールプレーンの設定のカスタマイズ" href="/ja/docs/setup/independent/control-plane-flags/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Options for Highly Available Topology" href="/ja/docs/setup/independent/ha-topology/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用した高可用性クラスターの作成" href="/ja/docs/setup/independent/high-availability/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用した高可用性etcdクラスターの作成" href="/ja/docs/setup/independent/setup-ha-etcd-with-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用したクラスター内の各kubeletの設定" href="/ja/docs/setup/independent/kubelet-integration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmのトラブルシューティング" href="/ja/docs/setup/independent/troubleshooting-kubeadm/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="すぐに利用できるクラウドソリューション">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="AWS EC2上でKubernetesを動かす" href="/ja/docs/setup/turnkey/aws/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Alibaba CloudでKubernetesを動かす" href="/ja/docs/setup/turnkey/alibaba-cloud/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Azure 上で Kubernetes を動かす" href="/ja/docs/setup/turnkey/azure/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="CenturyLink Cloud上でKubernetesを動かす" href="/ja/docs/setup/turnkey/clc/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Google Compute Engine上でKubernetesを動かす" href="/ja/docs/setup/turnkey/gce/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Multiple Clouds with IBM Cloud Private <small>(EN)</small>" href="/docs/setup/turnkey/icp/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Stackpoint.ioを利用して複数のクラウド上でKubernetesを動かす" href="/ja/docs/setup/turnkey/stackpoint/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="カスタムクラウドソリューション">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="AWSまたはGCE上のCoreOS" href="/ja/docs/setup/custom-cloud/coreos/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kopsを使ったAWS上でのKubernetesのインストール" href="/ja/docs/setup/custom-cloud/kops/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubesprayを使ったオンプレミス/クラウドプロバイダへのKubernetesのインストール" href="/ja/docs/setup/custom-cloud/kubespray/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="オンプレミスVM">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Cloudstack" href="/ja/docs/setup/on-premises-vm/cloudstack/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DC/OS上のKubernetes" href="/ja/docs/setup/on-premises-vm/dcos/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="oVirt" href="/ja/docs/setup/on-premises-vm/ovirt/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Version and Version Skew Support Policy <small>(EN)</small>" href="/docs/setup/version-skew-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="大規模クラスタの構築" href="/ja/docs/setup/cluster-large/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="複数のゾーンで動かす" href="/ja/docs/setup/multiple-zones/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="CRIのインストール" href="/ja/docs/setup/cri/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="KRIBを使用してDigital Rebar Provision (DRP)と共にKubernetesをインストールする" href="/ja/docs/setup/on-premises-metal/krib/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Minikubを使用してローカル環境でKubernetesを動かす" href="/ja/docs/setup/minikube/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="PKI証明書とその要件" href="/ja/docs/setup/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="ゼロからのカスタムクラスターの作成" href="/ja/docs/setup/scratch/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="ノードのセットアップの検証" href="/ja/docs/setup/node-conformance/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/ja/docs%5csetup%5ccri.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>CRIのインストール</h1>
+
+
+
+<p>Kubernetesでは、v1.6.0からデフォルトでCRI(Container Runtime Interface)を利用できます。
+このページでは、様々なCRIのインストール方法について説明します。</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#docker">Docker</a></li>
+
+
+
+
+<li><a href="#cri-o">CRI-O</a></li>
+
+
+
+
+<li><a href="#containerd">Containerd</a></li>
+
+
+
+
+<li><a href="#%e3%81%9d%e3%81%ae%e4%bb%96%e3%81%aecri%e3%83%a9%e3%83%b3%e3%82%bf%e3%82%a4%e3%83%a0-rktlet%e3%81%8a%e3%82%88%e3%81%b3frakti-%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6">その他のCRIランタイム(rktletおよびfrakti)について</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<p>手順を進めるにあたっては、下記に示しているコマンドを、ご利用のOSのものに従ってrootユーザとして実行してください。
+環境によっては、それぞれのホストへSSHで接続した後に<code>sudo -i</code>を実行することで、rootユーザになることができる場合があります。</p>
+
+<h2 id="docker">Docker</h2>
+
+<p>それぞれのマシンに対してDockerをインストールします。
+バージョン18.06が推奨されていますが、1.11、1.12、1.13、17.03についても動作が確認されています。
+Kubernetesのリリースノートにある、Dockerの動作確認済み最新バージョンについてもご確認ください。</p>
+
+<p>システムへDockerをインストールするには、次のコマンドを実行します。</p>
+
+<div id="tab-cri-docker-installation">
+<ul>
+    
+      
+  <li><a href="#tab-cri-docker-installation-0">Ubuntu 16.04</a></li>
+
+      
+  <li><a href="#tab-cri-docker-installation-1">CentOS/RHEL 7.4&#43;</a></li>
+
+</ul>
+
+
+<div id="tab-cri-docker-installation-0">
+    
+        <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<span style="color:#080;font-style:italic"># UbuntuのリポジトリからDockerをインストールする場合は次を実行します:</span>
+apt-get update
+apt-get install -y docker.io
+
+<span style="color:#080;font-style:italic"># または、UbuntuやDebian向けのDockerのリポジトリからDocker CE 18.06をインストールする場合は、次を実行します:</span>
+
+<span style="color:#080;font-style:italic">## 必要なパッケージをインストールします。</span>
+apt-get update <span style="color:#666">&amp;&amp;</span> apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+<span style="color:#080;font-style:italic">## GPGキーをダウンロードします。</span>
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+
+<span style="color:#080;font-style:italic">## dockerパッケージ用のaptリポジトリを追加します。</span>
+add-apt-repository <span style="color:#b62;font-weight:bold">\
+</span>
+   <span style="color:#b44">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+</span><span style="color:#b44">   </span><span style="color:#a2f;font-weight:bold">$(</span>lsb_release -cs<span style="color:#a2f;font-weight:bold">)</span><span style="color:#b44"> \
+</span><span style="color:#b44">   stable&#34;</span>
+
+<span style="color:#080;font-style:italic">## dockerをインストールします。</span>
+apt-get update <span style="color:#666">&amp;&amp;</span> apt-get install docker-ce<span style="color:#666">=</span><span style="color:#666">18</span>.06.0~ce~3-0~ubuntu
+
+<span style="color:#080;font-style:italic"># デーモンをセットアップします。</span>
+cat &gt; /etc/docker/daemon.json <span style="color:#b44">&lt;&lt;EOF
+</span><span style="color:#b44">{
+</span><span style="color:#b44">  &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;],
+</span><span style="color:#b44">  &#34;log-driver&#34;: &#34;json-file&#34;,
+</span><span style="color:#b44">  &#34;log-opts&#34;: {
+</span><span style="color:#b44">    &#34;max-size&#34;: &#34;100m&#34;
+</span><span style="color:#b44">  },
+</span><span style="color:#b44">  &#34;storage-driver&#34;: &#34;overlay2&#34;
+</span><span style="color:#b44">}
+</span><span style="color:#b44">EOF</span>
+
+mkdir -p /etc/systemd/system/docker.service.d
+
+<span style="color:#080;font-style:italic"># dockerを再起動します。</span>
+systemctl daemon-reload
+systemctl restart docker
+</code></pre></div>
+    
+
+<p></div></p>
+
+<div id="tab-cri-docker-installation-1">
+    
+        <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+
+<span style="color:#080;font-style:italic"># CentOSやRHELのリポジトリからDockerをインストールする場合は、次を実行します:</span>
+yum install -y docker
+
+<span style="color:#080;font-style:italic"># または、CentOS向けのDockerのリポジトリからDocker CE 18.06をインストールする場合は、次を実行します:</span>
+
+<span style="color:#080;font-style:italic">## 必要なパッケージをインストールします。</span>
+yum install yum-utils device-mapper-persistent-data lvm2
+
+<span style="color:#080;font-style:italic">## dockerパッケージ用のyumリポジトリを追加します。</span>
+yum-config-manager <span style="color:#b62;font-weight:bold">\
+</span>
+    --add-repo <span style="color:#b62;font-weight:bold">\
+</span>
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+<span style="color:#080;font-style:italic">## dockerをインストールします。</span>
+yum update <span style="color:#666">&amp;&amp;</span> yum install docker-ce-18.06.1.ce
+
+<span style="color:#080;font-style:italic">## /etc/docker ディレクトリを作成します。</span>
+mkdir /etc/docker
+
+<span style="color:#080;font-style:italic"># デーモンをセットアップします。</span>
+cat &gt; /etc/docker/daemon.json <span style="color:#b44">&lt;&lt;EOF
+</span><span style="color:#b44">{
+</span><span style="color:#b44">  &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;],
+</span><span style="color:#b44">  &#34;log-driver&#34;: &#34;json-file&#34;,
+</span><span style="color:#b44">  &#34;log-opts&#34;: {
+</span><span style="color:#b44">    &#34;max-size&#34;: &#34;100m&#34;
+</span><span style="color:#b44">  },
+</span><span style="color:#b44">  &#34;storage-driver&#34;: &#34;overlay2&#34;,
+</span><span style="color:#b44">  &#34;storage-opts&#34;: [
+</span><span style="color:#b44">    &#34;overlay2.override_kernel_check=true&#34;
+</span><span style="color:#b44">  ]
+</span><span style="color:#b44">}
+</span><span style="color:#b44">EOF</span>
+
+mkdir -p /etc/systemd/system/docker.service.d
+
+<span style="color:#080;font-style:italic"># dockerを再起動します。</span>
+systemctl daemon-reload
+systemctl restart docker
+</code></pre></div>
+    
+
+<p></div></p>
+
+<p></div></p>
+
+<script>$(function(){$("#tab-cri-docker-installation").tabs();});</script>
+
+<p>詳細については、<a href="https://docs.docker.com/engine/installation/" target="_blank">Dockerの公式インストールガイド</a>を参照してください。</p>
+
+<h2 id="cri-o">CRI-O</h2>
+
+<p>このセクションでは、CRIランタイムとして<code>CRI-O</code>を利用するために必要な手順について説明します。</p>
+
+<p>システムへCRI-Oをインストールするためには以下のコマンドを利用します:</p>
+
+<h3 id="必要な設定の追加">必要な設定の追加</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">modprobe overlay
+modprobe br_netfilter
+
+<span style="color:#080;font-style:italic"># 必要なカーネルパラメータの設定をします。これらの設定値は再起動後も永続化されます。</span>
+cat &gt; /etc/sysctl.d/99-kubernetes-cri.conf <span style="color:#b44">&lt;&lt;EOF
+</span><span style="color:#b44">net.bridge.bridge-nf-call-iptables  = 1
+</span><span style="color:#b44">net.ipv4.ip_forward                 = 1
+</span><span style="color:#b44">net.bridge.bridge-nf-call-ip6tables = 1
+</span><span style="color:#b44">EOF</span>
+
+sysctl --system</code></pre></div>
+<div id="tab-cri-cri-o-installation">
+<ul>
+    
+      
+  <li><a href="#tab-cri-cri-o-installation-0">Ubuntu 16.04</a></li>
+
+      
+  <li><a href="#tab-cri-cri-o-installation-1">CentOS/RHEL 7.4&#43;</a></li>
+
+</ul>
+
+
+<div id="tab-cri-cri-o-installation-0">
+    
+        <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+
+<span style="color:#080;font-style:italic"># 必要なパッケージをインストールし、リポジトリを追加</span>
+apt-get update
+apt-get install software-properties-common
+
+add-apt-repository ppa:projectatomic/ppa
+apt-get update
+
+<span style="color:#080;font-style:italic"># CRI-Oをインストール</span>
+apt-get install cri-o-1.11
+
+</code></pre></div>
+    
+
+<p></div></p>
+
+<div id="tab-cri-cri-o-installation-1">
+    
+        <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+
+<span style="color:#080;font-style:italic"># 必要なリポジトリを追加</span>
+yum-config-manager --add-repo<span style="color:#666">=</span>https://cbs.centos.org/repos/paas7-crio-311-candidate/x86_64/os/
+
+<span style="color:#080;font-style:italic"># CRI-Oをインストール</span>
+yum install --nogpgcheck cri-o
+
+</code></pre></div>
+    
+
+<p></div></p>
+
+<p></div></p>
+
+<script>$(function(){$("#tab-cri-cri-o-installation").tabs();});</script>
+
+<h3 id="cri-oの起動">CRI-Oの起動</h3>
+
+<pre><code>systemctl start crio
+</code></pre>
+
+<p>詳細については、<a href="https://github.com/kubernetes-sigs/cri-o#getting-started" target="_blank">CRI-Oインストールガイド</a>を参照してください。</p>
+
+<h2 id="containerd">Containerd</h2>
+
+<p>このセクションでは、CRIランタイムとして<code>containerd</code>を利用するために必要な手順について説明します。</p>
+
+<p>システムへContainerdをインストールするためには次のコマンドを実行します。</p>
+
+<h3 id="必要な設定の追加-1">必要な設定の追加</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">modprobe overlay
+modprobe br_netfilter
+
+<span style="color:#080;font-style:italic"># 必要なカーネルパラメータの設定をします。これらの設定値は再起動後も永続化されます。</span>
+cat &gt; /etc/sysctl.d/99-kubernetes-cri.conf <span style="color:#b44">&lt;&lt;EOF
+</span><span style="color:#b44">net.bridge.bridge-nf-call-iptables  = 1
+</span><span style="color:#b44">net.ipv4.ip_forward                 = 1
+</span><span style="color:#b44">net.bridge.bridge-nf-call-ip6tables = 1
+</span><span style="color:#b44">EOF</span>
+
+sysctl --system</code></pre></div>
+<div id="tab-cri-containerd-installation">
+<ul>
+    
+      
+  <li><a href="#tab-cri-containerd-installation-0">Ubuntu 16.04&#43;</a></li>
+
+      
+  <li><a href="#tab-cri-containerd-installation-1">CentOS/RHEL 7.4&#43;</a></li>
+
+</ul>
+
+
+<div id="tab-cri-containerd-installation-0">
+    
+        <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+apt-get install -y libseccomp2
+</code></pre></div>
+    
+
+<p></div></p>
+
+<div id="tab-cri-containerd-installation-1">
+    
+        <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+yum install -y libseccomp
+</code></pre></div>
+    
+
+<p></div></p>
+
+<p></div></p>
+
+<script>$(function(){$("#tab-cri-containerd-installation").tabs();});</script>
+
+<h3 id="containerdのインストール">containerdのインストール</h3>
+
+<p><a href="https://github.com/containerd/containerd/releases" target="_blank">Containerdは定期的にリリース</a>されますが、以下に示すコマンドで利用している値は、この手順が作成された時点での最新のバージョンにしたがって書かれています。より新しいバージョンとダウンロードするファイルのハッシュ値については<a href="https://storage.googleapis.com/cri-containerd-release" target="_blank">こちら</a>で確認するようにしてください。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># 必要な環境変数をexportします。</span>
+<span style="color:#a2f">export</span> <span style="color:#b8860b">CONTAINERD_VERSION</span><span style="color:#666">=</span><span style="color:#b44">&#34;1.1.2&#34;</span>
+<span style="color:#a2f">export</span> <span style="color:#b8860b">CONTAINERD_SHA256</span><span style="color:#666">=</span><span style="color:#b44">&#34;d4ed54891e90a5d1a45e3e96464e2e8a4770cd380c21285ef5c9895c40549218&#34;</span>
+
+<span style="color:#080;font-style:italic"># containerdのtarボールをダウンロードします。</span>
+wget https://storage.googleapis.com/cri-containerd-release/cri-containerd-<span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">CONTAINERD_VERSION</span><span style="color:#b68;font-weight:bold">}</span>.linux-amd64.tar.gz
+
+<span style="color:#080;font-style:italic"># ハッシュ値をチェックします。</span>
+<span style="color:#a2f">echo</span> <span style="color:#b44">&#34;</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">CONTAINERD_SHA256</span><span style="color:#b68;font-weight:bold">}</span><span style="color:#b44"> cri-containerd-</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">CONTAINERD_VERSION</span><span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">.linux-amd64.tar.gz&#34;</span> | sha256sum --check -
+
+<span style="color:#080;font-style:italic"># 解凍して展開します。</span>
+tar --no-overwrite-dir -C / -xzf cri-containerd-<span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">CONTAINERD_VERSION</span><span style="color:#b68;font-weight:bold">}</span>.linux-amd64.tar.gz
+
+<span style="color:#080;font-style:italic"># containerdを起動します。</span>
+systemctl start containerd</code></pre></div>
+<h2 id="その他のcriランタイム-rktletおよびfrakti-について">その他のCRIランタイム(rktletおよびfrakti)について</h2>
+
+<p>詳細については<a href="https://github.com/kubernetes/frakti#quickstart" target="_blank">Fraktiのクイックスタートガイド</a>および<a href="https://github.com/kubernetes-incubator/rktlet/blob/master/docs/getting-started-guide.md" target="_blank">Rktletのクイックスタートガイド</a>を参照してください。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/ja/docs/setup/multiple-zones/" title="複数のゾーンで動かす"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 複数のゾーンで動かす</a>
+<a class="nav nav-next" href="/ja/docs/setup/on-premises-metal/krib/" title="KRIBを使用してDigital Rebar Provision (DRP)と共にKubernetesをインストールする">Next - KRIBを使用してDigital Rebar Provision (DRP)と共にKubernetesをインストールする <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>Feedback</h2>
+  <p class="feedback--prompt">Was this page helpful? </p>
+  <button class="button feedback--yes">Yes</button>
+  <button class="button feedback--no">No</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5csetup%5ccri.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/ja\/docs\/setup\/cri\/",
+    "title" : "CRIのインストール",
+    "permalink" : "https:\/\/docstest.github.io\/ja\/docs\/setup\/cri\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">Issue作成</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/ja/docs%5csetup%5ccri.md" class="button issue">ページ編集</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    ページの最終更新 March 08, 2019 at 3:17 AM PST by
+    <a href="https://github.com/kubernetes/website/commit/edb233cac2f4f910dd55311a3c63bdfbd53a081b/">First Japanese l10n work for release-1.13 (#12998)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5csetup%5ccri.md">ページ履歴</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/ja/docs/home/">ホーム</a>
+            
+            
+            
+            
+            
+            
+            
+            <a href="/ja/case-studies/">ケーススタディ</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>フォーラム</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>イベントカレンダー</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">コントリビュート</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

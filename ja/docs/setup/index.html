@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>セットアップ - Kubernetes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/ja/docs/setup/">
+<meta property="og:title" content="セットアップ">
+<meta name="twitter:title" content="セットアップ">
+
+<meta name="twitter:image:alt"   content="Kubernetes">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/ja/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/ja/docs/" class="active">ドキュメント</a></li>
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="/ja/case-studies/">ケーススタディ</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    日本語 Japanese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/setup/">English</a></li>
+                
+                    <li><a href="/ko/docs/setup/">한국어 Korean</a></li>
+                
+                    <li><a href="/fr/docs/setup/">Français</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="検索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/ja/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>手を動かす準備はできていますか？本チュートリアルでは、Node.jsを使った簡単な"Hello World"を実行するKubernetesクラスタをビルドします。</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/ja/docs/home/">ドキュメント</a></h3>
+           <p>チュートリアル、サンプルやドキュメントのリファレンスを使って Kubernetes の利用方法を学んでください。あなたは<a href="/editdocs/" data-auto-burger-exclude>ドキュメントへコントリビュートをする</a>こともできます!</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">Kubernetesのコードを編集することに興味がありますか？</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>Githubで参照する</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">コミュニティを探す</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>フォーラム</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>イベントカレンダー</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>セットアップ</h1>
+<h5></h5>
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/ja/docs/home/">ホーム</a></li>
+		
+		
+		<li><a href="/ja/docs/setup/" class="YAH">セットアップ</a></li>
+		
+		
+		<li><a href="/ja/docs/concepts/">コンセプト</a></li>
+		
+		
+		<li><a href="/ja/docs/tutorials/">チュートリアル</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="検索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="セットアップ" href="/ja/docs/setup/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="正しいソリューションの選択" href="/ja/docs/setup/pick-right-solution/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Kubernetesのダウンロード">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="v1.13 Release Notes <small>(EN)</small>" href="/docs/setup/release/notes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="ソースからのビルド" href="/ja/docs/setup/release/building-from-source/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="kubeadmによるClusterのブートストラッピング">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="kubeadmのインストール" href="/ja/docs/setup/independent/install-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用したシングルマスタークラスターの作成" href="/ja/docs/setup/independent/create-cluster-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使ったコントロールプレーンの設定のカスタマイズ" href="/ja/docs/setup/independent/control-plane-flags/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Options for Highly Available Topology" href="/ja/docs/setup/independent/ha-topology/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用した高可用性クラスターの作成" href="/ja/docs/setup/independent/high-availability/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用した高可用性etcdクラスターの作成" href="/ja/docs/setup/independent/setup-ha-etcd-with-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用したクラスター内の各kubeletの設定" href="/ja/docs/setup/independent/kubelet-integration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmのトラブルシューティング" href="/ja/docs/setup/independent/troubleshooting-kubeadm/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="すぐに利用できるクラウドソリューション">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="AWS EC2上でKubernetesを動かす" href="/ja/docs/setup/turnkey/aws/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Alibaba CloudでKubernetesを動かす" href="/ja/docs/setup/turnkey/alibaba-cloud/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Azure 上で Kubernetes を動かす" href="/ja/docs/setup/turnkey/azure/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="CenturyLink Cloud上でKubernetesを動かす" href="/ja/docs/setup/turnkey/clc/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Google Compute Engine上でKubernetesを動かす" href="/ja/docs/setup/turnkey/gce/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Multiple Clouds with IBM Cloud Private <small>(EN)</small>" href="/docs/setup/turnkey/icp/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Stackpoint.ioを利用して複数のクラウド上でKubernetesを動かす" href="/ja/docs/setup/turnkey/stackpoint/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="カスタムクラウドソリューション">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="AWSまたはGCE上のCoreOS" href="/ja/docs/setup/custom-cloud/coreos/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kopsを使ったAWS上でのKubernetesのインストール" href="/ja/docs/setup/custom-cloud/kops/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubesprayを使ったオンプレミス/クラウドプロバイダへのKubernetesのインストール" href="/ja/docs/setup/custom-cloud/kubespray/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="オンプレミスVM">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Cloudstack" href="/ja/docs/setup/on-premises-vm/cloudstack/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DC/OS上のKubernetes" href="/ja/docs/setup/on-premises-vm/dcos/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="oVirt" href="/ja/docs/setup/on-premises-vm/ovirt/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Version and Version Skew Support Policy <small>(EN)</small>" href="/docs/setup/version-skew-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="大規模クラスタの構築" href="/ja/docs/setup/cluster-large/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="複数のゾーンで動かす" href="/ja/docs/setup/multiple-zones/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="CRIのインストール" href="/ja/docs/setup/cri/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="KRIBを使用してDigital Rebar Provision (DRP)と共にKubernetesをインストールする" href="/ja/docs/setup/on-premises-metal/krib/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Minikubを使用してローカル環境でKubernetesを動かす" href="/ja/docs/setup/minikube/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="PKI証明書とその要件" href="/ja/docs/setup/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="ゼロからのカスタムクラスターの作成" href="/ja/docs/setup/scratch/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="ノードのセットアップの検証" href="/ja/docs/setup/node-conformance/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+	 
+	 
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/ja/docs%5csetup%5c_index.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>セットアップ</h1>
+
+
+
+<p>このページを使い、自分のニーズに最も適したソリューションを見つけてください。</p>
+
+<p>Kubernetesをどこで実行するかは、利用可能なリソースと必要な柔軟性によって異なります。ノートPCからクラウドプロバイダのVM、ベアメタルのラックまで、ほぼどのような場所でもKubernetesを実行できます。単一のコマンドを実行して完全に管理された
+を設定したり、ベアメタルで独自にカスタマイズしたクラスタを作成したりすることもできます。</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%9e%e3%82%b7%e3%83%b3%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3">ローカルマシンソリューション</a></li>
+
+
+
+
+<li><a href="#%e3%83%9b%e3%82%b9%e3%83%88%e5%9e%8b%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3">ホスト型ソリューション</a></li>
+
+
+
+
+<li><a href="#%e3%82%bf%e3%83%bc%e3%83%b3%e3%82%ad%e3%83%bc%e3%82%af%e3%83%a9%e3%82%a6%e3%83%89%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3">ターンキークラウドソリューション</a></li>
+
+
+
+
+<li><a href="#%e3%82%bf%e3%83%bc%e3%83%b3%e3%82%ad%e3%83%bc%e3%82%aa%e3%83%b3%e3%83%97%e3%83%ac%e3%83%9f%e3%82%b9%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3">ターンキーオンプレミスソリューション</a></li>
+
+
+
+
+<li><a href="#%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3">カスタムソリューション</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="#what-s-next">What's next</a></li>
+
+
+
+</ul>
+
+
+<h2 id="ローカルマシンソリューション">ローカルマシンソリューション</h2>
+
+<p>ローカルマシンソリューションは、Kubernetesを使い始めるための簡単な方法です。クラウドリソースと、割当量の消費を気にせずにKubernetesクラスタを作成してテストできます。</p>
+
+<p>もし以下のようなことを実現したいのであれば、ローカルマシンソリューションを選ぶべきです:</p>
+
+<ul>
+<li>Kubernetesの検証や勉強</li>
+<li>ローカルでのクラスタの開発やテスト</li>
+</ul>
+
+<p><a href="/docs/setup/pick-right-solution/#local-machine-solutions">ローカルマシンソリューション</a>を選ぶ</p>
+
+<h2 id="ホスト型ソリューション">ホスト型ソリューション</h2>
+
+<p>ホスト型ソリューションは、Kubernetesクラスタを作成および管理するためには便利な方法です。自身で管理せずとも、ホスティングプロバイダがクラスタを管理、運用します。</p>
+
+<p>もし以下のようなことを実現したいのであれば、ホスト型ソリューションを選ぶべきです:</p>
+
+<ul>
+<li>完全に管理されたソリューションが欲しい</li>
+<li>アプリケーションやサービスの開発に集中したい</li>
+<li>専用のSite Reliability Engineering (SRE)チームはないが、高可用性を求めている</li>
+<li>クラスタをホストしたり、監視したりするためのリソースがない</li>
+</ul>
+
+<p><a href="/docs/setup/pick-right-solution/#hosted-solutions">ホスト型ソリューション</a>を選ぶ</p>
+
+<h2 id="ターンキークラウドソリューション">ターンキークラウドソリューション</h2>
+
+<p>このソリューションを使用すると、わずかなコマンドでKubernetesクラスタが作成できます。また、積極的に開発されており、積極的なコミュニティサポートを受けています。さまざまなCloud IaaSプロバイダでホストすることもできますが、努力と引き換えに、より多くの自由と柔軟性を提供します。</p>
+
+<p>もし以下のようなことを実現したいのであれば、ターンキークラウドソリューションを選ぶべきです:</p>
+
+<ul>
+<li>ホスト型ソリューションが許可する以上に、クラスタをもっと制御したい</li>
+<li>より多くのオペレーションの所有権を引き受けたい</li>
+</ul>
+
+<p><a href="/docs/setup/pick-right-solution/#turnkey-cloud-solutions">ターンキークラウドソリューション</a>を選ぶ</p>
+
+<h2 id="ターンキーオンプレミスソリューション">ターンキーオンプレミスソリューション</h2>
+
+<p>このソリューションを使用すると、内部の安全なクラウドネットワーク上に、少ないコマンドでKubernetesクラスタを作成できます。</p>
+
+<p>もし以下のようなことを実現したいのであれば、ターンキーオンプレミスソリューションを選ぶべきです:</p>
+
+<ul>
+<li>プライベートクラウド内にクラスタを配置したい</li>
+<li>専用のSREチームがいる</li>
+<li>クラスタをホストし、監視するためのリソースを持っている</li>
+</ul>
+
+<p><a href="/docs/setup/pick-right-solution/#on-premises-turnkey-cloud-solutions">ターンキーオンプレミスソリューション</a>を選ぶ</p>
+
+<h2 id="カスタムソリューション">カスタムソリューション</h2>
+
+<p>カスタムソリューションは、クラスタに対して最も自由度が高いですが、専門知識が最も必要になります。このソリューションは、数多くのオペレーティングシステム上のベアメタルからクラウドプロバイダまで、多岐にわたります。</p>
+
+<p><a href="/docs/setup/pick-right-solution/#custom-solutions">カスタムソリューション</a>を選ぶ</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="what-s-next">What&#39;s next</h2>
+<p>ソリューションの完全なリストを見るには、<a href="/docs/setup/pick-right-solution/">正しいソリューションの選択</a> に進んでください。</p>
+
+
+
+
+
+
+	 
+
+
+  
+  <h2>Feedback</h2>
+  <p class="feedback--prompt">Was this page helpful? </p>
+  <button class="button feedback--yes">Yes</button>
+  <button class="button feedback--no">No</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5csetup%5c_index.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/ja/docs%5csetup%5c_index.md" class="button issue">ページ編集</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    ページの最終更新 March 08, 2019 at 3:17 AM PST by
+    <a href="https://github.com/kubernetes/website/commit/edb233cac2f4f910dd55311a3c63bdfbd53a081b/">First Japanese l10n work for release-1.13 (#12998)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5csetup%5c_index.md">ページ履歴</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/ja/docs/home/">ホーム</a>
+            
+            
+            
+            
+            
+            
+            
+            <a href="/ja/case-studies/">ケーススタディ</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>フォーラム</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>イベントカレンダー</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">コントリビュート</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

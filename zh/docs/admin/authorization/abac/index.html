@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>ABAC 模式 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/admin/authorization/abac/">
+<meta property="og:title" content="ABAC 模式">
+<meta name="twitter:title" content="ABAC 模式">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/">English</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                    <li><a href="/it/">Italian</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="Admins" href="/zh/docs/admin/"></a>
+
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="构建高可用集群">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="构建高可用集群" href="/zh/docs/admin/high-availability/"></a>
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="概述">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="概述" href="/zh/docs/admin/authorization/"></a>
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="ABAC 模式" href="/zh/docs/admin/authorization/abac/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Webhook Mode" href="/zh/docs/admin/authorization/webhook/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubelet authentication/authorization" href="/zh/docs/admin/kubelet-authentication-authorization/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes API访问控制" href="/zh/docs/admin/accessing-the-api/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes OpenVSwitch GRE/VxLAN 网络" href="/zh/docs/admin/ovs-networking/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="TLS bootstrapping" href="/zh/docs/admin/kubelet-tls-bootstrapping/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kube-apiserver" href="/zh/docs/admin/kube-apiserver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用启动引导令牌（Bootstrap Tokens）认证" href="/zh/docs/admin/bootstrap-tokens/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="创建大规模集群" href="/zh/docs/admin/cluster-large/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="多区域运行" href="/zh/docs/admin/multiple-zones/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理Service Accounts" href="/zh/docs/admin/service-accounts-admin/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="节点设置校验" href="/zh/docs/admin/node-conformance/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cadmin%5cauthorization%5cabac.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>ABAC 模式</h1>
+
+
+
+<p>基于属性的访问控制（Attribute-based access control - ABAC）定义了访问控制范例，其中通过使用将属性组合在一起的策略来向用户授予访问权限。</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%e7%ad%96%e7%95%a5%e6%96%87%e4%bb%b6%e6%a0%bc%e5%bc%8f">策略文件格式</a></li>
+
+
+
+
+<li><a href="#%e6%8e%88%e6%9d%83%e7%ae%97%e6%b3%95">授权算法</a></li>
+
+
+
+
+<li><a href="#kubectl">Kubectl</a></li>
+
+
+
+
+<li><a href="#%e4%be%8b%e5%ad%90">例子</a></li>
+
+
+
+
+<li><a href="#%e6%9c%8d%e5%8a%a1%e5%b8%90%e6%88%b7%e7%9a%84%e5%bf%ab%e9%80%9f%e8%af%b4%e6%98%8e">服务帐户的快速说明</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<h2 id="策略文件格式">策略文件格式</h2>
+
+<p>基于 <code>ABAC</code> 模式，可以这样指定策略文件 <code>--authorization-policy-file=SOME_FILENAME</code>。</p>
+
+<p>此文件是 JSON 格式<a href="http://jsonlines.org/" target="_blank">每行都是一个JSON对象</a>，不应存在封闭的列表或映射，每行只有一个映射。</p>
+
+<p>每一行都是一个 &ldquo;策略对象&rdquo;，策略对象是具有以下映射的属性:</p>
+
+<ul>
+<li>版本控制属性:
+
+<ul>
+<li><code>apiVersion</code>，字符串类型: 有效值为&rdquo;abac.authorization.kubernetes.io/v1beta1&rdquo;，允许版本控制和转换策略格式。</li>
+<li><code>kind</code>，字符串类型: 有效值为 &ldquo;Policy&rdquo;，允许版本控制和转换策略格式。</li>
+</ul></li>
+<li><code>spec</code> 配置为具有以下映射的属性:
+
+<ul>
+<li>匹配属性:
+
+<ul>
+<li><code>user</code>，字符串类型; 来自 <code>--token-auth-file</code> 的用户字符串，如果你指定<code>user</code>，它必须与验证用户的用户名匹配。</li>
+<li><code>group</code>，字符串类型; 如果指定<code>group</code>，它必须与经过身份验证的用户的一个组匹配，<code>system:authenticated</code>匹配所有经过身份验证的请求。<code>system:unauthenticated</code>匹配所有未经过身份验证的请求。</li>
+</ul></li>
+</ul></li>
+<li>资源匹配属性:
+
+<ul>
+<li><code>apiGroup</code>，字符串类型; 一个 API 组。
+
+<ul>
+<li>例: <code>extensions</code></li>
+<li>通配符: <code>*</code>匹配所有 API 组。</li>
+</ul></li>
+<li><code>namespace</code>，字符串类型; 一个命名空间。
+
+<ul>
+<li>例如: <code>kube-system</code></li>
+<li>通配符: <code>*</code> 匹配所有资源请求。</li>
+</ul></li>
+<li><code>resource</code>，字符串类型; 资源类型。
+
+<ul>
+<li>例:<code>pods</code></li>
+<li>通配符: <code>*</code>匹配所有资源请求。</li>
+</ul></li>
+</ul></li>
+<li>非资源匹配属性:
+
+<ul>
+<li><code>nonResourcePath</code>，字符串类型; 非资源请求路径。
+
+<ul>
+<li>例如:<code>/version</code>或<code>/apis</code></li>
+<li>通配符:</li>
+<li><code>*</code> 匹配所有非资源请求。</li>
+<li><code>/foo/*</code> 匹配<code>/foo/</code>的所有子路径。</li>
+</ul></li>
+</ul></li>
+<li><code>readonly</code>，键入 boolean，如果为 true，则表示该策略仅适用于 get，list 和 watch 操作。</li>
+</ul>
+
+<p><strong>注意:</strong> 未设置的属性与类型设置为零值的属性相同(例如空字符串，0、false)，然而未知的应该可读性优先。</p>
+
+<p>在将来，策略可能以 JSON 格式表示，并通过 REST 界面进行管理。</p>
+
+<h2 id="授权算法">授权算法</h2>
+
+<p>请求具有与策略对象的属性对应的属性。</p>
+
+<p>当接收到请求时，确定属性。 未知属性设置为其类型的零值（例如: 空字符串，0，false）。</p>
+
+<p>设置为<code>“*&quot;</code>的属性将匹配相应属性的任何值。</p>
+
+<p>检查属性的元组，以匹配策略文件中的每个策略。 如果至少有一行匹配请求属性，则请求被授权（但可能会在稍后验证失败）。</p>
+
+<p>要允许任何经过身份验证的用户执行某些操作，请将策略组属性设置为 <code>&quot;system:authenticated“</code>。</p>
+
+<p>要允许任何未经身份验证的用户执行某些操作，请将策略组属性设置为<code>&quot;system:authentication“</code>。</p>
+
+<p>要允许用户执行任何操作，请使用 apiGroup，命名空间，
+资源和 nonResourcePath 属性设置为 <code>“*&quot;</code>的策略.</p>
+
+<p>要允许用户执行任何操作，请使用设置为<code>“*”</code> 的 apiGroup，namespace，resource 和 nonResourcePath 属性编写策略。</p>
+
+<h2 id="kubectl">Kubectl</h2>
+
+<p>Kubectl 使用 api-server 的 <code>/api</code> 和 <code>/apis</code> 端点进行协商客户端/服务器版本。 通过创建/更新来验证发送到API的对象操作，kubectl 查询某些 swagger 资源。 对于API版本&rdquo;v1&rdquo;, 那就是<code>/swaggerapi/api/v1</code> ＆ <code>/swaggerapi/ experimental/v1</code>。</p>
+
+<p>当使用 ABAC 授权时，这些特殊资源必须明确通过策略中的 <code>nonResourcePath</code> 属性暴露出来(参见下面的<a href="#examples">例子</a>):</p>
+
+<ul>
+<li><code>/api</code>，<code>/api/*</code>，<code>/apis</code>和<code>/apis/*</code> 用于 API 版本协商.</li>
+<li><code>/version</code> 通过 <code>kubectl version</code> 检索服务器版本.</li>
+<li><code>/swaggerapi/*</code> 用于创建/更新操作.</li>
+</ul>
+
+<p>要检查涉及到特定kubectl操作的HTTP调用，您可以调整详细程度：</p>
+
+<pre><code>kubectl --v=8 version
+</code></pre>
+
+<h2 id="例子">例子</h2>
+
+<ol>
+<li><p>Alice 可以对所有资源做任何事情:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#008000;font-weight:bold">&#34;apiVersion&#34;</span>: <span style="color:#b44">&#34;abac.authorization.kubernetes.io/v1beta1&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;kind&#34;</span>: <span style="color:#b44">&#34;Policy&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;spec&#34;</span>: {<span style="color:#008000;font-weight:bold">&#34;user&#34;</span>: <span style="color:#b44">&#34;alice&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;namespace&#34;</span>: <span style="color:#b44">&#34;*&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;resource&#34;</span>: <span style="color:#b44">&#34;*&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;apiGroup&#34;</span>: <span style="color:#b44">&#34;*&#34;</span>}}</code></pre></div></li>
+
+<li><p>Kubelet 可以读取任何pod:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#008000;font-weight:bold">&#34;apiVersion&#34;</span>: <span style="color:#b44">&#34;abac.authorization.kubernetes.io/v1beta1&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;kind&#34;</span>: <span style="color:#b44">&#34;Policy&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;spec&#34;</span>: {<span style="color:#008000;font-weight:bold">&#34;user&#34;</span>: <span style="color:#b44">&#34;kubelet&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;namespace&#34;</span>: <span style="color:#b44">&#34;*&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;resource&#34;</span>: <span style="color:#b44">&#34;pods&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;readonly&#34;</span>: <span style="color:#a2f;font-weight:bold">true</span>}}</code></pre></div></li>
+
+<li><p>Kubelet 可以读写事件:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#008000;font-weight:bold">&#34;apiVersion&#34;</span>: <span style="color:#b44">&#34;abac.authorization.kubernetes.io/v1beta1&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;kind&#34;</span>: <span style="color:#b44">&#34;Policy&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;spec&#34;</span>: {<span style="color:#008000;font-weight:bold">&#34;user&#34;</span>: <span style="color:#b44">&#34;kubelet&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;namespace&#34;</span>: <span style="color:#b44">&#34;*&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;resource&#34;</span>: <span style="color:#b44">&#34;events&#34;</span>}}</code></pre></div></li>
+
+<li><p>Bob 可以在命名空间“projectCaribou&rdquo;中读取 pod:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#008000;font-weight:bold">&#34;apiVersion&#34;</span>: <span style="color:#b44">&#34;abac.authorization.kubernetes.io/v1beta1&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;kind&#34;</span>: <span style="color:#b44">&#34;Policy&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;spec&#34;</span>: {<span style="color:#008000;font-weight:bold">&#34;user&#34;</span>: <span style="color:#b44">&#34;bob&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;namespace&#34;</span>: <span style="color:#b44">&#34;projectCaribou&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;resource&#34;</span>: <span style="color:#b44">&#34;pods&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;readonly&#34;</span>: <span style="color:#a2f;font-weight:bold">true</span>}}</code></pre></div></li>
+
+<li><p>任何人都可以对所有非资源路径进行只读请求:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#008000;font-weight:bold">&#34;apiVersion&#34;</span>: <span style="color:#b44">&#34;abac.authorization.kubernetes.io/v1beta1&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;kind&#34;</span>: <span style="color:#b44">&#34;Policy&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;spec&#34;</span>: {<span style="color:#008000;font-weight:bold">&#34;group&#34;</span>: <span style="color:#b44">&#34;system:authenticated&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;readonly&#34;</span>: <span style="color:#a2f;font-weight:bold">true</span>, <span style="color:#008000;font-weight:bold">&#34;nonResourcePath&#34;</span>: <span style="color:#b44">&#34;*&#34;</span>}}
+{<span style="color:#008000;font-weight:bold">&#34;apiVersion&#34;</span>: <span style="color:#b44">&#34;abac.authorization.kubernetes.io/v1beta1&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;kind&#34;</span>: <span style="color:#b44">&#34;Policy&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;spec&#34;</span>: {<span style="color:#008000;font-weight:bold">&#34;group&#34;</span>: <span style="color:#b44">&#34;system:unauthenticated&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;readonly&#34;</span>: <span style="color:#a2f;font-weight:bold">true</span>, <span style="color:#008000;font-weight:bold">&#34;nonResourcePath&#34;</span>: <span style="color:#b44">&#34;*&#34;</span>}}</code></pre></div></li>
+</ol>
+
+<p><a href="http://releases.k8s.io/master/pkg/auth/authorizer/abac/example_policy_file.jsonl" target="_blank">完整文件示例</a></p>
+
+<h2 id="服务帐户的快速说明">服务帐户的快速说明</h2>
+
+<p>服务帐户自动生成用户。 用户名是根据命名约定生成的:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">system:serviceaccount:&lt;namespace&gt;:&lt;serviceaccountname&gt;</code></pre></div>
+<p>创建新的命名空间也会导致创建一个新的服务帐户：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">system:serviceaccount:&lt;namespace&gt;:default</code></pre></div>
+<p>例如，如果要将 API 的 kube-system 完整权限中的默认服务帐户授予，则可以将此行添加到策略文件中:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#008000;font-weight:bold">&#34;apiVersion&#34;</span>:<span style="color:#b44">&#34;abac.authorization.kubernetes.io/v1beta1&#34;</span>,<span style="color:#008000;font-weight:bold">&#34;kind&#34;</span>:<span style="color:#b44">&#34;Policy&#34;</span>,<span style="color:#008000;font-weight:bold">&#34;spec&#34;</span>:{<span style="color:#008000;font-weight:bold">&#34;user&#34;</span>:<span style="color:#b44">&#34;system:serviceaccount:kube-system:default&#34;</span>,<span style="color:#008000;font-weight:bold">&#34;namespace&#34;</span>:<span style="color:#b44">&#34;*&#34;</span>,<span style="color:#008000;font-weight:bold">&#34;resource&#34;</span>:<span style="color:#b44">&#34;*&#34;</span>,<span style="color:#008000;font-weight:bold">&#34;apiGroup&#34;</span>:<span style="color:#b44">&#34;*&#34;</span>}}</code></pre></div>
+<p>需要重新启动 apiserver 以获取新的策略行.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/admin/authorization/" title="概述"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 概述</a>
+<a class="nav nav-next" href="/zh/docs/admin/authorization/webhook/" title="Webhook Mode">Next - Webhook Mode <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cadmin%5cauthorization%5cabac.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/admin\/authorization\/abac\/",
+    "title" : "ABAC 模式",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/admin\/authorization\/abac\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cadmin%5cauthorization%5cabac.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    页面最后一次修改于 October 12, 2018 at 2:25 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/abcee2dccd17c94376595b34cc05e56345a7f06c/">Update localization guidelines (#10485)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5cadmin%5cauthorization%5cabac.md">页面历史</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

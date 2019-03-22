@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>Kubernetes集群中使用Sysctls - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="什么是Sysctl？ 命名空间级vs.节点级Sysctls 安全的 vs. 不安全的 Sysctls 使能不安全的Sysctls 给Pod配置Sysctls    这篇文章描述了如何在Kubernetes集群中使用Sysctls。
+什么是Sysctl？ 在Linux中，Sysctl接口允许管理员在内核运行时修改内核参数。这些可用参数都存在于虚拟进程文件系统中的/proc/sys/目录。这些内核参数作用于各种子系统中，例如：
+ 内核 (通用前缀：kernel.) 网络 (通用前缀：net.) 虚拟内存 (通用前缀：vm.) 设备专用 (通用前缀：dev.) 更多子系统描述见 Kernel docs.  获取所有参数列表，可运行
+$ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系统中有一些Sysctls是 命名空间级 的。这意味着他们在同节点的不同pod间是可配置成独立的。在kubernetes里，命名空间级是Sysctls的一个必要条件，以使其在一个pod语境里易于理解。
+以下列出了Sysctls中已知的 命名空间级 ：
+ kernel.shm*（内核中共享内存相关参数）， kernel.msg*（内核中SystemV消息队列相关参数）， kernel.sem（内核中信号量参数）， fs.mqueue.*（内核中POSIX消息队列相关参数）， net.*（内核中网络配置项相关参数）。  Sysctls中非命名空间级的被称为 节点级 ，其必须由集群管理员手动设置，要么通过节点的底层Linux分布方式(例如，通过 /etc/sysctls.conf)，亦或在特权容器中使用Daemonset。
+注意: 这是很好的做法，考虑在一个集群里给有特殊sysctl的节点设置为 污点 ，并且给他们安排仅需要这些sysctl设置的pods。 建议采用Kubernetes 污点和容点 特征 来实现。
+安全的 vs. 不安全的 Sysctls Sysctls被分为 安全的 和 不安全的 sysctls。同一节点上的pods间除了适当命名空间命名一个 安全的 sysctl，还必须适当的 隔离 。 这意味着给一个pod设置一个 安全的 sysctl">
+<meta property="og:description" content="什么是Sysctl？ 命名空间级vs.节点级Sysctls 安全的 vs. 不安全的 Sysctls 使能不安全的Sysctls 给Pod配置Sysctls    这篇文章描述了如何在Kubernetes集群中使用Sysctls。
+什么是Sysctl？ 在Linux中，Sysctl接口允许管理员在内核运行时修改内核参数。这些可用参数都存在于虚拟进程文件系统中的/proc/sys/目录。这些内核参数作用于各种子系统中，例如：
+ 内核 (通用前缀：kernel.) 网络 (通用前缀：net.) 虚拟内存 (通用前缀：vm.) 设备专用 (通用前缀：dev.) 更多子系统描述见 Kernel docs.  获取所有参数列表，可运行
+$ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系统中有一些Sysctls是 命名空间级 的。这意味着他们在同节点的不同pod间是可配置成独立的。在kubernetes里，命名空间级是Sysctls的一个必要条件，以使其在一个pod语境里易于理解。
+以下列出了Sysctls中已知的 命名空间级 ：
+ kernel.shm*（内核中共享内存相关参数）， kernel.msg*（内核中SystemV消息队列相关参数）， kernel.sem（内核中信号量参数）， fs.mqueue.*（内核中POSIX消息队列相关参数）， net.*（内核中网络配置项相关参数）。  Sysctls中非命名空间级的被称为 节点级 ，其必须由集群管理员手动设置，要么通过节点的底层Linux分布方式(例如，通过 /etc/sysctls.conf)，亦或在特权容器中使用Daemonset。
+注意: 这是很好的做法，考虑在一个集群里给有特殊sysctl的节点设置为 污点 ，并且给他们安排仅需要这些sysctl设置的pods。 建议采用Kubernetes 污点和容点 特征 来实现。
+安全的 vs. 不安全的 Sysctls Sysctls被分为 安全的 和 不安全的 sysctls。同一节点上的pods间除了适当命名空间命名一个 安全的 sysctl，还必须适当的 隔离 。 这意味着给一个pod设置一个 安全的 sysctl">
+<meta name="twitter:description" content="什么是Sysctl？ 命名空间级vs.节点级Sysctls 安全的 vs. 不安全的 Sysctls 使能不安全的Sysctls 给Pod配置Sysctls    这篇文章描述了如何在Kubernetes集群中使用Sysctls。
+什么是Sysctl？ 在Linux中，Sysctl接口允许管理员在内核运行时修改内核参数。这些可用参数都存在于虚拟进程文件系统中的/proc/sys/目录。这些内核参数作用于各种子系统中，例如：
+ 内核 (通用前缀：kernel.) 网络 (通用前缀：net.) 虚拟内存 (通用前缀：vm.) 设备专用 (通用前缀：dev.) 更多子系统描述见 Kernel docs.  获取所有参数列表，可运行
+$ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系统中有一些Sysctls是 命名空间级 的。这意味着他们在同节点的不同pod间是可配置成独立的。在kubernetes里，命名空间级是Sysctls的一个必要条件，以使其在一个pod语境里易于理解。
+以下列出了Sysctls中已知的 命名空间级 ：
+ kernel.shm*（内核中共享内存相关参数）， kernel.msg*（内核中SystemV消息队列相关参数）， kernel.sem（内核中信号量参数）， fs.mqueue.*（内核中POSIX消息队列相关参数）， net.*（内核中网络配置项相关参数）。  Sysctls中非命名空间级的被称为 节点级 ，其必须由集群管理员手动设置，要么通过节点的底层Linux分布方式(例如，通过 /etc/sysctls.conf)，亦或在特权容器中使用Daemonset。
+注意: 这是很好的做法，考虑在一个集群里给有特殊sysctl的节点设置为 污点 ，并且给他们安排仅需要这些sysctl设置的pods。 建议采用Kubernetes 污点和容点 特征 来实现。
+安全的 vs. 不安全的 Sysctls Sysctls被分为 安全的 和 不安全的 sysctls。同一节点上的pods间除了适当命名空间命名一个 安全的 sysctl，还必须适当的 隔离 。 这意味着给一个pod设置一个 安全的 sysctl">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/concepts/cluster-administration/sysctl-cluster/">
+<meta property="og:title" content="Kubernetes集群中使用Sysctls">
+<meta name="twitter:title" content="Kubernetes集群中使用Sysctls">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/">English</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                    <li><a href="/it/">Italian</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>概念</h1>
+<h5></h5>
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/" class="YAH">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="概念" href="/zh/docs/concepts/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Overview">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="What is Kubernetes? <small>(EN)</small>" href="/docs/concepts/overview/what-is-kubernetes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Components <small>(EN)</small>" href="/docs/concepts/overview/components/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="The Kubernetes API <small>(EN)</small>" href="/docs/concepts/overview/kubernetes-api/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Working with Kubernetes Objects">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Understanding Kubernetes Objects <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/kubernetes-objects/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Names <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/names/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Namespaces <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/namespaces/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Labels and Selectors <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/labels/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Annotations <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/annotations/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Field Selectors <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/field-selectors/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Recommended Labels <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/common-labels/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Object Management Using kubectl">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Object Management <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Managing Kubernetes Objects Using Imperative Commands <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/imperative-command/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Imperative Management of Kubernetes Objects Using Configuration Files <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/imperative-config/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Declarative Management of Kubernetes Objects Using Configuration Files <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/declarative-config/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Kubernetes Architecture">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Nodes <small>(EN)</small>" href="/docs/concepts/architecture/nodes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Master-Node communication <small>(EN)</small>" href="/docs/concepts/architecture/master-node-communication/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Concepts Underlying the Cloud Controller Manager <small>(EN)</small>" href="/docs/concepts/architecture/cloud-controller/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Containers">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Images <small>(EN)</small>" href="/docs/concepts/containers/images/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Container Environment Variables <small>(EN)</small>" href="/docs/concepts/containers/container-environment-variables/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Runtime Class <small>(EN)</small>" href="/docs/concepts/containers/runtime-class/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Container Lifecycle Hooks <small>(EN)</small>" href="/docs/concepts/containers/container-lifecycle-hooks/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Taint 和 Toleration" href="/zh/docs/concepts/configuration/taint-and-toleration/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="工作负载">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="工作负载" href="/zh/docs/concepts/workloads/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Pods">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Pods" href="/zh/docs/concepts/workloads/pods/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pod Overview <small>(EN)</small>" href="/docs/concepts/workloads/pods/pod-overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pods <small>(EN)</small>" href="/docs/concepts/workloads/pods/pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Disruptions <small>(EN)</small>" href="/docs/concepts/workloads/pods/disruptions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Init 容器" href="/zh/docs/concepts/workloads/pods/init-containers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Pod Preset" href="/zh/docs/concepts/workloads/pods/podpreset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Pod 的生命周期" href="/zh/docs/concepts/workloads/pods/pod-lifecycle/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Controllers">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Controllers" href="/zh/docs/concepts/workloads/controllers/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="ReplicaSet <small>(EN)</small>" href="/docs/concepts/workloads/controllers/replicaset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="ReplicationController <small>(EN)</small>" href="/docs/concepts/workloads/controllers/replicationcontroller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="StatefulSets <small>(EN)</small>" href="/docs/concepts/workloads/controllers/statefulset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="TTL Controller for Finished Resources <small>(EN)</small>" href="/docs/concepts/workloads/controllers/ttlafterfinished/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Jobs - Run to Completion <small>(EN)</small>" href="/docs/concepts/workloads/controllers/jobs-run-to-completion/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Cron Job" href="/zh/docs/concepts/workloads/controllers/cron-jobs/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DaemonSet" href="/zh/docs/concepts/workloads/controllers/daemonset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Deployments" href="/zh/docs/concepts/workloads/controllers/deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="垃圾收集" href="/zh/docs/concepts/workloads/controllers/garbage-collection/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Services, Load Balancing, and Networking">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Services <small>(EN)</small>" href="/docs/concepts/services-networking/service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="DNS for Services and Pods <small>(EN)</small>" href="/docs/concepts/services-networking/dns-pod-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Connecting Applications with Services <small>(EN)</small>" href="/docs/concepts/services-networking/connect-applications-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Ingress <small>(EN)</small>" href="/docs/concepts/services-networking/ingress/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Ingress Controllers <small>(EN)</small>" href="/docs/concepts/services-networking/ingress-controllers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Network Policies <small>(EN)</small>" href="/docs/concepts/services-networking/network-policies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Adding entries to Pod /etc/hosts with HostAliases <small>(EN)</small>" href="/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="存储">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="存储" href="/zh/docs/concepts/storage/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Volumes <small>(EN)</small>" href="/docs/concepts/storage/volumes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Persistent Volumes <small>(EN)</small>" href="/docs/concepts/storage/persistent-volumes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Volume Snapshots <small>(EN)</small>" href="/docs/concepts/storage/volume-snapshots/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Storage Classes <small>(EN)</small>" href="/docs/concepts/storage/storage-classes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Volume Snapshot Classes <small>(EN)</small>" href="/docs/concepts/storage/volume-snapshot-classes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Dynamic Volume Provisioning <small>(EN)</small>" href="/docs/concepts/storage/dynamic-provisioning/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Node-specific Volume Limits <small>(EN)</small>" href="/docs/concepts/storage/storage-limits/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Configuration">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configuration Best Practices <small>(EN)</small>" href="/docs/concepts/configuration/overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Managing Compute Resources for Containers <small>(EN)</small>" href="/docs/concepts/configuration/manage-compute-resources-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Assigning Pods to Nodes <small>(EN)</small>" href="/docs/concepts/configuration/assign-pod-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Taints and Tolerations <small>(EN)</small>" href="/docs/concepts/configuration/taint-and-toleration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Secrets <small>(EN)</small>" href="/docs/concepts/configuration/secret/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Organizing Cluster Access Using kubeconfig Files <small>(EN)</small>" href="/docs/concepts/configuration/organize-cluster-access-kubeconfig/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pod Priority and Preemption <small>(EN)</small>" href="/docs/concepts/configuration/pod-priority-preemption/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Scheduler Performance Tuning <small>(EN)</small>" href="/docs/concepts/configuration/scheduler-perf-tuning/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Policies">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Resource Quotas <small>(EN)</small>" href="/docs/concepts/policy/resource-quotas/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pod Security Policies <small>(EN)</small>" href="/docs/concepts/policy/pod-security-policy/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Cluster Administration">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cluster Administration Overview <small>(EN)</small>" href="/docs/concepts/cluster-administration/cluster-administration-overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Certificates <small>(EN)</small>" href="/docs/concepts/cluster-administration/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cloud Providers <small>(EN)</small>" href="/docs/concepts/cluster-administration/cloud-providers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Managing Resources <small>(EN)</small>" href="/docs/concepts/cluster-administration/manage-deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cluster Networking <small>(EN)</small>" href="/docs/concepts/cluster-administration/networking/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Logging Architecture <small>(EN)</small>" href="/docs/concepts/cluster-administration/logging/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configuring kubelet Garbage Collection <small>(EN)</small>" href="/docs/concepts/cluster-administration/kubelet-garbage-collection/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federation <small>(EN)</small>" href="/docs/concepts/cluster-administration/federation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Proxies in Kubernetes <small>(EN)</small>" href="/docs/concepts/cluster-administration/proxies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Controller manager metrics <small>(EN)</small>" href="/docs/concepts/cluster-administration/controller-metrics/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing Addons <small>(EN)</small>" href="/docs/concepts/cluster-administration/addons/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Extending Kubernetes">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Extending your Kubernetes Cluster <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/extend-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Extending the Kubernetes API">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Extending the Kubernetes API with the aggregation layer <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Custom Resources <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/api-extension/custom-resources/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Compute, Storage, and Networking Extensions">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Network Plugins <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Device Plugins <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Service Catalog <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/service-catalog/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Poseidon-Firmament - An alternate scheduler <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/poseidon-firmament-alternate-scheduler/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="" href="/zh/docs/concepts/architecture/cloud-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="" href="/zh/docs/concepts/overview/kubernetes-api/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DNS Pod 与 Service" href="/zh/docs/concepts/services-networking/dns-pod-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes 中的代理" href="/zh/docs/concepts/cluster-administration/proxies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes 组件" href="/zh/docs/concepts/overview/components/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes集群中使用Sysctls" href="/zh/docs/concepts/cluster-administration/sysctl-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Managing Compute Resources for Containers" href="/zh/docs/concepts/configuration/manage-compute-resources-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Master 节点通信" href="/zh/docs/concepts/architecture/master-node-communication/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Nodes" href="/zh/docs/concepts/architecture/nodes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Pod 安全策略" href="/zh/docs/concepts/policy/pod-security-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Secret" href="/zh/docs/concepts/configuration/secret/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Service" href="/zh/docs/concepts/services-networking/service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="云供应商" href="/zh/docs/concepts/cluster-administration/cloud-providers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 HostAliases 向 Pod /etc/hosts 文件添加条目" href="/zh/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="安装扩展（Addons）" href="/zh/docs/concepts/cluster-administration/addons/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="容器环境变量" href="/zh/docs/concepts/containers/container-environment-variables/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="应用连接到 Service" href="/zh/docs/concepts/services-networking/connect-applications-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="概念模板示例" href="/zh/docs/concepts/example-concept-template/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="理解 Kubernetes 对象" href="/zh/docs/concepts/overview/working-with-objects/kubernetes-objects/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="网络策略" href="/zh/docs/concepts/services-networking/network-policies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="联邦" href="/zh/docs/concepts/cluster-administration/federation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="认识 Kubernetes?" href="/zh/docs/concepts/overview/what-is-kubernetes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="设备插件" href="/zh/docs/concepts/cluster-administration/device-plugins/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="证书" href="/zh/docs/concepts/cluster-administration/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="资源配额" href="/zh/docs/concepts/policy/resource-quotas/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="镜像" href="/zh/docs/concepts/containers/images/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="集群管理概述" href="/zh/docs/concepts/cluster-administration/cluster-administration-overview/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cconcepts%5ccluster-administration%5csysctl-cluster.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>Kubernetes集群中使用Sysctls</h1>
+
+
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#什么是sysctl">什么是Sysctl？</a></li>
+<li><a href="#命名空间级vs-节点级sysctls">命名空间级vs.节点级Sysctls</a></li>
+<li><a href="#安全的-vs-不安全的-sysctls">安全的 vs. 不安全的 Sysctls</a></li>
+<li><a href="#使能不安全的sysctls">使能不安全的Sysctls</a></li>
+<li><a href="#给pod配置sysctls">给Pod配置Sysctls</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<p>这篇文章描述了如何在Kubernetes集群中使用Sysctls。</p>
+
+<h2 id="什么是sysctl">什么是Sysctl？</h2>
+
+<p>在Linux中，Sysctl接口允许管理员在内核运行时修改内核参数。这些可用参数都存在于虚拟进程文件系统中的<code>/proc/sys/</code>目录。这些内核参数作用于各种子系统中，例如：</p>
+
+<ul>
+<li>内核 (通用前缀：<code>kernel.</code>)</li>
+<li>网络 (通用前缀：<code>net.</code>)</li>
+<li>虚拟内存 (通用前缀：<code>vm.</code>)</li>
+<li>设备专用 (通用前缀：<code>dev.</code>)</li>
+<li>更多子系统描述见 <a href="https://www.kernel.org/doc/Documentation/sysctl/README" target="_blank">Kernel docs</a>.</li>
+</ul>
+
+<p>获取所有参数列表，可运行</p>
+
+<pre><code>$ sudo sysctl -a
+</code></pre>
+
+<h2 id="命名空间级vs-节点级sysctls">命名空间级vs.节点级Sysctls</h2>
+
+<p>在今天的Linux内核系统中有一些Sysctls是 <em>命名空间级</em> 的。这意味着他们在同节点的不同pod间是可配置成独立的。在kubernetes里，命名空间级是Sysctls的一个必要条件，以使其在一个pod语境里易于理解。</p>
+
+<p>以下列出了Sysctls中已知的 <em>命名空间级</em> ：</p>
+
+<ul>
+<li><code>kernel.shm*</code>（内核中共享内存相关参数），</li>
+<li><code>kernel.msg*</code>（内核中SystemV消息队列相关参数），</li>
+<li><code>kernel.sem</code>（内核中信号量参数），</li>
+<li><code>fs.mqueue.*</code>（内核中POSIX消息队列相关参数），</li>
+<li><code>net.*</code>（内核中网络配置项相关参数）。</li>
+</ul>
+
+<p>Sysctls中非命名空间级的被称为 <em>节点级</em> ，其必须由集群管理员手动设置，要么通过节点的底层Linux分布方式(例如，通过 <code>/etc/sysctls.conf</code>)，亦或在特权容器中使用Daemonset。</p>
+
+<p><strong>注意</strong>: 这是很好的做法，考虑在一个集群里给有特殊sysctl的节点设置为 <em>污点</em> ，并且给他们安排仅需要这些sysctl设置的pods。 建议采用Kubernetes <a href="/docs/user-guide/kubectl/v1.13/#taint"><em>污点和容点</em>
+特征</a> 来实现。</p>
+
+<h2 id="安全的-vs-不安全的-sysctls">安全的 vs. 不安全的 Sysctls</h2>
+
+<p>Sysctls被分为 <em>安全的</em> 和 <em>不安全的</em> sysctls。同一节点上的pods间除了适当命名空间命名一个 <em>安全的</em> sysctl，还必须适当的 <em>隔离</em> 。 这意味着给一个pod设置一个 <em>安全的</em> sysctl</p>
+
+<ul>
+<li>不能对相同节点上其他pod产生任何影响</li>
+<li>不能对节点的健康造成损害</li>
+<li>不能在pod资源限制以外获取更多的CPU和内存资源</li>
+</ul>
+
+<p>目前看来，大多数的 <em>命名空间级</em> sysctls 不一定被认为是 <em>安全的</em> 。</p>
+
+<p>在Kubernetes 1.4版本中，以下sysctls提供了 <em>安全的</em> 配置：</p>
+
+<ul>
+<li><code>kernel.shm_rmid_forced</code>,</li>
+<li><code>net.ipv4.ip_local_port_range</code>,</li>
+<li><code>net.ipv4.tcp_syncookies</code>.</li>
+</ul>
+
+<p>该列表在未来的Kubernetes版本里还会继续扩充，当kubelet提供更好的隔离机制时。</p>
+
+<p>所有 <em>安全的</em> sysctls 都是默认启用的。</p>
+
+<p>所有 <em>不安全的</em> sysctls 默认是关闭的，且必须通过每个节点基础上的集群管理手动开启。禁用不安全的sysctls的Pods将会被计划，但不会启动。</p>
+
+<p><strong>警告</strong>: 由于他们的本质是 <em>不安全的</em> ，使用 <em>不安全的</em> sysctls是自担风险的，并且会导致严重的问题，例如容器的错误行为，资源短缺或者是一个节点的完全破损。</p>
+
+<h2 id="使能不安全的sysctls">使能不安全的Sysctls</h2>
+
+<p>牢记上面的警告， 在非常特殊的情况下，例如高性能指标或是实时应用程序优化，集群管理员可以允许 <em>不安全的</em>
+sysctls。 <em>不安全的</em> sysctls 会打上kubelet标识，在逐节点的基础上被启用，例如：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubelet --experimental-allowed-unsafe-sysctls <span style="color:#b44">&#39;kernel.msg*,net.ipv4.route.min_pmtu&#39;</span> ...</code></pre></div>
+<p>只有 <em>命名空间级</em> sysctls 可以使用该方法启用。</p>
+
+<h2 id="给pod配置sysctls">给Pod配置Sysctls</h2>
+
+<p>在Kubernetes 1.4版本中，sysctl特性是一个alpha API。因此，sysctls被设置为在pods上使用注释。它们适用于同一个pod上的所有容器。</p>
+
+<p>这里列举了一个例子， <em>安全的</em> 和 <em>不安全的</em> sysctls使用不同的注释:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Pod<span style="color:#bbb">
+</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>sysctl-example<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>annotations:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>security.alpha.kubernetes.io/sysctls:<span style="color:#bbb"> </span>kernel.shm_rmid_forced=<span style="color:#666">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>security.alpha.kubernetes.io/unsafe-sysctls:<span style="color:#bbb"> </span>net.ipv4.route.min_pmtu=<span style="color:#666">1000</span>,kernel.msgmax=<span style="color:#666">1</span><span style="color:#bbb"> </span><span style="color:#666">2</span><span style="color:#bbb"> </span><span style="color:#666">3</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>...</code></pre></div>
+<p><strong>注意</strong>: 包含以上规定的 <em>不安全的</em> sysctls的一个Pod， 将无法启动任何不能使这两个 <em>不安全的</em> sysctls明确的节点。 推荐
+<em>节点级</em> sysctls使用 <a href="/docs/user-guide/kubectl/v1.6/#taint"><em>容点和污点</em>
+特征</a> or <a href="/docs/concepts/configuration/taint-and-toleration/">taints on nodes</a>
+来将这些pods分配到正确的nodes上。</p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/concepts/overview/components/" title="Kubernetes 组件"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Kubernetes 组件</a>
+<a class="nav nav-next" href="/zh/docs/concepts/configuration/manage-compute-resources-container/" title="Managing Compute Resources for Containers">Next - Managing Compute Resources for Containers <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cconcepts%5ccluster-administration%5csysctl-cluster.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/concepts\/cluster-administration\/sysctl-cluster\/",
+    "title" : "Kubernetes集群中使用Sysctls",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/concepts\/cluster-administration\/sysctl-cluster\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cconcepts%5ccluster-administration%5csysctl-cluster.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    页面最后一次修改于 October 12, 2018 at 2:25 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/abcee2dccd17c94376595b34cc05e56345a7f06c/">Update localization guidelines (#10485)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5cconcepts%5ccluster-administration%5csysctl-cluster.md">页面历史</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

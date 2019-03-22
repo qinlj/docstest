@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>설치 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/ko/docs/setup/">
+<meta property="og:title" content="설치">
+<meta name="twitter:title" content="설치">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/ko/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/ko/docs/" class="active">문서</a></li>
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="/ko/case-studies/">사례 연구</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    한국어 Korean <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/setup/">English</a></li>
+                
+                    <li><a href="/ja/docs/setup/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/docs/setup/">Français</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="검색하기" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/ko/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/ko/docs/home/">문서</a></h3>
+           <p>개념, 튜토리얼 및 참조 문서와 함께 쿠버네티스 사용하는 방법을 익힐 수 있다. 또한, <a href="/editdocs/" data-auto-burger-exclude>문서에 기여하는 것도 도움을 줄 수 있다</a>!</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">코어 쿠버네티스 코드 베이스를 살펴보는데 관심이 있으십니까?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>GitHub에서 보기</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">커뮤니티 둘러보기</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>설치</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/ko/docs/home/">홈</a></li>
+		
+		
+		<li><a href="/ko/docs/setup/" class="YAH">설치</a></li>
+		
+		
+		<li><a href="/ko/docs/concepts/">개념</a></li>
+		
+		
+		<li><a href="/ko/docs/tasks/">태스크</a></li>
+		
+		
+		<li><a href="/ko/docs/tutorials/">튜토리얼</a></li>
+		
+		
+		<li><a href="/ko/docs/reference/">레퍼런스</a></li>
+		
+		
+		<li><a href="/ko/docs/contribute/">기여</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="검색하기" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="설치" href="/ko/docs/setup/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="알맞은 솔루션 선정" href="/ko/docs/setup/pick-right-solution/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="쿠버네티스 다운로드">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="v1.13 Release Notes <small>(EN)</small>" href="/docs/setup/release/notes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="릴리스 빌드" href="/ko/docs/setup/release/building-from-source/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="kubeadm으로 클러스터 부트스트래핑 하기">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing kubeadm <small>(EN)</small>" href="/docs/setup/independent/install-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Creating a single master cluster with kubeadm <small>(EN)</small>" href="/docs/setup/independent/create-cluster-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Customizing control plane configuration with kubeadm <small>(EN)</small>" href="/docs/setup/independent/control-plane-flags/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Options for Highly Available Topology <small>(EN)</small>" href="/docs/setup/independent/ha-topology/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Creating Highly Available Clusters with kubeadm <small>(EN)</small>" href="/docs/setup/independent/high-availability/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up a High Availability etcd cluster with kubeadm <small>(EN)</small>" href="/docs/setup/independent/setup-ha-etcd-with-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configuring each kubelet in your cluster using kubeadm <small>(EN)</small>" href="/docs/setup/independent/kubelet-integration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Troubleshooting kubeadm <small>(EN)</small>" href="/docs/setup/independent/troubleshooting-kubeadm/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="턴키 클라우드 솔루션">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on AWS EC2 <small>(EN)</small>" href="/docs/setup/turnkey/aws/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Alibaba Cloud <small>(EN)</small>" href="/docs/setup/turnkey/alibaba-cloud/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Azure <small>(EN)</small>" href="/docs/setup/turnkey/azure/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on CenturyLink Cloud <small>(EN)</small>" href="/docs/setup/turnkey/clc/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Google Compute Engine <small>(EN)</small>" href="/docs/setup/turnkey/gce/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Multiple Clouds with IBM Cloud Private <small>(EN)</small>" href="/docs/setup/turnkey/icp/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Multiple Clouds with Stackpoint.io <small>(EN)</small>" href="/docs/setup/turnkey/stackpoint/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="사용자 지정 클라우드 솔루션">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing Kubernetes On-premises/Cloud Providers with Kubespray <small>(EN)</small>" href="/docs/setup/custom-cloud/kubespray/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kops로 AWS에 쿠버네티스 설치하기" href="/ko/docs/setup/custom-cloud/kops/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="온-프레미스 VM">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cloudstack <small>(EN)</small>" href="/docs/setup/on-premises-vm/cloudstack/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes on DC/OS <small>(EN)</small>" href="/docs/setup/on-premises-vm/dcos/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="oVirt <small>(EN)</small>" href="/docs/setup/on-premises-vm/ovirt/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Version and Version Skew Support Policy <small>(EN)</small>" href="/docs/setup/version-skew-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="대형 클러스터 구축" href="/ko/docs/setup/cluster-large/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="여러 영역에서 구동" href="/ko/docs/setup/multiple-zones/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="CRI 설치" href="/ko/docs/setup/cri/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing Kubernetes with Digital Rebar Provision (DRP) via KRIB <small>(EN)</small>" href="/docs/setup/on-premises-metal/krib/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Minikube로 로컬 상에서 쿠버네티스 구동" href="/ko/docs/setup/minikube/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="PKI 인증서 및 요구 조건" href="/ko/docs/setup/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="노드 구성 검증하기" href="/ko/docs/setup/node-conformance/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="맨 처음부터 사용자 지정 클러스터 생성" href="/ko/docs/setup/scratch/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+	 
+	 
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/ko/docs%5csetup%5c_index.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>설치</h1>
+
+
+
+<p>니즈에 가장 적합한 솔루션 유형을 찾기 위해서는 이 페이지를 사용하길 바란다.</p>
+
+<p>쿠버네티스를 어디에서 동작시킬지 결정하는 것은 가용한 자원과 요구되는 유연성의 정도에 의존적이다. 쿠버네티스는 랩톱부터, 클라우드 프로바이더의 VM, 베어메탈(bare metal) 서버로 이루어진 랙까지 거의 모든 곳에서 동작시킬 수 있다. 또한 단 하나의 명령어 실행으로 완전-관리되는(fully-managed) 클러스터를 설치할 수도 있고, 베어메탈 서버에 자신만의 맞춤형 클러스터를 만들 수도 있다.</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%eb%a1%9c%ec%bb%ac-%eb%a8%b8%ec%8b%a0-local-machine-%ec%86%94%eb%a3%a8%ec%85%98">로컬 머신(Local-machine) 솔루션</a></li>
+
+
+
+
+<li><a href="#%ed%98%b8%ec%8a%a4%ed%8a%b8-%eb%90%9c-hosted-%ec%86%94%eb%a3%a8%ec%85%98">호스트 된(Hosted) 솔루션</a></li>
+
+
+
+
+<li><a href="#%ed%84%b4%ed%82%a4-turnkey-%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c-%ec%86%94%eb%a3%a8%ec%85%98">턴키(Turnkey) – 클라우드 솔루션</a></li>
+
+
+
+
+<li><a href="#%ed%84%b4%ed%82%a4-turnkey-%ec%98%a8-%ed%94%84%eb%a0%88%eb%af%b8%ec%8a%a4-on-premise-%ec%86%94%eb%a3%a8%ec%85%98">턴키(Turnkey) – 온-프레미스(On-Premise) 솔루션</a></li>
+
+
+
+
+<li><a href="#%ec%82%ac%ec%9a%a9%ec%9e%90-%ec%a7%80%ec%a0%95-custom-%ec%86%94%eb%a3%a8%ec%85%98">사용자 지정(Custom) 솔루션</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%eb%8b%a4%ec%9d%8c-%eb%82%b4%ec%9a%a9">다음 내용</a></li>
+
+
+
+</ul>
+
+
+<h2 id="로컬-머신-local-machine-솔루션">로컬 머신(Local-machine) 솔루션</h2>
+
+<p>로컬 머신 솔루션은 쿠버네티스를 시작하기에 쉬운 방법이다. 클라우드 자원(resource)과 한도(quota)에 대한 걱정 없이 쿠버네티스 클러스터를 생성하고 테스트할 수 있다.</p>
+
+<p>다음과 같은 사항을 원한다면 로컬 솔루션을 선택해야 한다.</p>
+
+<ul>
+<li>쿠버네티스를 써 보거나 배우기 시작하려고 함</li>
+<li>내부적으로 클러스터를 개발하거나 테스트하려고 함</li>
+</ul>
+
+<p><a href="/docs/setup/pick-right-solution/#local-machine-solutions">로컬 머신 솔루션</a> 중 하나를 선택하길 바란다.</p>
+
+<h2 id="호스트-된-hosted-솔루션">호스트 된(Hosted) 솔루션</h2>
+
+<p>호스트 된 솔루션은 쿠버네티스 클러스터를 생성하고 유지 관리하는데 편리한 방법이다. 호스트가 사용자의 클러스터를 관리하고 운영하기 때문에 사용자는 관리와 운영에서 자유롭다.</p>
+
+<p>다음의 경우 호스트 된 솔루션이 필요하다.</p>
+
+<ul>
+<li>완전히 관리된 솔루션을 원함</li>
+<li>사용자의 앱 또는 서비스를 개발에만 집중하고 싶음</li>
+<li>지정된 사이트 신뢰성 엔지니어링(SRE) 팀은 없지만 고가용성을 원함</li>
+<li>클러스터를 호스팅하고 모니터할 자원이 없음</li>
+</ul>
+
+<p><a href="/docs/setup/pick-right-solution/#hosted-solutions">호스트 된 솔루션</a> 중 하나를 선택하길 바란다.</p>
+
+<h2 id="턴키-turnkey-클라우드-솔루션">턴키(Turnkey) – 클라우드 솔루션</h2>
+
+<p>이와 같은 솔루션들은 쿠버네티스 클러스터를 단지 몇 가지 명령어로 생성하게 해준다. 솔루션들은 활발히 개발되며 활동적인 커뮤니티의 지원을 받는다. 또한 넓은 범위의 IaaS 클라우드 프로바이더들에 호스트 될 수 있음에도, 노력의 대가로 솔루션들은 더욱 더 큰 자유와 유연성을 제공한다.</p>
+
+<p>다음의 경우 턴키 클라우드 솔루션을 선택해야 한다.</p>
+
+<ul>
+<li>호스트 된 솔루션이 허용하는 것보다는 클러스터에 대한 더 높은 제어권을 원함</li>
+<li>운영에 대한 더 큰 소유권을 가지고 싶음</li>
+</ul>
+
+<p><a href="/docs/setup/pick-right-solution/#turnkey-cloud-solutions">턴키 클라우드 솔루션</a> 중 하나를 선택하길 바란다.</p>
+
+<h2 id="턴키-turnkey-온-프레미스-on-premise-솔루션">턴키(Turnkey) – 온-프레미스(On-Premise) 솔루션</h2>
+
+<p>이와 같은 솔루션들은 내부의, 안전한, 클라우드 네트워크에 쿠버네티스 클러스터를 단 몇 가지 명령어로 생성하게 해준다.</p>
+
+<p>다음의 경우 온-프레미스 턴키 솔루션을 선택해야 한다.</p>
+
+<ul>
+<li>프라이빗 클라우드 네트워크에 클러스터를 디플로이하길 원함</li>
+<li>지정된 사이트 신뢰성 엔지니어링(SRE) 팀을 보유함</li>
+<li>클러스터를 호스팅하고 모니터할 수 있는 자원을 보유함</li>
+</ul>
+
+<p><a href="/docs/setup/pick-right-solution/#on-premises-turnkey-cloud-solutions">온-프레미스 턴키 클라우드 솔루션</a> 중 하나를 선택하길 바란다.</p>
+
+<h2 id="사용자-지정-custom-솔루션">사용자 지정(Custom) 솔루션</h2>
+
+<p>사용자 지정 솔루션들은 클러스터에 대해서 가장 큰 자유를 제공하지만, 그 대신 높은 전문성을 필요로 한다. 이 솔루션들은 서로 다른 운영체제들에 대해서 베어메탈부터 클라우드 프로바이더들까지의 지원을 포함한다.</p>
+
+<p><a href="/docs/setup/pick-right-solution/#custom-solutions">사용자 지정 솔루션</a> 중 하나를 선택하길 바란다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="다음-내용">다음 내용</h2>
+<p>완전한 솔루션 리스트를 확인하기 위해서는 <a href="/docs/setup/pick-right-solution/">올바른 솔루션 선택하기</a>로 가길 바란다.</p>
+
+
+
+
+
+
+	 
+
+
+  
+  <h2>피드백</h2>
+  <p class="feedback--prompt">이 페이지가 도움이 되었나요? </p>
+  <button class="button feedback--yes">네</button>
+  <button class="button feedback--no">아니요</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5csetup%5c_index.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/ko/docs%5csetup%5c_index.md" class="button issue">페이지 편집하기</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    최종 수정일시 January 16, 2019 at 8:31 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/848a46a3b7a831fe3e906388f358c8793bf8591b/">Fourth Korean l10n work for release-1.13 (#12242)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5csetup%5c_index.md">페이지 변경 이력</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/ko/docs/home/">홈</a>
+            
+            
+            
+            
+            
+            
+            
+            <a href="/ko/case-studies/">사례 연구</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">기여하기</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>JSONPath Support - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/docs/reference/kubectl/jsonpath/">
+<meta property="og:title" content="JSONPath Support">
+<meta name="twitter:title" content="JSONPath Support">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/docs/" class="active">Documentation</a></li>
+            
+            <li><a href="/blog/">Blog</a></li>
+            
+            <li><a href="/partners/">Partners</a></li>
+            
+            <li><a href="/community/">Community</a></li>
+            
+            <li><a href="/case-studies/">Case Studies</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    English <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/fr/docs/reference/kubectl/jsonpath/">Français</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/docs/home/">Documentation</a></h3>
+           <p>Learn how to use Kubernetes with conceptual, tutorial, and reference documentation. You can even <a href="/editdocs/" data-auto-burger-exclude>help contribute to the docs</a>!</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/blog/">Blog</a></h3>
+           <p>Read the latest news for Kubernetes and the containers space in general, and get technical how-tos hot off the presses.</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">Interested in hacking on the core Kubernetes code base?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>View On Github</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">Explore the community</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Reference</h1>
+<h5></h5>
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/docs/home/">HOME</a></li>
+		
+		
+		<li><a href="/docs/surfaceanalyst/">SURFACEANALYSIS</a></li>
+		
+		
+		<li><a href="/docs/setup/">SETUP</a></li>
+		
+		
+		<li><a href="/docs/concepts/">CONCEPTS</a></li>
+		
+		
+		<li><a href="/docs/tasks/">TASKS</a></li>
+		
+		
+		<li><a href="/docs/tutorials/">TUTORIALS</a></li>
+		
+		
+		<li><a href="/docs/reference/" class="YAH">REFERENCE</a></li>
+		
+		
+		<li><a href="/docs/contribute/">CONTRIBUTE</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="Reference" href="/docs/reference/"></a>
+
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Standardized Glossary" href="/docs/reference/glossary/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Kubernetes Issues and Security">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Kubernetes Issue Tracker" href="/docs/reference/issues-security/issues/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes Security and Disclosure Information" href="/docs/reference/issues-security/security/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Using the Kubernetes API">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Kubernetes API Overview" href="/docs/reference/using-api/api-overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes API Concepts" href="/docs/reference/using-api/api-concepts/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Client Libraries" href="/docs/reference/using-api/client-libraries/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes Deprecation Policy" href="/docs/reference/using-api/deprecation-policy/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Accessing the API">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Controlling Access to the Kubernetes API" href="/docs/reference/access-authn-authz/controlling-access/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Authenticating" href="/docs/reference/access-authn-authz/authentication/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Authenticating with Bootstrap Tokens" href="/docs/reference/access-authn-authz/bootstrap-tokens/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Using Admission Controllers" href="/docs/reference/access-authn-authz/admission-controllers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Dynamic Admission Control" href="/docs/reference/access-authn-authz/extensible-admission-controllers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Managing Service Accounts" href="/docs/reference/access-authn-authz/service-accounts-admin/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Authorization Overview" href="/docs/reference/access-authn-authz/authorization/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Using RBAC Authorization" href="/docs/reference/access-authn-authz/rbac/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Using ABAC Authorization" href="/docs/reference/access-authn-authz/abac/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Using Node Authorization" href="/docs/reference/access-authn-authz/node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Webhook Mode" href="/docs/reference/access-authn-authz/webhook/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="API Reference">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Well-Known Labels, Annotations and Taints" href="/docs/reference/kubernetes-api/labels-annotations-taints/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="v1.13" href="/docs/reference/kubernetes-api/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Federation API">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="extensions/v1beta1 Model Definitions" href="/docs/reference/federation/extensions/v1beta1/definitions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="extensions/v1beta1 Operations" href="/docs/reference/federation/extensions/v1beta1/operations/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="federation/v1beta1 Model Definitions" href="/docs/reference/federation/federation/v1beta1/definitions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="federation/v1beta1 Operations" href="/docs/reference/federation/federation/v1beta1/operations/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="v1 Model Definitions" href="/docs/reference/federation/v1/definitions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="v1 Operations" href="/docs/reference/federation/v1/operations/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Setup tools reference">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+<div class="item" data-title="Kubeadm">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Overview of kubeadm" href="/docs/reference/setup-tools/kubeadm/kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadm init" href="/docs/reference/setup-tools/kubeadm/kubeadm-init/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadm join" href="/docs/reference/setup-tools/kubeadm/kubeadm-join/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadm upgrade" href="/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadm config" href="/docs/reference/setup-tools/kubeadm/kubeadm-config/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadm reset" href="/docs/reference/setup-tools/kubeadm/kubeadm-reset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadm token" href="/docs/reference/setup-tools/kubeadm/kubeadm-token/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadm version" href="/docs/reference/setup-tools/kubeadm/kubeadm-version/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadm alpha" href="/docs/reference/setup-tools/kubeadm/kubeadm-alpha/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadm init phase" href="/docs/reference/setup-tools/kubeadm/kubeadm-init-phase/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Implementation details" href="/docs/reference/setup-tools/kubeadm/implementation-details/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="kubefed">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="kubefed" href="/docs/reference/setup-tools/kubefed/kubefed/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubefed options" href="/docs/reference/setup-tools/kubefed/kubefed_options/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubefed init" href="/docs/reference/setup-tools/kubefed/kubefed_init/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubefed join" href="/docs/reference/setup-tools/kubefed/kubefed_join/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubefed unjoin" href="/docs/reference/setup-tools/kubefed/kubefed_unjoin/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubefed version" href="/docs/reference/setup-tools/kubefed/kubefed_version/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Command line tools reference">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Feature Gates" href="/docs/reference/command-line-tools-reference/feature-gates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubelet authentication/authorization" href="/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="TLS bootstrapping" href="/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="cloud-controller-manager" href="/docs/reference/command-line-tools-reference/cloud-controller-manager/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="federation-apiserver" href="/docs/reference/command-line-tools-reference/federation-apiserver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="federation-controller-manager" href="/docs/reference/command-line-tools-reference/federation-controller-manager/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kube-apiserver" href="/docs/reference/command-line-tools-reference/kube-apiserver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kube-controller-manager" href="/docs/reference/command-line-tools-reference/kube-controller-manager/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kube-proxy" href="/docs/reference/command-line-tools-reference/kube-proxy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kube-scheduler" href="/docs/reference/command-line-tools-reference/kube-scheduler/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubelet" href="/docs/reference/command-line-tools-reference/kubelet/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="kubectl CLI">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Overview of kubectl" href="/docs/reference/kubectl/overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="JSONPath Support" href="/docs/reference/kubectl/jsonpath/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubectl" href="/docs/reference/kubectl/kubectl/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubectl Cheat Sheet" href="/docs/reference/kubectl/cheatsheet/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubectl Commands" href="/docs/reference/kubectl/kubectl-cmds/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubectl Usage Conventions" href="/docs/reference/kubectl/conventions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubectl for Docker Users" href="/docs/reference/kubectl/docker-cli-to-kubectl/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Tools" href="/docs/reference/tools/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/en/docs%5creference%5ckubectl%5cjsonpath.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>JSONPath Support</h1>
+
+
+
+<p>Kubectl supports JSONPath template.</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<p>JSONPath template is composed of JSONPath expressions enclosed by curly braces {}.
+Kubectl uses JSONPath expressions to filter on specific fields in the JSON object and format the output.
+In addition to the original JSONPath template syntax, the following functions and syntax are valid:</p>
+
+<ol>
+<li>Use double quotes to quote text inside JSONPath expressions.</li>
+<li>Use the <code>range</code>, <code>end</code> operators to iterate lists.</li>
+<li>Use negative slice indices to step backwards through a list. Negative indices do not &ldquo;wrap around&rdquo; a list and are valid as long as <code>-index + listLength &gt;= 0</code>.</li>
+</ol>
+
+<blockquote class="note">
+  <div><strong>Note:</strong> <ul>
+<li><p>The <code>$</code> operator is optional since the expression always starts from the root object by default.</p></li>
+
+<li><p>The result object is printed as its String() function.</p></li>
+</ul>
+</div>
+</blockquote>
+
+<p>Given the JSON input:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#008000;font-weight:bold">&#34;kind&#34;</span>: <span style="color:#b44">&#34;List&#34;</span>,
+  <span style="color:#008000;font-weight:bold">&#34;items&#34;</span>:[
+    {
+      <span style="color:#008000;font-weight:bold">&#34;kind&#34;</span>:<span style="color:#b44">&#34;None&#34;</span>,
+      <span style="color:#008000;font-weight:bold">&#34;metadata&#34;</span>:{<span style="color:#008000;font-weight:bold">&#34;name&#34;</span>:<span style="color:#b44">&#34;127.0.0.1&#34;</span>},
+      <span style="color:#008000;font-weight:bold">&#34;status&#34;</span>:{
+        <span style="color:#008000;font-weight:bold">&#34;capacity&#34;</span>:{<span style="color:#008000;font-weight:bold">&#34;cpu&#34;</span>:<span style="color:#b44">&#34;4&#34;</span>},
+        <span style="color:#008000;font-weight:bold">&#34;addresses&#34;</span>:[{<span style="color:#008000;font-weight:bold">&#34;type&#34;</span>: <span style="color:#b44">&#34;LegacyHostIP&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;address&#34;</span>:<span style="color:#b44">&#34;127.0.0.1&#34;</span>}]
+      }
+    },
+    {
+      <span style="color:#008000;font-weight:bold">&#34;kind&#34;</span>:<span style="color:#b44">&#34;None&#34;</span>,
+      <span style="color:#008000;font-weight:bold">&#34;metadata&#34;</span>:{<span style="color:#008000;font-weight:bold">&#34;name&#34;</span>:<span style="color:#b44">&#34;127.0.0.2&#34;</span>},
+      <span style="color:#008000;font-weight:bold">&#34;status&#34;</span>:{
+        <span style="color:#008000;font-weight:bold">&#34;capacity&#34;</span>:{<span style="color:#008000;font-weight:bold">&#34;cpu&#34;</span>:<span style="color:#b44">&#34;8&#34;</span>},
+        <span style="color:#008000;font-weight:bold">&#34;addresses&#34;</span>:[
+          {<span style="color:#008000;font-weight:bold">&#34;type&#34;</span>: <span style="color:#b44">&#34;LegacyHostIP&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;address&#34;</span>:<span style="color:#b44">&#34;127.0.0.2&#34;</span>},
+          {<span style="color:#008000;font-weight:bold">&#34;type&#34;</span>: <span style="color:#b44">&#34;another&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;address&#34;</span>:<span style="color:#b44">&#34;127.0.0.3&#34;</span>}
+        ]
+      }
+    }
+  ],
+  <span style="color:#008000;font-weight:bold">&#34;users&#34;</span>:[
+    {
+      <span style="color:#008000;font-weight:bold">&#34;name&#34;</span>: <span style="color:#b44">&#34;myself&#34;</span>,
+      <span style="color:#008000;font-weight:bold">&#34;user&#34;</span>: {}
+    },
+    {
+      <span style="color:#008000;font-weight:bold">&#34;name&#34;</span>: <span style="color:#b44">&#34;e2e&#34;</span>,
+      <span style="color:#008000;font-weight:bold">&#34;user&#34;</span>: {<span style="color:#008000;font-weight:bold">&#34;username&#34;</span>: <span style="color:#b44">&#34;admin&#34;</span>, <span style="color:#008000;font-weight:bold">&#34;password&#34;</span>: <span style="color:#b44">&#34;secret&#34;</span>}
+    }
+  ]
+}</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+<th>Result</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>text</td>
+<td>the plain text</td>
+<td>kind is {.kind}</td>
+<td>kind is List</td>
+</tr>
+
+<tr>
+<td>@</td>
+<td>the current object</td>
+<td>{@}</td>
+<td>the same as input</td>
+</tr>
+
+<tr>
+<td>. or []</td>
+<td>child operator</td>
+<td>{.kind} or {[&lsquo;kind&rsquo;]}</td>
+<td>List</td>
+</tr>
+
+<tr>
+<td>..</td>
+<td>recursive descent</td>
+<td>{..name}</td>
+<td>127.0.0.1 127.0.0.2 myself e2e</td>
+</tr>
+
+<tr>
+<td>*</td>
+<td>wildcard. Get all objects</td>
+<td>{.items[*].metadata.name}</td>
+<td>[127.0.0.1 127.0.0.2]</td>
+</tr>
+
+<tr>
+<td>[start:end :step]</td>
+<td>subscript operator</td>
+<td>{.users[0].name}</td>
+<td>myself</td>
+</tr>
+
+<tr>
+<td>[,]</td>
+<td>union operator</td>
+<td>{.items[*][&lsquo;metadata.name&rsquo;, &lsquo;status.capacity&rsquo;]}</td>
+<td>127.0.0.1 127.0.0.2 map[cpu:4] map[cpu:8]</td>
+</tr>
+
+<tr>
+<td>?()</td>
+<td>filter</td>
+<td>{.users[?(@.name==&ldquo;e2e&rdquo;)].user.password}</td>
+<td>secret</td>
+</tr>
+
+<tr>
+<td>range, end</td>
+<td>iterate list</td>
+<td>{range .items[*]}[{.metadata.name}, {.status.capacity}] {end}</td>
+<td>[127.0.0.1, map[cpu:4]] [127.0.0.2, map[cpu:8]]</td>
+</tr>
+
+<tr>
+<td>&ldquo;</td>
+<td>quote interpreted string</td>
+<td>{range .items[*]}{.metadata.name}{&rsquo;\t&rsquo;}{end}</td>
+<td>127.0.0.1    127.0.0.2</td>
+</tr>
+</tbody>
+</table>
+
+<p>Examples using <code>kubectl</code> and JSONPath expressions:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get pods -o json
+kubectl get pods -o<span style="color:#666">=</span><span style="color:#b8860b">jsonpath</span><span style="color:#666">=</span><span style="color:#b44">&#39;{@}&#39;</span>
+kubectl get pods -o<span style="color:#666">=</span><span style="color:#b8860b">jsonpath</span><span style="color:#666">=</span><span style="color:#b44">&#39;{.items[0]}&#39;</span>
+kubectl get pods -o<span style="color:#666">=</span><span style="color:#b8860b">jsonpath</span><span style="color:#666">=</span><span style="color:#b44">&#39;{.items[0].metadata.name}&#39;</span>
+kubectl get pods -o<span style="color:#666">=</span><span style="color:#b8860b">jsonpath</span><span style="color:#666">=</span><span style="color:#b44">&#39;{range .items[*]}{.metadata.name}{&#34;\t&#34;}{.status.startTime}{&#34;\n&#34;}{end}&#39;</span></code></pre></div>
+<p>On Windows, you must <em>double</em> quote any JSONPath template that contains spaces (not single quote as shown above for bash). This in turn means that you must use a single quote or escaped double quote around any literals in the template. For example:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">C:<span style="color:#a0a000">\</span><span style="color:#080;font-style:italic">&gt; kubectl get pods -o=jsonpath=&#34;{range .items[*]}{.metadata.name}{&#39;\t&#39;}{.status.startTime}{&#39;\n&#39;}{end}&#34;</span>
+C:<span style="color:#a0a000">\</span><span style="color:#080;font-style:italic">&gt; kubectl get pods -o=jsonpath=&#34;{range .items[*]}{.metadata.name}{\&#34;\t\&#34;}{.status.startTime}{\&#34;\n\&#34;}{end}&#34;</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/docs/reference/kubectl/overview/" title="Overview of kubectl"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Overview of kubectl</a>
+<a class="nav nav-next" href="/docs/reference/kubectl/kubectl/" title="kubectl">Next - kubectl <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>Feedback</h2>
+  <p class="feedback--prompt">Was this page helpful? </p>
+  <button class="button feedback--yes">Yes</button>
+  <button class="button feedback--no">No</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5creference%5ckubectl%5cjsonpath.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/docs\/reference\/kubectl\/jsonpath\/",
+    "title" : "JSONPath Support",
+    "permalink" : "https:\/\/docstest.github.io\/docs\/reference\/kubectl\/jsonpath\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">Create an Issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/en/docs%5creference%5ckubectl%5cjsonpath.md" class="button issue">Edit This Page</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    Page last modified on March 07, 2019 at 3:01 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/d3cca48e3f342fb3dcb93cf60a59e0f301185f13/">Code snippents shouldn&#39;t include the command prompt (#12779)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5creference%5ckubectl%5cjsonpath.md">Page History</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/docs/home/">Home</a>
+            
+            <a href="/blog/">Blog</a>
+            
+            <a href="/partners/">Partners</a>
+            
+            <a href="/community/">Community</a>
+            
+            <a href="/case-studies/">Case Studies</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">Contribute</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

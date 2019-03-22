@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>알맞은 솔루션 선정 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/ko/docs/setup/pick-right-solution/">
+<meta property="og:title" content="알맞은 솔루션 선정">
+<meta name="twitter:title" content="알맞은 솔루션 선정">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/ko/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/ko/docs/" class="active">문서</a></li>
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="/ko/case-studies/">사례 연구</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    한국어 Korean <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/setup/pick-right-solution/">English</a></li>
+                
+                    <li><a href="/ja/docs/setup/pick-right-solution/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/docs/setup/pick-right-solution/">Français</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="검색하기" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/ko/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/ko/docs/home/">문서</a></h3>
+           <p>개념, 튜토리얼 및 참조 문서와 함께 쿠버네티스 사용하는 방법을 익힐 수 있다. 또한, <a href="/editdocs/" data-auto-burger-exclude>문서에 기여하는 것도 도움을 줄 수 있다</a>!</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">코어 쿠버네티스 코드 베이스를 살펴보는데 관심이 있으십니까?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>GitHub에서 보기</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">커뮤니티 둘러보기</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>설치</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/ko/docs/home/">홈</a></li>
+		
+		
+		<li><a href="/ko/docs/setup/" class="YAH">설치</a></li>
+		
+		
+		<li><a href="/ko/docs/concepts/">개념</a></li>
+		
+		
+		<li><a href="/ko/docs/tasks/">태스크</a></li>
+		
+		
+		<li><a href="/ko/docs/tutorials/">튜토리얼</a></li>
+		
+		
+		<li><a href="/ko/docs/reference/">레퍼런스</a></li>
+		
+		
+		<li><a href="/ko/docs/contribute/">기여</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="검색하기" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="설치" href="/ko/docs/setup/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="알맞은 솔루션 선정" href="/ko/docs/setup/pick-right-solution/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="쿠버네티스 다운로드">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="v1.13 Release Notes <small>(EN)</small>" href="/docs/setup/release/notes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="릴리스 빌드" href="/ko/docs/setup/release/building-from-source/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="kubeadm으로 클러스터 부트스트래핑 하기">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing kubeadm <small>(EN)</small>" href="/docs/setup/independent/install-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Creating a single master cluster with kubeadm <small>(EN)</small>" href="/docs/setup/independent/create-cluster-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Customizing control plane configuration with kubeadm <small>(EN)</small>" href="/docs/setup/independent/control-plane-flags/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Options for Highly Available Topology <small>(EN)</small>" href="/docs/setup/independent/ha-topology/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Creating Highly Available Clusters with kubeadm <small>(EN)</small>" href="/docs/setup/independent/high-availability/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up a High Availability etcd cluster with kubeadm <small>(EN)</small>" href="/docs/setup/independent/setup-ha-etcd-with-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configuring each kubelet in your cluster using kubeadm <small>(EN)</small>" href="/docs/setup/independent/kubelet-integration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Troubleshooting kubeadm <small>(EN)</small>" href="/docs/setup/independent/troubleshooting-kubeadm/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="턴키 클라우드 솔루션">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on AWS EC2 <small>(EN)</small>" href="/docs/setup/turnkey/aws/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Alibaba Cloud <small>(EN)</small>" href="/docs/setup/turnkey/alibaba-cloud/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Azure <small>(EN)</small>" href="/docs/setup/turnkey/azure/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on CenturyLink Cloud <small>(EN)</small>" href="/docs/setup/turnkey/clc/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Google Compute Engine <small>(EN)</small>" href="/docs/setup/turnkey/gce/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Multiple Clouds with IBM Cloud Private <small>(EN)</small>" href="/docs/setup/turnkey/icp/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Multiple Clouds with Stackpoint.io <small>(EN)</small>" href="/docs/setup/turnkey/stackpoint/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="사용자 지정 클라우드 솔루션">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing Kubernetes On-premises/Cloud Providers with Kubespray <small>(EN)</small>" href="/docs/setup/custom-cloud/kubespray/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kops로 AWS에 쿠버네티스 설치하기" href="/ko/docs/setup/custom-cloud/kops/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="온-프레미스 VM">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cloudstack <small>(EN)</small>" href="/docs/setup/on-premises-vm/cloudstack/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes on DC/OS <small>(EN)</small>" href="/docs/setup/on-premises-vm/dcos/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="oVirt <small>(EN)</small>" href="/docs/setup/on-premises-vm/ovirt/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Version and Version Skew Support Policy <small>(EN)</small>" href="/docs/setup/version-skew-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="대형 클러스터 구축" href="/ko/docs/setup/cluster-large/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="여러 영역에서 구동" href="/ko/docs/setup/multiple-zones/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="CRI 설치" href="/ko/docs/setup/cri/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing Kubernetes with Digital Rebar Provision (DRP) via KRIB <small>(EN)</small>" href="/docs/setup/on-premises-metal/krib/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Minikube로 로컬 상에서 쿠버네티스 구동" href="/ko/docs/setup/minikube/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="PKI 인증서 및 요구 조건" href="/ko/docs/setup/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="노드 구성 검증하기" href="/ko/docs/setup/node-conformance/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="맨 처음부터 사용자 지정 클러스터 생성" href="/ko/docs/setup/scratch/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/ko/docs%5csetup%5cpick-right-solution.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>알맞은 솔루션 선정</h1>
+
+
+
+<p>쿠버네티스는 랩탑부터 클라우드 공급자의 VM들, 베어메탈 서버 랙까지 다양한 플랫폼에서 작동 가능하다.
+클러스터 구성을 위해 필요한 노력은 하나의 단일 명령어를 실행시키는 수준에서 직접 자신만의 맞춤형 클러스터를 세밀하게 만드는 수준에 이르기까지 다양하다.
+알맞은 솔루션을 선택하기 위해서 이 가이드를 사용하자.</p>
+
+<p>쿠버네티스를 시도해보기를 원한다면, <a href="#로컬-머신-솔루션">로컬 Docker 기반의 솔루션</a>을 사용하자.</p>
+
+<p>더 많은 머신과 높은 가용성으로 확장할 준비가 되었다면, <a href="#호스트-된-솔루션">호스트 된 솔루션</a>이 생성하고 유지하기에 가장 쉽다.</p>
+
+<p><a href="#턴키-클라우드-솔루션">턴키 클라우드 솔루션</a>은 클라우드 공급자들의 넓은 범위를 다루고 생성하기 위해서 약간의 명령어가 필요하다.
+<a href="#온-프레미스-턴키-클라우드-솔루션">온-프레미스 턴키 클라우드 솔루션</a>은 프라이빗 네트워크의 보안과 결합된 턴키 클라우드 솔루션의 단순함을 가진다.</p>
+
+<p>호스팅한 자원을 구성하는 방법을 이미 가지고 있다면, 머신 당 단일 명령어로 클러스터를 만들어내기 위해서 <a href="/docs/setup/independent/create-cluster-kubeadm/">kubeadm</a>을 사용하자.</p>
+
+<p><a href="#사용자-지정-솔루션">사용자 지정 솔루션</a>은 단계별 지침부터 쿠버네티스 클러스터를 처음부터 설정하기 위한 일반적인 조언까지 다양하다.</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%eb%a1%9c%ec%bb%ac-%eb%a8%b8%ec%8b%a0-%ec%86%94%eb%a3%a8%ec%85%98">로컬 머신 솔루션</a></li>
+
+
+
+
+<li><a href="#%ed%98%b8%ec%8a%a4%ed%8a%b8-%eb%90%9c-%ec%86%94%eb%a3%a8%ec%85%98">호스트 된 솔루션</a></li>
+
+
+
+
+<li><a href="#%ed%84%b4%ed%82%a4-%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c-%ec%86%94%eb%a3%a8%ec%85%98">턴키 클라우드 솔루션</a></li>
+
+
+
+
+<li><a href="#%ec%98%a8-%ed%94%84%eb%a0%88%eb%af%b8%ec%8a%a4-%ed%84%b4%ed%82%a4-%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c-%ec%86%94%eb%a3%a8%ec%85%98">온-프레미스 턴키 클라우드 솔루션</a></li>
+
+
+
+
+<li><a href="#%ec%82%ac%ec%9a%a9%ec%9e%90-%ec%a7%80%ec%a0%95-%ec%86%94%eb%a3%a8%ec%85%98">사용자 지정 솔루션</a></li>
+
+
+
+
+<li><a href="#%ec%86%94%eb%a3%a8%ec%85%98-%ed%91%9c">솔루션 표</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<h2 id="로컬-머신-솔루션">로컬 머신 솔루션</h2>
+
+<ul>
+<li><p><a href="/docs/setup/minikube/">Minikube</a>는 개발과 테스트를 위한 단일 노드 쿠버네티스 클러스터를 로컬에 생성하기 위한 하나의 방법이다. 설치는 완전히 자동화 되어 있고, 클라우드 공급자 계정 정보가 필요하지 않다.</p></li>
+
+<li><p><a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop</a>는
+Mac 또는 Windows 환경에서 쉽게 설치 가능한 애플리케이션이다.
+수 분 내에 단일 노드 쿠버네티스 클러스터에서 컨테이너로 코딩과 배포를
+시작할 수 있게 해준다.</p></li>
+
+<li><p><a href="https://docs.okd.io/latest/minishift/" target="_blank">Minishift</a>는 커뮤니티 버전의 쿠버네티스 엔터프라이즈 플랫폼 OpenShift를 로컬 개발과 테스트 용으로 설치한다. Windows, macOS와 리눅스를 위한 all-in-one VM (<code>minishift start</code>)과 컨테이너 기반의 <code>oc cluster up</code> (리눅스 전용)을 지원하고 <a href="https://github.com/minishift/minishift-addons/tree/master/add-ons" target="_blank">포함된 애드온</a>을 설치할 수 있다.</p></li>
+
+<li><p><a href="https://microk8s.io/" target="_blank">Microk8s</a>는 개발과 테스트를 위한 쿠버네티스 최신 버전을 단일 명령어로 로컬 머신 상의 설치를 제공한다. 설치는 신속하고 빠르며(~30초) 단일 명령어로 Istio를 포함한 많은 플러그인을 지원한다.</p></li>
+
+<li><p><a href="https://github.com/IBM/deploy-ibm-cloud-private" target="_blank">IBM Cloud Private-CE (Community Edition)</a>는 개발과 테스트 시나리오를 위해 1개 또는 더 많은 VM에 쿠버네티스를 배포하기 위해서 머신의 VirtualBox를 사용할 수 있다. 이는 전체 멀티 노드 클러스터로 확장할 수 있다.</p></li>
+
+<li><p><a href="https://github.com/HSBawa/icp-ce-on-linux-containers" target="_blank">IBM Cloud Private-CE (Community Edition) on Linux Containers</a>는 Terraform/Packer/BASH 기반의 리눅스 호스트 상의 LXD 클러스터에 7개의 노드(부트 1개, 마스터 1개, 관리 1개, 프록시 1개 그리고 워커 3개)를 생성하기 위한 Infrastructure as Code (IaC) 스크립트이다.</p></li>
+
+<li><p><a href="https://github.com/kubernetes-sigs/kubeadm-dind-cluster" target="_blank">Kubeadm-dind</a>는 하나의 docker 데몬이 필요한 멀티 노드 쿠버네티스 클러스터이다.(minikube는 단일 노드이다.) 클러스터 생성을 위해서 docker-in-docker 기술을 사용한다.</p></li>
+
+<li><p><a href="/docs/getting-started-guides/ubuntu/local/">Ubuntu on LXD</a>는 로컬 호스트에서 9개의 인스턴스 배포를 지원한다.</p></li>
+</ul>
+
+<h2 id="호스트-된-솔루션">호스트 된 솔루션</h2>
+
+<ul>
+<li><p><a href="https://appscode.com/products/cloud-deployment/" target="_blank">AppsCode.com</a>는 AWS와 Google Cloud Platform을 포함하여 다양한 퍼블릭 클라우드의 관리형 쿠버네티스 클러스터를 제공한다.</p></li>
+
+<li><p><a href="https://appuio.ch" target="_blank">APPUiO</a>는 쿠버네티스 워크로드를 지원하는 OpenShift 퍼블릭 클라우드 플랫폼을 구동한다. 게다가 APPUiO는 퍼블릭 또는 프라이빗 클라우드에서 구동 중인 프라이빗 OpenShift 클러스터 관리를 제공한다.</p></li>
+
+<li><p><a href="https://aws.amazon.com/eks/" target="_blank">Amazon Elastic Container Service for Kubernetes</a>는 관리형 쿠버네티스 서비스를 제공한다.</p></li>
+
+<li><p><a href="https://azure.microsoft.com/services/container-service/" target="_blank">Azure Kubernetes Service</a>는 관리형 쿠버네티스 클러스터를 제공한다.</p></li>
+
+<li><p><a href="https://containership.io/containership-platform" target="_blank">Containership Kubernetes Engine (CKE)</a>는 GCP, Azure, AWS, Packet과 DigitalOcean 상에서 직관적인 쿠버네티스 클러스터 프로비저닝과 관리 기능을 제공한다. 매끄러운 버전 업그레이드, 오토스케일링, 메트릭, 워크로드 생성 등을 지원한다.</p></li>
+
+<li><p><a href="https://www.digitalocean.com/products/kubernetes/" target="_blank">DigitalOcean Kubernetes</a> 관리형 쿠버네티스 서비스를 제공한다.</p></li>
+
+<li><p><a href="https://giantswarm.io/product/" target="_blank">Giant Swarm</a>은 온-프레미스 또는 퍼블릭 클라우드 데이터센터 내에서 관리형 쿠버네티스 클러스터를 제공한다.</p></li>
+
+<li><p><a href="https://cloud.google.com/kubernetes-engine/" target="_blank">Google Kubernetes Engine</a>은 관리형 쿠버네티스 클러스터를 제공한다.</p></li>
+
+<li><p><a href="https://cloud.ibm.com/docs/containers?topic=containers-container_index#container_index" target="_blank">IBM Cloud Kubernetes Service</a>는 관리형 쿠버네티스 클러스터를 제공한다. 그와 함께 격리 종류, 운영 도구, 이미지와 컨테이너 통합된 보안 통찰력, Watson, IoT, 데이터와의 통합도 제공한다.</p></li>
+
+<li><p><a href="https://www.loodse.com" target="_blank">Kubermatic</a>는 AWS와  Digital Ocean을 포함한 다양한 퍼블릭 클라우드뿐만 아니라 온-프레미스 상의 OpenStack 통합을 위한 관리형 쿠버네티스 클러스터를 제공한다.</p></li>
+
+<li><p><a href="https://kublr.com" target="_blank">Kublr</a>는 AWS, Azure, GCP 및 온-프레미스에서 기업 수준의 안전하고, 확장 가능하며, 신뢰성 높은 쿠버네티스 클러스터를 제공한다. 여기에는 즉시 사용 가능한 백업 및 재해 복구, 중앙 집중식 다중 클러스터 로깅 및  모니터링, 내장 경고 서비스가 포함된다.</p></li>
+
+<li><p><a href="https://kubesail.com" target="_blank">KubeSail</a>는 쿠버네티스를 쉽고, 무료로 시도할 수 있는 방법이다.</p></li>
+
+<li><p><a href="https://madcore.ai" target="_blank">Madcore.Ai</a>는 AWS에서 쿠버네티스 인프라를 배포하기 위한 devops 중심의 CLI 도구이다. 또한 마스터, 스팟 인스턴스 그룹 노드 오토-스케일링, ingress-ssl-lego, Heapster, Grafana를 지원한다.</p></li>
+
+<li><p><a href="https://www.nutanix.com/products/karbon/" target="_blank">Nutanix Karbon</a>는 다중 클러스터의 고 가용성 쿠버네티스 관리 운영 플랫폼으로, 쿠버네티스의 프로비저닝, 운영 및 라이프 사이클 관리를 단순화해준다.</p></li>
+
+<li><p><a href="https://www.openshift.com/dedicated/" target="_blank">OpenShift Dedicated</a>는 OpenShift의 관리형 쿠버네티스 클러스터를 제공한다.</p></li>
+
+<li><p><a href="https://www.openshift.com/features/" target="_blank">OpenShift Online</a>은 쿠버네티스 애플리케이션을 위해 호스트 된 무료 접근을 제공한다.</p></li>
+
+<li><p><a href="https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengoverview.htm" target="_blank">Oracle Container Engine for Kubernetes</a>는 컨테이너 애플리케이션을 클라우드에 배포하는 데 사용할 수 있는 완벽하게 관리되고, 확장 가능하며, 가용성이 높은 서비스이다.</p></li>
+
+<li><p><a href="https://platform9.com/products/kubernetes/" target="_blank">Platform9</a>는 온-프레미스 또는 모든 퍼블릭 클라우드에서 관리형 쿠버네티스를 제공한다. 또한, 24/7 상태 모니터링 및 알람 및 경고 서비스를 제공한다.(Kube2go는 웹 UI 기반의 쿠버네티스 클러스터 배포 서비스인 Platform9가 Platform9 Sandbox에 통합된 형태로 출시되었다.)</p></li>
+
+<li><p><a href="https://stackpoint.io" target="_blank">Stackpoint.io</a>는 다중 퍼블릭 클라우드에서 쿠버네티스 인프라 자동화 및 관리 기능을 제공한다.</p></li>
+
+<li><p><a href="https://www.syseleven.io/products-services/managed-kubernetes/" target="_blank">SysEleven MetaKube</a>는 자체 OpenStack 퍼블릭 클라우드 상에서 서비스로써 관리형 쿠버네티스를 제공한다. 라이프사이클 관리, 관리 대시보드, 모니터링, 오토스케일링과 그 밖에 많은 기능을 포함한다.</p></li>
+
+<li><p><a href="https://cloud.vmware.com/vmware-cloud-pks" target="_blank">VMware Cloud PKS</a>는 사용하기 쉽고, 기본적으로 안전하며, 비용 효율적인 SaaS 기반의 쿠버네티스 클러스터를 제공하는 VMWare 클라우드 서비스 포트폴리오의 엔터프라이즈 Kubernetes-as-a-Service 오퍼링이다.</p></li>
+</ul>
+
+<h2 id="턴키-클라우드-솔루션">턴키 클라우드 솔루션</h2>
+
+<p>다음 솔루션들은 클라우드 IaaS 공급자의 범위에서 몇 안 되는 명령어로 쿠버네티스 클러스터를 생성을 허용한다. 이러한 솔루션은 활발히 개발되었고 활발한 커뮤니티 지원을 한다.</p>
+
+<ul>
+<li><a href="https://www.agilestacks.com/products/kubernetes" target="_blank">Agile Stacks</a></li>
+<li><a href="/docs/setup/turnkey/alibaba-cloud/">Alibaba Cloud</a></li>
+<li><a href="https://appuio.ch" target="_blank">APPUiO</a></li>
+<li><a href="/docs/setup/turnkey/aws/">AWS</a></li>
+<li><a href="/docs/setup/turnkey/azure/">Azure</a></li>
+<li><a href="/docs/setup/turnkey/clc/">CenturyLink Cloud</a></li>
+<li><a href="/docs/getting-started-guides/ubuntu/">Conjure-up Kubernetes with Ubuntu on AWS, Azure, Google Cloud, Oracle Cloud</a></li>
+<li><a href="https://containership.io/containership-platform" target="_blank">Containership</a></li>
+<li><a href="https://www.docker.com/products/docker-enterprise" target="_blank">Docker Enterprise</a></li>
+<li><a href="https://gardener.cloud/" target="_blank">Gardener</a></li>
+<li><a href="https://giantswarm.io" target="_blank">Giant Swarm</a></li>
+<li><a href="/docs/setup/turnkey/gce/">Google Compute Engine (GCE)</a></li>
+<li><a href="https://github.com/patrocinio/kubernetes-softlayer" target="_blank">IBM Cloud</a></li>
+<li><a href="https://kontena.io/pharos/" target="_blank">Kontena Pharos</a></li>
+<li><a href="https://cloud.kubermatic.io" target="_blank">Kubermatic</a></li>
+<li><a href="https://kublr.com/" target="_blank">Kublr</a></li>
+<li><a href="https://madcore.ai/" target="_blank">Madcore.Ai</a></li>
+<li><a href="https://nirmata.com/" target="_blank">Nirmata</a></li>
+<li><a href="https://www.nutanix.com/products/karbon/" target="_blank">Nutanix Karbon</a></li>
+<li><a href="https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengprerequisites.htm" target="_blank">Oracle Container Engine for K8s</a></li>
+<li><a href="https://pivotal.io/platform/pivotal-container-service" target="_blank">Pivotal Container Service</a></li>
+<li><a href="https://rancher.com/docs/rancher/v2.x/en/" target="_blank">Rancher 2.0</a></li>
+<li><a href="/docs/setup/turnkey/stackpoint/">Stackpoint.io</a></li>
+<li><a href="https://coreos.com/tectonic" target="_blank">Tectonic by CoreOS</a></li>
+<li><a href="https://cloud.vmware.com/vmware-cloud-pks" target="_blank">VMware Cloud PKS</a></li>
+</ul>
+
+<h2 id="온-프레미스-턴키-클라우드-솔루션">온-프레미스 턴키 클라우드 솔루션</h2>
+
+<p>다음 솔루션들은 몇 안 되는 명령어를 사용하여 내부의 안전한 클라우드 네트워크에서 쿠버네티스 클러스터를 생성할 수 있다.</p>
+
+<ul>
+<li><a href="https://www.agilestacks.com/products/kubernetes" target="_blank">Agile Stacks</a></li>
+<li><a href="https://appuio.ch" target="_blank">APPUiO</a></li>
+<li><a href="https://www.docker.com/products/docker-enterprise" target="_blank">Docker Enterprise</a></li>
+<li><a href="https://giantswarm.io" target="_blank">Giant Swarm</a></li>
+<li><a href="https://cloud.google.com/gke-on-prem/" target="_blank">GKE On-Prem | Google Cloud</a></li>
+<li><a href="https://www.ibm.com/cloud-computing/products/ibm-cloud-private/" target="_blank">IBM Cloud Private</a></li>
+<li><a href="https://kontena.io/pharos/" target="_blank">Kontena Pharos</a></li>
+<li><a href="https://www.loodse.com" target="_blank">Kubermatic</a></li>
+<li><a href="https://kublr.com/" target="_blank">Kublr</a></li>
+<li><a href="https://www.mirantis.com/software/kubernetes/" target="_blank">Mirantis Cloud Platform</a></li>
+<li><a href="https://nirmata.com/" target="_blank">Nirmata</a></li>
+<li><a href="https://www.openshift.com/products/container-platform/" target="_blank">OpenShift Container Platform</a> (OCP) by <a href="https://www.redhat.com" target="_blank">Red Hat</a></li>
+<li><a href="https://pivotal.io/platform/pivotal-container-service" target="_blank">Pivotal Container Service</a></li>
+<li><a href="https://rancher.com/docs/rancher/v2.x/en/" target="_blank">Rancher 2.0</a></li>
+<li><a href="https://www.suse.com/products/caas-platform" target="_blank">SUSE CaaS Platform</a></li>
+<li><a href="https://www.suse.com/products/cloud-application-platform/" target="_blank">SUSE Cloud Application Platform</a></li>
+</ul>
+
+<h2 id="사용자-지정-솔루션">사용자 지정 솔루션</h2>
+
+<p>쿠버네티스는 넓은 범위의 클라우드 공급자와 베어메탈 환경에서, 그리고 많은 기반 운영 체제에서 동작할 수 있다.</p>
+
+<p>필요에 맞는 가이드를 아래에서 찾았다면, 그것을 사용하자. 약간 구식일 수도 있지만, 처음부터 시작하는 것보다 더 쉬울 것이다.
+특별한 요구사항이 있기 때문에, 또는 단지 쿠버네티스 클러스터의 아래에 무엇이 있는지를 이해하기 원하기 때문에
+처음부터 시작하기를 원한다면, <a href="/docs/setup/scratch/">맨 처음부터 시작하기</a> 가이드를 시도하라.</p>
+
+<h3 id="일반">일반</h3>
+
+<p>호스팅한 리소스를 구성하는 방법을 이미 알고 있다면, <a href="/docs/setup/independent/create-cluster-kubeadm/">kubeadm</a>을 사용하면 머신당 단일 명령어로 클러스터를 가지고 올 수 있다.</p>
+
+<h3 id="클라우드">클라우드</h3>
+
+<p>다음 솔루션은 위의 솔루션에서 다루지 않는 클라우드 공급자와 운영체제의 조합이다.</p>
+
+<ul>
+<li><a href="https://docs-cfcr.cfapps.io/" target="_blank">Cloud Foundry Container Runtime (CFCR)</a></li>
+<li><a href="/docs/setup/custom-cloud/coreos/">CoreOS on AWS or GCE</a></li>
+<li><a href="https://gardener.cloud/" target="_blank">Gardener</a></li>
+<li><a href="https://kublr.com/" target="_blank">Kublr</a></li>
+<li><a href="/docs/getting-started-guides/ubuntu/">Kubernetes on Ubuntu</a></li>
+<li><a href="/docs/setup/custom-cloud/kubespray/">Kubespray</a></li>
+<li><a href="https://github.com/rancher/rke" target="_blank">Rancher Kubernetes Engine (RKE)</a></li>
+</ul>
+
+<h3 id="온-프레미스-vm">온-프레미스 VM</h3>
+
+<ul>
+<li><a href="https://docs-cfcr.cfapps.io/" target="_blank">Cloud Foundry Container Runtime (CFCR)</a></li>
+<li><a href="/docs/setup/on-premises-vm/cloudstack/">CloudStack</a> (Ansible, CoreOS와 flannel를 사용)</li>
+<li><a href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/">Fedora (Multi Node)</a> (Fedora와 flannel를 사용)</li>
+<li><a href="https://www.nutanix.com/products/acropolis/virtualization/" target="_blank">Nutanix AHV</a></li>
+<li><a href="https://www.openshift.com/products/container-platform/" target="_blank">OpenShift Container Platform</a> (OCP) Kubernetes platform by <a href="https://www.redhat.com" target="_blank">Red Hat</a></li>
+<li><a href="/docs/setup/on-premises-vm/ovirt/">oVirt</a></li>
+<li><a href="/docs/setup/custom-cloud/coreos/">Vagrant</a> (CoreOS와 flannel를 사용)</li>
+<li><a href="/docs/setup/custom-cloud/coreos/">VMware</a> (CoreOS와 flannel를 사용)</li>
+<li><a href="https://vmware.github.io/vsphere-storage-for-kubernetes/documentation/" target="_blank">VMware vSphere</a></li>
+<li><a href="/docs/getting-started-guides/ubuntu/">VMware vSphere, OpenStack, or Bare Metal</a> (Juju, Ubuntu와 flannel를 사용)</li>
+</ul>
+
+<h3 id="베어-메탈">베어 메탈</h3>
+
+<ul>
+<li><a href="/docs/setup/custom-cloud/coreos/">CoreOS</a></li>
+<li><a href="/docs/setup/on-premises-metal/krib/">Digital Rebar</a></li>
+<li><a href="https://www.docker.com/products/docker-enterprise" target="_blank">Docker Enterprise</a></li>
+<li><a href="/docs/getting-started-guides/fedora/fedora_manual_config/">Fedora (Single Node)</a></li>
+<li><a href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/">Fedora (Multi Node)</a></li>
+<li><a href="/docs/getting-started-guides/ubuntu/">Kubernetes on Ubuntu</a></li>
+<li><a href="https://www.openshift.com/products/container-platform/" target="_blank">OpenShift Container Platform</a> (OCP) Kubernetes platform by <a href="https://www.redhat.com" target="_blank">Red Hat</a></li>
+</ul>
+
+<h3 id="통합">통합</h3>
+
+<p>다음 솔루션들은 타사 스케줄러, 자원 관리자, 낮은 레벨의 플랫폼의 통합을 제공한다.</p>
+
+<ul>
+<li><a href="/docs/setup/on-premises-vm/dcos/">DCOS</a>
+
+<ul>
+<li>Community Edition DCOS는 AWS를 사용한다.</li>
+<li>Enterprise Edition DCOS는 클라우드 호스팅, 온-프레미스 VM, 베어메탈을 지원한다.</li>
+</ul></li>
+</ul>
+
+<h2 id="솔루션-표">솔루션 표</h2>
+
+<p>아래는 위에 리스트 된 모든 솔루션의 표이다.</p>
+
+<table>
+<thead>
+<tr>
+<th>IaaS 공급자</th>
+<th>구성 관리</th>
+<th>OS</th>
+<th>네트워킹</th>
+<th>문서</th>
+<th>지원 레벨</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>any</td>
+<td>any</td>
+<td>multi-support</td>
+<td>any CNI</td>
+<td><a href="/docs/setup/independent/create-cluster-kubeadm/">docs</a></td>
+<td>Project (<a href="https://git.k8s.io/community/sig-cluster-lifecycle" target="_blank">SIG-cluster-lifecycle</a>)</td>
+</tr>
+
+<tr>
+<td>Google Kubernetes Engine</td>
+<td></td>
+<td></td>
+<td>GCE</td>
+<td><a href="https://cloud.google.com/kubernetes-engine/docs/" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>Docker Enterprise</td>
+<td>custom</td>
+<td><a href="https://success.docker.com/article/compatibility-matrix" target="_blank">multi-support</a></td>
+<td><a href="https://docs.docker.com/ee/ucp/kubernetes/install-cni-plugin/" target="_blank">multi-support</a></td>
+<td><a href="https://docs.docker.com/ee/" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>IBM Cloud Private</td>
+<td>Ansible</td>
+<td>multi-support</td>
+<td>multi-support</td>
+<td><a href="https://www.ibm.com/support/knowledgecenter/SSBS6K/product_welcome_cloud_private.html" target="_blank">docs</a></td>
+<td><a href="https://www.ibm.com/mysupport/s/topic/0TO500000001o0fGAA/ibm-cloud-private?language=en_US&amp;productId=01t50000004X1PWAA0" target="_blank">Commercial</a> and <a href="https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/troubleshoot/support_types.html" target="_blank">Community</a></td>
+</tr>
+
+<tr>
+<td>Red Hat OpenShift</td>
+<td>Ansible &amp; CoreOS</td>
+<td>RHEL &amp; CoreOS</td>
+<td><a href="https://docs.openshift.com/container-platform/3.11/architecture/networking/network_plugins.html" target="_blank">multi-support</a></td>
+<td><a href="https://docs.openshift.com/container-platform/3.11/welcome/index.html" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>Stackpoint.io</td>
+<td></td>
+<td>multi-support</td>
+<td>multi-support</td>
+<td><a href="https://stackpoint.io/" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>AppsCode.com</td>
+<td>Saltstack</td>
+<td>Debian</td>
+<td>multi-support</td>
+<td><a href="https://appscode.com/products/cloud-deployment/" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>Madcore.Ai</td>
+<td>Jenkins DSL</td>
+<td>Ubuntu</td>
+<td>flannel</td>
+<td><a href="https://madcore.ai" target="_blank">docs</a></td>
+<td>Community (<a href="https://github.com/madcore-ai" target="_blank">@madcore-ai</a>)</td>
+</tr>
+
+<tr>
+<td>Platform9</td>
+<td></td>
+<td>multi-support</td>
+<td>multi-support</td>
+<td><a href="https://platform9.com/managed-kubernetes/" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>Kublr</td>
+<td>custom</td>
+<td>multi-support</td>
+<td>multi-support</td>
+<td><a href="http://docs.kublr.com/" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>Kubermatic</td>
+<td></td>
+<td>multi-support</td>
+<td>multi-support</td>
+<td><a href="http://docs.kubermatic.io/" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>IBM Cloud Kubernetes Service</td>
+<td></td>
+<td>Ubuntu</td>
+<td>IBM Cloud Networking + Calico</td>
+<td><a href="https://cloud.ibm.com/docs/containers?topic=containers-container_index#container_index" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>Giant Swarm</td>
+<td></td>
+<td>CoreOS</td>
+<td>flannel and/or Calico</td>
+<td><a href="https://docs.giantswarm.io/" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>GCE</td>
+<td>Saltstack</td>
+<td>Debian</td>
+<td>GCE</td>
+<td><a href="/docs/setup/turnkey/gce/">docs</a></td>
+<td>Project</td>
+</tr>
+
+<tr>
+<td>Azure Kubernetes Service</td>
+<td></td>
+<td>Ubuntu</td>
+<td>Azure</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/aks/" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>Azure (IaaS)</td>
+<td></td>
+<td>Ubuntu</td>
+<td>Azure</td>
+<td><a href="/docs/setup/turnkey/azure/">docs</a></td>
+<td><a href="https://github.com/Azure/acs-engine" target="_blank">Community (Microsoft)</a></td>
+</tr>
+
+<tr>
+<td>Bare-metal</td>
+<td>custom</td>
+<td>Fedora</td>
+<td><em>none</em></td>
+<td><a href="/docs/getting-started-guides/fedora/fedora_manual_config/">docs</a></td>
+<td>Project</td>
+</tr>
+
+<tr>
+<td>Bare-metal</td>
+<td>custom</td>
+<td>Fedora</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/">docs</a></td>
+<td>Community (<a href="https://github.com/aveshagarwal" target="_blank">@aveshagarwal</a>)</td>
+</tr>
+
+<tr>
+<td>libvirt</td>
+<td>custom</td>
+<td>Fedora</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/">docs</a></td>
+<td>Community (<a href="https://github.com/aveshagarwal" target="_blank">@aveshagarwal</a>)</td>
+</tr>
+
+<tr>
+<td>KVM</td>
+<td>custom</td>
+<td>Fedora</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/">docs</a></td>
+<td>Community (<a href="https://github.com/aveshagarwal" target="_blank">@aveshagarwal</a>)</td>
+</tr>
+
+<tr>
+<td>DCOS</td>
+<td>Marathon</td>
+<td>CoreOS/Alpine</td>
+<td>custom</td>
+<td><a href="/docs/getting-started-guides/dcos/">docs</a></td>
+<td>Community (<a href="https://github.com/mesosphere/kubernetes-mesos/blob/master/AUTHORS.md" target="_blank">Kubernetes-Mesos Authors</a>)</td>
+</tr>
+
+<tr>
+<td>AWS</td>
+<td>CoreOS</td>
+<td>CoreOS</td>
+<td>flannel</td>
+<td><a href="/docs/setup/turnkey/aws/">docs</a></td>
+<td>Community</td>
+</tr>
+
+<tr>
+<td>GCE</td>
+<td>CoreOS</td>
+<td>CoreOS</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/coreos/">docs</a></td>
+<td>Community (<a href="https://github.com/pires" target="_blank">@pires</a>)</td>
+</tr>
+
+<tr>
+<td>Vagrant</td>
+<td>CoreOS</td>
+<td>CoreOS</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/coreos/">docs</a></td>
+<td>Community (<a href="https://github.com/pires" target="_blank">@pires</a>, <a href="https://github.com/AntonioMeireles" target="_blank">@AntonioMeireles</a>)</td>
+</tr>
+
+<tr>
+<td>CloudStack</td>
+<td>Ansible</td>
+<td>CoreOS</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/cloudstack/">docs</a></td>
+<td>Community (<a href="https://github.com/sebgoa" target="_blank">@sebgoa</a>)</td>
+</tr>
+
+<tr>
+<td>VMware vSphere</td>
+<td>any</td>
+<td>multi-support</td>
+<td>multi-support</td>
+<td><a href="https://vmware.github.io/vsphere-storage-for-kubernetes/documentation/" target="_blank">docs</a></td>
+<td><a href="https://vmware.github.io/vsphere-storage-for-kubernetes/documentation/contactus.html" target="_blank">Community</a></td>
+</tr>
+
+<tr>
+<td>Bare-metal</td>
+<td>custom</td>
+<td>CentOS</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/centos/centos_manual_config/">docs</a></td>
+<td>Community (<a href="https://github.com/coolsvap" target="_blank">@coolsvap</a>)</td>
+</tr>
+
+<tr>
+<td>lxd</td>
+<td>Juju</td>
+<td>Ubuntu</td>
+<td>flannel/canal</td>
+<td><a href="/docs/getting-started-guides/ubuntu/local/">docs</a></td>
+<td><a href="https://www.ubuntu.com/kubernetes" target="_blank">Commercial</a> and <a href="https://jujucharms.com/kubernetes" target="_blank">Community</a></td>
+</tr>
+
+<tr>
+<td>AWS</td>
+<td>Juju</td>
+<td>Ubuntu</td>
+<td>flannel/calico/canal</td>
+<td><a href="/docs/getting-started-guides/ubuntu/">docs</a></td>
+<td><a href="https://www.ubuntu.com/kubernetes" target="_blank">Commercial</a> and <a href="https://jujucharms.com/kubernetes" target="_blank">Community</a></td>
+</tr>
+
+<tr>
+<td>Azure</td>
+<td>Juju</td>
+<td>Ubuntu</td>
+<td>flannel/calico/canal</td>
+<td><a href="/docs/getting-started-guides/ubuntu/">docs</a></td>
+<td><a href="https://www.ubuntu.com/kubernetes" target="_blank">Commercial</a> and <a href="https://jujucharms.com/kubernetes" target="_blank">Community</a></td>
+</tr>
+
+<tr>
+<td>GCE</td>
+<td>Juju</td>
+<td>Ubuntu</td>
+<td>flannel/calico/canal</td>
+<td><a href="/docs/getting-started-guides/ubuntu/">docs</a></td>
+<td><a href="https://www.ubuntu.com/kubernetes" target="_blank">Commercial</a> and <a href="https://jujucharms.com/kubernetes" target="_blank">Community</a></td>
+</tr>
+
+<tr>
+<td>Oracle Cloud</td>
+<td>Juju</td>
+<td>Ubuntu</td>
+<td>flannel/calico/canal</td>
+<td><a href="/docs/getting-started-guides/ubuntu/">docs</a></td>
+<td><a href="https://www.ubuntu.com/kubernetes" target="_blank">Commercial</a> and <a href="https://jujucharms.com/kubernetes" target="_blank">Community</a></td>
+</tr>
+
+<tr>
+<td>Rackspace</td>
+<td>custom</td>
+<td>CoreOS</td>
+<td>flannel/calico/canal</td>
+<td><a href="https://developer.rackspace.com/docs/rkaas/latest/" target="_blank">docs</a></td>
+<td><a href="https://www.rackspace.com/managed-kubernetes" target="_blank">Commercial</a></td>
+</tr>
+
+<tr>
+<td>VMware vSphere</td>
+<td>Juju</td>
+<td>Ubuntu</td>
+<td>flannel/calico/canal</td>
+<td><a href="/docs/getting-started-guides/ubuntu/">docs</a></td>
+<td><a href="https://www.ubuntu.com/kubernetes" target="_blank">Commercial</a> and <a href="https://jujucharms.com/kubernetes" target="_blank">Community</a></td>
+</tr>
+
+<tr>
+<td>Bare Metal</td>
+<td>Juju</td>
+<td>Ubuntu</td>
+<td>flannel/calico/canal</td>
+<td><a href="/docs/getting-started-guides/ubuntu/">docs</a></td>
+<td><a href="https://www.ubuntu.com/kubernetes" target="_blank">Commercial</a> and <a href="https://jujucharms.com/kubernetes" target="_blank">Community</a></td>
+</tr>
+
+<tr>
+<td>AWS</td>
+<td>Saltstack</td>
+<td>Debian</td>
+<td>AWS</td>
+<td><a href="/docs/setup/turnkey/aws/">docs</a></td>
+<td>Community (<a href="https://github.com/justinsb" target="_blank">@justinsb</a>)</td>
+</tr>
+
+<tr>
+<td>AWS</td>
+<td>kops</td>
+<td>Debian</td>
+<td>AWS</td>
+<td><a href="https://github.com/kubernetes/kops/" target="_blank">docs</a></td>
+<td>Community (<a href="https://github.com/justinsb" target="_blank">@justinsb</a>)</td>
+</tr>
+
+<tr>
+<td>Bare-metal</td>
+<td>custom</td>
+<td>Ubuntu</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/ubuntu/">docs</a></td>
+<td>Community (<a href="https://github.com/resouer" target="_blank">@resouer</a>, <a href="https://github.com/WIZARD-CXY" target="_blank">@WIZARD-CXY</a>)</td>
+</tr>
+
+<tr>
+<td>oVirt</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="/docs/setup/on-premises-vm/ovirt/">docs</a></td>
+<td>Community (<a href="https://github.com/simon3z" target="_blank">@simon3z</a>)</td>
+</tr>
+
+<tr>
+<td>any</td>
+<td>any</td>
+<td>any</td>
+<td>any</td>
+<td><a href="/docs/setup/scratch/">docs</a></td>
+<td>Community (<a href="https://github.com/erictune" target="_blank">@erictune</a>)</td>
+</tr>
+
+<tr>
+<td>any</td>
+<td>any</td>
+<td>any</td>
+<td>any</td>
+<td><a href="http://docs.projectcalico.org/v2.2/getting-started/kubernetes/installation/" target="_blank">docs</a></td>
+<td>Commercial and Community</td>
+</tr>
+
+<tr>
+<td>any</td>
+<td>RKE</td>
+<td>multi-support</td>
+<td>flannel or canal</td>
+<td><a href="https://rancher.com/docs/rancher/v2.x/en/quick-start-guide/" target="_blank">docs</a></td>
+<td><a href="https://rancher.com/what-is-rancher/overview/" target="_blank">Commercial</a> and <a href="https://github.com/rancher/rancher" target="_blank">Community</a></td>
+</tr>
+
+<tr>
+<td>any</td>
+<td><a href="https://kubernetes.io/blog/2018/05/17/gardener/" target="_blank">Gardener Cluster-Operator</a></td>
+<td>multi-support</td>
+<td>multi-support</td>
+<td><a href="https://gardener.cloud" target="_blank">docs</a></td>
+<td><a href="https://github.com/gardener" target="_blank">Project/Community</a> and <a href="https://cloudplatform.sap.com/" target="_blank">Commercial</a></td>
+</tr>
+
+<tr>
+<td>Alibaba Cloud Container Service For Kubernetes</td>
+<td>ROS</td>
+<td>CentOS</td>
+<td>flannel/Terway</td>
+<td><a href="https://www.aliyun.com/product/containerservice" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>Agile Stacks</td>
+<td>Terraform</td>
+<td>CoreOS</td>
+<td>multi-support</td>
+<td><a href="https://www.agilestacks.com/products/kubernetes" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>IBM Cloud Kubernetes Service</td>
+<td></td>
+<td>Ubuntu</td>
+<td>calico</td>
+<td><a href="https://cloud.ibm.com/docs/containers?topic=containers-container_index#container_index" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>Digital Rebar</td>
+<td>kubeadm</td>
+<td>any</td>
+<td>metal</td>
+<td><a href="/docs/setup/on-premises-metal/krib/">docs</a></td>
+<td>Community (<a href="https://github.com/digitalrebar" target="_blank">@digitalrebar</a>)</td>
+</tr>
+
+<tr>
+<td>VMware Cloud PKS</td>
+<td></td>
+<td>Photon OS</td>
+<td>Canal</td>
+<td><a href="https://docs.vmware.com/en/VMware-Kubernetes-Engine/index.html" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+
+<tr>
+<td>Mirantis Cloud Platform</td>
+<td>Salt</td>
+<td>Ubuntu</td>
+<td>multi-support</td>
+<td><a href="https://docs.mirantis.com/mcp/" target="_blank">docs</a></td>
+<td>Commercial</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote class="note">
+  <div><strong>참고:</strong> 위의 표는 버전 테스트/사용된 노드의 지원 레벨을 기준으로 정렬된다.</div>
+</blockquote>
+
+<h3 id="열-정의">열 정의</h3>
+
+<ul>
+<li><strong>IaaS 공급자</strong>는 쿠버네티스가 구동되는 가상 또는 물리적 머신(노드)를 제공하는 제품 또는 조직이다.</li>
+<li><strong>OS</strong>는 노드의 기본 운영 체제이다.</li>
+<li><strong>구성 관리</strong>는 노드에서 쿠버네티스를 설치하고 유지 관리하는 데 도움이 되는 구성 관리 시스템이다.
+nodes.</li>
+<li><strong>네트워킹</strong>은 <a href="/docs/concepts/cluster-administration/networking/">네트워킹 모델</a>을 구현하는 것이다. 네트워크 유형이
+_none_인 노드는 단일 노드 이상을 지원하지 않거나, 단일 물리 노드에서 여러 VM 노드를 지원할 수 있다.</li>
+<li><strong>적합성</strong>은 명시된 구성으로 생성된 클러스터가 쿠버네티스 v1.0.0의 API 및 기본 기능을 지원하는지의 프로젝트 적합성 테스트 통과 여부를 나타낸다.</li>
+<li><strong>지원 레벨</strong>
+
+<ul>
+<li><strong>프로젝트</strong>: 쿠버네티스 커미터는 현재 구성을 정기적으로 사용하므로, 일반적으로 최신 쿠버네티스 릴리즈와 함께 동작한다.</li>
+<li><strong>상업용</strong>: 자체 지원 계약을 가진 상업용 제품.</li>
+<li><strong>커뮤니티</strong>: 커뮤니티 기여를 바탕으로 활발하게 지원. 쿠버네티스 최신 릴리즈에는 작동하지 않을 수도 있다.</li>
+<li><strong>비활성</strong>: 현재 유지되지 않는다. 쿠버네티스 최초 사용자에게 권장하지 않으며, 삭제될 수도 있다.</li>
+</ul></li>
+<li><strong>참고</strong>는 사용된 쿠버네티스 버전 같은 기타 관련 정보가 있다.</li>
+</ul>
+
+<!-- reference style links below here -->
+
+<!-- GCE conformance test result -->
+
+<!-- Vagrant conformance test result -->
+
+<!-- Google Kubernetes Engine conformance test result -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/ko/docs/setup/" title="설치"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 설치</a>
+<a class="nav nav-next" href="/ko/docs/setup/release/" title="쿠버네티스 다운로드">Next - 쿠버네티스 다운로드 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>피드백</h2>
+  <p class="feedback--prompt">이 페이지가 도움이 되었나요? </p>
+  <button class="button feedback--yes">네</button>
+  <button class="button feedback--no">아니요</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5csetup%5cpick-right-solution.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/ko\/docs\/setup\/pick-right-solution\/",
+    "title" : "알맞은 솔루션 선정",
+    "permalink" : "https:\/\/docstest.github.io\/ko\/docs\/setup\/pick-right-solution\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">이슈 생성하기</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/ko/docs%5csetup%5cpick-right-solution.md" class="button issue">페이지 편집하기</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    최종 수정일시 March 05, 2019 at 10:32 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/92faff9209e9f00c5ab9f2bb739cdcd2bdb4ee95/">Seventh Korean l10n work for release-1.13 (#12981)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5csetup%5cpick-right-solution.md">페이지 변경 이력</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/ko/docs/home/">홈</a>
+            
+            
+            
+            
+            
+            
+            
+            <a href="/ko/case-studies/">사례 연구</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">기여하기</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

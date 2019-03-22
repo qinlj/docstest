@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>파드 라이프사이클 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/ko/docs/concepts/workloads/pods/pod-lifecycle/">
+<meta property="og:title" content="파드 라이프사이클">
+<meta name="twitter:title" content="파드 라이프사이클">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/ko/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/ko/docs/" class="active">문서</a></li>
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="/ko/case-studies/">사례 연구</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    한국어 Korean <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/concepts/workloads/pods/pod-lifecycle/">English</a></li>
+                
+                    <li><a href="/zh/docs/concepts/workloads/pods/pod-lifecycle/">中文 Chinese</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="검색하기" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/ko/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/ko/docs/home/">문서</a></h3>
+           <p>개념, 튜토리얼 및 참조 문서와 함께 쿠버네티스 사용하는 방법을 익힐 수 있다. 또한, <a href="/editdocs/" data-auto-burger-exclude>문서에 기여하는 것도 도움을 줄 수 있다</a>!</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">코어 쿠버네티스 코드 베이스를 살펴보는데 관심이 있으십니까?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>GitHub에서 보기</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">커뮤니티 둘러보기</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+<h1>개념</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/ko/docs/home/">홈</a></li>
+		
+		
+		<li><a href="/ko/docs/setup/">설치</a></li>
+		
+		
+		<li><a href="/ko/docs/concepts/" class="YAH">개념</a></li>
+		
+		
+		<li><a href="/ko/docs/tasks/">태스크</a></li>
+		
+		
+		<li><a href="/ko/docs/tutorials/">튜토리얼</a></li>
+		
+		
+		<li><a href="/ko/docs/reference/">레퍼런스</a></li>
+		
+		
+		<li><a href="/ko/docs/contribute/">기여</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="검색하기" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="개념" href="/ko/docs/concepts/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="개요">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="쿠버네티스란 무엇인가?" href="/ko/docs/concepts/overview/what-is-kubernetes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="쿠버네티스 컴포넌트" href="/ko/docs/concepts/overview/components/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="쿠버네티스 API" href="/ko/docs/concepts/overview/kubernetes-api/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="쿠버네티스 오브젝트로 작업하기">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="쿠버네티스 오브젝트 이해하기" href="/ko/docs/concepts/overview/working-with-objects/kubernetes-objects/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="이름(Name)" href="/ko/docs/concepts/overview/working-with-objects/names/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="네임스페이스" href="/ko/docs/concepts/overview/working-with-objects/namespaces/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Labels and Selectors <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/labels/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Annotations <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/annotations/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Field Selectors <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/field-selectors/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Recommended Labels <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/common-labels/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="kubectl을 이용한 오브젝트 관리">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="쿠버네티스 오브젝트 관리" href="/ko/docs/concepts/overview/object-management-kubectl/overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Managing Kubernetes Objects Using Imperative Commands <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/imperative-command/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Imperative Management of Kubernetes Objects Using Configuration Files <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/imperative-config/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Declarative Management of Kubernetes Objects Using Configuration Files <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/declarative-config/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="쿠버네티스 아키텍처">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="노드" href="/ko/docs/concepts/architecture/nodes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="마스터-노드 커뮤니케이션" href="/ko/docs/concepts/architecture/master-node-communication/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="클라우트 컨트롤러 매니저 기반에 관한 개념" href="/ko/docs/concepts/architecture/cloud-controller/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="컨테이너">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Images" href="/ko/docs/concepts/containers/images/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="런타임 클래스" href="/ko/docs/concepts/containers/runtime-class/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="컨테이너 환경 변수" href="/ko/docs/concepts/containers/container-environment-variables/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="컨테이너 라이프사이클 훅(Hook)" href="/ko/docs/concepts/containers/container-lifecycle-hooks/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="워크로드">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="파드">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="파드(Pod) 개요" href="/ko/docs/concepts/workloads/pods/pod-overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pods <small>(EN)</small>" href="/docs/concepts/workloads/pods/pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="파드 라이프사이클" href="/ko/docs/concepts/workloads/pods/pod-lifecycle/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="초기화 컨테이너" href="/ko/docs/concepts/workloads/pods/init-containers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="파드 프리셋" href="/ko/docs/concepts/workloads/pods/podpreset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Disruptions <small>(EN)</small>" href="/docs/concepts/workloads/pods/disruptions/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Controllers">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="ReplicaSet <small>(EN)</small>" href="/docs/concepts/workloads/controllers/replicaset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="ReplicationController <small>(EN)</small>" href="/docs/concepts/workloads/controllers/replicationcontroller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Deployments <small>(EN)</small>" href="/docs/concepts/workloads/controllers/deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="StatefulSets <small>(EN)</small>" href="/docs/concepts/workloads/controllers/statefulset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="DaemonSet <small>(EN)</small>" href="/docs/concepts/workloads/controllers/daemonset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Garbage Collection <small>(EN)</small>" href="/docs/concepts/workloads/controllers/garbage-collection/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="TTL Controller for Finished Resources <small>(EN)</small>" href="/docs/concepts/workloads/controllers/ttlafterfinished/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Jobs - Run to Completion <small>(EN)</small>" href="/docs/concepts/workloads/controllers/jobs-run-to-completion/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="CronJob <small>(EN)</small>" href="/docs/concepts/workloads/controllers/cron-jobs/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Services, Load Balancing, and Networking">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Services <small>(EN)</small>" href="/docs/concepts/services-networking/service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="DNS for Services and Pods <small>(EN)</small>" href="/docs/concepts/services-networking/dns-pod-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Connecting Applications with Services <small>(EN)</small>" href="/docs/concepts/services-networking/connect-applications-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Ingress <small>(EN)</small>" href="/docs/concepts/services-networking/ingress/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Ingress Controllers <small>(EN)</small>" href="/docs/concepts/services-networking/ingress-controllers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Network Policies <small>(EN)</small>" href="/docs/concepts/services-networking/network-policies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Adding entries to Pod /etc/hosts with HostAliases <small>(EN)</small>" href="/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Storage">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Volumes <small>(EN)</small>" href="/docs/concepts/storage/volumes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Persistent Volumes <small>(EN)</small>" href="/docs/concepts/storage/persistent-volumes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Volume Snapshots <small>(EN)</small>" href="/docs/concepts/storage/volume-snapshots/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Storage Classes <small>(EN)</small>" href="/docs/concepts/storage/storage-classes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Volume Snapshot Classes <small>(EN)</small>" href="/docs/concepts/storage/volume-snapshot-classes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Dynamic Volume Provisioning <small>(EN)</small>" href="/docs/concepts/storage/dynamic-provisioning/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Node-specific Volume Limits <small>(EN)</small>" href="/docs/concepts/storage/storage-limits/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="구성">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configuration Best Practices <small>(EN)</small>" href="/docs/concepts/configuration/overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Managing Compute Resources for Containers <small>(EN)</small>" href="/docs/concepts/configuration/manage-compute-resources-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Assigning Pods to Nodes <small>(EN)</small>" href="/docs/concepts/configuration/assign-pod-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Taints and Tolerations <small>(EN)</small>" href="/docs/concepts/configuration/taint-and-toleration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Secrets <small>(EN)</small>" href="/docs/concepts/configuration/secret/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Organizing Cluster Access Using kubeconfig Files <small>(EN)</small>" href="/docs/concepts/configuration/organize-cluster-access-kubeconfig/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pod Priority and Preemption <small>(EN)</small>" href="/docs/concepts/configuration/pod-priority-preemption/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="스케줄러 성능 튜닝" href="/ko/docs/concepts/configuration/scheduler-perf-tuning/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Policies">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Resource Quotas <small>(EN)</small>" href="/docs/concepts/policy/resource-quotas/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pod Security Policies <small>(EN)</small>" href="/docs/concepts/policy/pod-security-policy/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Cluster Administration">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cluster Administration Overview <small>(EN)</small>" href="/docs/concepts/cluster-administration/cluster-administration-overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Certificates <small>(EN)</small>" href="/docs/concepts/cluster-administration/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cloud Providers <small>(EN)</small>" href="/docs/concepts/cluster-administration/cloud-providers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Managing Resources <small>(EN)</small>" href="/docs/concepts/cluster-administration/manage-deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cluster Networking <small>(EN)</small>" href="/docs/concepts/cluster-administration/networking/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Logging Architecture <small>(EN)</small>" href="/docs/concepts/cluster-administration/logging/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configuring kubelet Garbage Collection <small>(EN)</small>" href="/docs/concepts/cluster-administration/kubelet-garbage-collection/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federation <small>(EN)</small>" href="/docs/concepts/cluster-administration/federation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Proxies in Kubernetes <small>(EN)</small>" href="/docs/concepts/cluster-administration/proxies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Controller manager metrics <small>(EN)</small>" href="/docs/concepts/cluster-administration/controller-metrics/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing Addons <small>(EN)</small>" href="/docs/concepts/cluster-administration/addons/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Extending Kubernetes">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Extending your Kubernetes Cluster <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/extend-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Extending the Kubernetes API">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Extending the Kubernetes API with the aggregation layer <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Custom Resources <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/api-extension/custom-resources/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Compute, Storage, and Networking Extensions">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Network Plugins <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Device Plugins <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Service Catalog <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/service-catalog/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Poseidon-Firmament - An alternate scheduler <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/poseidon-firmament-alternate-scheduler/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/ko/docs%5cconcepts%5cworkloads%5cpods%5cpod-lifecycle.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>파드 라이프사이클</h1>
+
+
+
+<p>이 페이지는 파드의 라이프사이클을 설명한다.</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%ed%8c%8c%eb%93%9c%ec%9d%98-%eb%8b%a8%ea%b3%84-phase">파드의 단계(phase)</a></li>
+
+
+
+
+<li><a href="#%ed%8c%8c%eb%93%9c%ec%9d%98-%ec%a1%b0%ea%b1%b4-condition">파드의 조건(condition)</a></li>
+
+
+
+
+<li><a href="#%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%ed%94%84%eb%a1%9c%eb%b8%8c-probe">컨테이너 프로브(probe)</a></li>
+
+
+
+
+<li><a href="#%ed%8c%8c%eb%93%9c-%eb%b0%8f-%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%ec%83%81%ed%83%9c">파드 및 컨테이너 상태</a></li>
+
+
+
+
+<li><a href="#%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%ec%83%81%ed%83%9c">컨테이너 상태</a></li>
+
+
+
+
+<li><a href="#%ed%8c%8c%eb%93%9c%ec%9d%98-%ec%a4%80%eb%b9%84%ec%84%b1-%ea%b2%8c%ec%9d%b4%ed%8a%b8-readiness-gate">파드의 준비성 게이트(readiness gate)</a></li>
+
+
+
+
+<li><a href="#%ec%9e%ac%ec%8b%9c%ec%9e%91-%ec%a0%95%ec%b1%85">재시작 정책</a></li>
+
+
+
+
+<li><a href="#%ed%8c%8c%eb%93%9c%ec%9d%98-%ec%9d%bc%ec%83%9d-lifetime">파드의 일생(lifetime)</a></li>
+
+
+
+
+<li><a href="#%ec%98%88%ec%a0%9c">예제</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%eb%8b%a4%ec%9d%8c-%eb%82%b4%ec%9a%a9">다음 내용</a></li>
+
+
+
+</ul>
+
+
+<h2 id="파드의-단계-phase">파드의 단계(phase)</h2>
+
+<p>파드의 <code>status</code> 필드는 <code>phase</code> 필드를 포함하는 <a href="/docs/reference/generated/kubernetes-api/v1.13/#podstatus-v1-core">PodStatus</a> 오브젝트로 정의된다.</p>
+
+<p>파드의 phase는 파드가 라이프사이클 중 어느 단계에 해당하는지 표현하는 간단한
+고수준의 요약이다. Phase는 컨테이너나 파드의 관측 정보에 대한 포괄적인
+롤업이나, 포괄적인 상태 머신을 표현하도록 의도되지는 않았다.</p>
+
+<p>파드 phase 값에서 숫자와 의미는 엄격하게 지켜진다.
+여기에 문서화된 내용 이외에는, 파드와 파드에 주어진 <code>phase</code> 값에 대해서
+어떤 사항도 가정되어서는 안 된다.</p>
+
+<p><code>phase</code>에 가능한 값은 다음과 같다.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">값</th>
+<th align="left">의미</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>Pending</code></td>
+<td align="left">파드가 쿠버네티스 시스템에 의해서 승인되었지만, 파드를 위한 하나 또는 하나 이상의 컨테이너 이미지 생성이 아직 완료되지 않았다. 여기에는 스케줄되기 이전까지의 시간 뿐만 아니라 오래 걸릴 수 있는 네트워크를 통한 이미지 다운로드 시간도 포함된다.</td>
+</tr>
+
+<tr>
+<td align="left"><code>Running</code></td>
+<td align="left">파드가 한 노드에 결합되었고, 모든 컨테이너들의 생성이 완료되었다. 적어도 하나의 컨테이너가 동작 중이거나, 시작 또는 재시작 중에 있다.</td>
+</tr>
+
+<tr>
+<td align="left"><code>Succeeded</code></td>
+<td align="left">파드에 있는 모든 컨테이너들이 성공으로 종료되었고, 재시작되지 않을 것이다.</td>
+</tr>
+
+<tr>
+<td align="left"><code>Failed</code></td>
+<td align="left">파드에 있는 모든 컨테이너들이 종료되었고, 적어도 하나 이상의 컨테이너가 실패로 종료되었다. 즉, 해당 컨테이너는 non-zero 상태로 빠져나왔거나(exited) 시스템에 의해서 종료(terminated)되었다.</td>
+</tr>
+
+<tr>
+<td align="left"><code>Unknown</code></td>
+<td align="left">어떤 이유에 의해서 파드의 상태를 얻을 수 없다. 일반적으로 파드 호스트와의 통신 오류에 의해서 발생한다.</td>
+</tr>
+
+<tr>
+<td align="left"><code>Completed</code></td>
+<td align="left">완료된 잡(Job)과 같이 다 실행되어서 더 작동하고 있을 필요 없이 완료된 상태가 되었다.</td>
+</tr>
+
+<tr>
+<td align="left"><code>CrashLoopBackOff</code></td>
+<td align="left">파드 내 컨테이너 중 하나가 예상과는 달리 종료(exit)되었고, <a href="#restart-policy">restart policy</a>에 따라 재시작된 뒤에도 0이 아닌 에러 코드가 발생했을 것이다.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="파드의-조건-condition">파드의 조건(condition)</h2>
+
+<p>파드는 하나의 PodStatus를 가지며, 그것은 파드가 통과했거나 통과하지 못한 조건에 대한 <a href="/docs/reference/generated/kubernetes-api/v1.13/#podcondition-v1-core">PodConditions</a> 배열을 가진다. PodCondition
+배열의 각 요소는 다음 여섯 가지 필드를 가질 수 있다.</p>
+
+<ul>
+<li><p><code>lastProbeTime</code> 필드는 파드의 조건이 마지막으로 조사된 시점의 타임스탬프를 제공한다.</p></li>
+
+<li><p><code>lastTransitionTime</code> 필드는 파드가 마지막으로 한 상태에서 다른 상태로 전환된 시점의 타임스탬프를 제공한다.</p></li>
+
+<li><p><code>message</code> 전환에 대한 세부 정보를 표시한, 사람이 읽을 수 있는 메시지이다.</p></li>
+
+<li><p><code>reason</code> 필드는 마지막으로 발생한 전환의 이유다. 이유는 유일하게, 한 단어로, 카멜 표기법(CamelCase)으로 표기된다.</p></li>
+
+<li><p><code>status</code> 필드는 <code>True</code>&rdquo;, &ldquo;<code>False</code>&rdquo;, 그리고 &ldquo;<code>Unknown</code>&ldquo;으로 지정될 수 있는 문자열이다.</p></li>
+
+<li><p><code>type</code> 필드는 다음과 같은 가능한 값들의 문자열이다.</p>
+
+<ul>
+<li><code>PodScheduled</code>: 파드가 하나의 노드로 스케줄 완료되었음.</li>
+<li><code>Ready</code>: 파드는 요청들을 수행할 수 있으며 모든 매칭 서비스들의 로드밸런싱 풀에 추가되어야 함.</li>
+<li><code>Initialized</code>: 모든 <a href="/docs/concepts/workloads/pods/init-containers">초기화 컨테이너</a>가 성공적으로 시작 완료되었음.</li>
+<li><code>Unschedulable</code>: 스케줄러가 자원의 부족이나 다른 제약 등에 의해서 지금 당장은 파드를 스케줄할 수 없음.</li>
+<li><code>ContainersReady</code>: 파드 내의 모든 컨테이너가 준비 상태임.</li>
+</ul></li>
+</ul>
+
+<h2 id="컨테이너-프로브-probe">컨테이너 프로브(probe)</h2>
+
+<p><a href="/docs/reference/generated/kubernetes-api/v1.13/#probe-v1-core">프로브</a>는 컨테이너에서 <a href="/docs/admin/kubelet/">kubelet</a>에 의해 주기적으로 수행되는 진단(diagnostic)이다. 진단을 수행하기 위해서,
+kubelet은 컨테이너에 의해서 구현된
+<a href="https://godoc.org/k8s.io/kubernetes/pkg/api/v1#Handler" target="_blank">핸들러</a>를 호출한다.
+핸들러에는 다음과 같이 세 가지 타입이 있다.</p>
+
+<ul>
+<li><p><a href="/docs/reference/generated/kubernetes-api/v1.13/#execaction-v1-core">ExecAction</a>
+은 컨테이너 내에서 지정된 명령어를 실행한다.
+명령어가 상태 코드 0으로 종료되면 진단이 성공한 것으로 간주한다.</p></li>
+
+<li><p><a href="/docs/reference/generated/kubernetes-api/v1.13/#tcpsocketaction-v1-core">TCPSocketAction</a>
+은 지정된 포트에서 컨테이너의 IP주소에 대해 TCP 검사를 수행한다.
+포트가 활성화되어 있다면 진단이 성공한 것으로 간주한다.</p></li>
+
+<li><p><a href="/docs/reference/generated/kubernetes-api/v1.13/#httpgetaction-v1-core">HTTPGetAction</a>
+은 지정한 포트 및 경로에서 컨테이너의 IP주소에
+대한 HTTP Get 요청을 수행한다. 응답의 상태 코드가 200보다 크고 400보다 작으면
+진단이 성공한 것으로 간주한다.</p></li>
+</ul>
+
+<p>각 probe는 다음 세 가지 결과 중 하나를 가진다.</p>
+
+<ul>
+<li>Success: 컨테이너가 진단을 통과함.</li>
+<li>Failure: 컨테이너가 진단에 실패함.</li>
+<li>Unknown: 진단 자체가 실패하였으므로 아무런 액션도 수행되면 안됨.</li>
+</ul>
+
+<p>kubelet은 실행 중인 컨테이너들에 대해서 선택적으로 두 가지 종류의 프로브를 수행하고
+그에 반응할 수 있다.</p>
+
+<ul>
+<li><p><code>livenessProbe</code>는 컨테이너가 동작 중인지 여부를 나타낸다. 만약
+활성 프로브(liveness probe)에 실패한다면, kubelet은 컨테이너를 죽이고, 해당 컨테이너는
+<a href="#재시작-정책">재시작 정책</a>의 대상이 된다. 만약 컨테이너가
+활성 프로브를 제공하지 않는 경우, 기본 상태는 <code>Success</code>이다.</p></li>
+
+<li><p><code>readinessProbe</code>는 컨테이너가 요청을 처리할 준비가 되었는지 여부를 나타낸다.
+만약 준비성 프로브(readiness probe)가 실패한다면, 엔드포인트 컨트롤러는
+파드에 연관된 모든 서비스들의 엔드포인트에서 파드의 IP주소를 제거한다. 준비성 프로브의
+초기 지연 이전의 기본 상태는 <code>Failure</code>이다. 만약 컨테이너가 준비성 프로브를
+지원하지 않는다면, 기본 상태는 <code>Success</code>이다.</p></li>
+</ul>
+
+<h3 id="언제-활성-또는-준비성-프로브를-사용해야-하는가">언제 활성 또는 준비성 프로브를 사용해야 하는가?</h3>
+
+<p>만약 컨테이너 속 프로세스가 어떠한 이슈에 직면하거나 건강하지 못한
+상태(unhealthy)가 되는 등 프로세스 자체의 문제로 중단될 수 있더라도, 활성 프로브가
+반드시 필요한 것은 아니다. 그 경우에는 kubelet이 파드의 <code>restartPolicy</code>에
+따라서 올바른 대처를 자동적으로 수행할 것이다.</p>
+
+<p>프로브가 실패한 후 컨테이너가 종료되거나 재시작되길 원한다면, 활성 프로브를
+지정하고, <code>restartPolicy</code>를 항상(Always) 또는 실패 시(OnFailure)로 지정한다.</p>
+
+<p>프로브가 성공한 경우에만 파드에 트래픽 전송을 시작하려고 한다면,
+준비성 프로브를 지정하길 바란다. 이 경우에서는, 준비성 프로브가 활성 프로브와 유사해
+보일 수도 있지만, 스팩에 준비성 프로브가 존재한다는 것은 파드가 트래픽을 받지 않는 상태에서
+시작되고 프로브가 성공하기 시작한 이후에만
+트래픽을 받는다는 뜻이다.</p>
+
+<p>만약 컨테이너가 대량의 데이터, 설정 파일들, 또는 시동 중 마그레이션을 처리해야 한다면,
+준비성 프로브를 지정하길 바란다.</p>
+
+<p>만약 당신의 컨테이너가 유지 관리를 위해서 자체 중단되게 하려면, 준비성
+프로브를 지정하길 바란다. 준비성 프로브는 활성 프로브와는
+다르게 준비성에 특정된 엔드포인트를 확인한다.</p>
+
+<p>파드가 삭제될 때 단지 요청들이 흘려 보낼(drain) 목적으로,
+준비성 프로브가 필요하지는 않다는 점을 유념해야한다. 삭제 시에, 파드는
+프로브의 존재 여부와 무관하게 자동으로 스스로를 준비되지 않은 상태(unready)로 변경한다.
+파드는 파드 내의 모든 컨테이너들이 중지될 때까지 준비되지 않은 상태로
+남아있는다.</p>
+
+<p>활성 프로브 및 준비성 프로브를 설정하는 방법에 대한 추가적인 정보는,
+<a href="/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/">활성 프로브 및 준비성 프로브 설정하기</a>를 참조하면 된다.</p>
+
+<h2 id="파드-및-컨테이너-상태">파드 및 컨테이너 상태</h2>
+
+<p>파드 및 컨테이너 상태에 대한 자세한 정보는, <a href="/docs/reference/generated/kubernetes-api/v1.13/#podstatus-v1-core">PodStatus</a>
+및
+<a href="/docs/reference/generated/kubernetes-api/v1.13/#containerstatus-v1-core">ContainerStatus</a>를 참조하면 된다.
+파드의 상태로서 보고되는 정보는 현재의
+<a href="/docs/reference/generated/kubernetes-api/v1.13/#containerstatus-v1-core">ContainerState</a>에 의존적이라는 점에 유의하길 바란다.</p>
+
+<h2 id="컨테이너-상태">컨테이너 상태</h2>
+
+<p>일단 스케줄러가 파드를 노드에 할당하면, kubelet이 컨테이너 런타임으로 컨테이너를 만들기 시작한다. 컨테이너에 세 가지 상태가 있는데, Waiting, Running, 그리고 Terminated이다. 컨테이너의 상태를 체크하려면 <code>kubectl describe pod [POD_NAME]</code> 명령을 사용할 수 있다. 상태는 파드 안에 있는 컨테이너 각각에 대해 출력된다.</p>
+
+<ul>
+<li><p><code>Waiting</code>: 컨테이너의 기본 상태이다. 컨테이너가 Running 이나 Terminated 상태가 아닌 경우, Waiting 상태이다. Waiting 상태의 컨테이너는 이미지를 내려받거나(pull), 시크릿을 적용하는 등의 필요한 오퍼레이션이 수행 중인 상태이다. 이 상태와 더불어서, 더 자세한 정보를 제공하기 위해 상태에 대한 메시지와 이유가 출력된다.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">...<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>State:<span style="color:#bbb">          </span>Waiting<span style="color:#bbb">
+</span><span style="color:#bbb">   </span>Reason:<span style="color:#bbb">       </span>ErrImagePull<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>...</code></pre></div></li>
+
+<li><p><code>Running</code>: 컨테이너가 이슈 없이 구동된다는 뜻이다. 컨테이너가 Running 상태가 되면, <code>postStart</code> 훅이 (존재한다면) 실행된다. 이 상태는 컨테이너가 언제 Running 상태에 돌입한 시간도 함께 출력된다.</p></li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">   </span>...<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>State:<span style="color:#bbb">          </span>Running<span style="color:#bbb">
+</span><span style="color:#bbb">       </span>Started:<span style="color:#bbb">      </span>Wed,<span style="color:#bbb"> </span><span style="color:#666">30</span><span style="color:#bbb"> </span>Jan<span style="color:#bbb"> </span><span style="color:#666">2019</span><span style="color:#bbb"> </span><span style="color:#666">16</span>:<span style="color:#666">46</span>:<span style="color:#666">38</span><span style="color:#bbb"> </span>+<span style="color:#666">0530</span><span style="color:#bbb">
+</span><span style="color:#bbb">   </span>...</code></pre></div>
+<ul>
+<li><code>Terminated</code>:  컨테이너가 실행이 완료되어 구동을 멈추었다는 뜻이다. 컨테이너가 성공적으로 작업을 완료했을 때나 어떤 이유에서 실패했을 때 이 상태가 된다. 원인과 종료 코드(exit code)가 컨테이너의 시작과 종료 시간과 함께 무조건 출력된다.
+컨테이너가 Terminated 상태가 되기 전에, <code>preStop</code> 훅이 (존재한다면) 실행된다.
+<br /></li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">   </span>...<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>State:<span style="color:#bbb">          </span>Terminated<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>Reason:<span style="color:#bbb">       </span>Completed<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>Exit<span style="color:#bbb"> </span>Code:<span style="color:#bbb">    </span><span style="color:#666">0</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>Started:<span style="color:#bbb">      </span>Wed,<span style="color:#bbb"> </span><span style="color:#666">30</span><span style="color:#bbb"> </span>Jan<span style="color:#bbb"> </span><span style="color:#666">2019</span><span style="color:#bbb"> </span><span style="color:#666">11</span>:<span style="color:#666">45</span>:<span style="color:#666">26</span><span style="color:#bbb"> </span>+<span style="color:#666">0530</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>Finished:<span style="color:#bbb">     </span>Wed,<span style="color:#bbb"> </span><span style="color:#666">30</span><span style="color:#bbb"> </span>Jan<span style="color:#bbb"> </span><span style="color:#666">2019</span><span style="color:#bbb"> </span><span style="color:#666">11</span>:<span style="color:#666">45</span>:<span style="color:#666">26</span><span style="color:#bbb"> </span>+<span style="color:#666">0530</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>...</code></pre></div>
+<h2 id="파드의-준비성-게이트-readiness-gate">파드의 준비성 게이트(readiness gate)</h2>
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+
+
+
+<b>FEATURE STATE:</b> <code>Kubernetes v1.12</code>
+
+
+
+
+    
+    
+    
+    
+    
+<a href="#" id="feature-state-dialog-link" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>beta</a>
+<div id="feature-state-dialog" class="ui-dialog-content" title="beta">
+This feature is currently in a <em>beta</em> state, meaning:</p>
+
+<ul>
+<li>The version names contain beta (e.g. v2beta3).</li>
+<li>Code is well tested. Enabling the feature is considered safe. Enabled by default.</li>
+<li>Support for the overall feature will not be dropped, though details may change.</li>
+<li>The schema and/or semantics of objects may change in incompatible ways in a subsequent beta or stable release. When this happens, we will provide instructions for migrating to the next version. This may require deleting, editing, and re-creating API objects. The editing process may require some thought. This may require downtime for applications that rely on the feature.</li>
+<li>Recommended for only non-business-critical uses because of potential for incompatible changes in subsequent releases. If you have multiple clusters that can be upgraded independently, you may be able to relax this restriction.</li>
+<li><strong>Please do try our beta features and give feedback on them! After they exit beta, it may not be practical for us to make more changes.</strong></li>
+</ul>
+
+</div>
+<script>
+$(function(){
+    
+    $( "#feature-state-dialog" ).dialog({
+        autoOpen: false,
+        width: "600",
+        buttons: [
+            {
+                text: "Ok",
+                click: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        ]
+    });
+
+    
+    $( "#feature-state-dialog-link" ).click(function( event ) {
+        $( "#feature-state-dialog" ).dialog( "open" );
+        event.preventDefault();
+    });
+
+});
+</script>
+
+    
+
+</div>
+
+<p>파드의 준비성에 대한 확장성을 추가하기 위해서
+추가적인 피드백이나 신호를 <code>PodStatus</code>에 주입하는 방법인,
+<a href="https://github.com/kubernetes/enhancements/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md" target="_blank">파드 준비++</a>라는 특징이 쿠버네티스 1.11에서 소개되었다.
+파드의 준비성을 평가하기 위한 추가적인 조건들을 <code>PodSpec</code> 내의 새로운 <code>ReadinessGate</code> 필드를
+통해서 지정할 수 있다. 만약 쿠버네티스가 <code>status.conditions</code> 필드에서 해당하는
+조건을 찾지 못한다면, 그 조건의 상태는
+기본 값인 &ldquo;<code>False</code>&ldquo;가 된다. 아래는 한 예제를 보여준다.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">Kind:<span style="color:#bbb"> </span>Pod<span style="color:#bbb">
+</span><span style="color:#bbb"></span>...<span style="color:#bbb">
+</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>readinessGates:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>conditionType:<span style="color:#bbb"> </span><span style="color:#b44">&#34;www.example.com/feature-1&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>status:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>conditions:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>type:<span style="color:#bbb"> </span>Ready<span style="color:#bbb">  </span><span style="color:#080;font-style:italic"># 이것은 내장된 PodCondition이다</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>status:<span style="color:#bbb"> </span><span style="color:#b44">&#34;True&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>lastProbeTime:<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">null</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>lastTransitionTime:<span style="color:#bbb"> </span>2018-01-01T00:00:00Z<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>type:<span style="color:#bbb"> </span><span style="color:#b44">&#34;www.example.com/feature-1&#34;</span><span style="color:#bbb">   </span><span style="color:#080;font-style:italic"># 추가적인 PodCondition</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>status:<span style="color:#bbb"> </span><span style="color:#b44">&#34;False&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>lastProbeTime:<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">null</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>lastTransitionTime:<span style="color:#bbb"> </span>2018-01-01T00:00:00Z<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>containerStatuses:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>containerID:<span style="color:#bbb"> </span>docker://abcd...<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>ready:<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">true</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>...</code></pre></div>
+<p>파드의 새로운 조건들은 쿠버네티스의 <a href="/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set">레이블 키 포멧</a>을 준수해야 한다.
+<code>kubectl patch</code> 명령어가 오브젝트 상태 패치(patching)를 아직 제공하지 않기 때문에,
+새로운 파드 조건들은 <a href="/docs/reference/using-api/client-libraries/">KubeClient 라이브러리</a>를
+통한 <code>PATCH</code> 액션을 통해서 주입되어야 한다.</p>
+
+<p>새로운 파드 조건들이 적용된 경우, 파드는 <strong>오직</strong>
+다음 두 문장이 모두 참일 때만 준비 상태로 평가된다.</p>
+
+<ul>
+<li>파드 내의 모든 컨테이너들이 준비 상태이다.</li>
+<li><code>ReadinessGates</code>에 지정된 모든 조건들이 &ldquo;<code>True</code>&ldquo;이다.</li>
+</ul>
+
+<p>파드 준비성 평가에 대한 변경을 촉진하기 위해서, 이전 파드 조건인
+<code>Ready</code>를 포착하기 위한 새로운 파드 조건 <code>ContainersReady</code>가 소개되었다.</p>
+
+<p>K8s 1.11에서, 알파 특징으로서, &ldquo;파드 준비++&rdquo; 특징을 사용하기
+위해서는 <a href="/docs/reference/command-line-tools-reference/feature-gates/">특징 게이트</a>의 <code>PodReadinessGates</code>를 참으로 설정함으로써 명시적으로
+활성화해야 한다.</p>
+
+<p>K8s 1.12에서는, 해당 특징이 기본으로 활성화되어 있다.</p>
+
+<h2 id="재시작-정책">재시작 정책</h2>
+
+<p>PodSpec은 항상(Always), 실패 시(OnFailure), 절대 안 함(Never) 값으로 설정 가능한 <code>restartPolicy</code> 필드를
+가지고 있다. 기본 값은 항상(Always)이다.
+<code>restartPolicy</code>는 파드 내의 모든 컨테이너들에 적용된다. <code>restartPolicy</code>는
+같은 노드에 있는 kubelet에 의한 컨테이너들의 재시작에만 관련되어 있다. kubelet에 의해서 재시작되는 종료된
+컨테이너는 5분으로 제한된 지수 백-오프 지연(10초, 20초, 40초 &hellip;)을
+기준으로 재시작되며, 10분의 성공적 실행 후에 재설정된다.
+<a href="/docs/user-guide/pods/#durability-of-pods-or-lack-thereof">파드 문서</a>에서 의논된 바와 같이,
+파드는 일단 한 노드에 바운드되고 나면, 다른 노드에 다시 바운드되지 않는다.</p>
+
+<h2 id="파드의-일생-lifetime">파드의 일생(lifetime)</h2>
+
+<p>일반적으로, 파드는 누군가 파드를 파괴할 때까지 사라지지 않는다. 그것은 주로
+사람이나 컨트롤러에 의해서 일어난다. 이 법칙에 대한 유일한 예외는
+일정 기간(마스터의 <code>terminated-pod-gc-threshold</code>에 의해 결정되는)
+이상 파드의 <code>phase</code>가 Succeeded 또는 Failed라서 파드가 만료되고 자동적으로 파괴되는 경우이다.</p>
+
+<p>세 가지 유형의 컨트롤러를 사용할 수 있다.</p>
+
+<ul>
+<li><p>배치 연산과 같이, 종료가 예상되는 파드를 위해서는 <a href="/docs/concepts/jobs/run-to-completion-finite-workloads/">잡</a>을
+사용하길 바란다. 잡은 <code>restartPolicy</code>가 실패 시(OnFailure) 또는 절대 안 함(Never)으로
+지정된 경우에 적합하다.</p></li>
+
+<li><p>웹 서버와 같이, 종료가 예상되지 않는 파드에 대해서는 <a href="/docs/concepts/workloads/controllers/replicationcontroller/">레플리케이션 컨트롤러</a>,
+<a href="/docs/concepts/workloads/controllers/replicaset/">레플리카 셋</a>, 또는
+<a href="/docs/concepts/workloads/controllers/deployment/">디플로이먼트</a>를 사용하길 바란다.
+레플리케이션 컨트롤러는 <code>restartPolicy</code>가 항상(Always)으로 지정된
+경우에만 적합하다.</p></li>
+
+<li><p>머신 당 하나씩 실행해야하는 파드를 위해서는 <a href="/docs/concepts/workloads/controllers/daemonset/">데몬 셋</a>을 사용하길
+바란다. 왜냐하면 데몬 셋은 특정 머신 전용 시스템 서비스(machine-specific system service)를 제공하기 때문이다.</p></li>
+</ul>
+
+<p>세 가지 모든 컨트롤러 유형은 PodTemplate을 가지고 있다. 파드를
+직접적으로 생성하는 것 보다는, 적절한 컨트롤러를 생성하고 컨트롤러가 파드를
+생성하도록 하는 것이 추천된다. 그 이유는 파드
+혼자서는 머신의 실패에 탄력적(resilient)이지 않지만, 컨트롤러는 탄력적이기 때문이다.</p>
+
+<p>만약 노드가 죽거나 다른 클러스터의 다른 노드들로부터 연결이 끊기면, 쿠버네티스는
+잃어버린 노드에 있는 모든 파드의 <code>phase</code>를 실패된(Failed)으로 설정하는 정책을 적용한다.</p>
+
+<h2 id="예제">예제</h2>
+
+<h3 id="고급-활성-프로브-예제">고급 활성 프로브 예제</h3>
+
+<p>활성 프로브는 kubelet에 의해서 실행된다. 따라서 모든 요청은
+kubelet 네트워크 네임스페이스에서 이루어진다.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Pod<span style="color:#bbb">
+</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>labels:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>test:<span style="color:#bbb"> </span>liveness<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>liveness-http<span style="color:#bbb">
+</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>containers:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>-<span style="color:#bbb"> </span>args:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>/server<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>image:<span style="color:#bbb"> </span>k8s.gcr.io/liveness<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>livenessProbe:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>httpGet:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#080;font-style:italic"># &#34;host&#34;가 정의되지 않은 경우, &#34;PodIP&#34; 가 사용될 것이다.</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#080;font-style:italic"># host: my-host</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#080;font-style:italic"># &#34;scheme&#34;이 정의되지 않은 경우, &#34;HTTP&#34; 스키마가 사용될 것이다. &#34;HTTP&#34;와 &#34;HTTPS&#34;만 허용된다.</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#080;font-style:italic"># scheme: HTTPS</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>path:<span style="color:#bbb"> </span>/healthz<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>port:<span style="color:#bbb"> </span><span style="color:#666">8080</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>httpHeaders:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>X-Custom-Header<span style="color:#bbb">
+</span><span style="color:#bbb">          </span>value:<span style="color:#bbb"> </span>Awesome<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>initialDelaySeconds:<span style="color:#bbb"> </span><span style="color:#666">15</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>timeoutSeconds:<span style="color:#bbb"> </span><span style="color:#666">1</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>name:<span style="color:#bbb"> </span>liveness</code></pre></div>
+<h3 id="상태-예제">상태 예제</h3>
+
+<ul>
+<li><p>파드가 동작 중이고 하나의 컨테이너를 가지고 있다. 컨테이너는 성공으로 종료됐다.</p>
+
+<ul>
+<li>완료 이벤트를 기록한다.</li>
+<li>만약 <code>restartPolicy</code>가 :
+
+<ul>
+<li>항상(Always)이면: 컨테이너는 재시작되고, 파드의 <code>phase</code>는 Running으로 유지된다.</li>
+<li>실패 시(OnFailure)이면: 파드의 <code>phase</code>는 Succeeded가 된다.</li>
+<li>절대 안 함(Never)이면: 파드의 <code>phase</code>는 Succeeded가 된다.</li>
+</ul></li>
+</ul></li>
+
+<li><p>파드가 동작 중이고 하나의 컨테이너를 가지고 있다. 컨테이너는 실패로 종료됐다.</p>
+
+<ul>
+<li>실패 이벤트를 기록한다.</li>
+<li>만약 <code>restartPolicy</code>가 :
+
+<ul>
+<li>항상(Always)이면: 컨테이너는 재시작되고, 파드의 <code>phase</code>는 Running으로 유지된다.</li>
+<li>실패 시(OnFailure)이면: 컨테이너는 재시작되고, 파드의 <code>phase</code>는 Running으로 유지된다.</li>
+<li>절대 안 함(Never)이면: 파드의 <code>phase</code>는 Failed가 된다.</li>
+</ul></li>
+</ul></li>
+
+<li><p>파드가 동작 중이고 두 개의 컨테이너를 가지고 있다. 컨테이너 1이 실패로 종료됐다.</p>
+
+<ul>
+<li>실패 이벤트를 기록한다.</li>
+<li>만약 <code>restartPolicy</code>가 :
+
+<ul>
+<li>항상(Always)이면: 컨테이너는 재시작되고, 파드의 <code>phase</code>는 Running으로 유지된다.</li>
+<li>실패 시(OnFailure)이면: 컨테이너는 재시작되고, 파드의 <code>phase</code>는 Running으로 유지된다.</li>
+<li>절대 안 함(Never)이면: 컨테이너는 재시작되지 않고, 파드의 <code>phase</code>는 Running으로 유지된다.</li>
+</ul></li>
+<li>만약 컨테이너 1이 동작 중이 아니고, 컨테이너 2가 종료됐다면 :
+
+<ul>
+<li>실패 이벤트를 기록한다.</li>
+<li>만약 <code>restartPolicy</code>가 :
+
+<ul>
+<li>항상(Always)이면: 컨테이너는 재시작되고, 파드의 <code>phase</code>는 Running으로 유지된다.</li>
+<li>실패 시(OnFailure)이면: 컨테이너는 재시작되고, 파드의 <code>phase</code>는 Running으로 유지된다.</li>
+<li>절대 안 함(Never)이면: 파드의 <code>phase</code>는 Failed가 된다.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li><p>파드는 동작 중이고 하나의 컨테이너를 가지고 있다. 컨테이너의 메모리가 부족하다.</p>
+
+<ul>
+<li>컨테이너는 실패로 종료된다.</li>
+<li>메모리 부족(OOM) 이벤트를 기록한다.</li>
+<li>만약 <code>restartPolicy</code>가 :
+
+<ul>
+<li>항상(Always)이면: 컨테이너는 재시작되고, 파드의 <code>phase</code>는 Running으로 유지된다.</li>
+<li>실패 시(OnFailure)이면: 컨테이너는 재시작되고, 파드의 <code>phase</code>는 Running으로 유지된다.</li>
+<li>절대 안 함(Never)이면: 로그 실패 이벤트가 발생되고, 파드의 <code>phase</code>는 Failed가 된다.</li>
+</ul></li>
+</ul></li>
+
+<li><p>파드 동작 중에, 디스크가 죽었다.</p>
+
+<ul>
+<li>모든 컨테이너들을 죽인다.</li>
+<li>적절한 이벤트를 기록한다.</li>
+<li>파드의 <code>phase</code>는 Failed가 된다.</li>
+<li>만약 컨트롤러로 실행되었다면, 파드는 어딘가에서 재생성된다.</li>
+</ul></li>
+
+<li><p>파드 동작 중에, 파드가 있는 노드가 세그먼티드 아웃되었다.</p>
+
+<ul>
+<li>노드 컨트롤러가 타임아웃을 기다린다.</li>
+<li>노드 컨트롤러가 파드의 <code>phase</code>를 Failed로 설정한다.</li>
+<li>만약 컨트롤러로 실행되었다면, 파드는 어딘가에서 재생성된다.</li>
+</ul></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="다음-내용">다음 내용</h2>
+<ul>
+<li><p>Hands-on 경험하기
+<a href="/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/">컨테이너 라이프사이클 이벤트에 핸들러 부착하기</a>.</p></li>
+
+<li><p>Hands-on 경험하기
+<a href="/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/">활성 및 준비성 프로브 설정하기</a>.</p></li>
+
+<li><p><a href="/docs/concepts/containers/container-lifecycle-hooks/">컨테이너 라이프사이클 후크(hook)</a>에 대해 더 배우기.</p></li>
+</ul>
+
+
+
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/ko/docs/concepts/workloads/pods/pod-overview/" title="파드(Pod) 개요"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 파드(Pod) 개요</a>
+<a class="nav nav-next" href="/ko/docs/concepts/workloads/pods/init-containers/" title="초기화 컨테이너">Next - 초기화 컨테이너 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>피드백</h2>
+  <p class="feedback--prompt">이 페이지가 도움이 되었나요? </p>
+  <button class="button feedback--yes">네</button>
+  <button class="button feedback--no">아니요</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cconcepts%5cworkloads%5cpods%5cpod-lifecycle.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/ko\/docs\/concepts\/workloads\/pods\/pod-lifecycle\/",
+    "title" : "파드 라이프사이클",
+    "permalink" : "https:\/\/docstest.github.io\/ko\/docs\/concepts\/workloads\/pods\/pod-lifecycle\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">이슈 생성하기</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/ko/docs%5cconcepts%5cworkloads%5cpods%5cpod-lifecycle.md" class="button issue">페이지 편집하기</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    최종 수정일시 March 05, 2019 at 10:32 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/92faff9209e9f00c5ab9f2bb739cdcd2bdb4ee95/">Seventh Korean l10n work for release-1.13 (#12981)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5cconcepts%5cworkloads%5cpods%5cpod-lifecycle.md">페이지 변경 이력</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/ko/docs/home/">홈</a>
+            
+            
+            
+            
+            
+            
+            
+            <a href="/ko/case-studies/">사례 연구</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">기여하기</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

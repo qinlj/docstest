@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>镜像 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/concepts/containers/images/">
+<meta property="og:title" content="镜像">
+<meta name="twitter:title" content="镜像">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/concepts/containers/images/">English</a></li>
+                
+                    <li><a href="/ko/docs/concepts/containers/images/">한국어 Korean</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>概念</h1>
+<h5></h5>
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/" class="YAH">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="概念" href="/zh/docs/concepts/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Overview">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="What is Kubernetes? <small>(EN)</small>" href="/docs/concepts/overview/what-is-kubernetes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Components <small>(EN)</small>" href="/docs/concepts/overview/components/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="The Kubernetes API <small>(EN)</small>" href="/docs/concepts/overview/kubernetes-api/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Working with Kubernetes Objects">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Understanding Kubernetes Objects <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/kubernetes-objects/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Names <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/names/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Namespaces <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/namespaces/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Labels and Selectors <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/labels/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Annotations <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/annotations/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Field Selectors <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/field-selectors/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Recommended Labels <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/common-labels/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Object Management Using kubectl">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Object Management <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Managing Kubernetes Objects Using Imperative Commands <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/imperative-command/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Imperative Management of Kubernetes Objects Using Configuration Files <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/imperative-config/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Declarative Management of Kubernetes Objects Using Configuration Files <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/declarative-config/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Kubernetes Architecture">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Nodes <small>(EN)</small>" href="/docs/concepts/architecture/nodes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Master-Node communication <small>(EN)</small>" href="/docs/concepts/architecture/master-node-communication/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Concepts Underlying the Cloud Controller Manager <small>(EN)</small>" href="/docs/concepts/architecture/cloud-controller/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Containers">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Images <small>(EN)</small>" href="/docs/concepts/containers/images/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Container Environment Variables <small>(EN)</small>" href="/docs/concepts/containers/container-environment-variables/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Runtime Class <small>(EN)</small>" href="/docs/concepts/containers/runtime-class/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Container Lifecycle Hooks <small>(EN)</small>" href="/docs/concepts/containers/container-lifecycle-hooks/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Taint 和 Toleration" href="/zh/docs/concepts/configuration/taint-and-toleration/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="工作负载">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="工作负载" href="/zh/docs/concepts/workloads/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Pods">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Pods" href="/zh/docs/concepts/workloads/pods/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pod Overview <small>(EN)</small>" href="/docs/concepts/workloads/pods/pod-overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pods <small>(EN)</small>" href="/docs/concepts/workloads/pods/pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Disruptions <small>(EN)</small>" href="/docs/concepts/workloads/pods/disruptions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Init 容器" href="/zh/docs/concepts/workloads/pods/init-containers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Pod Preset" href="/zh/docs/concepts/workloads/pods/podpreset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Pod 的生命周期" href="/zh/docs/concepts/workloads/pods/pod-lifecycle/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Controllers">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Controllers" href="/zh/docs/concepts/workloads/controllers/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="ReplicaSet <small>(EN)</small>" href="/docs/concepts/workloads/controllers/replicaset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="ReplicationController <small>(EN)</small>" href="/docs/concepts/workloads/controllers/replicationcontroller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="StatefulSets <small>(EN)</small>" href="/docs/concepts/workloads/controllers/statefulset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="TTL Controller for Finished Resources <small>(EN)</small>" href="/docs/concepts/workloads/controllers/ttlafterfinished/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Jobs - Run to Completion <small>(EN)</small>" href="/docs/concepts/workloads/controllers/jobs-run-to-completion/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Cron Job" href="/zh/docs/concepts/workloads/controllers/cron-jobs/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DaemonSet" href="/zh/docs/concepts/workloads/controllers/daemonset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Deployments" href="/zh/docs/concepts/workloads/controllers/deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="垃圾收集" href="/zh/docs/concepts/workloads/controllers/garbage-collection/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Services, Load Balancing, and Networking">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Services <small>(EN)</small>" href="/docs/concepts/services-networking/service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="DNS for Services and Pods <small>(EN)</small>" href="/docs/concepts/services-networking/dns-pod-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Connecting Applications with Services <small>(EN)</small>" href="/docs/concepts/services-networking/connect-applications-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Ingress <small>(EN)</small>" href="/docs/concepts/services-networking/ingress/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Ingress Controllers <small>(EN)</small>" href="/docs/concepts/services-networking/ingress-controllers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Network Policies <small>(EN)</small>" href="/docs/concepts/services-networking/network-policies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Adding entries to Pod /etc/hosts with HostAliases <small>(EN)</small>" href="/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="存储">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="存储" href="/zh/docs/concepts/storage/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Volumes <small>(EN)</small>" href="/docs/concepts/storage/volumes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Persistent Volumes <small>(EN)</small>" href="/docs/concepts/storage/persistent-volumes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Volume Snapshots <small>(EN)</small>" href="/docs/concepts/storage/volume-snapshots/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Storage Classes <small>(EN)</small>" href="/docs/concepts/storage/storage-classes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Volume Snapshot Classes <small>(EN)</small>" href="/docs/concepts/storage/volume-snapshot-classes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Dynamic Volume Provisioning <small>(EN)</small>" href="/docs/concepts/storage/dynamic-provisioning/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Node-specific Volume Limits <small>(EN)</small>" href="/docs/concepts/storage/storage-limits/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Configuration">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configuration Best Practices <small>(EN)</small>" href="/docs/concepts/configuration/overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Managing Compute Resources for Containers <small>(EN)</small>" href="/docs/concepts/configuration/manage-compute-resources-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Assigning Pods to Nodes <small>(EN)</small>" href="/docs/concepts/configuration/assign-pod-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Taints and Tolerations <small>(EN)</small>" href="/docs/concepts/configuration/taint-and-toleration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Secrets <small>(EN)</small>" href="/docs/concepts/configuration/secret/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Organizing Cluster Access Using kubeconfig Files <small>(EN)</small>" href="/docs/concepts/configuration/organize-cluster-access-kubeconfig/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pod Priority and Preemption <small>(EN)</small>" href="/docs/concepts/configuration/pod-priority-preemption/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Scheduler Performance Tuning <small>(EN)</small>" href="/docs/concepts/configuration/scheduler-perf-tuning/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Policies">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Resource Quotas <small>(EN)</small>" href="/docs/concepts/policy/resource-quotas/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pod Security Policies <small>(EN)</small>" href="/docs/concepts/policy/pod-security-policy/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Cluster Administration">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cluster Administration Overview <small>(EN)</small>" href="/docs/concepts/cluster-administration/cluster-administration-overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Certificates <small>(EN)</small>" href="/docs/concepts/cluster-administration/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cloud Providers <small>(EN)</small>" href="/docs/concepts/cluster-administration/cloud-providers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Managing Resources <small>(EN)</small>" href="/docs/concepts/cluster-administration/manage-deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cluster Networking <small>(EN)</small>" href="/docs/concepts/cluster-administration/networking/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Logging Architecture <small>(EN)</small>" href="/docs/concepts/cluster-administration/logging/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configuring kubelet Garbage Collection <small>(EN)</small>" href="/docs/concepts/cluster-administration/kubelet-garbage-collection/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federation <small>(EN)</small>" href="/docs/concepts/cluster-administration/federation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Proxies in Kubernetes <small>(EN)</small>" href="/docs/concepts/cluster-administration/proxies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Controller manager metrics <small>(EN)</small>" href="/docs/concepts/cluster-administration/controller-metrics/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing Addons <small>(EN)</small>" href="/docs/concepts/cluster-administration/addons/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Extending Kubernetes">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Extending your Kubernetes Cluster <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/extend-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Extending the Kubernetes API">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Extending the Kubernetes API with the aggregation layer <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Custom Resources <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/api-extension/custom-resources/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Compute, Storage, and Networking Extensions">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Network Plugins <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Device Plugins <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Service Catalog <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/service-catalog/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Poseidon-Firmament - An alternate scheduler <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/poseidon-firmament-alternate-scheduler/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="" href="/zh/docs/concepts/architecture/cloud-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="" href="/zh/docs/concepts/overview/kubernetes-api/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DNS Pod 与 Service" href="/zh/docs/concepts/services-networking/dns-pod-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes 中的代理" href="/zh/docs/concepts/cluster-administration/proxies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes 组件" href="/zh/docs/concepts/overview/components/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes集群中使用Sysctls" href="/zh/docs/concepts/cluster-administration/sysctl-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Managing Compute Resources for Containers" href="/zh/docs/concepts/configuration/manage-compute-resources-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Master 节点通信" href="/zh/docs/concepts/architecture/master-node-communication/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Nodes" href="/zh/docs/concepts/architecture/nodes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Pod 安全策略" href="/zh/docs/concepts/policy/pod-security-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Secret" href="/zh/docs/concepts/configuration/secret/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Service" href="/zh/docs/concepts/services-networking/service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="云供应商" href="/zh/docs/concepts/cluster-administration/cloud-providers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 HostAliases 向 Pod /etc/hosts 文件添加条目" href="/zh/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="安装扩展（Addons）" href="/zh/docs/concepts/cluster-administration/addons/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="容器环境变量" href="/zh/docs/concepts/containers/container-environment-variables/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="应用连接到 Service" href="/zh/docs/concepts/services-networking/connect-applications-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="概念模板示例" href="/zh/docs/concepts/example-concept-template/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="理解 Kubernetes 对象" href="/zh/docs/concepts/overview/working-with-objects/kubernetes-objects/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="网络策略" href="/zh/docs/concepts/services-networking/network-policies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="联邦" href="/zh/docs/concepts/cluster-administration/federation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="认识 Kubernetes?" href="/zh/docs/concepts/overview/what-is-kubernetes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="设备插件" href="/zh/docs/concepts/cluster-administration/device-plugins/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="证书" href="/zh/docs/concepts/cluster-administration/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="资源配额" href="/zh/docs/concepts/policy/resource-quotas/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="镜像" href="/zh/docs/concepts/containers/images/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="集群管理概述" href="/zh/docs/concepts/cluster-administration/cluster-administration-overview/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cconcepts%5ccontainers%5cimages.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>镜像</h1>
+
+
+
+<p>在Kubernetes pod中引用镜像前，请创建Docker镜像，并将之推送到镜像仓库中。
+容器的“image”属性支持和Docker命令行相同的语法，包括私有仓库和标签。</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%e5%8d%87%e7%ba%a7%e9%95%9c%e5%83%8f">升级镜像</a></li>
+
+
+
+
+<li><a href="#%e4%bd%bf%e7%94%a8%e7%a7%81%e6%9c%89%e4%bb%93%e5%ba%93">使用私有仓库</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<h2 id="升级镜像">升级镜像</h2>
+
+<p>默认的镜像拉取策略是“IfNotPresent”，在镜像已经存在的情况下，kubelet将不在去拉取镜像。
+如果总是想要拉取镜像，必须设置拉取策略为“Always”或者设置镜像标签为“:latest”。</p>
+
+<p>如果没有指定镜像的标签，它会被假定为“:latest”,同时拉取策略为“Always”。</p>
+
+<p>注意应避免使用“:latest”标签，参见 <a href="/docs/concepts/configuration/overview/#container-images">Best Practices for Configuration</a> 获取更多信息。</p>
+
+<h2 id="使用私有仓库">使用私有仓库</h2>
+
+<p>从私有仓库读取镜像时可能需要密钥。
+凭证可以用以下方式提供:</p>
+
+<ul>
+<li>使用Google Container Registry
+
+<ul>
+<li>每个集群分别配置</li>
+<li>在Google Compute Engine 或者 Google Kubernetes Engine上自动配置</li>
+<li>所有的pod都能读取项目的私有仓库</li>
+</ul></li>
+<li>使用 AWS EC2 Container Registry (ECR)
+
+<ul>
+<li>使用IAM角色和策略来控制对ECR仓库的访问</li>
+<li>自动刷新ECR的登录凭证</li>
+</ul></li>
+<li>使用 Azure Container Registry (ACR)</li>
+<li>配置节点对私有仓库认证
+
+<ul>
+<li>所有的pod都可以读取已配置的私有仓库</li>
+<li>需要集群管理员提供node的配置</li>
+</ul></li>
+<li>提前拉取镜像
+
+<ul>
+<li>所有的pod都可以使用node上缓存的镜像</li>
+<li>需要以root进入node操作</li>
+</ul></li>
+<li>pod上指定 ImagePullSecrets
+
+<ul>
+<li>只有提供了密钥的pod才能接入私有仓库
+下面将详细描述每一项</li>
+</ul></li>
+</ul>
+
+<h3 id="使用-google-container-registry">使用 Google Container Registry</h3>
+
+<p>Kuberetes运行在Google Compute Engine (GCE)时原生支持<a href="https://cloud.google.com/tools/container-registry/" target="_blank">Google ContainerRegistry (GCR)</a>。如果kubernetes集群运行在GCE
+或者Google Kubernetes Engine 上，使用镜像全名(e.g. gcr.io/my_project/image:tag)即可。</p>
+
+<p>集群中的所有pod都会有读取这个仓库中镜像的权限。</p>
+
+<p>Kubelet将使用实例的Google service account向GCR认证。实例的service account拥有
+<code>https://www.googleapis.com/auth/devstorage.read_only</code>，所以它可以从项目的GCR拉取，但不能推送。</p>
+
+<h3 id="使用-aws-ec2-container-registry">使用 AWS EC2 Container Registry</h3>
+
+<p>当Node是AWS EC2实例时，Kubernetes原生支持<a href="https://aws.amazon.com/ecr/" target="_blank">AWS EC2 ContainerRegistry</a>。</p>
+
+<p>在pod定义中，使用镜像全名即可 (例如 <code>ACCOUNT.dkr.ecr.REGION.amazonaws.com/imagename:tag</code>)</p>
+
+<p>集群中可以创建pod的用户都可以使用ECR中的任意镜像运行pod。</p>
+
+<p>Kubelet会获取并且定期刷新ECR的凭证。它需要以下权限</p>
+
+<ul>
+<li><code>ecr:GetAuthorizationToken</code></li>
+<li><code>ecr:BatchCheckLayerAvailability</code></li>
+<li><code>ecr:GetDownloadUrlForLayer</code></li>
+<li><code>ecr:GetRepositoryPolicy</code></li>
+<li><code>ecr:DescribeRepositories</code></li>
+<li><code>ecr:ListImages</code></li>
+<li><code>ecr:BatchGetImage</code></li>
+</ul>
+
+<p>要求：</p>
+
+<ul>
+<li>必须使用kubelet 1.2.0及以上版本</li>
+<li>如果node在区域A，而镜像仓库在另一个区域B，需要1.3.0及以上版本</li>
+<li>区域中必须提供ECR</li>
+</ul>
+
+<p>诊断</p>
+
+<ul>
+<li>验证是否满足以上要求</li>
+<li>获取工作站的$REGION (例如 <code>us-west-2</code>)凭证，使用凭证SSH到主机手动运行docker，检查是否运行</li>
+<li>验证kubelet是否使用参数<code>--cloud-provider=aws</code>运行</li>
+<li>检查kubelet日志(例如 <code>journalctl -u kubelet</code>)，是否有类似的行
+
+<ul>
+<li><code>plugins.go:56] Registering credential provider: aws-ecr-key</code></li>
+<li><code>provider.go:91] Refreshing cache for provider: *aws_credentials.ecrProvider</code></li>
+</ul></li>
+</ul>
+
+<h3 id="使用-azure-container-registry-acr">使用 Azure Container Registry (ACR)</h3>
+
+<p>当使用<a href="https://azure.microsoft.com/en-us/services/container-registry/" target="_blank">Azure Container Registry</a>时，可以使用admin user或者service principal认证。
+任何一种情况，认证都通过标准的Dokcer authentication完成。本指南假设使用<a href="https://github.com/azure/azure-cli" target="_blank">azure-cli</a>
+命令行工具。</p>
+
+<p>首先，需要创建仓库并获取凭证，完整的文档请参考
+<a href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli" target="_blank">Azure container registry documentation</a>。</p>
+
+<p>创建好容器仓库后，可以使用以下凭证登录：</p>
+
+<ul>
+<li><code>DOCKER_USER</code> : service principal, or admin username</li>
+<li><code>DOCKER_PASSWORD</code>: service principal password, or admin user password</li>
+<li><code>DOCKER_REGISTRY_SERVER</code>: <code>${some-registry-name}.azurecr.io</code></li>
+<li><code>DOCKER_EMAIL</code>: <code>${some-email-address}</code></li>
+</ul>
+
+<p>填写以上变量后，就可以
+<a href="/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod">configure a Kubernetes Secret and use it to deploy a Pod</a>。</p>
+
+<h3 id="配置nodes对私有仓库认证">配置Nodes对私有仓库认证</h3>
+
+<p><strong>注意：</strong> 如果在Google Kubernetes Engine 上运行集群，每个节点上都会有<code>.dockercfg</code>文件，它包含对Google Container Registry的凭证。
+不需要使用以下方法。</p>
+
+<p><strong>注意：</strong> 如果在AWS EC2上运行集群且准备使用EC2 Container Registry (ECR)，每个node上的kubelet会管理和更新ECR的登录凭证。不需要使用以下方法。</p>
+
+<p><strong>注意：</strong> 该方法适用于能够对节点进行配置的情况。该方法在GCE及在其它能自动配置节点的云平台上并不适合。</p>
+
+<p>Docker将私有仓库的密钥存放在<code>$HOME/.dockercfg</code>或<code>$HOME/.docker/config.json</code>文件中。Kubelet上，docker会使用root用户<code>$HOME</code>路径下的密钥。</p>
+
+<p>推荐如下步骤来为node配置私有仓库。以下示例在PC或笔记本电脑中操作</p>
+
+<p>1.对于想要使用的每一种凭证，运行 <code>docker login [server]</code>，它会更新<code>$HOME/.docker/config.json</code>。
+   1.使用编辑器查看<code>$HOME/.docker/config.json</code>，保证文件中包含了想要使用的凭证
+   1.获取node列表，例如
+     - 如果使用node名称，<code>nodes=$(kubectl get nodes -o jsonpath='{range.items[*].metadata}{.name} {end}')</code>
+     - 如果使用node IP ，<code>nodes=$(kubectl get nodes -o jsonpath='{range .items[*].status.addresses[?(@.type==&quot;ExternalIP&quot;)]}{.address} {end}')</code>
+   1.将本地的<code>.docker/config.json</code>拷贝到每个节点root用户目录下
+     - 例如： <code>for n in $nodes; do scp ~/.docker/config.json root@$n:/root/.docker/config.json; done</code></p>
+
+<p>创建使用私有仓库的pod来验证，例如：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">$<span style="color:#bbb"> </span>cat<span style="color:#bbb"> </span>&lt;&lt;EOF<span style="color:#bbb"> </span>&gt;<span style="color:#bbb"> </span>/tmp/private-image-test-<span style="color:#666">1.</span>yaml<span style="color:#bbb">
+</span><span style="color:#bbb"></span>apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Pod<span style="color:#bbb">
+</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>private-image-test-<span style="color:#666">1</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>containers:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>uses-private-image<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>image:<span style="color:#bbb"> </span>$PRIVATE_IMAGE_NAME<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>imagePullPolicy:<span style="color:#bbb"> </span>Always<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>command:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span><span style="color:#b44">&#34;echo&#34;</span>,<span style="color:#bbb"> </span><span style="color:#b44">&#34;SUCCESS&#34;</span><span style="color:#bbb"> </span>]<span style="color:#bbb">
+</span><span style="color:#bbb"></span>EOF<span style="color:#bbb">
+</span><span style="color:#bbb"></span>$<span style="color:#bbb"> </span>kubectl<span style="color:#bbb"> </span>create<span style="color:#bbb"> </span>-f<span style="color:#bbb"> </span>/tmp/private-image-test-<span style="color:#666">1.</span>yaml<span style="color:#bbb">
+</span><span style="color:#bbb"></span>pod<span style="color:#bbb"> </span><span style="color:#b44">&#34;private-image-test-1&#34;</span><span style="color:#bbb"> </span>created<span style="color:#bbb">
+</span><span style="color:#bbb"></span>$</code></pre></div>
+<p>如果一切正常，一段时间后，可以看到:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl logs private-image-test-1
+SUCCESS</code></pre></div>
+<p>如果失败，则可以看到：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl describe pods/private-image-test-1 | grep <span style="color:#b44">&#34;Failed&#34;</span>
+  Fri, <span style="color:#666">26</span> Jun <span style="color:#666">2015</span> <span style="color:#666">15</span>:36:13 -0700    Fri, <span style="color:#666">26</span> Jun <span style="color:#666">2015</span> <span style="color:#666">15</span>:39:13 -0700    <span style="color:#666">19</span>    <span style="color:#666">{</span>kubelet node-i2hq<span style="color:#666">}</span>    spec.containers<span style="color:#666">{</span>uses-private-image<span style="color:#666">}</span>    failed        Failed to pull image <span style="color:#b44">&#34;user/privaterepo:v1&#34;</span>: Error: image user/privaterepo:v1 not found</code></pre></div>
+<p>必须保证集群中所有的节点都有相同的<code>.docker/config.json</code>文件。否则,pod会在一些节点上正常运行而在另一些节点上无法启动
+例如，如果使用node自动弹缩，那么每个实例模板都需要包含<code>.docker/config.json</code>，或者挂载一个包含这个文件的驱动器。</p>
+
+<p>在<code>.docker/config.json</code>中配置了私有仓库密钥后，所有pod都会能读取私有仓库中的镜像。</p>
+
+<p><strong>该方法已在6月26日的docker私有仓库和kubernetes v0.19.3上测试通过，其他私有仓库，如quay.io应该也可以运行，但未测试过。</strong></p>
+
+<h3 id="提前拉取镜像">提前拉取镜像</h3>
+
+<p><strong>注意：</strong> 如果在Google Kubernetes Engine 上运行集群，每个节点上都会有<code>.dockercfg</code>文件，它包含对Google Container Registry的凭证。
+不需要使用以下方法。</p>
+
+<p><strong>注意：</strong> 该方法适用于能够对节点进行配置的情况。该方法在GCE及在其它能自动配置节点的云平台上并不适合。</p>
+
+<p>默认情况下，kubelet会尝试从指定的仓库拉取每一个镜像
+但是，如果容器属性<code>imagePullPolicy</code>设置为<code>IfNotPresent</code>或者<code>Never</code>，
+则会使用本地镜像（优先、唯一、分别）。</p>
+
+<p>如果依赖提前拉取镜像代替仓库认证，
+必须保证集群所有的节点提前拉取的镜像是相同的。</p>
+
+<p>可以用于提前载入指定的镜像以提高速度，或者作为私有仓库认证的一种替代方案</p>
+
+<p>所有的pod都可以使用node上缓存的镜像</p>
+
+<h3 id="在pod上指定imagepullsecrets">在pod上指定ImagePullSecrets</h3>
+
+<p><strong>注意:</strong> Google Kubernetes Engine,GCE及其他自动创建node的云平台上，推荐使用本方法。</p>
+
+<p>Kubernetes支持在pod中指定仓库密钥。</p>
+
+<h4 id="使用docker-config创建secret">使用Docker Config创建Secret</h4>
+
+<p>运行以下命令，将大写字母代替为合适的值</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl create secret docker-registry myregistrykey --docker-server<span style="color:#666">=</span>DOCKER_REGISTRY_SERVER --docker-username<span style="color:#666">=</span>DOCKER_USER --docker-password<span style="color:#666">=</span>DOCKER_PASSWORD --docker-email<span style="color:#666">=</span>DOCKER_EMAIL
+secret <span style="color:#b44">&#34;myregistrykey&#34;</span> created.</code></pre></div>
+<p>如果需要接入多个仓库，可以为每个仓库创建一个secret。
+当为pod拉取镜像时，kubelet会将<code>imagePullSecrets</code>合入一个独立虚拟的<code>.docker/config.json</code>。</p>
+
+<p>Pod只能引用和它相同namespace的ImagePullSecrets，
+所以需要为每一个namespace做配置</p>
+
+<h4 id="通过kubectl创建secret">通过kubectl创建secret</h4>
+
+<p>由于某种原因在一个<code>.docker/config.json</code>中需要多个项或者需要非上述命令给出的secret，可以<a href="/docs/user-guide/secrets/#creating-a-secret-manually">create a secret using
+json or yaml</a>。</p>
+
+<p>请保证：</p>
+
+<ul>
+<li>设置data项的名称为<code>.dockerconfigjson</code></li>
+<li>使用base64对docker文件编码，并将字符准确黏贴到<code>data[&quot;.dockerconfigjson&quot;]</code>里</li>
+<li>设置<code>type</code>为<code>kubernetes.io/dockerconfigjson</code></li>
+</ul>
+
+<p>示例：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Secret<span style="color:#bbb">
+</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>myregistrykey<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>namespace:<span style="color:#bbb"> </span>awesomeapps<span style="color:#bbb">
+</span><span style="color:#bbb"></span>data:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>.dockerconfigjson:<span style="color:#bbb"> </span>UmVhbGx5IHJlYWxseSByZWVlZWVlZWVlZWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWxsbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGx5eXl5eXl5eXl5eXl5eXl5eXl5eSBsbGxsbGxsbGxsbGxsbG9vb29vb29vb29vb29vb29vb29vb29vb29vb25ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubmdnZ2dnZ2dnZ2dnZ2dnZ2dnZ2cgYXV0aCBrZXlzCg==<span style="color:#bbb">
+</span><span style="color:#bbb"></span>type:<span style="color:#bbb"> </span>kubernetes.io/dockerconfigjson</code></pre></div>
+<p>如果收到错误消息<code>error: no objects passed to create</code>，可能是 base64 编码后的字符串非法。
+如果收到错误消息类似<code>Secret &quot;myregistrykey&quot; is invalid: data[.dockerconfigjson]: invalid value ...</code>,
+说明数据已经解码成功，但是不满足<code>.docker/config.json</code>文件的语法。</p>
+
+<h4 id="在pod中引用imagepullsecrets">在pod中引用imagePullSecrets</h4>
+
+<p>现在，在创建pod时，可以在pod定义中增加<code>imagePullSecrets</code>小节来引用secret</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Pod<span style="color:#bbb">
+</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>foo<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>namespace:<span style="color:#bbb"> </span>awesomeapps<span style="color:#bbb">
+</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>containers:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>foo<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>image:<span style="color:#bbb"> </span>janedoe/awesomeapp:v1<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>imagePullSecrets:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>myregistrykey</code></pre></div>
+<p>对每一个使用私有仓库的pod，都需要做以上操作。</p>
+
+<p>也可以在<a href="/docs/user-guide/service-accounts">serviceAccount</a> 资源中设置imagePullSecrets自动设置<code>imagePullSecrets</code></p>
+
+<p><code>imagePullSecrets</code>可以和每个node上的<code>.docker/config.json</code>一起使用，他们将共同生效。本方法在Google Kubernetes Engine
+也能正常工作。</p>
+
+<h3 id="使用场景">使用场景</h3>
+
+<p>配置私有仓库有多种方案，以下是一些常用场景和建议的解决方案。</p>
+
+<ol>
+<li>集群运行非专有（例如 开源镜像）镜像。镜像不需要隐藏。
+
+<ul>
+<li>使用Docker hub上的公有镜像</li>
+<li>无需配置</li>
+<li>在GCE/GKE上会自动使用高稳定性和高速的Docker hub的本地mirror</li>
+</ul></li>
+<li>集群运行一些专有镜像，这些镜像对外部公司需要隐藏，对集群用户可见
+
+<ul>
+<li>使用自主的私有<a href="https://docs.docker.com/registry/" target="_blank">Docker registry</a>.
+
+<ul>
+<li>可以放置在<a href="https://hub.docker.com/account/signup/" target="_blank">Docker Hub</a>,或者其他地方。</li>
+<li>按照上面的描述，在每个节点手动配置.docker/config.json</li>
+</ul></li>
+<li>或者，在防火墙内运行一个内置的私有仓库，并开放读取权限
+
+<ul>
+<li>不需要配置Kubenretes</li>
+</ul></li>
+<li>或者，在GCE/GKE上时，使用项目的Google Container Registry
+
+<ul>
+<li>使用集群自动伸缩比手动配置node工作的更好</li>
+</ul></li>
+<li>或者，在更改集群node配置不方便时，使用<code>imagePullSecrets</code></li>
+</ul></li>
+<li>使用专有镜像的集群，有更严格的访问控制
+
+<ul>
+<li>保证<a href="/docs/admin/admission-controllers/#alwayspullimages">AlwaysPullImages admission controller</a>开启。否则，所有的pod都可以使用镜像</li>
+<li>将敏感数据存储在&rdquo;Secret&rdquo;资源中，而不是打包在镜像里</li>
+</ul></li>
+<li>多租户集群下，每个租户需要自己的私有仓库
+
+<ul>
+<li>保证<a href="/docs/admin/admission-controllers/#alwayspullimages">AlwaysPullImages admission controller</a>开启。否则，所有租户的所有的pod都可以使用镜像</li>
+<li>私有仓库开启认证</li>
+<li>为每个租户获取仓库凭证，放置在secret中，并发布到每个租户的namespace下</li>
+<li>租户将secret增加到每个namespace下的imagePullSecrets中</li>
+</ul></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/concepts/policy/resource-quotas/" title="资源配额"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 资源配额</a>
+<a class="nav nav-next" href="/zh/docs/concepts/cluster-administration/cluster-administration-overview/" title="集群管理概述">Next - 集群管理概述 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cconcepts%5ccontainers%5cimages.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/concepts\/containers\/images\/",
+    "title" : "镜像",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/concepts\/containers\/images\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cconcepts%5ccontainers%5cimages.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    页面最后一次修改于 October 12, 2018 at 2:25 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/abcee2dccd17c94376595b34cc05e56345a7f06c/">Update localization guidelines (#10485)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5cconcepts%5ccontainers%5cimages.md">页面历史</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

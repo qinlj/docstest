@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>对象绘制 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="地图绘制中最常用的几何对象是点、线、面、文本四种。“对象操作”选项卡提供了在地图上创建各类几何对象的功能，包括：点对象绘制、线对象绘制、面对象绘制和文本对象绘制。
+各种几何对象的绘制都在图层可编辑得状态下进行，同时设置多个图层可编辑，但是在创建点、线、面或文本对象时，只针对当前选中的图层进行几何对象绘制。因此，如果想要对某个图层创建新对象，必须首先单击图层管理器中的相应图层，将该图层设置为当前图层。
+下面就对象绘制中涉及的一些概念做如下介绍：
+对象概述
+对象（Object）：即几何对象，在 GIS 中对离散空间实体的抽象表示。一个对象具有自己的属性和行为。在 SuperMap 中有些对象可以直接创建，有些则需要通过转换生成。
+ 单一对象（Single Object）：即指一个对象，一个简单对象、一个复杂对象、一个复合对象、一个子对象都是单一对象。
+ 子对象（part）：是指简单对象和复杂对象的组成单元。简单对象由一个子对象组成，即其本身；复杂对象由两个或两个以上子对象组成。 简单对象（Simple Object）：是指只有一个子对象（即其本身）的对象。
+ 复杂对象（Complex Object）：是指具有两个或多个子对象的对象，这些子对象是同类型的。
+ 复合对象（Compound Object）：特指在 CAD 图层中由组合运算生成的对象。复合对象没有子对象的概念。
+ 参数化对象：通过主要参数来绘制几何对象，是连续的。而普通几何对象是用组成该对象的关键点或者点串的坐标来绘制的。例如参数化圆是通过确定的圆心和半径两个参数来精确绘制的；而普通的圆将组成圆的圆弧离散化去点，然后用这些点连成线形成封闭的圆。
+  对象绘制中的角度说明
+ 角度方向：应用程序中涉及到的角度方向均为逆时针方向。
+ 起始角度：绘制对象中的起始角度是指以正北方向为起始边，到另一条边之间的夹角。   Shift 键的使用说明
+在绘制一些对象过程中，配合 Shift 键的使用，可以使绘制过程更加便捷。
+ 绘制直线：通过输入长度、角度参数绘制直线时，按住 Shift 键只能绘制水平、垂直或者45°方向的直线。
+ 绘制矩形（圆角矩形）：通过输入宽度、高度参数绘制矩形时，按住 Shift 键，将得到宽度和高度相等的正方形。
+ 绘制椭圆：通过输入外接矩形宽度和高度参数绘制椭圆时，按住 Shift 键，将得到外接矩形的宽度相等的正圆。   A 键的使用说明
+在地图中绘制对象时，即鼠标为绘制状态时，按下键盘中的字母“A”键，可将当前地图窗口中的鼠标切换为绘制漫游状态。绘制对象过程中切换鼠标为绘制漫游状态后，可通过单击鼠标右键将鼠标状态切换为绘制状态，继续绘制对象。
+注意事项
+ 在打开空地图（地理坐标系）的窗口默认范围为可绘制范围，能够有效避免默认窗口范围绘制对象时提示超范围的情况。   　">
+<meta property="og:description" content="地图绘制中最常用的几何对象是点、线、面、文本四种。“对象操作”选项卡提供了在地图上创建各类几何对象的功能，包括：点对象绘制、线对象绘制、面对象绘制和文本对象绘制。
+各种几何对象的绘制都在图层可编辑得状态下进行，同时设置多个图层可编辑，但是在创建点、线、面或文本对象时，只针对当前选中的图层进行几何对象绘制。因此，如果想要对某个图层创建新对象，必须首先单击图层管理器中的相应图层，将该图层设置为当前图层。
+下面就对象绘制中涉及的一些概念做如下介绍：
+对象概述
+对象（Object）：即几何对象，在 GIS 中对离散空间实体的抽象表示。一个对象具有自己的属性和行为。在 SuperMap 中有些对象可以直接创建，有些则需要通过转换生成。
+ 单一对象（Single Object）：即指一个对象，一个简单对象、一个复杂对象、一个复合对象、一个子对象都是单一对象。
+ 子对象（part）：是指简单对象和复杂对象的组成单元。简单对象由一个子对象组成，即其本身；复杂对象由两个或两个以上子对象组成。 简单对象（Simple Object）：是指只有一个子对象（即其本身）的对象。
+ 复杂对象（Complex Object）：是指具有两个或多个子对象的对象，这些子对象是同类型的。
+ 复合对象（Compound Object）：特指在 CAD 图层中由组合运算生成的对象。复合对象没有子对象的概念。
+ 参数化对象：通过主要参数来绘制几何对象，是连续的。而普通几何对象是用组成该对象的关键点或者点串的坐标来绘制的。例如参数化圆是通过确定的圆心和半径两个参数来精确绘制的；而普通的圆将组成圆的圆弧离散化去点，然后用这些点连成线形成封闭的圆。
+  对象绘制中的角度说明
+ 角度方向：应用程序中涉及到的角度方向均为逆时针方向。
+ 起始角度：绘制对象中的起始角度是指以正北方向为起始边，到另一条边之间的夹角。   Shift 键的使用说明
+在绘制一些对象过程中，配合 Shift 键的使用，可以使绘制过程更加便捷。
+ 绘制直线：通过输入长度、角度参数绘制直线时，按住 Shift 键只能绘制水平、垂直或者45°方向的直线。
+ 绘制矩形（圆角矩形）：通过输入宽度、高度参数绘制矩形时，按住 Shift 键，将得到宽度和高度相等的正方形。
+ 绘制椭圆：通过输入外接矩形宽度和高度参数绘制椭圆时，按住 Shift 键，将得到外接矩形的宽度相等的正圆。   A 键的使用说明
+在地图中绘制对象时，即鼠标为绘制状态时，按下键盘中的字母“A”键，可将当前地图窗口中的鼠标切换为绘制漫游状态。绘制对象过程中切换鼠标为绘制漫游状态后，可通过单击鼠标右键将鼠标状态切换为绘制状态，继续绘制对象。
+注意事项
+ 在打开空地图（地理坐标系）的窗口默认范围为可绘制范围，能够有效避免默认窗口范围绘制对象时提示超范围的情况。   　">
+<meta name="twitter:description" content="地图绘制中最常用的几何对象是点、线、面、文本四种。“对象操作”选项卡提供了在地图上创建各类几何对象的功能，包括：点对象绘制、线对象绘制、面对象绘制和文本对象绘制。
+各种几何对象的绘制都在图层可编辑得状态下进行，同时设置多个图层可编辑，但是在创建点、线、面或文本对象时，只针对当前选中的图层进行几何对象绘制。因此，如果想要对某个图层创建新对象，必须首先单击图层管理器中的相应图层，将该图层设置为当前图层。
+下面就对象绘制中涉及的一些概念做如下介绍：
+对象概述
+对象（Object）：即几何对象，在 GIS 中对离散空间实体的抽象表示。一个对象具有自己的属性和行为。在 SuperMap 中有些对象可以直接创建，有些则需要通过转换生成。
+ 单一对象（Single Object）：即指一个对象，一个简单对象、一个复杂对象、一个复合对象、一个子对象都是单一对象。
+ 子对象（part）：是指简单对象和复杂对象的组成单元。简单对象由一个子对象组成，即其本身；复杂对象由两个或两个以上子对象组成。 简单对象（Simple Object）：是指只有一个子对象（即其本身）的对象。
+ 复杂对象（Complex Object）：是指具有两个或多个子对象的对象，这些子对象是同类型的。
+ 复合对象（Compound Object）：特指在 CAD 图层中由组合运算生成的对象。复合对象没有子对象的概念。
+ 参数化对象：通过主要参数来绘制几何对象，是连续的。而普通几何对象是用组成该对象的关键点或者点串的坐标来绘制的。例如参数化圆是通过确定的圆心和半径两个参数来精确绘制的；而普通的圆将组成圆的圆弧离散化去点，然后用这些点连成线形成封闭的圆。
+  对象绘制中的角度说明
+ 角度方向：应用程序中涉及到的角度方向均为逆时针方向。
+ 起始角度：绘制对象中的起始角度是指以正北方向为起始边，到另一条边之间的夹角。   Shift 键的使用说明
+在绘制一些对象过程中，配合 Shift 键的使用，可以使绘制过程更加便捷。
+ 绘制直线：通过输入长度、角度参数绘制直线时，按住 Shift 键只能绘制水平、垂直或者45°方向的直线。
+ 绘制矩形（圆角矩形）：通过输入宽度、高度参数绘制矩形时，按住 Shift 键，将得到宽度和高度相等的正方形。
+ 绘制椭圆：通过输入外接矩形宽度和高度参数绘制椭圆时，按住 Shift 键，将得到外接矩形的宽度相等的正圆。   A 键的使用说明
+在地图中绘制对象时，即鼠标为绘制状态时，按下键盘中的字母“A”键，可将当前地图窗口中的鼠标切换为绘制漫游状态。绘制对象过程中切换鼠标为绘制漫游状态后，可通过单击鼠标右键将鼠标状态切换为绘制状态，继续绘制对象。
+注意事项
+ 在打开空地图（地理坐标系）的窗口默认范围为可绘制范围，能够有效避免默认窗口范围绘制对象时提示超范围的情况。   　">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/datamanage/objectdraw/">
+<meta property="og:title" content="对象绘制">
+<meta name="twitter:title" content="对象绘制">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/">English</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                    <li><a href="/it/">Italian</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+<h1>数据管理</h1>
+<h5></h5>
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/" class="YAH">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="数据管理" href="/zh/docs/datamanage/"></a>
+
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="" href="/zh/docs/datamanage/recalculateraster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="对象操作" href="/zh/docs/datamanage/objectedit/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="对象绘制" href="/zh/docs/datamanage/objectdraw/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="数据源类型及数据引擎" href="/zh/docs/datamanage/enginetype/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="数据集压缩编码方式" href="/zh/docs/datamanage/encodetype/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="目录管理" href="/zh/docs/datamanage/catalogmanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理工作空间" href="/zh/docs/datamanage/workspacemanagent/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理影像金字塔" href="/zh/docs/datamanage/pyramidmanage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理数据源" href="/zh/docs/datamanage/databasemanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理数据集" href="/zh/docs/datamanage/datasetmanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理空间索引" href="/zh/docs/datamanage/spatialindexmanage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制文本对象" href="/zh/docs/datamanage/text/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制点对象" href="/zh/docs/datamanage/point/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制线" href="/zh/docs/datamanage/drawcurve/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制面" href="/zh/docs/datamanage/drawquadrangle/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="重新计算矢量数据集的范围" href="/zh/docs/datamanage/recalculatevector/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cDataManage%5cObjectDraw.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>对象绘制</h1>
+
+
+
+
+
+<p>地图绘制中最常用的几何对象是点、线、面、文本四种。“对象操作”选项卡提供了在地图上创建各类几何对象的功能，包括：点对象绘制、线对象绘制、面对象绘制和文本对象绘制。</p>
+
+<p>各种几何对象的绘制都在图层可编辑得状态下进行，同时设置多个图层可编辑，但是在创建点、线、面或文本对象时，只针对当前选中的图层进行几何对象绘制。因此，如果想要对某个图层创建新对象，必须首先单击图层管理器中的相应图层，将该图层设置为当前图层。</p>
+
+<p>下面就对象绘制中涉及的一些概念做如下介绍：</p>
+
+<p><strong>对象概述</strong></p>
+
+<p>对象（Object）：即几何对象，在 GIS 中对离散空间实体的抽象表示。一个对象具有自己的属性和行为。在 SuperMap 中有些对象可以直接创建，有些则需要通过转换生成。</p>
+
+<ul>
+<li>单一对象（Single Object）：即指一个对象，一个简单对象、一个复杂对象、一个复合对象、一个子对象都是单一对象。<br /></li>
+<li>子对象（part）：是指简单对象和复杂对象的组成单元。简单对象由一个子对象组成，即其本身；复杂对象由两个或两个以上子对象组成。</li>
+<li>简单对象（Simple Object）：是指只有一个子对象（即其本身）的对象。<br /></li>
+<li>复杂对象（Complex Object）：是指具有两个或多个子对象的对象，这些子对象是同类型的。<br /></li>
+<li>复合对象（Compound Object）：特指在 CAD 图层中由组合运算生成的对象。复合对象没有子对象的概念。<br /></li>
+<li>参数化对象：通过主要参数来绘制几何对象，是连续的。而普通几何对象是用组成该对象的关键点或者点串的坐标来绘制的。例如参数化圆是通过确定的圆心和半径两个参数来精确绘制的；而普通的圆将组成圆的圆弧离散化去点，然后用这些点连成线形成封闭的圆。<br />
+<br /></li>
+</ul>
+
+<p><strong>对象绘制中的角度说明</strong></p>
+
+<ul>
+<li>角度方向：应用程序中涉及到的角度方向均为逆时针方向。<br /></li>
+<li>起始角度：绘制对象中的起始角度是指以正北方向为起始边，到另一条边之间的夹角。
+<br /></li>
+</ul>
+
+<p><strong>Shift 键的使用说明</strong></p>
+
+<p>在绘制一些对象过程中，配合 Shift 键的使用，可以使绘制过程更加便捷。</p>
+
+<ul>
+<li>绘制直线：通过输入长度、角度参数绘制直线时，按住 Shift 键只能绘制水平、垂直或者45°方向的直线。<br /></li>
+<li>绘制矩形（圆角矩形）：通过输入宽度、高度参数绘制矩形时，按住 Shift 键，将得到宽度和高度相等的正方形。<br /></li>
+<li>绘制椭圆：通过输入外接矩形宽度和高度参数绘制椭圆时，按住 Shift 键，将得到外接矩形的宽度相等的正圆。
+<br /></li>
+</ul>
+
+<p><strong>A 键的使用说明</strong></p>
+
+<p>在地图中绘制对象时，即鼠标为绘制状态时，按下键盘中的字母“A”键，可将当前地图窗口中的鼠标切换为绘制漫游状态。绘制对象过程中切换鼠标为绘制漫游状态后，可通过单击鼠标右键将鼠标状态切换为绘制状态，继续绘制对象。</p>
+
+<p><strong>注意事项</strong></p>
+
+<ul>
+<li>在打开空地图（地理坐标系）的窗口默认范围为可绘制范围，能够有效避免默认窗口范围绘制对象时提示超范围的情况。
+
+
+
+
+
+
+
+
+
+
+<br />
+<br /></li>
+</ul>
+
+<p>　</p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/datamanage/objectedit/" title="对象操作"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 对象操作</a>
+<a class="nav nav-next" href="/zh/docs/datamanage/enginetype/" title="数据源类型及数据引擎">Next - 数据源类型及数据引擎 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cDataManage%5cObjectDraw.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/datamanage\/objectdraw\/",
+    "title" : "对象绘制",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/datamanage\/objectdraw\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cDataManage%5cObjectDraw.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

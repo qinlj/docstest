@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>Minikubを使用してローカル環境でKubernetesを動かす - Kubernetes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/ja/docs/setup/minikube/">
+<meta property="og:title" content="Minikubを使用してローカル環境でKubernetesを動かす">
+<meta name="twitter:title" content="Minikubを使用してローカル環境でKubernetesを動かす">
+
+<meta name="twitter:image:alt"   content="Kubernetes">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/ja/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/ja/docs/" class="active">ドキュメント</a></li>
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="/ja/case-studies/">ケーススタディ</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    日本語 Japanese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/setup/minikube/">English</a></li>
+                
+                    <li><a href="/ko/docs/setup/minikube/">한국어 Korean</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="検索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/ja/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>手を動かす準備はできていますか？本チュートリアルでは、Node.jsを使った簡単な"Hello World"を実行するKubernetesクラスタをビルドします。</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/ja/docs/home/">ドキュメント</a></h3>
+           <p>チュートリアル、サンプルやドキュメントのリファレンスを使って Kubernetes の利用方法を学んでください。あなたは<a href="/editdocs/" data-auto-burger-exclude>ドキュメントへコントリビュートをする</a>こともできます!</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">Kubernetesのコードを編集することに興味がありますか？</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>Githubで参照する</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">コミュニティを探す</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>フォーラム</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>イベントカレンダー</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>セットアップ</h1>
+<h5></h5>
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/ja/docs/home/">ホーム</a></li>
+		
+		
+		<li><a href="/ja/docs/setup/" class="YAH">セットアップ</a></li>
+		
+		
+		<li><a href="/ja/docs/concepts/">コンセプト</a></li>
+		
+		
+		<li><a href="/ja/docs/tutorials/">チュートリアル</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="検索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="セットアップ" href="/ja/docs/setup/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="正しいソリューションの選択" href="/ja/docs/setup/pick-right-solution/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Kubernetesのダウンロード">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="v1.13 Release Notes <small>(EN)</small>" href="/docs/setup/release/notes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="ソースからのビルド" href="/ja/docs/setup/release/building-from-source/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="kubeadmによるClusterのブートストラッピング">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="kubeadmのインストール" href="/ja/docs/setup/independent/install-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用したシングルマスタークラスターの作成" href="/ja/docs/setup/independent/create-cluster-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使ったコントロールプレーンの設定のカスタマイズ" href="/ja/docs/setup/independent/control-plane-flags/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Options for Highly Available Topology" href="/ja/docs/setup/independent/ha-topology/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用した高可用性クラスターの作成" href="/ja/docs/setup/independent/high-availability/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用した高可用性etcdクラスターの作成" href="/ja/docs/setup/independent/setup-ha-etcd-with-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmを使用したクラスター内の各kubeletの設定" href="/ja/docs/setup/independent/kubelet-integration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubeadmのトラブルシューティング" href="/ja/docs/setup/independent/troubleshooting-kubeadm/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="すぐに利用できるクラウドソリューション">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="AWS EC2上でKubernetesを動かす" href="/ja/docs/setup/turnkey/aws/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Alibaba CloudでKubernetesを動かす" href="/ja/docs/setup/turnkey/alibaba-cloud/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Azure 上で Kubernetes を動かす" href="/ja/docs/setup/turnkey/azure/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="CenturyLink Cloud上でKubernetesを動かす" href="/ja/docs/setup/turnkey/clc/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Google Compute Engine上でKubernetesを動かす" href="/ja/docs/setup/turnkey/gce/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Multiple Clouds with IBM Cloud Private <small>(EN)</small>" href="/docs/setup/turnkey/icp/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Stackpoint.ioを利用して複数のクラウド上でKubernetesを動かす" href="/ja/docs/setup/turnkey/stackpoint/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="カスタムクラウドソリューション">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="AWSまたはGCE上のCoreOS" href="/ja/docs/setup/custom-cloud/coreos/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kopsを使ったAWS上でのKubernetesのインストール" href="/ja/docs/setup/custom-cloud/kops/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubesprayを使ったオンプレミス/クラウドプロバイダへのKubernetesのインストール" href="/ja/docs/setup/custom-cloud/kubespray/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="オンプレミスVM">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Cloudstack" href="/ja/docs/setup/on-premises-vm/cloudstack/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DC/OS上のKubernetes" href="/ja/docs/setup/on-premises-vm/dcos/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="oVirt" href="/ja/docs/setup/on-premises-vm/ovirt/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Version and Version Skew Support Policy <small>(EN)</small>" href="/docs/setup/version-skew-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="大規模クラスタの構築" href="/ja/docs/setup/cluster-large/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="複数のゾーンで動かす" href="/ja/docs/setup/multiple-zones/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="CRIのインストール" href="/ja/docs/setup/cri/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="KRIBを使用してDigital Rebar Provision (DRP)と共にKubernetesをインストールする" href="/ja/docs/setup/on-premises-metal/krib/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Minikubを使用してローカル環境でKubernetesを動かす" href="/ja/docs/setup/minikube/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="PKI証明書とその要件" href="/ja/docs/setup/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="ゼロからのカスタムクラスターの作成" href="/ja/docs/setup/scratch/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="ノードのセットアップの検証" href="/ja/docs/setup/node-conformance/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/ja/docs%5csetup%5cminikube.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>Minikubを使用してローカル環境でKubernetesを動かす</h1>
+
+
+
+<p>Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#minikube%e3%81%ae%e6%a9%9f%e8%83%bd">Minikubeの機能</a></li>
+
+
+
+
+<li><a href="#%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab">インストール</a></li>
+
+
+
+
+<li><a href="#%e3%82%af%e3%82%a4%e3%83%83%e3%82%af%e3%82%b9%e3%82%bf%e3%83%bc%e3%83%88">クイックスタート</a></li>
+
+
+
+
+<li><a href="#%e3%82%af%e3%83%a9%e3%82%b9%e3%82%bf%e3%83%bc%e3%81%ae%e7%ae%a1%e7%90%86">クラスターの管理</a></li>
+
+
+
+
+<li><a href="#%e3%82%af%e3%83%a9%e3%82%b9%e3%82%bf%e3%83%bc%e3%81%ab%e8%a7%a6%e3%82%8c%e3%81%a6%e3%81%bf%e3%82%88%e3%81%86">クラスターに触れてみよう</a></li>
+
+
+
+
+<li><a href="#%e3%83%8d%e3%83%83%e3%83%88%e3%83%af%e3%83%bc%e3%82%af">ネットワーク</a></li>
+
+
+
+
+<li><a href="#%e6%b0%b8%e7%b6%9a%e5%8c%96%e3%83%9c%e3%83%aa%e3%83%a5%e3%83%bc%e3%83%a0">永続化ボリューム</a></li>
+
+
+
+
+<li><a href="#%e3%83%9b%e3%82%b9%e3%83%88%e3%83%95%e3%82%a9%e3%83%ab%e3%83%80%e3%83%bc%e3%81%ae%e3%83%9e%e3%82%a6%e3%83%b3%e3%83%88">ホストフォルダーのマウント</a></li>
+
+
+
+
+<li><a href="#%e3%83%97%e3%83%a9%e3%82%a4%e3%83%99%e3%83%bc%e3%83%88%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e3%83%ac%e3%82%b8%e3%82%b9%e3%83%88%e3%83%aa">プライベートコンテナレジストリ</a></li>
+
+
+
+
+<li><a href="#%e3%82%a2%e3%83%89%e3%82%aa%e3%83%b3">アドオン</a></li>
+
+
+
+
+<li><a href="#http%e3%83%97%e3%83%ad%e3%82%ad%e3%82%b7%e7%b5%8c%e7%94%b1%e3%81%aeminikube%e5%88%a9%e7%94%a8">HTTPプロキシ経由のMinikube利用</a></li>
+
+
+
+
+<li><a href="#%e6%97%a2%e7%9f%a5%e3%81%ae%e5%95%8f%e9%a1%8c">既知の問題</a></li>
+
+
+
+
+<li><a href="#%e8%a8%ad%e8%a8%88">設計</a></li>
+
+
+
+
+<li><a href="#%e8%bf%bd%e5%8a%a0%e3%83%aa%e3%83%b3%e3%82%af%e9%9b%86">追加リンク集</a></li>
+
+
+
+
+<li><a href="#%e3%82%b3%e3%83%9f%e3%83%a5%e3%83%8b%e3%83%86%e3%82%a3">コミュニティ</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<h2 id="minikubeの機能">Minikubeの機能</h2>
+
+<ul>
+<li>Minikube supports Kubernetes features such as:
+
+<ul>
+<li>DNS</li>
+<li>NodePorts</li>
+<li>ConfigMaps and Secrets</li>
+<li>Dashboards</li>
+<li>Container Runtime: Docker, <a href="https://github.com/rkt/rkt" target="_blank">rkt</a>, <a href="https://github.com/kubernetes-incubator/cri-o" target="_blank">CRI-O</a> and <a href="https://github.com/containerd/containerd" target="_blank">containerd</a></li>
+<li>Enabling CNI (Container Network Interface)</li>
+<li>Ingress</li>
+</ul></li>
+</ul>
+
+<h2 id="インストール">インストール</h2>
+
+<p>See <a href="/docs/tasks/tools/install-minikube/">Installing Minikube</a>.</p>
+
+<h2 id="クイックスタート">クイックスタート</h2>
+
+<p>Here&rsquo;s a brief demo of Minikube usage.
+If you want to change the VM driver add the appropriate <code>--vm-driver=xxx</code> flag to <code>minikube start</code>. Minikube supports
+the following drivers:</p>
+
+<ul>
+<li>virtualbox</li>
+<li>vmwarefusion</li>
+<li>kvm2 (<a href="https://git.k8s.io/minikube/docs/drivers.md#kvm2-driver" target="_blank">driver installation</a>)</li>
+<li>kvm (<a href="https://git.k8s.io/minikube/docs/drivers.md#kvm-driver" target="_blank">driver installation</a>)</li>
+<li>hyperkit (<a href="https://git.k8s.io/minikube/docs/drivers.md#hyperkit-driver" target="_blank">driver installation</a>)</li>
+<li>xhyve (<a href="https://git.k8s.io/minikube/docs/drivers.md#xhyve-driver" target="_blank">driver installation</a>) (deprecated)</li>
+</ul>
+
+<p>Note that the IP below is dynamic and can change. It can be retrieved with <code>minikube ip</code>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ minikube start
+Starting <span style="color:#a2f">local</span> Kubernetes cluster...
+Running pre-create checks...
+Creating machine...
+Starting <span style="color:#a2f">local</span> Kubernetes cluster...
+
+$ kubectl run hello-minikube --image<span style="color:#666">=</span>k8s.gcr.io/echoserver:1.10 --port<span style="color:#666">=</span><span style="color:#666">8080</span>
+deployment.apps/hello-minikube created
+$ kubectl expose deployment hello-minikube --type<span style="color:#666">=</span>NodePort
+service/hello-minikube exposed
+
+<span style="color:#080;font-style:italic"># We have now launched an echoserver pod but we have to wait until the pod is up before curling/accessing it</span>
+<span style="color:#080;font-style:italic"># via the exposed service.</span>
+<span style="color:#080;font-style:italic"># To check whether the pod is up and running we can use the following:</span>
+$ kubectl get pod
+NAME                              READY     STATUS              RESTARTS   AGE
+hello-minikube-3383150820-vctvh   <span style="color:#666">0</span>/1       ContainerCreating   <span style="color:#666">0</span>          3s
+<span style="color:#080;font-style:italic"># We can see that the pod is still being created from the ContainerCreating status</span>
+$ kubectl get pod
+NAME                              READY     STATUS    RESTARTS   AGE
+hello-minikube-3383150820-vctvh   <span style="color:#666">1</span>/1       Running   <span style="color:#666">0</span>          13s
+<span style="color:#080;font-style:italic"># We can see that the pod is now Running and we will now be able to curl it:</span>
+$ curl <span style="color:#a2f;font-weight:bold">$(</span>minikube service hello-minikube --url<span style="color:#a2f;font-weight:bold">)</span>
+
+
+Hostname: hello-minikube-7c77b68cff-8wdzq
+
+Pod Information:
+    -no pod information available-
+
+Server values:
+    <span style="color:#b8860b">server_version</span><span style="color:#666">=</span>nginx: <span style="color:#666">1</span>.13.3 - lua: <span style="color:#666">10008</span>
+
+Request Information:
+    <span style="color:#b8860b">client_address</span><span style="color:#666">=</span><span style="color:#666">172</span>.17.0.1
+    <span style="color:#b8860b">method</span><span style="color:#666">=</span>GET
+    real <span style="color:#b8860b">path</span><span style="color:#666">=</span>/
+    <span style="color:#b8860b">query</span><span style="color:#666">=</span>
+    <span style="color:#b8860b">request_version</span><span style="color:#666">=</span><span style="color:#666">1</span>.1
+    <span style="color:#b8860b">request_scheme</span><span style="color:#666">=</span>http
+    <span style="color:#b8860b">request_uri</span><span style="color:#666">=</span>http://192.168.99.100:8080/
+
+Request Headers:
+    <span style="color:#b8860b">accept</span><span style="color:#666">=</span>*/*
+    <span style="color:#b8860b">host</span><span style="color:#666">=</span><span style="color:#666">192</span>.168.99.100:30674
+    user-agent<span style="color:#666">=</span>curl/7.47.0
+
+Request Body:
+    -no body in request-
+
+
+$ kubectl delete services hello-minikube
+service <span style="color:#b44">&#34;hello-minikube&#34;</span> deleted
+$ kubectl delete deployment hello-minikube
+deployment.extensions <span style="color:#b44">&#34;hello-minikube&#34;</span> deleted
+$ minikube stop
+Stopping <span style="color:#a2f">local</span> Kubernetes cluster...
+Stopping <span style="color:#b44">&#34;minikube&#34;</span>...</code></pre></div>
+<h3 id="コンテナランタイムの代替">コンテナランタイムの代替</h3>
+
+<h4 id="containerd">containerd</h4>
+
+<p>To use <a href="https://github.com/containerd/containerd" target="_blank">containerd</a> as the container runtime, run:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ minikube start <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --network-plugin<span style="color:#666">=</span>cni <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --container-runtime<span style="color:#666">=</span>containerd <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --bootstrapper<span style="color:#666">=</span>kubeadm</code></pre></div>
+<p>Or you can use the extended version:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ minikube start <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --network-plugin<span style="color:#666">=</span>cni <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --extra-config<span style="color:#666">=</span>kubelet.container-runtime<span style="color:#666">=</span>remote <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --extra-config<span style="color:#666">=</span>kubelet.container-runtime-endpoint<span style="color:#666">=</span>unix:///run/containerd/containerd.sock <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --extra-config<span style="color:#666">=</span>kubelet.image-service-endpoint<span style="color:#666">=</span>unix:///run/containerd/containerd.sock <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --bootstrapper<span style="color:#666">=</span>kubeadm</code></pre></div>
+<h4 id="cri-o">CRI-O</h4>
+
+<p>To use <a href="https://github.com/kubernetes-incubator/cri-o" target="_blank">CRI-O</a> as the container runtime, run:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ minikube start <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --network-plugin<span style="color:#666">=</span>cni <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --container-runtime<span style="color:#666">=</span>cri-o <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --bootstrapper<span style="color:#666">=</span>kubeadm</code></pre></div>
+<p>Or you can use the extended version:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ minikube start <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --network-plugin<span style="color:#666">=</span>cni <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --extra-config<span style="color:#666">=</span>kubelet.container-runtime<span style="color:#666">=</span>remote <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --extra-config<span style="color:#666">=</span>kubelet.container-runtime-endpoint<span style="color:#666">=</span>/var/run/crio.sock <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --extra-config<span style="color:#666">=</span>kubelet.image-service-endpoint<span style="color:#666">=</span>/var/run/crio.sock <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --bootstrapper<span style="color:#666">=</span>kubeadm</code></pre></div>
+<h4 id="rktコンテナエンジン">rktコンテナエンジン</h4>
+
+<p>To use <a href="https://github.com/rkt/rkt" target="_blank">rkt</a> as the container runtime run:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ minikube start <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --network-plugin<span style="color:#666">=</span>cni <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --container-runtime<span style="color:#666">=</span>rkt</code></pre></div>
+<p>This will use an alternative minikube ISO image containing both rkt, and Docker, and enable CNI networking.</p>
+
+<h3 id="ドライバープラグイン">ドライバープラグイン</h3>
+
+<p>See <a href="https://git.k8s.io/minikube/docs/drivers.md" target="_blank">DRIVERS</a> for details on supported drivers and how to install
+plugins, if required.</p>
+
+<h3 id="dockerデーモンの再利用によるローカルイメージの使用">Dockerデーモンの再利用によるローカルイメージの使用</h3>
+
+<p>When using a single VM of Kubernetes, it&rsquo;s really handy to reuse the Minikube&rsquo;s built-in Docker daemon; as this means you don&rsquo;t have to build a docker registry on your host machine and push the image into it - you can just build inside the same docker daemon as minikube which speeds up local experiments. Just make sure you tag your Docker image with something other than &lsquo;latest&rsquo; and use that tag while you pull the image. Otherwise, if you do not specify version of your image, it will be assumed as <code>:latest</code>, with pull image policy of <code>Always</code> correspondingly, which may eventually result in <code>ErrImagePull</code> as you may not have any versions of your Docker image out there in the default docker registry (usually DockerHub) yet.</p>
+
+<p>To be able to work with the docker daemon on your mac/linux host use the <code>docker-env command</code> in your shell:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#a2f">eval</span> <span style="color:#a2f;font-weight:bold">$(</span>minikube docker-env<span style="color:#a2f;font-weight:bold">)</span></code></pre></div>
+<p>You should now be able to use docker on the command line on your host mac/linux machine talking to the docker daemon inside the minikube VM:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker ps</code></pre></div>
+<p>On Centos 7, docker may report the following error:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Could not <span style="color:#a2f">read</span> CA certificate <span style="color:#b44">&#34;/etc/docker/ca.pem&#34;</span>: open /etc/docker/ca.pem: no such file or directory</code></pre></div>
+<p>The fix is to update /etc/sysconfig/docker to ensure that Minikube&rsquo;s environment changes are respected:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt; <span style="color:#b8860b">DOCKER_CERT_PATH</span><span style="color:#666">=</span>/etc/docker
+---
+&gt; <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">[</span> -z <span style="color:#b44">&#34;</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">DOCKER_CERT_PATH</span><span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">&#34;</span> <span style="color:#666">]</span>; <span style="color:#a2f;font-weight:bold">then</span>
+&gt;   <span style="color:#b8860b">DOCKER_CERT_PATH</span><span style="color:#666">=</span>/etc/docker
+&gt; <span style="color:#a2f;font-weight:bold">fi</span></code></pre></div>
+<p>Remember to turn off the imagePullPolicy:Always, otherwise Kubernetes won&rsquo;t use images you built locally.</p>
+
+<h2 id="クラスターの管理">クラスターの管理</h2>
+
+<h3 id="クラスターの起動">クラスターの起動</h3>
+
+<p>The <code>minikube start</code> command can be used to start your cluster.
+This command creates and configures a Virtual Machine that runs a single-node Kubernetes cluster.
+This command also configures your <a href="/docs/user-guide/kubectl-overview/">kubectl</a> installation to communicate with this cluster.</p>
+
+<p>If you are behind a web proxy, you will need to pass this information to the <code>minikube start</code> command:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#b8860b">https_proxy</span><span style="color:#666">=</span>&lt;my proxy&gt; minikube start --docker-env <span style="color:#b8860b">http_proxy</span><span style="color:#666">=</span>&lt;my proxy&gt; --docker-env <span style="color:#b8860b">https_proxy</span><span style="color:#666">=</span>&lt;my proxy&gt; --docker-env <span style="color:#b8860b">no_proxy</span><span style="color:#666">=</span><span style="color:#666">192</span>.168.99.0/24</code></pre></div>
+<p>Unfortunately just setting the environment variables will not work.</p>
+
+<p>Minikube will also create a &ldquo;minikube&rdquo; context, and set it to default in kubectl.
+To switch back to this context later, run this command: <code>kubectl config use-context minikube</code>.</p>
+
+<h4 id="kubernetesバージョンの指定">Kubernetesバージョンの指定</h4>
+
+<p>You can specify the specific version of Kubernetes for Minikube to use by
+adding the <code>--kubernetes-version</code> string to the <code>minikube start</code> command. For
+example, to run version <code>v1.7.3</code>, you would run the following:</p>
+
+<pre><code>minikube start --kubernetes-version v1.7.3
+</code></pre>
+
+<h3 id="kubernetesの設定">Kubernetesの設定</h3>
+
+<p>Minikube has a &ldquo;configurator&rdquo; feature that allows users to configure the Kubernetes components with arbitrary values.
+To use this feature, you can use the <code>--extra-config</code> flag on the <code>minikube start</code> command.</p>
+
+<p>This flag is repeated, so you can pass it several times with several different values to set multiple options.</p>
+
+<p>This flag takes a string of the form <code>component.key=value</code>, where <code>component</code> is one of the strings from the below list, <code>key</code> is a value on the
+configuration struct and <code>value</code> is the value to set.</p>
+
+<p>Valid keys can be found by examining the documentation for the Kubernetes <code>componentconfigs</code> for each component.
+Here is the documentation for each supported configuration:</p>
+
+<ul>
+<li><a href="https://godoc.org/k8s.io/kubernetes/pkg/kubelet/apis/config#KubeletConfiguration" target="_blank">kubelet</a></li>
+<li><a href="https://godoc.org/k8s.io/kubernetes/cmd/kube-apiserver/app/options#ServerRunOptions" target="_blank">apiserver</a></li>
+<li><a href="https://godoc.org/k8s.io/kubernetes/pkg/proxy/apis/config#KubeProxyConfiguration" target="_blank">proxy</a></li>
+<li><a href="https://godoc.org/k8s.io/kubernetes/pkg/controller/apis/config#KubeControllerManagerConfiguration" target="_blank">controller-manager</a></li>
+<li><a href="https://godoc.org/github.com/coreos/etcd/etcdserver#ServerConfig" target="_blank">etcd</a></li>
+<li><a href="https://godoc.org/k8s.io/kubernetes/pkg/scheduler/apis/config#KubeSchedulerConfiguration" target="_blank">scheduler</a></li>
+</ul>
+
+<h4 id="例">例</h4>
+
+<p>To change the <code>MaxPods</code> setting to 5 on the Kubelet, pass this flag: <code>--extra-config=kubelet.MaxPods=5</code>.</p>
+
+<p>This feature also supports nested structs. To change the <code>LeaderElection.LeaderElect</code> setting to <code>true</code> on the scheduler, pass this flag: <code>--extra-config=scheduler.LeaderElection.LeaderElect=true</code>.</p>
+
+<p>To set the <code>AuthorizationMode</code> on the <code>apiserver</code> to <code>RBAC</code>, you can use: <code>--extra-config=apiserver.authorization-mode=RBAC</code>.</p>
+
+<h3 id="クラスターの停止">クラスターの停止</h3>
+
+<p>The <code>minikube stop</code> command can be used to stop your cluster.
+This command shuts down the Minikube Virtual Machine, but preserves all cluster state and data.
+Starting the cluster again will restore it to it&rsquo;s previous state.</p>
+
+<h3 id="クラスターの削除">クラスターの削除</h3>
+
+<p>The <code>minikube delete</code> command can be used to delete your cluster.
+This command shuts down and deletes the Minikube Virtual Machine. No data or state is preserved.</p>
+
+<h2 id="クラスターに触れてみよう">クラスターに触れてみよう</h2>
+
+<h3 id="kubectl">Kubectl</h3>
+
+<p>The <code>minikube start</code> command creates a <a href="/docs/reference/generated/kubectl/kubectl-commands#-em-set-context-em-">kubectl context</a> called &ldquo;minikube&rdquo;.
+This context contains the configuration to communicate with your Minikube cluster.</p>
+
+<p>Minikube sets this context to default automatically, but if you need to switch back to it in the future, run:</p>
+
+<p><code>kubectl config use-context minikube</code>,</p>
+
+<p>Or pass the context on each command like this: <code>kubectl get pods --context=minikube</code>.</p>
+
+<h3 id="ダッシュボード">ダッシュボード</h3>
+
+<p>To access the <a href="/docs/tasks/access-application-cluster/web-ui-dashboard/">Kubernetes Dashboard</a>, run this command in a shell after starting Minikube to get the address:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">minikube dashboard</code></pre></div>
+<h3 id="サービス">サービス</h3>
+
+<p>To access a service exposed via a node port, run this command in a shell after starting Minikube to get the address:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">minikube service <span style="color:#666">[</span>-n NAMESPACE<span style="color:#666">]</span> <span style="color:#666">[</span>--url<span style="color:#666">]</span> NAME</code></pre></div>
+<h2 id="ネットワーク">ネットワーク</h2>
+
+<p>The Minikube VM is exposed to the host system via a host-only IP address, that can be obtained with the <code>minikube ip</code> command.
+Any services of type <code>NodePort</code> can be accessed over that IP address, on the NodePort.</p>
+
+<p>To determine the NodePort for your service, you can use a <code>kubectl</code> command like this:</p>
+
+<p><code>kubectl get service $SERVICE --output='jsonpath=&quot;{.spec.ports[0].nodePort}&quot;'</code></p>
+
+<h2 id="永続化ボリューム">永続化ボリューム</h2>
+
+<p>Minikube supports <a href="/docs/concepts/storage/persistent-volumes/">PersistentVolumes</a> of type <code>hostPath</code>.
+These PersistentVolumes are mapped to a directory inside the Minikube VM.</p>
+
+<p>The Minikube VM boots into a tmpfs, so most directories will not be persisted across reboots (<code>minikube stop</code>).
+However, Minikube is configured to persist files stored under the following host directories:</p>
+
+<ul>
+<li><code>/data</code></li>
+<li><code>/var/lib/minikube</code></li>
+<li><code>/var/lib/docker</code></li>
+</ul>
+
+<p>Here is an example PersistentVolume config to persist data in the <code>/data</code> directory:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>PersistentVolume<span style="color:#bbb">
+</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>pv0001<span style="color:#bbb">
+</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>accessModes:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>ReadWriteOnce<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>capacity:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>storage:<span style="color:#bbb"> </span>5Gi<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>hostPath:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>path:<span style="color:#bbb"> </span>/data/pv0001/</code></pre></div>
+<h2 id="ホストフォルダーのマウント">ホストフォルダーのマウント</h2>
+
+<p>Some drivers will mount a host folder within the VM so that you can easily share files between the VM and host.  These are not configurable at the moment and different for the driver and OS you are using.</p>
+
+<blockquote class="note">
+  <div><strong>Note:</strong> Host folder sharing is not implemented in the KVM driver yet.</div>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th>Driver</th>
+<th>OS</th>
+<th>HostFolder</th>
+<th>VM</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>VirtualBox</td>
+<td>Linux</td>
+<td>/home</td>
+<td>/hosthome</td>
+</tr>
+
+<tr>
+<td>VirtualBox</td>
+<td>macOS</td>
+<td>/Users</td>
+<td>/Users</td>
+</tr>
+
+<tr>
+<td>VirtualBox</td>
+<td>Windows</td>
+<td>C://Users</td>
+<td>/c/Users</td>
+</tr>
+
+<tr>
+<td>VMware Fusion</td>
+<td>macOS</td>
+<td>/Users</td>
+<td>/Users</td>
+</tr>
+
+<tr>
+<td>Xhyve</td>
+<td>macOS</td>
+<td>/Users</td>
+<td>/Users</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="プライベートコンテナレジストリ">プライベートコンテナレジストリ</h2>
+
+<p>To access a private container registry, follow the steps on <a href="/docs/concepts/containers/images/">this page</a>.</p>
+
+<p>We recommend you use <code>ImagePullSecrets</code>, but if you would like to configure access on the Minikube VM you can place the <code>.dockercfg</code> in the <code>/home/docker</code> directory or the <code>config.json</code> in the <code>/home/docker/.docker</code> directory.</p>
+
+<h2 id="アドオン">アドオン</h2>
+
+<p>In order to have Minikube properly start or restart custom addons,
+place the addons you wish to be launched with Minikube in the <code>~/.minikube/addons</code>
+directory. Addons in this folder will be moved to the Minikube VM and
+launched each time Minikube is started or restarted.</p>
+
+<h2 id="httpプロキシ経由のminikube利用">HTTPプロキシ経由のMinikube利用</h2>
+
+<p>Minikube creates a Virtual Machine that includes Kubernetes and a Docker daemon.
+When Kubernetes attempts to schedule containers using Docker, the Docker daemon may require external network access to pull containers.</p>
+
+<p>If you are behind an HTTP proxy, you may need to supply Docker with the proxy settings.
+To do this, pass the required environment variables as flags during <code>minikube start</code>.</p>
+
+<p>For example:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ minikube start --docker-env <span style="color:#b8860b">http_proxy</span><span style="color:#666">=</span>http://<span style="color:#b8860b">$YOURPROXY</span>:PORT <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>                 --docker-env <span style="color:#b8860b">https_proxy</span><span style="color:#666">=</span>https://<span style="color:#b8860b">$YOURPROXY</span>:PORT</code></pre></div>
+<p>If your Virtual Machine address is 192.168.99.100, then chances are your proxy settings will prevent <code>kubectl</code> from directly reaching it.
+To by-pass proxy configuration for this IP address, you should modify your no_proxy settings. You can do so with:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ <span style="color:#a2f">export</span> <span style="color:#b8860b">no_proxy</span><span style="color:#666">=</span><span style="color:#b8860b">$no_proxy</span>,<span style="color:#a2f;font-weight:bold">$(</span>minikube ip<span style="color:#a2f;font-weight:bold">)</span></code></pre></div>
+<h2 id="既知の問題">既知の問題</h2>
+
+<ul>
+<li>Features that require a Cloud Provider will not work in Minikube. These include:
+
+<ul>
+<li>LoadBalancers</li>
+</ul></li>
+<li>Features that require multiple nodes. These include:
+
+<ul>
+<li>Advanced scheduling policies</li>
+</ul></li>
+</ul>
+
+<h2 id="設計">設計</h2>
+
+<p>Minikube uses <a href="https://github.com/docker/machine/tree/master/libmachine" target="_blank">libmachine</a> for provisioning VMs, and <a href="https://github.com/kubernetes/kubeadm" target="_blank">kubeadm</a> to provision a Kubernetes cluster.</p>
+
+<p>For more information about Minikube, see the <a href="https://git.k8s.io/community/contributors/design-proposals/cluster-lifecycle/local-cluster-ux.md" target="_blank">proposal</a>.</p>
+
+<h2 id="追加リンク集">追加リンク集</h2>
+
+<ul>
+<li><strong>Goals and Non-Goals</strong>: For the goals and non-goals of the Minikube project, please see our <a href="https://git.k8s.io/minikube/docs/contributors/roadmap.md" target="_blank">roadmap</a>.</li>
+<li><strong>Development Guide</strong>: See <a href="https://git.k8s.io/minikube/CONTRIBUTING.md" target="_blank">CONTRIBUTING.md</a> for an overview of how to send pull requests.</li>
+<li><strong>Building Minikube</strong>: For instructions on how to build/test Minikube from source, see the <a href="https://git.k8s.io/minikube/docs/contributors/build_guide.md" target="_blank">build guide</a>.</li>
+<li><strong>Adding a New Dependency</strong>: For instructions on how to add a new dependency to Minikube see the <a href="https://git.k8s.io/minikube/docs/contributors/adding_a_dependency.md" target="_blank">adding dependencies guide</a>.</li>
+<li><strong>Adding a New Addon</strong>: For instruction on how to add a new addon for Minikube see the <a href="https://git.k8s.io/minikube/docs/contributors/adding_an_addon.md" target="_blank">adding an addon guide</a>.</li>
+<li><strong>Updating Kubernetes</strong>: For instructions on how to update Kubernetes see the <a href="https://git.k8s.io/minikube/docs/contributors/updating_kubernetes.md" target="_blank">updating Kubernetes guide</a>.</li>
+</ul>
+
+<h2 id="コミュニティ">コミュニティ</h2>
+
+<p>Contributions, questions, and comments are all welcomed and encouraged! Minikube developers hang out on <a href="https://kubernetes.slack.com" target="_blank">Slack</a> in the #minikube channel (get an invitation <a href="http://slack.kubernetes.io/" target="_blank">here</a>). We also have the <a href="https://groups.google.com/forum/#!forum/kubernetes-dev" target="_blank">kubernetes-dev Google Groups mailing list</a>. If you are posting to the list please prefix your subject with &ldquo;minikube: &ldquo;.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/ja/docs/setup/on-premises-metal/krib/" title="KRIBを使用してDigital Rebar Provision (DRP)と共にKubernetesをインストールする"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - KRIBを使用してDigital Rebar Provision (DRP)と共にKubernetesをインストールする</a>
+<a class="nav nav-next" href="/ja/docs/setup/certificates/" title="PKI証明書とその要件">Next - PKI証明書とその要件 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>Feedback</h2>
+  <p class="feedback--prompt">Was this page helpful? </p>
+  <button class="button feedback--yes">Yes</button>
+  <button class="button feedback--no">No</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5csetup%5cminikube.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/ja\/docs\/setup\/minikube\/",
+    "title" : "Minikubを使用してローカル環境でKubernetesを動かす",
+    "permalink" : "https:\/\/docstest.github.io\/ja\/docs\/setup\/minikube\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">Issue作成</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/ja/docs%5csetup%5cminikube.md" class="button issue">ページ編集</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    ページの最終更新 March 08, 2019 at 3:17 AM PST by
+    <a href="https://github.com/kubernetes/website/commit/edb233cac2f4f910dd55311a3c63bdfbd53a081b/">First Japanese l10n work for release-1.13 (#12998)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5csetup%5cminikube.md">ページ履歴</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/ja/docs/home/">ホーム</a>
+            
+            
+            
+            
+            
+            
+            
+            <a href="/ja/case-studies/">ケーススタディ</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>フォーラム</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>イベントカレンダー</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">コントリビュート</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

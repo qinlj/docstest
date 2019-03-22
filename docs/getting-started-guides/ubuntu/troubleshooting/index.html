@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>Troubleshooting - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content=" ">
+<meta property="og:description" content=" ">
+<meta name="twitter:description" content=" ">
+<meta property="og:url" content="https://docstest.github.io/docs/getting-started-guides/ubuntu/troubleshooting/">
+<meta property="og:title" content="Troubleshooting">
+<meta name="twitter:title" content="Troubleshooting">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/docs/" class="active">Documentation</a></li>
+            
+            <li><a href="/blog/">Blog</a></li>
+            
+            <li><a href="/partners/">Partners</a></li>
+            
+            <li><a href="/community/">Community</a></li>
+            
+            <li><a href="/case-studies/">Case Studies</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    English <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/zh/">中文 Chinese</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                    <li><a href="/it/">Italian</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/docs/home/">Documentation</a></h3>
+           <p>Learn how to use Kubernetes with conceptual, tutorial, and reference documentation. You can even <a href="/editdocs/" data-auto-burger-exclude>help contribute to the docs</a>!</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/blog/">Blog</a></h3>
+           <p>Read the latest news for Kubernetes and the containers space in general, and get technical how-tos hot off the presses.</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">Interested in hacking on the core Kubernetes code base?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>View On Github</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">Explore the community</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/docs/home/">HOME</a></li>
+		
+		
+		<li><a href="/docs/surfaceanalyst/">SURFACEANALYSIS</a></li>
+		
+		
+		<li><a href="/docs/setup/">SETUP</a></li>
+		
+		
+		<li><a href="/docs/concepts/">CONCEPTS</a></li>
+		
+		
+		<li><a href="/docs/tasks/">TASKS</a></li>
+		
+		
+		<li><a href="/docs/tutorials/">TUTORIALS</a></li>
+		
+		
+		<li><a href="/docs/reference/">REFERENCE</a></li>
+		
+		
+		<li><a href="/docs/contribute/">CONTRIBUTE</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="Independent Solutions" href="/docs/getting-started-guides/"></a>
+
+	
+	
+	
+	
+		
+			
+<div class="item" data-title="Bare Metal">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Fedora (Multi Node)" href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Fedora (Single Node)" href="/docs/getting-started-guides/fedora/fedora_manual_config/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Kubernetes on Ubuntu">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Backups" href="/docs/getting-started-guides/ubuntu/backups/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Decommissioning" href="/docs/getting-started-guides/ubuntu/decommissioning/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Glossary and Terminology" href="/docs/getting-started-guides/ubuntu/glossary/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Local Kubernetes development with LXD" href="/docs/getting-started-guides/ubuntu/local/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Logging" href="/docs/getting-started-guides/ubuntu/logging/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Monitoring" href="/docs/getting-started-guides/ubuntu/monitoring/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Networking" href="/docs/getting-started-guides/ubuntu/networking/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Operational Considerations" href="/docs/getting-started-guides/ubuntu/operational-considerations/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Rancher Integration with Ubuntu Kubernetes" href="/docs/getting-started-guides/ubuntu/rancher/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Scaling" href="/docs/getting-started-guides/ubuntu/scaling/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Security Considerations" href="/docs/getting-started-guides/ubuntu/security/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Setting up Kubernetes with Juju" href="/docs/getting-started-guides/ubuntu/installation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Storage" href="/docs/getting-started-guides/ubuntu/storage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Troubleshooting" href="/docs/getting-started-guides/ubuntu/troubleshooting/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Upgrades" href="/docs/getting-started-guides/ubuntu/upgrades/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Validation - End-to-end Testing" href="/docs/getting-started-guides/ubuntu/validation/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Deprecated Alternatives" href="/docs/getting-started-guides/alternatives/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/en/docs%5cgetting-started-guides%5cubuntu%5ctroubleshooting.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>Troubleshooting</h1>
+
+
+
+
+<p>This document with highlighting how to troubleshoot the deployment of a Kubernetes cluster, it will not cover debugging of workloads inside Kubernetes.</p>
+
+
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#before-you-begin">Before you begin</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="#understanding-cluster-status">Understanding Cluster Status</a></li>
+
+
+
+
+<li><a href="#sshing-to-units">SSHing to units</a></li>
+
+
+
+
+<li><a href="#collecting-debug-information">Collecting debug information</a></li>
+
+
+
+
+<li><a href="#common-problems">Common Problems</a></li>
+
+
+
+
+<li><a href="#logging-and-monitoring">Logging and monitoring</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+<h2 id="before-you-begin">Before you begin</h2>
+<p>This page assumes you have a working Juju deployed cluster.</p>
+
+
+
+
+<h2 id="understanding-cluster-status">Understanding Cluster Status</h2>
+
+<p>Using <code>juju status</code> can give you some insight as to what&rsquo;s happening in a cluster:</p>
+
+<pre><code>Model  Controller  Cloud/Region   Version
+kubes  work-multi  aws/us-east-2  2.0.2.1
+
+App                Version  Status  Scale  Charm              Store       Rev  OS      Notes
+easyrsa            3.0.1    active      1  easyrsa            jujucharms    3  ubuntu  
+etcd               2.2.5    active      1  etcd               jujucharms   17  ubuntu  
+flannel            0.6.1    active      2  flannel            jujucharms    6  ubuntu  
+kubernetes-master  1.4.5    active      1  kubernetes-master  jujucharms    8  ubuntu  exposed
+kubernetes-worker  1.4.5    active      1  kubernetes-worker  jujucharms   11  ubuntu  exposed
+
+Unit                  Workload  Agent  Machine  Public address  Ports           Message
+easyrsa/0*            active    idle   0/lxd/0  10.0.0.55                       Certificate Authority connected.
+etcd/0*               active    idle   0        52.15.47.228    2379/tcp        Healthy with 1 known peers.
+kubernetes-master/0*  active    idle   0        52.15.47.228    6443/tcp        Kubernetes master services ready.
+  flannel/1           active    idle            52.15.47.228                    Flannel subnet 10.1.75.1/24
+kubernetes-worker/0*  active    idle   1        52.15.177.233   80/tcp,443/tcp  Kubernetes worker running.
+  flannel/0*          active    idle            52.15.177.233                   Flannel subnet 10.1.63.1/24
+
+Machine  State    DNS            Inst id              Series  AZ
+0        started  52.15.47.228   i-0bb211a18be691473  xenial  us-east-2a
+0/lxd/0  started  10.0.0.55      juju-153b74-0-lxd-0  xenial  
+1        started  52.15.177.233  i-0502d7de733be31bb  xenial  us-east-2b
+</code></pre>
+
+<p>In this example we can glean some information. The <code>Workload</code> column will show the status of a given service. The <code>Message</code> section will show you the health of a given service in the cluster. During deployment and maintenance these workload statuses will update to reflect what a given node is doing. For example the workload my say <code>maintenance</code> while message will describe this maintenance as <code>Installing docker</code>.</p>
+
+<p>During normal operation the Workload should read <code>active</code>, the Agent column (which reflects what the Juju agent is doing) should read <code>idle</code>, and the messages will either say <code>Ready</code> or another descriptive term. <code>juju status --color</code> will also return all green results when a cluster&rsquo;s deployment is healthy.</p>
+
+<p>Status can become unwieldy for large clusters, it is then recommended to check status on individual services, for example to check the status on the workers only:</p>
+
+<pre><code>juju status kubernetes-worker
+</code></pre>
+
+<p>or just on the etcd cluster:</p>
+
+<pre><code>juju status etcd
+</code></pre>
+
+<p>Errors will have an obvious message, and will return a red result when used with <code>juju status --color</code>. Nodes that come up in this manner should be investigated.</p>
+
+<h2 id="sshing-to-units">SSHing to units</h2>
+
+<p>You can ssh to individual units easily with the following convention, <code>juju ssh &lt;servicename&gt;/&lt;unit#&gt;</code>:</p>
+
+<pre><code>juju ssh kubernetes-worker/3
+</code></pre>
+
+<p>Will automatically ssh you to the 3rd worker unit.</p>
+
+<pre><code>juju ssh easyrsa/0 
+</code></pre>
+
+<p>This will automatically ssh you to the easyrsa unit.</p>
+
+<h2 id="collecting-debug-information">Collecting debug information</h2>
+
+<p>Sometimes it is useful to collect all the information from a cluster to share with a developer to identify problems. This is best accomplished with <a href="https://github.com/juju-solutions/cdk-field-agent" target="_blank">CDK Field Agent</a>.</p>
+
+<p>Download and execute the collect.py script from <a href="https://github.com/juju-solutions/cdk-field-agent" target="_blank">CDK Field Agent</a> on a box that has a Juju client configured with the current controller and model pointing at the CDK deployment of interest.</p>
+
+<p>Running the script will generate a tarball of system information and includes basic information such as systemctl status, Juju logs, charm unit data, etc. Additional application-specific information may be included as well.</p>
+
+<h2 id="common-problems">Common Problems</h2>
+
+<h3 id="load-balancer-interfering-with-helm">Load Balancer interfering with Helm</h3>
+
+<p>This section assumes you have a working deployment of Kubernetes via Juju using a Load Balancer for the API, and that you are using Helm to deploy charts.</p>
+
+<p>To deploy Helm you will have run:</p>
+
+<pre><code>helm init
+$HELM_HOME has been configured at /home/ubuntu/.helm
+Tiller (the helm server side component) has been installed into your Kubernetes Cluster.
+Happy Helming!
+</code></pre>
+
+<p>Then when using helm you may see one of the following errors:</p>
+
+<ul>
+<li>Helm doesn&rsquo;t get the version from the Tiller server</li>
+</ul>
+
+<pre><code>helm version
+Client: &amp;version.Version{SemVer:&quot;v2.1.3&quot;, GitCommit:&quot;5cbc48fb305ca4bf68c26eb8d2a7eb363227e973&quot;, GitTreeState:&quot;clean&quot;}
+Error: cannot connect to Tiller
+</code></pre>
+
+<ul>
+<li>Helm cannot install your chart</li>
+</ul>
+
+<pre><code>helm install &lt;chart&gt; --debug
+Error: forwarding ports: error upgrading connection: Upgrade request required
+</code></pre>
+
+<p>This is caused by the API load balancer not forwarding ports in the context of the helm client-server relationship. To deploy using helm, you will need to follow these steps:</p>
+
+<ol>
+<li>Expose the Kubernetes Master service</li>
+</ol>
+
+<pre><code>   juju expose kubernetes-master
+</code></pre>
+
+<ol>
+<li>Identify the public IP address of one of your masters</li>
+</ol>
+
+<pre><code>   juju status kubernetes-master
+   Model       Controller  Cloud/Region   Version
+   production  k8s-admin   aws/us-east-1  2.0.0
+
+   App                Version  Status  Scale  Charm              Store       Rev  OS      Notes
+   flannel            0.6.1    active      1  flannel            jujucharms    7  ubuntu
+   kubernetes-master  1.5.1    active      1  kubernetes-master  jujucharms   10  ubuntu  exposed
+
+   Unit                  Workload  Agent  Machine  Public address  Ports     Message
+   kubernetes-master/0*  active    idle   5        54.210.100.102    6443/tcp  Kubernetes master running.
+     flannel/0           active    idle            54.210.100.102              Flannel subnet 10.1.50.1/24
+
+   Machine  State    DNS           Inst id              Series  AZ
+   5        started  54.210.100.102  i-002b7150639eb183b  xenial  us-east-1a
+
+   Relation      Provides               Consumes           Type
+   certificates  easyrsa                kubernetes-master  regular
+   etcd          etcd                   flannel            regular
+   etcd          etcd                   kubernetes-master  regular
+   cni           flannel                kubernetes-master  regular
+   loadbalancer  kubeapi-load-balancer  kubernetes-master  regular
+   cni           kubernetes-master      flannel            subordinate
+   cluster-dns   kubernetes-master      kubernetes-worker  regular
+   cni           kubernetes-worker      flannel            subordinate
+</code></pre>
+
+<p>In this context the public IP address is 54.210.100.102.</p>
+
+<p>If you want to access this data programmatically you can use the JSON output:</p>
+
+<pre><code>   juju show-status kubernetes-master --format json | jq --raw-output '.applications.&quot;kubernetes-master&quot;.units | keys[]'
+   54.210.100.102
+</code></pre>
+
+<ol>
+<li>Update the kubeconfig file</li>
+</ol>
+
+<p>Identify the kubeconfig file or section used for this cluster, and edit the server configuration.</p>
+
+<p>By default, it will look like <code>https://54.213.123.123:443</code>. Replace it with the Kubernetes Master endpoint <code>https://54.210.100.102:6443</code> and save.</p>
+
+<p>Note that the default port used by CDK for the Kubernetes Master API is 6443 while the port exposed by the load balancer is 443.</p>
+
+<ol>
+<li>Start helm again!</li>
+</ol>
+
+<pre><code>   helm install &lt;chart&gt; --debug
+   Created tunnel using local port: '36749'
+   SERVER: &quot;localhost:36749&quot;
+   CHART PATH: /home/ubuntu/.helm/&lt;chart&gt;
+   NAME:   &lt;chart&gt;
+   ...
+   ...
+</code></pre>
+
+<h2 id="logging-and-monitoring">Logging and monitoring</h2>
+
+<p>By default there is no log aggregation of the Kubernetes nodes, each node logs locally. Please read over the <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/logging/" target="_blank">logging</a> page for more information.</p>
+
+
+
+
+
+
+<p>
+</p>
+
+
+
+
+
+
+
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/docs/getting-started-guides/ubuntu/storage/" title="Storage"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Storage</a>
+<a class="nav nav-next" href="/docs/getting-started-guides/ubuntu/upgrades/" title="Upgrades">Next - Upgrades <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>Feedback</h2>
+  <p class="feedback--prompt">Was this page helpful? </p>
+  <button class="button feedback--yes">Yes</button>
+  <button class="button feedback--no">No</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cgetting-started-guides%5cubuntu%5ctroubleshooting.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/docs\/getting-started-guides\/ubuntu\/troubleshooting\/",
+    "title" : "Troubleshooting",
+    "permalink" : "https:\/\/docstest.github.io\/docs\/getting-started-guides\/ubuntu\/troubleshooting\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">Create an Issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/en/docs%5cgetting-started-guides%5cubuntu%5ctroubleshooting.md" class="button issue">Edit This Page</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    Page last modified on May 05, 2018 at 6:00 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/7f3b633aa0332b8a1ddc61b6d4e2e34fc6dd5522/">Convert site to Hugo (#8316)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5cgetting-started-guides%5cubuntu%5ctroubleshooting.md">Page History</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/docs/home/">Home</a>
+            
+            <a href="/blog/">Blog</a>
+            
+            <a href="/partners/">Partners</a>
+            
+            <a href="/community/">Community</a>
+            
+            <a href="/case-studies/">Case Studies</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">Contribute</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

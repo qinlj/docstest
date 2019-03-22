@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>Admins - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/admin/">
+<meta property="og:title" content="">
+<meta name="twitter:title" content="">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/">English</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                    <li><a href="/it/">Italian</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="Admins" href="/zh/docs/admin/"></a>
+
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="构建高可用集群">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="构建高可用集群" href="/zh/docs/admin/high-availability/"></a>
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="概述">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="概述" href="/zh/docs/admin/authorization/"></a>
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="ABAC 模式" href="/zh/docs/admin/authorization/abac/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Webhook Mode" href="/zh/docs/admin/authorization/webhook/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubelet authentication/authorization" href="/zh/docs/admin/kubelet-authentication-authorization/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes API访问控制" href="/zh/docs/admin/accessing-the-api/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes OpenVSwitch GRE/VxLAN 网络" href="/zh/docs/admin/ovs-networking/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="TLS bootstrapping" href="/zh/docs/admin/kubelet-tls-bootstrapping/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kube-apiserver" href="/zh/docs/admin/kube-apiserver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用启动引导令牌（Bootstrap Tokens）认证" href="/zh/docs/admin/bootstrap-tokens/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="创建大规模集群" href="/zh/docs/admin/cluster-large/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="多区域运行" href="/zh/docs/admin/multiple-zones/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理Service Accounts" href="/zh/docs/admin/service-accounts-admin/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="节点设置校验" href="/zh/docs/admin/node-conformance/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+	 
+    
+    
+    
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cadmin%5ckubelet-authentication-authorization.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>Kubelet authentication/authorization</h1>
+
+
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#kubelet-authentication">Kubelet authentication</a></li>
+<li><a href="#kubelet-authorization">Kubelet authorization</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="overview">Overview</h2>
+
+<p>A kubelet&rsquo;s HTTPS endpoint exposes APIs which give access to data of varying sensitivity,
+and allow you to perform operations with varying levels of power on the node and within containers.</p>
+
+<p>This document describes how to authenticate and authorize access to the kubelet&rsquo;s HTTPS endpoint.</p>
+
+<h2 id="kubelet-authentication">Kubelet authentication</h2>
+
+<p>By default, requests to the kubelet&rsquo;s HTTPS endpoint that are not rejected by other configured
+authentication methods are treated as anonymous requests, and given a username of <code>system:anonymous</code>
+and a group of <code>system:unauthenticated</code>.</p>
+
+<p>To disable anonymous access and send <code>401 Unauthorized</code> responses to unauthenticated requests:</p>
+
+<ul>
+<li>start the kubelet with the <code>--anonymous-auth=false</code> flag</li>
+</ul>
+
+<p>To enable X509 client certificate authentication to the kubelet&rsquo;s HTTPS endpoint:</p>
+
+<ul>
+<li>start the kubelet with the <code>--client-ca-file</code> flag, providing a CA bundle to verify client certificates with</li>
+<li>start the apiserver with <code>--kubelet-client-certificate</code> and <code>--kubelet-client-key</code> flags</li>
+<li>see the <a href="/docs/admin/authentication/#x509-client-certs">apiserver authentication documentation</a> for more details</li>
+</ul>
+
+<p>To enable API bearer tokens (including service account tokens) to be used to authenticate to the kubelet&rsquo;s HTTPS endpoint:</p>
+
+<ul>
+<li>ensure the <code>authentication.k8s.io/v1beta1</code> API group is enabled in the API server</li>
+<li>start the kubelet with the <code>--authentication-token-webhook</code> and the <code>--kubeconfig</code> flags</li>
+<li>the kubelet calls the <code>TokenReview</code> API on the configured API server to determine user information from bearer tokens</li>
+</ul>
+
+<h2 id="kubelet-authorization">Kubelet authorization</h2>
+
+<p>Any request that is successfully authenticated (including an anonymous request) is then authorized. The default authorization mode is <code>AlwaysAllow</code>, which allows all requests.</p>
+
+<p>There are many possible reasons to subdivide access to the kubelet API:</p>
+
+<ul>
+<li>anonymous auth is enabled, but anonymous users&rsquo; ability to call the kubelet API should be limited</li>
+<li>bearer token auth is enabled, but arbitrary API users&rsquo; (like service accounts) ability to call the kubelet API should be limited</li>
+<li>client certificate auth is enabled, but only some of the client certificates signed by the configured CA should be allowed to use the kubelet API</li>
+</ul>
+
+<p>To subdivide access to the kubelet API, delegate authorization to the API server:</p>
+
+<ul>
+<li>ensure the <code>authorization.k8s.io/v1beta1</code> API group is enabled in the API server</li>
+<li>start the kubelet with the <code>--authorization-mode=Webhook</code> and the <code>--kubeconfig</code> flags</li>
+<li>the kubelet calls the <code>SubjectAccessReview</code> API on the configured API server to determine whether each request is authorized</li>
+</ul>
+
+<p>The kubelet authorizes API requests using the same <a href="/docs/admin/authorization/#request-attributes">request attributes</a> approach as the apiserver.</p>
+
+<p>The verb is determined from the incoming request&rsquo;s HTTP verb:</p>
+
+<table>
+<thead>
+<tr>
+<th>HTTP verb</th>
+<th>request verb</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>POST</td>
+<td>create</td>
+</tr>
+
+<tr>
+<td>GET, HEAD</td>
+<td>get</td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>update</td>
+</tr>
+
+<tr>
+<td>PATCH</td>
+<td>patch</td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>delete</td>
+</tr>
+</tbody>
+</table>
+
+<p>The resource and subresource is determined from the incoming request&rsquo;s path:</p>
+
+<table>
+<thead>
+<tr>
+<th>Kubelet API</th>
+<th>resource</th>
+<th>subresource</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>/stats/*</td>
+<td>nodes</td>
+<td>stats</td>
+</tr>
+
+<tr>
+<td>/metrics/*</td>
+<td>nodes</td>
+<td>metrics</td>
+</tr>
+
+<tr>
+<td>/logs/*</td>
+<td>nodes</td>
+<td>log</td>
+</tr>
+
+<tr>
+<td>/spec/*</td>
+<td>nodes</td>
+<td>spec</td>
+</tr>
+
+<tr>
+<td><em>all others</em></td>
+<td>nodes</td>
+<td>proxy</td>
+</tr>
+</tbody>
+</table>
+
+<p>The namespace and API group attributes are always an empty string, and
+the resource name is always the name of the kubelet&rsquo;s <code>Node</code> API object.</p>
+
+<p>When running in this mode, ensure the user identified by the <code>--kubelet-client-certificate</code> and <code>--kubelet-client-key</code>
+flags passed to the apiserver is authorized for the following attributes:</p>
+
+<ul>
+<li>verb=*, resource=nodes, subresource=proxy</li>
+<li>verb=*, resource=nodes, subresource=stats</li>
+<li>verb=*, resource=nodes, subresource=log</li>
+<li>verb=*, resource=nodes, subresource=spec</li>
+<li>verb=*, resource=nodes, subresource=metrics</li>
+</ul>
+
+
+
+    
+    
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/admin\/",
+    "title" : "Admins",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/admin\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/" class="button issue">修改本页面</a>
+    
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

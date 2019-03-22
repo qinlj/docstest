@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>kubectl - Kubernetes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="kubectl kubectl contrôle le manager d&rsquo;un cluster Kubernetes
+Synopsis kubectl contrôle le manager d&rsquo;un cluster Kubernetes.
+Vous trouverez plus d&rsquo;informations ici : https://kubernetes.io/docs/reference/kubectl/overview/
+kubectl [flags]  Options     --alsologtostderr   log sur l&#39;erreur standard en plus d&#39;un fichier   --as chaîne   Nom d&#39;utilisateur à utiliser pour l&#39;opération   --as-group tableauDeChaînes   Groupe à utiliser pour l&#39;opération, ce flag peut être répété pour spécifier plusieurs groupes   --azure-container-registry-config chaîne   Chemin du fichier contenant les informations de configuration du registre de conteneurs Azure   --cache-dir chaîne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: &#34;">
+<meta property="og:description" content="kubectl kubectl contrôle le manager d&rsquo;un cluster Kubernetes
+Synopsis kubectl contrôle le manager d&rsquo;un cluster Kubernetes.
+Vous trouverez plus d&rsquo;informations ici : https://kubernetes.io/docs/reference/kubectl/overview/
+kubectl [flags]  Options     --alsologtostderr   log sur l&#39;erreur standard en plus d&#39;un fichier   --as chaîne   Nom d&#39;utilisateur à utiliser pour l&#39;opération   --as-group tableauDeChaînes   Groupe à utiliser pour l&#39;opération, ce flag peut être répété pour spécifier plusieurs groupes   --azure-container-registry-config chaîne   Chemin du fichier contenant les informations de configuration du registre de conteneurs Azure   --cache-dir chaîne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: &#34;">
+<meta name="twitter:description" content="kubectl kubectl contrôle le manager d&rsquo;un cluster Kubernetes
+Synopsis kubectl contrôle le manager d&rsquo;un cluster Kubernetes.
+Vous trouverez plus d&rsquo;informations ici : https://kubernetes.io/docs/reference/kubectl/overview/
+kubectl [flags]  Options     --alsologtostderr   log sur l&#39;erreur standard en plus d&#39;un fichier   --as chaîne   Nom d&#39;utilisateur à utiliser pour l&#39;opération   --as-group tableauDeChaînes   Groupe à utiliser pour l&#39;opération, ce flag peut être répété pour spécifier plusieurs groupes   --azure-container-registry-config chaîne   Chemin du fichier contenant les informations de configuration du registre de conteneurs Azure   --cache-dir chaîne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: &#34;">
+<meta property="og:url" content="https://docstest.github.io/fr/docs/reference/kubectl/kubectl/">
+<meta property="og:title" content="kubectl">
+<meta name="twitter:title" content="kubectl">
+
+<meta name="twitter:image:alt"   content="Kubernetes">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/fr/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/fr/docs/" class="active">Documentation</a></li>
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="/fr/case-studies/">Études de cas</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    Français <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/reference/kubectl/kubectl/">English</a></li>
+                
+                    <li><a href="/zh/docs/reference/kubectl/kubectl/">中文 Chinese</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="Recherche" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/fr/docs/home/">Documentation</a></h3>
+           <p>Apprenez à utiliser Kubernetes à l'aide d'une documentation conceptuelle, didactique et de référence. Vous pouvez même <a href="/editdocs/" data-auto-burger-exclude>aider en contribuant à la documentation</a>!</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">Souhaitez vous contribuer au code de Kubernetes ?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>Voir sur Github</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">Explorez la communauté</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Calendrier</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/fr/docs/home/">HOME</a></li>
+		
+		
+		<li><a href="/fr/docs/setup/">SETUP</a></li>
+		
+		
+		<li><a href="/fr/docs/concepts/">CONCEPTS</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="Recherche" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+         
+        
+        <a class="item" data-title="References" href="/fr/docs/reference/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Standardized Glossary <small>(EN)</small>" href="/docs/reference/glossary/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Kubernetes Issues and Security">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Issue Tracker <small>(EN)</small>" href="/docs/reference/issues-security/issues/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Security and Disclosure Information <small>(EN)</small>" href="/docs/reference/issues-security/security/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Using the Kubernetes API">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes API Overview <small>(EN)</small>" href="/docs/reference/using-api/api-overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes API Concepts <small>(EN)</small>" href="/docs/reference/using-api/api-concepts/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Client Libraries <small>(EN)</small>" href="/docs/reference/using-api/client-libraries/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Deprecation Policy <small>(EN)</small>" href="/docs/reference/using-api/deprecation-policy/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Accessing the API">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Controlling Access to the Kubernetes API <small>(EN)</small>" href="/docs/reference/access-authn-authz/controlling-access/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Authenticating <small>(EN)</small>" href="/docs/reference/access-authn-authz/authentication/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Authenticating with Bootstrap Tokens <small>(EN)</small>" href="/docs/reference/access-authn-authz/bootstrap-tokens/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using Admission Controllers <small>(EN)</small>" href="/docs/reference/access-authn-authz/admission-controllers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Dynamic Admission Control <small>(EN)</small>" href="/docs/reference/access-authn-authz/extensible-admission-controllers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Managing Service Accounts <small>(EN)</small>" href="/docs/reference/access-authn-authz/service-accounts-admin/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Authorization Overview <small>(EN)</small>" href="/docs/reference/access-authn-authz/authorization/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using RBAC Authorization <small>(EN)</small>" href="/docs/reference/access-authn-authz/rbac/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using ABAC Authorization <small>(EN)</small>" href="/docs/reference/access-authn-authz/abac/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using Node Authorization <small>(EN)</small>" href="/docs/reference/access-authn-authz/node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Webhook Mode <small>(EN)</small>" href="/docs/reference/access-authn-authz/webhook/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="API Reference">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Well-Known Labels, Annotations and Taints <small>(EN)</small>" href="/docs/reference/kubernetes-api/labels-annotations-taints/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="v1.13 <small>(EN)</small>" href="/docs/reference/kubernetes-api/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Federation API">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="extensions/v1beta1 Model Definitions <small>(EN)</small>" href="/docs/reference/federation/extensions/v1beta1/definitions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="extensions/v1beta1 Operations <small>(EN)</small>" href="/docs/reference/federation/extensions/v1beta1/operations/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="federation/v1beta1 Model Definitions <small>(EN)</small>" href="/docs/reference/federation/federation/v1beta1/definitions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="federation/v1beta1 Operations <small>(EN)</small>" href="/docs/reference/federation/federation/v1beta1/operations/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="v1 Model Definitions <small>(EN)</small>" href="/docs/reference/federation/v1/definitions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="v1 Operations <small>(EN)</small>" href="/docs/reference/federation/v1/operations/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Setup tools reference">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Kubeadm">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Overview of kubeadm <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubeadm init <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/kubeadm-init/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubeadm join <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/kubeadm-join/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubeadm upgrade <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubeadm config <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/kubeadm-config/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubeadm reset <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/kubeadm-reset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubeadm token <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/kubeadm-token/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubeadm version <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/kubeadm-version/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubeadm alpha <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/kubeadm-alpha/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubeadm init phase <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/kubeadm-init-phase/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Implementation details <small>(EN)</small>" href="/docs/reference/setup-tools/kubeadm/implementation-details/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="kubefed">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubefed <small>(EN)</small>" href="/docs/reference/setup-tools/kubefed/kubefed/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubefed options <small>(EN)</small>" href="/docs/reference/setup-tools/kubefed/kubefed_options/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubefed init <small>(EN)</small>" href="/docs/reference/setup-tools/kubefed/kubefed_init/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubefed join <small>(EN)</small>" href="/docs/reference/setup-tools/kubefed/kubefed_join/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubefed unjoin <small>(EN)</small>" href="/docs/reference/setup-tools/kubefed/kubefed_unjoin/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubefed version <small>(EN)</small>" href="/docs/reference/setup-tools/kubefed/kubefed_version/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="CLI kubectl">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Aperçu de kubectl" href="/fr/docs/reference/kubectl/overview/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Support de JSONPath" href="/fr/docs/reference/kubectl/jsonpath/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Aide-mémoire kubectl" href="/fr/docs/reference/kubectl/cheatsheet/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Commandes kubectl" href="/fr/docs/reference/kubectl/kubectl-cmds/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Conventions d&#39;utilisation de kubectl" href="/fr/docs/reference/kubectl/conventions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubectl" href="/fr/docs/reference/kubectl/kubectl/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubectl for Docker Users <small>(EN)</small>" href="/docs/reference/kubectl/docker-cli-to-kubectl/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Command line tools reference">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Feature Gates <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/feature-gates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubelet authentication/authorization <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="TLS bootstrapping <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="cloud-controller-manager <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/cloud-controller-manager/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="federation-apiserver <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/federation-apiserver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="federation-controller-manager <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/federation-controller-manager/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kube-apiserver <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/kube-apiserver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kube-controller-manager <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/kube-controller-manager/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kube-proxy <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/kube-proxy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kube-scheduler <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/kube-scheduler/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="kubelet <small>(EN)</small>" href="/docs/reference/command-line-tools-reference/kubelet/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Tools <small>(EN)</small>" href="/docs/reference/tools/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/fr/docs%5creference%5ckubectl%5ckubectl.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#kubectl">kubectl</a>
+<ul>
+<li><a href="#synopsis">Synopsis</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#voir-aussi">VOIR AUSSI</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<h2 id="kubectl">kubectl</h2>
+
+<p>kubectl contrôle le manager d&rsquo;un cluster Kubernetes</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>kubectl contrôle le manager d&rsquo;un cluster Kubernetes.</p>
+
+<p>Vous trouverez plus d&rsquo;informations ici : <a href="https://kubernetes.io/docs/reference/kubectl/overview/" target="_blank">https://kubernetes.io/docs/reference/kubectl/overview/</a></p>
+
+<pre><code>kubectl [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--alsologtostderr</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">log sur l'erreur standard en plus d'un fichier</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--as chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Nom d'utilisateur à utiliser pour l'opération</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--as-group tableauDeChaînes</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Groupe à utiliser pour l'opération, ce flag peut être répété pour spécifier plusieurs groupes</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--azure-container-registry-config chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Chemin du fichier contenant les informations de configuration du registre de conteneurs Azure</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--cache-dir chaîne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: "/Users/tim/.kube/http-cache"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Répertoire de cache HTTP par défaut</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--certificate-authority chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Chemin vers un fichier cert pour l'autorité de certification</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--client-certificate chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Chemin vers un fichier de certificat client pour TLS</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--client-key chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Chemin vers un fichier de clé client pour TLS</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--cloud-provider-gce-lb-src-cidrs cidrs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: 130.211.0.0/22,209.85.152.0/22,209.85.204.0/22,35.191.0.0/16</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">CIDRs ouverts dans le firewall GCE pour le proxy de trafic LB & health checks</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--cluster chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Le nom du cluster kubeconfig à utiliser</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--context chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Le nom du contexte kubeconfig à utiliser</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--default-not-ready-toleration-seconds int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: 300</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Indique les tolerationSeconds de la tolérance pour notReady:NoExecute qui sont ajoutées par défaut à tous les pods qui n'ont pas défini une telle tolérance</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--default-unreachable-toleration-seconds int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: 300</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Indique les tolerationSeconds de la tolérance pour unreachable:NoExecute qui sont ajoutées par défaut à tous les pods qui n'ont pas défini une telle tolérance</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">aide pour kubectl</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--insecure-skip-tls-verify</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Si vrai, la validité du certificat du serveur ne sera pas vérifiée. Ceci rend vos connexions HTTPS non sécurisées</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Chemin du fichier kubeconfig à utiliser pour les requêtes du CLI</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--log-backtrace-at traceLocation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: :0</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">lorsque les logs arrivent à la ligne fichier:N, émet une stack trace</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--log-dir chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Si non vide, écrit les fichiers de log dans ce répertoire</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--log-file chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Si non vide, utilise ce fichier de log</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--log-flush-frequency durée&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: 5s</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Nombre de secondes maximum entre flushs des logs</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--logtostderr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: true</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">log sur l'erreur standard plutôt que dans un fichier</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--match-server-version</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">La version du serveur doit correspondre à la version du client</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-n, --namespace chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Si présent, la portée de namespace pour la requête du CLI</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--profile chaîne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: "none"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Nom du profil à capturer. Parmi (none|cpu|heap|goroutine|threadcreate|block|mutex)</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--profile-output chaîne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: "profile.pprof"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Nom du fichier dans lequel écrire le profil</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--request-timeout chaîne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: "0"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">La durée à attendre avant d'abandonner une requête au serveur. Les valeurs non égales à zéro doivent contenir une unité de temps correspondante (ex 1s, 2m, 3h). Une valeur à zéro indique de ne pas abandonner les requêtes</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-s, --server chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">L'adresse et le port de l'API server Kubernetes</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--skip-headers</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Si vrai, n'affiche pas les entêtes dans les messages de log</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--stderrthreshold sévérité&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Défaut: 2</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">logs à cette sévérité et au dessus de ce seuil vont dans stderr</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--token chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Bearer token pour l'authentification auprès de l'API server</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--user chaîne</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Le nom de l'utilisateur kubeconfig à utiliser</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-v, --v Niveau</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Niveau de logs</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--version version[=true]</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Affiche les informations de version et quitte</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--vmodule moduleSpec</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Liste de settings pattern=N séparés par des virgules pour le logging filtré par fichiers</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="voir-aussi">VOIR AUSSI</h3>
+
+<ul>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#annotate">kubectl annotate</a>    - Met à jour les annotations d&rsquo;une ressource</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#api-resources">kubectl api-resources</a>  - Affiche les ressources de l&rsquo;API prises en charge sur le serveur</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#api-versions">kubectl api-versions</a>    - Affiche les versions de l&rsquo;API prises en charge sur le serveur, sous la forme &ldquo;groupe/version&rdquo;</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#apply">kubectl apply</a>  - Applique une configuration à une ressource depuis un fichier ou stdin</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#attach">kubectl attach</a>    - Attache à un conteneur en cours d&rsquo;exécution</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#auth">kubectl auth</a>    - Inspecte les autorisations</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#autoscale">kubectl autoscale</a>  - Auto-scale un Deployment, ReplicaSet, ou ReplicationController</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#certificate">kubectl certificate</a>  - Modifie des ressources certificat</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#cluster-info">kubectl cluster-info</a>    - Affiche les informations du cluster</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#completion">kubectl completion</a>    - Génère le code de complétion pour le shell spécifié (bash ou zsh)</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#config">kubectl config</a>    - Modifie les fichiers kubeconfig</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#convert">kubectl convert</a>  - Convertit des fichiers de config entre différentes versions d&rsquo;API</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#cordon">kubectl cordon</a>    - Marque un nœud comme non assignable (unschedulable)</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#cp">kubectl cp</a>    - Copie des fichiers et répertoires depuis et vers des conteneurs</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#create">kubectl create</a>    - Crée une ressource depuis un fichier ou stdin</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#delete">kubectl delete</a>    - Supprime des ressources par fichiers ou stdin, par ressource et nom, ou par ressource et sélecteur de label</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#describe">kubectl describe</a>    - Affiche les informations d&rsquo;une ressource spécifique ou d&rsquo;un groupe de ressources</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#diff">kubectl diff</a>    - Différence entre la version live et la version désirée</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#drain">kubectl drain</a>  - Draine un nœud en préparation d&rsquo;une mise en maintenance</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#edit">kubectl edit</a>    - Édite une ressource du serveur</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#exec">kubectl exec</a>    - Exécute une commande dans un conteneur</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#explain">kubectl explain</a>  - Documentation sur les ressources</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#expose">kubectl expose</a>    - Prend un replication controller, service, deployment ou pod et l&rsquo;expose comme un nouveau Service Kubernetes</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#get">kubectl get</a>  - Affiche une ou plusieurs ressources</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#label">kubectl label</a>  - Met à jour les labels d&rsquo;une ressource</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#logs">kubectl logs</a>    - Affiche les logs d&rsquo;un conteneur dans un pod</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#options">kubectl options</a>  - Affiche la liste des flags hérités par toutes les commandes</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#patch">kubectl patch</a>  - Met à jour un ou plusieurs champs d&rsquo;une ressource par merge patch stratégique</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#plugin">kubectl plugin</a>    - Fournit des utilitaires pour interagir avec des plugins</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#port-forward">kubectl port-forward</a>    - Redirige un ou plusieurs ports vers un pod</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#proxy">kubectl proxy</a>  - Exécute un proxy vers l&rsquo;API server Kubernetes</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#replace">kubectl replace</a>  - Remplace une ressource par fichier ou stdin</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#rollout">kubectl rollout</a>  - Gère le rollout d&rsquo;une ressource</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#run">kubectl run</a>  - Exécute une image donnée dans le cluster</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#scale">kubectl scale</a>  - Définit une nouvelle taille pour un Deployment, ReplicaSet, Replication Controller, ou Job</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#set">kubectl set</a>  - Définit des fonctionnalités spécifiques sur des objets</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#taint">kubectl taint</a>  - Met à jour les marques (taints) sur un ou plusieurs nœuds</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#top">kubectl top</a>  - Affiche l&rsquo;utilisation de ressources matérielles (CPU/Memory/Storage)</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#uncordon">kubectl uncordon</a>    - Marque un nœud comme assignable (schedulable)</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#version">kubectl version</a>  - Affiche les informations de version du client et du serveur</li>
+<li><a href="/docs/reference/generated/kubectl/kubectl-commands#wait">kubectl wait</a>    - Expérimental : Attend une condition particulière sur une ou plusieurs ressources</li>
+</ul>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/fr/docs/reference/kubectl/conventions/" title="Conventions d&#39;utilisation de kubectl"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Conventions d&#39;utilisation de kubectl</a>
+<a class="nav nav-next" href="/fr/docs/reference/kubectl/overview/" title="Aperçu de kubectl">Next - Aperçu de kubectl <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>Feedback</h2>
+  <p class="feedback--prompt">Cette page est elle utile ? </p>
+  <button class="button feedback--yes">Oui</button>
+  <button class="button feedback--no">Non</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5creference%5ckubectl%5ckubectl.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/fr\/docs\/reference\/kubectl\/kubectl\/",
+    "title" : "kubectl",
+    "permalink" : "https:\/\/docstest.github.io\/fr\/docs\/reference\/kubectl\/kubectl\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">Ouvrez un ticket</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/fr/docs%5creference%5ckubectl%5ckubectl.md" class="button issue">Editez cette page</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    Dernière modification le March 13, 2019 at 9:45 AM PST de
+    <a href="https://github.com/kubernetes/website/commit/b5865cfc2ff9448ca5704520978fa6eb4a439df1/">docs-fr | Reference | kubectl (#13059)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5creference%5ckubectl%5ckubectl.md">Historique</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/fr/docs/home/">Home</a>
+            
+            
+            
+            
+            
+            
+            
+            <a href="/fr/case-studies/">Études de cas</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Calendrier</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">Contribuer</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

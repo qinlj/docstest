@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>填挖方 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="填挖方原理 　地表经常由于沉积和侵蚀等作用引起表面物质的迁移，表现为地表某些区域的表面物质增加，某些区域的表面物质减少。在工程中，通常将表面物质的减少称为“挖方”，而将表面物质的增加称为“填方”。将一种情况变为另一种情况时需要填/挖的面积和大小。下图为填挖方的地形剖面示意图。
+　栅格填挖方计算要求输入两个栅格数据集：填挖方前的栅格数据集和填挖方后的栅格数据集，生成的结果数据集的每个像元值为这两个输入数据集对应像元值的变化值。如果像元值为正，表示该像元处的表面物质减少；如果像元值为负，表示该像元处的表面物质增加。如下图所示，以一个4*4的栅格数据显示了填挖方的计算方法：
+　通过该图可以看出：结果数据集 = 填挖方前栅格数据集 - 填挖方后栅格数据集。
+　下图所示为填挖方结果示意图，分别列出了填挖方之前的源数据集、作为参考的填挖方数据集和生成的填挖方结果数据集。源数据集和填挖方数据集中，高程值越高，栅格颜色偏向棕红色；高程值越低，栅格颜色偏向绿色。在填挖方结果数据集中，需要挖方的部分用墨绿色表示，且挖方量越大，颜色越深；需要填方的部分用棕色表示，且填方量越大，颜色越深；不需要填挖方的部分用白色表示。
+　当然，填挖方是对两个输入数据集对应像元的计算，这就需要两个输入数据集有相同的坐标和投影系统，以保证同一个地点有相同的坐标，如果两个输入数据集的坐标系统不一致，则很有可能产生错误的结果。理论上，要求两个输入数据集的空间范围也是一致的，然而，对于空间范围不一致的两个输入数据集，只计算其重叠区域的表面填挖方的结果；另外，在其中一个数据集的像元为空值处，计算结果该像元值也为空值。
+　此外，对于空间范围不一致的两个数据集的填挖方操作的结果的数据集的范围与两个数据集的重叠区域的范围一致。
+　填挖方用来统计一个地形表面所需要挖方或者填方的土方量。一种是通过统计两个栅格数据（源数据和填挖方数据）之间的体积和面积变化实现填挖方，
+　填挖方结果得到一个新的栅格数据集，实际是源栅格数据集和挖方对象之间栅格代数运算的结果，并对发生变化的区域进行统计的结果。
+操作说明  在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“点填挖方”，即可弹出“填挖方”对话框。 分别设置填挖方前和填挖方后的栅格数据集，以及结果数据集名称，对于输入的两个栅格数据集及结果数据集有几点内容需要注意：
+ 要求两个输入的栅格数据集有相同的坐标和投影系统，以保证同一个地点有相同的坐标，如果两个输入的栅格数据集的坐标系统不一致，则很有可能产生错误的结果。 理论上，要求输入的两个栅格数据集的空间范围也是一致的。对于空间范围不一致的两个栅格数据集，只计算其重叠区域的表面填挖方的结果。 若参与计算的一个栅格数据集某处的像元值为空值，则结果数据集中该处像元值也为空值。  单击“执行”按钮，即可执行填挖方操作。 执行完毕后会在输出窗口显示填挖方计算结果，包括填充体积、挖掘体积、填充面积、挖掘面积、未填挖面积5项内容，其中体积单位为立方米、面积单位为平方米。如下图所示：
+  　相关主题 　面填挖方
+　反算填挖方
+　查找极值
+　DEM曲率计算
+　坡度分析
+　坡向分析
+　剖面分析
+　正射三维影像
+　三维晕渲图">
+<meta property="og:description" content="填挖方原理 　地表经常由于沉积和侵蚀等作用引起表面物质的迁移，表现为地表某些区域的表面物质增加，某些区域的表面物质减少。在工程中，通常将表面物质的减少称为“挖方”，而将表面物质的增加称为“填方”。将一种情况变为另一种情况时需要填/挖的面积和大小。下图为填挖方的地形剖面示意图。
+　栅格填挖方计算要求输入两个栅格数据集：填挖方前的栅格数据集和填挖方后的栅格数据集，生成的结果数据集的每个像元值为这两个输入数据集对应像元值的变化值。如果像元值为正，表示该像元处的表面物质减少；如果像元值为负，表示该像元处的表面物质增加。如下图所示，以一个4*4的栅格数据显示了填挖方的计算方法：
+　通过该图可以看出：结果数据集 = 填挖方前栅格数据集 - 填挖方后栅格数据集。
+　下图所示为填挖方结果示意图，分别列出了填挖方之前的源数据集、作为参考的填挖方数据集和生成的填挖方结果数据集。源数据集和填挖方数据集中，高程值越高，栅格颜色偏向棕红色；高程值越低，栅格颜色偏向绿色。在填挖方结果数据集中，需要挖方的部分用墨绿色表示，且挖方量越大，颜色越深；需要填方的部分用棕色表示，且填方量越大，颜色越深；不需要填挖方的部分用白色表示。
+　当然，填挖方是对两个输入数据集对应像元的计算，这就需要两个输入数据集有相同的坐标和投影系统，以保证同一个地点有相同的坐标，如果两个输入数据集的坐标系统不一致，则很有可能产生错误的结果。理论上，要求两个输入数据集的空间范围也是一致的，然而，对于空间范围不一致的两个输入数据集，只计算其重叠区域的表面填挖方的结果；另外，在其中一个数据集的像元为空值处，计算结果该像元值也为空值。
+　此外，对于空间范围不一致的两个数据集的填挖方操作的结果的数据集的范围与两个数据集的重叠区域的范围一致。
+　填挖方用来统计一个地形表面所需要挖方或者填方的土方量。一种是通过统计两个栅格数据（源数据和填挖方数据）之间的体积和面积变化实现填挖方，
+　填挖方结果得到一个新的栅格数据集，实际是源栅格数据集和挖方对象之间栅格代数运算的结果，并对发生变化的区域进行统计的结果。
+操作说明  在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“点填挖方”，即可弹出“填挖方”对话框。 分别设置填挖方前和填挖方后的栅格数据集，以及结果数据集名称，对于输入的两个栅格数据集及结果数据集有几点内容需要注意：
+ 要求两个输入的栅格数据集有相同的坐标和投影系统，以保证同一个地点有相同的坐标，如果两个输入的栅格数据集的坐标系统不一致，则很有可能产生错误的结果。 理论上，要求输入的两个栅格数据集的空间范围也是一致的。对于空间范围不一致的两个栅格数据集，只计算其重叠区域的表面填挖方的结果。 若参与计算的一个栅格数据集某处的像元值为空值，则结果数据集中该处像元值也为空值。  单击“执行”按钮，即可执行填挖方操作。 执行完毕后会在输出窗口显示填挖方计算结果，包括填充体积、挖掘体积、填充面积、挖掘面积、未填挖面积5项内容，其中体积单位为立方米、面积单位为平方米。如下图所示：
+  　相关主题 　面填挖方
+　反算填挖方
+　查找极值
+　DEM曲率计算
+　坡度分析
+　坡向分析
+　剖面分析
+　正射三维影像
+　三维晕渲图">
+<meta name="twitter:description" content="填挖方原理 　地表经常由于沉积和侵蚀等作用引起表面物质的迁移，表现为地表某些区域的表面物质增加，某些区域的表面物质减少。在工程中，通常将表面物质的减少称为“挖方”，而将表面物质的增加称为“填方”。将一种情况变为另一种情况时需要填/挖的面积和大小。下图为填挖方的地形剖面示意图。
+　栅格填挖方计算要求输入两个栅格数据集：填挖方前的栅格数据集和填挖方后的栅格数据集，生成的结果数据集的每个像元值为这两个输入数据集对应像元值的变化值。如果像元值为正，表示该像元处的表面物质减少；如果像元值为负，表示该像元处的表面物质增加。如下图所示，以一个4*4的栅格数据显示了填挖方的计算方法：
+　通过该图可以看出：结果数据集 = 填挖方前栅格数据集 - 填挖方后栅格数据集。
+　下图所示为填挖方结果示意图，分别列出了填挖方之前的源数据集、作为参考的填挖方数据集和生成的填挖方结果数据集。源数据集和填挖方数据集中，高程值越高，栅格颜色偏向棕红色；高程值越低，栅格颜色偏向绿色。在填挖方结果数据集中，需要挖方的部分用墨绿色表示，且挖方量越大，颜色越深；需要填方的部分用棕色表示，且填方量越大，颜色越深；不需要填挖方的部分用白色表示。
+　当然，填挖方是对两个输入数据集对应像元的计算，这就需要两个输入数据集有相同的坐标和投影系统，以保证同一个地点有相同的坐标，如果两个输入数据集的坐标系统不一致，则很有可能产生错误的结果。理论上，要求两个输入数据集的空间范围也是一致的，然而，对于空间范围不一致的两个输入数据集，只计算其重叠区域的表面填挖方的结果；另外，在其中一个数据集的像元为空值处，计算结果该像元值也为空值。
+　此外，对于空间范围不一致的两个数据集的填挖方操作的结果的数据集的范围与两个数据集的重叠区域的范围一致。
+　填挖方用来统计一个地形表面所需要挖方或者填方的土方量。一种是通过统计两个栅格数据（源数据和填挖方数据）之间的体积和面积变化实现填挖方，
+　填挖方结果得到一个新的栅格数据集，实际是源栅格数据集和挖方对象之间栅格代数运算的结果，并对发生变化的区域进行统计的结果。
+操作说明  在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“点填挖方”，即可弹出“填挖方”对话框。 分别设置填挖方前和填挖方后的栅格数据集，以及结果数据集名称，对于输入的两个栅格数据集及结果数据集有几点内容需要注意：
+ 要求两个输入的栅格数据集有相同的坐标和投影系统，以保证同一个地点有相同的坐标，如果两个输入的栅格数据集的坐标系统不一致，则很有可能产生错误的结果。 理论上，要求输入的两个栅格数据集的空间范围也是一致的。对于空间范围不一致的两个栅格数据集，只计算其重叠区域的表面填挖方的结果。 若参与计算的一个栅格数据集某处的像元值为空值，则结果数据集中该处像元值也为空值。  单击“执行”按钮，即可执行填挖方操作。 执行完毕后会在输出窗口显示填挖方计算结果，包括填充体积、挖掘体积、填充面积、挖掘面积、未填挖面积5项内容，其中体积单位为立方米、面积单位为平方米。如下图所示：
+  　相关主题 　面填挖方
+　反算填挖方
+　查找极值
+　DEM曲率计算
+　坡度分析
+　坡向分析
+　剖面分析
+　正射三维影像
+　三维晕渲图">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/surfaceanalyst/cutfill/">
+<meta property="og:title" content="填挖方">
+<meta name="twitter:title" content="填挖方">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/surfaceanalyst/cutfill/">English</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>表面分析</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/" class="YAH">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="表面分析" href="/zh/docs/surfaceanalyst/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="DEM切割" href="/zh/docs/surfaceanalyst/terrainbuilderclip/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DEM曲率计算" href="/zh/docs/surfaceanalyst/calculatecurvature/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Surface Analysis <small>(EN)</small>" href="/docs/surfaceanalyst/surfaceanalyst/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="三维晕渲图" href="/zh/docs/surfaceanalyst/hillshade/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="剖面分析" href="/zh/docs/surfaceanalyst/profile/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="反算填挖方" href="/zh/docs/surfaceanalyst/inversecutfill/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="坡向分析" href="/zh/docs/surfaceanalyst/aspect/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="坡度分析" href="/zh/docs/surfaceanalyst/slope/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="填挖方" href="/zh/docs/surfaceanalyst/cutfill/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取所有等值线" href="/zh/docs/surfaceanalyst/drivecontourall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取所有等值面" href="/zh/docs/surfaceanalyst/driveregionall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取指定等值线" href="/zh/docs/surfaceanalyst/drivecontourspecific/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取指定等值面" href="/zh/docs/surfaceanalyst/driveregionspecific/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取等值线/面" href="/zh/docs/surfaceanalyst/drivecontour/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="查找极值" href="/zh/docs/surfaceanalyst/findextreme/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="正射三维影像" href="/zh/docs/surfaceanalyst/orthoimage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="点数据提取等值线" href="/zh/docs/surfaceanalyst/extractisoline/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="面填挖方" href="/zh/docs/surfaceanalyst/cutfillregion/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cSurfaceAnalyst%5cCutFill.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>填挖方</h1>
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#填挖方原理">填挖方原理</a></li>
+<li><a href="#操作说明">操作说明</a></li>
+<li><a href="#相关主题">相关主题</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<h3 id="填挖方原理">填挖方原理</h3>
+
+<p>　　地表经常由于沉积和侵蚀等作用引起表面物质的迁移，表现为地表某些区域的表面物质增加，某些区域的表面物质减少。在工程中，通常将表面物质的减少称为“挖方”，而将表面物质的增加称为“填方”。将一种情况变为另一种情况时需要填/挖的面积和大小。下图为填挖方的地形剖面示意图。</p>
+
+<p><img src="img/CutFill1.png" alt="" /></p>
+
+<p>　　栅格填挖方计算要求输入两个栅格数据集：填挖方前的栅格数据集和填挖方后的栅格数据集，生成的结果数据集的每个像元值为这两个输入数据集对应像元值的变化值。如果像元值为正，表示该像元处的表面物质减少；如果像元值为负，表示该像元处的表面物质增加。如下图所示，以一个4*4的栅格数据显示了填挖方的计算方法：</p>
+
+<p><img src="img/CutFill2.png" alt="" /></p>
+
+<p>　　通过该图可以看出：结果数据集 = 填挖方前栅格数据集 - 填挖方后栅格数据集。</p>
+
+<p>　　下图所示为填挖方结果示意图，分别列出了填挖方之前的源数据集、作为参考的填挖方数据集和生成的填挖方结果数据集。源数据集和填挖方数据集中，高程值越高，栅格颜色偏向棕红色；高程值越低，栅格颜色偏向绿色。在填挖方结果数据集中，需要挖方的部分用墨绿色表示，且挖方量越大，颜色越深；需要填方的部分用棕色表示，且填方量越大，颜色越深；不需要填挖方的部分用白色表示。</p>
+
+<p><img src="img/CutFill3.png" alt="" /></p>
+
+<p>　　当然，填挖方是对两个输入数据集对应像元的计算，这就需要两个输入数据集有相同的坐标和投影系统，以保证同一个地点有相同的坐标，如果两个输入数据集的坐标系统不一致，则很有可能产生错误的结果。理论上，要求两个输入数据集的空间范围也是一致的，然而，对于空间范围不一致的两个输入数据集，只计算其重叠区域的表面填挖方的结果；另外，在其中一个数据集的像元为空值处，计算结果该像元值也为空值。</p>
+
+<p>　　此外，对于空间范围不一致的两个数据集的填挖方操作的结果的数据集的范围与两个数据集的重叠区域的范围一致。</p>
+
+<p>　　填挖方用来统计一个地形表面所需要挖方或者填方的土方量。一种是通过统计两个栅格数据（源数据和填挖方数据）之间的体积和面积变化实现填挖方，</p>
+
+<p>　　填挖方结果得到一个新的栅格数据集，实际是源栅格数据集和挖方对象之间栅格代数运算的结果，并对发生变化的区域进行统计的结果。</p>
+
+<h3 id="操作说明">操作说明</h3>
+
+<ol>
+<li>在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“点填挖方”，即可弹出“填挖方”对话框。</li>
+
+<li><p>分别设置填挖方前和填挖方后的栅格数据集，以及结果数据集名称，对于输入的两个栅格数据集及结果数据集有几点内容需要注意：</p>
+
+<ul>
+<li>要求两个输入的栅格数据集有相同的坐标和投影系统，以保证同一个地点有相同的坐标，如果两个输入的栅格数据集的坐标系统不一致，则很有可能产生错误的结果。</li>
+<li>理论上，要求输入的两个栅格数据集的空间范围也是一致的。对于空间范围不一致的两个栅格数据集，只计算其重叠区域的表面填挖方的结果。</li>
+<li>若参与计算的一个栅格数据集某处的像元值为空值，则结果数据集中该处像元值也为空值。</li>
+</ul></li>
+
+<li><p>单击“执行”按钮，即可执行填挖方操作。 执行完毕后会在输出窗口显示填挖方计算结果，包括填充体积、挖掘体积、填充面积、挖掘面积、未填挖面积5项内容，其中体积单位为立方米、面积单位为平方米。如下图所示：</p></li>
+</ol>
+
+<p>　　<img src="img/CutFillExport.png" alt="" /></p>
+
+<h3 id="相关主题">相关主题</h3>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFillRegion.html" target="_blank">面填挖方</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="InverseCutFill.html" target="_blank">反算填挖方</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="FindExtreme.html" target="_blank">查找极值</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CalculateCurvature.html" target="_blank">DEM曲率计算</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Slope.html" target="_blank">坡度分析</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Aspect.html" target="_blank">坡向分析</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Profile.html" target="_blank">剖面分析</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="OrthoImage.html" target="_blank">正射三维影像</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="HillShade.html" target="_blank">三维晕渲图</a></p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/surfaceanalyst/slope/" title="坡度分析"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 坡度分析</a>
+<a class="nav nav-next" href="/zh/docs/surfaceanalyst/drivecontourall/" title="提取所有等值线">Next - 提取所有等值线 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cSurfaceAnalyst%5cCutFill.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/surfaceanalyst\/cutfill\/",
+    "title" : "填挖方",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/surfaceanalyst\/cutfill\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cSurfaceAnalyst%5cCutFill.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

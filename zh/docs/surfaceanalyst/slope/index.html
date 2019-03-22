@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>坡度分析 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content=" 　度和坡向是两个重要的地形特征因子，在地形表面分析中起到重要作用。其中，坡度表示地球面某一位置的高度变化率的量度。
+分析原理 　地表面某一点的坡度是表示地表在该点的倾斜程度的量，是既有大小又有方向的矢量。在地形分析中，坡度表示经过地表某一点的切平面和水平面所形成的夹角。根据坡度图，可以了解到区域内各位置的地形的陡峭程度。在坡度图中，每个像元都有一个坡度值，值越大表示地势越陡峭，值越小表示地势越平坦。
+　坡度可以用度数或百分数表示，其中，度数坡度是垂直增量与水平增量之比的反正切值（arctan），百分数坡度是垂直增量与水平增量之比乘以100。在 SuperMap 中，坡度计算提供了度数、弧度和百分比三种表现形式。设坡度的垂直增量为H、水平增量为L，则角度： θ = arctan(H / L)，弧度：R = θ * π / 180，百分比：P = (H / L) * 100，如下图所示：
+　　度数坡度的分析结果的范围是0到90°，0表示该处地表为水平面，90°表示该处地表为垂直于水平面的陡峭表面。百分数坡度的分析结果的范围是0到无穷大，当结果小于1时，表示该处坡度的高程增量小于水平增量，坡度较缓；当结果等于1时，表示该处坡度的高程增量等于水平增量，且坡度值为45°；当结果大于1时，表示该处坡度的高程增量大于水平增量，坡度变陡。
+　栅格数据集（GRID）的像元值即为中心点的值，在计算坡度和坡向时，可以通过插值得到每个点的高程值，然后计算每个点的坡度和坡向。由于计算点的坡度和坡向没有实际意义，所以该方法计算的是栅格数据集中各像元平面的坡度平均值。
+应用场景  当要在一座山上建造房子，需要找到山上比较平坦的区域； 如果要在山上建滑雪场，需要选择不同的坡度分别用作初级滑道、中级滑道和高级滑道，以满足不同水平的滑雪爱好者； 当参与紧急事件的救援飞机着陆时，需要找到地面相对平坦的区域； 在耕地坡度等级中规定，25°为开荒限制坡度，不可在25°以上的荒地种植对于这些问题，都需要考虑地形的坡度。  操作说明  在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“坡度分析”，即可弹出“坡度分析”对话框。 在源数据处设置要进行坡度分析的栅格数据集，通常我们会选择拥有高程值的 DEM 数据。 坡度单位类型：选择所要使用的坡度分析单位，包括角度、弧度和百分比三种类型，用户可根据需要选择合适的类型进行坡度分析。 高程缩放比例：用来设置高程被拉伸的程度。数值越大表示拉伸越大，地形越夸张。当系数为1表示不拉伸。数值单位为倍，即对高程相对于原始高度拉伸的倍数。
+ 设置结果数据所要保存的数据源，及结果数据集的名称，坡度数据集是与源数据集等大且分辨率相同。
+ 单击“执行”按钮，即可执行坡度分析操作，结果如下图所示：
+  　">
+<meta property="og:description" content=" 　度和坡向是两个重要的地形特征因子，在地形表面分析中起到重要作用。其中，坡度表示地球面某一位置的高度变化率的量度。
+分析原理 　地表面某一点的坡度是表示地表在该点的倾斜程度的量，是既有大小又有方向的矢量。在地形分析中，坡度表示经过地表某一点的切平面和水平面所形成的夹角。根据坡度图，可以了解到区域内各位置的地形的陡峭程度。在坡度图中，每个像元都有一个坡度值，值越大表示地势越陡峭，值越小表示地势越平坦。
+　坡度可以用度数或百分数表示，其中，度数坡度是垂直增量与水平增量之比的反正切值（arctan），百分数坡度是垂直增量与水平增量之比乘以100。在 SuperMap 中，坡度计算提供了度数、弧度和百分比三种表现形式。设坡度的垂直增量为H、水平增量为L，则角度： θ = arctan(H / L)，弧度：R = θ * π / 180，百分比：P = (H / L) * 100，如下图所示：
+　　度数坡度的分析结果的范围是0到90°，0表示该处地表为水平面，90°表示该处地表为垂直于水平面的陡峭表面。百分数坡度的分析结果的范围是0到无穷大，当结果小于1时，表示该处坡度的高程增量小于水平增量，坡度较缓；当结果等于1时，表示该处坡度的高程增量等于水平增量，且坡度值为45°；当结果大于1时，表示该处坡度的高程增量大于水平增量，坡度变陡。
+　栅格数据集（GRID）的像元值即为中心点的值，在计算坡度和坡向时，可以通过插值得到每个点的高程值，然后计算每个点的坡度和坡向。由于计算点的坡度和坡向没有实际意义，所以该方法计算的是栅格数据集中各像元平面的坡度平均值。
+应用场景  当要在一座山上建造房子，需要找到山上比较平坦的区域； 如果要在山上建滑雪场，需要选择不同的坡度分别用作初级滑道、中级滑道和高级滑道，以满足不同水平的滑雪爱好者； 当参与紧急事件的救援飞机着陆时，需要找到地面相对平坦的区域； 在耕地坡度等级中规定，25°为开荒限制坡度，不可在25°以上的荒地种植对于这些问题，都需要考虑地形的坡度。  操作说明  在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“坡度分析”，即可弹出“坡度分析”对话框。 在源数据处设置要进行坡度分析的栅格数据集，通常我们会选择拥有高程值的 DEM 数据。 坡度单位类型：选择所要使用的坡度分析单位，包括角度、弧度和百分比三种类型，用户可根据需要选择合适的类型进行坡度分析。 高程缩放比例：用来设置高程被拉伸的程度。数值越大表示拉伸越大，地形越夸张。当系数为1表示不拉伸。数值单位为倍，即对高程相对于原始高度拉伸的倍数。
+ 设置结果数据所要保存的数据源，及结果数据集的名称，坡度数据集是与源数据集等大且分辨率相同。
+ 单击“执行”按钮，即可执行坡度分析操作，结果如下图所示：
+  　">
+<meta name="twitter:description" content=" 　度和坡向是两个重要的地形特征因子，在地形表面分析中起到重要作用。其中，坡度表示地球面某一位置的高度变化率的量度。
+分析原理 　地表面某一点的坡度是表示地表在该点的倾斜程度的量，是既有大小又有方向的矢量。在地形分析中，坡度表示经过地表某一点的切平面和水平面所形成的夹角。根据坡度图，可以了解到区域内各位置的地形的陡峭程度。在坡度图中，每个像元都有一个坡度值，值越大表示地势越陡峭，值越小表示地势越平坦。
+　坡度可以用度数或百分数表示，其中，度数坡度是垂直增量与水平增量之比的反正切值（arctan），百分数坡度是垂直增量与水平增量之比乘以100。在 SuperMap 中，坡度计算提供了度数、弧度和百分比三种表现形式。设坡度的垂直增量为H、水平增量为L，则角度： θ = arctan(H / L)，弧度：R = θ * π / 180，百分比：P = (H / L) * 100，如下图所示：
+　　度数坡度的分析结果的范围是0到90°，0表示该处地表为水平面，90°表示该处地表为垂直于水平面的陡峭表面。百分数坡度的分析结果的范围是0到无穷大，当结果小于1时，表示该处坡度的高程增量小于水平增量，坡度较缓；当结果等于1时，表示该处坡度的高程增量等于水平增量，且坡度值为45°；当结果大于1时，表示该处坡度的高程增量大于水平增量，坡度变陡。
+　栅格数据集（GRID）的像元值即为中心点的值，在计算坡度和坡向时，可以通过插值得到每个点的高程值，然后计算每个点的坡度和坡向。由于计算点的坡度和坡向没有实际意义，所以该方法计算的是栅格数据集中各像元平面的坡度平均值。
+应用场景  当要在一座山上建造房子，需要找到山上比较平坦的区域； 如果要在山上建滑雪场，需要选择不同的坡度分别用作初级滑道、中级滑道和高级滑道，以满足不同水平的滑雪爱好者； 当参与紧急事件的救援飞机着陆时，需要找到地面相对平坦的区域； 在耕地坡度等级中规定，25°为开荒限制坡度，不可在25°以上的荒地种植对于这些问题，都需要考虑地形的坡度。  操作说明  在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“坡度分析”，即可弹出“坡度分析”对话框。 在源数据处设置要进行坡度分析的栅格数据集，通常我们会选择拥有高程值的 DEM 数据。 坡度单位类型：选择所要使用的坡度分析单位，包括角度、弧度和百分比三种类型，用户可根据需要选择合适的类型进行坡度分析。 高程缩放比例：用来设置高程被拉伸的程度。数值越大表示拉伸越大，地形越夸张。当系数为1表示不拉伸。数值单位为倍，即对高程相对于原始高度拉伸的倍数。
+ 设置结果数据所要保存的数据源，及结果数据集的名称，坡度数据集是与源数据集等大且分辨率相同。
+ 单击“执行”按钮，即可执行坡度分析操作，结果如下图所示：
+  　">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/surfaceanalyst/slope/">
+<meta property="og:title" content="坡度分析">
+<meta name="twitter:title" content="坡度分析">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/surfaceanalyst/slope/">English</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>表面分析</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/" class="YAH">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="表面分析" href="/zh/docs/surfaceanalyst/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="DEM切割" href="/zh/docs/surfaceanalyst/terrainbuilderclip/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DEM曲率计算" href="/zh/docs/surfaceanalyst/calculatecurvature/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Surface Analysis <small>(EN)</small>" href="/docs/surfaceanalyst/surfaceanalyst/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="三维晕渲图" href="/zh/docs/surfaceanalyst/hillshade/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="剖面分析" href="/zh/docs/surfaceanalyst/profile/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="反算填挖方" href="/zh/docs/surfaceanalyst/inversecutfill/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="坡向分析" href="/zh/docs/surfaceanalyst/aspect/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="坡度分析" href="/zh/docs/surfaceanalyst/slope/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="填挖方" href="/zh/docs/surfaceanalyst/cutfill/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取所有等值线" href="/zh/docs/surfaceanalyst/drivecontourall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取所有等值面" href="/zh/docs/surfaceanalyst/driveregionall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取指定等值线" href="/zh/docs/surfaceanalyst/drivecontourspecific/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取指定等值面" href="/zh/docs/surfaceanalyst/driveregionspecific/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取等值线/面" href="/zh/docs/surfaceanalyst/drivecontour/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="查找极值" href="/zh/docs/surfaceanalyst/findextreme/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="正射三维影像" href="/zh/docs/surfaceanalyst/orthoimage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="点数据提取等值线" href="/zh/docs/surfaceanalyst/extractisoline/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="面填挖方" href="/zh/docs/surfaceanalyst/cutfillregion/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cSurfaceAnalyst%5cSlope.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>坡度分析</h1>
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#分析原理">分析原理</a></li>
+<li><a href="#应用场景">应用场景</a></li>
+<li><a href="#操作说明">操作说明</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<p>　　度和坡向是两个重要的地形特征因子，在地形表面分析中起到重要作用。其中，坡度表示地球面某一位置的高度变化率的量度。</p>
+
+<h3 id="分析原理">分析原理</h3>
+
+<p>　　地表面某一点的坡度是表示地表在该点的倾斜程度的量，是既有大小又有方向的矢量。在地形分析中，坡度表示经过地表某一点的切平面和水平面所形成的夹角。根据坡度图，可以了解到区域内各位置的地形的陡峭程度。在坡度图中，每个像元都有一个坡度值，值越大表示地势越陡峭，值越小表示地势越平坦。</p>
+
+<p>　　坡度可以用度数或百分数表示，其中，度数坡度是垂直增量与水平增量之比的反正切值（arctan），百分数坡度是垂直增量与水平增量之比乘以100。在 SuperMap 中，坡度计算提供了度数、弧度和百分比三种表现形式。设坡度的垂直增量为H、水平增量为L，则角度： θ = arctan(H / L)，弧度：R = θ * π / 180，百分比：P = (H / L) * 100，如下图所示：</p>
+
+<p>　　<img src="/images/img/Slope.png" alt="" /></p>
+
+<p>　　度数坡度的分析结果的范围是0到90°，0表示该处地表为水平面，90°表示该处地表为垂直于水平面的陡峭表面。百分数坡度的分析结果的范围是0到无穷大，当结果小于1时，表示该处坡度的高程增量小于水平增量，坡度较缓；当结果等于1时，表示该处坡度的高程增量等于水平增量，且坡度值为45°；当结果大于1时，表示该处坡度的高程增量大于水平增量，坡度变陡。</p>
+
+<p>　　栅格数据集（GRID）的像元值即为中心点的值，在计算坡度和坡向时，可以通过插值得到每个点的高程值，然后计算每个点的坡度和坡向。由于计算点的坡度和坡向没有实际意义，所以该方法计算的是栅格数据集中各像元平面的坡度平均值。</p>
+
+<h3 id="应用场景">应用场景</h3>
+
+<ul>
+<li>当要在一座山上建造房子，需要找到山上比较平坦的区域；</li>
+<li>如果要在山上建滑雪场，需要选择不同的坡度分别用作初级滑道、中级滑道和高级滑道，以满足不同水平的滑雪爱好者；</li>
+<li>当参与紧急事件的救援飞机着陆时，需要找到地面相对平坦的区域；</li>
+<li>在耕地坡度等级中规定，25°为开荒限制坡度，不可在25°以上的荒地种植对于这些问题，都需要考虑地形的坡度。</li>
+</ul>
+
+<h3 id="操作说明">操作说明</h3>
+
+<ol>
+<li>在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“坡度分析”，即可弹出“坡度分析”对话框。</li>
+<li>在源数据处设置要进行坡度分析的栅格数据集，通常我们会选择拥有高程值的 DEM 数据。</li>
+<li><strong>坡度单位类型</strong>：选择所要使用的坡度分析单位，包括角度、弧度和百分比三种类型，用户可根据需要选择合适的类型进行坡度分析。</li>
+
+<li><p><strong>高程缩放比例</strong>：用来设置高程被拉伸的程度。数值越大表示拉伸越大，地形越夸张。当系数为1表示不拉伸。数值单位为倍，即对高程相对于原始高度拉伸的倍数。</p></li>
+
+<li><p>设置结果数据所要保存的数据源，及结果数据集的名称，坡度数据集是与源数据集等大且分辨率相同。</p></li>
+
+<li><p>单击“执行”按钮，即可执行坡度分析操作，结果如下图所示：</p></li>
+</ol>
+
+<p>　　<img src="/images/img/SlopeRsult.png" alt="" /></p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/surfaceanalyst/aspect/" title="坡向分析"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 坡向分析</a>
+<a class="nav nav-next" href="/zh/docs/surfaceanalyst/cutfill/" title="填挖方">Next - 填挖方 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cSurfaceAnalyst%5cSlope.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/surfaceanalyst\/slope\/",
+    "title" : "坡度分析",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/surfaceanalyst\/slope\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cSurfaceAnalyst%5cSlope.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

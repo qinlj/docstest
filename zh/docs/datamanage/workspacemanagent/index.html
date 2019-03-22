@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>管理工作空间 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="工作空间，即用户的工作环境，用户在进行数据操作时，都需要先创建一个工作空间，才能进一步操作 GIS 数据。工作空间会保存用户在该工作环境中的操作结果，包括用户在该工作空间中打开的数据源、保存的地图、布局和三维场景等，当用户打开工作空间时可以继续上一次的工作成果来工作。
+工作空间的类型 按照工作空间的存储形式，工作空间可以分为两大类型，文件型工作空间和数据库型工作空间。
+ 文件型工作空间：是将工作空间存储为扩展名为 .sxw/.smw 或者 .sxwu/.smwu 类型的文件。 数据库型工作空间：是将工作空间存储在数据库中。目前，支持打开的数据库型工作空间包括：SQL Server、Oracle、PostgreSQL、MySQL、MongoDB、DM 六种数据库工作空间。
+  工作空间的层次结构 SuperMap iDesktop Java 产品中用户的一个工作环境对应一个工作空间，每一个工作空间都由树状层次结构组成，该结构中工作空间对应根结点。一个工作空间包含唯一的数据源集合、唯一的地图集合、唯一的布局集合、唯一的场景集合和唯一的资源集合（符号库集合），对应着工作空间的子结点。
+数据源集合，用于管理在工作空间打开的所有数据源；地图集合，用来保存工作空间中的地图；布局集合，用来保存工作空间中的布局；三维场景集合，用来保存工作空间中的三维场景；符号库集合，主要管理符号库、线型库和填充库。 工作空间中的地图、布局、三维场景和资源都是依附于工作空间存在的，即这些内容都保存在工作空间中，删除工作空间时，其中的地图、布局、三维场景和符号库资源也相应的随之删除；而数据源是独立存储的，与工作空间只是关联关系，并没有保存在工作空间中，当删除工作空间时，只是删除了工作空间与数据源的关联关系，并不能删除数据
+打开工作空间 打开工作空间的方式有三种：
+ “文件“选项卡中“打开”按钮提供打开不同类型的工作空间的功能。
+ ”开始“选项卡”工作空间“组提供”文件“和”数据库“两个按钮以打开不同类型的工作空间。其中下拉按钮包含两个部分，一是按钮部分，单击该部分将执行下拉菜单中第一项的功能；二是下拉按钮部分，单击该部分将弹出下拉菜单，通过选择下拉菜单中的项来实现打开相应类型的工作空间.
+ 单击右键工作空间管理器中工作空间节点，可在右键菜单中选择”打开文件型工作空间“和”打开数据库型工作空间“。
+  注意事项:
+在应用程序中，当前只能打开一个工作空间，不能同时打开多个工作空间，因此，在打开工作空间时，应用系统会先关闭当前打开的工作空间。在关闭当前打开的工作空间时，如果应用程序当前存在一个打开的未保存的工作空间，系统将弹出对话框，提醒保存关闭原有的工作空间，待关闭原有的工作空间后，才能继续打开操作。
+保存/另存为工作空间 “保存”按钮提供保存当前打开的工作空间中的操作结果以及保存工作空间的功能，只有工作空间中有未保存的内容，该按钮才可用。工作空间中的操作结果只有先保存到工作空间中，然后，在进行工作空间本身的保存，这些操作成果才能最终保存下来，在关闭工作空间后，当再次打开工作空间时，才能获取上一次工作的环境以及操作成果。
+ 先保存工作空间中的操作结果 当工作空间中有未保存的内容，单击“保存”按钮时，会弹出“保存”对话框。在弹出的“保存”对话框中的列表为未保存的项目，包括：未保存的地图、模型、布局。每个项目前有一个复选框，默认为选中状态，当复选框被选中时，表示将该项内容保存到工作空间中；否则，不进行保存。 保存工作空间 指定好要保存到工作空间中的内容后，单击对话框中的“保存”按钮，即完成工作空间的保存。
+ 另存为工作空间 如果当前打开的工作空间是已经存在的工作空间，则在上一步中单击“保存”按钮后，即可实现工作空间的保存；如果当前打开的工作空间是一个新的工作空间（非已有的工作空间），则在上一步单击“保存”按钮后，将弹出如下所示的“工作空间另存”对话框，通过“另存工作空间为”对话框可以将工作空间保存为用户所需要类型的工作空间， 可选择存储为文件型工作空间或数据库型工作空间。
+  关闭工作空间 “关闭工作空间”，主要提供关闭当前打开的工作空间的功能。关闭工作空间后，应用程序会提供一个默认打开的空的工作空间作为当前打开的工作空间。
+1. 在工作空间节点上右击鼠标，在弹出的右键菜单中选择“关闭工作空间”项。
+2. 应用程序在执行当前打开的关闭工作空间操作时，如果应用程序中当前打开的工作空间没有未被保存的内容，则直接关闭当前的工作空间；如果当前打开的工作空间存在未被保存的内容，则会弹出提示对话框，提示用户在关闭当前打开的工作空间时是否保存这些内容。
+3. 如果点击“否”按钮，则不进行保存直接关闭当前打开的工作空间；如果点击“是”按钮，则对当前打开的工作空间进行保存工作。有关保存/另存为工作空间请参看上一节保存操作。">
+<meta property="og:description" content="工作空间，即用户的工作环境，用户在进行数据操作时，都需要先创建一个工作空间，才能进一步操作 GIS 数据。工作空间会保存用户在该工作环境中的操作结果，包括用户在该工作空间中打开的数据源、保存的地图、布局和三维场景等，当用户打开工作空间时可以继续上一次的工作成果来工作。
+工作空间的类型 按照工作空间的存储形式，工作空间可以分为两大类型，文件型工作空间和数据库型工作空间。
+ 文件型工作空间：是将工作空间存储为扩展名为 .sxw/.smw 或者 .sxwu/.smwu 类型的文件。 数据库型工作空间：是将工作空间存储在数据库中。目前，支持打开的数据库型工作空间包括：SQL Server、Oracle、PostgreSQL、MySQL、MongoDB、DM 六种数据库工作空间。
+  工作空间的层次结构 SuperMap iDesktop Java 产品中用户的一个工作环境对应一个工作空间，每一个工作空间都由树状层次结构组成，该结构中工作空间对应根结点。一个工作空间包含唯一的数据源集合、唯一的地图集合、唯一的布局集合、唯一的场景集合和唯一的资源集合（符号库集合），对应着工作空间的子结点。
+数据源集合，用于管理在工作空间打开的所有数据源；地图集合，用来保存工作空间中的地图；布局集合，用来保存工作空间中的布局；三维场景集合，用来保存工作空间中的三维场景；符号库集合，主要管理符号库、线型库和填充库。 工作空间中的地图、布局、三维场景和资源都是依附于工作空间存在的，即这些内容都保存在工作空间中，删除工作空间时，其中的地图、布局、三维场景和符号库资源也相应的随之删除；而数据源是独立存储的，与工作空间只是关联关系，并没有保存在工作空间中，当删除工作空间时，只是删除了工作空间与数据源的关联关系，并不能删除数据
+打开工作空间 打开工作空间的方式有三种：
+ “文件“选项卡中“打开”按钮提供打开不同类型的工作空间的功能。
+ ”开始“选项卡”工作空间“组提供”文件“和”数据库“两个按钮以打开不同类型的工作空间。其中下拉按钮包含两个部分，一是按钮部分，单击该部分将执行下拉菜单中第一项的功能；二是下拉按钮部分，单击该部分将弹出下拉菜单，通过选择下拉菜单中的项来实现打开相应类型的工作空间.
+ 单击右键工作空间管理器中工作空间节点，可在右键菜单中选择”打开文件型工作空间“和”打开数据库型工作空间“。
+  注意事项:
+在应用程序中，当前只能打开一个工作空间，不能同时打开多个工作空间，因此，在打开工作空间时，应用系统会先关闭当前打开的工作空间。在关闭当前打开的工作空间时，如果应用程序当前存在一个打开的未保存的工作空间，系统将弹出对话框，提醒保存关闭原有的工作空间，待关闭原有的工作空间后，才能继续打开操作。
+保存/另存为工作空间 “保存”按钮提供保存当前打开的工作空间中的操作结果以及保存工作空间的功能，只有工作空间中有未保存的内容，该按钮才可用。工作空间中的操作结果只有先保存到工作空间中，然后，在进行工作空间本身的保存，这些操作成果才能最终保存下来，在关闭工作空间后，当再次打开工作空间时，才能获取上一次工作的环境以及操作成果。
+ 先保存工作空间中的操作结果 当工作空间中有未保存的内容，单击“保存”按钮时，会弹出“保存”对话框。在弹出的“保存”对话框中的列表为未保存的项目，包括：未保存的地图、模型、布局。每个项目前有一个复选框，默认为选中状态，当复选框被选中时，表示将该项内容保存到工作空间中；否则，不进行保存。 保存工作空间 指定好要保存到工作空间中的内容后，单击对话框中的“保存”按钮，即完成工作空间的保存。
+ 另存为工作空间 如果当前打开的工作空间是已经存在的工作空间，则在上一步中单击“保存”按钮后，即可实现工作空间的保存；如果当前打开的工作空间是一个新的工作空间（非已有的工作空间），则在上一步单击“保存”按钮后，将弹出如下所示的“工作空间另存”对话框，通过“另存工作空间为”对话框可以将工作空间保存为用户所需要类型的工作空间， 可选择存储为文件型工作空间或数据库型工作空间。
+  关闭工作空间 “关闭工作空间”，主要提供关闭当前打开的工作空间的功能。关闭工作空间后，应用程序会提供一个默认打开的空的工作空间作为当前打开的工作空间。
+1. 在工作空间节点上右击鼠标，在弹出的右键菜单中选择“关闭工作空间”项。
+2. 应用程序在执行当前打开的关闭工作空间操作时，如果应用程序中当前打开的工作空间没有未被保存的内容，则直接关闭当前的工作空间；如果当前打开的工作空间存在未被保存的内容，则会弹出提示对话框，提示用户在关闭当前打开的工作空间时是否保存这些内容。
+3. 如果点击“否”按钮，则不进行保存直接关闭当前打开的工作空间；如果点击“是”按钮，则对当前打开的工作空间进行保存工作。有关保存/另存为工作空间请参看上一节保存操作。">
+<meta name="twitter:description" content="工作空间，即用户的工作环境，用户在进行数据操作时，都需要先创建一个工作空间，才能进一步操作 GIS 数据。工作空间会保存用户在该工作环境中的操作结果，包括用户在该工作空间中打开的数据源、保存的地图、布局和三维场景等，当用户打开工作空间时可以继续上一次的工作成果来工作。
+工作空间的类型 按照工作空间的存储形式，工作空间可以分为两大类型，文件型工作空间和数据库型工作空间。
+ 文件型工作空间：是将工作空间存储为扩展名为 .sxw/.smw 或者 .sxwu/.smwu 类型的文件。 数据库型工作空间：是将工作空间存储在数据库中。目前，支持打开的数据库型工作空间包括：SQL Server、Oracle、PostgreSQL、MySQL、MongoDB、DM 六种数据库工作空间。
+  工作空间的层次结构 SuperMap iDesktop Java 产品中用户的一个工作环境对应一个工作空间，每一个工作空间都由树状层次结构组成，该结构中工作空间对应根结点。一个工作空间包含唯一的数据源集合、唯一的地图集合、唯一的布局集合、唯一的场景集合和唯一的资源集合（符号库集合），对应着工作空间的子结点。
+数据源集合，用于管理在工作空间打开的所有数据源；地图集合，用来保存工作空间中的地图；布局集合，用来保存工作空间中的布局；三维场景集合，用来保存工作空间中的三维场景；符号库集合，主要管理符号库、线型库和填充库。 工作空间中的地图、布局、三维场景和资源都是依附于工作空间存在的，即这些内容都保存在工作空间中，删除工作空间时，其中的地图、布局、三维场景和符号库资源也相应的随之删除；而数据源是独立存储的，与工作空间只是关联关系，并没有保存在工作空间中，当删除工作空间时，只是删除了工作空间与数据源的关联关系，并不能删除数据
+打开工作空间 打开工作空间的方式有三种：
+ “文件“选项卡中“打开”按钮提供打开不同类型的工作空间的功能。
+ ”开始“选项卡”工作空间“组提供”文件“和”数据库“两个按钮以打开不同类型的工作空间。其中下拉按钮包含两个部分，一是按钮部分，单击该部分将执行下拉菜单中第一项的功能；二是下拉按钮部分，单击该部分将弹出下拉菜单，通过选择下拉菜单中的项来实现打开相应类型的工作空间.
+ 单击右键工作空间管理器中工作空间节点，可在右键菜单中选择”打开文件型工作空间“和”打开数据库型工作空间“。
+  注意事项:
+在应用程序中，当前只能打开一个工作空间，不能同时打开多个工作空间，因此，在打开工作空间时，应用系统会先关闭当前打开的工作空间。在关闭当前打开的工作空间时，如果应用程序当前存在一个打开的未保存的工作空间，系统将弹出对话框，提醒保存关闭原有的工作空间，待关闭原有的工作空间后，才能继续打开操作。
+保存/另存为工作空间 “保存”按钮提供保存当前打开的工作空间中的操作结果以及保存工作空间的功能，只有工作空间中有未保存的内容，该按钮才可用。工作空间中的操作结果只有先保存到工作空间中，然后，在进行工作空间本身的保存，这些操作成果才能最终保存下来，在关闭工作空间后，当再次打开工作空间时，才能获取上一次工作的环境以及操作成果。
+ 先保存工作空间中的操作结果 当工作空间中有未保存的内容，单击“保存”按钮时，会弹出“保存”对话框。在弹出的“保存”对话框中的列表为未保存的项目，包括：未保存的地图、模型、布局。每个项目前有一个复选框，默认为选中状态，当复选框被选中时，表示将该项内容保存到工作空间中；否则，不进行保存。 保存工作空间 指定好要保存到工作空间中的内容后，单击对话框中的“保存”按钮，即完成工作空间的保存。
+ 另存为工作空间 如果当前打开的工作空间是已经存在的工作空间，则在上一步中单击“保存”按钮后，即可实现工作空间的保存；如果当前打开的工作空间是一个新的工作空间（非已有的工作空间），则在上一步单击“保存”按钮后，将弹出如下所示的“工作空间另存”对话框，通过“另存工作空间为”对话框可以将工作空间保存为用户所需要类型的工作空间， 可选择存储为文件型工作空间或数据库型工作空间。
+  关闭工作空间 “关闭工作空间”，主要提供关闭当前打开的工作空间的功能。关闭工作空间后，应用程序会提供一个默认打开的空的工作空间作为当前打开的工作空间。
+1. 在工作空间节点上右击鼠标，在弹出的右键菜单中选择“关闭工作空间”项。
+2. 应用程序在执行当前打开的关闭工作空间操作时，如果应用程序中当前打开的工作空间没有未被保存的内容，则直接关闭当前的工作空间；如果当前打开的工作空间存在未被保存的内容，则会弹出提示对话框，提示用户在关闭当前打开的工作空间时是否保存这些内容。
+3. 如果点击“否”按钮，则不进行保存直接关闭当前打开的工作空间；如果点击“是”按钮，则对当前打开的工作空间进行保存工作。有关保存/另存为工作空间请参看上一节保存操作。">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/datamanage/workspacemanagent/">
+<meta property="og:title" content="管理工作空间">
+<meta name="twitter:title" content="管理工作空间">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/">English</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                    <li><a href="/it/">Italian</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+<h1>数据管理</h1>
+<h5></h5>
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/" class="YAH">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="数据管理" href="/zh/docs/datamanage/"></a>
+
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="" href="/zh/docs/datamanage/recalculateraster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="对象操作" href="/zh/docs/datamanage/objectedit/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="对象绘制" href="/zh/docs/datamanage/objectdraw/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="数据源类型及数据引擎" href="/zh/docs/datamanage/enginetype/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="数据集压缩编码方式" href="/zh/docs/datamanage/encodetype/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="目录管理" href="/zh/docs/datamanage/catalogmanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理工作空间" href="/zh/docs/datamanage/workspacemanagent/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理影像金字塔" href="/zh/docs/datamanage/pyramidmanage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理数据源" href="/zh/docs/datamanage/databasemanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理数据集" href="/zh/docs/datamanage/datasetmanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理空间索引" href="/zh/docs/datamanage/spatialindexmanage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制文本对象" href="/zh/docs/datamanage/text/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制点对象" href="/zh/docs/datamanage/point/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制线" href="/zh/docs/datamanage/drawcurve/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制面" href="/zh/docs/datamanage/drawquadrangle/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="重新计算矢量数据集的范围" href="/zh/docs/datamanage/recalculatevector/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cDataManage%5cWorkspaceManagent.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>管理工作空间</h1>
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#工作空间的类型">工作空间的类型</a></li>
+<li><a href="#工作空间的层次结构">工作空间的层次结构</a></li>
+<li><a href="#打开工作空间">打开工作空间</a></li>
+<li><a href="#保存-另存为工作空间">保存/另存为工作空间</a></li>
+<li><a href="#关闭工作空间">关闭工作空间</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<p>　　工作空间，即用户的工作环境，用户在进行数据操作时，都需要先创建一个工作空间，才能进一步操作 GIS 数据。工作空间会保存用户在该工作环境中的操作结果，包括用户在该工作空间中打开的数据源、保存的地图、布局和三维场景等，当用户打开工作空间时可以继续上一次的工作成果来工作。</p>
+
+<h3 id="工作空间的类型">工作空间的类型</h3>
+
+<p>按照工作空间的存储形式，工作空间可以分为两大类型，文件型工作空间和数据库型工作空间。</p>
+
+<ul>
+<li><strong>文件型工作空间</strong>：是将工作空间存储为扩展名为 <em>.sxw/</em>.smw 或者 <em>.sxwu/</em>.smwu 类型的文件。</li>
+<li><strong>数据库型工作空间</strong>：是将工作空间存储在数据库中。目前，支持打开的数据库型工作空间包括：SQL Server、Oracle、PostgreSQL、MySQL、MongoDB、DM 六种数据库工作空间。<br />
+<br /></li>
+</ul>
+
+<h3 id="工作空间的层次结构">工作空间的层次结构</h3>
+
+<p>SuperMap iDesktop Java 产品中用户的一个工作环境对应一个工作空间，每一个工作空间都由树状层次结构组成，该结构中工作空间对应根结点。一个工作空间包含唯一的数据源集合、唯一的地图集合、唯一的布局集合、唯一的场景集合和唯一的资源集合（符号库集合），对应着工作空间的子结点。</p>
+
+<p>数据源集合，用于管理在工作空间打开的所有数据源；地图集合，用来保存工作空间中的地图；布局集合，用来保存工作空间中的布局；三维场景集合，用来保存工作空间中的三维场景；符号库集合，主要管理符号库、线型库和填充库。
+工作空间中的地图、布局、三维场景和资源都是依附于工作空间存在的，即这些内容都保存在工作空间中，删除工作空间时，其中的地图、布局、三维场景和符号库资源也相应的随之删除；而数据源是独立存储的，与工作空间只是关联关系，并没有保存在工作空间中，当删除工作空间时，只是删除了工作空间与数据源的关联关系，并不能删除数据</p>
+
+<h3 id="打开工作空间">打开工作空间</h3>
+
+<p>打开工作空间的方式有三种：</p>
+
+<ul>
+<li>“文件“选项卡中“打开”按钮提供打开不同类型的工作空间的功能。<br /></li>
+<li>”开始“选项卡”工作空间“组提供”文件“和”数据库“两个按钮以打开不同类型的工作空间。其中下拉按钮包含两个部分，一是按钮部分，单击该部分将执行下拉菜单中第一项的功能；二是下拉按钮部分，单击该部分将弹出下拉菜单，通过选择下拉菜单中的项来实现打开相应类型的工作空间.<br /></li>
+<li>单击右键工作空间管理器中工作空间节点，可在右键菜单中选择”打开文件型工作空间“和”打开数据库型工作空间“。<br />
+<br /></li>
+</ul>
+
+<p><strong>注意事项</strong>:</p>
+
+<p>在应用程序中，当前只能打开一个工作空间，不能同时打开多个工作空间，因此，在打开工作空间时，应用系统会先关闭当前打开的工作空间。在关闭当前打开的工作空间时，如果应用程序当前存在一个打开的未保存的工作空间，系统将弹出对话框，提醒保存关闭原有的工作空间，待关闭原有的工作空间后，才能继续打开操作。</p>
+
+<h3 id="保存-另存为工作空间">保存/另存为工作空间</h3>
+
+<p>“<strong>保存</strong>”按钮提供保存当前打开的工作空间中的操作结果以及保存工作空间的功能，只有工作空间中有未保存的内容，该按钮才可用。工作空间中的操作结果只有先保存到工作空间中，然后，在进行工作空间本身的保存，这些操作成果才能最终保存下来，在关闭工作空间后，当再次打开工作空间时，才能获取上一次工作的环境以及操作成果。</p>
+
+<ol>
+<li><strong>先保存工作空间中的操作结果</strong>  当工作空间中有未保存的内容，单击“保存”按钮时，会弹出“保存”对话框。在弹出的“保存”对话框中的列表为未保存的项目，包括：未保存的地图、模型、布局。每个项目前有一个复选框，默认为选中状态，当复选框被选中时，表示将该项内容保存到工作空间中；否则，不进行保存。</li>
+<li><strong>保存工作空间</strong> 指定好要保存到工作空间中的内容后，单击对话框中的“保存”按钮，即完成工作空间的保存。<br /></li>
+<li><strong>另存为工作空间</strong> 如果当前打开的工作空间是已经存在的工作空间，则在上一步中单击“保存”按钮后，即可实现工作空间的保存；如果当前打开的工作空间是一个新的工作空间（非已有的工作空间），则在上一步单击“保存”按钮后，将弹出如下所示的“工作空间另存”对话框，通过“另存工作空间为”对话框可以将工作空间保存为用户所需要类型的工作空间， 可选择存储为文件型工作空间或数据库型工作空间。<br /></li>
+</ol>
+
+<h3 id="关闭工作空间">关闭工作空间</h3>
+
+<p>“<strong>关闭工作空间</strong>”，主要提供关闭当前打开的工作空间的功能。关闭工作空间后，应用程序会提供一个默认打开的空的工作空间作为当前打开的工作空间。<br />
+1. 在工作空间节点上右击鼠标，在弹出的右键菜单中选择“关闭工作空间”项。<br />
+2. 应用程序在执行当前打开的关闭工作空间操作时，如果应用程序中当前打开的工作空间没有未被保存的内容，则直接关闭当前的工作空间；如果当前打开的工作空间存在未被保存的内容，则会弹出提示对话框，提示用户在关闭当前打开的工作空间时是否保存这些内容。<br />
+3. 如果点击“否”按钮，则不进行保存直接关闭当前打开的工作空间；如果点击“是”按钮，则对当前打开的工作空间进行保存工作。有关保存/另存为工作空间请参看上一节保存操作。</p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/datamanage/catalogmanagement/" title="目录管理"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 目录管理</a>
+<a class="nav nav-next" href="/zh/docs/datamanage/pyramidmanage/" title="管理影像金字塔">Next - 管理影像金字塔 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cDataManage%5cWorkspaceManagent.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/datamanage\/workspacemanagent\/",
+    "title" : "管理工作空间",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/datamanage\/workspacemanagent\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cDataManage%5cWorkspaceManagent.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

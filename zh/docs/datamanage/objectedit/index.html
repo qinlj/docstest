@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>对象操作 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="选择对象 　选择对象需要保证加载到地图窗口中图层开启了图层可见。只有对图层开启图层显示的设置，才可设置其为可选择的，进而进行其他操作。
+开启图层显示 开启图层显示主要有以下方式：
+使用图层显示按钮：在图层管理器中，单击各图层中的显示控制按钮，该按钮变为状态时，图层可显示；若按钮变为状态时，图层不显示。
+使用右键菜单：右键单击需要设置为显示状态的图层。选择“可显示”项，图层可显示。
+通过图层属性面板：在图层管理器中，选中需要设置为显示状态的图层,右键单击在右键菜单中选择“图层属性”按钮，弹出“图层属性”面板。 在“显示控制”组，勾选“可显示”复选框，图层可显示。
+注意事项
+若已将图层设置为可显示，但该图层仍未在地图窗口中显示，可能存在以下原因：
+ 已对该图层进行了某种过滤显示的设置，则该图层中的内容已经被过滤掉了。解决办法：去除其他的过滤显示设置。
+ 该图层被其他图层覆盖了，导致其无法显示。解决办法：将该图层向上移动，直至其可显示。
+  开启图层选择 “可选择”命令，用来控制该矢量图层是否可选择，即图层中的对象是否可以被选中。开启图层可选择主要有以下方式：
+使用图层显示按钮：在图层管理器中，单击各图层中的显示控制按钮，该按钮变为状态时，图层可选择；若按钮变为状态时，图层对象不可被选择。
+使用右键菜单：右键单击图层管理器中的矢量图层结点，在弹出右键菜单中点击选择“可选择”命令，即可设置图层对象可选择。
+通过图层属性面板：在图层管理器中，选中需要设置为可选择状态的图层,右键单击在右键菜单中选择“图层属性”按钮，弹出“图层属性”面板。“显示控制”组，勾选“可选择”复选框，图层对象可被选择。
+选择对象方式 在地图窗口中选择对象时，要保证所要选择的对象所在的图层为可选择状态，否则对象将不能被选中。在“对象操作”选项卡中“对象操作”组中的“选择”下拉菜单中，支持点选和矩形选择、圆形选择、多边形选择以及画线选择四种方式选择对象。
+点选和矩形框选择
+单击“选择”项后，当前地图窗口的操作状态变为点选状态，并且鼠标在当前地图窗口中的状态变为。
+ 点选：用户可通过鼠标单击选择对象。当选择另一个对象后，之前已选中对象的选择状态被撤销；选择一个对象后，按住 Shift 键，再次选择其他对象时，可同时选中多个对象。
+ 框选：用户可通过单击鼠标左键并按住不放，沿对角线拖动鼠标，出现一个大小随着鼠标移动而变化的临时矩形。在适当位置松开鼠标左键，确定用于选择的矩形区域，则质心在矩形区域内的所有对象都被选中。用户可通过按住 Shift 键继续进行矩形框选择，在原有基础上增加选中的对象。
+  圆形选择
+圆形选择方式，是指通过绘制一个临时圆形区域，选中圆形区域内符合选择模式的对象。单击该下拉按钮，在弹出的下拉菜单中选择“圆形选择”项。当前地图窗口的操作状态变为圆形选择状态，并且鼠标在当前地图窗口中的状态变为。
+ 在地图窗口中某个位置单击鼠标左键，该位置即绘制的临时圆形区域的圆心。拖动鼠标，在拖动鼠标的过程中会看到半径不断变化的临时圆。
+ 在适当位置处再次单击鼠标左键，即可通过确定临时圆的半径确定用于选择的圆形区域，则质心在圆形区域内的所有对象被选中。
+ 用户可通过按住 Shift 键继续进行圆形选择，在原有基础上增加选中的对象。
+  多边形选择
+多边形选择方式，是指通过绘制一个临时多边形区域，选中多边形区域内符合选择模式的对象。单击该下拉按钮，在弹出的下拉菜单中选择“多边形选择”项。当前地图窗口的操作状态变为多边形选择状态，并且鼠标在当前地图窗口中的状态变为。
+ 在地图窗口中连续单击鼠标左键，绘制一个临时多边形，当完成绘制临时多边形区域时单击鼠标右键来结束绘制，则质心在该多边形区域内的所有对象被选中。
+ 用户可通过按住 Shift 键继续进行多边形选择，在原有基础上增加选中的对象。
+  画线选择
+画线选择方式，是指通过绘制一条临时折线段，选中与折线段相交的对象。单击该下拉按钮，在弹出的下拉菜单中选择“画线选择”项。当前地图窗口的操作状态变为画线选择状态，并且鼠标在当前地图窗口中的状态变为。
+ 在地图窗口中连续单击鼠标左键，绘制一条临时的折线，单击鼠标右键完成折线的绘制，则与折线相交的所有对象将被选中。
+ 用户可通过按住 Shift 键继续进行画线选择，在原有基础上增加选中的对象。  以上几种选择方式可以混合使用，只要在选择对象时按住 shift 键，就可以在原有基础上增加选中的对象。SuperMap iDesktop 9D 支持跨图层选择，因此，地图窗口中所有可选择图层中满足选择条件的对象都会被选中，被选择的对象将以特殊的状态（选择状态）显示出来。">
+<meta property="og:description" content="选择对象 　选择对象需要保证加载到地图窗口中图层开启了图层可见。只有对图层开启图层显示的设置，才可设置其为可选择的，进而进行其他操作。
+开启图层显示 开启图层显示主要有以下方式：
+使用图层显示按钮：在图层管理器中，单击各图层中的显示控制按钮，该按钮变为状态时，图层可显示；若按钮变为状态时，图层不显示。
+使用右键菜单：右键单击需要设置为显示状态的图层。选择“可显示”项，图层可显示。
+通过图层属性面板：在图层管理器中，选中需要设置为显示状态的图层,右键单击在右键菜单中选择“图层属性”按钮，弹出“图层属性”面板。 在“显示控制”组，勾选“可显示”复选框，图层可显示。
+注意事项
+若已将图层设置为可显示，但该图层仍未在地图窗口中显示，可能存在以下原因：
+ 已对该图层进行了某种过滤显示的设置，则该图层中的内容已经被过滤掉了。解决办法：去除其他的过滤显示设置。
+ 该图层被其他图层覆盖了，导致其无法显示。解决办法：将该图层向上移动，直至其可显示。
+  开启图层选择 “可选择”命令，用来控制该矢量图层是否可选择，即图层中的对象是否可以被选中。开启图层可选择主要有以下方式：
+使用图层显示按钮：在图层管理器中，单击各图层中的显示控制按钮，该按钮变为状态时，图层可选择；若按钮变为状态时，图层对象不可被选择。
+使用右键菜单：右键单击图层管理器中的矢量图层结点，在弹出右键菜单中点击选择“可选择”命令，即可设置图层对象可选择。
+通过图层属性面板：在图层管理器中，选中需要设置为可选择状态的图层,右键单击在右键菜单中选择“图层属性”按钮，弹出“图层属性”面板。“显示控制”组，勾选“可选择”复选框，图层对象可被选择。
+选择对象方式 在地图窗口中选择对象时，要保证所要选择的对象所在的图层为可选择状态，否则对象将不能被选中。在“对象操作”选项卡中“对象操作”组中的“选择”下拉菜单中，支持点选和矩形选择、圆形选择、多边形选择以及画线选择四种方式选择对象。
+点选和矩形框选择
+单击“选择”项后，当前地图窗口的操作状态变为点选状态，并且鼠标在当前地图窗口中的状态变为。
+ 点选：用户可通过鼠标单击选择对象。当选择另一个对象后，之前已选中对象的选择状态被撤销；选择一个对象后，按住 Shift 键，再次选择其他对象时，可同时选中多个对象。
+ 框选：用户可通过单击鼠标左键并按住不放，沿对角线拖动鼠标，出现一个大小随着鼠标移动而变化的临时矩形。在适当位置松开鼠标左键，确定用于选择的矩形区域，则质心在矩形区域内的所有对象都被选中。用户可通过按住 Shift 键继续进行矩形框选择，在原有基础上增加选中的对象。
+  圆形选择
+圆形选择方式，是指通过绘制一个临时圆形区域，选中圆形区域内符合选择模式的对象。单击该下拉按钮，在弹出的下拉菜单中选择“圆形选择”项。当前地图窗口的操作状态变为圆形选择状态，并且鼠标在当前地图窗口中的状态变为。
+ 在地图窗口中某个位置单击鼠标左键，该位置即绘制的临时圆形区域的圆心。拖动鼠标，在拖动鼠标的过程中会看到半径不断变化的临时圆。
+ 在适当位置处再次单击鼠标左键，即可通过确定临时圆的半径确定用于选择的圆形区域，则质心在圆形区域内的所有对象被选中。
+ 用户可通过按住 Shift 键继续进行圆形选择，在原有基础上增加选中的对象。
+  多边形选择
+多边形选择方式，是指通过绘制一个临时多边形区域，选中多边形区域内符合选择模式的对象。单击该下拉按钮，在弹出的下拉菜单中选择“多边形选择”项。当前地图窗口的操作状态变为多边形选择状态，并且鼠标在当前地图窗口中的状态变为。
+ 在地图窗口中连续单击鼠标左键，绘制一个临时多边形，当完成绘制临时多边形区域时单击鼠标右键来结束绘制，则质心在该多边形区域内的所有对象被选中。
+ 用户可通过按住 Shift 键继续进行多边形选择，在原有基础上增加选中的对象。
+  画线选择
+画线选择方式，是指通过绘制一条临时折线段，选中与折线段相交的对象。单击该下拉按钮，在弹出的下拉菜单中选择“画线选择”项。当前地图窗口的操作状态变为画线选择状态，并且鼠标在当前地图窗口中的状态变为。
+ 在地图窗口中连续单击鼠标左键，绘制一条临时的折线，单击鼠标右键完成折线的绘制，则与折线相交的所有对象将被选中。
+ 用户可通过按住 Shift 键继续进行画线选择，在原有基础上增加选中的对象。  以上几种选择方式可以混合使用，只要在选择对象时按住 shift 键，就可以在原有基础上增加选中的对象。SuperMap iDesktop 9D 支持跨图层选择，因此，地图窗口中所有可选择图层中满足选择条件的对象都会被选中，被选择的对象将以特殊的状态（选择状态）显示出来。">
+<meta name="twitter:description" content="选择对象 　选择对象需要保证加载到地图窗口中图层开启了图层可见。只有对图层开启图层显示的设置，才可设置其为可选择的，进而进行其他操作。
+开启图层显示 开启图层显示主要有以下方式：
+使用图层显示按钮：在图层管理器中，单击各图层中的显示控制按钮，该按钮变为状态时，图层可显示；若按钮变为状态时，图层不显示。
+使用右键菜单：右键单击需要设置为显示状态的图层。选择“可显示”项，图层可显示。
+通过图层属性面板：在图层管理器中，选中需要设置为显示状态的图层,右键单击在右键菜单中选择“图层属性”按钮，弹出“图层属性”面板。 在“显示控制”组，勾选“可显示”复选框，图层可显示。
+注意事项
+若已将图层设置为可显示，但该图层仍未在地图窗口中显示，可能存在以下原因：
+ 已对该图层进行了某种过滤显示的设置，则该图层中的内容已经被过滤掉了。解决办法：去除其他的过滤显示设置。
+ 该图层被其他图层覆盖了，导致其无法显示。解决办法：将该图层向上移动，直至其可显示。
+  开启图层选择 “可选择”命令，用来控制该矢量图层是否可选择，即图层中的对象是否可以被选中。开启图层可选择主要有以下方式：
+使用图层显示按钮：在图层管理器中，单击各图层中的显示控制按钮，该按钮变为状态时，图层可选择；若按钮变为状态时，图层对象不可被选择。
+使用右键菜单：右键单击图层管理器中的矢量图层结点，在弹出右键菜单中点击选择“可选择”命令，即可设置图层对象可选择。
+通过图层属性面板：在图层管理器中，选中需要设置为可选择状态的图层,右键单击在右键菜单中选择“图层属性”按钮，弹出“图层属性”面板。“显示控制”组，勾选“可选择”复选框，图层对象可被选择。
+选择对象方式 在地图窗口中选择对象时，要保证所要选择的对象所在的图层为可选择状态，否则对象将不能被选中。在“对象操作”选项卡中“对象操作”组中的“选择”下拉菜单中，支持点选和矩形选择、圆形选择、多边形选择以及画线选择四种方式选择对象。
+点选和矩形框选择
+单击“选择”项后，当前地图窗口的操作状态变为点选状态，并且鼠标在当前地图窗口中的状态变为。
+ 点选：用户可通过鼠标单击选择对象。当选择另一个对象后，之前已选中对象的选择状态被撤销；选择一个对象后，按住 Shift 键，再次选择其他对象时，可同时选中多个对象。
+ 框选：用户可通过单击鼠标左键并按住不放，沿对角线拖动鼠标，出现一个大小随着鼠标移动而变化的临时矩形。在适当位置松开鼠标左键，确定用于选择的矩形区域，则质心在矩形区域内的所有对象都被选中。用户可通过按住 Shift 键继续进行矩形框选择，在原有基础上增加选中的对象。
+  圆形选择
+圆形选择方式，是指通过绘制一个临时圆形区域，选中圆形区域内符合选择模式的对象。单击该下拉按钮，在弹出的下拉菜单中选择“圆形选择”项。当前地图窗口的操作状态变为圆形选择状态，并且鼠标在当前地图窗口中的状态变为。
+ 在地图窗口中某个位置单击鼠标左键，该位置即绘制的临时圆形区域的圆心。拖动鼠标，在拖动鼠标的过程中会看到半径不断变化的临时圆。
+ 在适当位置处再次单击鼠标左键，即可通过确定临时圆的半径确定用于选择的圆形区域，则质心在圆形区域内的所有对象被选中。
+ 用户可通过按住 Shift 键继续进行圆形选择，在原有基础上增加选中的对象。
+  多边形选择
+多边形选择方式，是指通过绘制一个临时多边形区域，选中多边形区域内符合选择模式的对象。单击该下拉按钮，在弹出的下拉菜单中选择“多边形选择”项。当前地图窗口的操作状态变为多边形选择状态，并且鼠标在当前地图窗口中的状态变为。
+ 在地图窗口中连续单击鼠标左键，绘制一个临时多边形，当完成绘制临时多边形区域时单击鼠标右键来结束绘制，则质心在该多边形区域内的所有对象被选中。
+ 用户可通过按住 Shift 键继续进行多边形选择，在原有基础上增加选中的对象。
+  画线选择
+画线选择方式，是指通过绘制一条临时折线段，选中与折线段相交的对象。单击该下拉按钮，在弹出的下拉菜单中选择“画线选择”项。当前地图窗口的操作状态变为画线选择状态，并且鼠标在当前地图窗口中的状态变为。
+ 在地图窗口中连续单击鼠标左键，绘制一条临时的折线，单击鼠标右键完成折线的绘制，则与折线相交的所有对象将被选中。
+ 用户可通过按住 Shift 键继续进行画线选择，在原有基础上增加选中的对象。  以上几种选择方式可以混合使用，只要在选择对象时按住 shift 键，就可以在原有基础上增加选中的对象。SuperMap iDesktop 9D 支持跨图层选择，因此，地图窗口中所有可选择图层中满足选择条件的对象都会被选中，被选择的对象将以特殊的状态（选择状态）显示出来。">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/datamanage/objectedit/">
+<meta property="og:title" content="对象操作">
+<meta name="twitter:title" content="对象操作">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/">English</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                    <li><a href="/it/">Italian</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+<h1>数据管理</h1>
+<h5></h5>
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/" class="YAH">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="数据管理" href="/zh/docs/datamanage/"></a>
+
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="" href="/zh/docs/datamanage/recalculateraster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="对象操作" href="/zh/docs/datamanage/objectedit/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="对象绘制" href="/zh/docs/datamanage/objectdraw/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="数据源类型及数据引擎" href="/zh/docs/datamanage/enginetype/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="数据集压缩编码方式" href="/zh/docs/datamanage/encodetype/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="目录管理" href="/zh/docs/datamanage/catalogmanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理工作空间" href="/zh/docs/datamanage/workspacemanagent/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理影像金字塔" href="/zh/docs/datamanage/pyramidmanage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理数据源" href="/zh/docs/datamanage/databasemanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理数据集" href="/zh/docs/datamanage/datasetmanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理空间索引" href="/zh/docs/datamanage/spatialindexmanage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制文本对象" href="/zh/docs/datamanage/text/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制点对象" href="/zh/docs/datamanage/point/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制线" href="/zh/docs/datamanage/drawcurve/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制面" href="/zh/docs/datamanage/drawquadrangle/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="重新计算矢量数据集的范围" href="/zh/docs/datamanage/recalculatevector/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cDataManage%5cObjectEdit.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>对象操作</h1>
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#选择对象">选择对象</a>
+<ul>
+<li><a href="#开启图层显示">开启图层显示</a></li>
+<li><a href="#开启图层选择">开启图层选择</a></li>
+<li><a href="#选择对象方式">选择对象方式</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<h3 id="选择对象">选择对象</h3>
+
+<p>　　选择对象需要保证加载到地图窗口中图层开启了图层可见。只有对图层开启图层显示的设置，才可设置其为可选择的，进而进行其他操作。</p>
+
+<h4 id="开启图层显示">开启图层显示</h4>
+
+<p>开启图层显示主要有以下方式：</p>
+
+<p><strong>使用图层显示按钮</strong>：在图层管理器中，单击各图层中的显示控制按钮，该按钮变为<img src="/images/img/VisibleButton.png" alt="" />状态时，图层可显示；若按钮变为<img src="img/UnvisibleButton.png" alt="" />状态时，图层不显示。</p>
+
+<p><strong>使用右键菜单</strong>：右键单击需要设置为显示状态的图层。选择“可显示”项，图层可显示。</p>
+
+<p><strong>通过图层属性面板</strong>：在图层管理器中，选中需要设置为显示状态的图层,右键单击在右键菜单中选择“图层属性”按钮，弹出“图层属性”面板。  在“显示控制”组，勾选“可显示”复选框，图层可显示。</p>
+
+<p><strong>注意事项</strong></p>
+
+<p>若已将图层设置为可显示，但该图层仍未在地图窗口中显示，可能存在以下原因：</p>
+
+<ul>
+<li>已对该图层进行了某种过滤显示的设置，则该图层中的内容已经被过滤掉了。解决办法：去除其他的过滤显示设置。<br /></li>
+<li>该图层被其他图层覆盖了，导致其无法显示。解决办法：将该图层向上移动，直至其可显示。<br />
+<br /></li>
+</ul>
+
+<h4 id="开启图层选择">开启图层选择</h4>
+
+<p>“可选择”命令，用来控制该矢量图层是否可选择，即图层中的对象是否可以被选中。开启图层可选择主要有以下方式：</p>
+
+<p><strong>使用图层显示按钮</strong>：在图层管理器中，单击各图层中的显示控制按钮，该按钮变为<img src="/images/img/select.png" alt="" />状态时，图层可选择；若按钮变为<img src="img/unselect.png" alt="" />状态时，图层对象不可被选择。</p>
+
+<p><strong>使用右键菜单</strong>：右键单击图层管理器中的矢量图层结点，在弹出右键菜单中点击选择“可选择”命令，即可设置图层对象可选择。</p>
+
+<p><strong>通过图层属性面板</strong>：在图层管理器中，选中需要设置为可选择状态的图层,右键单击在右键菜单中选择“图层属性”按钮，弹出“图层属性”面板。“显示控制”组，勾选“可选择”复选框，图层对象可被选择。</p>
+
+<h4 id="选择对象方式">选择对象方式</h4>
+
+<p>在地图窗口中选择对象时，要保证所要选择的对象所在的图层为可选择状态，否则对象将不能被选中。在“对象操作”选项卡中“对象操作”组中的“选择”下拉菜单中，支持点选和矩形选择、圆形选择、多边形选择以及画线选择四种方式选择对象。</p>
+
+<p><strong>点选和矩形框选择</strong></p>
+
+<p>单击“选择”项后，当前地图窗口的操作状态变为点选状态，并且鼠标在当前地图窗口中的状态变为<img src="img/pointSelect.png" alt="" />。</p>
+
+<ul>
+<li>点选：用户可通过鼠标单击选择对象。当选择另一个对象后，之前已选中对象的选择状态被撤销；选择一个对象后，按住 Shift 键，再次选择其他对象时，可同时选中多个对象。<br /></li>
+<li>框选：用户可通过单击鼠标左键并按住不放，沿对角线拖动鼠标，出现一个大小随着鼠标移动而变化的临时矩形。在适当位置松开鼠标左键，确定用于选择的矩形区域，则质心在矩形区域内的所有对象都被选中。用户可通过按住 Shift 键继续进行矩形框选择，在原有基础上增加选中的对象。<br />
+<br /></li>
+</ul>
+
+<p><strong>圆形选择</strong></p>
+
+<p>圆形选择方式，是指通过绘制一个临时圆形区域，选中圆形区域内符合选择模式的对象。单击该下拉按钮，在弹出的下拉菜单中选择“圆形选择”项。当前地图窗口的操作状态变为圆形选择状态，并且鼠标在当前地图窗口中的状态变为<img src="img/circleSelect.png" alt="" />。</p>
+
+<ul>
+<li>在地图窗口中某个位置单击鼠标左键，该位置即绘制的临时圆形区域的圆心。拖动鼠标，在拖动鼠标的过程中会看到半径不断变化的临时圆。<br /></li>
+<li>在适当位置处再次单击鼠标左键，即可通过确定临时圆的半径确定用于选择的圆形区域，则质心在圆形区域内的所有对象被选中。<br /></li>
+<li>用户可通过按住 Shift 键继续进行圆形选择，在原有基础上增加选中的对象。<br />
+<br /></li>
+</ul>
+
+<p><strong>多边形选择</strong></p>
+
+<p>多边形选择方式，是指通过绘制一个临时多边形区域，选中多边形区域内符合选择模式的对象。单击该下拉按钮，在弹出的下拉菜单中选择“多边形选择”项。当前地图窗口的操作状态变为多边形选择状态，并且鼠标在当前地图窗口中的状态变为<img src="img/regionSelect.png" alt="" />。</p>
+
+<ul>
+<li>在地图窗口中连续单击鼠标左键，绘制一个临时多边形，当完成绘制临时多边形区域时单击鼠标右键来结束绘制，则质心在该多边形区域内的所有对象被选中。<br /></li>
+<li>用户可通过按住 Shift 键继续进行多边形选择，在原有基础上增加选中的对象。<br />
+<br /></li>
+</ul>
+
+<p><strong>画线选择</strong></p>
+
+<p>画线选择方式，是指通过绘制一条临时折线段，选中与折线段相交的对象。单击该下拉按钮，在弹出的下拉菜单中选择“画线选择”项。当前地图窗口的操作状态变为画线选择状态，并且鼠标在当前地图窗口中的状态变为<img src="img/polylineSelect.png" alt="" /> 。</p>
+
+<ul>
+<li>在地图窗口中连续单击鼠标左键，绘制一条临时的折线，单击鼠标右键完成折线的绘制，则与折线相交的所有对象将被选中。<br /></li>
+<li>用户可通过按住 Shift 键继续进行画线选择，在原有基础上增加选中的对象。</li>
+</ul>
+
+<p>以上几种选择方式可以混合使用，只要在选择对象时按住 shift 键，就可以在原有基础上增加选中的对象。SuperMap iDesktop 9D 支持跨图层选择，因此，地图窗口中所有可选择图层中满足选择条件的对象都会被选中，被选择的对象将以特殊的状态（选择状态）显示出来。</p>
+
+<p><strong>备注</strong> 当图层为可选择状态，且鼠标焦点在地图中，同时按键盘中的“Ctrl+A”键，即可选中地图中的所有对象。按“Esc”键可取消选中。</p>
+
+<p>　</p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/datamanage/recalculateraster/" title=""><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - </a>
+<a class="nav nav-next" href="/zh/docs/datamanage/objectdraw/" title="对象绘制">Next - 对象绘制 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cDataManage%5cObjectEdit.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/datamanage\/objectedit\/",
+    "title" : "对象操作",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/datamanage\/objectedit\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cDataManage%5cObjectEdit.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

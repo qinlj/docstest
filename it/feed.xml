@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes – Container Orchestration a livello di produzione</title>
+    <link>https://docstest.github.io/it/</link>
+    <description>The Kubernetes project blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 19 Feb 2019 19:04:14 -0800</lastBuildDate>
+    <image>
+      <url>https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png</url>
+      <title>Kubernetes.io</title>
+      <link>https://docstest.github.io/it/</link>
+    </image>
+    
+	<atom:link href="https://docstest.github.io/it/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

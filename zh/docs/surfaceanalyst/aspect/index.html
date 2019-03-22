@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>坡向分析 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content=" 　坡向分析用于计算栅格数据集（通常使用 DEM 数据）中各个像元的坡度面的朝向。坡向计算的范围是0到360°，以正北方0°为开始，按顺时针移动，回到正北方以360°结束。平坦的坡面没有方向，赋值为-1。
+分析原理 　地表面某一点的坡向表示经过该点的斜坡的朝向。在地形分析中，坡向表示经过地表某一点的切平面的法线在水平面的投影与经过该点正北方向的夹角。坡向表示该点高程值改变量的最大变化方向。
+　坡向用度数表示，坡向分析结果的范围是0到360°。以正北方0°为开始，按顺时针移动，回到正北方以360°结束。坡度图中每个像元的值代表了其像元面的斜坡面对的方向，平坦的坡面没有方向，赋值为-1。
+　　由于坡向是圆的度量，10°坡向比30°坡向更靠近360°。因此，用坡向做数据分析之前，用户需要对坡向进行转换，即：将坡向分为东、西、南、北4个基本方向（或者东、西、南、北、东南、西南、东北、西北8个基本方向），可通过栅格重分级功能完成转换，突出需要考虑的坡向范围。
+应用场景 　坡向在植被分析、环境评价等领域有重要的意义。 - 在生物学上，生长在朝向北的斜坡上和生长在朝向南的斜坡上的植被一般有明显的差别，这种差别的主要原因在于绿色植被生长需要阳光的充分程度不同； - 建立风力发电站的选址时，需要考虑把它们建在面向风的斜坡上； - 地质学家经常需要了解断层的主要坡向，或者褶皱露头，来分析地质变化的过程； - 在确定容易被积雪融水破坏的居民区的位置时，需要识别朝南的坡面，来得到最初融化的积雪的位置。
+操作说明  在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“坡向分析”，即可弹出“坡向分析”对话框。 在源数据处设置要进行坡度分析的栅格数据集，通常我们会选择拥有高程值的 DEM 数据。 设置结果数据所要保存的数据源，及结果数据集的名称，坡度数据集是与源数据集等大且分辨率相同。 单击“执行”按钮，即可执行坡向分析操作，结果如下图所示：  　">
+<meta property="og:description" content=" 　坡向分析用于计算栅格数据集（通常使用 DEM 数据）中各个像元的坡度面的朝向。坡向计算的范围是0到360°，以正北方0°为开始，按顺时针移动，回到正北方以360°结束。平坦的坡面没有方向，赋值为-1。
+分析原理 　地表面某一点的坡向表示经过该点的斜坡的朝向。在地形分析中，坡向表示经过地表某一点的切平面的法线在水平面的投影与经过该点正北方向的夹角。坡向表示该点高程值改变量的最大变化方向。
+　坡向用度数表示，坡向分析结果的范围是0到360°。以正北方0°为开始，按顺时针移动，回到正北方以360°结束。坡度图中每个像元的值代表了其像元面的斜坡面对的方向，平坦的坡面没有方向，赋值为-1。
+　　由于坡向是圆的度量，10°坡向比30°坡向更靠近360°。因此，用坡向做数据分析之前，用户需要对坡向进行转换，即：将坡向分为东、西、南、北4个基本方向（或者东、西、南、北、东南、西南、东北、西北8个基本方向），可通过栅格重分级功能完成转换，突出需要考虑的坡向范围。
+应用场景 　坡向在植被分析、环境评价等领域有重要的意义。 - 在生物学上，生长在朝向北的斜坡上和生长在朝向南的斜坡上的植被一般有明显的差别，这种差别的主要原因在于绿色植被生长需要阳光的充分程度不同； - 建立风力发电站的选址时，需要考虑把它们建在面向风的斜坡上； - 地质学家经常需要了解断层的主要坡向，或者褶皱露头，来分析地质变化的过程； - 在确定容易被积雪融水破坏的居民区的位置时，需要识别朝南的坡面，来得到最初融化的积雪的位置。
+操作说明  在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“坡向分析”，即可弹出“坡向分析”对话框。 在源数据处设置要进行坡度分析的栅格数据集，通常我们会选择拥有高程值的 DEM 数据。 设置结果数据所要保存的数据源，及结果数据集的名称，坡度数据集是与源数据集等大且分辨率相同。 单击“执行”按钮，即可执行坡向分析操作，结果如下图所示：  　">
+<meta name="twitter:description" content=" 　坡向分析用于计算栅格数据集（通常使用 DEM 数据）中各个像元的坡度面的朝向。坡向计算的范围是0到360°，以正北方0°为开始，按顺时针移动，回到正北方以360°结束。平坦的坡面没有方向，赋值为-1。
+分析原理 　地表面某一点的坡向表示经过该点的斜坡的朝向。在地形分析中，坡向表示经过地表某一点的切平面的法线在水平面的投影与经过该点正北方向的夹角。坡向表示该点高程值改变量的最大变化方向。
+　坡向用度数表示，坡向分析结果的范围是0到360°。以正北方0°为开始，按顺时针移动，回到正北方以360°结束。坡度图中每个像元的值代表了其像元面的斜坡面对的方向，平坦的坡面没有方向，赋值为-1。
+　　由于坡向是圆的度量，10°坡向比30°坡向更靠近360°。因此，用坡向做数据分析之前，用户需要对坡向进行转换，即：将坡向分为东、西、南、北4个基本方向（或者东、西、南、北、东南、西南、东北、西北8个基本方向），可通过栅格重分级功能完成转换，突出需要考虑的坡向范围。
+应用场景 　坡向在植被分析、环境评价等领域有重要的意义。 - 在生物学上，生长在朝向北的斜坡上和生长在朝向南的斜坡上的植被一般有明显的差别，这种差别的主要原因在于绿色植被生长需要阳光的充分程度不同； - 建立风力发电站的选址时，需要考虑把它们建在面向风的斜坡上； - 地质学家经常需要了解断层的主要坡向，或者褶皱露头，来分析地质变化的过程； - 在确定容易被积雪融水破坏的居民区的位置时，需要识别朝南的坡面，来得到最初融化的积雪的位置。
+操作说明  在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“坡向分析”，即可弹出“坡向分析”对话框。 在源数据处设置要进行坡度分析的栅格数据集，通常我们会选择拥有高程值的 DEM 数据。 设置结果数据所要保存的数据源，及结果数据集的名称，坡度数据集是与源数据集等大且分辨率相同。 单击“执行”按钮，即可执行坡向分析操作，结果如下图所示：  　">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/surfaceanalyst/aspect/">
+<meta property="og:title" content="坡向分析">
+<meta name="twitter:title" content="坡向分析">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/surfaceanalyst/aspect/">English</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>表面分析</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/" class="YAH">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="表面分析" href="/zh/docs/surfaceanalyst/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="DEM切割" href="/zh/docs/surfaceanalyst/terrainbuilderclip/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DEM曲率计算" href="/zh/docs/surfaceanalyst/calculatecurvature/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Surface Analysis <small>(EN)</small>" href="/docs/surfaceanalyst/surfaceanalyst/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="三维晕渲图" href="/zh/docs/surfaceanalyst/hillshade/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="剖面分析" href="/zh/docs/surfaceanalyst/profile/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="反算填挖方" href="/zh/docs/surfaceanalyst/inversecutfill/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="坡向分析" href="/zh/docs/surfaceanalyst/aspect/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="坡度分析" href="/zh/docs/surfaceanalyst/slope/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="填挖方" href="/zh/docs/surfaceanalyst/cutfill/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取所有等值线" href="/zh/docs/surfaceanalyst/drivecontourall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取所有等值面" href="/zh/docs/surfaceanalyst/driveregionall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取指定等值线" href="/zh/docs/surfaceanalyst/drivecontourspecific/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取指定等值面" href="/zh/docs/surfaceanalyst/driveregionspecific/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="提取等值线/面" href="/zh/docs/surfaceanalyst/drivecontour/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="查找极值" href="/zh/docs/surfaceanalyst/findextreme/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="正射三维影像" href="/zh/docs/surfaceanalyst/orthoimage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="点数据提取等值线" href="/zh/docs/surfaceanalyst/extractisoline/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="面填挖方" href="/zh/docs/surfaceanalyst/cutfillregion/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cSurfaceAnalyst%5cAspect.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>坡向分析</h1>
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#分析原理">分析原理</a></li>
+<li><a href="#应用场景">应用场景</a></li>
+<li><a href="#操作说明">操作说明</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<p>　　坡向分析用于计算栅格数据集（通常使用 DEM 数据）中各个像元的坡度面的朝向。坡向计算的范围是0到360°，以正北方0°为开始，按顺时针移动，回到正北方以360°结束。平坦的坡面没有方向，赋值为-1。</p>
+
+<h3 id="分析原理">分析原理</h3>
+
+<p>　　地表面某一点的坡向表示经过该点的斜坡的朝向。在地形分析中，坡向表示经过地表某一点的切平面的法线在水平面的投影与经过该点正北方向的夹角。坡向表示该点高程值改变量的最大变化方向。</p>
+
+<p>　　坡向用度数表示，坡向分析结果的范围是0到360°。以正北方0°为开始，按顺时针移动，回到正北方以360°结束。坡度图中每个像元的值代表了其像元面的斜坡面对的方向，平坦的坡面没有方向，赋值为-1。</p>
+
+<p>　　<img src="/images/img/Aspect.png" alt="" /></p>
+
+<p>　　由于坡向是圆的度量，10°坡向比30°坡向更靠近360°。因此，用坡向做数据分析之前，用户需要对坡向进行转换，即：将坡向分为东、西、南、北4个基本方向（或者东、西、南、北、东南、西南、东北、西北8个基本方向），可通过栅格重分级功能完成转换，突出需要考虑的坡向范围。</p>
+
+<h3 id="应用场景">应用场景</h3>
+
+<p>　　坡向在植被分析、环境评价等领域有重要的意义。
+  - 在生物学上，生长在朝向北的斜坡上和生长在朝向南的斜坡上的植被一般有明显的差别，这种差别的主要原因在于绿色植被生长需要阳光的充分程度不同；
+  - 建立风力发电站的选址时，需要考虑把它们建在面向风的斜坡上；
+  - 地质学家经常需要了解断层的主要坡向，或者褶皱露头，来分析地质变化的过程；
+  - 在确定容易被积雪融水破坏的居民区的位置时，需要识别朝南的坡面，来得到最初融化的积雪的位置。</p>
+
+<h3 id="操作说明">操作说明</h3>
+
+<ol>
+<li>在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“坡向分析”，即可弹出“坡向分析”对话框。</li>
+<li>在源数据处设置要进行坡度分析的栅格数据集，通常我们会选择拥有高程值的 DEM 数据。</li>
+<li>设置结果数据所要保存的数据源，及结果数据集的名称，坡度数据集是与源数据集等大且分辨率相同。</li>
+<li>单击“执行”按钮，即可执行坡向分析操作，结果如下图所示：</li>
+</ol>
+
+<p>　　<img src="/images/img/AspectResult.png" alt="" /></p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/surfaceanalyst/inversecutfill/" title="反算填挖方"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 反算填挖方</a>
+<a class="nav nav-next" href="/zh/docs/surfaceanalyst/slope/" title="坡度分析">Next - 坡度分析 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cSurfaceAnalyst%5cAspect.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/surfaceanalyst\/aspect\/",
+    "title" : "坡向分析",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/surfaceanalyst\/aspect\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cSurfaceAnalyst%5cAspect.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

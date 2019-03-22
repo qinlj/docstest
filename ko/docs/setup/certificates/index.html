@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>PKI 인증서 및 요구 조건 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/ko/docs/setup/certificates/">
+<meta property="og:title" content="PKI 인증서 및 요구 조건">
+<meta name="twitter:title" content="PKI 인증서 및 요구 조건">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/ko/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/ko/docs/" class="active">문서</a></li>
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="/ko/case-studies/">사례 연구</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    한국어 Korean <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/setup/certificates/">English</a></li>
+                
+                    <li><a href="/ja/docs/setup/certificates/">日本語 Japanese</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="검색하기" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/ko/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/ko/docs/home/">문서</a></h3>
+           <p>개념, 튜토리얼 및 참조 문서와 함께 쿠버네티스 사용하는 방법을 익힐 수 있다. 또한, <a href="/editdocs/" data-auto-burger-exclude>문서에 기여하는 것도 도움을 줄 수 있다</a>!</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">코어 쿠버네티스 코드 베이스를 살펴보는데 관심이 있으십니까?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>GitHub에서 보기</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">커뮤니티 둘러보기</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>설치</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/ko/docs/home/">홈</a></li>
+		
+		
+		<li><a href="/ko/docs/setup/" class="YAH">설치</a></li>
+		
+		
+		<li><a href="/ko/docs/concepts/">개념</a></li>
+		
+		
+		<li><a href="/ko/docs/tasks/">태스크</a></li>
+		
+		
+		<li><a href="/ko/docs/tutorials/">튜토리얼</a></li>
+		
+		
+		<li><a href="/ko/docs/reference/">레퍼런스</a></li>
+		
+		
+		<li><a href="/ko/docs/contribute/">기여</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="검색하기" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="설치" href="/ko/docs/setup/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="알맞은 솔루션 선정" href="/ko/docs/setup/pick-right-solution/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="쿠버네티스 다운로드">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="v1.13 Release Notes <small>(EN)</small>" href="/docs/setup/release/notes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="릴리스 빌드" href="/ko/docs/setup/release/building-from-source/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="kubeadm으로 클러스터 부트스트래핑 하기">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing kubeadm <small>(EN)</small>" href="/docs/setup/independent/install-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Creating a single master cluster with kubeadm <small>(EN)</small>" href="/docs/setup/independent/create-cluster-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Customizing control plane configuration with kubeadm <small>(EN)</small>" href="/docs/setup/independent/control-plane-flags/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Options for Highly Available Topology <small>(EN)</small>" href="/docs/setup/independent/ha-topology/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Creating Highly Available Clusters with kubeadm <small>(EN)</small>" href="/docs/setup/independent/high-availability/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up a High Availability etcd cluster with kubeadm <small>(EN)</small>" href="/docs/setup/independent/setup-ha-etcd-with-kubeadm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configuring each kubelet in your cluster using kubeadm <small>(EN)</small>" href="/docs/setup/independent/kubelet-integration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Troubleshooting kubeadm <small>(EN)</small>" href="/docs/setup/independent/troubleshooting-kubeadm/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="턴키 클라우드 솔루션">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on AWS EC2 <small>(EN)</small>" href="/docs/setup/turnkey/aws/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Alibaba Cloud <small>(EN)</small>" href="/docs/setup/turnkey/alibaba-cloud/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Azure <small>(EN)</small>" href="/docs/setup/turnkey/azure/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on CenturyLink Cloud <small>(EN)</small>" href="/docs/setup/turnkey/clc/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Google Compute Engine <small>(EN)</small>" href="/docs/setup/turnkey/gce/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Multiple Clouds with IBM Cloud Private <small>(EN)</small>" href="/docs/setup/turnkey/icp/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Running Kubernetes on Multiple Clouds with Stackpoint.io <small>(EN)</small>" href="/docs/setup/turnkey/stackpoint/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="사용자 지정 클라우드 솔루션">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing Kubernetes On-premises/Cloud Providers with Kubespray <small>(EN)</small>" href="/docs/setup/custom-cloud/kubespray/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kops로 AWS에 쿠버네티스 설치하기" href="/ko/docs/setup/custom-cloud/kops/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="온-프레미스 VM">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cloudstack <small>(EN)</small>" href="/docs/setup/on-premises-vm/cloudstack/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes on DC/OS <small>(EN)</small>" href="/docs/setup/on-premises-vm/dcos/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="oVirt <small>(EN)</small>" href="/docs/setup/on-premises-vm/ovirt/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Version and Version Skew Support Policy <small>(EN)</small>" href="/docs/setup/version-skew-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="대형 클러스터 구축" href="/ko/docs/setup/cluster-large/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="여러 영역에서 구동" href="/ko/docs/setup/multiple-zones/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="CRI 설치" href="/ko/docs/setup/cri/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Installing Kubernetes with Digital Rebar Provision (DRP) via KRIB <small>(EN)</small>" href="/docs/setup/on-premises-metal/krib/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Minikube로 로컬 상에서 쿠버네티스 구동" href="/ko/docs/setup/minikube/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="PKI 인증서 및 요구 조건" href="/ko/docs/setup/certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="노드 구성 검증하기" href="/ko/docs/setup/node-conformance/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="맨 처음부터 사용자 지정 클러스터 생성" href="/ko/docs/setup/scratch/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/ko/docs%5csetup%5ccertificates.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>PKI 인증서 및 요구 조건</h1>
+
+
+
+<p>쿠버네티스는 TLS 위에 인증을 위해 PKI 인증서가 필요하다.
+만약 <a href="/docs/reference/setup-tools/kubeadm/kubeadm/">kubeadm</a>으로 쿠버네티스를 설치했다면, 클러스터에 필요한 인증서는 자동으로 생성된다.
+또한 더 안전하게 자신이 소유한 인증서를 생성할 수 있다. 이를 테면, 개인키를 API 서버에 저장하지 않으므로 더 안전하게 보관할 수 있다.
+이 페이지는 클러스터에 필요한 인증서를 설명한다.</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%ed%81%b4%eb%9f%ac%ec%8a%a4%ed%84%b0%ec%97%90%ec%84%9c-%ec%9d%b8%ec%a6%9d%ec%84%9c%eb%8a%94-%ec%96%b4%eb%96%bb%ea%b2%8c-%ec%9d%b4%ec%9a%a9%eb%90%98%eb%82%98">클러스터에서 인증서는 어떻게 이용되나?</a></li>
+
+
+
+
+<li><a href="#%ec%9d%b8%ec%a6%9d%ec%84%9c%eb%a5%bc-%ec%a0%80%ec%9e%a5%ed%95%98%eb%8a%94-%ec%9c%84%ec%b9%98">인증서를 저장하는 위치</a></li>
+
+
+
+
+<li><a href="#%ec%9d%b8%ec%a6%9d%ec%84%9c-%ec%88%98%eb%8f%99-%ec%84%a4%ec%a0%95">인증서 수동 설정</a></li>
+
+
+
+
+<li><a href="#%ea%b0%81-%ec%82%ac%ec%9a%a9%ec%9e%90-%ea%b3%84%ec%a0%95%ec%9d%84-%ec%9c%84%ed%95%9c-%ec%9d%b8%ec%a6%9d%ec%84%9c-%ec%84%a4%ec%a0%95%ed%95%98%ea%b8%b0">각 사용자 계정을 위한 인증서 설정하기</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<h2 id="클러스터에서-인증서는-어떻게-이용되나">클러스터에서 인증서는 어떻게 이용되나?</h2>
+
+<p>쿠버네티스는 다음 작업에서 PKI가 필요하다.</p>
+
+<ul>
+<li>kubelet에서 API 서버 인증서를 인증시 사용하는 클라이언트 인증서</li>
+<li>API 서버 엔드포인트를 위한 서버 인증서</li>
+<li>API 서버에 클러스터 관리자 인증을 위한 클라이언트 인증서</li>
+<li>API 서버에서 kubelet과 통신을 위한 클라이언트 인증서</li>
+<li>API 서버에서 etcd 간의 통신을 위한 클라이언트 인증서</li>
+<li>컨트롤러 매니저와 API 서버 간의 통신을 위한 클라이언트 인증서/kubeconfig</li>
+<li>스케줄러와 API 서버간 통신을 위한 클라이언트 인증서/kubeconfig</li>
+<li><a href="/docs/tasks/access-kubernetes-api/configure-aggregation-layer/">front-proxy</a>를 위한 클라이언트와 서버 인증서</li>
+</ul>
+
+<blockquote class="note">
+  <div><strong>참고:</strong> <code>front-proxy</code> 인증서는 kube-proxy에서 <a href="/docs/tasks/access-kubernetes-api/setup-extension-api-server/">API 서버 확장</a>을 지원할 때만 kube-proxy에서 필요하다.</div>
+</blockquote>
+
+<p>etcd 역시 클라이언트와 피어 간에 상호 TLS 인증을 구현한다.</p>
+
+<h2 id="인증서를-저장하는-위치">인증서를 저장하는 위치</h2>
+
+<p>만약 쿠버네티스를 kubeadm으로 설치했다면 인증서는 <code>/etc/kubernets/pki</code>에 저장된다. 이 문서에 언급된 모든 파일 경로는 그 디렉토리에 상대적이다.</p>
+
+<h2 id="인증서-수동-설정">인증서 수동 설정</h2>
+
+<p>필요한 인증서를 kubeadm으로 생성하기 싫다면 다음 방법 중 하나로 생성할 수 있다.</p>
+
+<h3 id="단일-루트-ca">단일 루트 CA</h3>
+
+<p>관리자에 의해 제어되는 단일 루트 CA를 만들 수 있다. 이 루트 CA는 여러 중간 CA를 생성할 수 있고, 모든 추가 생성에 관해서도 쿠버네티스 자체에 위임할 수 있다.</p>
+
+<p>필요 CA:</p>
+
+<table>
+<thead>
+<tr>
+<th>경로</th>
+<th>기본 CN</th>
+<th>설명</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ca.crt,key</td>
+<td>kubernetes-ca</td>
+<td>쿠버네티스 일반 CA</td>
+</tr>
+
+<tr>
+<td>etcd/ca.crt,key</td>
+<td>etcd-ca</td>
+<td>모든 etcd 관련 기능을 위해서</td>
+</tr>
+
+<tr>
+<td>front-proxy-ca.crt,key</td>
+<td>kubernetes-front-proxy-ca</td>
+<td><a href="/docs/tasks/access-kubernetes-api/configure-aggregation-layer/">front-end proxy</a> 위해서</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="모든-인증서">모든 인증서</h3>
+
+<p>이런 개인키를 API 서버에 복사하기 원치 않는다면, 모든 인증서를 스스로 생성할 수 있다.</p>
+
+<p>필요한 인증서:</p>
+
+<table>
+<thead>
+<tr>
+<th>기본 CN</th>
+<th>부모 CA</th>
+<th>O (주체에서)</th>
+<th>종류</th>
+<th>호스트  (SAN)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>kube-etcd</td>
+<td>etcd-ca</td>
+<td></td>
+<td>server, client [<sup>1</sup>][etcdbug]</td>
+<td><code>localhost</code>, <code>127.0.0.1</code></td>
+</tr>
+
+<tr>
+<td>kube-etcd-peer</td>
+<td>etcd-ca</td>
+<td></td>
+<td>server, client</td>
+<td><code>&lt;hostname&gt;</code>, <code>&lt;Host_IP&gt;</code>, <code>localhost</code>, <code>127.0.0.1</code></td>
+</tr>
+
+<tr>
+<td>kube-etcd-healthcheck-client</td>
+<td>etcd-ca</td>
+<td></td>
+<td>client</td>
+<td></td>
+</tr>
+
+<tr>
+<td>kube-apiserver-etcd-client</td>
+<td>etcd-ca</td>
+<td>system:masters</td>
+<td>client</td>
+<td></td>
+</tr>
+
+<tr>
+<td>kube-apiserver</td>
+<td>kubernetes-ca</td>
+<td></td>
+<td>server</td>
+<td><code>&lt;hostname&gt;</code>, <code>&lt;Host_IP&gt;</code>, <code>&lt;advertise_IP&gt;</code>, <code>[1]</code></td>
+</tr>
+
+<tr>
+<td>kube-apiserver-kubelet-client</td>
+<td>kubernetes-ca</td>
+<td>system:masters</td>
+<td>client</td>
+<td></td>
+</tr>
+
+<tr>
+<td>front-proxy-client</td>
+<td>kubernetes-front-proxy-ca</td>
+<td></td>
+<td>client</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>[1]: <code>kubernetes</code>, <code>kubernetes.default</code>, <code>kubernetes.default.svc</code>, <code>kubernetes.default.svc.cluster</code>, <code>kubernetes.default.svc.cluster.local</code></p>
+
+<p><code>kind</code>는 하나 이상의 <a href="https://godoc.org/k8s.io/api/certificates/v1beta1#KeyUsage" target="_blank">x509 키 사용</a> 종류를 가진다.</p>
+
+<table>
+<thead>
+<tr>
+<th>종류</th>
+<th>키 사용</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>server</td>
+<td>digital signature, key encipherment, server auth</td>
+</tr>
+
+<tr>
+<td>client</td>
+<td>digital signature, key encipherment, client auth</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="인증서-파일-경로">인증서 파일 경로</h3>
+
+<p>인증서는 권고하는 파일 경로에 존재해야 한다(<a href="/docs/reference/setup-tools/kubeadm/kubeadm/">kubeadm</a>에서 사용되는 것처럼). 경로는 위치에 관계없이 주어진 파라미터를 사용하여 지정되야 한다.</p>
+
+<table>
+<thead>
+<tr>
+<th>기본 CN</th>
+<th>권고하는 키 파일 경로</th>
+<th>권고하는 인증서 파일 경로</th>
+<th>명령어</th>
+<th>키 파라미터</th>
+<th>인증서 파라미터</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>etcd-ca</td>
+<td></td>
+<td>etcd/ca.crt</td>
+<td>kube-apiserver</td>
+<td></td>
+<td>&ndash;etcd-cafile</td>
+</tr>
+
+<tr>
+<td>etcd-client</td>
+<td>apiserver-etcd-client.key</td>
+<td>apiserver-etcd-client.crt</td>
+<td>kube-apiserver</td>
+<td>&ndash;etcd-keyfile</td>
+<td>&ndash;etcd-certfile</td>
+</tr>
+
+<tr>
+<td>kubernetes-ca</td>
+<td></td>
+<td>ca.crt</td>
+<td>kube-apiserver</td>
+<td></td>
+<td>&ndash;client-ca-file</td>
+</tr>
+
+<tr>
+<td>kube-apiserver</td>
+<td>apiserver.key</td>
+<td>apiserver.crt</td>
+<td>kube-apiserver</td>
+<td>&ndash;tls-private-key-file</td>
+<td>&ndash;tls-cert-file</td>
+</tr>
+
+<tr>
+<td>apiserver-kubelet-client</td>
+<td></td>
+<td>apiserver-kubelet-client.crt</td>
+<td>kube-apiserver</td>
+<td></td>
+<td>&ndash;kubelet-client-certificate</td>
+</tr>
+
+<tr>
+<td>front-proxy-ca</td>
+<td></td>
+<td>front-proxy-ca.crt</td>
+<td>kube-apiserver</td>
+<td></td>
+<td>&ndash;requestheader-client-ca-file</td>
+</tr>
+
+<tr>
+<td>front-proxy-client</td>
+<td>front-proxy-client.key</td>
+<td>front-proxy-client.crt</td>
+<td>kube-apiserver</td>
+<td>&ndash;proxy-client-key-file</td>
+<td>&ndash;proxy-client-cert-file</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>etcd-ca</td>
+<td></td>
+<td>etcd/ca.crt</td>
+<td>etcd</td>
+<td></td>
+<td>&ndash;trusted-ca-file, &ndash;peer-trusted-ca-file</td>
+</tr>
+
+<tr>
+<td>kube-etcd</td>
+<td>etcd/server.key</td>
+<td>etcd/server.crt</td>
+<td>etcd</td>
+<td>&ndash;key-file</td>
+<td>&ndash;cert-file</td>
+</tr>
+
+<tr>
+<td>kube-etcd-peer</td>
+<td>etcd/peer.key</td>
+<td>etcd/peer.crt</td>
+<td>etcd</td>
+<td>&ndash;peer-key-file</td>
+<td>&ndash;peer-cert-file</td>
+</tr>
+
+<tr>
+<td>etcd-ca</td>
+<td></td>
+<td>etcd/ca.crt</td>
+<td>etcdctl[2]</td>
+<td></td>
+<td>&ndash;cacert</td>
+</tr>
+
+<tr>
+<td>kube-etcd-healthcheck-client</td>
+<td>etcd/healthcheck-client.key</td>
+<td>etcd/healthcheck-client.crt</td>
+<td>etcdctl[2]</td>
+<td>&ndash;key</td>
+<td>&ndash;cert</td>
+</tr>
+</tbody>
+</table>
+
+<p>[2]: 셀프 호스팅시, 생존신호(liveness probe)를 위해</p>
+
+<h2 id="각-사용자-계정을-위한-인증서-설정하기">각 사용자 계정을 위한 인증서 설정하기</h2>
+
+<p>반드시 이런 관리자 계정과 서비스 계정을 설정해야 한다.</p>
+
+<table>
+<thead>
+<tr>
+<th>파일명</th>
+<th>자격증명 이름</th>
+<th>기본 CN</th>
+<th>O (주체에서)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>admin.conf</td>
+<td>default-admin</td>
+<td>kubernetes-admin</td>
+<td>system:masters</td>
+</tr>
+
+<tr>
+<td>kubelet.conf</td>
+<td>default-auth</td>
+<td>system:node:<code>&lt;nodeName&gt;</code> (note를 보자)</td>
+<td>system:nodes</td>
+</tr>
+
+<tr>
+<td>controller-manager.conf</td>
+<td>default-controller-manager</td>
+<td>system:kube-controller-manager</td>
+<td></td>
+</tr>
+
+<tr>
+<td>scheduler.conf</td>
+<td>default-manager</td>
+<td>system:kube-scheduler</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<blockquote class="note">
+  <div><strong>참고:</strong> <code>kubelet.conf</code>을 위한 <code>&lt;nodeName&gt;</code>값은 API 서버에 등록된 것처럼 kubelet에 제공되는 노드 이름 값과 <strong>반드시</strong> 정확히 일치해야 한다. 더 자세한 내용은 <a href="/docs/reference/access-authn-authz/node/">노드 인증</a>을 살펴보자.</div>
+</blockquote>
+
+<ol>
+<li><p>각 환경 설정에 대해 주어진 CN과 O를 이용하여 x509 인증서와 키쌍을 생성한다.</p></li>
+
+<li><p>각 환경 설정에 대해 다음과 같이 <code>kubectl</code>를 실행한다.</p></li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#b8860b">KUBECONFIG</span><span style="color:#666">=</span>&lt;filename&gt; kubectl config set-cluster default-cluster --server<span style="color:#666">=</span>https://&lt;host ip&gt;:6443 --certificate-authority &lt;path-to-kubernetes-ca&gt; --embed-certs
+<span style="color:#b8860b">KUBECONFIG</span><span style="color:#666">=</span>&lt;filename&gt; kubectl config set-credentials &lt;credential-name&gt; --client-key &lt;path-to-key&gt;.pem --client-certificate &lt;path-to-cert&gt;.pem --embed-certs
+<span style="color:#b8860b">KUBECONFIG</span><span style="color:#666">=</span>&lt;filename&gt; kubectl config set-context default-system --cluster default-cluster --user &lt;credential-name&gt;
+<span style="color:#b8860b">KUBECONFIG</span><span style="color:#666">=</span>&lt;filename&gt; kubectl config use-context default-system</code></pre></div>
+<p>이 파일들은 다음과 같이 사용된다.</p>
+
+<p>| 파일명                | 명령어                  | 설명                                                                  |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| admin.conf              | kubectl                 | 클러스터 관리자를 설정한다.                                           |
+| kubelet.conf            | kubelet                 | 클러스터 각 노드를 위해 필요하다.                                     |
+| controller-manager.conf | kube-controller-manager | 반드시 매니페스트를 <code>manifests/kube-controller-manager.yaml</code>에 추가해야한다. |
+| scheduler.conf | kube-scheduler | 반드시 매니페스트를 <code>manifests/kube-scheduler.yaml</code>에 추가해야한다. |</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/ko/docs/setup/minikube/" title="Minikube로 로컬 상에서 쿠버네티스 구동"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Minikube로 로컬 상에서 쿠버네티스 구동</a>
+<a class="nav nav-next" href="/ko/docs/setup/node-conformance/" title="노드 구성 검증하기">Next - 노드 구성 검증하기 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>피드백</h2>
+  <p class="feedback--prompt">이 페이지가 도움이 되었나요? </p>
+  <button class="button feedback--yes">네</button>
+  <button class="button feedback--no">아니요</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5csetup%5ccertificates.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/ko\/docs\/setup\/certificates\/",
+    "title" : "PKI 인증서 및 요구 조건",
+    "permalink" : "https:\/\/docstest.github.io\/ko\/docs\/setup\/certificates\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">이슈 생성하기</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/ko/docs%5csetup%5ccertificates.md" class="button issue">페이지 편집하기</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    최종 수정일시 February 19, 2019 at 10:50 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/aa6564e014bde799e27d1cf1d9412126a3f2aa77/">Sixth Korean l10n work for release-1.13 (#12705)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5csetup%5ccertificates.md">페이지 변경 이력</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/ko/docs/home/">홈</a>
+            
+            
+            
+            
+            
+            
+            
+            <a href="/ko/case-studies/">사례 연구</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">기여하기</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

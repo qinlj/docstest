@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>管理影像金字塔 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content=" 基本概念 　影像金字塔是栅格数据集的简化的分辨率（Reduced Resolution）图像的集合，通过影像重采样方法，建立一系列不同分辨率的影像图层，每个图层分别存储，并建立相应的空间索引机制，从而提高缩放浏览影像时的显示速度。为减小影像的传输数据量和优化显示性能，有时需要为影像建立影像金字塔。
+实现原理 　影像金字塔是按照一定规则生成的一系列分辨率由细到粗的图像的集合。影像金字塔技术通过影像重采样方法，建立一系列不同分辨率的影像图层，每个图层分割存储，并建立相应的空间索引机制，从而提高缩放浏览影像时的显示速度。如下图所示的影像金字塔，底部是影像的原始最高分辨率的表示，为512×512图像分辨率，越往上的影像的分辨率越小，分别为256×256，128×128，顶部是影像金字塔的最低分辨率的图像64×64，因此这个影像金字塔共有4层，即4个等级的分辨率。显然影像的图像分辨率越高，影像金字塔的等级越多。对于图像分辨率为2^a×2^b的（a&gt;b）影像，SuperMap中将会为其建立（b-6）&#43;1 层的金字塔。
+　为影像建立了影像金字塔之后，以后每次浏览该影像时，系统都会获取其影像金字塔来显示数据，当您将影像放大或缩小时，系统会自动基于用户的显示比例尺选择最合适的金字塔等级来显示该影像。
+　金字塔只能针对原始的数据进行创建。一次只能给一个数据集创建金字塔，如果想再次创建，需要将已创建的金字塔删除。浏览创建影像金字塔后的栅格数据集时，实际上时在访问已创建的金字塔。如下图所示在不同的比例尺下金字塔的建立过程。
+　建立影像金字塔可以显著地提高影像缩放显示渲染的速度和性能，但是同时影像金字塔的建立会增加数据集的存储空间，即增大影像数据集所在数据源文件的大小，这是因为建立的影像金字塔实际上就是影像在不同分辨率下的图像的集合，这些不同分辨率下的图像都和数据一起存储在数据源文件中，从而增大了数据源文件的大小。而且栅格数据集数据量越大建立金字塔的时间越长，影像金字塔的存储空间也就越大，但是会为以后的影像浏览节约了更多的时间，所以对于海量影像数据，创建金字塔不失为一种优化效率的选择。
+　SuperMap SIT 影像文件存储格式是集成了影像压缩及高效的影像金字塔技术的数据格式，因而可以超快速地显示影像数据，与影像数据大小基本无关，即使在很低配置的机器上也能非常流畅地对海量影像数据进行显示。
+影像金字塔管理 　影像金字塔管理功能包括创建和删除金字塔的功能，具体操作说明如下：
+创建影像金字塔 　支持创建影像金字塔的数据集有影像、栅格数据集、及以数据源形式直接打开的栅格文件（目前支持 tiff、tif、img 格式）。创建影像金字塔有两种操作方式，如下所述： * 方式一：在“开始”选项卡“数据处理”组，单击“影像金字塔”按钮，在弹出的“影像金字塔管理”对话框中添加需创建金字塔的数据集，可批量创建影像金字塔。 * 方式二：在工作空间管理器中选中待创建影像金字塔的影像（或栅格）数据集，单击鼠标右键选择“创建影像金字塔&hellip;”项，即可对选中的数据集创建影像金字塔。注意：若在工作空间管理器中选中多个数据集通过右键菜单创建金字塔，必须都为影像数据集，或都为栅格数据集。
+删除影像金字塔 　创建了影像金字塔的影像和栅格数据集可进行删除操作，但是，对于以数据源形式打开的影像文件，如 tiff、img格式的数据，不能进行删除影像金字塔的操作。删除影像金字塔也有以下两种方式：
+ 方式一：在“开始”选项卡“数据处理”组，单击“影像金字塔”按钮，在弹出的“影像金字塔管理”对话框中添加并选中需删除金字塔的数据集，可批量删除影像金字塔。 方式二：在工作空间管理器中选中一个或多个需删除影像金字塔的影像（或栅格）数据集，单击鼠标右键选择“删除影像金字塔&hellip;”项，即可将选中的数据集创建影像金字塔。注意：若在工作空间管理器中选中多个数据集通过右键菜单创建金字塔，必须都为影像数据集，或都为栅格数据集。  ">
+<meta property="og:description" content=" 基本概念 　影像金字塔是栅格数据集的简化的分辨率（Reduced Resolution）图像的集合，通过影像重采样方法，建立一系列不同分辨率的影像图层，每个图层分别存储，并建立相应的空间索引机制，从而提高缩放浏览影像时的显示速度。为减小影像的传输数据量和优化显示性能，有时需要为影像建立影像金字塔。
+实现原理 　影像金字塔是按照一定规则生成的一系列分辨率由细到粗的图像的集合。影像金字塔技术通过影像重采样方法，建立一系列不同分辨率的影像图层，每个图层分割存储，并建立相应的空间索引机制，从而提高缩放浏览影像时的显示速度。如下图所示的影像金字塔，底部是影像的原始最高分辨率的表示，为512×512图像分辨率，越往上的影像的分辨率越小，分别为256×256，128×128，顶部是影像金字塔的最低分辨率的图像64×64，因此这个影像金字塔共有4层，即4个等级的分辨率。显然影像的图像分辨率越高，影像金字塔的等级越多。对于图像分辨率为2^a×2^b的（a&gt;b）影像，SuperMap中将会为其建立（b-6）&#43;1 层的金字塔。
+　为影像建立了影像金字塔之后，以后每次浏览该影像时，系统都会获取其影像金字塔来显示数据，当您将影像放大或缩小时，系统会自动基于用户的显示比例尺选择最合适的金字塔等级来显示该影像。
+　金字塔只能针对原始的数据进行创建。一次只能给一个数据集创建金字塔，如果想再次创建，需要将已创建的金字塔删除。浏览创建影像金字塔后的栅格数据集时，实际上时在访问已创建的金字塔。如下图所示在不同的比例尺下金字塔的建立过程。
+　建立影像金字塔可以显著地提高影像缩放显示渲染的速度和性能，但是同时影像金字塔的建立会增加数据集的存储空间，即增大影像数据集所在数据源文件的大小，这是因为建立的影像金字塔实际上就是影像在不同分辨率下的图像的集合，这些不同分辨率下的图像都和数据一起存储在数据源文件中，从而增大了数据源文件的大小。而且栅格数据集数据量越大建立金字塔的时间越长，影像金字塔的存储空间也就越大，但是会为以后的影像浏览节约了更多的时间，所以对于海量影像数据，创建金字塔不失为一种优化效率的选择。
+　SuperMap SIT 影像文件存储格式是集成了影像压缩及高效的影像金字塔技术的数据格式，因而可以超快速地显示影像数据，与影像数据大小基本无关，即使在很低配置的机器上也能非常流畅地对海量影像数据进行显示。
+影像金字塔管理 　影像金字塔管理功能包括创建和删除金字塔的功能，具体操作说明如下：
+创建影像金字塔 　支持创建影像金字塔的数据集有影像、栅格数据集、及以数据源形式直接打开的栅格文件（目前支持 tiff、tif、img 格式）。创建影像金字塔有两种操作方式，如下所述： * 方式一：在“开始”选项卡“数据处理”组，单击“影像金字塔”按钮，在弹出的“影像金字塔管理”对话框中添加需创建金字塔的数据集，可批量创建影像金字塔。 * 方式二：在工作空间管理器中选中待创建影像金字塔的影像（或栅格）数据集，单击鼠标右键选择“创建影像金字塔&hellip;”项，即可对选中的数据集创建影像金字塔。注意：若在工作空间管理器中选中多个数据集通过右键菜单创建金字塔，必须都为影像数据集，或都为栅格数据集。
+删除影像金字塔 　创建了影像金字塔的影像和栅格数据集可进行删除操作，但是，对于以数据源形式打开的影像文件，如 tiff、img格式的数据，不能进行删除影像金字塔的操作。删除影像金字塔也有以下两种方式：
+ 方式一：在“开始”选项卡“数据处理”组，单击“影像金字塔”按钮，在弹出的“影像金字塔管理”对话框中添加并选中需删除金字塔的数据集，可批量删除影像金字塔。 方式二：在工作空间管理器中选中一个或多个需删除影像金字塔的影像（或栅格）数据集，单击鼠标右键选择“删除影像金字塔&hellip;”项，即可将选中的数据集创建影像金字塔。注意：若在工作空间管理器中选中多个数据集通过右键菜单创建金字塔，必须都为影像数据集，或都为栅格数据集。  ">
+<meta name="twitter:description" content=" 基本概念 　影像金字塔是栅格数据集的简化的分辨率（Reduced Resolution）图像的集合，通过影像重采样方法，建立一系列不同分辨率的影像图层，每个图层分别存储，并建立相应的空间索引机制，从而提高缩放浏览影像时的显示速度。为减小影像的传输数据量和优化显示性能，有时需要为影像建立影像金字塔。
+实现原理 　影像金字塔是按照一定规则生成的一系列分辨率由细到粗的图像的集合。影像金字塔技术通过影像重采样方法，建立一系列不同分辨率的影像图层，每个图层分割存储，并建立相应的空间索引机制，从而提高缩放浏览影像时的显示速度。如下图所示的影像金字塔，底部是影像的原始最高分辨率的表示，为512×512图像分辨率，越往上的影像的分辨率越小，分别为256×256，128×128，顶部是影像金字塔的最低分辨率的图像64×64，因此这个影像金字塔共有4层，即4个等级的分辨率。显然影像的图像分辨率越高，影像金字塔的等级越多。对于图像分辨率为2^a×2^b的（a&gt;b）影像，SuperMap中将会为其建立（b-6）&#43;1 层的金字塔。
+　为影像建立了影像金字塔之后，以后每次浏览该影像时，系统都会获取其影像金字塔来显示数据，当您将影像放大或缩小时，系统会自动基于用户的显示比例尺选择最合适的金字塔等级来显示该影像。
+　金字塔只能针对原始的数据进行创建。一次只能给一个数据集创建金字塔，如果想再次创建，需要将已创建的金字塔删除。浏览创建影像金字塔后的栅格数据集时，实际上时在访问已创建的金字塔。如下图所示在不同的比例尺下金字塔的建立过程。
+　建立影像金字塔可以显著地提高影像缩放显示渲染的速度和性能，但是同时影像金字塔的建立会增加数据集的存储空间，即增大影像数据集所在数据源文件的大小，这是因为建立的影像金字塔实际上就是影像在不同分辨率下的图像的集合，这些不同分辨率下的图像都和数据一起存储在数据源文件中，从而增大了数据源文件的大小。而且栅格数据集数据量越大建立金字塔的时间越长，影像金字塔的存储空间也就越大，但是会为以后的影像浏览节约了更多的时间，所以对于海量影像数据，创建金字塔不失为一种优化效率的选择。
+　SuperMap SIT 影像文件存储格式是集成了影像压缩及高效的影像金字塔技术的数据格式，因而可以超快速地显示影像数据，与影像数据大小基本无关，即使在很低配置的机器上也能非常流畅地对海量影像数据进行显示。
+影像金字塔管理 　影像金字塔管理功能包括创建和删除金字塔的功能，具体操作说明如下：
+创建影像金字塔 　支持创建影像金字塔的数据集有影像、栅格数据集、及以数据源形式直接打开的栅格文件（目前支持 tiff、tif、img 格式）。创建影像金字塔有两种操作方式，如下所述： * 方式一：在“开始”选项卡“数据处理”组，单击“影像金字塔”按钮，在弹出的“影像金字塔管理”对话框中添加需创建金字塔的数据集，可批量创建影像金字塔。 * 方式二：在工作空间管理器中选中待创建影像金字塔的影像（或栅格）数据集，单击鼠标右键选择“创建影像金字塔&hellip;”项，即可对选中的数据集创建影像金字塔。注意：若在工作空间管理器中选中多个数据集通过右键菜单创建金字塔，必须都为影像数据集，或都为栅格数据集。
+删除影像金字塔 　创建了影像金字塔的影像和栅格数据集可进行删除操作，但是，对于以数据源形式打开的影像文件，如 tiff、img格式的数据，不能进行删除影像金字塔的操作。删除影像金字塔也有以下两种方式：
+ 方式一：在“开始”选项卡“数据处理”组，单击“影像金字塔”按钮，在弹出的“影像金字塔管理”对话框中添加并选中需删除金字塔的数据集，可批量删除影像金字塔。 方式二：在工作空间管理器中选中一个或多个需删除影像金字塔的影像（或栅格）数据集，单击鼠标右键选择“删除影像金字塔&hellip;”项，即可将选中的数据集创建影像金字塔。注意：若在工作空间管理器中选中多个数据集通过右键菜单创建金字塔，必须都为影像数据集，或都为栅格数据集。  ">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/datamanage/pyramidmanage/">
+<meta property="og:title" content="管理影像金字塔">
+<meta name="twitter:title" content="管理影像金字塔">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/">English</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                    <li><a href="/it/">Italian</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+<h1>数据管理</h1>
+<h5></h5>
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/" class="YAH">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="数据管理" href="/zh/docs/datamanage/"></a>
+
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="" href="/zh/docs/datamanage/recalculateraster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="对象操作" href="/zh/docs/datamanage/objectedit/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="对象绘制" href="/zh/docs/datamanage/objectdraw/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="数据源类型及数据引擎" href="/zh/docs/datamanage/enginetype/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="数据集压缩编码方式" href="/zh/docs/datamanage/encodetype/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="目录管理" href="/zh/docs/datamanage/catalogmanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理工作空间" href="/zh/docs/datamanage/workspacemanagent/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理影像金字塔" href="/zh/docs/datamanage/pyramidmanage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理数据源" href="/zh/docs/datamanage/databasemanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理数据集" href="/zh/docs/datamanage/datasetmanagement/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理空间索引" href="/zh/docs/datamanage/spatialindexmanage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制文本对象" href="/zh/docs/datamanage/text/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制点对象" href="/zh/docs/datamanage/point/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制线" href="/zh/docs/datamanage/drawcurve/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="绘制面" href="/zh/docs/datamanage/drawquadrangle/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="重新计算矢量数据集的范围" href="/zh/docs/datamanage/recalculatevector/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cDataManage%5cPyramidManage.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>管理影像金字塔</h1>
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#实现原理">实现原理</a></li>
+<li><a href="#影像金字塔管理">影像金字塔管理</a>
+<ul>
+<li><a href="#创建影像金字塔">创建影像金字塔</a></li>
+<li><a href="#删除影像金字塔">删除影像金字塔</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<h3 id="基本概念">基本概念</h3>
+
+<p>　　影像金字塔是栅格数据集的简化的分辨率（Reduced Resolution）图像的集合，通过影像重采样方法，建立一系列不同分辨率的影像图层，每个图层分别存储，并建立相应的空间索引机制，从而提高缩放浏览影像时的显示速度。为减小影像的传输数据量和优化显示性能，有时需要为影像建立影像金字塔。</p>
+
+<h3 id="实现原理">实现原理</h3>
+
+<p>　　影像金字塔是按照一定规则生成的一系列分辨率由细到粗的图像的集合。影像金字塔技术通过影像重采样方法，建立一系列不同分辨率的影像图层，每个图层分割存储，并建立相应的空间索引机制，从而提高缩放浏览影像时的显示速度。如下图所示的影像金字塔，底部是影像的原始最高分辨率的表示，为512×512图像分辨率，越往上的影像的分辨率越小，分别为256×256，128×128，顶部是影像金字塔的最低分辨率的图像64×64，因此这个影像金字塔共有4层，即4个等级的分辨率。显然影像的图像分辨率越高，影像金字塔的等级越多。对于图像分辨率为2^a×2^b的（a&gt;b）影像，SuperMap中将会为其建立（b-6）+1 层的金字塔。</p>
+
+<p><img src="/images/img/HasPyramid.png" alt="" /></p>
+
+<p>　　为影像建立了影像金字塔之后，以后每次浏览该影像时，系统都会获取其影像金字塔来显示数据，当您将影像放大或缩小时，系统会自动基于用户的显示比例尺选择最合适的金字塔等级来显示该影像。</p>
+
+<p>　　金字塔只能针对原始的数据进行创建。一次只能给一个数据集创建金字塔，如果想再次创建，需要将已创建的金字塔删除。浏览创建影像金字塔后的栅格数据集时，实际上时在访问已创建的金字塔。如下图所示在不同的比例尺下金字塔的建立过程。</p>
+
+<p><img src="/images/img/Pyramid.png" alt="" /></p>
+
+<p>　　建立影像金字塔可以显著地提高影像缩放显示渲染的速度和性能，但是同时影像金字塔的建立会增加数据集的存储空间，即增大影像数据集所在数据源文件的大小，这是因为建立的影像金字塔实际上就是影像在不同分辨率下的图像的集合，这些不同分辨率下的图像都和数据一起存储在数据源文件中，从而增大了数据源文件的大小。而且栅格数据集数据量越大建立金字塔的时间越长，影像金字塔的存储空间也就越大，但是会为以后的影像浏览节约了更多的时间，所以对于海量影像数据，创建金字塔不失为一种优化效率的选择。</p>
+
+<p>　　SuperMap SIT 影像文件存储格式是集成了影像压缩及高效的影像金字塔技术的数据格式，因而可以超快速地显示影像数据，与影像数据大小基本无关，即使在很低配置的机器上也能非常流畅地对海量影像数据进行显示。</p>
+
+<h3 id="影像金字塔管理">影像金字塔管理</h3>
+
+<p>　　影像金字塔管理功能包括创建和删除金字塔的功能，具体操作说明如下：</p>
+
+<h4 id="创建影像金字塔">创建影像金字塔</h4>
+
+<p>　　支持创建影像金字塔的数据集有影像、栅格数据集、及以数据源形式直接打开的栅格文件（目前支持 tiff、tif、img 格式）。创建影像金字塔有两种操作方式，如下所述：
+* <strong>方式一</strong>：在“开始”选项卡“数据处理”组，单击“影像金字塔”按钮，在弹出的“影像金字塔管理”对话框中添加需创建金字塔的数据集，可批量创建影像金字塔。
+* <strong>方式二</strong>：在工作空间管理器中选中待创建影像金字塔的影像（或栅格）数据集，单击鼠标右键选择“创建影像金字塔&hellip;”项，即可对选中的数据集创建影像金字塔。<strong>注意</strong>：若在工作空间管理器中选中多个数据集通过右键菜单创建金字塔，必须都为影像数据集，或都为栅格数据集。</p>
+
+<h4 id="删除影像金字塔">删除影像金字塔</h4>
+
+<p>　　创建了影像金字塔的影像和栅格数据集可进行删除操作，但是，对于以数据源形式打开的影像文件，如 tiff、img格式的数据，不能进行删除影像金字塔的操作。删除影像金字塔也有以下两种方式：</p>
+
+<ul>
+<li><strong>方式一</strong>：在“开始”选项卡“数据处理”组，单击“影像金字塔”按钮，在弹出的“影像金字塔管理”对话框中添加并选中需删除金字塔的数据集，可批量删除影像金字塔。</li>
+<li><strong>方式二</strong>：在工作空间管理器中选中一个或多个需删除影像金字塔的影像（或栅格）数据集，单击鼠标右键选择“删除影像金字塔&hellip;”项，即可将选中的数据集创建影像金字塔。<strong>注意</strong>：若在工作空间管理器中选中多个数据集通过右键菜单创建金字塔，必须都为影像数据集，或都为栅格数据集。</li>
+</ul>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/datamanage/workspacemanagent/" title="管理工作空间"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 管理工作空间</a>
+<a class="nav nav-next" href="/zh/docs/datamanage/databasemanagement/" title="管理数据源">Next - 管理数据源 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cDataManage%5cPyramidManage.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/datamanage\/pyramidmanage\/",
+    "title" : "管理影像金字塔",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/datamanage\/pyramidmanage\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cDataManage%5cPyramidManage.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

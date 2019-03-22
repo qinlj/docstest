@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>Extract Specified Isolines - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="Extract a certain amount of isolines which have one or more special values. You can enter a special value directly, or the system will generate series of characteristic values according to the range and interval you set. Also, you can import specific values through importing the *.txt file where the specific values are saved in.
+Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Extract Isolines&rdquo; &gt; &ldquo;Specified Isolines&rdquo; to open the &ldquo;Specified Isolines&rdquo; dialog box.">
+<meta property="og:description" content="Extract a certain amount of isolines which have one or more special values. You can enter a special value directly, or the system will generate series of characteristic values according to the range and interval you set. Also, you can import specific values through importing the *.txt file where the specific values are saved in.
+Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Extract Isolines&rdquo; &gt; &ldquo;Specified Isolines&rdquo; to open the &ldquo;Specified Isolines&rdquo; dialog box.">
+<meta name="twitter:description" content="Extract a certain amount of isolines which have one or more special values. You can enter a special value directly, or the system will generate series of characteristic values according to the range and interval you set. Also, you can import specific values through importing the *.txt file where the specific values are saved in.
+Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Extract Isolines&rdquo; &gt; &ldquo;Specified Isolines&rdquo; to open the &ldquo;Specified Isolines&rdquo; dialog box.">
+<meta property="og:url" content="https://docstest.github.io/docs/surfaceanalyst/drivecontourspecific/">
+<meta property="og:title" content="Extract Specified Isolines">
+<meta name="twitter:title" content="Extract Specified Isolines">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/docs/" class="active">Documentation</a></li>
+            
+            <li><a href="/blog/">Blog</a></li>
+            
+            <li><a href="/partners/">Partners</a></li>
+            
+            <li><a href="/community/">Community</a></li>
+            
+            <li><a href="/case-studies/">Case Studies</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    English <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/zh/docs/surfaceanalyst/drivecontourspecific/">中文 Chinese</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/docs/home/">Documentation</a></h3>
+           <p>Learn how to use Kubernetes with conceptual, tutorial, and reference documentation. You can even <a href="/editdocs/" data-auto-burger-exclude>help contribute to the docs</a>!</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/blog/">Blog</a></h3>
+           <p>Read the latest news for Kubernetes and the containers space in general, and get technical how-tos hot off the presses.</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">Interested in hacking on the core Kubernetes code base?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>View On Github</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">Explore the community</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>SurfaceAnalysis</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/docs/home/">HOME</a></li>
+		
+		
+		<li><a href="/docs/surfaceanalyst/" class="YAH">SURFACEANALYSIS</a></li>
+		
+		
+		<li><a href="/docs/setup/">SETUP</a></li>
+		
+		
+		<li><a href="/docs/concepts/">CONCEPTS</a></li>
+		
+		
+		<li><a href="/docs/tasks/">TASKS</a></li>
+		
+		
+		<li><a href="/docs/tutorials/">TUTORIALS</a></li>
+		
+		
+		<li><a href="/docs/reference/">REFERENCE</a></li>
+		
+		
+		<li><a href="/docs/contribute/">CONTRIBUTE</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="SurfaceAnalysis" href="/docs/surfaceanalyst/"></a>
+
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="3D Hillshade Map" href="/docs/surfaceanalyst/hillshade/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Aspect Analysis" href="/docs/surfaceanalyst/aspect/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Cut Fill" href="/docs/surfaceanalyst/cutfill/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Cut Fill with Regions" href="/docs/surfaceanalyst/cutfillregion/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DEM Curvature Calculate" href="/docs/surfaceanalyst/calculatecurvature/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract All Isolines" href="/docs/surfaceanalyst/drivecontourall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract All Isoregions" href="/docs/surfaceanalyst/driveregionall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract Isolines by Points" href="/docs/surfaceanalyst/extractisoline/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract Isolines/Isoregions" href="/docs/surfaceanalyst/drivecontour/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract Specified Isolines" href="/docs/surfaceanalyst/drivecontourspecific/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract Specified Isoregions" href="/docs/surfaceanalyst/driveregionspecific/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Find Extremum" href="/docs/surfaceanalyst/findextreme/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Inverse Cut Fill" href="/docs/surfaceanalyst/inversecutfill/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Orthophoto Image" href="/docs/surfaceanalyst/orthoimage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Profile Analysis" href="/docs/surfaceanalyst/profile/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Slope Analysis" href="/docs/surfaceanalyst/slope/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Split DEM" href="/docs/surfaceanalyst/terrainbuilderclip/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Surface Analysis" href="/docs/surfaceanalyst/surfaceanalyst/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/en/docs%5cSurfaceAnalyst%5cDriveContourSpecific.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>Extract Specified Isolines</h1>
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#basic-steps">Basic steps</a></li>
+<li><a href="#related-topics">Related topics</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<p>　　Extract a certain amount of isolines which have one or more special values. You can enter a special value directly, or the system will generate series of characteristic values according to the range and interval you set. Also, you can import specific values through importing the *.txt file where the specific values are saved in.</p>
+
+<h3 id="basic-steps">Basic steps</h3>
+
+<ol>
+<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Extract Isolines&rdquo; &gt; &ldquo;Specified Isolines&rdquo; to open the &ldquo;Specified Isolines&rdquo; dialog box.</li>
+
+<li><p>Click <img src="img/Add.png" alt="" /> button to open the &ldquo;Batch Add&rdquo; dialog box where you can set following parameters for extraction of isolines.</p>
+
+<ul>
+<li>Start Value: The start value for creating isolines.</li>
+<li>End Value: The maximum value for creating isolines.</li>
+<li>Interval: Check it to specify the difference in elevation between two adjacent isolines and then how many isolines will be calculated by system.</li>
+<li>Classes: Specify how many isolines in the target dataset when the Interval is not set.</li>
+<li>Auto calculate the end value: After the Interval is set, check the check box, the end value of isolines will be calculated again as the Start Value and Interval.</li>
+</ul></li>
+
+<li><p>Specify your raster dataset for extracting isolines, and then the maximum value and minimum value of your data will be shown automatically.</p>
+
+<ul>
+<li>Max Cell Value: The maximum value in the source dataset. It can not be changed.</li>
+<li>Min Cell Value: The minimum value in the source dataset. It can not be changed.</li>
+</ul></li>
+
+<li><p>On the settings of parameters in Parameter Settings area, please refer to <a href="DriveContour.html" target="_blank">Extract isolines and isoregions</a>.</p></li>
+
+<li><p>Click &ldquo;Run&rdquo; image button to perform the operation.</p></li>
+</ol>
+
+<p><img src="img/DriveContourSpecific.png" alt="" /></p>
+
+<h3 id="related-topics">Related topics</h3>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContour.html" target="_blank">Extract all isolines/isoregions</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContourAll.html" target="_blank">Extract all isolines</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="ExtractIsoline.html" target="_blank">Extract isoline by points</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveRegionAll.html" target="_blank">Extract all isoregions</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveRegionSpecific.html" target="_blank">Extract specified isoregion</a></p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/docs/surfaceanalyst/drivecontour/" title="Extract Isolines/Isoregions"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Extract Isolines/Isoregions</a>
+<a class="nav nav-next" href="/docs/surfaceanalyst/driveregionspecific/" title="Extract Specified Isoregions">Next - Extract Specified Isoregions <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>Feedback</h2>
+  <p class="feedback--prompt">Was this page helpful? </p>
+  <button class="button feedback--yes">Yes</button>
+  <button class="button feedback--no">No</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cSurfaceAnalyst%5cDriveContourSpecific.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/docs\/surfaceanalyst\/drivecontourspecific\/",
+    "title" : "Extract Specified Isolines",
+    "permalink" : "https:\/\/docstest.github.io\/docs\/surfaceanalyst\/drivecontourspecific\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">Create an Issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/en/docs%5cSurfaceAnalyst%5cDriveContourSpecific.md" class="button issue">Edit This Page</a>
+    
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/docs/home/">Home</a>
+            
+            <a href="/blog/">Blog</a>
+            
+            <a href="/partners/">Partners</a>
+            
+            <a href="/community/">Community</a>
+            
+            <a href="/case-studies/">Case Studies</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">Contribute</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

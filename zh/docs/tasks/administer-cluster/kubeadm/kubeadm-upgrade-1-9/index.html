@@ -1,0 +1,3169 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>将 kubeadm 集群在 v1.8 版本到 v1.9 版本之间升级/降级 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-9/">
+<meta property="og:title" content="将 kubeadm 集群在 v1.8 版本到 v1.9 版本之间升级/降级">
+<meta name="twitter:title" content="将 kubeadm 集群在 v1.8 版本到 v1.9 版本之间升级/降级">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/">English</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                    <li><a href="/it/">Italian</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="Tasks" href="/zh/docs/tasks/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Install Tools">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Install and Set Up kubectl <small>(EN)</small>" href="/docs/tasks/tools/install-kubectl/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Install Minikube <small>(EN)</small>" href="/docs/tasks/tools/install-minikube/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Setup an extension API server" href="/zh/docs/tasks/access-kubernetes-api/setup-extension-api-server/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Configure Pods and Containers">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Configure Pods and Containers" href="/zh/docs/tasks/configure-pod-container/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Assign Memory Resources to Containers and Pods <small>(EN)</small>" href="/docs/tasks/configure-pod-container/assign-memory-resource/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Assign CPU Resources to Containers and Pods <small>(EN)</small>" href="/docs/tasks/configure-pod-container/assign-cpu-resource/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Quality of Service for Pods <small>(EN)</small>" href="/docs/tasks/configure-pod-container/quality-service-pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Assign Extended Resources to a Container <small>(EN)</small>" href="/docs/tasks/configure-pod-container/extended-resource/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod to Use a Volume for Storage <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-volume-storage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod to Use a PersistentVolume for Storage <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-persistent-volume-storage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod to Use a Projected Volume for Storage <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-projected-volume-storage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Security Context for a Pod or Container <small>(EN)</small>" href="/docs/tasks/configure-pod-container/security-context/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Service Accounts for Pods <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-service-account/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pull an Image from a Private Registry <small>(EN)</small>" href="/docs/tasks/configure-pod-container/pull-image-private-registry/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Liveness and Readiness Probes <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="将 Pod 分配给节点" href="/zh/docs/tasks/configure-pod-container/assign-pods-nodes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Pod Initialization <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-pod-initialization/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Attach Handlers to Container Lifecycle Events <small>(EN)</small>" href="/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod to Use a ConfigMap <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-pod-configmap/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Share Process Namespace between Containers in a Pod <small>(EN)</small>" href="/docs/tasks/configure-pod-container/share-process-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Translate a Docker Compose File to Kubernetes Resources <small>(EN)</small>" href="/docs/tasks/configure-pod-container/translate-compose-kubernetes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="给容器分配非透明整型资源" href="/zh/docs/tasks/configure-pod-container/opaque-integer-resource/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Administer a Cluster">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Administration with kubeadm">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Certificate Management with kubeadm <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm HA clusters from v1.11 to v1.12 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-12/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm HA clusters from v1.12 to v1.13 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-13/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.10 to v1.11 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-11/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.11 to v1.12 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-12/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.12 to v1.13 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-13/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Manage Memory, CPU, and API Resources">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Default Memory Requests and Limits for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Default CPU Requests and Limits for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Minimum and Maximum Memory Constraints for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Minimum and Maximum CPU Constraints for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Memory and CPU Quotas for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod Quota for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/quota-pod-namespace/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Install a Network Policy Provider">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use Calico for NetworkPolicy <small>(EN)</small>" href="/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use Cilium for NetworkPolicy <small>(EN)</small>" href="/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use Kube-router for NetworkPolicy <small>(EN)</small>" href="/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Romana for NetworkPolicy <small>(EN)</small>" href="/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Weave Net for NetworkPolicy <small>(EN)</small>" href="/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Access Clusters Using the Kubernetes API <small>(EN)</small>" href="/docs/tasks/administer-cluster/access-cluster-api/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Access Services Running on Clusters <small>(EN)</small>" href="/docs/tasks/administer-cluster/access-cluster-services/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Advertise Extended Resources for a Node <small>(EN)</small>" href="/docs/tasks/administer-cluster/extended-resource-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Autoscale the DNS Service in a Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/dns-horizontal-autoscaling/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Change the Reclaim Policy of a PersistentVolume <small>(EN)</small>" href="/docs/tasks/administer-cluster/change-pv-reclaim-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Change the default StorageClass <small>(EN)</small>" href="/docs/tasks/administer-cluster/change-default-storage-class/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cluster Management <small>(EN)</small>" href="/docs/tasks/administer-cluster/cluster-management/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Multiple Schedulers <small>(EN)</small>" href="/docs/tasks/administer-cluster/configure-multiple-schedulers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Out Of Resource Handling <small>(EN)</small>" href="/docs/tasks/administer-cluster/out-of-resource/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Quotas for API Objects <small>(EN)</small>" href="/docs/tasks/administer-cluster/quota-api-object/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Control CPU Management Policies on the Node <small>(EN)</small>" href="/docs/tasks/administer-cluster/cpu-management-policies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Customizing DNS Service <small>(EN)</small>" href="/docs/tasks/administer-cluster/dns-custom-nameservers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Debugging DNS Resolution <small>(EN)</small>" href="/docs/tasks/administer-cluster/dns-debugging-resolution/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Declare Network Policy <small>(EN)</small>" href="/docs/tasks/administer-cluster/declare-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Developing Cloud Controller Manager <small>(EN)</small>" href="/docs/tasks/administer-cluster/developing-cloud-controller-manager/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Encrypting Secret Data at Rest <small>(EN)</small>" href="/docs/tasks/administer-cluster/encrypt-data/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Guaranteed Scheduling For Critical Add-On Pods <small>(EN)</small>" href="/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="IP Masquerade Agent User Guide <small>(EN)</small>" href="/docs/tasks/administer-cluster/ip-masq-agent/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Cloud Controller Manager <small>(EN)</small>" href="/docs/tasks/administer-cluster/running-cloud-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Limit Storage Consumption <small>(EN)</small>" href="/docs/tasks/administer-cluster/limit-storage-consumption/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Namespaces Walkthrough <small>(EN)</small>" href="/docs/tasks/administer-cluster/namespaces-walkthrough/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Operating etcd clusters for Kubernetes <small>(EN)</small>" href="/docs/tasks/administer-cluster/configure-upgrade-etcd/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Reconfigure a Node&#39;s Kubelet in a Live Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/reconfigure-kubelet/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Reserve Compute Resources for System Daemons <small>(EN)</small>" href="/docs/tasks/administer-cluster/reserve-compute-resources/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Safely Drain a Node while Respecting Application SLOs <small>(EN)</small>" href="/docs/tasks/administer-cluster/safely-drain-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Securing a Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/securing-a-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set Kubelet parameters via a config file <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubelet-config-file/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up High-Availability Kubernetes Masters <small>(EN)</small>" href="/docs/tasks/administer-cluster/highly-available-master/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Share a Cluster with Namespaces <small>(EN)</small>" href="/docs/tasks/administer-cluster/namespaces/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Static Pods <small>(EN)</small>" href="/docs/tasks/administer-cluster/static-pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Storage Object in Use Protection <small>(EN)</small>" href="/docs/tasks/administer-cluster/storage-object-in-use-protection/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using CoreDNS for Service Discovery <small>(EN)</small>" href="/docs/tasks/administer-cluster/coredns/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using a KMS provider for data encryption <small>(EN)</small>" href="/docs/tasks/administer-cluster/kms-provider/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using sysctls in a Kubernetes Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/sysctl-cluster/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Accessing Clusters" href="/zh/docs/tasks/access-application-cluster/access-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Inject Data Into Applications">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Inject Data Into Applications" href="/zh/docs/tasks/inject-data-application/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="为容器设置启动时要执行的命令及其入参" href="/zh/docs/tasks/inject-data-application/define-command-argument-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="为容器设置环境变量" href="/zh/docs/tasks/inject-data-application/define-environment-variable-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 PodPreset 将信息注入 Pods" href="/zh/docs/tasks/inject-data-application/podpreset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Secret 安全地分发凭证" href="/zh/docs/tasks/inject-data-application/distribute-credentials-secure/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="通过文件将Pod信息呈现给容器" href="/zh/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="通过环境变量将Pod信息呈现给容器" href="/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Run Applications">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Run a Stateless Application Using a Deployment <small>(EN)</small>" href="/docs/tasks/run-application/run-stateless-application-deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Run a Single-Instance Stateful Application <small>(EN)</small>" href="/docs/tasks/run-application/run-single-instance-stateful-application/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Run a Replicated Stateful Application <small>(EN)</small>" href="/docs/tasks/run-application/run-replicated-stateful-application/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Update API Objects in Place Using kubectl patch <small>(EN)</small>" href="/docs/tasks/run-application/update-api-object-kubectl-patch/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Scale a StatefulSet <small>(EN)</small>" href="/docs/tasks/run-application/scale-stateful-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Delete a StatefulSet <small>(EN)</small>" href="/docs/tasks/run-application/delete-stateful-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Force Delete StatefulSet Pods <small>(EN)</small>" href="/docs/tasks/run-application/force-delete-stateful-set-pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Perform Rolling Update Using a Replication Controller <small>(EN)</small>" href="/docs/tasks/run-application/rolling-update-replication-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Horizontal Pod Autoscaler <small>(EN)</small>" href="/docs/tasks/run-application/horizontal-pod-autoscale/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Horizontal Pod Autoscaler Walkthrough <small>(EN)</small>" href="/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Specifying a Disruption Budget for your Application <small>(EN)</small>" href="/docs/tasks/run-application/configure-pdb/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Use Port Forwarding to Access Applications in a Cluster" href="/zh/docs/tasks/access-application-cluster/port-forward-access-application-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Run Jobs">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Run Jobs" href="/zh/docs/tasks/job/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Running Automated Tasks with a CronJob" href="/zh/docs/tasks/job/automated-tasks-with-cron-jobs/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Parallel Processing using Expansions <small>(EN)</small>" href="/docs/tasks/job/parallel-processing-expansion/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Coarse Parallel Processing Using a Work Queue <small>(EN)</small>" href="/docs/tasks/job/coarse-parallel-processing-work-queue/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用工作队列进行精细的并行处理" href="/zh/docs/tasks/job/fine-parallel-processing-work-queue/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Provide Load-Balanced Access to an Application in a Cluster" href="/zh/docs/tasks/access-application-cluster/load-balance-access-application-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Access Applications in a Cluster">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Web UI (Dashboard) <small>(EN)</small>" href="/docs/tasks/access-application-cluster/web-ui-dashboard/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Accessing Clusters <small>(EN)</small>" href="/docs/tasks/access-application-cluster/access-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Access to Multiple Clusters <small>(EN)</small>" href="/docs/tasks/access-application-cluster/configure-access-multiple-clusters/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use Port Forwarding to Access Applications in a Cluster <small>(EN)</small>" href="/docs/tasks/access-application-cluster/port-forward-access-application-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use a Service to Access an Application in a Cluster <small>(EN)</small>" href="/docs/tasks/access-application-cluster/service-access-application-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Connect a Front End to a Back End Using a Service <small>(EN)</small>" href="/docs/tasks/access-application-cluster/connecting-frontend-backend/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Create an External Load Balancer <small>(EN)</small>" href="/docs/tasks/access-application-cluster/create-external-load-balancer/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Your Cloud Provider&#39;s Firewalls <small>(EN)</small>" href="/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="List All Container Images Running in a Cluster <small>(EN)</small>" href="/docs/tasks/access-application-cluster/list-all-running-container-images/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up Ingress on Minikube with the NGINX Ingress Controller <small>(EN)</small>" href="/docs/tasks/access-application-cluster/ingress-minikube/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Communicate Between Containers in the Same Pod Using a Shared Volume <small>(EN)</small>" href="/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure DNS for a Cluster <small>(EN)</small>" href="/docs/tasks/access-application-cluster/configure-dns-cluster/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Use a Service to Access an Application in a Cluster" href="/zh/docs/tasks/access-application-cluster/service-access-application-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="删除 StatefulSet" href="/zh/docs/tasks/run-application/delete-stateful-set/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Monitor, Log, and Debug">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Monitor, Log, and Debug" href="/zh/docs/tasks/debug-application-cluster/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Application Introspection and Debugging <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/debug-application-introspection/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Auditing" href="/zh/docs/tasks/debug-application-cluster/audit/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Core metrics pipeline <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/core-metrics-pipeline/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Debug Init Containers <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/debug-init-containers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Debug Services <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/debug-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Debugging Kubernetes nodes with crictl <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/crictl/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Determine the Reason for Pod Failure <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/determine-reason-pod-failure/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Developing and debugging services locally <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/local-debugging/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Events in Stackdriver <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/events-stackdriver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Get a Shell to a Running Container <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/get-shell-running-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Logging Using Elasticsearch and Kibana <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Logging Using Stackdriver <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/logging-stackdriver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Monitor Node Health <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/monitor-node-health/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Tools for Monitoring Resources <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/resource-usage-monitoring/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Troubleshooting <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/troubleshooting/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="应用故障排查" href="/zh/docs/tasks/debug-application-cluster/debug-application/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="调试Pods和Replication Controllers" href="/zh/docs/tasks/debug-application-cluster/debug-pod-replication-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="调试StatefulSet" href="/zh/docs/tasks/debug-application-cluster/debug-stateful-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="集群故障排查" href="/zh/docs/tasks/debug-application-cluster/debug-cluster/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Create an External Load Balancer" href="/zh/docs/tasks/access-application-cluster/create-external-load-balancer/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Extend Kubernetes">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Use Custom Resources">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Extend the Kubernetes API with CustomResourceDefinitions <small>(EN)</small>" href="/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Versions of CustomResourceDefinitions <small>(EN)</small>" href="/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definition-versioning/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure the Aggregation Layer <small>(EN)</small>" href="/docs/tasks/access-kubernetes-api/configure-aggregation-layer/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Setup an Extension API Server <small>(EN)</small>" href="/docs/tasks/access-kubernetes-api/setup-extension-api-server/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use an HTTP Proxy to Access the Kubernetes API <small>(EN)</small>" href="/docs/tasks/access-kubernetes-api/http-proxy-access-api/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="配置你的云平台防火墙" href="/zh/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="TLS">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Certificate Rotation <small>(EN)</small>" href="/docs/tasks/tls/certificate-rotation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Manage TLS Certificates in a Cluster <small>(EN)</small>" href="/docs/tasks/tls/managing-tls-in-a-cluster/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="List All Container Images Running in a Cluster" href="/zh/docs/tasks/access-application-cluster/list-all-running-container-images/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Federation - Run an App on Multiple Clusters">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Federation - Run an App on Multiple Clusters" href="/zh/docs/tasks/federation/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up Cluster Federation with Kubefed <small>(EN)</small>" href="/docs/tasks/federation/set-up-cluster-federation-kubefed/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up CoreDNS as DNS provider for Cluster Federation <small>(EN)</small>" href="/docs/tasks/federation/set-up-coredns-provider-federation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up placement policies in Federation <small>(EN)</small>" href="/docs/tasks/federation/set-up-placement-policies-federation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cross-cluster Service Discovery using Federated Services <small>(EN)</small>" href="/docs/tasks/federation/federation-service-discovery/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Administer Federation Control Plane">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Cluster <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated ConfigMap <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/configmap/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated DaemonSet <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/daemonset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Deployment <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Events <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/events/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Horizontal Pod Autoscalers (HPA) <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/hpa/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Ingress <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/ingress/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Jobs <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/job/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Namespaces <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/namespaces/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated ReplicaSets <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/replicaset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Secrets <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/secret/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Configure DNS for a Cluster" href="/zh/docs/tasks/access-application-cluster/configure-dns-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Manage Cluster Daemons">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Perform a Rollback on a DaemonSet <small>(EN)</small>" href="/docs/tasks/manage-daemon/rollback-daemon-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Perform a Rolling Update on a DaemonSet <small>(EN)</small>" href="/docs/tasks/manage-daemon/update-daemon-set/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Install Service Catalog">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Install Service Catalog using Helm <small>(EN)</small>" href="/docs/tasks/service-catalog/install-service-catalog-using-helm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Install Service Catalog using SC <small>(EN)</small>" href="/docs/tasks/service-catalog/install-service-catalog-using-sc/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Federation - Run an App on Multiple Clusters">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Federation - Run an App on Multiple Clusters" href="/zh/docs/tasks/administer-federation/"></a>
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Administer-clusters">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Administration with kubeadm">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Certificate Management with kubeadm <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm HA clusters from v1.11 to v1.12 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-12/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm HA clusters from v1.12 to v1.13 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-13/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.10 to v1.11 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-11/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.11 to v1.12 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-12/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.12 to v1.13 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-13/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Manage Memory, CPU, and API Resources">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Manage Memory, CPU, and API Resources" href="/zh/docs/tasks/administer-cluster/manage-resources/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Configure Default Memory Requests and Limits for a Namespace" href="/zh/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Configure Default CPU Requests and Limits for a Namespace" href="/zh/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Configure Minimum and Maximum Memory Constraints for a Namespace" href="/zh/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Configure Minimum and Maximum CPU Constraints for a Namespace" href="/zh/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Configure Memory and CPU Quotas for a Namespace" href="/zh/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod Quota for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/quota-pod-namespace/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Install a Network Policy Provider">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Install a Network Policy Provider" href="/zh/docs/tasks/administer-cluster/network-policy-provider/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="使用 Calico 作为 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Cilium 作为 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Kube-router 作为 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Romana 作为 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Weave Net 作为 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Access Clusters Using the Kubernetes API <small>(EN)</small>" href="/docs/tasks/administer-cluster/access-cluster-api/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Advertise Extended Resources for a Node <small>(EN)</small>" href="/docs/tasks/administer-cluster/extended-resource-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Autoscale the DNS Service in a Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/dns-horizontal-autoscaling/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Multiple Schedulers <small>(EN)</small>" href="/docs/tasks/administer-cluster/configure-multiple-schedulers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Out Of Resource Handling <small>(EN)</small>" href="/docs/tasks/administer-cluster/out-of-resource/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Quotas for API Objects <small>(EN)</small>" href="/docs/tasks/administer-cluster/quota-api-object/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Debugging DNS Resolution <small>(EN)</small>" href="/docs/tasks/administer-cluster/dns-debugging-resolution/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Developing Cloud Controller Manager <small>(EN)</small>" href="/docs/tasks/administer-cluster/developing-cloud-controller-manager/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Encrypting Secret Data at Rest" href="/zh/docs/tasks/administer-cluster/encrypt-data/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="IP Masquerade Agent User Guide <small>(EN)</small>" href="/docs/tasks/administer-cluster/ip-masq-agent/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Cloud Controller Manager <small>(EN)</small>" href="/docs/tasks/administer-cluster/running-cloud-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Limit Storage Consumption <small>(EN)</small>" href="/docs/tasks/administer-cluster/limit-storage-consumption/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Namespaces Walkthrough <small>(EN)</small>" href="/docs/tasks/administer-cluster/namespaces-walkthrough/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Operating etcd clusters for Kubernetes <small>(EN)</small>" href="/docs/tasks/administer-cluster/configure-upgrade-etcd/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Reconfigure a Node&#39;s Kubelet in a Live Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/reconfigure-kubelet/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Reserve Compute Resources for System Daemons <small>(EN)</small>" href="/docs/tasks/administer-cluster/reserve-compute-resources/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Safely Drain a Node while Respecting Application SLOs <small>(EN)</small>" href="/docs/tasks/administer-cluster/safely-drain-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Securing a Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/securing-a-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up High-Availability Kubernetes Masters <small>(EN)</small>" href="/docs/tasks/administer-cluster/highly-available-master/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Share a Cluster with Namespaces <small>(EN)</small>" href="/docs/tasks/administer-cluster/namespaces/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Storage Object in Use Protection <small>(EN)</small>" href="/docs/tasks/administer-cluster/storage-object-in-use-protection/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using CoreDNS for Service Discovery <small>(EN)</small>" href="/docs/tasks/administer-cluster/coredns/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using a KMS provider for data encryption <small>(EN)</small>" href="/docs/tasks/administer-cluster/kms-provider/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Calico 来提供 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/calico-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Romana 来提供 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/romana-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Weave 网络来提供 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/weave-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="关键插件 Pod 的调度保证" href="/zh/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="在 Kubernetes 中配置私有 DNS 和上游域名服务器" href="/zh/docs/tasks/administer-cluster/dns-custom-nameservers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="在 Kubernetes 集群中使用 sysctl" href="/zh/docs/tasks/administer-cluster/sysctl-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="声明网络策略" href="/zh/docs/tasks/administer-cluster/declare-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="将 kubeadm 集群在 v1.8 版本到 v1.9 版本之间升级/降级" href="/zh/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-9/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="应用资源配额和限额" href="/zh/docs/tasks/administer-cluster/apply-resource-quota-limit/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="控制节点上的CPU管理策略" href="/zh/docs/tasks/administer-cluster/cpu-management-policies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="改变默认 StorageClass" href="/zh/docs/tasks/administer-cluster/change-default-storage-class/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="更改 PersistentVolume 的回收策略" href="/zh/docs/tasks/administer-cluster/change-pv-reclaim-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="设置 Pod CPU 和内存限制" href="/zh/docs/tasks/administer-cluster/cpu-memory-limit/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="访问集群上运行的服务" href="/zh/docs/tasks/administer-cluster/access-cluster-services/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="通过配置文件设置 Kubelet 参数" href="/zh/docs/tasks/administer-cluster/kubelet-config-file/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="配置命名空间下pod总数" href="/zh/docs/tasks/administer-cluster/quota-pod-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="集群管理" href="/zh/docs/tasks/administer-cluster/cluster-management/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="静态Pods" href="/zh/docs/tasks/administer-cluster/static-pod/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Extend kubectl with plugins <small>(EN)</small>" href="/docs/tasks/extend-kubectl/kubectl-plugins/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Service 把前端连接到后端" href="/zh/docs/tasks/access-application-cluster/connecting-frontend-backend/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用Deployment运行一个无状态应用" href="/zh/docs/tasks/run-application/run-stateless-application-deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="同 Pod 内的容器使用共享卷通信" href="/zh/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="基于Replication Controller执行滚动升级" href="/zh/docs/tasks/run-application/rolling-update-replication-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="对 DaemonSet 执行回滚" href="/zh/docs/tasks/manage-daemon/rollback-daemon-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="弹缩StatefulSet" href="/zh/docs/tasks/run-application/scale-stateful-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理巨页（HugePages）" href="/zh/docs/tasks/manage-hugepages/scheduling-hugepages/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="证书轮换" href="/zh/docs/tasks/tls/certificate-rotation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="调度 GPU" href="/zh/docs/tasks/manage-gpus/scheduling-gpus/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="运行一个单实例有状态应用" href="/zh/docs/tasks/run-application/run-single-instance-stateful-application/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="配置对多集群的访问" href="/zh/docs/tasks/access-application-cluster/configure-access-multiple-clusters/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5ctasks%5cadminister-cluster%5ckubeadm%5ckubeadm-upgrade-1-9.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>将 kubeadm 集群在 v1.8 版本到 v1.9 版本之间升级/降级</h1>
+
+
+
+
+<!--
+
+This guide is for upgrading `kubeadm` clusters from version 1.8.x to 1.9.x, as well as 1.8.x to 1.8.y and 1.9.x to 1.9.y where `y > x`.
+See also [upgrading kubeadm clusters from 1.7 to 1.8](/docs/tasks/administer-cluster/kubeadm-upgrade-1-8/) if you're on a 1.7 cluster currently.
+
+--->
+
+<p>本文主要描述如何将 <code>kubeadm</code> 集群从 1.8.x 版本升级到 1.9.x 版本，包括从 1.8.x 版本升级到 1.8.y 版本，和从版本 1.9.x 版本到 1.9.y 版本（<code>y &gt; x</code>）。
+如果您目前安装的是集群是 1.7 版本，也可以查看<a href="/docs/tasks/administer-cluster/kubeadm-upgrade-1-8/"> kubeadm clusters 集群从 1.7 版本升级到 1.8 版本</a></p>
+
+
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%e5%87%86%e5%a4%87%e5%bc%80%e5%a7%8b">准备开始</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="#%e5%8d%87%e7%ba%a7%e6%8e%a7%e5%88%b6%e9%9d%a2%e6%9d%bf">升级控制面板</a></li>
+
+
+
+
+<li><a href="#%e5%8d%87%e7%ba%a7master%e5%92%8cnode%e5%8c%85">升级master和node包</a></li>
+
+
+
+
+<li><a href="#recovering-from-a-failure-state">Recovering from a failure state</a></li>
+
+
+
+
+<li><a href="#%e4%bb%8e%e5%9d%8f%e7%9a%84%e7%8a%b6%e6%80%81%e4%b8%ad%e6%81%a2%e5%a4%8d">##从坏的状态中恢复</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+<h2 id="准备开始">准备开始</h2>
+<!--
+
+Before proceeding:
+
+- You need to have a functional `kubeadm` Kubernetes cluster running version 1.8.0 or higher in order to use the process described here. Swap also needs to be disabled.
+- Make sure you read the [release notes](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.9.md) carefully.
+- `kubeadm upgrade` now allows you to upgrade etcd. `kubeadm upgrade` will also upgrade of etcd to 3.1.10 as part of upgrading from v1.8 to v1.9 by default. This is due to the fact that etcd 3.1.10 is the officially validated etcd version for Kubernetes v1.9. The upgrade is handled automatically by kubeadm for you.
+- Note that `kubeadm upgrade` will not touch any of your workloads, only Kubernetes-internal components. As a best-practice you should back up what's important to you. For example, any app-level state, such as a database an app might depend on (like MySQL or MongoDB) must be backed up beforehand.
+
+--->
+
+<p>升级之前：</p>
+
+<ul>
+<li>您需要先安装一个版本为 1.8.0 或更高版本的 <code>kubeadm</code> Kubernetes 集群。另外还需要禁用节点的交换分区。</li>
+<li>一定要认真阅读<a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.9.md" target="_blank">发布说明</a></li>
+<li><code>kubeadm upgrade</code> 可以更新 etcd。默认情况下，从 Kubernetes 1.8 版本升级到 1.9 版本时，<code>kubeadm upgrade</code> 也会升级 etcd 到 3.1.10 版本。这是由于 etcd3.1.10 是官方验证的 etcd 版本对于 kubernetes1.9。kubeadm 为您提供了自动化的升级过程。</li>
+<li>请注意，<code>kubeadm upgrade</code>命令 不会触及任何工作负载，只有 kubernetes 内部组件。作为最佳实践，您应当备份，因为备份相当的重要。例如，任何应用程序级别的状态（如应用程序可能依赖的数据库，如 mysql 或 mongoDB）必须预先备份。
+<blockquote class="caution">
+<div><strong>Caution:</strong> &lt;!&ndash;</li>
+</ul>
+
+<p>All the containers will get restarted after the upgrade, due to container spec hash value gets changed.</p>
+
+<p>&mdash;&gt;</p>
+
+<p><p><strong>注意:</strong> 由于容器的具体哈希值改变了，所有的容器在升级之后会重新启动。</div>
+</blockquote></p>
+
+<!--
+
+Also, note that only one minor version upgrade is supported. For example, you can only upgrade from 1.8 to 1.9, not from 1.7 to 1.9.
+
+--->
+
+<p>同时，也要注意只有小范围的升级是支持的。例如，您只可以从 1.8 版本升级到 1.9 版本，但是不能从 1.7 版本升级到 1.9 版本。</p>
+
+
+
+
+<!--
+
+## Upgrading your control plane
+
+-->
+
+<h2 id="升级控制面板">升级控制面板</h2>
+
+<!--
+
+Execute these commands on your master node:
+
+1. Install the most recent version of `kubeadm` using `curl` like so:
+
+-->
+
+<p>在您的 master 节点上执行这些命令：</p>
+
+<ol>
+<li>使用 <code>curl</code> 命令进行安装最新的版本的 <code>kubeadm</code> ，例如：
+<code>shell
+export VERSION=$(curl -sSL https://dl.k8s.io/release/stable.txt) # or manually specify a released Kubernetes version
+export ARCH=amd64 # or: arm, arm64, ppc64le, s390x
+curl -sSL https://dl.k8s.io/release/${VERSION}/bin/linux/${ARCH}/kubeadm &gt; /usr/bin/kubeadm
+chmod a+rx /usr/bin/kubeadm
+</code></li>
+</ol>
+
+<blockquote class="caution">
+  <div><strong>Caution:</strong> <!--
+
+Upgrading the `kubeadm` package on your system prior to upgrading the control plane causes a failed upgrade. 
+Even though `kubeadm` ships in the Kubernetes repositories, it's important to install `kubeadm` manually. The kubeadm 
+team is working on fixing this limitation. 
+
+--->
+
+<p><strong>注意:</strong> 在您的系统上升级控制面板之前升级 <code>kubeadm</code> 包会导致升级失败。
+尽管 <code>kubeadm</code> ships 在 kubernetes 仓库中，手动安装 <code>kubeadm</code> 是重要的。kubeadm 团队在努力解决这种手动安装的限制。</div>
+</blockquote>
+
+<!--
+
+Verify that this download of kubeadm works and has the expected version:
+
+--->
+
+<p>验证 kubeadm 下载工作是否正常，并是否有达到预期的版本：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubeadm version</code></pre></div>
+<!--
+
+2. On the master node, run the following:
+
+--->
+
+<ol>
+<li>在master节点上运行如下命令：
+<code>shell
+kubeadm upgrade plan
+</code>
+&lt;!&ndash;</li>
+</ol>
+
+<p>You should see output similar to this:</p>
+
+<p>&mdash;&gt;
+可以得到类型的结果：
+&lt;!&ndash;</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>preflight<span style="color:#666">]</span> Running pre-flight checks
+<span style="color:#666">[</span>upgrade<span style="color:#666">]</span> Making sure the cluster is healthy:
+<span style="color:#666">[</span>upgrade/health<span style="color:#666">]</span> Checking API Server health: Healthy
+<span style="color:#666">[</span>upgrade/health<span style="color:#666">]</span> Checking Node health: All Nodes are healthy
+<span style="color:#666">[</span>upgrade/health<span style="color:#666">]</span> Checking Static Pod manifests exists on disk: All manifests exist on disk
+<span style="color:#666">[</span>upgrade/config<span style="color:#666">]</span> Making sure the configuration is correct:
+<span style="color:#666">[</span>upgrade/config<span style="color:#666">]</span> Reading configuration from the cluster...
+<span style="color:#666">[</span>upgrade/config<span style="color:#666">]</span> FYI: You can look at this config file with <span style="color:#b44">&#39;kubectl -n kube-system get cm kubeadm-config -o yaml&#39;</span>
+<span style="color:#666">[</span>upgrade<span style="color:#666">]</span> Fetching available versions to upgrade to:
+<span style="color:#666">[</span>upgrade/versions<span style="color:#666">]</span> Cluster version: v1.8.1
+<span style="color:#666">[</span>upgrade/versions<span style="color:#666">]</span> kubeadm version: v1.9.0
+<span style="color:#666">[</span>upgrade/versions<span style="color:#666">]</span> Latest stable version: v1.9.0
+<span style="color:#666">[</span>upgrade/versions<span style="color:#666">]</span> Latest version in the v1.8 series: v1.8.6
+
+Components that must be upgraded manually after you<span style="color:#b44">&#39;ve upgraded the control plane with &#39;</span>kubeadm upgrade apply<span style="color:#b44">&#39;:
+</span><span style="color:#b44">
+</span><span style="color:#b44">COMPONENT   CURRENT      AVAILABLE
+</span><span style="color:#b44">Kubelet     1 x v1.8.1   v1.8.6
+</span><span style="color:#b44">
+</span><span style="color:#b44">Upgrade to the latest version in the v1.8 series:
+</span><span style="color:#b44">
+</span><span style="color:#b44">COMPONENT            CURRENT   AVAILABLE
+</span><span style="color:#b44">API Server           v1.8.1    v1.8.6
+</span><span style="color:#b44">Controller Manager   v1.8.1    v1.8.6
+</span><span style="color:#b44">Scheduler            v1.8.1    v1.8.6
+</span><span style="color:#b44">Kube Proxy           v1.8.1    v1.8.6
+</span><span style="color:#b44">Kube DNS             1.14.4    1.14.5
+</span><span style="color:#b44">
+</span><span style="color:#b44">You can now apply the upgrade by executing the following command:
+</span><span style="color:#b44">
+</span><span style="color:#b44">    kubeadm upgrade apply v1.8.6
+</span><span style="color:#b44">
+</span><span style="color:#b44">    _____________________________________________________________________
+</span><span style="color:#b44">
+</span><span style="color:#b44">    Components that must be upgraded manually after you&#39;</span>ve upgraded the control plane with <span style="color:#b44">&#39;kubeadm upgrade apply&#39;</span>:
+
+    COMPONENT   CURRENT      AVAILABLE
+    Kubelet     <span style="color:#666">1</span> x v1.8.1   v1.9.0
+
+    Upgrade to the latest stable version:
+
+    COMPONENT            CURRENT   AVAILABLE
+    API Server           v1.8.1    v1.9.0
+    Controller Manager   v1.8.1    v1.9.0
+    Scheduler            v1.8.1    v1.9.0
+    Kube Proxy           v1.8.1    v1.9.0
+    Kube DNS             <span style="color:#666">1</span>.14.5    <span style="color:#666">1</span>.14.7
+
+    You can now apply the upgrade by executing the following command:
+
+        kubeadm upgrade apply v1.9.0
+
+        Note: Before you <span style="color:#a2f;font-weight:bold">do</span> can perform this upgrade, you have to update kubeadm to v1.9.0
+
+_____________________________________________________________________</code></pre></div>
+<p>&mdash;&gt;</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> <span style="color:#666">[</span>preflight<span style="color:#666">]</span> Running pre-flight checks
+ <span style="color:#666">[</span>upgrade<span style="color:#666">]</span> Making sure the cluster is healthy:
+ <span style="color:#666">[</span>upgrade/health<span style="color:#666">]</span> Checking API Server health: Healthy
+ <span style="color:#666">[</span>upgrade/health<span style="color:#666">]</span> Checking Node health: All Nodes are healthy
+ <span style="color:#666">[</span>upgrade/health<span style="color:#666">]</span> Checking Static Pod manifests exists on disk: All manifests exist on disk
+ <span style="color:#666">[</span>upgrade/config<span style="color:#666">]</span> Making sure the configuration is correct:
+ <span style="color:#666">[</span>upgrade/config<span style="color:#666">]</span> Reading configuration from the cluster...
+ <span style="color:#666">[</span>upgrade/config<span style="color:#666">]</span> FYI: You can look at this config file with <span style="color:#b44">&#39;kubectl -n kube-system get cm kubeadm-config -o yaml&#39;</span>
+ <span style="color:#666">[</span>upgrade<span style="color:#666">]</span> Fetching available versions to upgrade to:
+ <span style="color:#666">[</span>upgrade/versions<span style="color:#666">]</span> Cluster version: v1.8.1
+ <span style="color:#666">[</span>upgrade/versions<span style="color:#666">]</span> kubeadm version: v1.9.0
+ <span style="color:#666">[</span>upgrade/versions<span style="color:#666">]</span> Latest stable version: v1.9.0
+ <span style="color:#666">[</span>upgrade/versions<span style="color:#666">]</span> Latest version in the v1.8 series: v1.8.6
+
+   在升级控制面板并使用 <span style="color:#b44">&#39;kubeadm upgrade apply&#39;</span> 后，必须手动升级组件：
+    COMPONENT   CURRENT      AVAILABLE
+     Kubelet     <span style="color:#666">1</span> x v1.8.1   v1.8.6
+
+    升级到最新的 v1.8 系列的版本：
+    COMPONENT            CURRENT   AVAILABLE
+    API Server           v1.8.1    v1.8.6
+    Controller Manager   v1.8.1    v1.8.6
+    Scheduler            v1.8.1    v1.8.6
+    Kube Proxy           v1.8.1    v1.8.6
+    Kube DNS             <span style="color:#666">1</span>.14.4    <span style="color:#666">1</span>.14.5
+
+    您可以通过以下的命令来进行升级：
+      kubeadm upgrade apply v1.8.6
+
+    _____________________________________________________________________
+
+    在升级控制面板并使用 <span style="color:#b44">&#39;kubeadm upgrade apply&#39;</span> 后，必须手动升级组件：
+    COMPONENT   CURRENT      AVAILABLE
+    Kubelet     <span style="color:#666">1</span> x v1.8.1   v1.9.0
+
+    升级到最新和稳定的版本：
+    COMPONENT            CURRENT   AVAILABLE
+    API Server           v1.8.1    v1.9.0
+    Controller Manager   v1.8.1    v1.9.0
+    Scheduler            v1.8.1    v1.9.0
+    Kube Proxy           v1.8.1    v1.9.0
+    Kube DNS             <span style="color:#666">1</span>.14.5    <span style="color:#666">1</span>.14.7
+
+    您可以通过以下命令来进行升级：
+    kubeadm upgrade apply v1.9.0
+
+    请注意：在您执行升级之前，您必须升级 kubeadm 到 v1.9.0 版本
+_____________________________________________________________________</code></pre></div>
+<!--
+
+The `kubeadm upgrade plan` checks that your cluster is upgradeable and fetches the versions available to upgrade to in an user-friendly way.
+
+To check CoreDNS version, include the `--feature-gates=CoreDNS=true` flag to verify the CoreDNS version which will be installed in place of kube-dns.
+
+3. Pick a version to upgrade to and run. For example:
+
+--->
+
+<p><code>kubeadm upgrade plan</code> 命令检查您的集群是否处于可升级的状态并且获取可以以用户友好方式升级的版本。</p>
+
+<p>检查 coreDNS 版本，包括 <code>--feature-gates=CoreDNS=true</code> 标志来验证存放 kube-dns 在某个位置的 coreDNS 版本。</p>
+
+<ol>
+<li>选择一个版本来进行升级和运行，例如：
+<code>shell
+kubeadm upgrade apply v1.9.0
+</code>
+&lt;!&ndash;</li>
+</ol>
+
+<p>You should see output similar to this:</p>
+
+<p>&mdash;&gt;
+可以得到如下类似的输出：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>preflight<span style="color:#666">]</span> Running pre-flight checks.
+<span style="color:#666">[</span>upgrade<span style="color:#666">]</span> Making sure the cluster is healthy:
+<span style="color:#666">[</span>upgrade/config<span style="color:#666">]</span> Making sure the configuration is correct:
+<span style="color:#666">[</span>upgrade/config<span style="color:#666">]</span> Reading configuration from the cluster...
+<span style="color:#666">[</span>upgrade/config<span style="color:#666">]</span> FYI: You can look at this config file with <span style="color:#b44">&#39;kubectl -n kube-system get cm kubeadm-config -oyaml&#39;</span>
+<span style="color:#666">[</span>upgrade/version<span style="color:#666">]</span> You have chosen to upgrade to version <span style="color:#b44">&#34;v1.9.0&#34;</span>
+<span style="color:#666">[</span>upgrade/versions<span style="color:#666">]</span> Cluster version: v1.8.1
+<span style="color:#666">[</span>upgrade/versions<span style="color:#666">]</span> kubeadm version: v1.9.0
+<span style="color:#666">[</span>upgrade/confirm<span style="color:#666">]</span> Are you sure you want to proceed with the upgrade? <span style="color:#666">[</span>y/N<span style="color:#666">]</span>: y
+<span style="color:#666">[</span>upgrade/prepull<span style="color:#666">]</span> Will prepull images <span style="color:#a2f;font-weight:bold">for</span> components <span style="color:#666">[</span>kube-apiserver kube-controller-manager kube-scheduler<span style="color:#666">]</span>
+<span style="color:#666">[</span>upgrade/apply<span style="color:#666">]</span> Upgrading your Static Pod-hosted control plane to version <span style="color:#b44">&#34;v1.9.0&#34;</span>...
+<span style="color:#666">[</span>etcd<span style="color:#666">]</span> Wrote Static Pod manifest <span style="color:#a2f;font-weight:bold">for</span> a <span style="color:#a2f">local</span> etcd instance to <span style="color:#b44">&#34;/etc/kubernetes/tmp/kubeadm-upgraded-manifests802453804/etcd.yaml&#34;</span>
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Moved upgraded manifest to <span style="color:#b44">&#34;/etc/kubernetes/manifests/etcd.yaml&#34;</span> and backed up old manifest to <span style="color:#b44">&#34;/etc/kubernetes/tmp/kubeadm-backup-manifests502223003/etcd.yaml&#34;</span>
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Waiting <span style="color:#a2f;font-weight:bold">for</span> the kubelet to restart the component
+<span style="color:#666">[</span>apiclient<span style="color:#666">]</span> Found <span style="color:#666">1</span> Pods <span style="color:#a2f;font-weight:bold">for</span> label selector <span style="color:#b8860b">component</span><span style="color:#666">=</span>etcd
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Component <span style="color:#b44">&#34;etcd&#34;</span> upgraded successfully!
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Writing upgraded Static Pod manifests to <span style="color:#b44">&#34;/etc/kubernetes/tmp/kubeadm-upgraded-manifests802453804&#34;</span>
+<span style="color:#666">[</span>controlplane<span style="color:#666">]</span> Wrote Static Pod manifest <span style="color:#a2f;font-weight:bold">for</span> component kube-apiserver to <span style="color:#b44">&#34;/etc/kubernetes/tmp/kubeadm-upgraded-manifests802453804/kube-apiserver.yaml&#34;</span>
+<span style="color:#666">[</span>controlplane<span style="color:#666">]</span> Wrote Static Pod manifest <span style="color:#a2f;font-weight:bold">for</span> component kube-controller-manager to <span style="color:#b44">&#34;/etc/kubernetes/tmp/kubeadm-upgraded-manifests802453804/kube-controller-manager.yaml&#34;</span>
+<span style="color:#666">[</span>controlplane<span style="color:#666">]</span> Wrote Static Pod manifest <span style="color:#a2f;font-weight:bold">for</span> component kube-scheduler to <span style="color:#b44">&#34;/etc/kubernetes/tmp/kubeadm-upgraded-manifests802453804/kube-scheduler.yaml&#34;</span>
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Moved upgraded manifest to <span style="color:#b44">&#34;/etc/kubernetes/manifests/kube-apiserver.yaml&#34;</span> and backed up old manifest to <span style="color:#b44">&#34;/etc/kubernetes/tmp/kubeadm-backup-manifests502223003/kube-apiserver.yaml&#34;</span>
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Waiting <span style="color:#a2f;font-weight:bold">for</span> the kubelet to restart the component
+<span style="color:#666">[</span>apiclient<span style="color:#666">]</span> Found <span style="color:#666">1</span> Pods <span style="color:#a2f;font-weight:bold">for</span> label selector <span style="color:#b8860b">component</span><span style="color:#666">=</span>kube-apiserver
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Component <span style="color:#b44">&#34;kube-apiserver&#34;</span> upgraded successfully!
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Moved upgraded manifest to <span style="color:#b44">&#34;/etc/kubernetes/manifests/kube-controller-manager.yaml&#34;</span> and backed up old manifest to <span style="color:#b44">&#34;/etc/kubernetes/tmp/kubeadm-backup-manifests502223003/kube-controller-manager.yaml&#34;</span>
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Waiting <span style="color:#a2f;font-weight:bold">for</span> the kubelet to restart the component
+<span style="color:#666">[</span>apiclient<span style="color:#666">]</span> Found <span style="color:#666">1</span> Pods <span style="color:#a2f;font-weight:bold">for</span> label selector <span style="color:#b8860b">component</span><span style="color:#666">=</span>kube-controller-manager
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Component <span style="color:#b44">&#34;kube-controller-manager&#34;</span> upgraded successfully!
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Moved upgraded manifest to <span style="color:#b44">&#34;/etc/kubernetes/manifests/kube-scheduler.yaml&#34;</span> and backed up old manifest to <span style="color:#b44">&#34;/etc/kubernetes/tmp/kubeadm-backup-manifests502223003/kube-scheduler.yaml&#34;</span>
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Waiting <span style="color:#a2f;font-weight:bold">for</span> the kubelet to restart the component
+<span style="color:#666">[</span>apiclient<span style="color:#666">]</span> Found <span style="color:#666">1</span> Pods <span style="color:#a2f;font-weight:bold">for</span> label selector <span style="color:#b8860b">component</span><span style="color:#666">=</span>kube-scheduler
+<span style="color:#666">[</span>upgrade/staticpods<span style="color:#666">]</span> Component <span style="color:#b44">&#34;kube-scheduler&#34;</span> upgraded successfully!
+<span style="color:#666">[</span>uploadconfig<span style="color:#666">]</span> Storing the configuration used in ConfigMap <span style="color:#b44">&#34;kubeadm-config&#34;</span> in the <span style="color:#b44">&#34;kube-system&#34;</span> Namespace
+<span style="color:#666">[</span>bootstraptoken<span style="color:#666">]</span> Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order <span style="color:#a2f;font-weight:bold">for</span> nodes to get long term certificate credentials
+<span style="color:#666">[</span>bootstraptoken<span style="color:#666">]</span> Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+<span style="color:#666">[</span>bootstraptoken<span style="color:#666">]</span> Configured RBAC rules to allow certificate rotation <span style="color:#a2f;font-weight:bold">for</span> all node client certificates in the cluster
+<span style="color:#666">[</span>addons<span style="color:#666">]</span> Applied essential addon: kube-dns
+<span style="color:#666">[</span>addons<span style="color:#666">]</span> Applied essential addon: kube-proxy
+
+<span style="color:#666">[</span>upgrade/successful<span style="color:#666">]</span> SUCCESS! Your cluster was upgraded to <span style="color:#b44">&#34;v1.9.0&#34;</span>. Enjoy!
+
+<span style="color:#666">[</span>upgrade/kubelet<span style="color:#666">]</span> Now that your control plane is upgraded, please proceed with upgrading your kubelets in turn.</code></pre></div>
+<!--
+
+To upgrade the cluster with CoreDNS as the default internal DNS, invoke `kubeadm upgrade apply` with the `--feature-gates=CoreDNS=true` flag.
+`kubeadm upgrade apply` does the following:
+
+- Checks that your cluster is in an upgradeable state:
+  - The API server is reachable,
+  - All nodes are in the `Ready` state
+  - The control plane is healthy
+- Enforces the version skew policies.
+- Makes sure the control plane images are available or available to pull to the machine.
+- Upgrades the control plane components or rollbacks if any of them fails to come up.
+- Applies the new `kube-dns` and `kube-proxy` manifests and enforces that all necessary RBAC rules are created.
+- Creates new certificate and key files of apiserver and backs up old files if they're about to expire in 180 days.
+
+--->
+
+<p>升级具有默认内部的 DNS 的 coreDNS 集群，调用具有 <code>--feature-gates=CoreDNS=true</code> 标记的 <code>kubeadm upgrade apply</code>。
+<code>kubeadm upgrade apply</code>按照如下进行：</p>
+
+<ul>
+<li>检查集群是否处于可升级状态：
+-API服务器是否可达
+-所有的节点处于<code>Ready</code>状态
+-控制面板是健康的</li>
+<li>强制执行版本倾斜策略</li>
+<li>确保控制面板镜像可用或者可用于机器pull</li>
+<li>升级控制面板组件或者回滚如果其中一个无法出现</li>
+<li>应用新的<code>kube-dns</code>和<code>kube-proxy</code>清单并强制创建所必须的RBAC规则</li>
+<li>创建API服务器新的证书和秘钥文件，并备份旧文件（如果它们即将在180天到期）
+&lt;!&ndash;</li>
+</ul>
+
+<ol>
+<li>Manually upgrade your Software Defined Network (SDN).</li>
+</ol>
+
+<p>Your Container Network Interface (CNI) provider may have its own upgrade instructions to follow.
+   Check the <a href="/docs/concepts/cluster-administration/addons/">addons</a> page to find your CNI provider and see if there are additional      upgrade steps necessary.</p>
+
+<p>&mdash;&gt;</p>
+
+<ol>
+<li>手动升级定义网络（SDN）的软件</li>
+</ol>
+
+<p>容器网络接口（CNI）提供者具有升级说明指导。
+   检查这个<a href="/docs/concepts/cluster-administration/addons/">插件</a>页面来找到 CNI 提供者和查看是否需要额外的升级步骤。</p>
+
+<!--
+
+## Upgrading your master and node packages
+
+--->
+
+<h2 id="升级master和node包">升级master和node包</h2>
+
+<!--
+For each host (referred to as `$HOST` below) in your cluster, upgrade `kubelet` by executing the following commands:
+
+1. Prepare the host for maintenance, marking it unschedulable and evicting the workload:
+--->
+
+<p>在集群中涉及 <code>$HOST</code> 的每个主机，执行如下命令来升级 <code>kubelet</code> ：</p>
+
+<ol>
+<li>准备主机维修，并标记为不可调度和驱逐工作负载：
+<code>shell
+kubectl drain $HOST --ignore-daemonsets
+</code>
+&lt;!&ndash;</li>
+</ol>
+
+<p>When running this command against the master host, this error is expected and can be safely ignored (since there are static pods running on the master):</p>
+
+<p>&mdash;&gt;
+当在 master 主机上运行这个命令，这个错误是可以预料的并且可以忽略（因为静态的 pods 运行在 master 上）</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node <span style="color:#b44">&#34;master&#34;</span> already cordoned
+error: pods not managed by ReplicationController, ReplicaSet, Job, DaemonSet or StatefulSet <span style="color:#666">(</span>use --force to override<span style="color:#666">)</span>: etcd-kubeadm, kube-apiserver-kubeadm, kube-controller-manager-kubeadm, kube-scheduler-kubeadm</code></pre></div>
+<!-- 
+
+2. Upgrade the Kubernetes package versions on the `$HOST` node by using a Linux distribution-specific package manager:
+
+If the host is running a Debian-based distro such as Ubuntu, run:
+
+--->
+
+<ol>
+<li>在 <code>$HOST</code> 节点上使用特定的包管理器升级 kubernetes 包版本：</li>
+</ol>
+
+<p>如果主机运行 Debian-based 发行版如 ubuntu，运行如下：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">apt-get update
+apt-get upgrade</code></pre></div>
+<!--
+
+If the host is running CentOS or the like, run:
+
+--->
+
+<p>如果主机运行centos或者类似，运行如下:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum update</code></pre></div>
+<!--
+Now the new version of the `kubelet` should be running on the host. Verify this using the following command on `$HOST`:
+--->
+
+<p>现在 <code>kubelet</code> 新的版本运行在主机上。在<code>$HOST</code> 上使用如下命令验证：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl status kubelet</code></pre></div>
+<!--
+
+3. Bring the host back online by marking it schedulable:
+
+--->
+
+<ol>
+<li>通过标记可计划的将主机从新联机：
+<code>shell
+kubectl uncordon $HOST
+</code>
+&lt;!&ndash;</li>
+
+<li><p>After upgrading <code>kubelet</code> on each host in your cluster, verify that all nodes are available again by executing the following (from anywhere, for example, from outside the cluster):
+&mdash;&gt;
+在所以主机升级 <code>kubelet</code> 后，通过从任意位置运行以下命令例如从集群外来验证所有节点是否可用：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get nodes</code></pre></div>
+<!--
+If the `STATUS` column of the above command shows `Ready` for all of your hosts, you are done.
+--->
+
+<p>如果上面命令的 <code>STATUS</code> 列显示所有的主机的 <code>Ready</code>，就完成了。
+&lt;!&ndash;</p>
+
+<h2 id="recovering-from-a-failure-state">Recovering from a failure state</h2>
+
+<p>&mdash;&gt;</p>
+
+<h2 id="从坏的状态中恢复">##从坏的状态中恢复</h2>
+
+<p>&lt;!&ndash;</p></li>
+</ol>
+
+<p>If <code>kubeadm upgrade</code> somehow fails and fails to roll back, for example due to an unexpected shutdown during execution,
+you can run <code>kubeadm upgrade</code> again as it is idempotent and should eventually make sure the actual state is the desired state you are declaring.
+&mdash;&gt;
+如果 <code>kubeadm upgrade</code> 以某种方式失败了并无法回滚，原因有在执行过程中出现意外关机，可以再次运行 <code>kubeadm upgrade</code>，因为它是幂等的，并且最终确保实际状态是期待的状态。</p>
+
+<!--
+You can use `kubeadm upgrade` to change a running cluster with `x.x.x -> x.x.x` with `--force`, which can be used to recover from a bad state.
+--->
+
+<p>可以使用 <code>kubeadm upgrade</code> 来更改运行的集群并使用具有  <code>--force</code> 参数的 <code>x.x.x --&gt; x.x.x</code>，这样可以恢复坏的状态。</p>
+
+
+
+
+
+
+<!--
+
+---
+reviewers:
+- pipejakob
+- luxas
+- roberthbailey
+- jbeda
+title: Upgrading/downgrading kubeadm clusters between v1.8 to v1.9
+content_template: templates/task
+---
+
+--->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/tasks/administer-cluster/declare-network-policy/" title="声明网络策略"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 声明网络策略</a>
+<a class="nav nav-next" href="/zh/docs/tasks/administer-cluster/apply-resource-quota-limit/" title="应用资源配额和限额">Next - 应用资源配额和限额 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5ctasks%5cadminister-cluster%5ckubeadm%5ckubeadm-upgrade-1-9.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/tasks\/administer-cluster\/kubeadm\/kubeadm-upgrade-1-9\/",
+    "title" : "将 kubeadm 集群在 v1.8 版本到 v1.9 版本之间升级\/降级",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/tasks\/administer-cluster\/kubeadm\/kubeadm-upgrade-1-9\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5ctasks%5cadminister-cluster%5ckubeadm%5ckubeadm-upgrade-1-9.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    页面最后一次修改于 November 06, 2018 at 11:33 AM PST by
+    <a href="https://github.com/kubernetes/website/commit/d65e1790ffc020129db5f5a583060d6fe318316a/">Add admonition type to shortcode (#9482)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5ctasks%5cadminister-cluster%5ckubeadm%5ckubeadm-upgrade-1-9.md">页面历史</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

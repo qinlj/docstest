@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>Extract Isolines/Isoregions - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="Extract isolines 　Isoline is the mostly-commonly used method to represent a surface on a map. An isoline is a smooth curve formed by connecting adjacent points of equal values. Common isolines include: contours, depth contours, isotherms, isobars, and isohyet lines.
+　The distribution of isolines reflects the change of values on surface. A dense isoline distribution indicates a dramatic change of values on surface like the steepness of slopes.">
+<meta property="og:description" content="Extract isolines 　Isoline is the mostly-commonly used method to represent a surface on a map. An isoline is a smooth curve formed by connecting adjacent points of equal values. Common isolines include: contours, depth contours, isotherms, isobars, and isohyet lines.
+　The distribution of isolines reflects the change of values on surface. A dense isoline distribution indicates a dramatic change of values on surface like the steepness of slopes.">
+<meta name="twitter:description" content="Extract isolines 　Isoline is the mostly-commonly used method to represent a surface on a map. An isoline is a smooth curve formed by connecting adjacent points of equal values. Common isolines include: contours, depth contours, isotherms, isobars, and isohyet lines.
+　The distribution of isolines reflects the change of values on surface. A dense isoline distribution indicates a dramatic change of values on surface like the steepness of slopes.">
+<meta property="og:url" content="https://docstest.github.io/docs/surfaceanalyst/drivecontour/">
+<meta property="og:title" content="Extract Isolines/Isoregions">
+<meta name="twitter:title" content="Extract Isolines/Isoregions">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/docs/" class="active">Documentation</a></li>
+            
+            <li><a href="/blog/">Blog</a></li>
+            
+            <li><a href="/partners/">Partners</a></li>
+            
+            <li><a href="/community/">Community</a></li>
+            
+            <li><a href="/case-studies/">Case Studies</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    English <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/zh/docs/surfaceanalyst/drivecontour/">中文 Chinese</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/docs/home/">Documentation</a></h3>
+           <p>Learn how to use Kubernetes with conceptual, tutorial, and reference documentation. You can even <a href="/editdocs/" data-auto-burger-exclude>help contribute to the docs</a>!</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/blog/">Blog</a></h3>
+           <p>Read the latest news for Kubernetes and the containers space in general, and get technical how-tos hot off the presses.</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">Interested in hacking on the core Kubernetes code base?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>View On Github</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">Explore the community</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+<h1>SurfaceAnalysis</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/docs/home/">HOME</a></li>
+		
+		
+		<li><a href="/docs/surfaceanalyst/" class="YAH">SURFACEANALYSIS</a></li>
+		
+		
+		<li><a href="/docs/setup/">SETUP</a></li>
+		
+		
+		<li><a href="/docs/concepts/">CONCEPTS</a></li>
+		
+		
+		<li><a href="/docs/tasks/">TASKS</a></li>
+		
+		
+		<li><a href="/docs/tutorials/">TUTORIALS</a></li>
+		
+		
+		<li><a href="/docs/reference/">REFERENCE</a></li>
+		
+		
+		<li><a href="/docs/contribute/">CONTRIBUTE</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="SurfaceAnalysis" href="/docs/surfaceanalyst/"></a>
+
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="3D Hillshade Map" href="/docs/surfaceanalyst/hillshade/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Aspect Analysis" href="/docs/surfaceanalyst/aspect/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Cut Fill" href="/docs/surfaceanalyst/cutfill/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Cut Fill with Regions" href="/docs/surfaceanalyst/cutfillregion/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="DEM Curvature Calculate" href="/docs/surfaceanalyst/calculatecurvature/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract All Isolines" href="/docs/surfaceanalyst/drivecontourall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract All Isoregions" href="/docs/surfaceanalyst/driveregionall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract Isolines by Points" href="/docs/surfaceanalyst/extractisoline/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract Isolines/Isoregions" href="/docs/surfaceanalyst/drivecontour/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract Specified Isolines" href="/docs/surfaceanalyst/drivecontourspecific/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Extract Specified Isoregions" href="/docs/surfaceanalyst/driveregionspecific/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Find Extremum" href="/docs/surfaceanalyst/findextreme/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Inverse Cut Fill" href="/docs/surfaceanalyst/inversecutfill/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Orthophoto Image" href="/docs/surfaceanalyst/orthoimage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Profile Analysis" href="/docs/surfaceanalyst/profile/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Slope Analysis" href="/docs/surfaceanalyst/slope/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Split DEM" href="/docs/surfaceanalyst/terrainbuilderclip/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Surface Analysis" href="/docs/surfaceanalyst/surfaceanalyst/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/en/docs%5cSurfaceAnalyst%5cDriveContour.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>Extract Isolines/Isoregions</h1>
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#extract-isolines">Extract isolines</a></li>
+<li><a href="#extract-isoregions">Extract isoregions</a></li>
+<li><a href="#common-parameters">Common Parameters</a></li>
+<li><a href="#related-topics">Related topics</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<h3 id="extract-isolines">Extract isolines</h3>
+
+<p>　　Isoline is the mostly-commonly used method to represent a surface on a map. An isoline is a smooth curve formed by connecting adjacent points of equal values. Common isolines include: contours, depth contours, isotherms, isobars, and isohyet lines.</p>
+
+<p>　　The distribution of isolines reflects the change of values on surface. A dense isoline distribution indicates a dramatic change of values on surface like the steepness of slopes. A sparse isoline distribution indicates a mild change of values on surface like the gentleness of slopes. Therefore, locations with the same elevations, temperatures, precipitations, etc., can be found through isoline extraction.</p>
+
+<p>　　The value of each cell in a raster dataset represents the attribute value of feature like the land type, or temperature, etc. which leads to the elevation information at every location on surface can be reflected exactly. However, if you extract contour lines from a raster dataset and turn the dataset into a vector dataset, data details can be highlighted. For example, according to the contour line data, you can distinct the steepness and gentleness of slopes thereby find out hills and valleys.</p>
+
+<p>　　You can extract contour lines through the surface analysis function provided by SuperMap. Three extraction methods are provided:</p>
+
+<ul>
+<li>Extract all isolines: All isolines that meet a certain condition are extracted from a surface model according to specified parameters. Datum Value and Interval are used to control the extracted isolines.<br /></li>
+
+<li><p>Extract specified isolines: A certain number of isolines with specific values are extracted as needed. You can either directly input the isoline values or automatically generate a series of altitudes according to a specified range and interval.</p></li>
+
+<li><p>Extract isoline by points: Isolines are selected by clicking on the raster model. The output result would be the isolines whose altitudes are equal to that of selected points. Note that they are not only the isolines that join the selected point.</p></li>
+</ul>
+
+<h3 id="extract-isoregions">Extract isoregions</h3>
+
+<p>　　The isoregion is produced by closing the two neighboring isolines. The isoregion can display the change of the neighboring isolines. The isoregion has the same effect when representing the distribution of the surface. The areas where the isoregions are dense indicate the values here rise or fall rapidly; the areas where the isoregions are sparse indicate the values seldom change. Other, if the isoregion is narrower, the values here change sharply; if the isoregion is wider, the values change gently.</p>
+
+<p>　　SuperMap surface analysis supports two methods to extract isoregions: Extract All Isoregions; Specified Isoregions.</p>
+
+<ul>
+<li>Extract All Isoregions: All the isoregions satisfying the condition are extracted from a surface model according to specified parameters. Usually Datum Value and Interval are used to control the extracted isoregions. The datum value is the start value for generating isoregions, and the interval is the difference in elevation between successive contour lines. With these two parameters how many isoregions are extracted can be determined. For example, if the datum value is 0 and the interval is 50, 17 isoregions would be extracted from a DEM grid dataset whose elevation values range from 120 to 999 and the minimum elevation is 150 and the maximum elevation is 950 in the result. To generate isoregions, the original grid data is first interpolated, and the points with the same values are then connected, and finally adjacent isolines are closed to form isoregions. The result would be angular polygons. Thus the polygons need to be smoothed to realistically simulate true isoregions. The smooth methods for isoregions are the same as those for isolines. SuperMap also supports two smooth methods: B Spline and Polish</li>
+<li>Specified Isoregions: A certain number of isoregions with specific values are extracted as needed. You can either directly input specific values or let the system automatically generate a series of altitudes according to a specified range and interval.</li>
+</ul>
+
+<h3 id="common-parameters">Common Parameters</h3>
+
+<p><strong>Datum value and interval</strong></p>
+
+<ul>
+<li><strong>Datum Value</strong>The start value for generating contours. The datum value can be any number.</li>
+<li><strong>Interval</strong>: The difference in elevation between successive contour lines. Together with the datum value, determines which contour line will be extracted.</li>
+</ul>
+
+<p><strong>Smoothness coefficient and Smoothness way</strong></p>
+
+<ul>
+<li><strong>Smoothness Coefficient</strong>: Its value range is [0,5]. 0 or 1 means no smoothing. The greater the value, the smoother the contour lines will be. The recommended value is 3.</li>
+<li><strong>Smoothness</strong>: Two methods are provided by SuperMap: B-Spline, Polish. Both the two methods can make the extracted contour lines smoother with bigger smoothness coefficient meanwhile more time and space are required.</li>
+</ul>
+
+<p><strong>Resample coefficient</strong></p>
+
+<p>　　Resampling distance tolerance can be obtained by multiplying resolution of original raster data with the coefficient for extracting isolines or isoregions. The resampling distance tolerance has an effect on the extracted isolines or isoregions. The recommended value is 0~1.</p>
+
+<p>　　The resample coefficient is 1 by default. The greater the coefficient is, the less control points of isolines, hence, intersection between contour lines may appear. It is recommended that using default value to extract isolines or isoregions.</p>
+
+<p><strong>Source data and target data</strong></p>
+
+<ul>
+<li><strong>Source Dataset</strong>: A raster dataset (DEM or Grid data) for extracting isolines.</li>
+<li><strong>Target Dataset</strong>: The result dataset and specify a datasource to save it.</li>
+</ul>
+
+<h3 id="related-topics">Related topics</h3>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContourAll.html" target="_blank">Extract all isolines</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContourSpecific.html" target="_blank">Extract specified isolines</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="ExtractIsoline.html" target="_blank">Extract isoline by points</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveRegionAll.html" target="_blank">Extract all isoregions</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveRegionSpecific.html" target="_blank">Extract specified isoregion</a></p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/docs/surfaceanalyst/extractisoline/" title="Extract Isolines by Points"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Extract Isolines by Points</a>
+<a class="nav nav-next" href="/docs/surfaceanalyst/drivecontourspecific/" title="Extract Specified Isolines">Next - Extract Specified Isolines <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>Feedback</h2>
+  <p class="feedback--prompt">Was this page helpful? </p>
+  <button class="button feedback--yes">Yes</button>
+  <button class="button feedback--no">No</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cSurfaceAnalyst%5cDriveContour.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/docs\/surfaceanalyst\/drivecontour\/",
+    "title" : "Extract Isolines\/Isoregions",
+    "permalink" : "https:\/\/docstest.github.io\/docs\/surfaceanalyst\/drivecontour\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">Create an Issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/en/docs%5cSurfaceAnalyst%5cDriveContour.md" class="button issue">Edit This Page</a>
+    
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/docs/home/">Home</a>
+            
+            <a href="/blog/">Blog</a>
+            
+            <a href="/partners/">Partners</a>
+            
+            <a href="/community/">Community</a>
+            
+            <a href="/case-studies/">Case Studies</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">Contribute</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

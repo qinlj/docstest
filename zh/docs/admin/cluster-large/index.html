@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>创建大规模集群 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="支持规格 在 v1.13，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 所有 标准的配置：
+ 不超过5000节点 总共不超过15000个pod 总共不超过300000个容器 每个节点不超过100个pod  
+ TOC    支持规格 创建  配额问题 Etcd存储 管理节点和组件的规格 插件的资源占用 启动时允许部分失败      创建 集群是一组运行Kubernetes代理组件的节点(物理或虚拟机)，它们被 &ldquo;master&rdquo; (集群管理平面)所管理。
+一般来说，集群的节点数量通过平台相关的 config-default.sh 文件中的 NUM_NODES 值来控制，(例如，详见 GCE&rsquo;s config-default.sh)。
+对很多云提供商来说，单纯地修改NUM_NODES 为一个非常大的值，可能会导致集群的创建脚本失败。 例如，在GCE中部署时，会因配额不足，导致集群启动失败。
+当建立一个大型的Kubernetes集群，以下几个问题必须考虑。
+配额问题 为了避免出现配额问题，当创建包含大量节点的集群时，考虑：
+ 提高相关配额，如CPU，IP等。  如，在 GCE中，你可能需要提高以下资源的配额： CPU 虚机实例 磁盘 使用的IP地址 防火墙规则 转发规则 路由 对象池  设置创建脚本，使其以较小的规模分批次拉起新的节点，并在其间设置一定的等待时间，因为一些云供应商可能对虚机的创建速率进行了限制。  Etcd存储 为了提升大规模集群的性能，我们将事件对象存储到独立的etcd实例中。
+创建集群时，当前的salt脚本：
+ 启动并配置额外的etcd实例 配置api-server，将该etcd实例用于事件对象的存储  管理节点和组件的规格 在 GCE/Google Kubernetes Engine 或 AWS平台中， kube-up 会根据集群的节点规模合理地设置管理节点的规格。 在其他云平台上，用户需要手动配置。 作为参考，GCE使用的规格为：">
+<meta property="og:description" content="支持规格 在 v1.13，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 所有 标准的配置：
+ 不超过5000节点 总共不超过15000个pod 总共不超过300000个容器 每个节点不超过100个pod  
+ TOC    支持规格 创建  配额问题 Etcd存储 管理节点和组件的规格 插件的资源占用 启动时允许部分失败      创建 集群是一组运行Kubernetes代理组件的节点(物理或虚拟机)，它们被 &ldquo;master&rdquo; (集群管理平面)所管理。
+一般来说，集群的节点数量通过平台相关的 config-default.sh 文件中的 NUM_NODES 值来控制，(例如，详见 GCE&rsquo;s config-default.sh)。
+对很多云提供商来说，单纯地修改NUM_NODES 为一个非常大的值，可能会导致集群的创建脚本失败。 例如，在GCE中部署时，会因配额不足，导致集群启动失败。
+当建立一个大型的Kubernetes集群，以下几个问题必须考虑。
+配额问题 为了避免出现配额问题，当创建包含大量节点的集群时，考虑：
+ 提高相关配额，如CPU，IP等。  如，在 GCE中，你可能需要提高以下资源的配额： CPU 虚机实例 磁盘 使用的IP地址 防火墙规则 转发规则 路由 对象池  设置创建脚本，使其以较小的规模分批次拉起新的节点，并在其间设置一定的等待时间，因为一些云供应商可能对虚机的创建速率进行了限制。  Etcd存储 为了提升大规模集群的性能，我们将事件对象存储到独立的etcd实例中。
+创建集群时，当前的salt脚本：
+ 启动并配置额外的etcd实例 配置api-server，将该etcd实例用于事件对象的存储  管理节点和组件的规格 在 GCE/Google Kubernetes Engine 或 AWS平台中， kube-up 会根据集群的节点规模合理地设置管理节点的规格。 在其他云平台上，用户需要手动配置。 作为参考，GCE使用的规格为：">
+<meta name="twitter:description" content="支持规格 在 v1.13，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 所有 标准的配置：
+ 不超过5000节点 总共不超过15000个pod 总共不超过300000个容器 每个节点不超过100个pod  
+ TOC    支持规格 创建  配额问题 Etcd存储 管理节点和组件的规格 插件的资源占用 启动时允许部分失败      创建 集群是一组运行Kubernetes代理组件的节点(物理或虚拟机)，它们被 &ldquo;master&rdquo; (集群管理平面)所管理。
+一般来说，集群的节点数量通过平台相关的 config-default.sh 文件中的 NUM_NODES 值来控制，(例如，详见 GCE&rsquo;s config-default.sh)。
+对很多云提供商来说，单纯地修改NUM_NODES 为一个非常大的值，可能会导致集群的创建脚本失败。 例如，在GCE中部署时，会因配额不足，导致集群启动失败。
+当建立一个大型的Kubernetes集群，以下几个问题必须考虑。
+配额问题 为了避免出现配额问题，当创建包含大量节点的集群时，考虑：
+ 提高相关配额，如CPU，IP等。  如，在 GCE中，你可能需要提高以下资源的配额： CPU 虚机实例 磁盘 使用的IP地址 防火墙规则 转发规则 路由 对象池  设置创建脚本，使其以较小的规模分批次拉起新的节点，并在其间设置一定的等待时间，因为一些云供应商可能对虚机的创建速率进行了限制。  Etcd存储 为了提升大规模集群的性能，我们将事件对象存储到独立的etcd实例中。
+创建集群时，当前的salt脚本：
+ 启动并配置额外的etcd实例 配置api-server，将该etcd实例用于事件对象的存储  管理节点和组件的规格 在 GCE/Google Kubernetes Engine 或 AWS平台中， kube-up 会根据集群的节点规模合理地设置管理节点的规格。 在其他云平台上，用户需要手动配置。 作为参考，GCE使用的规格为：">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/admin/cluster-large/">
+<meta property="og:title" content="创建大规模集群">
+<meta name="twitter:title" content="创建大规模集群">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/">English</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                    <li><a href="/it/">Italian</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="Admins" href="/zh/docs/admin/"></a>
+
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="构建高可用集群">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="构建高可用集群" href="/zh/docs/admin/high-availability/"></a>
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="概述">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="概述" href="/zh/docs/admin/authorization/"></a>
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="ABAC 模式" href="/zh/docs/admin/authorization/abac/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Webhook Mode" href="/zh/docs/admin/authorization/webhook/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubelet authentication/authorization" href="/zh/docs/admin/kubelet-authentication-authorization/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes API访问控制" href="/zh/docs/admin/accessing-the-api/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kubernetes OpenVSwitch GRE/VxLAN 网络" href="/zh/docs/admin/ovs-networking/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="TLS bootstrapping" href="/zh/docs/admin/kubelet-tls-bootstrapping/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kube-apiserver" href="/zh/docs/admin/kube-apiserver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用启动引导令牌（Bootstrap Tokens）认证" href="/zh/docs/admin/bootstrap-tokens/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="创建大规模集群" href="/zh/docs/admin/cluster-large/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="多区域运行" href="/zh/docs/admin/multiple-zones/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理Service Accounts" href="/zh/docs/admin/service-accounts-admin/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="节点设置校验" href="/zh/docs/admin/node-conformance/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cadmin%5ccluster-large.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>创建大规模集群</h1>
+
+
+
+
+
+<h2 id="支持规格">支持规格</h2>
+
+<p>在 v1.13，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 <em>所有</em> 标准的配置：</p>
+
+<ul>
+<li>不超过5000节点</li>
+<li>总共不超过15000个pod</li>
+<li>总共不超过300000个容器</li>
+<li>每个节点不超过100个pod</li>
+</ul>
+
+<p><br></p>
+
+<ul>
+<li>TOC
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#支持规格">支持规格</a></li>
+<li><a href="#创建">创建</a>
+<ul>
+<li><a href="#配额问题">配额问题</a></li>
+<li><a href="#etcd存储">Etcd存储</a></li>
+<li><a href="#管理节点和组件的规格">管理节点和组件的规格</a></li>
+<li><a href="#插件的资源占用">插件的资源占用</a></li>
+<li><a href="#启动时允许部分失败">启动时允许部分失败</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></li>
+</ul>
+
+<h2 id="创建">创建</h2>
+
+<p>集群是一组运行Kubernetes代理组件的节点(物理或虚拟机)，它们被 &ldquo;master&rdquo; (集群管理平面)所管理。</p>
+
+<p>一般来说，集群的节点数量通过平台相关的 <code>config-default.sh</code> 文件中的 <code>NUM_NODES</code> 值来控制，(例如，详见 <a href="http://releases.k8s.io/master/cluster/gce/config-default.sh" target="_blank">GCE&rsquo;s <code>config-default.sh</code></a>)。</p>
+
+<p>对很多云提供商来说，单纯地修改<code>NUM_NODES</code> 为一个非常大的值，可能会导致集群的创建脚本失败。 例如，在GCE中部署时，会因配额不足，导致集群启动失败。</p>
+
+<p>当建立一个大型的Kubernetes集群，以下几个问题必须考虑。</p>
+
+<h3 id="配额问题">配额问题</h3>
+
+<p>为了避免出现配额问题，当创建包含大量节点的集群时，考虑：</p>
+
+<ul>
+<li>提高相关配额，如CPU，IP等。
+
+<ul>
+<li>如，在 <a href="https://cloud.google.com/compute/docs/resource-quotas" target="_blank">GCE</a>中，你可能需要提高以下资源的配额：</li>
+<li>CPU</li>
+<li>虚机实例</li>
+<li>磁盘</li>
+<li>使用的IP地址</li>
+<li>防火墙规则</li>
+<li>转发规则</li>
+<li>路由</li>
+<li>对象池</li>
+</ul></li>
+<li>设置创建脚本，使其以较小的规模分批次拉起新的节点，并在其间设置一定的等待时间，因为一些云供应商可能对虚机的创建速率进行了限制。</li>
+</ul>
+
+<h3 id="etcd存储">Etcd存储</h3>
+
+<p>为了提升大规模集群的性能，我们将事件对象存储到独立的etcd实例中。</p>
+
+<p>创建集群时，当前的salt脚本：</p>
+
+<ul>
+<li>启动并配置额外的etcd实例</li>
+<li>配置api-server，将该etcd实例用于事件对象的存储</li>
+</ul>
+
+<h3 id="管理节点和组件的规格">管理节点和组件的规格</h3>
+
+<p>在 GCE/Google Kubernetes Engine 或 AWS平台中， <code>kube-up</code> 会根据集群的节点规模合理地设置管理节点的规格。 在其他云平台上，用户需要手动配置。 作为参考，GCE使用的规格为：</p>
+
+<ul>
+<li>1-5 节点： n1-standard-1</li>
+<li>6-10 节点： n1-standard-2</li>
+<li>11-100 节点： n1-standard-4</li>
+<li>101-250 节点： n1-standard-8</li>
+<li>251-500 节点： n1-standard-16</li>
+<li>500节点以上： n1-standard-32</li>
+</ul>
+
+<p>AWS使用的规格为：</p>
+
+<ul>
+<li>1-5 节点： m3.medium</li>
+<li>6-10 节点： m3.large</li>
+<li>11-100 节点： m3.xlarge</li>
+<li>101-250 节点： m3.2xlarge</li>
+<li>251-500 节点： c4.4xlarge</li>
+<li>500节点以上： c4.8xlarge</li>
+</ul>
+
+<p>注意，管理节点的规格只会在集群创建时进行设置，后续集群规模发生变化 (如 手动增删节点或集群自动扩缩容)后不会再调整。</p>
+
+<h3 id="插件的资源占用">插件的资源占用</h3>
+
+<p>为防止 <a href="https://releases.k8s.io/master/cluster/addons" target="_blank">集群插件</a> 耗尽节点资源引起内存泄漏或其他资源问题， Kubernetes 设置了插件容器资源的上限，来限制其对CPU和内存资源的占用 (参考 PR <a href="http://pr.k8s.io/10653/files" target="_blank">#10653</a> 和 <a href="http://pr.k8s.io/10778/files" target="_blank">#10778</a>)。</p>
+
+<p>例如：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">  </span>containers:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>fluentd-cloud-logging<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>image:<span style="color:#bbb"> </span>k8s.gcr.io/fluentd-gcp:<span style="color:#666">1.16</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>resources:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>limits:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>cpu:<span style="color:#bbb"> </span>100m<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>memory:<span style="color:#bbb"> </span>200Mi</code></pre></div>
+<p>除 Heapster 外，这些限制是静态的，基于4个节点规模的集群上运行的插件所采集的数据 (详见 <a href="http://issue.k8s.io/10335#issuecomment-117861225" target="_blank">#10335</a>)。 而实际大规模集群中插件所消耗的资源要多得多 (详见 <a href="http://issue.k8s.io/5880#issuecomment-113984085" target="_blank">#5880</a>)。 所以如果部署大规模集群时不对这些值进行调整，插件可能会因为资源占用达到上限而不断被杀死。</p>
+
+<p>为了避免集群插件的资源问题，创建多节点的集群时，考虑以下几点：</p>
+
+<ul>
+<li>当扩大集群规模时，如果涉及，相应扩大以下插件的内存和CPU限制 (通过一个实例处理整个集群，因此其内存和CPU使用量往往与集群的大小/负载成比例增长)：
+
+<ul>
+<li><a href="http://releases.k8s.io/master/cluster/addons/cluster-monitoring/influxdb/influxdb-grafana-controller.yaml" target="_blank">InfluxDB 和 Grafana</a></li>
+<li><a href="http://releases.k8s.io/master/cluster/addons/dns/kubedns-controller.yaml.in" target="_blank">kubedns, dnsmasq, 和 sidecar</a></li>
+<li><a href="http://releases.k8s.io/master/cluster/addons/fluentd-elasticsearch/kibana-controller.yaml" target="_blank">Kibana</a></li>
+</ul></li>
+<li>当扩大集群规模时，如果涉及，相应扩大以下插件副本数 (每个组件有多个副本，因此增加副本将有助于处理增加的负载，但是，由于每个副本的负载也略有增加，也应考虑提高CPU /内存上限)：
+
+<ul>
+<li><a href="http://releases.k8s.io/master/cluster/addons/fluentd-elasticsearch/es-controller.yaml" target="_blank">elasticsearch</a></li>
+</ul></li>
+<li>当扩大集群规模时，如果涉及，略微扩大以下插件的内存和CPU限制 (每个节点一个副本， 但是CPU/内存使用随集群的大小/负载增长变化不明显)：
+
+<ul>
+<li><a href="http://releases.k8s.io/master/cluster/addons/fluentd-elasticsearch/fluentd-es-ds.yaml" target="_blank">FluentD with ElasticSearch Plugin</a></li>
+<li><a href="http://releases.k8s.io/master/cluster/addons/fluentd-gcp/fluentd-gcp-ds.yaml" target="_blank">FluentD with GCP Plugin</a></li>
+</ul></li>
+</ul>
+
+<p>Heapster的资源限制是基于集群的初始规模动态设置的 (参考 <a href="http://issue.k8s.io/16185" target="_blank">#16185</a>
+和 <a href="http://issue.k8s.io/22940" target="_blank">#22940</a>)。 当发现Heapster资源耗尽，应考虑调整计算Heapster内存请求的公式 (参考上述PR)。</p>
+
+<p>关于如何检测插件是否达到资源上限 参考 <a href="/docs/concepts/configuration/manage-compute-resources-container/#troubleshooting">计算资源的故障排除章节</a>。</p>
+
+<p><a href="http://issue.k8s.io/13048" target="_blank">将来</a>，我们期望基于集群规模来设置集群插件的资源限制，并且在集群规模增长或缩小时能够动态调整。
+欢迎提出PR来实现这些特性。</p>
+
+<h3 id="启动时允许部分失败">启动时允许部分失败</h3>
+
+<p>因为种种原因 (详见 <a href="https://github.com/kubernetes/kubernetes/issues/18969" target="_blank">#18969</a>)，在 <code>NUM_NODES</code> 值很大的情况下执行
+<code>kube-up.sh</code>， 可能因为其中一小部分节点没有正常启动而失败。
+这时我们有两种选择：重启集群 (<code>kube-down.sh</code> 然后再 <code>kube-up.sh</code>），或者在执行 <code>kube-up.sh</code>之前，
+将环境变量 <code>ALLOWED_NOTREADY_NODES</code> 设置为合适的值。 这将允许 <code>kube-up.sh</code> 以少于 <code>NUM_NODES</code> 的节点数量启动集群。 依据失败的具体原因，另外的节点可能在后面加入集群，或者集群节点数量将保持在 <code>NUM_NODES - ALLOWED_NOTREADY_NODES</code>。</p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/admin/bootstrap-tokens/" title="使用启动引导令牌（Bootstrap Tokens）认证"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 使用启动引导令牌（Bootstrap Tokens）认证</a>
+<a class="nav nav-next" href="/zh/docs/admin/multiple-zones/" title="多区域运行">Next - 多区域运行 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5cadmin%5ccluster-large.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/admin\/cluster-large\/",
+    "title" : "创建大规模集群",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/admin\/cluster-large\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5cadmin%5ccluster-large.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    页面最后一次修改于 October 12, 2018 at 2:25 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/abcee2dccd17c94376595b34cc05e56345a7f06c/">Update localization guidelines (#10485)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5cadmin%5ccluster-large.md">页面历史</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

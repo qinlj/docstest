@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html id="home" lang="en" class="">
+	<head>
+	<meta name="generator" content="Hugo 0.54.0" />
+		
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>Container Orchestration a livello di produzione - Kubernetes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="Kubernetes (k8s) è un sistema open source per automatizzare la distribuzione il ridimensionamento e la gestione di applicazioni containerizzate.
+Raggruppa i contenitori che costituiscono un&rsquo;applicazione in unità logiche per una piu facile gestione. Kubernetes si basa su 15 anni di esperienza di Google ,combinando idee e messe in pratica suggerite da una comunità.
+Planet Scale Progettato secondo gli stessi principi che consentono a Google di gestire miliardi di container alla settimana, Kubernetes può scalare senza aumentare il tuo team operativo.">
+<meta property="og:description" content="Kubernetes (k8s) è un sistema open source per automatizzare la distribuzione il ridimensionamento e la gestione di applicazioni containerizzate.
+Raggruppa i contenitori che costituiscono un&rsquo;applicazione in unità logiche per una piu facile gestione. Kubernetes si basa su 15 anni di esperienza di Google ,combinando idee e messe in pratica suggerite da una comunità.
+Planet Scale Progettato secondo gli stessi principi che consentono a Google di gestire miliardi di container alla settimana, Kubernetes può scalare senza aumentare il tuo team operativo.">
+<meta name="twitter:description" content="Kubernetes (k8s) è un sistema open source per automatizzare la distribuzione il ridimensionamento e la gestione di applicazioni containerizzate.
+Raggruppa i contenitori che costituiscono un&rsquo;applicazione in unità logiche per una piu facile gestione. Kubernetes si basa su 15 anni di esperienza di Google ,combinando idee e messe in pratica suggerite da una comunità.
+Planet Scale Progettato secondo gli stessi principi che consentono a Google di gestire miliardi di container alla settimana, Kubernetes può scalare senza aumentare il tuo team operativo.">
+<meta property="og:url" content="https://docstest.github.io/it/">
+<meta property="og:title" content="Container Orchestration a livello di produzione">
+<meta name="twitter:title" content="Container Orchestration a livello di produzione">
+
+<meta name="twitter:image:alt"   content="Kubernetes">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="website">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+	</head>
+	<body class="page">
+		<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/it/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/it/docs/">Docs</a></li>
+            
+            <li><a href="/it/blog/">Blog</a></li>
+            
+            
+            
+            <li><a href="/it/community/">Community</a></li>
+            
+            <li><a href="/it/case-studies/">Case Studies</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    Italian <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/">English</a></li>
+                
+                    <li><a href="/zh/">中文 Chinese</a></li>
+                
+                    <li><a href="/ko/">한국어 Korean</a></li>
+                
+                    <li><a href="/ja/">日本語 Japanese</a></li>
+                
+                    <li><a href="/fr/">Français</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/it/blog/">Blog</a></h3>
+           <p>Read the latest news for Kubernetes and the containers space in general, and get technical how-tos hot off the presses.</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">Ti interessa l&#39;hacking sulla base del codice di Kubernetes?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>Visualizza su Github</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">Explora la community</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+		
+		
+		<section id="hero" class="light-text">
+			<main>
+				<div id="headlineWrapper">
+					<h1>Container Orchestration a livello di produzione</h1>
+					<h5>Implementazione, ridimensionamento e gestione automatizzata dei container </h5>
+				</div>
+				
+
+
+			</main>
+		</section>
+		
+		
+    
+    <article class="page-content">
+      
+
+
+
+
+<section id="oceanNodes" style="">
+	
+<main>
+	<div class="image-wrapper"><img src="/it/_common-resources/images/flower.png" alt="images/flower.png"></div>
+	<div class="content">
+		<h3 id="kubernetes-k8s-it-docs-concepts-overview-what-is-kubernetes"><a href="/it/docs/concepts/overview/what-is-kubernetes/">Kubernetes (k8s)</a></h3>
+
+<p>è un sistema open source per automatizzare la distribuzione il ridimensionamento e la gestione di applicazioni containerizzate.</p>
+
+<p>Raggruppa i contenitori che costituiscono un&rsquo;applicazione in unità logiche per una piu facile gestione. Kubernetes si basa <a href="http://queue.acm.org/detail.cfm?id=2898444" target="_blank">su 15 anni di esperienza di Google</a> ,combinando idee e messe in pratica suggerite da una comunità.</p>
+
+	</div>
+</main>
+
+
+<main>
+	<div class="image-wrapper"><img src="/it/_common-resources/images/scalable.png" alt="images/scalable.png"></div>
+	<div class="content">
+		<h4 id="planet-scale">Planet Scale</h4>
+
+<p>Progettato secondo gli stessi principi che consentono a Google di gestire miliardi di container alla settimana, Kubernetes può scalare senza aumentare il tuo team operativo.</p>
+
+	</div>
+</main>
+
+
+<main>
+	<div class="image-wrapper"><img src="/it/_common-resources/images/blocks%20-%20%E5%89%AF%E6%9C%AC.png" alt="images/blocks - 副本.png"></div>
+	<div class="content">
+		<h4 id="never-outgrow">Never Outgrow</h4>
+
+<p>Che si tratti di eseguire test localmente o di gestire un&rsquo;azienda globale, la flessibilità di Kubernetes cresce con te per fornire le tue applicazioni in modo coerente e semplice, indipendentemente dalla complessità delle tue esigenze.</p>
+
+	</div>
+</main>
+
+
+<main>
+	<div class="image-wrapper"><img src="/it/_common-resources/images/suitcase.png" alt="images/suitcase.png"></div>
+	<div class="content">
+		<h4 id="run-anywhere">Run Anywhere</h4>
+
+<p>Kubernetes è open source e ti offre la libertà di trarre vantaggio dall&rsquo;infrastruttura cloud locale, ibrida o pubblica, consentendo di spostare facilmente i carichi di lavoro nel punto in cui è importante per te.</p>
+
+	</div>
+</main>
+
+
+
+</section>
+
+
+<section id="video" style="background-image: url(https://docstest.github.io/it/_common-resources/images/kub_video_banner_homepage.jpg); ">
+	
+<div class="light-text">
+<h2>Le sfide della migrazione di oltre 150 microservizi a Kubernetes</h2>
+        <p>By Sarah Wells, Technical Director for Operations and Reliability, Financial Times</p>
+        <button id="desktopShowVideoButton" onclick="kub.showVideo()">Guarda i Video</button>
+        <br>
+        <br>
+        <br>
+        <a href="https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019" button id="desktopKCButton">Attend KubeCon in Barcelona on May 20-23, 2019</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="https://www.lfasiallc.com/events/kubecon-cloudnativecon-china-2019" button id="desktopKCButton">Attend KubeCon in Shanghai on June 24-26, 2019</a>
+</div>
+<div id="videoPlayer">
+    <iframe data-url="https://www.youtube.com/embed/H06qrNmGqyE?autoplay=1" frameborder="0" allowfullscreen></iframe>
+    <button id="closeButton"></button>
+</div>
+
+</section>
+
+
+
+<section id="features">
+    <main>
+        <h3 class="center">Caratteristiche di Kubernetes</h3>
+        
+        
+    </main>
+</section>
+
+
+
+
+
+<section id="talkToUs">
+  <main>
+    <h3>Case Studies</h3>
+    <div id="caseStudiesWrapper">
+      
+    </div>
+  </main>
+</section>
+
+
+
+<section id="kubeweekly">
+      <main>
+        
+        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+        	#mc_embed_signup{clear:left; width:100%;}
+        	 
+        </style>
+<br>
+<br>
+        <div id="mc_embed_signup">
+        <form action="https://kubeweekly.us10.list-manage.com/subscribe/post?u=3885586f8f1175194017967d6&amp;id=11c1b8bcb2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+        	<p style="font-size: 20px">Interested in receiving the latest Kubernetes news? Sign up for KubeWeekly.</p>
+          <br />
+
+              <button id="conformance" class="button" onClick="updateSrc(this.id)">访问SuperMap iDesktop API 中心</button>
+        </form>
+        <h5 style="text-align: center"><a href="https://us10.campaign-archive.com/home/?u=3885586f8f1175194017967d6&id=11c1b8bcb2" style="color: #3371E3; font-weight: 400; font-size: 20px"></a></h5>
+        </div>
+<br>
+<br>
+        
+    </main>
+</section>
+
+    </article>
+
+		<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            
+            
+            <a href="/it/blog/">Blog</a>
+            
+            
+            
+            <a href="/it/community/">Community</a>
+            
+            <a href="/it/case-studies/">Case Studies</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">Contribuire</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 Gli autori di Kubernetes| Documentazione distribuita sotto <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. Tutti i diritti riservati. The Linux Foundation ha marchi registrati e utilizza marchi commerciali. Per un elenco dei marchi di Linux Foundation, consultare il nostro sito<a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+		<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+	</body>
+</html>

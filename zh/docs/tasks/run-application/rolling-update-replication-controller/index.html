@@ -1,0 +1,2853 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+<head>
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>基于Replication Controller执行滚动升级 - SuperMap iDesktop .NET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="概述 通过配置文件更新  示例  更新容器镜像  示例  必选和可选字段 实践 故障分析    概述 注: 创建副本应用的首选方法是使用Deployment，Deployment使用ReplicaSet来进行副本控制。 更多信息, 查看使用Deployment运行一个无状态应用。
+为了在更新服务的同时不中断业务， kubectl 支持&lsquo;滚动更新&rsquo;，它一次更新一个pod，而不是同时停止整个服务。 有关更多信息，请参阅 滚动更新设计文档 和 滚动更新示例。
+请注意， kubectl rolling-update 仅支持Replication Controllers。 但是，如果使用Replication Controllers部署应用，请考虑将其切换到Deployments. Deployment是一种被推荐使用的更高级别的控制器，它可以对应用进行声明性的自动滚动更新。 如果您仍然希望保留您的Replication Controllers并使用 kubectl rolling-update进行滚动更新， 请继续往下阅读：
+滚动更新可以对replication controller所管理的Pod的配置进行变更，变更可以通过一个新的配置文件来进行，或者，如果只更新镜像，则可以直接指定新的容器镜像。
+滚动更新的工作流程：
+ 通过新的配置创建一个replication controller 在新的控制器上增加副本数，在旧的上面减少副本数，直到副本数达到期望值 删除之前的replication controller  使用kubectl rolling-update命令来进行滚动更新：
+$ kubectl rolling-update NAME \ ([NEW_NAME] --image=IMAGE | -f FILE)  通过配置文件更新 通过配置文件来进行滚动更新，需要在kubectl rolling-update命令后面带上新的配置文件：">
+<meta property="og:description" content="概述 通过配置文件更新  示例  更新容器镜像  示例  必选和可选字段 实践 故障分析    概述 注: 创建副本应用的首选方法是使用Deployment，Deployment使用ReplicaSet来进行副本控制。 更多信息, 查看使用Deployment运行一个无状态应用。
+为了在更新服务的同时不中断业务， kubectl 支持&lsquo;滚动更新&rsquo;，它一次更新一个pod，而不是同时停止整个服务。 有关更多信息，请参阅 滚动更新设计文档 和 滚动更新示例。
+请注意， kubectl rolling-update 仅支持Replication Controllers。 但是，如果使用Replication Controllers部署应用，请考虑将其切换到Deployments. Deployment是一种被推荐使用的更高级别的控制器，它可以对应用进行声明性的自动滚动更新。 如果您仍然希望保留您的Replication Controllers并使用 kubectl rolling-update进行滚动更新， 请继续往下阅读：
+滚动更新可以对replication controller所管理的Pod的配置进行变更，变更可以通过一个新的配置文件来进行，或者，如果只更新镜像，则可以直接指定新的容器镜像。
+滚动更新的工作流程：
+ 通过新的配置创建一个replication controller 在新的控制器上增加副本数，在旧的上面减少副本数，直到副本数达到期望值 删除之前的replication controller  使用kubectl rolling-update命令来进行滚动更新：
+$ kubectl rolling-update NAME \ ([NEW_NAME] --image=IMAGE | -f FILE)  通过配置文件更新 通过配置文件来进行滚动更新，需要在kubectl rolling-update命令后面带上新的配置文件：">
+<meta name="twitter:description" content="概述 通过配置文件更新  示例  更新容器镜像  示例  必选和可选字段 实践 故障分析    概述 注: 创建副本应用的首选方法是使用Deployment，Deployment使用ReplicaSet来进行副本控制。 更多信息, 查看使用Deployment运行一个无状态应用。
+为了在更新服务的同时不中断业务， kubectl 支持&lsquo;滚动更新&rsquo;，它一次更新一个pod，而不是同时停止整个服务。 有关更多信息，请参阅 滚动更新设计文档 和 滚动更新示例。
+请注意， kubectl rolling-update 仅支持Replication Controllers。 但是，如果使用Replication Controllers部署应用，请考虑将其切换到Deployments. Deployment是一种被推荐使用的更高级别的控制器，它可以对应用进行声明性的自动滚动更新。 如果您仍然希望保留您的Replication Controllers并使用 kubectl rolling-update进行滚动更新， 请继续往下阅读：
+滚动更新可以对replication controller所管理的Pod的配置进行变更，变更可以通过一个新的配置文件来进行，或者，如果只更新镜像，则可以直接指定新的容器镜像。
+滚动更新的工作流程：
+ 通过新的配置创建一个replication controller 在新的控制器上增加副本数，在旧的上面减少副本数，直到副本数达到期望值 删除之前的replication controller  使用kubectl rolling-update命令来进行滚动更新：
+$ kubectl rolling-update NAME \ ([NEW_NAME] --image=IMAGE | -f FILE)  通过配置文件更新 通过配置文件来进行滚动更新，需要在kubectl rolling-update命令后面带上新的配置文件：">
+<meta property="og:url" content="https://docstest.github.io/zh/docs/tasks/run-application/rolling-update-replication-controller/">
+<meta property="og:title" content="基于Replication Controller执行滚动升级">
+<meta name="twitter:title" content="基于Replication Controller执行滚动升级">
+
+<meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+</head>
+<body>
+<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/zh/" class="logo"></a>
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
+            
+            <li><a href="/zh/blog/">技术专题</a></li>
+            
+            
+            
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="/docs/tasks/run-application/rolling-update-replication-controller/">English</a></li>
+                
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+
+        <form id="searchBox" action="/search/">
+          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+        </form>
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="/zh/docs/home/">文档</a></h3>
+           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/zh/blog/">技术专题</a></h3>
+           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">了解社区</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+
+
+<section id="hero" class="light-text no-sub">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/zh/docs/home/">主页</a></li>
+		
+		
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
+		
+		
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
+		
+		
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
+		
+		
+		<li><a href="/zh/docs/concepts/">概念</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+  </form>
+</div>
+
+</section>
+
+
+
+<section id="encyclopedia">
+  
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="Tasks" href="/zh/docs/tasks/"></a>
+
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Install Tools">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Install and Set Up kubectl <small>(EN)</small>" href="/docs/tasks/tools/install-kubectl/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Install Minikube <small>(EN)</small>" href="/docs/tasks/tools/install-minikube/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Setup an extension API server" href="/zh/docs/tasks/access-kubernetes-api/setup-extension-api-server/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Configure Pods and Containers">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Configure Pods and Containers" href="/zh/docs/tasks/configure-pod-container/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Assign Memory Resources to Containers and Pods <small>(EN)</small>" href="/docs/tasks/configure-pod-container/assign-memory-resource/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Assign CPU Resources to Containers and Pods <small>(EN)</small>" href="/docs/tasks/configure-pod-container/assign-cpu-resource/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Quality of Service for Pods <small>(EN)</small>" href="/docs/tasks/configure-pod-container/quality-service-pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Assign Extended Resources to a Container <small>(EN)</small>" href="/docs/tasks/configure-pod-container/extended-resource/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod to Use a Volume for Storage <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-volume-storage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod to Use a PersistentVolume for Storage <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-persistent-volume-storage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod to Use a Projected Volume for Storage <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-projected-volume-storage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Security Context for a Pod or Container <small>(EN)</small>" href="/docs/tasks/configure-pod-container/security-context/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Service Accounts for Pods <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-service-account/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Pull an Image from a Private Registry <small>(EN)</small>" href="/docs/tasks/configure-pod-container/pull-image-private-registry/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Liveness and Readiness Probes <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="将 Pod 分配给节点" href="/zh/docs/tasks/configure-pod-container/assign-pods-nodes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Pod Initialization <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-pod-initialization/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Attach Handlers to Container Lifecycle Events <small>(EN)</small>" href="/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod to Use a ConfigMap <small>(EN)</small>" href="/docs/tasks/configure-pod-container/configure-pod-configmap/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Share Process Namespace between Containers in a Pod <small>(EN)</small>" href="/docs/tasks/configure-pod-container/share-process-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Translate a Docker Compose File to Kubernetes Resources <small>(EN)</small>" href="/docs/tasks/configure-pod-container/translate-compose-kubernetes/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="给容器分配非透明整型资源" href="/zh/docs/tasks/configure-pod-container/opaque-integer-resource/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Administer a Cluster">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Administration with kubeadm">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Certificate Management with kubeadm <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm HA clusters from v1.11 to v1.12 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-12/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm HA clusters from v1.12 to v1.13 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-13/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.10 to v1.11 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-11/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.11 to v1.12 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-12/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.12 to v1.13 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-13/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Manage Memory, CPU, and API Resources">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Default Memory Requests and Limits for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Default CPU Requests and Limits for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Minimum and Maximum Memory Constraints for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Minimum and Maximum CPU Constraints for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Memory and CPU Quotas for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod Quota for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/quota-pod-namespace/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Install a Network Policy Provider">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use Calico for NetworkPolicy <small>(EN)</small>" href="/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use Cilium for NetworkPolicy <small>(EN)</small>" href="/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use Kube-router for NetworkPolicy <small>(EN)</small>" href="/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Romana for NetworkPolicy <small>(EN)</small>" href="/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Weave Net for NetworkPolicy <small>(EN)</small>" href="/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Access Clusters Using the Kubernetes API <small>(EN)</small>" href="/docs/tasks/administer-cluster/access-cluster-api/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Access Services Running on Clusters <small>(EN)</small>" href="/docs/tasks/administer-cluster/access-cluster-services/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Advertise Extended Resources for a Node <small>(EN)</small>" href="/docs/tasks/administer-cluster/extended-resource-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Autoscale the DNS Service in a Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/dns-horizontal-autoscaling/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Change the Reclaim Policy of a PersistentVolume <small>(EN)</small>" href="/docs/tasks/administer-cluster/change-pv-reclaim-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Change the default StorageClass <small>(EN)</small>" href="/docs/tasks/administer-cluster/change-default-storage-class/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cluster Management <small>(EN)</small>" href="/docs/tasks/administer-cluster/cluster-management/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Multiple Schedulers <small>(EN)</small>" href="/docs/tasks/administer-cluster/configure-multiple-schedulers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Out Of Resource Handling <small>(EN)</small>" href="/docs/tasks/administer-cluster/out-of-resource/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Quotas for API Objects <small>(EN)</small>" href="/docs/tasks/administer-cluster/quota-api-object/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Control CPU Management Policies on the Node <small>(EN)</small>" href="/docs/tasks/administer-cluster/cpu-management-policies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Customizing DNS Service <small>(EN)</small>" href="/docs/tasks/administer-cluster/dns-custom-nameservers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Debugging DNS Resolution <small>(EN)</small>" href="/docs/tasks/administer-cluster/dns-debugging-resolution/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Declare Network Policy <small>(EN)</small>" href="/docs/tasks/administer-cluster/declare-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Developing Cloud Controller Manager <small>(EN)</small>" href="/docs/tasks/administer-cluster/developing-cloud-controller-manager/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Encrypting Secret Data at Rest <small>(EN)</small>" href="/docs/tasks/administer-cluster/encrypt-data/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Guaranteed Scheduling For Critical Add-On Pods <small>(EN)</small>" href="/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="IP Masquerade Agent User Guide <small>(EN)</small>" href="/docs/tasks/administer-cluster/ip-masq-agent/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Cloud Controller Manager <small>(EN)</small>" href="/docs/tasks/administer-cluster/running-cloud-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Limit Storage Consumption <small>(EN)</small>" href="/docs/tasks/administer-cluster/limit-storage-consumption/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Namespaces Walkthrough <small>(EN)</small>" href="/docs/tasks/administer-cluster/namespaces-walkthrough/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Operating etcd clusters for Kubernetes <small>(EN)</small>" href="/docs/tasks/administer-cluster/configure-upgrade-etcd/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Reconfigure a Node&#39;s Kubelet in a Live Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/reconfigure-kubelet/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Reserve Compute Resources for System Daemons <small>(EN)</small>" href="/docs/tasks/administer-cluster/reserve-compute-resources/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Safely Drain a Node while Respecting Application SLOs <small>(EN)</small>" href="/docs/tasks/administer-cluster/safely-drain-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Securing a Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/securing-a-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set Kubelet parameters via a config file <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubelet-config-file/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up High-Availability Kubernetes Masters <small>(EN)</small>" href="/docs/tasks/administer-cluster/highly-available-master/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Share a Cluster with Namespaces <small>(EN)</small>" href="/docs/tasks/administer-cluster/namespaces/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Static Pods <small>(EN)</small>" href="/docs/tasks/administer-cluster/static-pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Storage Object in Use Protection <small>(EN)</small>" href="/docs/tasks/administer-cluster/storage-object-in-use-protection/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using CoreDNS for Service Discovery <small>(EN)</small>" href="/docs/tasks/administer-cluster/coredns/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using a KMS provider for data encryption <small>(EN)</small>" href="/docs/tasks/administer-cluster/kms-provider/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using sysctls in a Kubernetes Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/sysctl-cluster/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Accessing Clusters" href="/zh/docs/tasks/access-application-cluster/access-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Inject Data Into Applications">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Inject Data Into Applications" href="/zh/docs/tasks/inject-data-application/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="为容器设置启动时要执行的命令及其入参" href="/zh/docs/tasks/inject-data-application/define-command-argument-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="为容器设置环境变量" href="/zh/docs/tasks/inject-data-application/define-environment-variable-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 PodPreset 将信息注入 Pods" href="/zh/docs/tasks/inject-data-application/podpreset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Secret 安全地分发凭证" href="/zh/docs/tasks/inject-data-application/distribute-credentials-secure/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="通过文件将Pod信息呈现给容器" href="/zh/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="通过环境变量将Pod信息呈现给容器" href="/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Run Applications">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Run a Stateless Application Using a Deployment <small>(EN)</small>" href="/docs/tasks/run-application/run-stateless-application-deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Run a Single-Instance Stateful Application <small>(EN)</small>" href="/docs/tasks/run-application/run-single-instance-stateful-application/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Run a Replicated Stateful Application <small>(EN)</small>" href="/docs/tasks/run-application/run-replicated-stateful-application/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Update API Objects in Place Using kubectl patch <small>(EN)</small>" href="/docs/tasks/run-application/update-api-object-kubectl-patch/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Scale a StatefulSet <small>(EN)</small>" href="/docs/tasks/run-application/scale-stateful-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Delete a StatefulSet <small>(EN)</small>" href="/docs/tasks/run-application/delete-stateful-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Force Delete StatefulSet Pods <small>(EN)</small>" href="/docs/tasks/run-application/force-delete-stateful-set-pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Perform Rolling Update Using a Replication Controller <small>(EN)</small>" href="/docs/tasks/run-application/rolling-update-replication-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Horizontal Pod Autoscaler <small>(EN)</small>" href="/docs/tasks/run-application/horizontal-pod-autoscale/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Horizontal Pod Autoscaler Walkthrough <small>(EN)</small>" href="/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Specifying a Disruption Budget for your Application <small>(EN)</small>" href="/docs/tasks/run-application/configure-pdb/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Use Port Forwarding to Access Applications in a Cluster" href="/zh/docs/tasks/access-application-cluster/port-forward-access-application-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Run Jobs">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Run Jobs" href="/zh/docs/tasks/job/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Running Automated Tasks with a CronJob" href="/zh/docs/tasks/job/automated-tasks-with-cron-jobs/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Parallel Processing using Expansions <small>(EN)</small>" href="/docs/tasks/job/parallel-processing-expansion/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Coarse Parallel Processing Using a Work Queue <small>(EN)</small>" href="/docs/tasks/job/coarse-parallel-processing-work-queue/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用工作队列进行精细的并行处理" href="/zh/docs/tasks/job/fine-parallel-processing-work-queue/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Provide Load-Balanced Access to an Application in a Cluster" href="/zh/docs/tasks/access-application-cluster/load-balance-access-application-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Access Applications in a Cluster">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Web UI (Dashboard) <small>(EN)</small>" href="/docs/tasks/access-application-cluster/web-ui-dashboard/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Accessing Clusters <small>(EN)</small>" href="/docs/tasks/access-application-cluster/access-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Access to Multiple Clusters <small>(EN)</small>" href="/docs/tasks/access-application-cluster/configure-access-multiple-clusters/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use Port Forwarding to Access Applications in a Cluster <small>(EN)</small>" href="/docs/tasks/access-application-cluster/port-forward-access-application-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use a Service to Access an Application in a Cluster <small>(EN)</small>" href="/docs/tasks/access-application-cluster/service-access-application-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Connect a Front End to a Back End Using a Service <small>(EN)</small>" href="/docs/tasks/access-application-cluster/connecting-frontend-backend/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Create an External Load Balancer <small>(EN)</small>" href="/docs/tasks/access-application-cluster/create-external-load-balancer/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Your Cloud Provider&#39;s Firewalls <small>(EN)</small>" href="/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="List All Container Images Running in a Cluster <small>(EN)</small>" href="/docs/tasks/access-application-cluster/list-all-running-container-images/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up Ingress on Minikube with the NGINX Ingress Controller <small>(EN)</small>" href="/docs/tasks/access-application-cluster/ingress-minikube/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Communicate Between Containers in the Same Pod Using a Shared Volume <small>(EN)</small>" href="/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure DNS for a Cluster <small>(EN)</small>" href="/docs/tasks/access-application-cluster/configure-dns-cluster/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Use a Service to Access an Application in a Cluster" href="/zh/docs/tasks/access-application-cluster/service-access-application-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="删除 StatefulSet" href="/zh/docs/tasks/run-application/delete-stateful-set/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Monitor, Log, and Debug">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Monitor, Log, and Debug" href="/zh/docs/tasks/debug-application-cluster/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Application Introspection and Debugging <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/debug-application-introspection/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Auditing" href="/zh/docs/tasks/debug-application-cluster/audit/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Core metrics pipeline <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/core-metrics-pipeline/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Debug Init Containers <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/debug-init-containers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Debug Services <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/debug-service/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Debugging Kubernetes nodes with crictl <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/crictl/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Determine the Reason for Pod Failure <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/determine-reason-pod-failure/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Developing and debugging services locally <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/local-debugging/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Events in Stackdriver <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/events-stackdriver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Get a Shell to a Running Container <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/get-shell-running-container/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Logging Using Elasticsearch and Kibana <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Logging Using Stackdriver <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/logging-stackdriver/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Monitor Node Health <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/monitor-node-health/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Tools for Monitoring Resources <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/resource-usage-monitoring/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Troubleshooting <small>(EN)</small>" href="/docs/tasks/debug-application-cluster/troubleshooting/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="应用故障排查" href="/zh/docs/tasks/debug-application-cluster/debug-application/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="调试Pods和Replication Controllers" href="/zh/docs/tasks/debug-application-cluster/debug-pod-replication-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="调试StatefulSet" href="/zh/docs/tasks/debug-application-cluster/debug-stateful-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="集群故障排查" href="/zh/docs/tasks/debug-application-cluster/debug-cluster/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Create an External Load Balancer" href="/zh/docs/tasks/access-application-cluster/create-external-load-balancer/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Extend Kubernetes">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Use Custom Resources">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Extend the Kubernetes API with CustomResourceDefinitions <small>(EN)</small>" href="/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Versions of CustomResourceDefinitions <small>(EN)</small>" href="/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definition-versioning/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure the Aggregation Layer <small>(EN)</small>" href="/docs/tasks/access-kubernetes-api/configure-aggregation-layer/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Setup an Extension API Server <small>(EN)</small>" href="/docs/tasks/access-kubernetes-api/setup-extension-api-server/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Use an HTTP Proxy to Access the Kubernetes API <small>(EN)</small>" href="/docs/tasks/access-kubernetes-api/http-proxy-access-api/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="配置你的云平台防火墙" href="/zh/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="TLS">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Certificate Rotation <small>(EN)</small>" href="/docs/tasks/tls/certificate-rotation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Manage TLS Certificates in a Cluster <small>(EN)</small>" href="/docs/tasks/tls/managing-tls-in-a-cluster/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="List All Container Images Running in a Cluster" href="/zh/docs/tasks/access-application-cluster/list-all-running-container-images/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Federation - Run an App on Multiple Clusters">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Federation - Run an App on Multiple Clusters" href="/zh/docs/tasks/federation/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up Cluster Federation with Kubefed <small>(EN)</small>" href="/docs/tasks/federation/set-up-cluster-federation-kubefed/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up CoreDNS as DNS provider for Cluster Federation <small>(EN)</small>" href="/docs/tasks/federation/set-up-coredns-provider-federation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up placement policies in Federation <small>(EN)</small>" href="/docs/tasks/federation/set-up-placement-policies-federation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Cross-cluster Service Discovery using Federated Services <small>(EN)</small>" href="/docs/tasks/federation/federation-service-discovery/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Administer Federation Control Plane">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Cluster <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated ConfigMap <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/configmap/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated DaemonSet <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/daemonset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Deployment <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Events <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/events/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Horizontal Pod Autoscalers (HPA) <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/hpa/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Ingress <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/ingress/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Jobs <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/job/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Namespaces <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/namespaces/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated ReplicaSets <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/replicaset/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Federated Secrets <small>(EN)</small>" href="/docs/tasks/federation/administer-federation/secret/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Configure DNS for a Cluster" href="/zh/docs/tasks/access-application-cluster/configure-dns-cluster/"></a>
+
+		
+	
+		
+			
+<div class="item" data-title="Manage Cluster Daemons">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Perform a Rollback on a DaemonSet <small>(EN)</small>" href="/docs/tasks/manage-daemon/rollback-daemon-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Perform a Rolling Update on a DaemonSet <small>(EN)</small>" href="/docs/tasks/manage-daemon/update-daemon-set/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Install Service Catalog">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Install Service Catalog using Helm <small>(EN)</small>" href="/docs/tasks/service-catalog/install-service-catalog-using-helm/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Install Service Catalog using SC <small>(EN)</small>" href="/docs/tasks/service-catalog/install-service-catalog-using-sc/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Federation - Run an App on Multiple Clusters">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Federation - Run an App on Multiple Clusters" href="/zh/docs/tasks/administer-federation/"></a>
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Administer-clusters">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+<div class="item" data-title="Administration with kubeadm">
+	<div class="container">
+		
+		
+	
+	
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Certificate Management with kubeadm <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm HA clusters from v1.11 to v1.12 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-12/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm HA clusters from v1.12 to v1.13 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-13/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.10 to v1.11 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-11/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.11 to v1.12 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-12/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Upgrading kubeadm clusters from v1.12 to v1.13 <small>(EN)</small>" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-13/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Manage Memory, CPU, and API Resources">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Manage Memory, CPU, and API Resources" href="/zh/docs/tasks/administer-cluster/manage-resources/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Configure Default Memory Requests and Limits for a Namespace" href="/zh/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Configure Default CPU Requests and Limits for a Namespace" href="/zh/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Configure Minimum and Maximum Memory Constraints for a Namespace" href="/zh/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Configure Minimum and Maximum CPU Constraints for a Namespace" href="/zh/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Configure Memory and CPU Quotas for a Namespace" href="/zh/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure a Pod Quota for a Namespace <small>(EN)</small>" href="/docs/tasks/administer-cluster/manage-resources/quota-pod-namespace/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Install a Network Policy Provider">
+	<div class="container">
+		
+		
+		
+		<a class="item" data-title="Install a Network Policy Provider" href="/zh/docs/tasks/administer-cluster/network-policy-provider/"></a>
+		
+		
+	
+	
+			
+			
+			
+			
+			
+		
+	
+	
+	
+		
+			
+
+<a class="item" data-title="使用 Calico 作为 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Cilium 作为 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Kube-router 作为 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Romana 作为 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Weave Net 作为 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Access Clusters Using the Kubernetes API <small>(EN)</small>" href="/docs/tasks/administer-cluster/access-cluster-api/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Advertise Extended Resources for a Node <small>(EN)</small>" href="/docs/tasks/administer-cluster/extended-resource-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Autoscale the DNS Service in a Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/dns-horizontal-autoscaling/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Multiple Schedulers <small>(EN)</small>" href="/docs/tasks/administer-cluster/configure-multiple-schedulers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Out Of Resource Handling <small>(EN)</small>" href="/docs/tasks/administer-cluster/out-of-resource/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Configure Quotas for API Objects <small>(EN)</small>" href="/docs/tasks/administer-cluster/quota-api-object/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Debugging DNS Resolution <small>(EN)</small>" href="/docs/tasks/administer-cluster/dns-debugging-resolution/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Developing Cloud Controller Manager <small>(EN)</small>" href="/docs/tasks/administer-cluster/developing-cloud-controller-manager/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Encrypting Secret Data at Rest" href="/zh/docs/tasks/administer-cluster/encrypt-data/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="IP Masquerade Agent User Guide <small>(EN)</small>" href="/docs/tasks/administer-cluster/ip-masq-agent/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Kubernetes Cloud Controller Manager <small>(EN)</small>" href="/docs/tasks/administer-cluster/running-cloud-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Limit Storage Consumption <small>(EN)</small>" href="/docs/tasks/administer-cluster/limit-storage-consumption/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Namespaces Walkthrough <small>(EN)</small>" href="/docs/tasks/administer-cluster/namespaces-walkthrough/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Operating etcd clusters for Kubernetes <small>(EN)</small>" href="/docs/tasks/administer-cluster/configure-upgrade-etcd/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Reconfigure a Node&#39;s Kubelet in a Live Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/reconfigure-kubelet/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Reserve Compute Resources for System Daemons <small>(EN)</small>" href="/docs/tasks/administer-cluster/reserve-compute-resources/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Safely Drain a Node while Respecting Application SLOs <small>(EN)</small>" href="/docs/tasks/administer-cluster/safely-drain-node/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Securing a Cluster <small>(EN)</small>" href="/docs/tasks/administer-cluster/securing-a-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Set up High-Availability Kubernetes Masters <small>(EN)</small>" href="/docs/tasks/administer-cluster/highly-available-master/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Share a Cluster with Namespaces <small>(EN)</small>" href="/docs/tasks/administer-cluster/namespaces/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Storage Object in Use Protection <small>(EN)</small>" href="/docs/tasks/administer-cluster/storage-object-in-use-protection/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using CoreDNS for Service Discovery <small>(EN)</small>" href="/docs/tasks/administer-cluster/coredns/"></a>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Using a KMS provider for data encryption <small>(EN)</small>" href="/docs/tasks/administer-cluster/kms-provider/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Calico 来提供 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/calico-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Romana 来提供 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/romana-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Weave 网络来提供 NetworkPolicy" href="/zh/docs/tasks/administer-cluster/weave-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="关键插件 Pod 的调度保证" href="/zh/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="在 Kubernetes 中配置私有 DNS 和上游域名服务器" href="/zh/docs/tasks/administer-cluster/dns-custom-nameservers/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="在 Kubernetes 集群中使用 sysctl" href="/zh/docs/tasks/administer-cluster/sysctl-cluster/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="声明网络策略" href="/zh/docs/tasks/administer-cluster/declare-network-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="将 kubeadm 集群在 v1.8 版本到 v1.9 版本之间升级/降级" href="/zh/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-9/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="应用资源配额和限额" href="/zh/docs/tasks/administer-cluster/apply-resource-quota-limit/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="控制节点上的CPU管理策略" href="/zh/docs/tasks/administer-cluster/cpu-management-policies/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="改变默认 StorageClass" href="/zh/docs/tasks/administer-cluster/change-default-storage-class/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="更改 PersistentVolume 的回收策略" href="/zh/docs/tasks/administer-cluster/change-pv-reclaim-policy/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="设置 Pod CPU 和内存限制" href="/zh/docs/tasks/administer-cluster/cpu-memory-limit/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="访问集群上运行的服务" href="/zh/docs/tasks/administer-cluster/access-cluster-services/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="通过配置文件设置 Kubelet 参数" href="/zh/docs/tasks/administer-cluster/kubelet-config-file/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="配置命名空间下pod总数" href="/zh/docs/tasks/administer-cluster/quota-pod-namespace/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="集群管理" href="/zh/docs/tasks/administer-cluster/cluster-management/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="静态Pods" href="/zh/docs/tasks/administer-cluster/static-pod/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+
+<a class="item" target="_blank" data-title="Extend kubectl with plugins <small>(EN)</small>" href="/docs/tasks/extend-kubectl/kubectl-plugins/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用 Service 把前端连接到后端" href="/zh/docs/tasks/access-application-cluster/connecting-frontend-backend/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="使用Deployment运行一个无状态应用" href="/zh/docs/tasks/run-application/run-stateless-application-deployment/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="同 Pod 内的容器使用共享卷通信" href="/zh/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="基于Replication Controller执行滚动升级" href="/zh/docs/tasks/run-application/rolling-update-replication-controller/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="对 DaemonSet 执行回滚" href="/zh/docs/tasks/manage-daemon/rollback-daemon-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="弹缩StatefulSet" href="/zh/docs/tasks/run-application/scale-stateful-set/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="管理巨页（HugePages）" href="/zh/docs/tasks/manage-hugepages/scheduling-hugepages/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="证书轮换" href="/zh/docs/tasks/tls/certificate-rotation/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="调度 GPU" href="/zh/docs/tasks/manage-gpus/scheduling-gpus/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="运行一个单实例有状态应用" href="/zh/docs/tasks/run-application/run-single-instance-stateful-application/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="配置对多集群的访问" href="/zh/docs/tasks/access-application-cluster/configure-access-multiple-clusters/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+  <div id="docsContent">
+  
+
+<p>
+  <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5ctasks%5crun-application%5crolling-update-replication-controller.md" id="editPageButton" target="_blank">
+    Edit This Page
+  </a>
+</p>
+
+<h1>基于Replication Controller执行滚动升级</h1>
+
+
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#概述">概述</a></li>
+<li><a href="#通过配置文件更新">通过配置文件更新</a>
+<ul>
+<li><a href="#示例">示例</a></li>
+</ul></li>
+<li><a href="#更新容器镜像">更新容器镜像</a>
+<ul>
+<li><a href="#示例-1">示例</a></li>
+</ul></li>
+<li><a href="#必选和可选字段">必选和可选字段</a></li>
+<li><a href="#实践">实践</a></li>
+<li><a href="#故障分析">故障分析</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="概述">概述</h2>
+
+<p><strong>注</strong>: 创建副本应用的首选方法是使用<a href="/docs/api-reference/v1.13/#deployment-v1beta1-apps">Deployment</a>，Deployment使用<a href="/docs/api-reference/v1.13/#replicaset-v1beta1-extensions">ReplicaSet</a>来进行副本控制。
+更多信息, 查看<a href="/docs/tasks/run-application/run-stateless-application-deployment/">使用Deployment运行一个无状态应用</a>。</p>
+
+<p>为了在更新服务的同时不中断业务， <code>kubectl</code> 支持<a href="/docs/user-guide/kubectl/v1.6/#rolling-update">&lsquo;滚动更新&rsquo;</a>，它一次更新一个pod，而不是同时停止整个服务。 有关更多信息，请参阅 <a href="https://git.k8s.io/community/contributors/design-proposals/cli/simple-rolling-update.md" target="_blank">滚动更新设计文档</a> 和 <a href="/docs/tasks/run-application/rolling-update-replication-controller/">滚动更新示例</a>。</p>
+
+<p>请注意， <code>kubectl rolling-update</code> 仅支持Replication Controllers。 但是，如果使用Replication Controllers部署应用，请考虑将其切换到<a href="/docs/concepts/workloads/controllers/deployment/">Deployments</a>. Deployment是一种被推荐使用的更高级别的控制器，它可以对应用进行声明性的自动滚动更新。 如果您仍然希望保留您的Replication Controllers并使用 <code>kubectl rolling-update</code>进行滚动更新， 请继续往下阅读：</p>
+
+<p>滚动更新可以对replication controller所管理的Pod的配置进行变更，变更可以通过一个新的配置文件来进行，或者，如果只更新镜像，则可以直接指定新的容器镜像。</p>
+
+<p>滚动更新的工作流程：</p>
+
+<ol>
+<li>通过新的配置创建一个replication controller</li>
+<li>在新的控制器上增加副本数，在旧的上面减少副本数，直到副本数达到期望值</li>
+<li>删除之前的replication controller</li>
+</ol>
+
+<p>使用<code>kubectl rolling-update</code>命令来进行滚动更新：</p>
+
+<pre><code>$ kubectl rolling-update NAME \
+    ([NEW_NAME] --image=IMAGE | -f FILE)
+</code></pre>
+
+<h2 id="通过配置文件更新">通过配置文件更新</h2>
+
+<p>通过配置文件来进行滚动更新，需要在<code>kubectl rolling-update</code>命令后面带上新的配置文件：</p>
+
+<pre><code>$ kubectl rolling-update NAME -f FILE
+</code></pre>
+
+<p>这个配置文件必须满足以下条件：</p>
+
+<ul>
+<li><p>指定不同的<code>metadata.name</code>值</p></li>
+
+<li><p>至少要修改<code>spec.selector</code>中的一个标签值</p></li>
+
+<li><p><code>metadata.namespace</code>字段必须相同</p></li>
+</ul>
+
+<p>Replication Controllers的配置文件详细介绍见<a href="/docs/tutorials/stateless-application/run-stateless-ap-replication-controller/">创建Replication Controllers</a>.</p>
+
+<h3 id="示例">示例</h3>
+
+<pre><code>// 通过新的配置文件frontend-v2.json来更新frontend-v1的pods
+$ kubectl rolling-update frontend-v1 -f frontend-v2.json
+
+// 将frontend-v2.json数据传到标准输入来更新frontend-v1的pods
+$ cat frontend-v2.json | kubectl rolling-update frontend-v1 -f -
+</code></pre>
+
+<h2 id="更新容器镜像">更新容器镜像</h2>
+
+<p>仅更新容器镜像的话，可通过如下命令，该命令可以指定一个新的控制器名称（可选），通过<code>--image</code>参数来指定新的镜像名称和标签。</p>
+
+<pre><code>$ kubectl rolling-update NAME [NEW_NAME] --image=IMAGE:TAG
+</code></pre>
+
+<p><code>--image</code>参数仅支持单容器pod，多容器pod使用<code>--image</code>参数会返回错误。</p>
+
+<p>如果没有指定 <code>NEW_NAME</code> ，新的replication controller创建后会使用一个临时名称，当更新完成，旧的controller被删除后，新的controller名称会被更新成旧的controller名称。</p>
+
+<p>如果<code>IMAGE:TAG</code> 和当前值相同，更新就会失败。 因此，我们建议使用版本号来作为标签，而不是使用 <code>:latest</code>。从一个 <code>image:latest</code>镜像升级到一个新的 <code>image:latest</code> 镜像将会失败，即使这两个镜像不是相同的。
+所以，我们不建议使用 <code>:latest</code> 来作为标签，详细信息见<a href="/docs/concepts/configuration/overview/#container-images">最佳配置实践</a> 。</p>
+
+<h3 id="示例-1">示例</h3>
+
+<pre><code>// 更新frontend-v1的pod到frontend-v2
+$ kubectl rolling-update frontend-v1 frontend-v2 --image=image:v2
+
+// 更新frontend的pods，不更改replication controller的名称
+$ kubectl rolling-update frontend --image=image:v2
+</code></pre>
+
+<h2 id="必选和可选字段">必选和可选字段</h2>
+
+<p>必选字段：</p>
+
+<ul>
+<li><code>NAME</code>: 需要进行滚动更新的replication controller名称</li>
+</ul>
+
+<p>下面两个字段选其一：</p>
+
+<ul>
+<li><code>-f FILE</code>: 新的replication controller的配置文件，JSON或者YAML格式均可。配置文件必须指定一个新的顶层<code>id</code>值，且至少包含一个现有<code>spec.selector</code>中的键值对。
+详细信息见<a href="/docs/tutorials/stateless-application/run-stateless-ap-replication-controller/#replication-controller-configuration-file">通过Replication Controller运行无状态应用</a>。
+<br>
+<br>
+或者：
+<br>
+<br></li>
+<li><code>--image IMAGE:TAG</code>: 更新后的镜像的名称和标签。必须和当前的image:tag不同。</li>
+</ul>
+
+<p>可选字段包括：</p>
+
+<ul>
+<li><code>NEW_NAME</code>: 只和 <code>--image</code> 一起使用，不和 <code>-f FILE</code> 一起使用。标识新的replication controller的名称。</li>
+<li><code>--poll-interval DURATION</code>: 在更新后轮询控制器状态的间隔时间。有效单位有 <code>ns</code> （纳秒），<code>us</code> 或 <code>µs</code>（微秒），<code>ms</code>（毫秒），<code>s</code>（秒），<code>m</code>（分钟）或 <code>h</code>（小时）。 单位可以自由组合（例如 <code>1m30s</code>）。 默认值为 <code>3s</code>。</li>
+<li><code>--timeout DURATION</code>: 退出更新之前，等待控制器更新一个pod的最大时间。默认是<code>5m0s</code>。有效单位如<code>--poll-interval</code>所述。</li>
+<li><code>--update-period DURATION</code>: 更新两个pod之间等待的时间，默认值是<code>1m0s</code>。有效单位如<code>--poll-interval</code>所述。</li>
+</ul>
+
+<p>有关<code>kubectl rolling-update</code>命令的更多信息见<a href="/docs/user-guide/kubectl/v1.6/#rolling-update"><code>kubectl</code>参考</a>.</p>
+
+<h2 id="实践">实践</h2>
+
+<p>现在你运行了一个1.7.9版本的nginx应用：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>ReplicationController<span style="color:#bbb">
+</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>my-nginx<span style="color:#bbb">
+</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>replicas:<span style="color:#bbb"> </span><span style="color:#666">5</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>template:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>labels:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>app:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>containers:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>image:<span style="color:#bbb"> </span>nginx:<span style="color:#666">1.7</span>.<span style="color:#666">9</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>ports:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>-<span style="color:#bbb"> </span>containerPort:<span style="color:#bbb"> </span><span style="color:#666">80</span></code></pre></div>
+<p>要更新到1.9.1版本，你可以使用<a href="https://git.k8s.io/community/contributors/design-proposals/cli/simple-rolling-update.md" target="_blank"><code>kubectl rolling-update --image</code></a>来指定一个新的镜像：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl rolling-update my-nginx --image<span style="color:#666">=</span>nginx:1.9.1
+Created my-nginx-ccba8fbd8cc8160970f63f9a2696fc46</code></pre></div>
+<p>在终端上打开另一个窗口 ，你可以看到<code>kubectl</code> 给每个pod都增加了一个值为配置文件哈希值的 <code>deployment</code> 标签，用来区分新旧pod：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl get pods -l <span style="color:#b8860b">app</span><span style="color:#666">=</span>nginx -L deployment
+NAME                                              READY     STATUS    RESTARTS   AGE       DEPLOYMENT
+my-nginx-ccba8fbd8cc8160970f63f9a2696fc46-k156z   <span style="color:#666">1</span>/1       Running   <span style="color:#666">0</span>          1m        ccba8fbd8cc8160970f63f9a2696fc46
+my-nginx-ccba8fbd8cc8160970f63f9a2696fc46-v95yh   <span style="color:#666">1</span>/1       Running   <span style="color:#666">0</span>          35s       ccba8fbd8cc8160970f63f9a2696fc46
+my-nginx-divi2                                    <span style="color:#666">1</span>/1       Running   <span style="color:#666">0</span>          2h        2d1d7a8f682934a254002b56404b813e
+my-nginx-o0ef1                                    <span style="color:#666">1</span>/1       Running   <span style="color:#666">0</span>          2h        2d1d7a8f682934a254002b56404b813e
+my-nginx-q6all                                    <span style="color:#666">1</span>/1       Running   <span style="color:#666">0</span>          8m        2d1d7a8f682934a254002b56404b813e</code></pre></div>
+<p>使用<code>kubectl rolling-update</code>可以实时看到更新的进度：</p>
+
+<pre><code>Scaling up my-nginx-ccba8fbd8cc8160970f63f9a2696fc46 from 0 to 3, scaling down my-nginx from 3 to 0 (keep 3 pods available, don't exceed 4 pods)
+Scaling my-nginx-ccba8fbd8cc8160970f63f9a2696fc46 up to 1
+Scaling my-nginx down to 2
+Scaling my-nginx-ccba8fbd8cc8160970f63f9a2696fc46 up to 2
+Scaling my-nginx down to 1
+Scaling my-nginx-ccba8fbd8cc8160970f63f9a2696fc46 up to 3
+Scaling my-nginx down to 0
+Update succeeded. Deleting old controller: my-nginx
+Renaming my-nginx-ccba8fbd8cc8160970f63f9a2696fc46 to my-nginx
+replicationcontroller &quot;my-nginx&quot; rolling updated
+</code></pre>
+
+<p>如果遇到问题，你可以中途停止滚动更新，并且使用 <code>--rollback</code> 来回滚到以前的版本:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl rolling-update my-nginx --rollback
+Setting <span style="color:#b44">&#34;my-nginx&#34;</span> replicas to <span style="color:#666">1</span>
+Continuing update with existing controller my-nginx.
+Scaling up nginx from <span style="color:#666">1</span> to <span style="color:#666">1</span>, scaling down my-nginx-ccba8fbd8cc8160970f63f9a2696fc46 from <span style="color:#666">1</span> to <span style="color:#666">0</span> <span style="color:#666">(</span>keep <span style="color:#666">1</span> pods available, don<span style="">&#39;</span>t exceed <span style="color:#666">2</span> pods<span style="color:#666">)</span>
+Scaling my-nginx-ccba8fbd8cc8160970f63f9a2696fc46 down to <span style="color:#666">0</span>
+Update succeeded. Deleting my-nginx-ccba8fbd8cc8160970f63f9a2696fc46
+replicationcontroller <span style="color:#b44">&#34;my-nginx&#34;</span> rolling updated</code></pre></div>
+<p>这个例子说明容器的不变性是个巨大的优点。</p>
+
+<p>如果你不仅仅是需要更新镜像，(例如，更新命令参数，环境变量等)，你可以创建一个新的replication controller配置文件，包含一个新的名称和不同的标签值，例如：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>ReplicationController<span style="color:#bbb">
+</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>my-nginx-v4<span style="color:#bbb">
+</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>replicas:<span style="color:#bbb"> </span><span style="color:#666">5</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>selector:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>app:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>deployment:<span style="color:#bbb"> </span>v4<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>template:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>labels:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>app:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>deployment:<span style="color:#bbb"> </span>v4<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>containers:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>image:<span style="color:#bbb"> </span>nginx:<span style="color:#666">1.9</span>.<span style="color:#666">2</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>args:<span style="color:#bbb"> </span>[<span style="color:#b44">&#34;nginx&#34;</span>,<span style="color:#bbb"> </span><span style="color:#b44">&#34;-T&#34;</span>]<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>ports:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>-<span style="color:#bbb"> </span>containerPort:<span style="color:#bbb"> </span><span style="color:#666">80</span></code></pre></div>
+<p>然后使用它来进行更新：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl rolling-update my-nginx -f ./nginx-rc.yaml
+Created my-nginx-v4
+Scaling up my-nginx-v4 from <span style="color:#666">0</span> to <span style="color:#666">5</span>, scaling down my-nginx from <span style="color:#666">4</span> to <span style="color:#666">0</span> <span style="color:#666">(</span>keep <span style="color:#666">4</span> pods available, don<span style="">&#39;</span>t exceed <span style="color:#666">5</span> pods<span style="color:#666">)</span>
+Scaling my-nginx-v4 up to <span style="color:#666">1</span>
+Scaling my-nginx down to <span style="color:#666">3</span>
+Scaling my-nginx-v4 up to <span style="color:#666">2</span>
+Scaling my-nginx down to <span style="color:#666">2</span>
+Scaling my-nginx-v4 up to <span style="color:#666">3</span>
+Scaling my-nginx down to <span style="color:#666">1</span>
+Scaling my-nginx-v4 up to <span style="color:#666">4</span>
+Scaling my-nginx down to <span style="color:#666">0</span>
+Scaling my-nginx-v4 up to <span style="color:#666">5</span>
+Update succeeded. Deleting old controller: my-nginx
+replicationcontroller <span style="color:#b44">&#34;my-nginx-v4&#34;</span> rolling updated</code></pre></div>
+<h2 id="故障分析">故障分析</h2>
+
+<p>如果更新过程中，达到超时时长<code>timeout</code>后还没更新完成，则更新会失败。这时，一些pod会属于新的replication controller，一些会属于旧的。</p>
+
+<p>如果更新失败，可以尝试使用同样的命令来继续更新过程。</p>
+
+<p>在尝试更新之前如果需要回滚到之前的状态，可在之前的命令后面添加<code>--rollback=true</code>参数，这将回退所有的更改。</p>
+
+
+
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/" title="同 Pod 内的容器使用共享卷通信"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 同 Pod 内的容器使用共享卷通信</a>
+<a class="nav nav-next" href="/zh/docs/tasks/manage-daemon/rollback-daemon-set/" title="对 DaemonSet 执行回滚">Next - 对 DaemonSet 执行回滚 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav>
+
+
+  
+  <h2>反馈</h2>
+  <p class="feedback--prompt">此页是否对您有帮助？ </p>
+  <button class="button feedback--yes">是</button>
+  <button class="button feedback--no">否</button>
+  <p class="feedback--response feedback--response__hidden">
+    Thanks for the feedback. If you have a specific, answerable question about how to use Kubernetes,
+    ask it on <a target="_blank" rel="noopener"
+    href="https://stackoverflow.com/questions/tagged/kubernetes">Stack Overflow</a>. Open
+    an issue in the GitHub repo if you want to <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Issue%20with%20k8s.io">report a problem</a> or
+    <a class="feedback--link" target="_blank" rel="noopener"
+    href="https://github.com/kubernetes/website/issues/new?title=Improvement%20for%20k8s.io">suggest an improvement</a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+  <div id="pre-footer"> 
+  <hr />
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs%5ctasks%5crun-application%5crolling-update-replication-controller.md?pixel" alt="Analytics" /></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/zh\/docs\/tasks\/run-application\/rolling-update-replication-controller\/",
+    "title" : "基于Replication Controller执行滚动升级",
+    "permalink" : "https:\/\/docstest.github.io\/zh\/docs\/tasks\/run-application\/rolling-update-replication-controller\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">创建 GitHub issue</a>
+    
+    
+    
+    <a href="https://github.com/kubernetes/website/edit/master/content/zh/docs%5ctasks%5crun-application%5crolling-update-replication-controller.md" class="button issue">修改本页面</a>
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    页面最后一次修改于 October 12, 2018 at 2:25 PM PST by
+    <a href="https://github.com/kubernetes/website/commit/abcee2dccd17c94376595b34cc05e56345a7f06c/">Update localization guidelines (#10485)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs%5ctasks%5crun-application%5crolling-update-replication-controller.md">页面历史</a>)
+  </div>
+  
+</div>
+
+  <div class="post-comment">
+    
+    
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
+        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
+        notify: 'false',
+        verify: 'false',
+        avatar:'SuperMap',
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+</script>
+
+  </div>
+  </div>
+</section>
+
+<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="/zh/docs/home/">主页</a>
+            
+            <a href="/zh/blog/">技术专题</a>
+            
+            
+            
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+<script language="application/javascript">
+  
+  (function addHeadingLinks(){
+    var article = document.getElementById('docsContent');
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var a = document.createElement('a');
+        a.innerHTML = heading.innerHTML;
+        a.href = '#'+heading.id;
+        a.classList.add('inpage_heading');
+        heading.innerHTML = '';
+        heading.appendChild(a);
+      }
+    });
+  })();
+</script>
+</body>
+</html>
