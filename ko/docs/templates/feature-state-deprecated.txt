@@ -1,1 +1,2 @@
-Cette fonctionnalité est *obsolète*. Pour plus d'informations sur cet état, voir la [Politique d'obsolescence de Kubernetes](/docs/reference/deprecation-policy/).
+
+This feature is *deprecated*. For more information on this state, see the [Kubernetes Deprecation Policy](/docs/reference/deprecation-policy/).

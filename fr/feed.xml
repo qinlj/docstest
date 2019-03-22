@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes – La meilleure solution d&#39;orchestration de conteneurs en production</title>
-    <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/</link>
+    <link>https://qinlj.github.io/fr/</link>
     <description>The Kubernetes project blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 01 Mar 2019 02:13:42 +0100</lastBuildDate>
     <image>
       <url>https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png</url>
       <title>Kubernetes.io</title>
-      <link>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/</link>
+      <link>https://qinlj.github.io/fr/</link>
     </image>
     
-	<atom:link href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://qinlj.github.io/fr/feed.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

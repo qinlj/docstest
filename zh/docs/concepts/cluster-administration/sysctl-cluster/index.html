@@ -14,13 +14,13 @@
 <meta charset="utf-8">
 <title>Kubernetes集群中使用Sysctls - SuperMap iDesktop .NET</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/png" href="/Test_hugo/images/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/Test_hugo/css/jquery-ui.min.css">
-<link rel="stylesheet" href="/Test_hugo/css/sweetalert.min.css">
-<link rel="stylesheet" href="/Test_hugo/css/callouts.css">
-<link rel="stylesheet" href="/Test_hugo/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
 
 
 
@@ -48,22 +48,22 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
  kernel.shm*（内核中共享内存相关参数）， kernel.msg*（内核中SystemV消息队列相关参数）， kernel.sem（内核中信号量参数）， fs.mqueue.*（内核中POSIX消息队列相关参数）， net.*（内核中网络配置项相关参数）。  Sysctls中非命名空间级的被称为 节点级 ，其必须由集群管理员手动设置，要么通过节点的底层Linux分布方式(例如，通过 /etc/sysctls.conf)，亦或在特权容器中使用Daemonset。
 注意: 这是很好的做法，考虑在一个集群里给有特殊sysctl的节点设置为 污点 ，并且给他们安排仅需要这些sysctl设置的pods。 建议采用Kubernetes 污点和容点 特征 来实现。
 安全的 vs. 不安全的 Sysctls Sysctls被分为 安全的 和 不安全的 sysctls。同一节点上的pods间除了适当命名空间命名一个 安全的 sysctl，还必须适当的 隔离 。 这意味着给一个pod设置一个 安全的 sysctl">
-<meta property="og:url" content="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/sysctl-cluster/">
+<meta property="og:url" content="https://qinlj.github.io/zh/docs/concepts/cluster-administration/sysctl-cluster/">
 <meta property="og:title" content="Kubernetes集群中使用Sysctls">
 <meta name="twitter:title" content="Kubernetes集群中使用Sysctls">
 
 <meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
 
-<meta property="og:image" content="/Test_hugo/images/kubernetes-horizontal-color.png">
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
 
 <meta property="og:type" content="article">
-<script src="/Test_hugo/js/anchor-4.1.1.min.js"></script>
-<script src="/Test_hugo/js/jquery-3.2.1.min.js"></script>
-<script src="/Test_hugo/js/jquery-ui-1.12.1.min.js"></script>
-<script src="/Test_hugo/js/bootstrap-3.3.7.min.js"></script>
-<script src="/Test_hugo/js/sweetalert-1.1.3.min.js"></script>
-<script src="/Test_hugo/js/script.js"></script>
-<script src="/Test_hugo/js/custom-jekyll/tags.js"></script>
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
 
 
 </head>
@@ -71,20 +71,20 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
-    <a href="/Test_hugo/zh/" class="logo"></a>
+    <a href="/zh/" class="logo"></a>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
             
-            <li><a href="/Test_hugo/zh/docs/" class="active">GIS 百科</a></li>
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
             
-            <li><a href="/Test_hugo/zh/blog/">技术专题</a></li>
-            
-            
+            <li><a href="/zh/blog/">技术专题</a></li>
             
             
             
-            <li><a href="/Test_hugo/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
             
             
             
@@ -94,15 +94,15 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
                 </a>
                 <ul>
                 
-                    <li><a href="/Test_hugo/">English</a></li>
+                    <li><a href="/">English</a></li>
                 
-                    <li><a href="/Test_hugo/ko/">한국어 Korean</a></li>
+                    <li><a href="/ko/">한국어 Korean</a></li>
                 
-                    <li><a href="/Test_hugo/ja/">日本語 Japanese</a></li>
+                    <li><a href="/ja/">日本語 Japanese</a></li>
                 
-                    <li><a href="/Test_hugo/fr/">Français</a></li>
+                    <li><a href="/fr/">Français</a></li>
                 
-                    <li><a href="/Test_hugo/it/">Italian</a></li>
+                    <li><a href="/it/">Italian</a></li>
                 
                 </ul>
             </li>
@@ -137,13 +137,13 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
         <main data-auto-burger="primary">
          
            <div class="nav-box">
-            <h3><a href="/Test_hugo/zh/docs/home/">文档</a></h3>
+            <h3><a href="/zh/docs/home/">文档</a></h3>
            <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
 
         </div>
          
            <div class="nav-box">
-            <h3><a href="/Test_hugo/zh/blog/">技术专题</a></h3>
+            <h3><a href="/zh/blog/">技术专题</a></h3>
            <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
 
         </div>
@@ -196,19 +196,19 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 	<ul>
 		
 		
-		<li><a href="/Test_hugo/zh/docs/home/">主页</a></li>
+		<li><a href="/zh/docs/home/">主页</a></li>
 		
 		
-		<li><a href="/Test_hugo/zh/docs/surfaceanalyst/">表面分析</a></li>
+		<li><a href="/zh/docs/surfaceanalyst/">表面分析</a></li>
 		
 		
-		<li><a href="/Test_hugo/zh/docs/datamanage/">数据管理</a></li>
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
 		
 		
-		<li><a href="/Test_hugo/zh/docs/dataconversion/">数据转换</a></li>
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
 		
 		
-		<li><a href="/Test_hugo/zh/docs/concepts/" class="YAH">概念</a></li>
+		<li><a href="/zh/docs/concepts/" class="YAH">概念</a></li>
 		
 	</ul>
 	<form id="searchBox" action="/docs/search/">
@@ -264,7 +264,7 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
          
          
         
-        <a class="item" data-title="概念" href="/Test_hugo/zh/docs/concepts/"></a>
+        <a class="item" data-title="概念" href="/zh/docs/concepts/"></a>
 
 	
 	
@@ -294,21 +294,21 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="What is Kubernetes? <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/what-is-kubernetes/"></a>
+<a class="item" target="_blank" data-title="What is Kubernetes? <small>(EN)</small>" href="/docs/concepts/overview/what-is-kubernetes/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Kubernetes Components <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/components/"></a>
+<a class="item" target="_blank" data-title="Kubernetes Components <small>(EN)</small>" href="/docs/concepts/overview/components/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="The Kubernetes API <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/kubernetes-api/"></a>
+<a class="item" target="_blank" data-title="The Kubernetes API <small>(EN)</small>" href="/docs/concepts/overview/kubernetes-api/"></a>
 
 		
 	
@@ -329,49 +329,49 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Understanding Kubernetes Objects <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/working-with-objects/kubernetes-objects/"></a>
+<a class="item" target="_blank" data-title="Understanding Kubernetes Objects <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/kubernetes-objects/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Names <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/working-with-objects/names/"></a>
+<a class="item" target="_blank" data-title="Names <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/names/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Namespaces <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/working-with-objects/namespaces/"></a>
+<a class="item" target="_blank" data-title="Namespaces <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/namespaces/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Labels and Selectors <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/working-with-objects/labels/"></a>
+<a class="item" target="_blank" data-title="Labels and Selectors <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/labels/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Annotations <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/working-with-objects/annotations/"></a>
+<a class="item" target="_blank" data-title="Annotations <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/annotations/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Field Selectors <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/working-with-objects/field-selectors/"></a>
+<a class="item" target="_blank" data-title="Field Selectors <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/field-selectors/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Recommended Labels <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/working-with-objects/common-labels/"></a>
+<a class="item" target="_blank" data-title="Recommended Labels <small>(EN)</small>" href="/docs/concepts/overview/working-with-objects/common-labels/"></a>
 
 		
 	
@@ -398,28 +398,28 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Kubernetes Object Management <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/object-management-kubectl/overview/"></a>
+<a class="item" target="_blank" data-title="Kubernetes Object Management <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/overview/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Managing Kubernetes Objects Using Imperative Commands <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/object-management-kubectl/imperative-command/"></a>
+<a class="item" target="_blank" data-title="Managing Kubernetes Objects Using Imperative Commands <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/imperative-command/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Imperative Management of Kubernetes Objects Using Configuration Files <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/object-management-kubectl/imperative-config/"></a>
+<a class="item" target="_blank" data-title="Imperative Management of Kubernetes Objects Using Configuration Files <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/imperative-config/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Declarative Management of Kubernetes Objects Using Configuration Files <small>(EN)</small>" href="/Test_hugo/docs/concepts/overview/object-management-kubectl/declarative-config/"></a>
+<a class="item" target="_blank" data-title="Declarative Management of Kubernetes Objects Using Configuration Files <small>(EN)</small>" href="/docs/concepts/overview/object-management-kubectl/declarative-config/"></a>
 
 		
 	
@@ -452,21 +452,21 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Nodes <small>(EN)</small>" href="/Test_hugo/docs/concepts/architecture/nodes/"></a>
+<a class="item" target="_blank" data-title="Nodes <small>(EN)</small>" href="/docs/concepts/architecture/nodes/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Master-Node communication <small>(EN)</small>" href="/Test_hugo/docs/concepts/architecture/master-node-communication/"></a>
+<a class="item" target="_blank" data-title="Master-Node communication <small>(EN)</small>" href="/docs/concepts/architecture/master-node-communication/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Concepts Underlying the Cloud Controller Manager <small>(EN)</small>" href="/Test_hugo/docs/concepts/architecture/cloud-controller/"></a>
+<a class="item" target="_blank" data-title="Concepts Underlying the Cloud Controller Manager <small>(EN)</small>" href="/docs/concepts/architecture/cloud-controller/"></a>
 
 		
 	
@@ -493,28 +493,28 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Images <small>(EN)</small>" href="/Test_hugo/docs/concepts/containers/images/"></a>
+<a class="item" target="_blank" data-title="Images <small>(EN)</small>" href="/docs/concepts/containers/images/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Container Environment Variables <small>(EN)</small>" href="/Test_hugo/docs/concepts/containers/container-environment-variables/"></a>
+<a class="item" target="_blank" data-title="Container Environment Variables <small>(EN)</small>" href="/docs/concepts/containers/container-environment-variables/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Runtime Class <small>(EN)</small>" href="/Test_hugo/docs/concepts/containers/runtime-class/"></a>
+<a class="item" target="_blank" data-title="Runtime Class <small>(EN)</small>" href="/docs/concepts/containers/runtime-class/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Container Lifecycle Hooks <small>(EN)</small>" href="/Test_hugo/docs/concepts/containers/container-lifecycle-hooks/"></a>
+<a class="item" target="_blank" data-title="Container Lifecycle Hooks <small>(EN)</small>" href="/docs/concepts/containers/container-lifecycle-hooks/"></a>
 
 		
 	
@@ -527,7 +527,7 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" data-title="Taint 和 Toleration" href="/Test_hugo/zh/docs/concepts/configuration/taint-and-toleration/"></a>
+<a class="item" data-title="Taint 和 Toleration" href="/zh/docs/concepts/configuration/taint-and-toleration/"></a>
 
 		
 	
@@ -538,7 +538,7 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 		
 		
-		<a class="item" data-title="工作负载" href="/Test_hugo/zh/docs/concepts/workloads/"></a>
+		<a class="item" data-title="工作负载" href="/zh/docs/concepts/workloads/"></a>
 		
 		
 	
@@ -559,7 +559,7 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 		
 		
-		<a class="item" data-title="Pods" href="/Test_hugo/zh/docs/concepts/workloads/pods/"></a>
+		<a class="item" data-title="Pods" href="/zh/docs/concepts/workloads/pods/"></a>
 		
 		
 	
@@ -576,42 +576,42 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Pod Overview <small>(EN)</small>" href="/Test_hugo/docs/concepts/workloads/pods/pod-overview/"></a>
+<a class="item" target="_blank" data-title="Pod Overview <small>(EN)</small>" href="/docs/concepts/workloads/pods/pod-overview/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Pods <small>(EN)</small>" href="/Test_hugo/docs/concepts/workloads/pods/pod/"></a>
+<a class="item" target="_blank" data-title="Pods <small>(EN)</small>" href="/docs/concepts/workloads/pods/pod/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Disruptions <small>(EN)</small>" href="/Test_hugo/docs/concepts/workloads/pods/disruptions/"></a>
+<a class="item" target="_blank" data-title="Disruptions <small>(EN)</small>" href="/docs/concepts/workloads/pods/disruptions/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Init 容器" href="/Test_hugo/zh/docs/concepts/workloads/pods/init-containers/"></a>
+<a class="item" data-title="Init 容器" href="/zh/docs/concepts/workloads/pods/init-containers/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Pod Preset" href="/Test_hugo/zh/docs/concepts/workloads/pods/podpreset/"></a>
+<a class="item" data-title="Pod Preset" href="/zh/docs/concepts/workloads/pods/podpreset/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Pod 的生命周期" href="/Test_hugo/zh/docs/concepts/workloads/pods/pod-lifecycle/"></a>
+<a class="item" data-title="Pod 的生命周期" href="/zh/docs/concepts/workloads/pods/pod-lifecycle/"></a>
 
 		
 	
@@ -628,7 +628,7 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 		
 		
-		<a class="item" data-title="Controllers" href="/Test_hugo/zh/docs/concepts/workloads/controllers/"></a>
+		<a class="item" data-title="Controllers" href="/zh/docs/concepts/workloads/controllers/"></a>
 		
 		
 	
@@ -645,63 +645,63 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="ReplicaSet <small>(EN)</small>" href="/Test_hugo/docs/concepts/workloads/controllers/replicaset/"></a>
+<a class="item" target="_blank" data-title="ReplicaSet <small>(EN)</small>" href="/docs/concepts/workloads/controllers/replicaset/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="ReplicationController <small>(EN)</small>" href="/Test_hugo/docs/concepts/workloads/controllers/replicationcontroller/"></a>
+<a class="item" target="_blank" data-title="ReplicationController <small>(EN)</small>" href="/docs/concepts/workloads/controllers/replicationcontroller/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="StatefulSets <small>(EN)</small>" href="/Test_hugo/docs/concepts/workloads/controllers/statefulset/"></a>
+<a class="item" target="_blank" data-title="StatefulSets <small>(EN)</small>" href="/docs/concepts/workloads/controllers/statefulset/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="TTL Controller for Finished Resources <small>(EN)</small>" href="/Test_hugo/docs/concepts/workloads/controllers/ttlafterfinished/"></a>
+<a class="item" target="_blank" data-title="TTL Controller for Finished Resources <small>(EN)</small>" href="/docs/concepts/workloads/controllers/ttlafterfinished/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Jobs - Run to Completion <small>(EN)</small>" href="/Test_hugo/docs/concepts/workloads/controllers/jobs-run-to-completion/"></a>
+<a class="item" target="_blank" data-title="Jobs - Run to Completion <small>(EN)</small>" href="/docs/concepts/workloads/controllers/jobs-run-to-completion/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Cron Job" href="/Test_hugo/zh/docs/concepts/workloads/controllers/cron-jobs/"></a>
+<a class="item" data-title="Cron Job" href="/zh/docs/concepts/workloads/controllers/cron-jobs/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="DaemonSet" href="/Test_hugo/zh/docs/concepts/workloads/controllers/daemonset/"></a>
+<a class="item" data-title="DaemonSet" href="/zh/docs/concepts/workloads/controllers/daemonset/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Deployments" href="/Test_hugo/zh/docs/concepts/workloads/controllers/deployment/"></a>
+<a class="item" data-title="Deployments" href="/zh/docs/concepts/workloads/controllers/deployment/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="垃圾收集" href="/Test_hugo/zh/docs/concepts/workloads/controllers/garbage-collection/"></a>
+<a class="item" data-title="垃圾收集" href="/zh/docs/concepts/workloads/controllers/garbage-collection/"></a>
 
 		
 	
@@ -734,49 +734,49 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Services <small>(EN)</small>" href="/Test_hugo/docs/concepts/services-networking/service/"></a>
+<a class="item" target="_blank" data-title="Services <small>(EN)</small>" href="/docs/concepts/services-networking/service/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="DNS for Services and Pods <small>(EN)</small>" href="/Test_hugo/docs/concepts/services-networking/dns-pod-service/"></a>
+<a class="item" target="_blank" data-title="DNS for Services and Pods <small>(EN)</small>" href="/docs/concepts/services-networking/dns-pod-service/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Connecting Applications with Services <small>(EN)</small>" href="/Test_hugo/docs/concepts/services-networking/connect-applications-service/"></a>
+<a class="item" target="_blank" data-title="Connecting Applications with Services <small>(EN)</small>" href="/docs/concepts/services-networking/connect-applications-service/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Ingress <small>(EN)</small>" href="/Test_hugo/docs/concepts/services-networking/ingress/"></a>
+<a class="item" target="_blank" data-title="Ingress <small>(EN)</small>" href="/docs/concepts/services-networking/ingress/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Ingress Controllers <small>(EN)</small>" href="/Test_hugo/docs/concepts/services-networking/ingress-controllers/"></a>
+<a class="item" target="_blank" data-title="Ingress Controllers <small>(EN)</small>" href="/docs/concepts/services-networking/ingress-controllers/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Network Policies <small>(EN)</small>" href="/Test_hugo/docs/concepts/services-networking/network-policies/"></a>
+<a class="item" target="_blank" data-title="Network Policies <small>(EN)</small>" href="/docs/concepts/services-networking/network-policies/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Adding entries to Pod /etc/hosts with HostAliases <small>(EN)</small>" href="/Test_hugo/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"></a>
+<a class="item" target="_blank" data-title="Adding entries to Pod /etc/hosts with HostAliases <small>(EN)</small>" href="/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"></a>
 
 		
 	
@@ -793,7 +793,7 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 		
 		
-		<a class="item" data-title="存储" href="/Test_hugo/zh/docs/concepts/storage/"></a>
+		<a class="item" data-title="存储" href="/zh/docs/concepts/storage/"></a>
 		
 		
 	
@@ -810,49 +810,49 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Volumes <small>(EN)</small>" href="/Test_hugo/docs/concepts/storage/volumes/"></a>
+<a class="item" target="_blank" data-title="Volumes <small>(EN)</small>" href="/docs/concepts/storage/volumes/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Persistent Volumes <small>(EN)</small>" href="/Test_hugo/docs/concepts/storage/persistent-volumes/"></a>
+<a class="item" target="_blank" data-title="Persistent Volumes <small>(EN)</small>" href="/docs/concepts/storage/persistent-volumes/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Volume Snapshots <small>(EN)</small>" href="/Test_hugo/docs/concepts/storage/volume-snapshots/"></a>
+<a class="item" target="_blank" data-title="Volume Snapshots <small>(EN)</small>" href="/docs/concepts/storage/volume-snapshots/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Storage Classes <small>(EN)</small>" href="/Test_hugo/docs/concepts/storage/storage-classes/"></a>
+<a class="item" target="_blank" data-title="Storage Classes <small>(EN)</small>" href="/docs/concepts/storage/storage-classes/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Volume Snapshot Classes <small>(EN)</small>" href="/Test_hugo/docs/concepts/storage/volume-snapshot-classes/"></a>
+<a class="item" target="_blank" data-title="Volume Snapshot Classes <small>(EN)</small>" href="/docs/concepts/storage/volume-snapshot-classes/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Dynamic Volume Provisioning <small>(EN)</small>" href="/Test_hugo/docs/concepts/storage/dynamic-provisioning/"></a>
+<a class="item" target="_blank" data-title="Dynamic Volume Provisioning <small>(EN)</small>" href="/docs/concepts/storage/dynamic-provisioning/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Node-specific Volume Limits <small>(EN)</small>" href="/Test_hugo/docs/concepts/storage/storage-limits/"></a>
+<a class="item" target="_blank" data-title="Node-specific Volume Limits <small>(EN)</small>" href="/docs/concepts/storage/storage-limits/"></a>
 
 		
 	
@@ -879,56 +879,56 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Configuration Best Practices <small>(EN)</small>" href="/Test_hugo/docs/concepts/configuration/overview/"></a>
+<a class="item" target="_blank" data-title="Configuration Best Practices <small>(EN)</small>" href="/docs/concepts/configuration/overview/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Managing Compute Resources for Containers <small>(EN)</small>" href="/Test_hugo/docs/concepts/configuration/manage-compute-resources-container/"></a>
+<a class="item" target="_blank" data-title="Managing Compute Resources for Containers <small>(EN)</small>" href="/docs/concepts/configuration/manage-compute-resources-container/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Assigning Pods to Nodes <small>(EN)</small>" href="/Test_hugo/docs/concepts/configuration/assign-pod-node/"></a>
+<a class="item" target="_blank" data-title="Assigning Pods to Nodes <small>(EN)</small>" href="/docs/concepts/configuration/assign-pod-node/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Taints and Tolerations <small>(EN)</small>" href="/Test_hugo/docs/concepts/configuration/taint-and-toleration/"></a>
+<a class="item" target="_blank" data-title="Taints and Tolerations <small>(EN)</small>" href="/docs/concepts/configuration/taint-and-toleration/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Secrets <small>(EN)</small>" href="/Test_hugo/docs/concepts/configuration/secret/"></a>
+<a class="item" target="_blank" data-title="Secrets <small>(EN)</small>" href="/docs/concepts/configuration/secret/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Organizing Cluster Access Using kubeconfig Files <small>(EN)</small>" href="/Test_hugo/docs/concepts/configuration/organize-cluster-access-kubeconfig/"></a>
+<a class="item" target="_blank" data-title="Organizing Cluster Access Using kubeconfig Files <small>(EN)</small>" href="/docs/concepts/configuration/organize-cluster-access-kubeconfig/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Pod Priority and Preemption <small>(EN)</small>" href="/Test_hugo/docs/concepts/configuration/pod-priority-preemption/"></a>
+<a class="item" target="_blank" data-title="Pod Priority and Preemption <small>(EN)</small>" href="/docs/concepts/configuration/pod-priority-preemption/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Scheduler Performance Tuning <small>(EN)</small>" href="/Test_hugo/docs/concepts/configuration/scheduler-perf-tuning/"></a>
+<a class="item" target="_blank" data-title="Scheduler Performance Tuning <small>(EN)</small>" href="/docs/concepts/configuration/scheduler-perf-tuning/"></a>
 
 		
 	
@@ -955,14 +955,14 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Resource Quotas <small>(EN)</small>" href="/Test_hugo/docs/concepts/policy/resource-quotas/"></a>
+<a class="item" target="_blank" data-title="Resource Quotas <small>(EN)</small>" href="/docs/concepts/policy/resource-quotas/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Pod Security Policies <small>(EN)</small>" href="/Test_hugo/docs/concepts/policy/pod-security-policy/"></a>
+<a class="item" target="_blank" data-title="Pod Security Policies <small>(EN)</small>" href="/docs/concepts/policy/pod-security-policy/"></a>
 
 		
 	
@@ -989,77 +989,77 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Cluster Administration Overview <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/cluster-administration-overview/"></a>
+<a class="item" target="_blank" data-title="Cluster Administration Overview <small>(EN)</small>" href="/docs/concepts/cluster-administration/cluster-administration-overview/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Certificates <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/certificates/"></a>
+<a class="item" target="_blank" data-title="Certificates <small>(EN)</small>" href="/docs/concepts/cluster-administration/certificates/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Cloud Providers <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/cloud-providers/"></a>
+<a class="item" target="_blank" data-title="Cloud Providers <small>(EN)</small>" href="/docs/concepts/cluster-administration/cloud-providers/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Managing Resources <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/manage-deployment/"></a>
+<a class="item" target="_blank" data-title="Managing Resources <small>(EN)</small>" href="/docs/concepts/cluster-administration/manage-deployment/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Cluster Networking <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/networking/"></a>
+<a class="item" target="_blank" data-title="Cluster Networking <small>(EN)</small>" href="/docs/concepts/cluster-administration/networking/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Logging Architecture <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/logging/"></a>
+<a class="item" target="_blank" data-title="Logging Architecture <small>(EN)</small>" href="/docs/concepts/cluster-administration/logging/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Configuring kubelet Garbage Collection <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/kubelet-garbage-collection/"></a>
+<a class="item" target="_blank" data-title="Configuring kubelet Garbage Collection <small>(EN)</small>" href="/docs/concepts/cluster-administration/kubelet-garbage-collection/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Federation <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/federation/"></a>
+<a class="item" target="_blank" data-title="Federation <small>(EN)</small>" href="/docs/concepts/cluster-administration/federation/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Proxies in Kubernetes <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/proxies/"></a>
+<a class="item" target="_blank" data-title="Proxies in Kubernetes <small>(EN)</small>" href="/docs/concepts/cluster-administration/proxies/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Controller manager metrics <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/controller-metrics/"></a>
+<a class="item" target="_blank" data-title="Controller manager metrics <small>(EN)</small>" href="/docs/concepts/cluster-administration/controller-metrics/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Installing Addons <small>(EN)</small>" href="/Test_hugo/docs/concepts/cluster-administration/addons/"></a>
+<a class="item" target="_blank" data-title="Installing Addons <small>(EN)</small>" href="/docs/concepts/cluster-administration/addons/"></a>
 
 		
 	
@@ -1086,7 +1086,7 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Extending your Kubernetes Cluster <small>(EN)</small>" href="/Test_hugo/docs/concepts/extend-kubernetes/extend-cluster/"></a>
+<a class="item" target="_blank" data-title="Extending your Kubernetes Cluster <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/extend-cluster/"></a>
 
 		
 	
@@ -1107,14 +1107,14 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Extending the Kubernetes API with the aggregation layer <small>(EN)</small>" href="/Test_hugo/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/"></a>
+<a class="item" target="_blank" data-title="Extending the Kubernetes API with the aggregation layer <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Custom Resources <small>(EN)</small>" href="/Test_hugo/docs/concepts/extend-kubernetes/api-extension/custom-resources/"></a>
+<a class="item" target="_blank" data-title="Custom Resources <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/api-extension/custom-resources/"></a>
 
 		
 	
@@ -1141,14 +1141,14 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Network Plugins <small>(EN)</small>" href="/Test_hugo/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/"></a>
+<a class="item" target="_blank" data-title="Network Plugins <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Device Plugins <small>(EN)</small>" href="/Test_hugo/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/"></a>
+<a class="item" target="_blank" data-title="Device Plugins <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/"></a>
 
 		
 	
@@ -1161,14 +1161,14 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" target="_blank" data-title="Service Catalog <small>(EN)</small>" href="/Test_hugo/docs/concepts/extend-kubernetes/service-catalog/"></a>
+<a class="item" target="_blank" data-title="Service Catalog <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/service-catalog/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Poseidon-Firmament - An alternate scheduler <small>(EN)</small>" href="/Test_hugo/docs/concepts/extend-kubernetes/poseidon-firmament-alternate-scheduler/"></a>
+<a class="item" target="_blank" data-title="Poseidon-Firmament - An alternate scheduler <small>(EN)</small>" href="/docs/concepts/extend-kubernetes/poseidon-firmament-alternate-scheduler/"></a>
 
 		
 	
@@ -1181,189 +1181,189 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 		
 			
 
-<a class="item" data-title="" href="/Test_hugo/zh/docs/concepts/architecture/cloud-controller/"></a>
+<a class="item" data-title="" href="/zh/docs/concepts/architecture/cloud-controller/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="" href="/Test_hugo/zh/docs/concepts/overview/kubernetes-api/"></a>
+<a class="item" data-title="" href="/zh/docs/concepts/overview/kubernetes-api/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="DNS Pod 与 Service" href="/Test_hugo/zh/docs/concepts/services-networking/dns-pod-service/"></a>
+<a class="item" data-title="DNS Pod 与 Service" href="/zh/docs/concepts/services-networking/dns-pod-service/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Kubernetes 中的代理" href="/Test_hugo/zh/docs/concepts/cluster-administration/proxies/"></a>
+<a class="item" data-title="Kubernetes 中的代理" href="/zh/docs/concepts/cluster-administration/proxies/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Kubernetes 组件" href="/Test_hugo/zh/docs/concepts/overview/components/"></a>
+<a class="item" data-title="Kubernetes 组件" href="/zh/docs/concepts/overview/components/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Kubernetes集群中使用Sysctls" href="/Test_hugo/zh/docs/concepts/cluster-administration/sysctl-cluster/"></a>
+<a class="item" data-title="Kubernetes集群中使用Sysctls" href="/zh/docs/concepts/cluster-administration/sysctl-cluster/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Managing Compute Resources for Containers" href="/Test_hugo/zh/docs/concepts/configuration/manage-compute-resources-container/"></a>
+<a class="item" data-title="Managing Compute Resources for Containers" href="/zh/docs/concepts/configuration/manage-compute-resources-container/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Master 节点通信" href="/Test_hugo/zh/docs/concepts/architecture/master-node-communication/"></a>
+<a class="item" data-title="Master 节点通信" href="/zh/docs/concepts/architecture/master-node-communication/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Nodes" href="/Test_hugo/zh/docs/concepts/architecture/nodes/"></a>
+<a class="item" data-title="Nodes" href="/zh/docs/concepts/architecture/nodes/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Pod 安全策略" href="/Test_hugo/zh/docs/concepts/policy/pod-security-policy/"></a>
+<a class="item" data-title="Pod 安全策略" href="/zh/docs/concepts/policy/pod-security-policy/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Secret" href="/Test_hugo/zh/docs/concepts/configuration/secret/"></a>
+<a class="item" data-title="Secret" href="/zh/docs/concepts/configuration/secret/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Service" href="/Test_hugo/zh/docs/concepts/services-networking/service/"></a>
+<a class="item" data-title="Service" href="/zh/docs/concepts/services-networking/service/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="云供应商" href="/Test_hugo/zh/docs/concepts/cluster-administration/cloud-providers/"></a>
+<a class="item" data-title="云供应商" href="/zh/docs/concepts/cluster-administration/cloud-providers/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="使用 HostAliases 向 Pod /etc/hosts 文件添加条目" href="/Test_hugo/zh/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"></a>
+<a class="item" data-title="使用 HostAliases 向 Pod /etc/hosts 文件添加条目" href="/zh/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="安装扩展（Addons）" href="/Test_hugo/zh/docs/concepts/cluster-administration/addons/"></a>
+<a class="item" data-title="安装扩展（Addons）" href="/zh/docs/concepts/cluster-administration/addons/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="容器环境变量" href="/Test_hugo/zh/docs/concepts/containers/container-environment-variables/"></a>
+<a class="item" data-title="容器环境变量" href="/zh/docs/concepts/containers/container-environment-variables/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="应用连接到 Service" href="/Test_hugo/zh/docs/concepts/services-networking/connect-applications-service/"></a>
+<a class="item" data-title="应用连接到 Service" href="/zh/docs/concepts/services-networking/connect-applications-service/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="概念模板示例" href="/Test_hugo/zh/docs/concepts/example-concept-template/"></a>
+<a class="item" data-title="概念模板示例" href="/zh/docs/concepts/example-concept-template/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="理解 Kubernetes 对象" href="/Test_hugo/zh/docs/concepts/overview/working-with-objects/kubernetes-objects/"></a>
+<a class="item" data-title="理解 Kubernetes 对象" href="/zh/docs/concepts/overview/working-with-objects/kubernetes-objects/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="网络策略" href="/Test_hugo/zh/docs/concepts/services-networking/network-policies/"></a>
+<a class="item" data-title="网络策略" href="/zh/docs/concepts/services-networking/network-policies/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="联邦" href="/Test_hugo/zh/docs/concepts/cluster-administration/federation/"></a>
+<a class="item" data-title="联邦" href="/zh/docs/concepts/cluster-administration/federation/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="认识 Kubernetes?" href="/Test_hugo/zh/docs/concepts/overview/what-is-kubernetes/"></a>
+<a class="item" data-title="认识 Kubernetes?" href="/zh/docs/concepts/overview/what-is-kubernetes/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="设备插件" href="/Test_hugo/zh/docs/concepts/cluster-administration/device-plugins/"></a>
+<a class="item" data-title="设备插件" href="/zh/docs/concepts/cluster-administration/device-plugins/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="证书" href="/Test_hugo/zh/docs/concepts/cluster-administration/certificates/"></a>
+<a class="item" data-title="证书" href="/zh/docs/concepts/cluster-administration/certificates/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="资源配额" href="/Test_hugo/zh/docs/concepts/policy/resource-quotas/"></a>
+<a class="item" data-title="资源配额" href="/zh/docs/concepts/policy/resource-quotas/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="镜像" href="/Test_hugo/zh/docs/concepts/containers/images/"></a>
+<a class="item" data-title="镜像" href="/zh/docs/concepts/containers/images/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="集群管理概述" href="/Test_hugo/zh/docs/concepts/cluster-administration/cluster-administration-overview/"></a>
+<a class="item" data-title="集群管理概述" href="/zh/docs/concepts/cluster-administration/cluster-administration-overview/"></a>
 
 		
 	
@@ -1499,8 +1499,8 @@ sysctls。 <em>不安全的</em> sysctls 会打上kubelet标识，在逐节点�
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/Test_hugo/zh/docs/concepts/overview/components/" title="Kubernetes 组件"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Kubernetes 组件</a>
-<a class="nav nav-next" href="/Test_hugo/zh/docs/concepts/configuration/manage-compute-resources-container/" title="Managing Compute Resources for Containers">Next - Managing Compute Resources for Containers <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/concepts/overview/components/" title="Kubernetes 组件"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Kubernetes 组件</a>
+<a class="nav nav-next" href="/zh/docs/concepts/configuration/manage-compute-resources-container/" title="Managing Compute Resources for Containers">Next - Managing Compute Resources for Containers <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -1561,9 +1561,9 @@ sysctls。 <em>不安全的</em> sysctls 会打上kubelet标识，在逐节点�
     <script type="text/javascript">
     PDRTJS_settings_8345992 = {
     "id" : "8345992",
-    "unique_id" : "\/Test_hugo\/zh\/docs\/concepts\/cluster-administration\/sysctl-cluster\/",
+    "unique_id" : "\/zh\/docs\/concepts\/cluster-administration\/sysctl-cluster\/",
     "title" : "Kubernetes集群中使用Sysctls",
-    "permalink" : "https:\/\/SuperMap_iDesktop.gitee.io\/Test_hugo\/zh\/docs\/concepts\/cluster-administration\/sysctl-cluster\/"
+    "permalink" : "https:\/\/qinlj.github.io\/zh\/docs\/concepts\/cluster-administration\/sysctl-cluster\/"
     };
     (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
     </script>
@@ -1615,15 +1615,15 @@ sysctls。 <em>不安全的</em> sysctls 会打上kubelet标识，在逐节点�
             
             
             
-            <a href="/Test_hugo/zh/docs/home/">主页</a>
+            <a href="/zh/docs/home/">主页</a>
             
-            <a href="/Test_hugo/zh/blog/">技术专题</a>
-            
-            
+            <a href="/zh/blog/">技术专题</a>
             
             
             
-            <a href="/Test_hugo/zh/case-studies/">三维技术专题</a>
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
             
         </nav>
         <div class="social">

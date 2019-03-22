@@ -14,13 +14,13 @@
 <meta charset="utf-8">
 <title>Kubernetes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/png" href="/Test_hugo/images/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/Test_hugo/css/jquery-ui.min.css">
-<link rel="stylesheet" href="/Test_hugo/css/sweetalert.min.css">
-<link rel="stylesheet" href="/Test_hugo/css/callouts.css">
-<link rel="stylesheet" href="/Test_hugo/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
 
 
 
@@ -30,22 +30,22 @@
 - rm $GOPATH/src/k8s.io/kubernetes/vendor/k8s.io/apimachinery - rm $GOPATH/src/k8s.io/kubernetes/vendor/k8s.io/apiserver - rm $GOPATH/src/k8s.io/kubernetes/vendor/k8s.io/client-go - cp -r $GOPATH/src/k8s.io/kubernetes/vendor/* $GOPATH/src/ - rm -rf $GOPATH/src/k8s.io/kubernetes/vendor/* - cp -r $GOPATH/src/k8s.io/kubernetes/staging/src/* $GOPATH/src/  ">
 <meta name="twitter:description" content="Note: These tests are importing code from kubernetes that isn&rsquo;t really meant to be used outside the repo. This causes vendoring problems. As a result, we have to work around those with these lines in the travis config:
 - rm $GOPATH/src/k8s.io/kubernetes/vendor/k8s.io/apimachinery - rm $GOPATH/src/k8s.io/kubernetes/vendor/k8s.io/apiserver - rm $GOPATH/src/k8s.io/kubernetes/vendor/k8s.io/client-go - cp -r $GOPATH/src/k8s.io/kubernetes/vendor/* $GOPATH/src/ - rm -rf $GOPATH/src/k8s.io/kubernetes/vendor/* - cp -r $GOPATH/src/k8s.io/kubernetes/staging/src/* $GOPATH/src/  ">
-<meta property="og:url" content="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/examples/readme/">
+<meta property="og:url" content="https://qinlj.github.io/ja/examples/readme/">
 <meta property="og:title" content="Note: …">
 <meta name="twitter:title" content="Note: …">
 
 <meta name="twitter:image:alt"   content="Kubernetes">
 
-<meta property="og:image" content="/Test_hugo/images/kubernetes-horizontal-color.png">
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
 
 <meta property="og:type" content="article">
-<script src="/Test_hugo/js/anchor-4.1.1.min.js"></script>
-<script src="/Test_hugo/js/jquery-3.2.1.min.js"></script>
-<script src="/Test_hugo/js/jquery-ui-1.12.1.min.js"></script>
-<script src="/Test_hugo/js/bootstrap-3.3.7.min.js"></script>
-<script src="/Test_hugo/js/sweetalert-1.1.3.min.js"></script>
-<script src="/Test_hugo/js/script.js"></script>
-<script src="/Test_hugo/js/custom-jekyll/tags.js"></script>
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
 
 
 	</head>
@@ -53,12 +53,12 @@
 		<div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
-    <a href="/Test_hugo/ja/" class="logo"></a>
+    <a href="/ja/" class="logo"></a>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
             
-            <li><a href="/Test_hugo/ja/docs/">ドキュメント</a></li>
+            <li><a href="/ja/docs/">ドキュメント</a></li>
             
             
             
@@ -66,7 +66,7 @@
             
             
             
-            <li><a href="/Test_hugo/ja/case-studies/">ケーススタディ</a></li>
+            <li><a href="/ja/case-studies/">ケーススタディ</a></li>
             
             
             
@@ -76,7 +76,7 @@
                 </a>
                 <ul>
                 
-                    <li><a href="/Test_hugo/examples/readme/">English</a></li>
+                    <li><a href="/examples/readme/">English</a></li>
                 
                 </ul>
             </li>
@@ -111,13 +111,13 @@
         <main data-auto-burger="primary">
          
            <div class="nav-box">
-            <h3><a href="/Test_hugo/ja/docs/tutorials/hello-minikube/">Get Started</a></h3>
+            <h3><a href="/ja/docs/tutorials/hello-minikube/">Get Started</a></h3>
            <p>手を動かす準備はできていますか？本チュートリアルでは、Node.jsを使った簡単な"Hello World"を実行するKubernetesクラスタをビルドします。</p>
 
         </div>
          
            <div class="nav-box">
-            <h3><a href="/Test_hugo/ja/docs/home/">ドキュメント</a></h3>
+            <h3><a href="/ja/docs/home/">ドキュメント</a></h3>
            <p>チュートリアル、サンプルやドキュメントのリファレンスを使って Kubernetes の利用方法を学んでください。あなたは<a href="/editdocs/" data-auto-burger-exclude>ドキュメントへコントリビュートをする</a>こともできます!</p>
 
         </div>
@@ -174,8 +174,8 @@ config:</p>
 - cp -r $GOPATH/src/k8s.io/kubernetes/staging/src/* $GOPATH/src/
 </code></pre>
 
-<nav class="pagination"><a class="nav nav-prev" href="/Test_hugo/ja/examples/" title="Examples"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Examples</a>
-<a class="nav nav-next" href="/Test_hugo/ja/case-studies/" title="ケーススタディ">Next - ケーススタディ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination"><a class="nav nav-prev" href="/ja/examples/" title="Examples"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Examples</a>
+<a class="nav nav-next" href="/ja/case-studies/" title="ケーススタディ">Next - ケーススタディ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
     </article>
@@ -186,7 +186,7 @@ config:</p>
             
             
             
-            <a href="/Test_hugo/ja/docs/home/">ホーム</a>
+            <a href="/ja/docs/home/">ホーム</a>
             
             
             
@@ -194,7 +194,7 @@ config:</p>
             
             
             
-            <a href="/Test_hugo/ja/case-studies/">ケーススタディ</a>
+            <a href="/ja/case-studies/">ケーススタディ</a>
             
         </nav>
         <div class="social">

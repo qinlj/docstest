@@ -3,972 +3,972 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/pick-right-solution/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/pick-right-solution/</loc>
     <lastmod>2019-02-24T08:28:25-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/pick-right-solution/"
+                href="https://qinlj.github.io/docs/setup/pick-right-solution/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/setup/pick-right-solution/"
+                href="https://qinlj.github.io/ko/docs/setup/pick-right-solution/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/pick-right-solution/"
+                href="https://qinlj.github.io/ja/docs/setup/pick-right-solution/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/pick-right-solution/"
+                href="https://qinlj.github.io/fr/docs/setup/pick-right-solution/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/home/</loc>
+    <loc>https://qinlj.github.io/fr/docs/home/</loc>
     <lastmod>2019-02-22T12:00:33+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/home/"
+                href="https://qinlj.github.io/docs/home/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/home/"
+                href="https://qinlj.github.io/zh/docs/home/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/home/"
+                href="https://qinlj.github.io/ko/docs/home/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/home/"
+                href="https://qinlj.github.io/ja/docs/home/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/home/"
+                href="https://qinlj.github.io/fr/docs/home/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/architecture/nodes/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/architecture/nodes/</loc>
     <lastmod>2019-03-05T12:00:36+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/architecture/nodes/"
+                href="https://qinlj.github.io/docs/concepts/architecture/nodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/architecture/nodes/"
+                href="https://qinlj.github.io/zh/docs/concepts/architecture/nodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/architecture/nodes/"
+                href="https://qinlj.github.io/ko/docs/concepts/architecture/nodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/architecture/nodes/"
+                href="https://qinlj.github.io/fr/docs/concepts/architecture/nodes/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/overview/what-is-kubernetes/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/overview/what-is-kubernetes/</loc>
     <lastmod>2019-02-26T07:20:54+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/overview/what-is-kubernetes/"
+                href="https://qinlj.github.io/docs/concepts/overview/what-is-kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/overview/what-is-kubernetes/"
+                href="https://qinlj.github.io/zh/docs/concepts/overview/what-is-kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/overview/what-is-kubernetes/"
+                href="https://qinlj.github.io/ko/docs/concepts/overview/what-is-kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/concepts/overview/what-is-kubernetes/"
+                href="https://qinlj.github.io/ja/docs/concepts/overview/what-is-kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/it/docs/concepts/overview/what-is-kubernetes/"
+                href="https://qinlj.github.io/it/docs/concepts/overview/what-is-kubernetes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/overview/what-is-kubernetes/"
+                href="https://qinlj.github.io/fr/docs/concepts/overview/what-is-kubernetes/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/cluster-administration/cluster-administration-overview/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/cluster-administration/cluster-administration-overview/</loc>
     <lastmod>2019-03-11T17:25:28+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/cluster-administration/cluster-administration-overview/"
+                href="https://qinlj.github.io/docs/concepts/cluster-administration/cluster-administration-overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/cluster-administration-overview/"
+                href="https://qinlj.github.io/zh/docs/concepts/cluster-administration/cluster-administration-overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/cluster-administration/cluster-administration-overview/"
+                href="https://qinlj.github.io/fr/docs/concepts/cluster-administration/cluster-administration-overview/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/overview/</loc>
+    <loc>https://qinlj.github.io/fr/docs/reference/kubectl/overview/</loc>
     <lastmod>2019-03-12T14:22:41+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/kubectl/overview/"
+                href="https://qinlj.github.io/docs/reference/kubectl/overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/overview/"
+                href="https://qinlj.github.io/fr/docs/reference/kubectl/overview/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/cluster-administration/certificates/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/cluster-administration/certificates/</loc>
     <lastmod>2019-03-11T17:25:28+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/cluster-administration/certificates/"
+                href="https://qinlj.github.io/docs/concepts/cluster-administration/certificates/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/cluster-administration/certificates/"
+                href="https://qinlj.github.io/zh/docs/concepts/cluster-administration/certificates/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/cluster-administration/certificates/"
+                href="https://qinlj.github.io/fr/docs/concepts/cluster-administration/certificates/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/containers/runtime-class/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/containers/runtime-class/</loc>
     <lastmod>2019-03-05T13:32:42+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/containers/runtime-class/"
+                href="https://qinlj.github.io/docs/concepts/containers/runtime-class/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/containers/runtime-class/"
+                href="https://qinlj.github.io/ko/docs/concepts/containers/runtime-class/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/containers/runtime-class/"
+                href="https://qinlj.github.io/fr/docs/concepts/containers/runtime-class/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/architecture/master-node-communication/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/architecture/master-node-communication/</loc>
     <lastmod>2019-03-05T12:00:36+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/architecture/master-node-communication/"
+                href="https://qinlj.github.io/docs/concepts/architecture/master-node-communication/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/architecture/master-node-communication/"
+                href="https://qinlj.github.io/zh/docs/concepts/architecture/master-node-communication/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/architecture/master-node-communication/"
+                href="https://qinlj.github.io/ko/docs/concepts/architecture/master-node-communication/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/architecture/master-node-communication/"
+                href="https://qinlj.github.io/fr/docs/concepts/architecture/master-node-communication/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/install-kubeadm/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/independent/install-kubeadm/</loc>
     <lastmod>2019-03-04T16:50:11+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/install-kubeadm/"
+                href="https://qinlj.github.io/docs/setup/independent/install-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/setup/independent/install-kubeadm/"
+                href="https://qinlj.github.io/zh/docs/setup/independent/install-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/install-kubeadm/"
+                href="https://qinlj.github.io/ja/docs/setup/independent/install-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/install-kubeadm/"
+                href="https://qinlj.github.io/fr/docs/setup/independent/install-kubeadm/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/containers/container-environment-variables/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/containers/container-environment-variables/</loc>
     <lastmod>2019-02-21T16:57:51+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/containers/container-environment-variables/"
+                href="https://qinlj.github.io/docs/concepts/containers/container-environment-variables/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/containers/container-environment-variables/"
+                href="https://qinlj.github.io/zh/docs/concepts/containers/container-environment-variables/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/containers/container-environment-variables/"
+                href="https://qinlj.github.io/ko/docs/concepts/containers/container-environment-variables/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/containers/container-environment-variables/"
+                href="https://qinlj.github.io/fr/docs/concepts/containers/container-environment-variables/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/release/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/release/</loc>
     <lastmod>2019-02-20T09:50:21+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/release/"
+                href="https://qinlj.github.io/docs/setup/release/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/setup/release/"
+                href="https://qinlj.github.io/ko/docs/setup/release/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/release/"
+                href="https://qinlj.github.io/ja/docs/setup/release/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/release/"
+                href="https://qinlj.github.io/fr/docs/setup/release/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/overview/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/overview/</loc>
     <lastmod>2019-02-25T17:14:19+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/overview/"
+                href="https://qinlj.github.io/docs/concepts/overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/overview/"
+                href="https://qinlj.github.io/ko/docs/concepts/overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/concepts/overview/"
+                href="https://qinlj.github.io/ja/docs/concepts/overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/overview/"
+                href="https://qinlj.github.io/fr/docs/concepts/overview/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/jsonpath/</loc>
+    <loc>https://qinlj.github.io/fr/docs/reference/kubectl/jsonpath/</loc>
     <lastmod>2019-03-11T21:08:38+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/kubectl/jsonpath/"
+                href="https://qinlj.github.io/docs/reference/kubectl/jsonpath/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/jsonpath/"
+                href="https://qinlj.github.io/fr/docs/reference/kubectl/jsonpath/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/architecture/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/architecture/</loc>
     <lastmod>2019-03-05T12:00:36+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/architecture/"
+                href="https://qinlj.github.io/docs/concepts/architecture/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/architecture/"
+                href="https://qinlj.github.io/ko/docs/concepts/architecture/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/architecture/"
+                href="https://qinlj.github.io/fr/docs/concepts/architecture/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/create-cluster-kubeadm/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/independent/create-cluster-kubeadm/</loc>
     <lastmod>2019-03-04T16:50:11+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/create-cluster-kubeadm/"
+                href="https://qinlj.github.io/docs/setup/independent/create-cluster-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/setup/independent/create-cluster-kubeadm/"
+                href="https://qinlj.github.io/zh/docs/setup/independent/create-cluster-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/create-cluster-kubeadm/"
+                href="https://qinlj.github.io/ja/docs/setup/independent/create-cluster-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/create-cluster-kubeadm/"
+                href="https://qinlj.github.io/fr/docs/setup/independent/create-cluster-kubeadm/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/independent/</loc>
     <lastmod>2019-03-04T16:50:11+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/"
+                href="https://qinlj.github.io/docs/setup/independent/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/setup/independent/"
+                href="https://qinlj.github.io/ko/docs/setup/independent/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/"
+                href="https://qinlj.github.io/ja/docs/setup/independent/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/"
+                href="https://qinlj.github.io/fr/docs/setup/independent/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/</loc>
     <lastmod>2019-02-14T18:40:23+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/"
+                href="https://qinlj.github.io/docs/setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/setup/"
+                href="https://qinlj.github.io/ko/docs/setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/"
+                href="https://qinlj.github.io/ja/docs/setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/"
+                href="https://qinlj.github.io/fr/docs/setup/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/</loc>
     <lastmod>2019-02-22T12:15:15+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/"
+                href="https://qinlj.github.io/docs/concepts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/concepts/"
+                href="https://qinlj.github.io/zh/docs/concepts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/"
+                href="https://qinlj.github.io/ko/docs/concepts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/concepts/"
+                href="https://qinlj.github.io/ja/docs/concepts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/"
+                href="https://qinlj.github.io/fr/docs/concepts/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/containers/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/containers/</loc>
     <lastmod>2019-02-21T16:57:51+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/containers/"
+                href="https://qinlj.github.io/docs/concepts/containers/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/concepts/containers/"
+                href="https://qinlj.github.io/ko/docs/concepts/containers/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/containers/"
+                href="https://qinlj.github.io/fr/docs/concepts/containers/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/control-plane-flags/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/independent/control-plane-flags/</loc>
     <lastmod>2019-03-04T16:50:11+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/control-plane-flags/"
+                href="https://qinlj.github.io/docs/setup/independent/control-plane-flags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/control-plane-flags/"
+                href="https://qinlj.github.io/ja/docs/setup/independent/control-plane-flags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/control-plane-flags/"
+                href="https://qinlj.github.io/fr/docs/setup/independent/control-plane-flags/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/ha-topology/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/independent/ha-topology/</loc>
     <lastmod>2019-03-04T16:50:11+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/ha-topology/"
+                href="https://qinlj.github.io/docs/setup/independent/ha-topology/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/ha-topology/"
+                href="https://qinlj.github.io/ja/docs/setup/independent/ha-topology/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/ha-topology/"
+                href="https://qinlj.github.io/fr/docs/setup/independent/ha-topology/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/custom-cloud/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/custom-cloud/</loc>
     <lastmod>2019-02-18T21:56:57+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/custom-cloud/"
+                href="https://qinlj.github.io/docs/setup/custom-cloud/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/setup/custom-cloud/"
+                href="https://qinlj.github.io/ko/docs/setup/custom-cloud/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/custom-cloud/"
+                href="https://qinlj.github.io/ja/docs/setup/custom-cloud/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/custom-cloud/"
+                href="https://qinlj.github.io/fr/docs/setup/custom-cloud/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/</loc>
+    <loc>https://qinlj.github.io/fr/docs/reference/kubectl/</loc>
     <lastmod>2019-03-13T09:55:34+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/kubectl/"
+                href="https://qinlj.github.io/docs/reference/kubectl/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/"
+                href="https://qinlj.github.io/fr/docs/reference/kubectl/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/high-availability/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/independent/high-availability/</loc>
     <lastmod>2019-03-04T16:50:11+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/high-availability/"
+                href="https://qinlj.github.io/docs/setup/independent/high-availability/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/high-availability/"
+                href="https://qinlj.github.io/ja/docs/setup/independent/high-availability/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/high-availability/"
+                href="https://qinlj.github.io/fr/docs/setup/independent/high-availability/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/setup-ha-etcd-with-kubeadm/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/independent/setup-ha-etcd-with-kubeadm/</loc>
     <lastmod>2019-03-04T16:50:11+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/setup-ha-etcd-with-kubeadm/"
+                href="https://qinlj.github.io/docs/setup/independent/setup-ha-etcd-with-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/setup-ha-etcd-with-kubeadm/"
+                href="https://qinlj.github.io/ja/docs/setup/independent/setup-ha-etcd-with-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/setup-ha-etcd-with-kubeadm/"
+                href="https://qinlj.github.io/fr/docs/setup/independent/setup-ha-etcd-with-kubeadm/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/kubelet-integration/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/independent/kubelet-integration/</loc>
     <lastmod>2019-03-04T16:50:11+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/kubelet-integration/"
+                href="https://qinlj.github.io/docs/setup/independent/kubelet-integration/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/kubelet-integration/"
+                href="https://qinlj.github.io/ja/docs/setup/independent/kubelet-integration/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/kubelet-integration/"
+                href="https://qinlj.github.io/fr/docs/setup/independent/kubelet-integration/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/troubleshooting-kubeadm/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/independent/troubleshooting-kubeadm/</loc>
     <lastmod>2019-03-04T16:50:11+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/independent/troubleshooting-kubeadm/"
+                href="https://qinlj.github.io/docs/setup/independent/troubleshooting-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/independent/troubleshooting-kubeadm/"
+                href="https://qinlj.github.io/ja/docs/setup/independent/troubleshooting-kubeadm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/independent/troubleshooting-kubeadm/"
+                href="https://qinlj.github.io/fr/docs/setup/independent/troubleshooting-kubeadm/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/cluster-administration/</loc>
+    <loc>https://qinlj.github.io/fr/docs/concepts/cluster-administration/</loc>
     <lastmod>2019-03-11T17:25:28+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/concepts/cluster-administration/"
+                href="https://qinlj.github.io/docs/concepts/cluster-administration/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/concepts/cluster-administration/"
+                href="https://qinlj.github.io/fr/docs/concepts/cluster-administration/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/tutorials/hello-minikube/</loc>
+    <loc>https://qinlj.github.io/fr/docs/tutorials/hello-minikube/</loc>
     <lastmod>2019-02-13T18:29:21+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/tutorials/hello-minikube/"
+                href="https://qinlj.github.io/docs/tutorials/hello-minikube/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/tutorials/hello-minikube/"
+                href="https://qinlj.github.io/ko/docs/tutorials/hello-minikube/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/tutorials/hello-minikube/"
+                href="https://qinlj.github.io/ja/docs/tutorials/hello-minikube/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/tutorials/hello-minikube/"
+                href="https://qinlj.github.io/fr/docs/tutorials/hello-minikube/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/cheatsheet/</loc>
+    <loc>https://qinlj.github.io/fr/docs/reference/kubectl/cheatsheet/</loc>
     <lastmod>2019-02-26T09:35:36+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/kubectl/cheatsheet/"
+                href="https://qinlj.github.io/docs/reference/kubectl/cheatsheet/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/cheatsheet/"
+                href="https://qinlj.github.io/fr/docs/reference/kubectl/cheatsheet/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/kubectl-cmds/</loc>
+    <loc>https://qinlj.github.io/fr/docs/reference/kubectl/kubectl-cmds/</loc>
     <lastmod>2019-03-13T09:55:34+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/kubectl/kubectl-cmds/"
+                href="https://qinlj.github.io/docs/reference/kubectl/kubectl-cmds/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/kubectl-cmds/"
+                href="https://qinlj.github.io/fr/docs/reference/kubectl/kubectl-cmds/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/release/building-from-source/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/release/building-from-source/</loc>
     <lastmod>2019-02-20T09:50:21+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/release/building-from-source/"
+                href="https://qinlj.github.io/docs/setup/release/building-from-source/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/setup/release/building-from-source/"
+                href="https://qinlj.github.io/ko/docs/setup/release/building-from-source/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/release/building-from-source/"
+                href="https://qinlj.github.io/ja/docs/setup/release/building-from-source/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/release/building-from-source/"
+                href="https://qinlj.github.io/fr/docs/setup/release/building-from-source/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/conventions/</loc>
+    <loc>https://qinlj.github.io/fr/docs/reference/kubectl/conventions/</loc>
     <lastmod>2019-03-13T09:55:34+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/kubectl/conventions/"
+                href="https://qinlj.github.io/docs/reference/kubectl/conventions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/conventions/"
+                href="https://qinlj.github.io/fr/docs/reference/kubectl/conventions/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/custom-cloud/coreos/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/custom-cloud/coreos/</loc>
     <lastmod>2019-02-18T21:56:57+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/custom-cloud/coreos/"
+                href="https://qinlj.github.io/ja/docs/setup/custom-cloud/coreos/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/custom-cloud/coreos/"
+                href="https://qinlj.github.io/fr/docs/setup/custom-cloud/coreos/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/</loc>
+    <loc>https://qinlj.github.io/fr/docs/</loc>
     <lastmod>2019-02-13T18:29:21+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/"
+                href="https://qinlj.github.io/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/"
+                href="https://qinlj.github.io/zh/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/"
+                href="https://qinlj.github.io/ko/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/"
+                href="https://qinlj.github.io/ja/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/it/docs/"
+                href="https://qinlj.github.io/it/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/"
+                href="https://qinlj.github.io/fr/docs/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/custom-cloud/kubespray/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/custom-cloud/kubespray/</loc>
     <lastmod>2019-02-23T09:54:27+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/custom-cloud/kubespray/"
+                href="https://qinlj.github.io/docs/setup/custom-cloud/kubespray/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/custom-cloud/kubespray/"
+                href="https://qinlj.github.io/ja/docs/setup/custom-cloud/kubespray/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/custom-cloud/kubespray/"
+                href="https://qinlj.github.io/fr/docs/setup/custom-cloud/kubespray/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/custom-cloud/kops/</loc>
+    <loc>https://qinlj.github.io/fr/docs/setup/custom-cloud/kops/</loc>
     <lastmod>2019-03-04T13:19:44+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/setup/custom-cloud/kops/"
+                href="https://qinlj.github.io/docs/setup/custom-cloud/kops/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/setup/custom-cloud/kops/"
+                href="https://qinlj.github.io/ko/docs/setup/custom-cloud/kops/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/setup/custom-cloud/kops/"
+                href="https://qinlj.github.io/ja/docs/setup/custom-cloud/kops/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/setup/custom-cloud/kops/"
+                href="https://qinlj.github.io/fr/docs/setup/custom-cloud/kops/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/</loc>
+    <loc>https://qinlj.github.io/fr/</loc>
     <lastmod>2019-03-01T02:13:42+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/"
+                href="https://qinlj.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/"
+                href="https://qinlj.github.io/zh/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/"
+                href="https://qinlj.github.io/ko/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/"
+                href="https://qinlj.github.io/ja/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/it/"
+                href="https://qinlj.github.io/it/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/"
+                href="https://qinlj.github.io/fr/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/</loc>
+    <loc>https://qinlj.github.io/fr/docs/reference/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/"
+                href="https://qinlj.github.io/docs/reference/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/docs/reference/"
+                href="https://qinlj.github.io/ko/docs/reference/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/"
+                href="https://qinlj.github.io/fr/docs/reference/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/home/supported-doc-versions/</loc>
+    <loc>https://qinlj.github.io/fr/docs/home/supported-doc-versions/</loc>
     <lastmod>2019-02-22T12:00:33+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/home/supported-doc-versions/"
+                href="https://qinlj.github.io/docs/home/supported-doc-versions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/docs/home/supported-doc-versions/"
+                href="https://qinlj.github.io/ja/docs/home/supported-doc-versions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/home/supported-doc-versions/"
+                href="https://qinlj.github.io/fr/docs/home/supported-doc-versions/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/kubectl/</loc>
+    <loc>https://qinlj.github.io/fr/docs/reference/kubectl/kubectl/</loc>
     <lastmod>2019-03-13T09:45:33+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/docs/reference/kubectl/kubectl/"
+                href="https://qinlj.github.io/docs/reference/kubectl/kubectl/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/reference/kubectl/kubectl/"
+                href="https://qinlj.github.io/zh/docs/reference/kubectl/kubectl/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/docs/reference/kubectl/kubectl/"
+                href="https://qinlj.github.io/fr/docs/reference/kubectl/kubectl/"
                 />
   </url>
   
   <url>
-    <loc>https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/case-studies/</loc>
+    <loc>https://qinlj.github.io/fr/case-studies/</loc>
     <lastmod>2019-03-01T02:13:42+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/case-studies/"
+                href="https://qinlj.github.io/case-studies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/case-studies/"
+                href="https://qinlj.github.io/zh/case-studies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ko/case-studies/"
+                href="https://qinlj.github.io/ko/case-studies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/ja/case-studies/"
+                href="https://qinlj.github.io/ja/case-studies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/it/case-studies/"
+                href="https://qinlj.github.io/it/case-studies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://SuperMap_iDesktop.gitee.io/Test_hugo/fr/case-studies/"
+                href="https://qinlj.github.io/fr/case-studies/"
                 />
   </url>
   

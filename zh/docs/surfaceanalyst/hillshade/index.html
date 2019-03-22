@@ -14,13 +14,13 @@
 <meta charset="utf-8">
 <title>三维晕渲图 - SuperMap iDesktop .NET</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/png" href="/Test_hugo/images/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/Test_hugo/css/jquery-ui.min.css">
-<link rel="stylesheet" href="/Test_hugo/css/sweetalert.min.css">
-<link rel="stylesheet" href="/Test_hugo/css/callouts.css">
-<link rel="stylesheet" href="/Test_hugo/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
 
 
 
@@ -48,22 +48,22 @@
 操作说明  在工具箱的“栅格分析”-“表面分析”-“地形计算”选项中，双击“三维晕渲图”，即可弹出“三维晕渲图”对话框。 在源数据处待生成正射三维影像的栅格数据集。 方位角：方位角由0-360度之间的正度数表示，以北方向为基准方向按顺时针进行测量。 高度角：高于地平线的光源高度角。高度角由正度数表示，0度表示地平线，90度表示头顶正方向。 阴影模式：三维晕渲图有三种类型：渲染阴影效果、渲染效果和阴影效果。  渲染和阴影：同时考虑当地的光照角及阴影的作用。 阴影：只考虑当前区域是否位于阴影中。 渲染：只考虑当地的光照角。  高程缩放倍数：栅格表面中，栅格高程值（Z 值）相对于 X 和 Y 坐标的单位变换系数。当 Z 方向的单位与栅格表面的 X，Y 单位不同时，可使用高程缩放倍数进行调整。
  如果 X，Y 单位与 Z 单位相同，则高程缩放系数为1，表示不缩放。 如果 X，Y 单位与 Z 单位使用不同的测量单位，则必须使用适当的高程缩放系数，否则可能会得到错误的结果。例如，X，Y 方向上的单位是米，而Z方向的单位为英尺，由于1英尺=0.3048米，则需要制定高程缩放系数为0.3084，将英尺单位转换为米。  设置结果数据的名称和保存在的数据源，单击“执行”按钮，即可生成晕渲图，生成三维晕渲图的结果如下图所示，左图为原始栅格数据，中间为三维晕渲图，右图为晕渲图与栅格图层（透明度40%）叠加的显示效果。
   　">
-<meta property="og:url" content="https://SuperMap_iDesktop.gitee.io/Test_hugo/zh/docs/surfaceanalyst/hillshade/">
+<meta property="og:url" content="https://qinlj.github.io/zh/docs/surfaceanalyst/hillshade/">
 <meta property="og:title" content="三维晕渲图">
 <meta name="twitter:title" content="三维晕渲图">
 
 <meta name="twitter:image:alt"   content="SuperMap iDesktop .NET">
 
-<meta property="og:image" content="/Test_hugo/images/kubernetes-horizontal-color.png">
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
 
 <meta property="og:type" content="article">
-<script src="/Test_hugo/js/anchor-4.1.1.min.js"></script>
-<script src="/Test_hugo/js/jquery-3.2.1.min.js"></script>
-<script src="/Test_hugo/js/jquery-ui-1.12.1.min.js"></script>
-<script src="/Test_hugo/js/bootstrap-3.3.7.min.js"></script>
-<script src="/Test_hugo/js/sweetalert-1.1.3.min.js"></script>
-<script src="/Test_hugo/js/script.js"></script>
-<script src="/Test_hugo/js/custom-jekyll/tags.js"></script>
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-3.3.7.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
 
 
 </head>
@@ -71,20 +71,20 @@
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
-    <a href="/Test_hugo/zh/" class="logo"></a>
+    <a href="/zh/" class="logo"></a>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
             
-            <li><a href="/Test_hugo/zh/docs/" class="active">GIS 百科</a></li>
+            <li><a href="/zh/docs/" class="active">GIS 百科</a></li>
             
-            <li><a href="/Test_hugo/zh/blog/">技术专题</a></li>
-            
-            
+            <li><a href="/zh/blog/">技术专题</a></li>
             
             
             
-            <li><a href="/Test_hugo/zh/case-studies/">三维技术专题</a></li>
+            
+            
+            <li><a href="/zh/case-studies/">三维技术专题</a></li>
             
             
             
@@ -94,7 +94,7 @@
                 </a>
                 <ul>
                 
-                    <li><a href="/Test_hugo/docs/surfaceanalyst/hillshade/">English</a></li>
+                    <li><a href="/docs/surfaceanalyst/hillshade/">English</a></li>
                 
                 </ul>
             </li>
@@ -129,13 +129,13 @@
         <main data-auto-burger="primary">
          
            <div class="nav-box">
-            <h3><a href="/Test_hugo/zh/docs/home/">文档</a></h3>
+            <h3><a href="/zh/docs/home/">文档</a></h3>
            <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
 
         </div>
          
            <div class="nav-box">
-            <h3><a href="/Test_hugo/zh/blog/">技术专题</a></h3>
+            <h3><a href="/zh/blog/">技术专题</a></h3>
            <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
 
         </div>
@@ -188,19 +188,19 @@
 	<ul>
 		
 		
-		<li><a href="/Test_hugo/zh/docs/home/">主页</a></li>
+		<li><a href="/zh/docs/home/">主页</a></li>
 		
 		
-		<li><a href="/Test_hugo/zh/docs/surfaceanalyst/" class="YAH">表面分析</a></li>
+		<li><a href="/zh/docs/surfaceanalyst/" class="YAH">表面分析</a></li>
 		
 		
-		<li><a href="/Test_hugo/zh/docs/datamanage/">数据管理</a></li>
+		<li><a href="/zh/docs/datamanage/">数据管理</a></li>
 		
 		
-		<li><a href="/Test_hugo/zh/docs/dataconversion/">数据转换</a></li>
+		<li><a href="/zh/docs/dataconversion/">数据转换</a></li>
 		
 		
-		<li><a href="/Test_hugo/zh/docs/concepts/">概念</a></li>
+		<li><a href="/zh/docs/concepts/">概念</a></li>
 		
 	</ul>
 	<form id="searchBox" action="/docs/search/">
@@ -250,7 +250,7 @@
          
          
         
-        <a class="item" data-title="表面分析" href="/Test_hugo/zh/docs/surfaceanalyst/"></a>
+        <a class="item" data-title="表面分析" href="/zh/docs/surfaceanalyst/"></a>
 
 	
 	
@@ -266,126 +266,126 @@
 		
 			
 
-<a class="item" data-title="DEM切割" href="/Test_hugo/zh/docs/surfaceanalyst/terrainbuilderclip/"></a>
+<a class="item" data-title="DEM切割" href="/zh/docs/surfaceanalyst/terrainbuilderclip/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="DEM曲率计算" href="/Test_hugo/zh/docs/surfaceanalyst/calculatecurvature/"></a>
+<a class="item" data-title="DEM曲率计算" href="/zh/docs/surfaceanalyst/calculatecurvature/"></a>
 
 		
 	
 		
 			
 
-<a class="item" target="_blank" data-title="Surface Analysis <small>(EN)</small>" href="/Test_hugo/docs/surfaceanalyst/surfaceanalyst/"></a>
+<a class="item" target="_blank" data-title="Surface Analysis <small>(EN)</small>" href="/docs/surfaceanalyst/surfaceanalyst/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="三维晕渲图" href="/Test_hugo/zh/docs/surfaceanalyst/hillshade/"></a>
+<a class="item" data-title="三维晕渲图" href="/zh/docs/surfaceanalyst/hillshade/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="剖面分析" href="/Test_hugo/zh/docs/surfaceanalyst/profile/"></a>
+<a class="item" data-title="剖面分析" href="/zh/docs/surfaceanalyst/profile/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="反算填挖方" href="/Test_hugo/zh/docs/surfaceanalyst/inversecutfill/"></a>
+<a class="item" data-title="反算填挖方" href="/zh/docs/surfaceanalyst/inversecutfill/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="坡向分析" href="/Test_hugo/zh/docs/surfaceanalyst/aspect/"></a>
+<a class="item" data-title="坡向分析" href="/zh/docs/surfaceanalyst/aspect/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="坡度分析" href="/Test_hugo/zh/docs/surfaceanalyst/slope/"></a>
+<a class="item" data-title="坡度分析" href="/zh/docs/surfaceanalyst/slope/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="填挖方" href="/Test_hugo/zh/docs/surfaceanalyst/cutfill/"></a>
+<a class="item" data-title="填挖方" href="/zh/docs/surfaceanalyst/cutfill/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="提取所有等值线" href="/Test_hugo/zh/docs/surfaceanalyst/drivecontourall/"></a>
+<a class="item" data-title="提取所有等值线" href="/zh/docs/surfaceanalyst/drivecontourall/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="提取所有等值面" href="/Test_hugo/zh/docs/surfaceanalyst/driveregionall/"></a>
+<a class="item" data-title="提取所有等值面" href="/zh/docs/surfaceanalyst/driveregionall/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="提取指定等值线" href="/Test_hugo/zh/docs/surfaceanalyst/drivecontourspecific/"></a>
+<a class="item" data-title="提取指定等值线" href="/zh/docs/surfaceanalyst/drivecontourspecific/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="提取指定等值面" href="/Test_hugo/zh/docs/surfaceanalyst/driveregionspecific/"></a>
+<a class="item" data-title="提取指定等值面" href="/zh/docs/surfaceanalyst/driveregionspecific/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="提取等值线/面" href="/Test_hugo/zh/docs/surfaceanalyst/drivecontour/"></a>
+<a class="item" data-title="提取等值线/面" href="/zh/docs/surfaceanalyst/drivecontour/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="查找极值" href="/Test_hugo/zh/docs/surfaceanalyst/findextreme/"></a>
+<a class="item" data-title="查找极值" href="/zh/docs/surfaceanalyst/findextreme/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="正射三维影像" href="/Test_hugo/zh/docs/surfaceanalyst/orthoimage/"></a>
+<a class="item" data-title="正射三维影像" href="/zh/docs/surfaceanalyst/orthoimage/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="点数据提取等值线" href="/Test_hugo/zh/docs/surfaceanalyst/extractisoline/"></a>
+<a class="item" data-title="点数据提取等值线" href="/zh/docs/surfaceanalyst/extractisoline/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="面填挖方" href="/Test_hugo/zh/docs/surfaceanalyst/cutfillregion/"></a>
+<a class="item" data-title="面填挖方" href="/zh/docs/surfaceanalyst/cutfillregion/"></a>
 
 		
 	
@@ -482,8 +482,8 @@
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/Test_hugo/zh/docs/surfaceanalyst/calculatecurvature/" title="DEM曲率计算"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - DEM曲率计算</a>
-<a class="nav nav-next" href="/Test_hugo/zh/docs/surfaceanalyst/profile/" title="剖面分析">Next - 剖面分析 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/surfaceanalyst/calculatecurvature/" title="DEM曲率计算"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - DEM曲率计算</a>
+<a class="nav nav-next" href="/zh/docs/surfaceanalyst/profile/" title="剖面分析">Next - 剖面分析 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -544,9 +544,9 @@
     <script type="text/javascript">
     PDRTJS_settings_8345992 = {
     "id" : "8345992",
-    "unique_id" : "\/Test_hugo\/zh\/docs\/surfaceanalyst\/hillshade\/",
+    "unique_id" : "\/zh\/docs\/surfaceanalyst\/hillshade\/",
     "title" : "三维晕渲图",
-    "permalink" : "https:\/\/SuperMap_iDesktop.gitee.io\/Test_hugo\/zh\/docs\/surfaceanalyst\/hillshade\/"
+    "permalink" : "https:\/\/qinlj.github.io\/zh\/docs\/surfaceanalyst\/hillshade\/"
     };
     (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
     </script>
@@ -592,15 +592,15 @@
             
             
             
-            <a href="/Test_hugo/zh/docs/home/">主页</a>
+            <a href="/zh/docs/home/">主页</a>
             
-            <a href="/Test_hugo/zh/blog/">技术专题</a>
-            
-            
+            <a href="/zh/blog/">技术专题</a>
             
             
             
-            <a href="/Test_hugo/zh/case-studies/">三维技术专题</a>
+            
+            
+            <a href="/zh/case-studies/">三维技术专题</a>
             
         </nav>
         <div class="social">
