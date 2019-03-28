@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -589,24 +591,114 @@
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Share: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>　　工作空间，即用户的工作环境，用户在进行数据操作时，都需要先创建一个工作空间，才能进一步操作 GIS 数据。工作空间会保存用户在该工作环境中的操作结果，包括用户在该工作空间中打开的数据源、保存的地图、布局和三维场景等，当用户打开工作空间时可以继续上一次的工作成果来工作。</p>
+
+<h3 id="工作空间的类型">工作空间的类型</h3>
+
+<p>按照工作空间的存储形式，工作空间可以分为两大类型，文件型工作空间和数据库型工作空间。</p>
+
+<ul>
+<li><strong>文件型工作空间</strong>：是将工作空间存储为扩展名为 <em>.sxw/</em>.smw 或者 <em>.sxwu/</em>.smwu 类型的文件。</li>
+<li><strong>数据库型工作空间</strong>：是将工作空间存储在数据库中。目前，支持打开的数据库型工作空间包括：SQL Server、Oracle、PostgreSQL、MySQL、MongoDB、DM 六种数据库工作空间。<br />
+<br /></li>
+</ul>
+
+<h3 id="工作空间的层次结构">工作空间的层次结构</h3>
+
+<p>SuperMap iDesktop Java 产品中用户的一个工作环境对应一个工作空间，每一个工作空间都由树状层次结构组成，该结构中工作空间对应根结点。一个工作空间包含唯一的数据源集合、唯一的地图集合、唯一的布局集合、唯一的场景集合和唯一的资源集合（符号库集合），对应着工作空间的子结点。</p>
+
+<p>数据源集合，用于管理在工作空间打开的所有数据源；地图集合，用来保存工作空间中的地图；布局集合，用来保存工作空间中的布局；三维场景集合，用来保存工作空间中的三维场景；符号库集合，主要管理符号库、线型库和填充库。
+工作空间中的地图、布局、三维场景和资源都是依附于工作空间存在的，即这些内容都保存在工作空间中，删除工作空间时，其中的地图、布局、三维场景和符号库资源也相应的随之删除；而数据源是独立存储的，与工作空间只是关联关系，并没有保存在工作空间中，当删除工作空间时，只是删除了工作空间与数据源的关联关系，并不能删除数据</p>
+
+<h3 id="打开工作空间">打开工作空间</h3>
+
+<p>打开工作空间的方式有三种：</p>
+
+<ul>
+<li>“文件“选项卡中“打开”按钮提供打开不同类型的工作空间的功能。<br /></li>
+<li>”开始“选项卡”工作空间“组提供”文件“和”数据库“两个按钮以打开不同类型的工作空间。其中下拉按钮包含两个部分，一是按钮部分，单击该部分将执行下拉菜单中第一项的功能；二是下拉按钮部分，单击该部分将弹出下拉菜单，通过选择下拉菜单中的项来实现打开相应类型的工作空间.<br /></li>
+<li>单击右键工作空间管理器中工作空间节点，可在右键菜单中选择”打开文件型工作空间“和”打开数据库型工作空间“。<br />
+<br /></li>
+</ul>
+
+<p><strong>注意事项</strong>:</p>
+
+<p>在应用程序中，当前只能打开一个工作空间，不能同时打开多个工作空间，因此，在打开工作空间时，应用系统会先关闭当前打开的工作空间。在关闭当前打开的工作空间时，如果应用程序当前存在一个打开的未保存的工作空间，系统将弹出对话框，提醒保存关闭原有的工作空间，待关闭原有的工作空间后，才能继续打开操作。</p>
+
+<h3 id="保存-另存为工作空间">保存/另存为工作空间</h3>
+
+<p>“<strong>保存</strong>”按钮提供保存当前打开的工作空间中的操作结果以及保存工作空间的功能，只有工作空间中有未保存的内容，该按钮才可用。工作空间中的操作结果只有先保存到工作空间中，然后，在进行工作空间本身的保存，这些操作成果才能最终保存下来，在关闭工作空间后，当再次打开工作空间时，才能获取上一次工作的环境以及操作成果。</p>
+
+<ol>
+<li><strong>先保存工作空间中的操作结果</strong>  当工作空间中有未保存的内容，单击“保存”按钮时，会弹出“保存”对话框。在弹出的“保存”对话框中的列表为未保存的项目，包括：未保存的地图、模型、布局。每个项目前有一个复选框，默认为选中状态，当复选框被选中时，表示将该项内容保存到工作空间中；否则，不进行保存。</li>
+<li><strong>保存工作空间</strong> 指定好要保存到工作空间中的内容后，单击对话框中的“保存”按钮，即完成工作空间的保存。<br /></li>
+<li><strong>另存为工作空间</strong> 如果当前打开的工作空间是已经存在的工作空间，则在上一步中单击“保存”按钮后，即可实现工作空间的保存；如果当前打开的工作空间是一个新的工作空间（非已有的工作空间），则在上一步单击“保存”按钮后，将弹出如下所示的“工作空间另存”对话框，通过“另存工作空间为”对话框可以将工作空间保存为用户所需要类型的工作空间， 可选择存储为文件型工作空间或数据库型工作空间。<br /></li>
+</ol>
+
+<h3 id="关闭工作空间">关闭工作空间</h3>
+
+<p>“<strong>关闭工作空间</strong>”，主要提供关闭当前打开的工作空间的功能。关闭工作空间后，应用程序会提供一个默认打开的空的工作空间作为当前打开的工作空间。<br />
+1. 在工作空间节点上右击鼠标，在弹出的右键菜单中选择“关闭工作空间”项。<br />
+2. 应用程序在执行当前打开的关闭工作空间操作时，如果应用程序中当前打开的工作空间没有未被保存的内容，则直接关闭当前的工作空间；如果当前打开的工作空间存在未被保存的内容，则会弹出提示对话框，提示用户在关闭当前打开的工作空间时是否保存这些内容。<br />
+3. 如果点击“否”按钮，则不进行保存直接关闭当前打开的工作空间；如果点击“是”按钮，则对当前打开的工作空间进行保存工作。有关保存/另存为工作空间请参看上一节保存操作。</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

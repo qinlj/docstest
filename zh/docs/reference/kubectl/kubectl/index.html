@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -8529,24 +8531,245 @@ Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: 'è¯´ç‚¹ä»€ä¹ˆå§...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> ä¸ºæ­£å¸¸ä½¿ç”¨æ¥å¿…åŠ›è¯„è®ºåŠŸèƒ½è¯·æ¿€æ´»JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Share: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<h2 id="kubectl">kubectl</h2>
+
+<!--
+kubectl controls the Kubernetes cluster manager
+-->
+
+<p>kubectl ¿ÉÒÔ²Ù¿Ø Kubernetes ¼¯Èº¡£</p>
+
+<!--
+### Synopsis
+
+kubectl controls the Kubernetes cluster manager. 
+
+Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/
+-->
+
+<h3 id="toc_1">¼ò½é</h3>
+
+<p>kubectl ¿ÉÒÔ²Ù¿Ø Kubernetes ¼¯Èº¡£</p>
+
+<p>»ñÈ¡¸ü¶àĞÅÏ¢£¬Çë·ÃÎÊ£º<a href="https://kubernetes.io/docs/reference/kubectl/overview/" target="_blank">https://kubernetes.io/docs/reference/kubectl/overview/</a></p>
+
+<pre><code>kubectl [flags]
+</code></pre>
+
+<!--
+### Options
+
+```
+      --alsologtostderr                  log to standard error as well as files
+      --as string                        Username to impersonate for the operation
+      --as-group stringArray             Group to impersonate for the operation, this flag can be repeated to specify multiple groups.
+      --cache-dir string                 Default HTTP cache directory (default "/home/username/.kube/http-cache")
+      --certificate-authority string     Path to a cert file for the certificate authority
+      --client-certificate string        Path to a client certificate file for TLS
+      --client-key string                Path to a client key file for TLS
+      --cluster string                   The name of the kubeconfig cluster to use
+      --context string                   The name of the kubeconfig context to use
+  -h, --help                             help for kubectl
+      --insecure-skip-tls-verify         If true, the server's certificate will not be checked for validity. This will make your HTTPS connections insecure
+      --kubeconfig string                Path to the kubeconfig file to use for CLI requests.
+      --log-backtrace-at traceLocation   when logging hits line file:N, emit a stack trace (default :0)
+      --log-dir string                   If non-empty, write log files in this directory
+      --logtostderr                      log to standard error instead of files
+      --match-server-version             Require server version to match client version
+  -n, --namespace string                 If present, the namespace scope for this CLI request
+      --request-timeout string           The length of time to wait before giving up on a single server request. Non-zero values should contain a corresponding time unit (e.g. 1s, 2m, 3h). A value of zero means don't timeout requests. (default "0")
+  -s, --server string                    The address and port of the Kubernetes API server
+      --stderrthreshold severity         logs at or above this threshold go to stderr (default 2)
+      --token string                     Bearer token for authentication to the API server
+      --user string                      The name of the kubeconfig user to use
+  -v, --v Level                          log level for V logs
+      --vmodule moduleSpec               comma-separated list of pattern=N settings for file-filtered logging
+```
+-->
+
+<h3 id="Ñ¡">Ñ¡Ïî</h3>
+
+<pre><code>      --alsologtostderr                  Í¬Ê±Êä³öÈÕÖ¾µ½±ê×¼´íÎó¿ØÖÆÌ¨ºÍÎÄ¼ş
+      --as string                        ÒÔÖ¸¶¨ÓÃ»§Ö´ĞĞ²Ù×÷
+      --as-group stringArray             Ä£Äâ²Ù×÷µÄ×é£¬¿ÉÒÔÊ¹ÓÃÕâ¸ö±êÊ¶À´Ö¸¶¨¶à¸ö×é¡£
+      --cache-dir string                 Ä¬ÈÏ HTTP »º´æÄ¿Â¼£¨Ä¬ÈÏÖµ &quot;/home/username/.kube/http-cache&quot; £©
+      --certificate-authority string     ÓÃÓÚ½øĞĞÈÏÖ¤ÊÚÈ¨µÄ .cert ÎÄ¼şÂ·¾¶
+      --client-certificate string        TLS Ê¹ÓÃµÄ¿Í»§¶ËÖ¤ÊéÂ·¾¶
+      --client-key string                TLS Ê¹ÓÃµÄ¿Í»§¶ËÃÜÔ¿ÎÄ¼şÂ·¾¶
+      --cluster string                   Ö¸¶¨ÒªÊ¹ÓÃµÄ kubeconfig ÎÄ¼şÖĞ¼¯ÈºÃû
+      --context string                   Ö¸¶¨ÒªÊ¹ÓÃµÄ kubeconfig ÎÄ¼şÖĞÉÏÏÂÎÄ
+  -h, --help                             kubectl °ïÖú
+      --insecure-skip-tls-verify         ÖµÎª true£¬Ôò²»»á¼ì²é·şÎñÆ÷µÄÖ¤ÊéµÄÓĞĞ§ĞÔ¡£ Õâ½«Ê¹ÄúµÄHTTPSÁ¬½Ó²»°²È«
+      --kubeconfig string                CLI ÇëÇóÊ¹ÓÃµÄ kubeconfig ÅäÖÃÎÄ¼şÂ·¾¶¡£
+      --log-backtrace-at traceLocation   µ±ÈÕÖ¾³¤¶È³¬³ö¹æ¶¨µÄĞĞÊıÊ±£¬ºöÂÔ¶ÑÕ»ĞÅÏ¢£¨Ä¬ÈÏÖµ£º0£©
+      --log-dir string                   Èç¹û²»Îª¿Õ£¬Ôò½«ÈÕÖ¾ÎÄ¼şĞ´Èë´ËÄ¿Â¼
+      --logtostderr                      ÈÕÖ¾Êä³öµ½±ê×¼´íÎó¿ØÖÆÌ¨¶ø²»Êä³öµ½ÎÄ¼ş
+      --match-server-version             ÒªÇó¿Í»§¶Ë°æ±¾ºÍ·şÎñ¶Ë°æ±¾ÏàÆ¥Åä
+  -n, --namespace string                 Èç¹û´æÔÚ£¬CLI ÇëÇó½«Ê¹ÓÃ´ËÃüÃû¿Õ¼ä
+      --request-timeout string           ·ÅÆúÒ»¸ö¼òµ¥·şÎñÇëÇóÇ°µÄµÈ´ıÊ±¼ä£¬·ÇÁãÖµĞèÒª°üº¬ÏàÓ¦Ê±¼äµ¥Î»(ÀıÈç£º1s, 2m, 3h)¡£ÁãÖµÔòÈÏÎª²»×ö³¬Ê±ÇëÇó¡£ (Ä¬ÈÏÖµ &quot;0&quot;)
+  -s, --server string                    Kubernetes API server µÄµØÖ·ºÍ¶Ë¿Ú
+      --stderrthreshold severity         µÈÓÚ»ò¸ßÓÚ´ËãĞÖµµÄÈÕÖ¾½«Êä³ö±ê×¼´íÎó¿ØÖÆÌ¨£¨Ä¬ÈÏÖµ2£©
+      --token string                     ÓÃÓÚ API server ½øĞĞÉí·İÈÏÖ¤µÄ³ĞÔØÁîÅÆ
+      --user string                      Ö¸¶¨Ê¹ÓÃµÄ kubeconfig ÅäÖÃÎÄ¼şÖĞµÄÓÃ»§Ãû
+  -v, --v Level                          Ö¸¶¨Êä³öÈÕÖ¾µÄÈÕÖ¾¼¶±ğ
+      --vmodule moduleSpec               Ö¸¶¨Êä³öÈÕÖ¾µÄÄ£¿é£¬¸ñÊ½ÈçÏÂ£ºpattern=N£¬Ê¹ÓÃ¶ººÅ·Ö¸ô
+</code></pre>
+
+<!--
+### SEE ALSO
+
+* [kubectl alpha](kubectl_alpha.md)  - Commands for features in alpha
+* [kubectl annotate](kubectl_annotate.md)    - Update the annotations on a resource
+* [kubectl api-resources](kubectl_api-resources.md)  - Print the supported API resources on the server
+* [kubectl api-versions](kubectl_api-versions.md)    - Print the supported API versions on the server, in the form of "group/version"
+* [kubectl apply](kubectl_apply.md)  - Apply a configuration to a resource by filename or stdin
+* [kubectl attach](kubectl_attach.md)    - Attach to a running container
+* [kubectl auth](kubectl_auth.md)    - Inspect authorization
+* [kubectl autoscale](kubectl_autoscale.md)  - Auto-scale a Deployment, ReplicaSet, or ReplicationController
+* [kubectl certificate](kubectl_certificate.md)  - Modify certificate resources.
+* [kubectl cluster-info](kubectl_cluster-info.md)    - Display cluster info
+* [kubectl completion](kubectl_completion.md)    - Output shell completion code for the specified shell (bash or zsh)
+* [kubectl config](kubectl_config.md)    - Modify kubeconfig files
+* [kubectl convert](kubectl_convert.md)  - Convert config files between different API versions
+* [kubectl cordon](kubectl_cordon.md)    - Mark node as unschedulable
+* [kubectl cp](kubectl_cp.md)    - Copy files and directories to and from containers.
+* [kubectl create](kubectl_create.md)    - Create a resource from a file or from stdin.
+* [kubectl delete](kubectl_delete.md)    - Delete resources by filenames, stdin, resources and names, or by resources and label selector
+* [kubectl describe](kubectl_describe.md)    - Show details of a specific resource or group of resources
+* [kubectl drain](kubectl_drain.md)  - Drain node in preparation for maintenance
+* [kubectl edit](kubectl_edit.md)    - Edit a resource on the server
+* [kubectl exec](kubectl_exec.md)    - Execute a command in a container
+* [kubectl explain](kubectl_explain.md)  - Documentation of resources
+* [kubectl expose](kubectl_expose.md)    - Take a replication controller, service, deployment or pod and expose it as a new Kubernetes Service
+* [kubectl get](kubectl_get.md)  - Display one or many resources
+* [kubectl label](kubectl_label.md)  - Update the labels on a resource
+* [kubectl logs](kubectl_logs.md)    - Print the logs for a container in a pod
+* [kubectl options](kubectl_options.md)  - Print the list of flags inherited by all commands
+* [kubectl patch](kubectl_patch.md)  - Update field(s) of a resource using strategic merge patch
+* [kubectl plugin](kubectl_plugin.md)    - Runs a command-line plugin
+* [kubectl port-forward](kubectl_port-forward.md)    - Forward one or more local ports to a pod
+* [kubectl proxy](kubectl_proxy.md)  - Run a proxy to the Kubernetes API server
+* [kubectl replace](kubectl_replace.md)  - Replace a resource by filename or stdin
+* [kubectl rollout](kubectl_rollout.md)  - Manage the rollout of a resource
+* [kubectl run](kubectl_run.md)  - Run a particular image on the cluster
+* [kubectl scale](kubectl_scale.md)  - Set a new size for a Deployment, ReplicaSet, Replication Controller, or Job
+* [kubectl set](kubectl_set.md)  - Set specific features on objects
+* [kubectl taint](kubectl_taint.md)  - Update the taints on one or more nodes
+* [kubectl top](kubectl_top.md)  - Display Resource (CPU/Memory/Storage) usage.
+* [kubectl uncordon](kubectl_uncordon.md)    - Mark node as schedulable
+* [kubectl version](kubectl_version.md)  - Print the client and server version information
+* [kubectl wait](kubectl_wait.md)    - Experimental: Wait for one condition on one or many resources
+-->
+
+<h3 id="toc_3">½ÓÏÂÀ´¿´</h3>
+
+<ul>
+<li><a href="kubectl_alpha.md" target="_blank">kubectl alpha</a>  - alpha»·¾³ÉÏÃüÁîÊôĞÔ</li>
+<li><a href="kubectl_annotate.md" target="_blank">kubectl annotate</a>    - ¸üĞÂ×ÊÔ´ÉÏ×¢ÊÍ</li>
+<li><a href="kubectl_api-resources.md" target="_blank">kubectl api-resources</a>  - ÔÚ·şÎñÆ÷ÉÏ´òÓ¡Ö§³ÖµÄ API ×ÊÔ´</li>
+<li><a href="kubectl_api-versions.md" target="_blank">kubectl api-versions</a>    - ÒÔ &ldquo;group/version&rdquo; µÄĞÎÊ½ÔÚ·şÎñÆ÷ÉÏ´òÓ¡Ö§³ÖµÄ API °æ±¾</li>
+<li><a href="kubectl_apply.md" target="_blank">kubectl apply</a>  - Í¨¹ıÎÄ¼şÃû»ò±ê×¼ÊäÈë½«ÅäÖÃÌí¼Ó¸ø×ÊÔ´</li>
+<li><a href="kubectl_attach.md" target="_blank">kubectl attach</a>    - ¸½¼Óµ½ÕıÔÚÔËĞĞµÄÈİÆ÷</li>
+<li><a href="kubectl_auth.md" target="_blank">kubectl auth</a>    - ¼ì²éÊÚÈ¨</li>
+<li><a href="kubectl_autoscale.md" target="_blank">kubectl autoscale</a>  - ×Ô¶¯À©Õ¹ Deployment, ReplicaSet »ò ReplicationController</li>
+<li><a href="kubectl_certificate.md" target="_blank">kubectl certificate</a>  - ĞŞ¸ÄÖ¤Êé×ÊÔ´¡£</li>
+<li><a href="kubectl_cluster-info.md" target="_blank">kubectl cluster-info</a>    - Õ¹Ê¾¼¯ÈºĞÅÏ¢</li>
+<li><a href="kubectl_completion.md" target="_blank">kubectl completion</a>    - Îª¸ø¶¨µÄ shell Êä³öÍê³É´úÂë£¨ bash »ò zsh£©</li>
+<li><a href="kubectl_config.md" target="_blank">kubectl config</a>    - ĞŞ¸Ä kubeconfig ÅäÖÃÎÄ¼ş</li>
+<li><a href="kubectl_convert.md" target="_blank">kubectl convert</a>  - ÔÚ²»Í¬µÄ API °æ±¾Ö®¼ä×ª»»ÅäÖÃÎÄ¼ş</li>
+<li><a href="kubectl_cordon.md" target="_blank">kubectl cordon</a>    - ½« node ½Úµã±ê¼ÇÎª²»¿Éµ÷¶È</li>
+<li><a href="kubectl_cp.md" target="_blank">kubectl cp</a>    - ´ÓÈİÆ÷¸´ÖÆÎÄ¼şºÍÄ¿Â¼£¬Ò²¿É½«ÎÄ¼şºÍÄ¿Â¼¸´ÖÆµ½ÈİÆ÷¡£</li>
+<li><a href="kubectl_create.md" target="_blank">kubectl create</a>    - Í¨¹ıÎÄ¼şÃû»ò±ê×¼ÊäÈë´´½¨×ÊÔ´¡£</li>
+<li><a href="kubectl_delete.md" target="_blank">kubectl delete</a>    - Í¨¹ıÎÄ¼şÃû£¬±ê×¼ÊäÈë£¬×ÊÔ´ºÍÃû³Æ»ò×ÊÔ´ºÍ±êÇ©Ñ¡ÔñÆ÷É¾³ı×ÊÔ´</li>
+<li><a href="kubectl_describe.md" target="_blank">kubectl describe</a>    - ÏÔÊ¾ÌØ¶¨×ÊÔ´»ò×ÊÔ´×éµÄÏêÏ¸ĞÅÏ¢</li>
+<li><a href="kubectl_drain.md" target="_blank">kubectl drain</a>  - Îª±ãÓÚÎ¬»¤£¬ĞèÒªÌáÇ°ÇıÖğnode½Úµã</li>
+<li><a href="kubectl_edit.md" target="_blank">kubectl edit</a>    - ÔÚ·şÎñÆ÷±à¼­×ÊÔ´</li>
+<li><a href="kubectl_exec.md" target="_blank">kubectl exec</a>    - ÈİÆ÷ÄÚÍË³öÃüÁî</li>
+<li><a href="kubectl_explain.md" target="_blank">kubectl explain</a>  - ×ÊÔ´ÎÄµµ</li>
+<li><a href="kubectl_expose.md" target="_blank">kubectl expose</a>    - »ñÈ¡ replication controller, service, deployment »ò pod ×ÊÔ´£¬²¢×÷ÎªĞÂµÄ Kubernetes ·şÎñ±©Â¶</li>
+<li><a href="kubectl_get.md" target="_blank">kubectl get</a>  - Õ¹Ê¾Ò»¸ö»ò¶à¸ö×ÊÔ´</li>
+<li><a href="kubectl_label.md" target="_blank">kubectl label</a>  - Éı¼¶×ÊÔ´±êÇ©</li>
+<li><a href="kubectl_logs.md" target="_blank">kubectl logs</a>    - Îª pod ÖĞµÄÈİÆ÷´òÓ¡ÈÕÖ¾</li>
+<li><a href="kubectl_options.md" target="_blank">kubectl options</a>  - ´òÓ¡ËùÓĞÃüÁî¼Ì³ĞµÄ±êÊ¶ÁĞ±í</li>
+<li><a href="kubectl_patch.md" target="_blank">kubectl patch</a>  - Ê¹ÓÃÕ½ÂÔĞÔºÏ²¢²¹¶¡¸üĞÂ×ÊÔ´×Ö¶Î</li>
+<li><a href="kubectl_plugin.md" target="_blank">kubectl plugin</a>    - ÔËĞĞÃüÁîĞĞ²å¼ş</li>
+<li><a href="kubectl_port-forward.md" target="_blank">kubectl port-forward</a>    - ¸ø pod ¿ª·ÅÒ»¸ö»ò¶à¸ö±¾µØ¶Ë¿Ú</li>
+<li><a href="kubectl_proxy.md" target="_blank">kubectl proxy</a>  - Îª Kubernetes API server ÔËĞĞ´úÀí</li>
+<li><a href="kubectl_replace.md" target="_blank">kubectl replace</a>  - Í¨¹ıÎÄ¼ş»ò±ê×¼ÊäÈëÌæ»»×ÊÔ´</li>
+<li><a href="kubectl_rollout.md" target="_blank">kubectl rollout</a>  - ¹ÜÀí×ÊÔ´Õ¹Ê¾</li>
+<li><a href="kubectl_run.md" target="_blank">kubectl run</a>  - ÔÚ¼¯ÈºÉÏÔËĞĞÖ¸¶¨¾µÏñ</li>
+<li><a href="kubectl_scale.md" target="_blank">kubectl scale</a>  - ¸ø Deployment, ReplicaSet, Replication Controller »ò Job ÉèÖÃĞÂ¸±±¾¹æÄ£</li>
+<li><a href="kubectl_set.md" target="_blank">kubectl set</a>  - ¸ø¶ÔÏóÉèÖÃÌØ¶¨¹¦ÄÜ</li>
+<li><a href="kubectl_taint.md" target="_blank">kubectl taint</a>  - ¸üĞÂÒ»¸ö»ò¶à¸ö node ½ÚµãµÄÎÛµãĞÅÏ¢</li>
+<li><a href="kubectl_top.md" target="_blank">kubectl top</a>  - Õ¹Ê¾×ÊÔ´ (CPU/Memory/Storage) Ê¹ÓÃĞÅÏ¢¡£</li>
+<li><a href="kubectl_uncordon.md" target="_blank">kubectl uncordon</a>    - ±ê¼Ç node ½ÚµãÎª¿Éµ÷¶È</li>
+<li><a href="kubectl_version.md" target="_blank">kubectl version</a>  - ´òÓ¡¿Í»§¶ËºÍ·şÎñ¶Ë°æ±¾ĞÅÏ¢</li>
+<li><a href="kubectl_wait.md" target="_blank">kubectl wait</a>    - ÊÔÑé: ÔÚÒ»¸ö»ò¶à¸ö×ÊÔ´ÉÏµÈ´ıÌõ¼şÍê³É</li>
+</ul>
+
+<!--
+###### Auto generated by spf13/cobra on 16-Jun-2018
+-->
+
+<p>######2018Äê6ÔÂ16ÈÕ£¬Í¨¹ıspf13/cobra×Ô¶¯Éú³É</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="ä¸æ‰«åˆ«åæ‚”">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">åˆ†äº«åˆ°ï¼š</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
