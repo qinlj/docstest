@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,30 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -88,6 +114,8 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -456,8 +484,8 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/surfaceanalyst/driveregionspecific/" title="Extract Specified Isoregions"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Extract Specified Isoregions</a>
-<a class="nav nav-next" href="/docs/surfaceanalyst/inversecutfill/" title="Inverse Cut Fill">Next - Inverse Cut Fill <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/surfaceanalyst/driveregionspecific/" title="Extract Specified Isoregions"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Extract Specified Isoregions</a>
+<a class="nav nav-next" style="float:right"  href="/docs/surfaceanalyst/inversecutfill/" title="Inverse Cut Fill">Next - Inverse Cut Fill <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -539,24 +567,94 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>　　Finds out the extremums (maximum value and minimum value) in some regions at the same time determines their positions and attribute information.</p>
+
+<h3 id="basic-steps">Basic steps</h3>
+
+<ol>
+<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Terrain Calculate&rdquo; &gt; &ldquo;Region Find Extremum Value&rdquo; to open the &ldquo;Find Extremum Value&rdquo; dialog box.</li>
+<li>Specify your raster dataset at the Source Dataset area and your region dataset at Zonal Data area.</li>
+<li>Set the number of maximum value and minimum value both which are 256 by default.</li>
+<li>Set result data. The statistics results will be saved as a 3D point dataset. Elevation information (field SmZ) and types (field ExtremumType) of extremum points will be saved in the attribute table of the result dataset.</li>
+</ol>
+
+<h3 id="related-topics">Related topics</h3>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFill.html" target="_blank">Cut fill</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFillRegion.html" target="_blank">Cut fill with region</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="InverseCutFill.html" target="_blank">Inverse cut fill</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CalculateCurvature.html" target="_blank">DEM curvature calculate</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Slope.html" target="_blank">Slope analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Aspect.html" target="_blank">Aspect analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Profile.html" target="_blank">Profile analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="OrthoImage.html" target="_blank">Orthophoto image</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="HillShade.html" target="_blank">3D hillshade map</a></p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

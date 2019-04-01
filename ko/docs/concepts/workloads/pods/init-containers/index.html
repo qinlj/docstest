@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -51,6 +53,30 @@
 
 <header>
     <a href="/ko/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -87,6 +113,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -1550,8 +1578,8 @@ myapp-pod   <span style="color:#666">1</span>/1       Running   <span style="col
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/ko/docs/concepts/workloads/pods/pod-lifecycle/" title="파드 라이프사이클"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 파드 라이프사이클</a>
-<a class="nav nav-next" href="/ko/docs/concepts/workloads/pods/podpreset/" title="파드 프리셋">Next - 파드 프리셋 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/ko/docs/concepts/workloads/pods/pod-lifecycle/" title="파드 라이프사이클"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 파드 라이프사이클</a>
+<a class="nav nav-next" style="float:right"  href="/ko/docs/concepts/workloads/pods/podpreset/" title="파드 프리셋">Next - 파드 프리셋 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -1639,24 +1667,72 @@ myapp-pod   <span style="color:#666">1</span>/1       Running   <span style="col
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>이 특징은 1.6에서 베타를 빠져나왔다. 초기화 컨테이너는 앱 <code>containers</code> 배열과 나란히
+파드 스펙에 명시될 수 있다. 베타 어노테이션의 값은 여전히 존중되며 파드 스펙 필드 값을 덮어쓴다.
+하지만, 베타 어노테이션은 1.6과 1.7에서 사용 중단(deprecated)되었다.
+1.8에서 어노테이션은 더는 지원되지 않으므로 파드 스펙 필드로 변환되어야 한다.</p>
+
+
+
+
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

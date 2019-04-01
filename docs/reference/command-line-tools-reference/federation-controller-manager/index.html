@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -51,6 +53,30 @@
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -93,6 +119,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -967,8 +995,8 @@ ship with federation today is the cluster controller.</p>
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/reference/command-line-tools-reference/federation-apiserver/" title="federation-apiserver"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - federation-apiserver</a>
-<a class="nav nav-next" href="/docs/reference/command-line-tools-reference/kube-apiserver/" title="kube-apiserver">Next - kube-apiserver <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/reference/command-line-tools-reference/federation-apiserver/" title="federation-apiserver"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - federation-apiserver</a>
+<a class="nav nav-next" style="float:right"  href="/docs/reference/command-line-tools-reference/kube-apiserver/" title="kube-apiserver">Next - kube-apiserver <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -1056,24 +1084,113 @@ ship with federation today is the cluster controller.</p>
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<h2 id="federation-controller-manager">federation-controller-manager</h2>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>The federation controller manager is a daemon that embeds
+the core control loops shipped with federation. In applications of robotics and
+automation, a control loop is a non-terminating loop that regulates the state of
+the system. In federation, a controller is a control loop that watches the shared
+state of the federation cluster through the apiserver and makes changes attempting
+to move the current state towards the desired state. Examples of controllers that
+ship with federation today is the cluster controller.</p>
+
+<pre><code>federation-controller-manager [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<pre><code>      --address ip                             The IP address to serve on (set to 0.0.0.0 for all interfaces) (default 0.0.0.0)
+      --cluster-monitor-period duration        The period for syncing ClusterStatus in ClusterController. (default 40s)
+      --concurrent-job-syncs int               The number of Jobs syncing operations that will be done concurrently. Larger number = faster endpoint updating, but more CPU (and network) load (default 10)
+      --concurrent-replicaset-syncs int        The number of ReplicaSets syncing operations that will be done concurrently. Larger number = faster endpoint updating, but more CPU (and network) load (default 10)
+      --concurrent-service-syncs int           The number of service syncing operations that will be done concurrently. Larger number = faster endpoint updating, but more CPU (and network) load (default 10)
+      --contention-profiling                   Enable lock contention profiling, if profiling is enabled
+      --controllers mapStringString            A set of key=value pairs that describe controller configuration to enable/disable specific controllers. Key should be the resource name (like services) and value should be true or false. For example: services=false,ingresses=false
+      --dns-provider string                    DNS provider. Valid values are: [&quot;coredns&quot; &quot;google-clouddns&quot; &quot;aws-route53&quot; &quot;azure-azuredns&quot;]
+      --dns-provider-config string             Path to config file for configuring DNS provider.
+      --federated-api-burst int                Burst to use while talking with federation apiserver (default 30)
+      --federated-api-qps float32              QPS to use while talking with federation apiserver (default 20)
+      --federation-name string                 Federation name.
+      --federation-only-namespace string       Name of the namespace that would be created only in federation control plane. (default &quot;federation-only&quot;)
+  -h, --help                                   help for federation-controller-manager
+      --hpa-scale-forbidden-window duration    The time window wrt cluster local hpa lastscale time, during which federated hpa would not move the hpa max/min replicas around (default 2m0s)
+      --kube-api-content-type string           ContentType of requests sent to apiserver. Passing application/vnd.kubernetes.protobuf is an experimental feature now.
+      --kubeconfig string                      Path to kubeconfig file with authorization and master location information.
+      --leader-elect                           Start a leader election client and gain leadership before executing the main loop. Enable this when running replicated components for high availability.
+      --leader-elect-lease-duration duration   The duration that non-leader candidates will wait after observing a leadership renewal until attempting to acquire leadership of a led but unrenewed leader slot. This is effectively the maximum duration that a leader can be stopped before it is replaced by another candidate. This is only applicable if leader election is enabled. (default 15s)
+      --leader-elect-renew-deadline duration   The interval between attempts by the acting master to renew a leadership slot before it stops leading. This must be less than or equal to the lease duration. This is only applicable if leader election is enabled. (default 10s)
+      --leader-elect-resource-lock endpoints   The type of resource object that is used for locking during leader election. Supported options are endpoints (default) and `configmaps`. (default &quot;endpoints&quot;)
+      --leader-elect-retry-period duration     The duration the clients should wait between attempting acquisition and renewal of a leadership. This is only applicable if leader election is enabled. (default 2s)
+      --log-flush-frequency duration           Maximum number of seconds between log flushes (default 5s)
+      --master string                          The address of the federation API server (overrides any value in kubeconfig)
+      --port int                               The port that the controller-manager's http service runs on (default 10253)
+      --profiling                              Enable profiling via web interface host:port/debug/pprof/ (default true)
+      --service-dns-suffix string              DNS Suffix to use when publishing federated service names.  Defaults to zone-name
+      --zone-id string                         Zone ID, needed if the zone name is not unique.
+      --zone-name string                       Zone name, like example.com.
+</code></pre>
+
+<h6 id="auto-generated-by-spf13-cobra-on-1-dec-2018">Auto generated by spf13/cobra on 1-Dec-2018</h6>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

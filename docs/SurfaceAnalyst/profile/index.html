@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,30 @@
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -88,6 +114,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -475,8 +503,8 @@
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/surfaceanalyst/orthoimage/" title="Orthophoto Image"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Orthophoto Image</a>
-<a class="nav nav-next" href="/docs/surfaceanalyst/slope/" title="Slope Analysis">Next - Slope Analysis <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/surfaceanalyst/orthoimage/" title="Orthophoto Image"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Orthophoto Image</a>
+<a class="nav nav-next" style="float:right"  href="/docs/surfaceanalyst/slope/" title="Slope Analysis">Next - Slope Analysis <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -558,24 +586,113 @@
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>　　Profile shows the change of elevation along the line (section). The research of the profile, terrain, geology and hydrology features of certain section, including the landform, outline, absolute and relative elevation, geologic structure, slope features, surface cutting strength, erosion, etc., is very useful for the estimating of the feasibility for building railway or the difficult for building road, it can also provide foundation for calculating earth volume.</p>
+
+<p>　　Profile analysis can view the profile of raster surface along a specified road and get a set of profile line and profile sampling points.</p>
+
+<p><strong>Sampling Points</strong></p>
+
+<p>　　The raster surface is continuous, and it is impossible to get all the locations on the given path, so it is needed to select some feature points from the path, called sampling points. The profile is formed by the elevation and coordinate information of the points. In the figure below, the intersections of the given path and the center lines of the cells are used as sampling points.</p>
+
+<p><img src="img/Profile1.png" alt="" /></p>
+
+<p><strong>Profile line and profile sampling points</strong></p>
+
+<p>　　Profile line is one result of the profile analysis, it is a polygonal line. The nodes on the line and the sampling points are in one-to-one correspondence, the X value of the node represents the straight-line distance between the current sampling point to the start point of the given path, and the Y value is the elevation of the sampling point. In the coordinate system, the maximum and minimum values of the elevation of all the nodes is labeled on the top left corner, the x-coordinates, y-coordinates and elevation values of all the nodes are labeled on the profile line. The sampling points have the location of all the points, and the profile line stores the points. You can get the elevation of certain location and its distance to the start point from the profile line and sampling points.</p>
+
+<p>　　<img src="img/Profile2.png" alt="" /></p>
+
+<p>　　The figure below shows the profile line in the 2D coordinate system, the ups and downs of the terrain on the line is displayed intuitively.</p>
+
+<p>　　<img src="img/Profile3.png" alt="" /></p>
+
+<h3 id="basic-steps">Basic steps</h3>
+
+<ol>
+<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Terrain Calculate&rdquo; &gt; &ldquo;Profile Analysis&rdquo; to open the &ldquo;Profile Analysis&rdquo; dialog box.</li>
+<li>Specify your raster dataset to perform the profile analysis, and set your line data at the Line area. Create profile line data and sampling point data for each line object; if there are more than one line object in the line dataset, multiple profile data and sampling point data will be created.</li>
+<li>Result Data: Set a name for profile line data (CAD dataset) and specify a datasource to save the result data.</li>
+<li>Create the Sampling Points Dataset: Checking it to create a sampling point dataset when creating profile line, otherwise no sampling point dataset is created.</li>
+<li>Click &ldquo;Run&rdquo; image button to perform the operation. After successful, you can open the generated CAD dataset to view the profile line information.</li>
+</ol>
+
+<h3 id="related-topics">Related topics</h3>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFill.html" target="_blank">Cut fill</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFillRegion.html" target="_blank">Cut fill with region</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="InverseCutFill.html" target="_blank">Inverse cut fill</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="FindExtreme.html" target="_blank">Find Extremum value</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CalculateCurvature.html" target="_blank">DEM curvature calculate</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Slope.html" target="_blank">Slope analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Aspect.html" target="_blank">Aspect analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="OrthoImage.html" target="_blank">Orthophoto image</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="HillShade.html" target="_blank">3D hillshade map</a></p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

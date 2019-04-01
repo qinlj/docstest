@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -51,6 +53,30 @@
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -93,6 +119,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -4435,8 +4463,8 @@ Filter by Command: <span id="commandFilter" />
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/doc-contributor-tools/snippets/readme/" title=""><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - </a>
-<a class="nav nav-next" href="/docs/user-journeys/users/application-developer/advanced/" title="Advanced Topics">Next - Advanced Topics <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/doc-contributor-tools/snippets/readme/" title=""><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - </a>
+<a class="nav nav-next" style="float:right"  href="/docs/user-journeys/users/application-developer/advanced/" title="Advanced Topics">Next - Advanced Topics <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -4524,24 +4552,174 @@ Filter by Command: <span id="commandFilter" />
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          <p><script language="JavaScript">
+var dropDownsPopulated = false;
+$( document ).ready(function() {
+  // When the document loads, get the metadata JSON, and kick off tbl render
+  $.get(&ldquo;/metadata.txt&rdquo;, function(data, status) {
+    metadata = $.parseJSON(data);
+    metadata.pages.sort(dynamicSort(&ldquo;t&rdquo;));
+    mainLogic()
+    $(window).bind( &lsquo;hashchange&rsquo;, function(e) {
+      mainLogic();
+    });
+  });
+});
+function mainLogic()
+{
+  // If there&rsquo;s a tag filter, change the table/drop down output
+  if (!dropDownsPopulated) populateDropdowns();
+  var tag=window.location.hash.replace(&ldquo;#&rdquo;,&ldquo;&rdquo;);
+  if(tag) {
+    tag = $.trim(tag);
+    for (i=0;i<tagName.length;i++) {
+      querystringTag = tagName[i] + "=";
+      if (tag.indexOf(querystringTag) > -1)
+      {
+        console.log(&ldquo;in mainLog: querystringTag of &ldquo; + querystringTag + &rdquo; matches tag of &ldquo; + tag);
+        tag = tag.replace(querystringTag,&ldquo;&rdquo;);
+        selectDropDown(tagName[i],tag);
+        topicsFilter(tagName[i],tag,&ldquo;output&rdquo;);
+      }
+    }
+  } else {
+    currentTopics = metadata.pages;
+  }
+  renderTable(currentTopics,&ldquo;output&rdquo;);</p>
+
+<p>}
+function populateDropdowns()
+{
+  // Keeping mainLogic() brief by functionalizing the initialization of the
+  // drop-down filter boxes</p>
+
+<p>for(i=0;i<metadata.pages.length;i++)
+  {
+    var metadataArrays = [metadata.pages[i].cr,metadata.pages[i].or,metadata.pages[i].mr];
+    for(j=0;j<metadataArrays.length;j++)
+    {
+      if (metadataArrays[j]) {
+        for (k=0;k<metadataArrays[j].length;k++) {
+          if (typeof storedTagsArrays[j] == 'undefined') storedTagsArrays[j] = new Array();
+          storedTagsArrays[j][metadataArrays[j][k][tagName[j]]] = true;
+          // ^ conceptList[metadata.pages[i].cr[k].concept] = true; (if rolling through concepts)
+          // ^ conceptList['container'] = true; (ultimate result)
+          // ^ objectList[metadata.pages[i].or[k].object] = true; (if rolling through objects)
+          // ^ objectList['restartPolicy'] = true; (ultimate result)
+        }
+      }
+    }
+  }
+  var output = new Array();
+  for(i=0;i<tagName.length;i++)
+  {
+    // Phew! All tags in conceptList, objectList, and commandList!
+    // Loop through them and populate those drop-downs through html() injection
+    output = [];
+    output.push("<select id='" + tagName[i] + "' onchange='dropFilter(this)'>&rdquo;);
+    output.push(&rdquo;<option>&mdash;</option>&rdquo;);
+    Object.keys(storedTagsArrays[i]).sort().forEach(function (key) {
+      output.push(&rdquo;<option>&rdquo; + key + &ldquo;</option>&rdquo;);
+    });
+    output.push(&rdquo;</select>&rdquo;)
+    $(dropDowns[i]).html(output.join(&ldquo;&rdquo;));
+  }
+  dropDownsPopulated = true;
+}
+function dropFilter(srcobj)
+{
+  // process the change of a drop-down value
+  // the ID of the drop down is either command, object, or concept
+  // these exact values are what topicsFilter() expects, plus a filter val
+  // which we get from .text() of :selected
+  console.log(&ldquo;dropFilter:&rdquo; + $(srcobj).attr(&lsquo;id&rsquo;) + &ldquo;:&rdquo; + $(srcobj).find(&rdquo;:selected&rdquo;).text());
+  topicsFilter($(srcobj).attr(&lsquo;id&rsquo;).replace(&ldquo;#&rdquo;,&ldquo;&rdquo;),$(srcobj).find(&rdquo;:selected&rdquo;).text(),&ldquo;output&rdquo;);
+  for(i=0;i<tagName.length;i++)
+  {
+    if($(srcobj).attr('id')!=tagName[i]) selectDropDown(tagName[i],"---");
+  }
+}
+function selectDropDown(type,tag)
+{
+  // change drop-down selection w/o filtering
+  $("#" + type).val(tag);
+}
+</script>
+<style>
+#filters select{
+  font-size: 14px;
+  border: 1px #000 solid;
+}
+#filters {
+  padding-top: 20px;
+}
+</style></p>
+
+<p>Click tags or use the drop downs to filter. Click table headers to sort or reverse sort.</p>
+
+<p id="filters">
+Filter by Concept: <span id="conceptFilter" /><br/>
+Filter by Object: <span id="objectFilter" /><br/>
+Filter by Command: <span id="commandFilter" />
+</p>
+
+<p><div id="output" /></p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

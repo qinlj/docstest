@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -57,6 +59,30 @@ apiVersion:v1data:federations:| {&#34;foo&#34; : &#34;foo.feddomain.com&#34;}stu
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -91,6 +117,8 @@ apiVersion:v1data:federations:| {&#34;foo&#34; : &#34;foo.feddomain.com&#34;}stu
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -2166,8 +2194,8 @@ A cluster administrator can also migrate using <a href="https://github.com/cored
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/tasks/administer-cluster/cpu-management-policies/" title="Control CPU Management Policies on the Node"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Control CPU Management Policies on the Node</a>
-<a class="nav nav-next" href="/docs/tasks/administer-cluster/dns-debugging-resolution/" title="Debugging DNS Resolution">Next - Debugging DNS Resolution <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/tasks/administer-cluster/cpu-management-policies/" title="Control CPU Management Policies on the Node"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Control CPU Management Policies on the Node</a>
+<a class="nav nav-next" style="float:right"  href="/docs/tasks/administer-cluster/dns-debugging-resolution/" title="Debugging DNS Resolution">Next - Debugging DNS Resolution <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -2255,24 +2283,147 @@ A cluster administrator can also migrate using <a href="https://github.com/cored
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+
+
+
+
+
+
+
+
+<h2 id="coredns-configuration-equivalent-to-kube-dns">CoreDNS configuration equivalent to kube-dns</h2>
+
+<p>CoreDNS supports the features of kube-dns and more.
+A ConfigMap created for kube-dns to support <code>StubDomains</code>and <code>upstreamNameservers</code> translates to the <code>proxy</code> plugin in CoreDNS.
+Similarly, the <code>Federations</code> plugin in kube-dns translates to the <code>federation</code> plugin in CoreDNS.</p>
+
+<h3 id="example">Example</h3>
+
+<p>This example ConfigMap for kubedns specifies federations, stubdomains and upstreamnameservers:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>data:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>federations:<span style="color:#bbb"> </span><span style="color:#b44;font-style:italic">|
+</span><span style="color:#b44;font-style:italic">    {&#34;foo&#34; : &#34;foo.feddomain.com&#34;}</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>stubDomains:<span style="color:#bbb"> </span><span style="color:#b44;font-style:italic">|
+</span><span style="color:#b44;font-style:italic">    {&#34;abc.com&#34; : [&#34;1.2.3.4&#34;], &#34;my.cluster.local&#34; : [&#34;2.3.4.5&#34;]}</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>upstreamNameservers:<span style="color:#bbb"> </span><span style="color:#b44;font-style:italic">|
+</span><span style="color:#b44;font-style:italic">    [&#34;8.8.8.8&#34;, &#34;8.8.4.4&#34;]</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>ConfigMap</code></pre></div>
+<p>The equivalent configuration in CoreDNS creates a Corefile:</p>
+
+<ul>
+<li><p>For federations:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">federation<span style="color:#bbb"> </span>cluster.local<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">       </span>foo<span style="color:#bbb"> </span>foo.feddomain.com<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}</code></pre></div></li>
+
+<li><p>For stubDomains:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">abc.com:<span style="color:#666">53</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>errors<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>cache<span style="color:#bbb"> </span><span style="color:#666">30</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>proxy<span style="color:#bbb"> </span>.<span style="color:#bbb"> </span><span style="color:#666">1.2</span>.<span style="color:#666">3.4</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span><span style="color:#bbb"></span>my.cluster.local:<span style="color:#666">53</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>errors<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>cache<span style="color:#bbb"> </span><span style="color:#666">30</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>proxy<span style="color:#bbb"> </span>.<span style="color:#bbb"> </span><span style="color:#666">2.3</span>.<span style="color:#666">4.5</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></div></li>
+</ul>
+
+<p>The complete Corefile with the default plugins:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">.:<span style="color:#666">53</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>errors<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>health<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>kubernetes<span style="color:#bbb"> </span>cluster.local<span style="color:#bbb"> </span>in-addr.arpa<span style="color:#bbb"> </span>ip6.arpa<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">           </span>upstream<span style="color:#bbb">  </span><span style="color:#666">8.8</span>.<span style="color:#666">8.8</span><span style="color:#bbb"> </span><span style="color:#666">8.8</span>.<span style="color:#666">4.4</span><span style="color:#bbb">
+</span><span style="color:#bbb">           </span>pods<span style="color:#bbb"> </span>insecure<span style="color:#bbb">
+</span><span style="color:#bbb">           </span>fallthrough<span style="color:#bbb"> </span>in-addr.arpa<span style="color:#bbb"> </span>ip6.arpa<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>federation<span style="color:#bbb"> </span>cluster.local<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">           </span>foo<span style="color:#bbb"> </span>foo.feddomain.com<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>prometheus<span style="color:#bbb"> </span>:<span style="color:#666">9153</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>proxy<span style="color:#bbb"> </span>.<span style="color:#bbb">  </span><span style="color:#666">8.8</span>.<span style="color:#666">8.8</span><span style="color:#bbb"> </span><span style="color:#666">8.8</span>.<span style="color:#666">4.4</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>cache<span style="color:#bbb"> </span><span style="color:#666">30</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>abc.com:<span style="color:#666">53</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>errors<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>cache<span style="color:#bbb"> </span><span style="color:#666">30</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>proxy<span style="color:#bbb"> </span>.<span style="color:#bbb"> </span><span style="color:#666">1.2</span>.<span style="color:#666">3.4</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>my.cluster.local:<span style="color:#666">53</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>errors<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>cache<span style="color:#bbb"> </span><span style="color:#666">30</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span>proxy<span style="color:#bbb"> </span>.<span style="color:#bbb"> </span><span style="color:#666">2.3</span>.<span style="color:#666">4.5</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}</code></pre></div>
+<h2 id="migration-to-coredns">Migration to CoreDNS</h2>
+
+<p>To migrate from kube-dns to CoreDNS, <a href="https://coredns.io/2018/05/21/migration-from-kube-dns-to-coredns/" target="_blank">a detailed blog</a> is available to help users adapt CoreDNS in place of kube-dns.
+A cluster administrator can also migrate using <a href="https://github.com/coredns/deployment/blob/master/kubernetes/deploy.sh" target="_blank">the deploy script</a>.</p>
+
+<h2 id="what-s-next">What&rsquo;s next</h2>
+
+<ul>
+<li><a href="/docs/tasks/administer-cluster/dns-debugging-resolution/">Debugging DNS Resolution</a>.</li>
+</ul>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

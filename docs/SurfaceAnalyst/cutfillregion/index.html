@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,30 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -88,6 +114,8 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -467,8 +495,8 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/surfaceanalyst/cutfill/" title="Cut Fill"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Cut Fill</a>
-<a class="nav nav-next" href="/docs/surfaceanalyst/calculatecurvature/" title="DEM Curvature Calculate">Next - DEM Curvature Calculate <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/surfaceanalyst/cutfill/" title="Cut Fill"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Cut Fill</a>
+<a class="nav nav-next" style="float:right"  href="/docs/surfaceanalyst/calculatecurvature/" title="DEM Curvature Calculate">Next - DEM Curvature Calculate <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -550,24 +578,105 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>　　Calculates the volume and area of the cut and fill.
+　　For example, when you want to flat a rugged region, you can perform the Cut Fill with Region to obtain the fill area, the cut area, the volume of cut and fill through specifying the rugged area and the elevation of result region. About the theory and method of Cut Fill, please refer to <a href="CutFill.html" target="_blank">Cut Fill</a>.</p>
+
+<h3 id="basic-steps">Basic steps</h3>
+
+<ol>
+<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Terrain Calculate&rdquo; &gt; &ldquo;Cut Fill with Regions&rdquo; to open the &ldquo;Cut Fill with Regions&rdquo; dialog box.</li>
+<li>Specify a dataset for the calculation.</li>
+<li>Select a line or region dataset as the reference data. To a region object, it can participate in the operation directly as a specified plane. To a line object, a buffer analysis will be done first, and the result will take part in the calculation as a specified plane.</li>
+<li><strong>Append Height</strong>: Result elevation of cut or fill.</li>
+
+<li><p>Buffer settings: It is available for line objects.</p>
+
+<ul>
+<li><strong>Buffer Type</strong>: Select a buffer type as your needs. Two types are provided: Flat which means there are bevels at line ends and nodes, and Round which means both the ends and nodes are round.</li>
+<li><strong>Buffer Radius</strong>: Determines the buffer range by buffer radius, and creates buffer for line objects to form the area to be cut and filled.</li>
+</ul></li>
+
+<li><p>Set a name for the result dataset and specify a datasource to save it, then click &ldquo;Run&rdquo; image button to perform the operation. After this operation is done, it will display the cut and fill result in the output window, including the Fill Volume, Cut Volume, Fill Area, Cut Area, and Left Area five contents. The volume unit is cubic meter, and the area unit is square meter, shown as below:
+　　<img src="img/CutFillRegion.png" alt="" /></p></li>
+</ol>
+
+<h3 id="related-topics">Related topics</h3>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFill.html" target="_blank">Cut fill</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="InverseCutFill.html" target="_blank">Inverse cut fill</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="FindExtreme.html" target="_blank">Find Extremum value</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CalculateCurvature.html" target="_blank">DEM curvature calculate</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Slope.html" target="_blank">Slope analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Aspect.html" target="_blank">Aspect analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Profile.html" target="_blank">Profile analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="OrthoImage.html" target="_blank">Orthophoto image</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="HillShade.html" target="_blank">3D hillshade map</a></p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,30 @@ Photon Node Name The Photon cloud provider uses the hostname of the node (as det
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -88,6 +114,8 @@ Photon Node Name The Photon cloud provider uses the hostname of the node (as det
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -1610,8 +1638,8 @@ Note that the Kubernetes Node name must match the Baidu VM private IP.</p>
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/concepts/cluster-administration/certificates/" title="Certificates"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Certificates</a>
-<a class="nav nav-next" href="/docs/concepts/cluster-administration/manage-deployment/" title="Managing Resources">Next - Managing Resources <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/concepts/cluster-administration/certificates/" title="Certificates"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Certificates</a>
+<a class="nav nav-next" style="float:right"  href="/docs/concepts/cluster-administration/manage-deployment/" title="Managing Resources">Next - Managing Resources <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -1699,24 +1727,114 @@ Note that the Kubernetes Node name must match the Baidu VM private IP.</p>
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+
+
+
+
+<h2 id="ovirt">OVirt</h2>
+
+<h3 id="node-name">Node Name</h3>
+
+<p>The OVirt cloud provider uses the hostname of the node (as determined by the kubelet or overridden with <code>--hostname-override</code>) as the name of the Kubernetes Node object.
+Note that the Kubernetes Node name must match the VM FQDN (reported by OVirt under <code>&lt;vm&gt;&lt;guest_info&gt;&lt;fqdn&gt;...&lt;/fqdn&gt;&lt;/guest_info&gt;&lt;/vm&gt;</code>)</p>
+
+<h2 id="photon">Photon</h2>
+
+<h3 id="node-name-1">Node Name</h3>
+
+<p>The Photon cloud provider uses the hostname of the node (as determined by the kubelet or overridden with <code>--hostname-override</code>) as the name of the Kubernetes Node object.
+Note that the Kubernetes Node name must match the Photon VM name (or if <code>overrideIP</code> is set to true in the <code>--cloud-config</code>, the Kubernetes Node name must match the Photon VM IP address).</p>
+
+<h2 id="vsphere">VSphere</h2>
+
+<h3 id="node-name-2">Node Name</h3>
+
+<p>The VSphere cloud provider uses the detected hostname of the node (as determined by the kubelet) as the name of the Kubernetes Node object.</p>
+
+<p>The <code>--hostname-override</code> parameter is ignored by the VSphere cloud provider.</p>
+
+<h2 id="ibm-cloud-kubernetes-service">IBM Cloud Kubernetes Service</h2>
+
+<h3 id="compute-nodes">Compute nodes</h3>
+
+<p>By using the IBM Cloud Kubernetes Service provider, you can create clusters with a mixture of virtual and physical (bare metal) nodes in a single zone or across multiple zones in a region. For more information, see <a href="https://cloud.ibm.com/docs/containers?topic=containers-plan_clusters#plan_clusters" target="_blank">Planning your cluster and worker node setup</a>.</p>
+
+<p>The name of the Kubernetes Node object is the private IP address of the IBM Cloud Kubernetes Service worker node instance.</p>
+
+<h3 id="networking">Networking</h3>
+
+<p>The IBM Cloud Kubernetes Service provider provides VLANs for quality network performance and network isolation for nodes. You can set up custom firewalls and Calico network policies to add an extra layer of security for your cluster, or connect your cluster to your on-prem data center via VPN. For more information, see <a href="https://cloud.ibm.com/docs/containers?topic=containers-cs_network_cluster#cs_network_cluster" target="_blank">Planning in-cluster and private networking</a>.</p>
+
+<p>To expose apps to the public or within the cluster, you can leverage NodePort, LoadBalancer, or Ingress services. You can also customize the Ingress application load balancer with annotations. For more information, see <a href="https://cloud.ibm.com/docs/containers?topic=containers-cs_network_planning#cs_network_planning" target="_blank">Planning to expose your apps with external networking</a>.</p>
+
+<h3 id="storage">Storage</h3>
+
+<p>The IBM Cloud Kubernetes Service provider leverages Kubernetes-native persistent volumes to enable users to mount file, block, and cloud object storage to their apps. You can also use database-as-a-service and third-party add-ons for persistent storage of your data. For more information, see <a href="https://cloud.ibm.com/docs/containers?topic=containers-storage_planning#storage_planning" target="_blank">Planning highly available persistent storage</a>.</p>
+
+<h2 id="baidu-cloud-container-engine">Baidu Cloud Container Engine</h2>
+
+<h3 id="node-name-3">Node Name</h3>
+
+<p>The Baidu cloud provider uses the private IP address of the node (as determined by the kubelet or overridden with <code>--hostname-override</code>) as the name of the Kubernetes Node object.
+Note that the Kubernetes Node name must match the Baidu VM private IP.</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

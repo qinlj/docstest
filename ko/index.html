@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -58,6 +60,30 @@
 
 <header>
     <a href="/ko/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -100,6 +126,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -163,12 +191,13 @@
 			<main>
 				<div id="headlineWrapper">
 					<h1>운영 수준의 컨테이너 오케스트레이션</h1>
-					<h5>자동화된 컨테이너 배포, 스케일링과 관리</h5>
+
 				</div>
-				
-
-<a href="/ko/docs/tutorials/kubernetes-basics/" id="quickstartButton" class="button">쿠버네티스 기초 학습</a>
-
+        <div>
+          <form id="searchBox" action="/docs/search/">
+            <input type="text" id="search" name="q" style="width: 60%" placeholder="검색하기" aria-label="Search">
+          </form>
+        </div>
 
 			</main>
 		</section>

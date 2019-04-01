@@ -1,8 +1,7 @@
-This feature is currently in a *alpha* state, meaning:
+Cette fonctionnalité est actuellement dans un état *alpha*, ce qui signifie :
 
-* The version names contain alpha (e.g. v1alpha1).
-* Might be buggy. Enabling the feature may expose bugs. Disabled by default.
-* Support for feature may be dropped at any time without notice.
-* The API may change in incompatible ways in a later software release without notice.
-* Recommended for use only in short-lived testing clusters, due to increased risk of bugs and lack of long-term support.
-
+* Les noms de version contiennent: alpha (par ex. v1alpha1).
+* La fonctionnalité peut contenir des bugs. L'activation de cette fonctionnalité peut donc vous exposer aux effets de ces bugs. La fonctionnalité est désactivée par défaut.
+* La prise en charge de cette fonctionnalité peut être supprimée à tout moment sans préavis.
+* La retro-compatibilité n'est pas assurée pour les prochaines versions.
+* Recommandé pour une utilisation uniquement dans les clusters de test de courte durée, en raison d'un risque accru de bugs et d'un manque de support à long terme.

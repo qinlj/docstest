@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -51,6 +53,30 @@
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -93,6 +119,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -636,8 +664,8 @@ PING <span style="color:#666">18</span>.16.90.4 <span style="color:#666">(</span
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/getting-started-guides/fedora/" title="Bare Metal"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Bare Metal</a>
-<a class="nav nav-next" href="/docs/getting-started-guides/fedora/fedora_manual_config/" title="Fedora (Single Node)">Next - Fedora (Single Node) <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/getting-started-guides/fedora/" title="Bare Metal"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Bare Metal</a>
+<a class="nav nav-next" style="float:right"  href="/docs/getting-started-guides/fedora/fedora_manual_config/" title="Fedora (Single Node)">Next - Fedora (Single Node) <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -725,24 +753,240 @@ PING <span style="color:#666">18</span>.16.90.4 <span style="color:#666">(</span
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#master-setup">Master Setup</a></li>
+<li><a href="#node-setup">Node Setup</a></li>
+<li><a href="#test-the-cluster-and-flannel-configuration">Test the cluster and flannel configuration</a></li>
+<li><a href="#support-level">Support Level</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<p>This document describes how to deploy Kubernetes on multiple hosts to set up a multi-node cluster and networking with flannel. Follow fedora <a href="/docs/getting-started-guides/fedora/fedora_manual_config/">getting started guide</a> to setup 1 master (fed-master) and 2 or more nodes. Make sure that all nodes have different names (fed-node1, fed-node2 and so on) and labels (fed-node1-label, fed-node2-label, and so on) to avoid any conflict. Also make sure that the Kubernetes master host is running etcd, kube-controller-manager, kube-scheduler, and kube-apiserver services, and the nodes are running docker, kube-proxy and kubelet services. Now install flannel on Kubernetes nodes. Flannel on each node configures an overlay network that docker uses. Flannel runs on each node to setup a unique class-C container network.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>You need 2 or more machines with Fedora installed.</p>
+
+<h2 id="master-setup">Master Setup</h2>
+
+<p><strong>Perform following commands on the Kubernetes master</strong></p>
+
+<ul>
+<li>Configure flannel by creating a <code>flannel-config.json</code> in your current directory on fed-master. Flannel provides udp and vxlan among other overlay networking backend options. In this guide, we choose kernel based vxlan backend. The contents of the json are:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#008000;font-weight:bold">&#34;Network&#34;</span>: <span style="color:#b44">&#34;18.16.0.0/16&#34;</span>,
+    <span style="color:#008000;font-weight:bold">&#34;SubnetLen&#34;</span>: <span style="color:#666">24</span>,
+    <span style="color:#008000;font-weight:bold">&#34;Backend&#34;</span>: {
+        <span style="color:#008000;font-weight:bold">&#34;Type&#34;</span>: <span style="color:#b44">&#34;vxlan&#34;</span>,
+        <span style="color:#008000;font-weight:bold">&#34;VNI&#34;</span>: <span style="color:#666">1</span>
+     }
+}</code></pre></div>
+<blockquote class="note">
+  <div><strong>Note:</strong> Choose an IP range that is <em>NOT</em> part of the public IP address range.</div>
+</blockquote>
+
+
+<p>Add the configuration to the etcd server on fed-master.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">etcdctl <span style="color:#a2f">set</span> /coreos.com/network/config &lt; flannel-config.json</code></pre></div>
+<ul>
+<li>Verify that the key exists in the etcd server on fed-master.</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">etcdctl get /coreos.com/network/config</code></pre></div>
+<h2 id="node-setup">Node Setup</h2>
+
+<p><strong>Perform following commands on all Kubernetes nodes</strong></p>
+
+<p>Install the flannel package</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># dnf -y install flannel</span></code></pre></div>
+<p>Edit the flannel configuration file /etc/sysconfig/flanneld as follows:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># Flanneld configuration options</span>
+
+<span style="color:#080;font-style:italic"># etcd url location.  Point this to the server where etcd runs</span>
+<span style="color:#b8860b">FLANNEL_ETCD</span><span style="color:#666">=</span><span style="color:#b44">&#34;http://fed-master:2379&#34;</span>
+
+<span style="color:#080;font-style:italic"># etcd config key.  This is the configuration key that flannel queries</span>
+<span style="color:#080;font-style:italic"># For address range assignment</span>
+<span style="color:#b8860b">FLANNEL_ETCD_KEY</span><span style="color:#666">=</span><span style="color:#b44">&#34;/coreos.com/network&#34;</span>
+
+<span style="color:#080;font-style:italic"># Any additional options that you want to pass</span>
+<span style="color:#b8860b">FLANNEL_OPTIONS</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span></code></pre></div>
+<blockquote class="note">
+  <div><strong>Note:</strong> By default, flannel uses the interface for the default route. If you have multiple interfaces and would like to use an interface other than the default route one, you could add &ldquo;-iface=&rdquo; to FLANNEL_OPTIONS. For additional options, run <code>flanneld --help</code> on command line.</div>
+</blockquote>
+
+
+<p>Enable the flannel service.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl <span style="color:#a2f">enable</span> flanneld</code></pre></div>
+<p>If docker is not running, then starting flannel service is enough and skip the next step.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl start flanneld</code></pre></div>
+<p>If docker is already running, then stop docker, delete docker bridge (docker0), start flanneld and restart docker as follows. Another alternative is to just reboot the system (<code>systemctl reboot</code>).</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl stop docker
+ip link delete docker0
+systemctl start flanneld
+systemctl start docker</code></pre></div>
+<h2 id="test-the-cluster-and-flannel-configuration">Test the cluster and flannel configuration</h2>
+
+<p>Now check the interfaces on the nodes. Notice there is now a flannel.1 interface, and the ip addresses of docker0 and flannel.1 interfaces are in the same network. You will notice that docker0 is assigned a subnet (18.16.29.0/24 as shown below) on each Kubernetes node out of the IP range configured above. A working output should look like this:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># ip -4 a|grep inet</span>
+    inet <span style="color:#666">127</span>.0.0.1/8 scope host lo
+    inet <span style="color:#666">192</span>.168.122.77/24 brd <span style="color:#666">192</span>.168.122.255 scope global dynamic eth0
+    inet <span style="color:#666">18</span>.16.29.0/16 scope global flannel.1
+    inet <span style="color:#666">18</span>.16.29.1/24 scope global docker0</code></pre></div>
+<p>From any node in the cluster, check the cluster members by issuing a query to etcd server via curl (only partial output is shown using <code>grep -E &quot;\{|\}|key|value&quot;</code>). If you set up a 1 master and 3 nodes cluster, you should see one block for each node showing the subnets they have been assigned. You can associate those subnets to each node by the MAC address (VtepMAC) and IP address (Public IP) that is listed in the output.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -s http://fed-master:2379/v2/keys/coreos.com/network/subnets | python -mjson.tool</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#008000;font-weight:bold">&#34;node&#34;</span>: {
+        <span style="color:#008000;font-weight:bold">&#34;key&#34;</span>: <span style="color:#b44">&#34;/coreos.com/network/subnets&#34;</span>,
+            <span style="">{</span>
+                <span style="color:#008000;font-weight:bold">&#34;key&#34;</span>: <span style="color:#b44">&#34;/coreos.com/network/subnets/18.16.29.0-24&#34;</span>,
+                <span style="color:#008000;font-weight:bold">&#34;value&#34;</span>: <span style="color:#b44">&#34;{\&#34;PublicIP\&#34;:\&#34;192.168.122.77\&#34;,\&#34;BackendType\&#34;:\&#34;vxlan\&#34;,\&#34;BackendData\&#34;:{\&#34;VtepMAC\&#34;:\&#34;46:f1:d0:18:d0:65\&#34;}}&#34;</span>
+            },
+            <span style="">{</span>
+                <span style="color:#008000;font-weight:bold">&#34;key&#34;</span>: <span style="color:#b44">&#34;/coreos.com/network/subnets/18.16.83.0-24&#34;</span>,
+                <span style="color:#008000;font-weight:bold">&#34;value&#34;</span>: <span style="color:#b44">&#34;{\&#34;PublicIP\&#34;:\&#34;192.168.122.36\&#34;,\&#34;BackendType\&#34;:\&#34;vxlan\&#34;,\&#34;BackendData\&#34;:{\&#34;VtepMAC\&#34;:\&#34;ca:38:78:fc:72:29\&#34;}}&#34;</span>
+            }<span style="">,</span>
+            {
+                <span style="color:#008000;font-weight:bold">&#34;key&#34;</span>: <span style="color:#b44">&#34;/coreos.com/network/subnets/18.16.90.0-24&#34;</span>,
+                <span style="color:#008000;font-weight:bold">&#34;value&#34;</span>: <span style="color:#b44">&#34;{\&#34;PublicIP\&#34;:\&#34;192.168.122.127\&#34;,\&#34;BackendType\&#34;:\&#34;vxlan\&#34;,\&#34;BackendData\&#34;:{\&#34;VtepMAC\&#34;:\&#34;92:e2:80:ba:2d:4d\&#34;}}&#34;</span>
+            }
+    <span style="">}</span>
+<span style="">}</span></code></pre></div>
+<p>From all nodes, review the <code>/run/flannel/subnet.env</code> file.  This file was generated automatically by flannel.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># cat /run/flannel/subnet.env</span>
+<span style="color:#b8860b">FLANNEL_SUBNET</span><span style="color:#666">=</span><span style="color:#666">18</span>.16.29.1/24
+<span style="color:#b8860b">FLANNEL_MTU</span><span style="color:#666">=</span><span style="color:#666">1450</span>
+<span style="color:#b8860b">FLANNEL_IPMASQ</span><span style="color:#666">=</span>false</code></pre></div>
+<p>At this point, we have etcd running on the Kubernetes master, and flannel / docker running on Kubernetes nodes. Next steps are for testing cross-host container communication which will confirm that docker and flannel are configured properly.</p>
+
+<p>Issue the following commands on any 2 nodes:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># docker run -it fedora:latest bash</span>
+bash-4.3# </code></pre></div>
+<p>This will place you inside the container. Install iproute and iputils packages to install ip and ping utilities. Due to a <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1142311" target="_blank">bug</a>, it is required to modify capabilities of ping binary to work around &ldquo;Operation not permitted&rdquo; error.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bash-4.3# dnf -y install iproute iputils
+bash-4.3# setcap cap_net_raw-ep /usr/bin/ping</code></pre></div>
+<p>Now note the IP address on the first node:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bash-4.3# ip -4 a l eth0 | grep inet
+    inet <span style="color:#666">18</span>.16.29.4/24 scope global eth0</code></pre></div>
+<p>And also note the IP address on the other node:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bash-4.3# ip a l eth0 | grep inet
+    inet <span style="color:#666">18</span>.16.90.4/24 scope global eth0</code></pre></div>
+<p>Now ping from the first node to the other node:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bash-4.3# ping <span style="color:#666">18</span>.16.90.4
+PING <span style="color:#666">18</span>.16.90.4 <span style="color:#666">(</span><span style="color:#666">18</span>.16.90.4<span style="color:#666">)</span> <span style="color:#666">56</span><span style="color:#666">(</span><span style="color:#666">84</span><span style="color:#666">)</span> bytes of data.
+<span style="color:#666">64</span> bytes from <span style="color:#666">18</span>.16.90.4: <span style="color:#b8860b">icmp_seq</span><span style="color:#666">=</span><span style="color:#666">1</span> <span style="color:#b8860b">ttl</span><span style="color:#666">=</span><span style="color:#666">62</span> <span style="color:#b8860b">time</span><span style="color:#666">=</span><span style="color:#666">0</span>.275 ms
+<span style="color:#666">64</span> bytes from <span style="color:#666">18</span>.16.90.4: <span style="color:#b8860b">icmp_seq</span><span style="color:#666">=</span><span style="color:#666">2</span> <span style="color:#b8860b">ttl</span><span style="color:#666">=</span><span style="color:#666">62</span> <span style="color:#b8860b">time</span><span style="color:#666">=</span><span style="color:#666">0</span>.372 ms</code></pre></div>
+<p>Now Kubernetes multi-node cluster is set up with overlay networking set up by flannel.</p>
+
+<h2 id="support-level">Support Level</h2>
+
+<table>
+<thead>
+<tr>
+<th>IaaS Provider</th>
+<th>Config. Mgmt</th>
+<th>OS</th>
+<th>Networking</th>
+<th>Docs</th>
+<th>Conforms</th>
+<th>Support Level</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Bare-metal</td>
+<td>custom</td>
+<td>Fedora</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/">docs</a></td>
+<td></td>
+<td>Community (<a href="https://github.com/aveshagarwal" target="_blank">@aveshagarwal</a>)</td>
+</tr>
+
+<tr>
+<td>libvirt</td>
+<td>custom</td>
+<td>Fedora</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/">docs</a></td>
+<td></td>
+<td>Community (<a href="https://github.com/aveshagarwal" target="_blank">@aveshagarwal</a>)</td>
+</tr>
+
+<tr>
+<td>KVM</td>
+<td>custom</td>
+<td>Fedora</td>
+<td>flannel</td>
+<td><a href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/">docs</a></td>
+<td></td>
+<td>Community (<a href="https://github.com/aveshagarwal" target="_blank">@aveshagarwal</a>)</td>
+</tr>
+</tbody>
+</table>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -60,6 +62,30 @@ Usage Have a look through atom-snippets.cson and note the titles and prefix valu
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -102,6 +128,8 @@ Usage Have a look through atom-snippets.cson and note the titles and prefix valu
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -4401,8 +4429,8 @@ Kubernetes Slack.</li>
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/doc-contributor-tools/readme/" title=""><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - </a>
-<a class="nav nav-next" href="/docs/sitemap/" title="">Next -  <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/doc-contributor-tools/readme/" title=""><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - </a>
+<a class="nav nav-next" style="float:right"  href="/docs/sitemap/" title="">Next -  <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -4490,24 +4518,121 @@ Kubernetes Slack.</li>
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<h1 id="snippets-for-atom">Snippets for Atom</h1>
+
+<p>Snippets are bits of text that get inserted into your editor, to save typing and
+reduce syntax errors. The snippets provided in <code>atom-snippets.cson</code> are scoped to
+only work on Markdown files within Atom.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Copy the contents of the <code>atom-snippets.cson</code> file into your existing
+<code>~/.atom/snippets.cson</code>. <strong>Do not replace your existing file.</strong></p>
+
+<p>You do not need to restart Atom.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>Have a look through <code>atom-snippets.cson</code> and note the titles and <code>prefix</code> values
+of the snippets.</p>
+
+<p>You can trigger a given snippet in one of two ways:</p>
+
+<ul>
+<li>By typing the snippet&rsquo;s <code>prefix</code> and pressing the <code>&lt;TAB&gt;</code> key</li>
+<li>By searching for the snippet&rsquo;s title in <strong>Packages / Snippets / Available</strong></li>
+</ul>
+
+<p>For example, open a Markdown file and type <code>anote</code> and press <code>&lt;TAB&gt;</code>. A blank
+note is added, with the correct Hugo shortcodes.</p>
+
+<p>A snippet can insert a single line or multiple lines of text. Some snippets
+have placeholder values. To get to the next placeholder, press <code>&lt;TAB&gt;</code> again.</p>
+
+<p>Some of the snippets only insert partially-formed Markdown or Hugo syntax.
+For instance, <code>coverview</code> inserts the start of a concept overview tag, while
+<code>cclose</code> inserts a close-capture tag. This is because every type of capture
+needs a capture-close tab.</p>
+
+<h2 id="creating-new-topics-using-snippets">Creating new topics using snippets</h2>
+
+<p>To create a new concept, task, or tutorial from a blank file, use one of the
+following:</p>
+
+<ul>
+<li><code>newconcept</code></li>
+<li><code>newtask</code></li>
+<li><code>newtutorial</code></li>
+</ul>
+
+<p>Placeholder text is included.</p>
+
+<h2 id="submitting-new-snippets">Submitting new snippets</h2>
+
+<ol>
+<li>Develop the snippet locally and verify that it works as expected.</li>
+<li>Copy the template&rsquo;s code into the <code>atom-snippets.cson</code> file on Github. Raise a
+pull request, and ask for review from another Atom user in <code>#sig-docs</code> on
+Kubernetes Slack.</li>
+</ol>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

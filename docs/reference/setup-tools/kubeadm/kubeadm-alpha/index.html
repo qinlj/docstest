@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -57,6 +59,30 @@ Synopsis This command is not meant to be run on its own.">
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -99,6 +125,8 @@ Synopsis This command is not meant to be run on its own.">
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -2682,8 +2710,8 @@ to enable the DynamicKubeletConfiguration feature.</p>
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/reference/setup-tools/kubeadm/kubeadm-version/" title="kubeadm version"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - kubeadm version</a>
-<a class="nav nav-next" href="/docs/reference/setup-tools/kubeadm/kubeadm-init-phase/" title="kubeadm init phase">Next - kubeadm init phase <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/reference/setup-tools/kubeadm/kubeadm-version/" title="kubeadm version"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - kubeadm version</a>
+<a class="nav nav-next" style="float:right"  href="/docs/reference/setup-tools/kubeadm/kubeadm-init-phase/" title="kubeadm init phase">Next - kubeadm init phase <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -2771,24 +2799,1828 @@ to enable the DynamicKubeletConfiguration feature.</p>
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<blockquote class="caution">
+  <div><strong>Caution:</strong> <code>kubeadm alpha</code> provides a preview of a set of features made available for gathering feedback
+ from the community. Please try it out and give us feedback!</div>
+</blockquote>
+
+
+<h2 id="cmd-certs-renew">kubeadm alpha certs renew</h2>
+
+<p>You can renew all Kubernetes certificates using the <code>all</code> subcommand or renew them selectively.</p>
+
+
+
+
+
+<div id="tab-certs-renew">
+<ul>
+	
+	  
+  <li><a href="#tab-certs-renew-0">renew</a></li>
+
+	  
+  <li><a href="#tab-certs-renew-1">all</a></li>
+
+	  
+  <li><a href="#tab-certs-renew-2">apiserver-etcd-client</a></li>
+
+	  
+  <li><a href="#tab-certs-renew-3">apiserver-kubelet-client</a></li>
+
+	  
+  <li><a href="#tab-certs-renew-4">apiserver</a></li>
+
+	  
+  <li><a href="#tab-certs-renew-5">etcd-healthcheck-client</a></li>
+
+	  
+  <li><a href="#tab-certs-renew-6">etcd-peer</a></li>
+
+	  
+  <li><a href="#tab-certs-renew-7">etcd-server</a></li>
+
+	  
+  <li><a href="#tab-certs-renew-8">front-proxy-client</a></li>
+
+</ul>
+
+
+<div id="tab-certs-renew-0">
+	
+		
+		
+		
+		
+			
+
+<p>Renews certificates for a Kubernetes cluster</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>This command is not meant to be run on its own. See list of available subcommands.</p>
+
+<pre><code>kubeadm alpha certs renew [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for renew</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-certs-renew-1">
+	
+		
+		
+		
+		
+			
+
+<p>renew all available certificates</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Renews all known certificates necessary to run the control plan. Renewals are run unconditionally, regardless of expiration date. Renewals can also be run individually for more control.</p>
+
+<pre><code>kubeadm alpha certs renew all [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--cert-dir string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/pki"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path where to save the certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--config string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to a kubeadm configuration file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-dir string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path to output the CSRs and private keys to</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-only</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Create CSRs instead of generating certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for all</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--use-api</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Use the Kubernetes certificate API to renew certificates</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-certs-renew-2">
+	
+		
+		
+		
+		
+			
+
+<p>Generates the client apiserver uses to access etcd</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Renews the client apiserver uses to access etcd, and saves them into apiserver-etcd-client.cert and apiserver-etcd-client.key files.</p>
+
+<p>Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.</p>
+
+<pre><code>kubeadm alpha certs renew apiserver-etcd-client [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--cert-dir string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/pki"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path where to save the certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--config string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to a kubeadm configuration file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-dir string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path to output the CSRs and private keys to</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-only</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Create CSRs instead of generating certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for apiserver-etcd-client</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--use-api</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Use the Kubernetes certificate API to renew certificates</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-certs-renew-3">
+	
+		
+		
+		
+		
+			
+
+<p>Generates the Client certificate for the API server to connect to kubelet</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Renews the Client certificate for the API server to connect to kubelet, and saves them into apiserver-kubelet-client.cert and apiserver-kubelet-client.key files.</p>
+
+<p>Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.</p>
+
+<pre><code>kubeadm alpha certs renew apiserver-kubelet-client [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--cert-dir string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/pki"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path where to save the certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--config string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to a kubeadm configuration file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-dir string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path to output the CSRs and private keys to</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-only</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Create CSRs instead of generating certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for apiserver-kubelet-client</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--use-api</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Use the Kubernetes certificate API to renew certificates</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-certs-renew-4">
+	
+		
+		
+		
+		
+			
+
+<p>Generates the certificate for serving the Kubernetes API</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Renews the certificate for serving the Kubernetes API, and saves them into apiserver.cert and apiserver.key files.</p>
+
+<p>Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.</p>
+
+<pre><code>kubeadm alpha certs renew apiserver [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--cert-dir string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/pki"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path where to save the certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--config string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to a kubeadm configuration file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-dir string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path to output the CSRs and private keys to</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-only</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Create CSRs instead of generating certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for apiserver</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--use-api</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Use the Kubernetes certificate API to renew certificates</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-certs-renew-5">
+	
+		
+		
+		
+		
+			
+
+<p>Generates the client certificate for liveness probes to healtcheck etcd</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Renews the client certificate for liveness probes to healtcheck etcd, and saves them into etcd/healthcheck-client.cert and etcd/healthcheck-client.key files.</p>
+
+<p>Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.</p>
+
+<pre><code>kubeadm alpha certs renew etcd-healthcheck-client [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--cert-dir string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/pki"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path where to save the certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--config string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to a kubeadm configuration file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-dir string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path to output the CSRs and private keys to</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-only</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Create CSRs instead of generating certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for etcd-healthcheck-client</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--use-api</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Use the Kubernetes certificate API to renew certificates</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-certs-renew-6">
+	
+		
+		
+		
+		
+			
+
+<p>Generates the credentials for etcd nodes to communicate with each other</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Renews the credentials for etcd nodes to communicate with each other, and saves them into etcd/peer.cert and etcd/peer.key files.</p>
+
+<p>Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.</p>
+
+<pre><code>kubeadm alpha certs renew etcd-peer [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--cert-dir string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/pki"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path where to save the certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--config string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to a kubeadm configuration file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-dir string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path to output the CSRs and private keys to</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-only</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Create CSRs instead of generating certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for etcd-peer</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--use-api</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Use the Kubernetes certificate API to renew certificates</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-certs-renew-7">
+	
+		
+		
+		
+		
+			
+
+<p>Generates the certificate for serving etcd</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Renews the certificate for serving etcd, and saves them into etcd/server.cert and etcd/server.key files.</p>
+
+<p>Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.</p>
+
+<pre><code>kubeadm alpha certs renew etcd-server [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--cert-dir string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/pki"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path where to save the certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--config string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to a kubeadm configuration file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-dir string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path to output the CSRs and private keys to</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-only</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Create CSRs instead of generating certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for etcd-server</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--use-api</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Use the Kubernetes certificate API to renew certificates</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-certs-renew-8">
+	
+		
+		
+		
+		
+			
+
+<p>Generates the client for the front proxy</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Renews the client for the front proxy, and saves them into front-proxy-client.cert and front-proxy-client.key files.</p>
+
+<p>Extra attributes such as SANs will be based on the existing certificates, there is no need to resupply them.</p>
+
+<pre><code>kubeadm alpha certs renew front-proxy-client [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--cert-dir string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/pki"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path where to save the certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--config string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to a kubeadm configuration file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-dir string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path to output the CSRs and private keys to</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--csr-only</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Create CSRs instead of generating certificates</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for front-proxy-client</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--use-api</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Use the Kubernetes certificate API to renew certificates</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+</div>
+
+<script>$(function(){$("#tab-certs-renew").tabs();});</script>
+
+
+<h2 id="cmd-phase-kubeconfig">kubeadm alpha kubeconfig user</h2>
+
+<p>The <code>user</code> subcommand can be used for the creation of kubeconfig files for additional users.</p>
+
+
+
+
+
+<div id="tab-kubeconfig">
+<ul>
+	
+	  
+  <li><a href="#tab-kubeconfig-0">kubeconfig</a></li>
+
+	  
+  <li><a href="#tab-kubeconfig-1">user</a></li>
+
+</ul>
+
+
+<div id="tab-kubeconfig-0">
+	
+		
+		
+		
+		
+			
+
+<p>Kubeconfig file utilities</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Kubeconfig file utilities.</p>
+
+<p>Alpha Disclaimer: this command is currently alpha.</p>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for kubeconfig</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-kubeconfig-1">
+	
+		
+		
+		
+		
+			
+
+<p>Outputs a kubeconfig file for an additional user</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Outputs a kubeconfig file for an additional user.</p>
+
+<p>Alpha Disclaimer: this command is currently alpha.</p>
+
+<pre><code>kubeadm alpha kubeconfig user [flags]
+</code></pre>
+
+<h3 id="examples">Examples</h3>
+
+<pre><code>  # Outputs a kubeconfig file for an additional user named foo
+  kubeadm alpha kubeconfig user --client-name=foo
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--apiserver-advertise-address string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The IP address the API server is accessible on</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--apiserver-bind-port int32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: 6443</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The port the API server is accessible on</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--cert-dir string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/pki"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path where certificates are stored</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--client-name string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The name of user. It will be used as the CN if client certificates are created</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for user</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--org stringSlice</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The orgnizations of the client certificate. It will be used as the O if client certificates are created</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--token string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The token that should be used as the authentication mechanism for this kubeconfig, instead of client certificates</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+</div>
+
+<script>$(function(){$("#tab-kubeconfig").tabs();});</script>
+
+
+<h2 id="cmd-phase-kubelet">kubeadm alpha kubelet config</h2>
+
+<p>Use the following commands to either download the kubelet configuration from the cluster or
+to enable the DynamicKubeletConfiguration feature.</p>
+
+
+
+
+
+<div id="tab-kubelet">
+<ul>
+	
+	  
+  <li><a href="#tab-kubelet-0">kubelet</a></li>
+
+	  
+  <li><a href="#tab-kubelet-1">download</a></li>
+
+	  
+  <li><a href="#tab-kubelet-2">enable-dynamic</a></li>
+
+</ul>
+
+
+<div id="tab-kubelet-0">
+	
+		
+		
+		
+		
+			
+
+<p>Commands related to handling the kubelet</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>This command is not meant to be run on its own. See list of available subcommands.</p>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for kubelet</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-kubelet-1">
+	
+		
+		
+		
+		
+			
+
+<p>Downloads the kubelet configuration from the cluster ConfigMap kubelet-config-1.X, where X is the minor version of the kubelet.</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Downloads the kubelet configuration from a ConfigMap of the form &ldquo;kubelet-config-1.X&rdquo; in the cluster, where X is the minor version of the kubelet. Either kubeadm autodetects the kubelet version by exec-ing &ldquo;kubelet &ndash;version&rdquo; or respects the &ndash;kubelet-version parameter.</p>
+
+<p>Alpha Disclaimer: this command is currently alpha.</p>
+
+<pre><code>kubeadm alpha kubelet config download [flags]
+</code></pre>
+
+<h3 id="examples">Examples</h3>
+
+<pre><code>  # Downloads the kubelet configuration from the ConfigMap in the cluster. Autodetects the kubelet version.
+  kubeadm alpha phase kubelet config download
+  
+  # Downloads the kubelet configuration from the ConfigMap in the cluster. Uses a specific desired kubelet version.
+  kubeadm alpha phase kubelet config download --kubelet-version v1.12.0
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for download</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/kubelet.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubelet-version string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The desired version for the kubelet. Defaults to being autodetected from 'kubelet --version'.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-kubelet-2">
+	
+		
+		
+		
+		
+			
+
+<p>Downloads the kubelet configuration from the cluster ConfigMap kubelet-config-1.X, where X is the minor version of the kubelet.</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Downloads the kubelet configuration from a ConfigMap of the form &ldquo;kubelet-config-1.X&rdquo; in the cluster, where X is the minor version of the kubelet. Either kubeadm autodetects the kubelet version by exec-ing &ldquo;kubelet &ndash;version&rdquo; or respects the &ndash;kubelet-version parameter.</p>
+
+<p>Alpha Disclaimer: this command is currently alpha.</p>
+
+<pre><code>kubeadm alpha kubelet config download [flags]
+</code></pre>
+
+<h3 id="examples">Examples</h3>
+
+<pre><code>  # Downloads the kubelet configuration from the ConfigMap in the cluster. Autodetects the kubelet version.
+  kubeadm alpha phase kubelet config download
+  
+  # Downloads the kubelet configuration from the ConfigMap in the cluster. Uses a specific desired kubelet version.
+  kubeadm alpha phase kubelet config download --kubelet-version v1.12.0
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for download</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/kubelet.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubelet-version string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The desired version for the kubelet. Defaults to being autodetected from 'kubelet --version'.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+</div>
+
+<script>$(function(){$("#tab-kubelet").tabs();});</script>
+
+
+<h2 id="cmd-phase-preflight">kubeadm alpha preflight node</h2>
+
+<p>You can use the <code>node</code> sub command to run preflight checks on a worker node.</p>
+
+
+
+
+
+<div id="tab-preflight">
+<ul>
+	
+	  
+  <li><a href="#tab-preflight-0">preflight</a></li>
+
+	  
+  <li><a href="#tab-preflight-1">node</a></li>
+
+</ul>
+
+
+<div id="tab-preflight-0">
+	
+		
+		
+		
+		
+			
+
+<p>Commands related to pre-flight checks</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>This command is not meant to be run on its own. See list of available subcommands.</p>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for preflight</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="tab-preflight-1">
+	
+		
+		
+		
+		
+			
+
+<p>Run node pre-flight checks</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Run node pre-flight checks, functionally equivalent to what implemented by kubeadm join.</p>
+
+<p>Alpha Disclaimer: this command is currently alpha.</p>
+
+<pre><code>kubeadm alpha preflight node [flags]
+</code></pre>
+
+<h3 id="examples">Examples</h3>
+
+<pre><code>  # Run node pre-flight checks.
+  kubeadm alpha preflight node
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--config string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to a kubeadm configuration file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for node</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--ignore-preflight-errors stringSlice</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">A list of checks whose errors will be shown as warnings. Example: 'IsPrivilegedUser,Swap'. Value 'all' ignores errors from all checks.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+</div>
+
+<script>$(function(){$("#tab-preflight").tabs();});</script>
+
+
+<h2 id="cmd-selfhosting">kubeadm alpha selfhosting pivot</h2>
+
+<p>The subcommand <code>pivot</code> can be used to conver a static Pod-hosted control plane into a self-hosted one.</p>
+
+
+
+
+
+<div id="selfhosting">
+<ul>
+	
+	  
+  <li><a href="#selfhosting-0">selfhosting</a></li>
+
+	  
+  <li><a href="#selfhosting-1">pivot</a></li>
+
+</ul>
+
+
+<div id="selfhosting-0">
+	
+		
+		
+		
+		
+			
+
+<p>Makes a kubeadm cluster self-hosted</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>This command is not meant to be run on its own. See list of available subcommands.</p>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for selfhosting</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+
+<div id="selfhosting-1">
+	
+		
+		
+		
+		
+			
+
+<p>Converts a static Pod-hosted control plane into a self-hosted one</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Converts static Pod files for control plane components into self-hosted DaemonSets configured via the Kubernetes API.</p>
+
+<p>See the documentation for self-hosting limitations.</p>
+
+<p>Alpha Disclaimer: this command is currently alpha.</p>
+
+<pre><code>kubeadm alpha selfhosting pivot [flags]
+</code></pre>
+
+<h3 id="examples">Examples</h3>
+
+<pre><code>  # Converts a static Pod-hosted control plane into a self-hosted one.
+  
+  kubeadm alpha phase self-hosting convert-from-staticpods
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--cert-dir string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/pki"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The path where certificates are stored</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--config string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to a kubeadm config file. WARNING: Usage of a configuration file is experimental</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-f, --force</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Pivot the cluster without prompting for confirmation</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for pivot</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-s, --store-certs-in-secrets</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Enable storing certs in secrets</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+		
+		
+	
+</div>
+
+</div>
+
+<script>$(function(){$("#selfhosting").tabs();});</script>
+
+
+<h2 id="what-s-next">What&rsquo;s next</h2>
+
+<ul>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-init/">kubeadm init</a> to bootstrap a Kubernetes control-plane node</li>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-join/">kubeadm join</a> to connect a node to the cluster</li>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-reset/">kubeadm reset</a> to revert any changes made to this host by <code>kubeadm init</code> or <code>kubeadm join</code></li>
+</ul>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

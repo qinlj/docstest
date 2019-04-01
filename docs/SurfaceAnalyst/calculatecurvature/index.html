@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,30 @@
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -88,6 +114,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -473,8 +501,8 @@
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/surfaceanalyst/cutfillregion/" title="Cut Fill with Regions"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Cut Fill with Regions</a>
-<a class="nav nav-next" href="/docs/surfaceanalyst/drivecontourall/" title="Extract All Isolines">Next - Extract All Isolines <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/surfaceanalyst/cutfillregion/" title="Cut Fill with Regions"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Cut Fill with Regions</a>
+<a class="nav nav-next" style="float:right"  href="/docs/surfaceanalyst/drivecontourall/" title="Extract All Isolines">Next - Extract All Isolines <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -556,24 +584,110 @@
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>　　Calculates the surface curvature of a DEM raster, including mean curvature, profile curvature, and plan curvature. Curvature is the second derivative of a surface, or the slope of the slope. The primary output is the curvature of the surface on a cell-by-cell basis, as fitted through that cell and its eight surrounding neighbors.</p>
+
+<p>　　The output is a raster dataset. Three types of curvature can be calculated: mean curvature, profile curvature, and plan curvature. The profile curvature is in the direction of the maximum slope, and the plan curvature is perpendicular to the direction of the maximum slope.</p>
+
+<ul>
+<li>The output curvature raster is of the same extent and resolution with the source dataset.</li>
+<li>A positive curvature indicates the surface is upwardly convex at that cell. A negative curvature indicates the surface is upwardly concave at that cell. A value of zero indicates the surface is flat.</li>
+<li>Units of the curvature output raster are one over 100 z units, or 1/100(z units). The reasonably expected values of all three output rasters for a hilly area (moderate relief) can vary from -0.5 to 0.5; while for steep, rugged mountains (extreme relief), the values can vary between -4 and 4.</li>
+</ul>
+
+<h3 id="basic-steps">Basic steps</h3>
+
+<ol>
+<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Terrain Calculate&rdquo; &gt; &ldquo;DEM Curvature Calculate&rdquo; to open the &ldquo;DEM Curvature Calculate&rdquo; dialog box.</li>
+<li>Specify your dataset to perform the DEM Curvature Calculate operation.</li>
+<li><strong>Altitude zoom parameter</strong>: When calculating the curvature, altitude values should multiply a coefficient to make the altitude unit consistent with the unit of coordinate x, y. For example, if the unit is meter in x, y direction but feet in z direction, you need to specify the parameter value is 0.3408 meter because of 1 feet is 0.3048 meter.</li>
+<li>Set names for the three result dataset and specify a datasource to save them.</li>
+<li>Click &ldquo;Run&rdquo; image button to perform the operation. A positive curvature represents a convex at that cell, A negative curvature represents a concave surface. If the curvature is 0 meaning the surface at that cell is flat.</li>
+</ol>
+
+<h3 id="note">Note</h3>
+
+<ul>
+<li>Note that if the elevation unit and the coordinate unit can not be converted into a same unit, then you need to use the other ways to do it. One of the most common situation is that the DEM unit is degree when it uses the geographic coordinate system, and the elevation unit is meter, then you can do projection transformation for the DEM data, and make its (x, y) coordinate into the planar coordinate.</li>
+<li>If the calculating cell is no-value, then its result is also no-value. Note: for the cells located at the edge of the raster dataset, its 3 * 3 neighbour region includes the cells outside the range of the dataset, then these cells will be calculated by the elevation of the calculating cell, so the result of the slope may be less than the practical value. The surrounding no-value cells can be dealt with the same way.</li>
+</ul>
+
+<h3 id="related-topics">Related topics</h3>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFill.html" target="_blank">Cut fill</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFillRegion.html" target="_blank">Cut fill with region</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="InverseCutFill.html" target="_blank">Inverse cut fill</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="FindExtreme.html" target="_blank">Find Extremum value</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Slope.html" target="_blank">Slope analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Aspect.html" target="_blank">Aspect analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Profile.html" target="_blank">Profile analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="OrthoImage.html" target="_blank">Orthophoto image</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="HillShade.html" target="_blank">3D hillshade map</a></p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

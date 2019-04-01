@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,30 @@ To recover from a bad state, you can also run kubeadm upgrade --force without ch
 
 <header>
     <a href="/" class="logo"></a>
+  <div class="left-buttons" data-auto-burger="primary">
+    <ul class="global-nav">
+      <li>
+        <a href="#">
+          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://kubernetes.io">v1.13</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
+          
+          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -96,6 +122,8 @@ To recover from a bad state, you can also run kubeadm upgrade --force without ch
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -2055,8 +2083,8 @@ This command is idempotent and eventually makes sure that the actual state is th
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-11/" title="Upgrading kubeadm clusters from v1.10 to v1.11"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Upgrading kubeadm clusters from v1.10 to v1.11</a>
-<a class="nav nav-next" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-13/" title="Upgrading kubeadm clusters from v1.12 to v1.13">Next - Upgrading kubeadm clusters from v1.12 to v1.13 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-11/" title="Upgrading kubeadm clusters from v1.10 to v1.11"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Upgrading kubeadm clusters from v1.10 to v1.11</a>
+<a class="nav nav-next" style="float:right"  href="/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-13/" title="Upgrading kubeadm clusters from v1.12 to v1.13">Next - Upgrading kubeadm clusters from v1.12 to v1.13 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -2144,24 +2172,95 @@ This command is idempotent and eventually makes sure that the actual state is th
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+
+
+
+
+
+
+<h2 id="recovering-from-a-failure-state">Recovering from a failure state</h2>
+
+<p>If <code>kubeadm upgrade</code> fails and does not roll back, for example because of an unexpected shutdown during execution, you can run <code>kubeadm upgrade</code> again.
+This command is idempotent and eventually makes sure that the actual state is the desired state you declare.</p>
+
+<p>To recover from a bad state, you can also run <code>kubeadm upgrade --force</code> without changing the version that your cluster is running.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p><code>kubeadm upgrade apply</code> does the following:</p>
+
+<ul>
+<li>Checks that your cluster is in an upgradeable state:
+
+<ul>
+<li>The API server is reachable</li>
+<li>All nodes are in the <code>Ready</code> state</li>
+<li>The control plane is healthy</li>
+</ul></li>
+<li>Enforces the version skew policies.</li>
+<li>Makes sure the control plane images are available or available to pull to the machine.</li>
+<li>Upgrades the control plane components or rollbacks if any of them fails to come up.</li>
+<li>Applies the new <code>kube-dns</code> and <code>kube-proxy</code> manifests and enforces that all necessary RBAC rules are created.</li>
+<li>Creates new certificate and key files of the API server and backs up old files if they&rsquo;re about to expire in 180 days.</li>
+</ul>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
