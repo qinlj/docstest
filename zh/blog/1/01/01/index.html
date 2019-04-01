@@ -107,30 +107,7 @@ cluster.yaml">
 
 <header>
     <a href="/zh/" class="logo"></a>
-  <div class="left-buttons" data-auto-burger="primary">
-    <ul class="global-nav">
-      <li>
-        <a href="#">
-          v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-        </a>
-        <ul>
-          
-          <li><a href="https://kubernetes.io">v1.13</a></li>
-          
-          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-          
-          <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-          
-          <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-          
-          <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-          
-          <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-          
-        </ul>
-      </li>
-    </ul>
-  </div>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -1350,62 +1327,6 @@ coreos:
                 <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
                 <a href="https://discuss.kubernetes.io" class="mailing-list"><span>Forum</span></a>
                 <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
-            </div>
-            <div>
-                
-                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
-            </div>
-        </div>
-        <div id="miceType" class="center">
-            &copy; 2019 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a></a>
-        </div>
-        <div id="miceType" class="center">
-            Copyright &copy; 2019 The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
-        </div>
-        <div id="miceType" class="center">
-            ICP license: 京ICP备17074266号-3
-        </div>
-    </main>
-</footer>
-
-		<button class="flyout-button" onclick="kub.toggleToc()"></button>
-
-<script>
-
-(function () {
-    window.addEventListener('DOMContentLoaded', init)
-
-        
-        function init() {
-            window.removeEventListener('DOMContentLoaded', init)
-                hideNav()
-        }
-
-    function hideNav(toc){
-        if (!toc) toc = document.querySelector('#docsToc')
-        if (!toc) return
-            var container = toc.querySelector('.container')
-
-                
-                if (container) {
-                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
-                        toc.style.display = 'none'
-                            document.getElementById('docsContent').style.width = '100%'
-                    }
-                } else {
-                    requestAnimationFrame(function () {
-                        hideNav(toc)
-                    })
-                }
-    }
-})();
-</script>
-
-
-
-	</body>
-</html>
-mbed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
             </div>
             <div>
                 
