@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -72,6 +74,7 @@ curl -L -O https://storage.googleapis.com/kubernetes-release/easy-rsa/easy-rsa.t
 
 <header>
     <a href="/zh/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -108,6 +111,8 @@ curl -L -O https://storage.googleapis.com/kubernetes-release/easy-rsa/easy-rsa.t
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -1679,8 +1684,8 @@ Running hooks in /etc/ca-certificates/update.d....
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/concepts/cluster-administration/device-plugins/" title="设备插件"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 设备插件</a>
-<a class="nav nav-next" href="/zh/docs/concepts/policy/resource-quotas/" title="资源配额">Next - 资源配额 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/zh/docs/concepts/cluster-administration/device-plugins/" title="设备插件"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 设备插件</a>
+<a class="nav nav-next" style="float:right"  href="/zh/docs/concepts/policy/resource-quotas/" title="资源配额">Next - 资源配额 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -1768,24 +1773,358 @@ Running hooks in /etc/ca-certificates/update.d....
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">600 Words|Read in about 3 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#创建证书">创建证书</a>
+<ul>
+<li><a href="#使用现有部署脚本">使用现有部署脚本</a></li>
+<li><a href="#easyrsa">easyrsa</a></li>
+<li><a href="#openssl">openssl</a></li>
+<li><a href="#cfssl">cfssl</a></li>
+</ul></li>
+<li><a href="#分发自签名-ca-证书">分发自签名 CA 证书</a></li>
+<li><a href="#证书-api">证书 API</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="创建证书">创建证书</h2>
+
+<p>当使用客户端证书进行认证时，用户可以使用现有部署脚本，或者通过 <code>easyrsa</code>、<code>openssl</code> 或
+<code>cfssl</code> 手动生成证书。</p>
+
+<h3 id="使用现有部署脚本">使用现有部署脚本</h3>
+
+<p><strong>现有部署脚本</strong> 位于
+<code>cluster/saltbase/salt/generate-cert/make-ca-cert.sh</code>。</p>
+
+<p>执行该脚本时需传入两个参数。 第一个参数为 API 服务器的 IP 地址，第二个参数为对象的候补名称列表，
+形如 <code>IP:&lt;ip地址&gt; 或 DNS:&lt;dns名称&gt;</code>。</p>
+
+<p>脚本生成三个文件： <code>ca.crt</code>、<code>server.crt</code> 和 <code>server.key</code>。</p>
+
+<p>最后，将以下参数加入到  API 服务器的启动参数中：</p>
+
+<pre><code>--client-ca-file=/srv/kubernetes/ca.crt
+--tls-cert-file=/srv/kubernetes/server.crt
+--tls-private-key-file=/srv/kubernetes/server.key
+</code></pre>
+
+<h3 id="easyrsa">easyrsa</h3>
+
+<p>使用 <strong>easyrsa</strong> 能够手动地为集群生成证书。</p>
+
+<ol>
+<li><p>下载、解压并初始化 easyrsa3 的补丁版本。</p>
+
+<pre><code>curl -L -O https://storage.googleapis.com/kubernetes-release/easy-rsa/easy-rsa.tar.gz
+tar xzf easy-rsa.tar.gz
+cd easy-rsa-master/easyrsa3
+./easyrsa init-pki
+</code></pre></li>
+
+<li><p>生成 CA（通过 <code>--batch</code> 参数设置自动模式。 通过 <code>--req-cn</code> 设置默认使用的 CN）</p>
+
+<pre><code>./easyrsa --batch &quot;--req-cn=${MASTER_IP}@`date +%s`&quot; build-ca nopass
+</code></pre></li>
+
+<li><p>生成服务器证书和密钥。
+参数 <code>--subject-alt-name</code> 设置了访问 API 服务器时可能使用的 IP 和 DNS 名称。 <code>MASTER_CLUSTER_IP</code>
+通常为 <code>--service-cluster-ip-range</code> 参数中指定的服务 CIDR 的 首个 IP 地址，<code>--service-cluster-ip-range</code>同时用于
+API 服务器和控制器管理器组件。  <code>--days</code> 参数用于设置证书的有效期限。
+下面的示例还假设用户使用 <code>cluster.local</code> 作为默认的 DNS 域名。</p>
+
+<pre><code>./easyrsa --subject-alt-name=&quot;IP:${MASTER_IP}&quot;\
+&quot;IP:${MASTER_CLUSTER_IP},&quot;\
+&quot;DNS:kubernetes,&quot;\
+&quot;DNS:kubernetes.default,&quot;\
+&quot;DNS:kubernetes.default.svc,&quot;\
+&quot;DNS:kubernetes.default.svc.cluster,&quot;\
+&quot;DNS:kubernetes.default.svc.cluster.local&quot; \
+--days=10000 \
+build-server-full server nopass
+</code></pre></li>
+
+<li><p>拷贝 <code>pki/ca.crt</code>、 <code>pki/issued/server.crt</code> 和 <code>pki/private/server.key</code> 至您的目录。</p></li>
+
+<li><p>填充并在 API 服务器的启动参数中添加以下参数：</p>
+
+<pre><code>--client-ca-file=/yourdirectory/ca.crt
+--tls-cert-file=/yourdirectory/server.crt
+--tls-private-key-file=/yourdirectory/server.key
+</code></pre></li>
+</ol>
+
+<h3 id="openssl">openssl</h3>
+
+<p>使用 <strong>openssl</strong> 能够手动地为集群生成证书。</p>
+
+<ol>
+<li><p>生成密钥位数为 2048 的 ca.key：</p>
+
+<pre><code>openssl genrsa -out ca.key 2048
+</code></pre></li>
+
+<li><p>依据 ca.key 生成 ca.crt （使用 -days 参数来设置证书有效时间）：</p>
+
+<pre><code>openssl req -x509 -new -nodes -key ca.key -subj &quot;/CN=${MASTER_IP}&quot; -days 10000 -out ca.crt
+</code></pre></li>
+
+<li><p>生成密钥位数为 2048 的 server.key：</p>
+
+<pre><code>openssl genrsa -out server.key 2048
+</code></pre></li>
+
+<li><p>创建用于生成证书签名请求（CSR）的配置文件。
+确保在将其保存至文件（如<code>csr.conf</code>）之前将尖括号标记的值（如<code>&lt;MASTER_IP&gt;</code>）
+替换为你想使用的真实值。 注意：<code>MASTER_CLUSTER_IP</code> 是前面小节中描述的 API 服务器的服务集群 IP
+(service cluster IP)。 下面的示例也假设用户使用 <code>cluster.local</code> 作为默认的 DNS 域名。</p>
+
+<pre><code>[ req ]
+default_bits = 2048
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
+
+[ dn ]
+C = &lt;country&gt;
+ST = &lt;state&gt;
+L = &lt;city&gt;
+O = &lt;organization&gt;
+OU = &lt;organization unit&gt;
+CN = &lt;MASTER_IP&gt;
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = kubernetes
+DNS.2 = kubernetes.default
+DNS.3 = kubernetes.default.svc
+DNS.4 = kubernetes.default.svc.cluster
+DNS.5 = kubernetes.default.svc.cluster.local
+IP.1 = &lt;MASTER_IP&gt;
+IP.2 = &lt;MASTER_CLUSTER_IP&gt;
+
+[ v3_ext ]
+authorityKeyIdentifier=keyid,issuer:always
+basicConstraints=CA:FALSE
+keyUsage=keyEncipherment,dataEncipherment
+extendedKeyUsage=serverAuth,clientAuth
+subjectAltName=@alt_names
+</code></pre></li>
+
+<li><p>基于配置文件生成证书签名请求：</p>
+
+<pre><code>openssl req -new -key server.key -out server.csr -config csr.conf
+</code></pre></li>
+
+<li><p>使用 ca.key、ca.crt 和 server.csr 生成服务器证书：</p>
+
+<pre><code>openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key \
+-CAcreateserial -out server.crt -days 10000 \
+-extensions v3_ext -extfile csr.conf
+</code></pre></li>
+
+<li><p>查看证书：</p>
+
+<pre><code>openssl x509  -noout -text -in ./server.crt
+</code></pre></li>
+</ol>
+
+<p>最后，添加同样的参数到  API 服务器的启动参数中。</p>
+
+<h3 id="cfssl">cfssl</h3>
+
+<p><strong>cfssl</strong> 是另一种用来生成证书的工具。</p>
+
+<ol>
+<li><p>按如下所示的方式下载、解压并准备命令行工具。
+注意：你可能需要基于硬件架构和你所使用的 cfssl 版本对示例命令进行修改。</p>
+
+<pre><code>curl -LO https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 -o cfssl
+chmod +x cfssl
+curl -LO https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 -o cfssljson
+chmod +x cfssljson
+curl -LO https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -o cfssl-certinfo
+chmod +x cfssl-certinfo
+</code></pre></li>
+
+<li><p>创建目录来存放物料，并初始化 cfssl：</p>
+
+<pre><code>mkdir cert
+cd cert
+../cfssl print-defaults config &gt; config.json
+../cfssl print-defaults csr &gt; csr.json
+</code></pre></li>
+
+<li><p>创建用来生成 CA 文件的 JSON 配置文件，例如 <code>ca-config.json</code>：</p>
+
+<pre><code>{
+  &quot;signing&quot;: {
+    &quot;default&quot;: {
+      &quot;expiry&quot;: &quot;8760h&quot;
+    },
+    &quot;profiles&quot;: {
+      &quot;kubernetes&quot;: {
+        &quot;usages&quot;: [
+          &quot;signing&quot;,
+          &quot;key encipherment&quot;,
+          &quot;server auth&quot;,
+          &quot;client auth&quot;,
+        ],
+        &quot;expiry&quot;: &quot;8760h&quot;
+      }
+    }
+  }
+}
+</code></pre></li>
+
+<li><p>创建用来生成 CA 证书签名请求（CSR）的 JSON 配置文件，例如 <code>ca-csr.json</code>。
+确保将尖括号标记的值替换为你想使用的真实值。</p>
+
+<pre><code>{
+  &quot;CN&quot;: &quot;kubernetes&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;:[{
+    &quot;C&quot;: &quot;&lt;country&gt;&quot;,
+    &quot;ST&quot;: &quot;&lt;state&gt;&quot;,
+    &quot;L&quot;: &quot;&lt;city&gt;&quot;,
+    &quot;O&quot;: &quot;&lt;organization&gt;&quot;,
+    &quot;OU&quot;: &quot;&lt;organization unit&gt;&quot;,
+  }]
+}
+</code></pre></li>
+
+<li><p>生成 CA 密钥（<code>ca-key.pem</code>）和证书（<code>ca.pem</code>）：</p>
+
+<pre><code>../cfssl gencert -initca ca-csr.json | ../cfssljson -bare ca
+</code></pre></li>
+
+<li><p>按如下所示的方式创建用来为 API 服务器生成密钥和证书的 JSON 配置文件。
+确保将尖括号标记的值替换为你想使用的真实值。 <code>MASTER_CLUSTER_IP</code> 是前面小节中描述的
+API 服务器的服务集群 IP。 下面的示例也假设用户使用 <code>cluster.local</code> 作为默认的 DNS 域名。</p>
+
+<pre><code>{
+  &quot;CN&quot;: &quot;kubernetes&quot;,
+  &quot;hosts&quot;: [
+    &quot;127.0.0.1&quot;,
+    &quot;&lt;MASTER_IP&gt;&quot;,
+    &quot;&lt;MASTER_CLUSTER_IP&gt;&quot;,
+    &quot;kubernetes&quot;,
+    &quot;kubernetes.default&quot;,
+    &quot;kubernetes.default.svc&quot;,
+    &quot;kubernetes.default.svc.cluster&quot;,
+    &quot;kubernetes.default.svc.cluster.local&quot;
+  ],
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [{
+    &quot;C&quot;: &quot;&lt;country&gt;&quot;,
+    &quot;ST&quot;: &quot;&lt;state&gt;&quot;,
+    &quot;L&quot;: &quot;&lt;city&gt;&quot;,
+    &quot;O&quot;: &quot;&lt;organization&gt;&quot;,
+    &quot;OU&quot;: &quot;&lt;organization unit&gt;&quot;
+  }]
+} 
+</code></pre></li>
+
+<li><p>为 API 服务器生成密钥和证书，生成的秘钥和证书分别默认保存在文件 <code>server-key.pem</code>
+和 <code>server.pem</code> 中：</p>
+
+<pre><code>../cfssl gencert -ca=ca.pem -ca-key=ca-key.pem \
+--config=ca-config.json -profile=kubernetes \
+server-csr.json | ../cfssljson -bare server
+</code></pre></li>
+</ol>
+
+<h2 id="分发自签名-ca-证书">分发自签名 CA 证书</h2>
+
+<p>客户端节点可能拒绝承认自签名 CA 证书有效。
+对于非生产环境的部署，或运行在企业防火墙后的部署，用户可以向所有客户端分发自签名 CA 证书，
+并刷新本地的有效证书列表。</p>
+
+<p>在每个客户端上执行以下操作：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo cp ca.crt /usr/local/share/ca-certificates/kubernetes.crt
+$ sudo update-ca-certificates
+Updating certificates in /etc/ssl/certs...
+<span style="color:#666">1</span> added, <span style="color:#666">0</span> removed; <span style="color:#a2f;font-weight:bold">done</span>.
+Running hooks in /etc/ca-certificates/update.d....
+<span style="color:#a2f;font-weight:bold">done</span>.</code></pre></div>
+<h2 id="证书-api">证书 API</h2>
+
+<p>您可以按照<a href="/docs/tasks/tls/managing-tls-in-a-cluster">这里</a>记录的方式，
+使用 <code>certificates.k8s.io</code> API 来准备 x509 证书，用于认证。</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -60,6 +62,7 @@ $ kubectl get pods --output=wide NAME READY STATUS RESTARTS AGE IP NODE nginx 1/
 
 <header>
     <a href="/zh/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -94,6 +97,8 @@ $ kubectl get pods --output=wide NAME READY STATUS RESTARTS AGE IP NODE nginx 1/
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -1491,8 +1496,8 @@ fe00::2 ip6-allrouters
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/concepts/cluster-administration/cloud-providers/" title="云供应商"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 云供应商</a>
-<a class="nav nav-next" href="/zh/docs/concepts/cluster-administration/addons/" title="安装扩展（Addons）">Next - 安装扩展（Addons） <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/zh/docs/concepts/cluster-administration/cloud-providers/" title="云供应商"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 云供应商</a>
+<a class="nav nav-next" style="float:right"  href="/zh/docs/concepts/cluster-administration/addons/" title="安装扩展（Addons）">Next - 安装扩展（Addons） <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -1580,24 +1585,184 @@ fe00::2 ip6-allrouters
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">200 Words|Read in about 1 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#默认-hosts-文件内容">默认 hosts 文件内容</a></li>
+<li><a href="#通过-hostaliases-增加额外的条目">通过 HostAliases 增加额外的条目</a></li>
+<li><a href="#限制">限制</a></li>
+<li><a href="#为什么-kubelet-管理-hosts文件">为什么 Kubelet 管理 hosts文件？</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<p>当 DNS 配置以及其它选项不合理的时候，通过向 Pod 的 /etc/hosts 文件中添加条目，可以在 Pod 级别覆盖对主机名的解析。在 1.7 版本，用户可以通过 PodSpec 的 HostAliases 字段来添加这些自定义的条目。</p>
+
+<p>建议通过使用 HostAliases 来进行修改，因为该文件由 Kubelet 管理，并且可以在 Pod 创建/重启过程中被重写。</p>
+
+<h2 id="默认-hosts-文件内容">默认 hosts 文件内容</h2>
+
+<p>让我们从一个 Nginx Pod 开始，给该 Pod 分配一个 IP：</p>
+
+<pre><code>$ kubectl get pods --output=wide
+NAME     READY     STATUS    RESTARTS   AGE    IP           NODE
+nginx    1/1       Running   0          13s    10.200.0.4   worker0
+</code></pre>
+
+<p>默认，hosts 文件只包含 ipv4 和 ipv6 的样板内容，像 <code>localhost</code> 和主机名称。</p>
+
+<h2 id="通过-hostaliases-增加额外的条目">通过 HostAliases 增加额外的条目</h2>
+
+<p>除了默认的样板内容，我们可以向 hosts 文件添加额外的条目，将 <code>foo.local</code>、 <code>bar.local</code> 解析为<code>127.0.0.1</code>，将 <code>foo.remote</code>、 <code>bar.remote</code> 解析为 <code>10.1.2.3</code>，我们可以在 <code>.spec.hostAliases</code> 下为 Pod 添加 HostAliases。</p>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="includecode" id="hostaliases-pod-yaml">
+    <thead>
+        <tr>
+            <th>
+                <a href="https://github.com/kubernetes/website/blob/master/content/zh/docs/concepts/services-networking/hostaliases-pod.yaml" download="hostaliases-pod.yaml">
+                    <code>hostaliases-pod.yaml docs/concepts/services-networking</code>
+                </a>
+                <img src="/images/copycode.svg" style="max-height:24px" onclick="copyCode('hostaliases-pod-yaml')" title="Copy hostaliases-pod.yaml to clipboard">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Pod<span style="color:#bbb">
+</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>hostaliases-pod<span style="color:#bbb">
+</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>hostAliases:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>-<span style="color:#bbb"> </span>ip:<span style="color:#bbb"> </span><span style="color:#b44">&#34;127.0.0.1&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>hostnames:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span><span style="color:#b44">&#34;foo.local&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span><span style="color:#b44">&#34;bar.local&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>-<span style="color:#bbb"> </span>ip:<span style="color:#bbb"> </span><span style="color:#b44">&#34;10.1.2.3&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>hostnames:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span><span style="color:#b44">&#34;foo.remote&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span><span style="color:#b44">&#34;bar.remote&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span>containers:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>cat-hosts<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>image:<span style="color:#bbb"> </span>busybox<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>command:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>cat<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>args:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span><span style="color:#b44">&#34;/etc/hosts&#34;</span><span style="color:#bbb">
+</span></code></pre></div>  </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<p>hosts 文件的内容看起来类似如下这样：</p>
+
+<pre><code>$ kubectl logs hostaliases-pod
+# Kubernetes-managed hosts file.
+127.0.0.1   localhost
+::1 localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+fe00::0 ip6-mcastprefix
+fe00::1 ip6-allnodes
+fe00::2 ip6-allrouters
+10.200.0.4  hostaliases-pod
+127.0.0.1   foo.local
+127.0.0.1   bar.local
+10.1.2.3    foo.remote
+10.1.2.3    bar.remote
+</code></pre>
+
+<p>在最下面额外添加了一些条目。</p>
+
+<h2 id="限制">限制</h2>
+
+<p>在 1.7 版本，如果 Pod 启用 hostNetwork，那么将不能使用这个特性，因为 kubelet 只管理非 hostNetwork 类型 Pod 的 hosts 文件。目前正在讨论要改变这个情况。</p>
+
+<h2 id="为什么-kubelet-管理-hosts文件">为什么 Kubelet 管理 hosts文件？</h2>
+
+<p>kubelet <a href="https://github.com/kubernetes/kubernetes/issues/14633" target="_blank">管理</a> Pod 中每个容器的 hosts 文件，避免 Docker 在容器已经启动之后去 <a href="https://github.com/moby/moby/issues/17190" target="_blank">修改</a> 该文件。</p>
+
+<p>因为该文件是托管性质的文件，无论容器重启或 Pod 重新调度，用户修改该 hosts 文件的任何内容，都会在 Kubelet 重新安装后被覆盖。因此，不建议修改该文件的内容。</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

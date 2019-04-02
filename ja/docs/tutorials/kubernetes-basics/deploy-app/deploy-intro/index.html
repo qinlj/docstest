@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -75,6 +77,7 @@ Deploymentが何であるかがわかったので、オンラインチュート�
 
 <header>
     <a href="/ja/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -111,6 +114,8 @@ Deploymentが何であるかがわかったので、オンラインチュート�
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -834,8 +839,8 @@ Deploymentが何であるかがわかったので、オンラインチュート�
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/ja/docs/tutorials/kubernetes-basics/deploy-app/" title="アプリケーションのデプロイ"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - アプリケーションのデプロイ</a>
-<a class="nav nav-next" href="/ja/docs/tutorials/kubernetes-basics/deploy-app/deploy-interactive/" title="対話型チュートリアル - アプリケーションのデプロイ">Next - 対話型チュートリアル - アプリケーションのデプロイ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/ja/docs/tutorials/kubernetes-basics/deploy-app/" title="アプリケーションのデプロイ"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - アプリケーションのデプロイ</a>
+<a class="nav nav-next" style="float:right"  href="/ja/docs/tutorials/kubernetes-basics/deploy-app/deploy-interactive/" title="対話型チュートリアル - アプリケーションのデプロイ">Next - 対話型チュートリアル - アプリケーションのデプロイ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -923,24 +928,169 @@ Deploymentが何であるかがわかったので、オンラインチュート�
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">100 Words|Read in about 1 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<body>
+
+<link href="/docs/tutorials/kubernetes-basics/public/css/styles.css" rel="stylesheet">
+
+<div class="layout" id="top">
+
+    <main class="content">
+
+        <div class="row">
+
+         <div class="col-md-8">
+          <h3>目標</h3>
+                <ul>
+                    <li>アプリケーションのデプロイについて学ぶ</li>
+                    <li>kubectlを使って、Kubenretes上にはじめてのアプリケーションをデプロイする</li>
+                </ul>
+            </div>
+
+            <div class="col-md-8">
+                <h3>Kubernetes Deployments</h3>
+                <p>
+                実行中のKubernetesクラスタを入手すると、その上にコンテナ化アプリケーションをデプロイすることができます。そのためには、Kubernetesの<b>Deployment</b> の設定を作成します。DeploymentはKubernetesにあなたのアプリケーションのインスタンスを作成し、更新する方法を指示します。Deploymentを作成すると、Kubernetesマスターは指定されたアプリケーションインスタンスをクラスタ内の個々のNodeにスケジュールします。
+                </p>
+
+                <p>アプリケーションインスタンスが作成されると、Kubernetes Deploymentコントローラーは、それらのインスタンスを継続的に監視します。インスタンスをホストしているNodeが停止、削除された場合、Deploymentコントローラーがそれを置き換えます。<b>これは、マシンの故障やメンテナンスに対処するためのセルフヒーリングの仕組みを提供しています。</b></p>
+
+                <p>オーケストレーションが入る前の世界では、インストールスクリプトを使用してアプリケーションを起動することはよくありましたが、マシン障害が発生した場合に復旧する事はできませんでした。アプリケーションのインスタンスを作成し、それらをNode間で実行し続けることで、Kubernetes Deploymentsはアプリケーションの管理に根本的に異なるアプローチを提供します。</p>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="content__box content__box_lined">
+                    <h3>まとめ:</h3>
+                    <ul>
+                        <li>Deployments</li>
+                        <li>kubectl</li>
+                    </ul>
+                </div>
+                <div class="content__box content__box_fill">
+                    <p><i>
+                        Deploymentは、アプリケーションのインスタンスを作成および更新する責務があります。
+                    </i></p>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2 style="color: #3771e3;">Kubenretes上にはじめてのアプリケーションをデプロイする</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <p><img src="/docs/tutorials/kubernetes-basics/public/images/module_02_first_app.svg"></p>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-8">
+
+                <p>Kubernetesのコマンドラインインターフェイスである<b>kubectl</b>を使用して、Deploymentを作成、管理できます。kubectlはKubernetes APIを使用してクラスタと対話します。このモジュールでは、Kubernetesクラスタでアプリケーションを実行するDeploymentを作成するために必要な、最も一般的なkubectlコマンドについて学びます。</p>
+
+                <p>Deploymentを作成するときは、アプリケーションのコンテナイメージと実行するレプリカの数を指定する必要があります。Deploymentを更新することで、あとでその情報を変更できます。チュートリアルのモジュール<a href="/ja/docs/tutorials/kubernetes-basics/scale-intro/">5</a>と<a href="/ja/docs/tutorials/kubernetes-basics/update-intro/">6</a>では、Deploymentをどのようにスケール、更新できるかについて説明します。</p>
+
+            </div>
+            <div class="col-md-4">
+                <div class="content__box content__box_fill">
+                    <p><i>Kubernetesにデプロイするには、アプリケーションをサポートされているコンテナ形式のいずれかにパッケージ化する必要があります。</i></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+
+                <p>最初のDeploymentには、Dockerコンテナにパッケージされた<a href="https://nodejs.org">Node.js</a>アプリケーションを使用します。Node.jsアプリケーションを作成してDockerコンテナをデプロイするには、<a href="/ja/docs/tutorials/hello-minikube/#create-your-node-js-application">Hello Minikubeチュートリアル</a>の指示に従ってください。</p>
+
+                <p>Deploymentが何であるかがわかったので、オンラインチュートリアルに行き、最初のアプリケーションをデプロイしましょう！</p>
+
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <a class="btn btn-lg btn-success" href="/ja/docs/tutorials/kubernetes-basics/deploy-app/deploy-interactive/" role="button">対話型のチュートリアルを始める <span class="btn__next">›</span></a>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

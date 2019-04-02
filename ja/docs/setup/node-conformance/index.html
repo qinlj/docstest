@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,7 @@
 
 <header>
     <a href="/ja/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -90,6 +93,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -731,8 +736,8 @@ during the functionality test.</li>
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/ja/docs/setup/scratch/" title="ゼロからのカスタムクラスターの作成"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - ゼロからのカスタムクラスターの作成</a>
-<a class="nav nav-next" href="/ja/docs/concepts/" title="コンセプト">Next - コンセプト <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/ja/docs/setup/scratch/" title="ゼロからのカスタムクラスターの作成"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - ゼロからのカスタムクラスターの作成</a>
+<a class="nav nav-next" style="float:right"  href="/ja/docs/concepts/" title="コンセプト">Next - コンセプト <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -820,24 +825,193 @@ during the functionality test.</li>
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">500 Words|Read in about 2 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ノード適合テスト">ノード適合テスト</a></li>
+<li><a href="#制約">制約</a></li>
+<li><a href="#ノードの前提条件">ノードの前提条件</a></li>
+<li><a href="#ノード適合テストの実行">ノード適合テストの実行</a></li>
+<li><a href="#他アーキテクチャ向けのノード適合テストの実行">他アーキテクチャ向けのノード適合テストの実行</a></li>
+<li><a href="#選択したテストの実行">選択したテストの実行</a></li>
+<li><a href="#注意事項">注意事項</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="ノード適合テスト">ノード適合テスト</h2>
+
+<p><em>Node conformance test</em> is a containerized test framework that provides a system
+verification and functionality test for a node. The test validates whether the
+node meets the minimum requirements for Kubernetes; a node that passes the test
+is qualified to join a Kubernetes cluster.</p>
+
+<h2 id="制約">制約</h2>
+
+<p>In Kubernetes version 1.5, node conformance test has the following limitations:</p>
+
+<ul>
+<li>Node conformance test only supports Docker as the container runtime.</li>
+</ul>
+
+<h2 id="ノードの前提条件">ノードの前提条件</h2>
+
+<p>To run node conformance test, a node must satisfy the same prerequisites as a
+standard Kubernetes node. At a minimum, the node should have the following
+daemons installed:</p>
+
+<ul>
+<li>Container Runtime (Docker)</li>
+<li>Kubelet</li>
+</ul>
+
+<h2 id="ノード適合テストの実行">ノード適合テストの実行</h2>
+
+<p>To run the node conformance test, perform the following steps:</p>
+
+<ol>
+<li><p>Point your Kubelet to localhost <code>--api-servers=&quot;http://localhost:8080&quot;</code>,
+because the test framework starts a local master to test Kubelet. There are some
+other Kubelet flags you may care:</p>
+
+<ul>
+<li><code>--pod-cidr</code>: If you are using <code>kubenet</code>, you should specify an arbitrary CIDR
+to Kubelet, for example <code>--pod-cidr=10.180.0.0/24</code>.</li>
+<li><code>--cloud-provider</code>: If you are using <code>--cloud-provider=gce</code>, you should
+remove the flag to run the test.</li>
+</ul></li>
+
+<li><p>Run the node conformance test with command:</p></li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># $CONFIG_DIR is the pod manifest path of your Kubelet.</span>
+<span style="color:#080;font-style:italic"># $LOG_DIR is the test output path.</span>
+sudo docker run -it --rm --privileged --net<span style="color:#666">=</span>host <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -v /:/rootfs -v <span style="color:#b8860b">$CONFIG_DIR</span>:<span style="color:#b8860b">$CONFIG_DIR</span> -v <span style="color:#b8860b">$LOG_DIR</span>:/var/result <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  k8s.gcr.io/node-test:0.2</code></pre></div>
+<h2 id="他アーキテクチャ向けのノード適合テストの実行">他アーキテクチャ向けのノード適合テストの実行</h2>
+
+<p>Kubernetes also provides node conformance test docker images for other
+architectures:</p>
+
+<table>
+<thead>
+<tr>
+<th>Arch</th>
+<th align="center">Image</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>amd64</td>
+<td align="center">node-test-amd64</td>
+</tr>
+
+<tr>
+<td>arm</td>
+<td align="center">node-test-arm</td>
+</tr>
+
+<tr>
+<td>arm64</td>
+<td align="center">node-test-arm64</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="選択したテストの実行">選択したテストの実行</h2>
+
+<p>To run specific tests, overwrite the environment variable <code>FOCUS</code> with the
+regular expression of tests you want to run.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo docker run -it --rm --privileged --net<span style="color:#666">=</span>host <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -v /:/rootfs:ro -v <span style="color:#b8860b">$CONFIG_DIR</span>:<span style="color:#b8860b">$CONFIG_DIR</span> -v <span style="color:#b8860b">$LOG_DIR</span>:/var/result <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -e <span style="color:#b8860b">FOCUS</span><span style="color:#666">=</span>MirrorPod <span style="color:#b62;font-weight:bold">\ </span><span style="color:#080;font-style:italic"># Only run MirrorPod test</span>
+  k8s.gcr.io/node-test:0.2</code></pre></div>
+<p>To skip specific tests, overwrite the environment variable <code>SKIP</code> with the
+regular expression of tests you want to skip.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo docker run -it --rm --privileged --net<span style="color:#666">=</span>host <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -v /:/rootfs:ro -v <span style="color:#b8860b">$CONFIG_DIR</span>:<span style="color:#b8860b">$CONFIG_DIR</span> -v <span style="color:#b8860b">$LOG_DIR</span>:/var/result <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -e <span style="color:#b8860b">SKIP</span><span style="color:#666">=</span>MirrorPod <span style="color:#b62;font-weight:bold">\ </span><span style="color:#080;font-style:italic"># Run all conformance tests but skip MirrorPod test</span>
+  k8s.gcr.io/node-test:0.2</code></pre></div>
+<p>Node conformance test is a containerized version of <a href="https://github.com/kubernetes/community/blob/master/contributors/devel/e2e-node-tests.md" target="_blank">node e2e test</a>.
+By default, it runs all conformance tests.</p>
+
+<p>Theoretically, you can run any node e2e test if you configure the container and
+mount required volumes properly. But <strong>it is strongly recommended to only run conformance
+test</strong>, because it requires much more complex configuration to run non-conformance test.</p>
+
+<h2 id="注意事項">注意事項</h2>
+
+<ul>
+<li>The test leaves some docker images on the node, including the node conformance
+test image and images of containers used in the functionality
+test.</li>
+<li>The test leaves dead containers on the node. These containers are created
+during the functionality test.</li>
+</ul>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

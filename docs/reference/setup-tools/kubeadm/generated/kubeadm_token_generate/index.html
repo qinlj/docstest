@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -57,6 +59,7 @@ You don&rsquo;t have to use this command in order to generate a token. You can d
 
 <header>
     <a href="/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -99,6 +102,8 @@ You don&rsquo;t have to use this command in order to generate a token. You can d
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -986,8 +991,8 @@ generate and print one for you.</p>
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/reference/setup-tools/kubeadm/generated/kubeadm_token_delete/" title=""><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - </a>
-<a class="nav nav-next" href="/docs/reference/setup-tools/kubeadm/generated/kubeadm_token_list/" title="">Next -  <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/reference/setup-tools/kubeadm/generated/kubeadm_token_delete/" title=""><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - </a>
+<a class="nav nav-next" style="float:right"  href="/docs/reference/setup-tools/kubeadm/generated/kubeadm_token_list/" title="">Next -  <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -1075,24 +1080,136 @@ generate and print one for you.</p>
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">200 Words|Read in about 1 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>Generate and print a bootstrap token, but do not create it on the server.</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>This command will print out a randomly-generated bootstrap token that can be used with
+the &ldquo;init&rdquo; and &ldquo;join&rdquo; commands.</p>
+
+<p>You don&rsquo;t have to use this command in order to generate a token. You can do so
+yourself as long as it is in the format &ldquo;[a-z0-9]{6}.[a-z0-9]{16}&ldquo;. This
+command is provided for convenience to generate tokens in the given format.</p>
+
+<p>You can also use &ldquo;kubeadm init&rdquo; without specifying a token and it will
+generate and print one for you.</p>
+
+<pre><code>kubeadm token generate [flags]
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for generate</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--dry-run</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Whether to enable dry-run mode or not</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--rootfs string</td>
+    </tr>
+    <tr>
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

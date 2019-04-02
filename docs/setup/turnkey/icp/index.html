@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,7 @@ IBM Cloud Private is available in a community edition and a fully supported ente
 
 <header>
     <a href="/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -96,6 +99,8 @@ IBM Cloud Private is available in a community edition and a fully supported ente
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -679,8 +684,8 @@ IBM Cloud Private is available in a community edition and a fully supported ente
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/setup/turnkey/gce/" title="Running Kubernetes on Google Compute Engine"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Running Kubernetes on Google Compute Engine</a>
-<a class="nav nav-next" href="/docs/setup/turnkey/stackpoint/" title="Running Kubernetes on Multiple Clouds with Stackpoint.io">Next - Running Kubernetes on Multiple Clouds with Stackpoint.io <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/setup/turnkey/gce/" title="Running Kubernetes on Google Compute Engine"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Running Kubernetes on Google Compute Engine</a>
+<a class="nav nav-next" style="float:right"  href="/docs/setup/turnkey/stackpoint/" title="Running Kubernetes on Multiple Clouds with Stackpoint.io">Next - Running Kubernetes on Multiple Clouds with Stackpoint.io <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -768,24 +773,139 @@ IBM Cloud Private is available in a community edition and a fully supported ente
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">700 Words|Read in about 4 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>IBM® Cloud Private is a turnkey cloud solution and an on-premises turnkey cloud solution. IBM Cloud Private delivers pure upstream Kubernetes with the typical management components that are required to run real enterprise workloads. These workloads include health management, log management, audit trails, and metering for tracking usage of workloads on the platform.</p>
+
+<p>IBM Cloud Private is available in a community edition and a fully supported enterprise edition. The community edition is available at no charge from <a href="https://hub.docker.com/r/ibmcom/icp-inception/" target="_blank">Docker Hub</a>. The enterprise edition supports high availability topologies and includes commercial support from IBM for Kubernetes and the IBM Cloud Private management platform. If you want to try IBM Cloud Private, you can use either the hosted trial, the tutorial, or the self-guided demo. You can also try the free community edition. For details, see <a href="https://www.ibm.com/cloud/private/get-started" target="_blank">Get started with IBM Cloud Private</a>.</p>
+
+<p>For more information, explore the following resources:</p>
+
+<ul>
+<li><a href="https://www.ibm.com/cloud/private" target="_blank">IBM Cloud Private</a></li>
+<li><a href="https://github.com/ibm-cloud-architecture/refarch-privatecloud" target="_blank">Reference architecture for IBM Cloud Private</a></li>
+<li><a href="https://www.ibm.com/support/knowledgecenter/SSBS6K/product_welcome_cloud_private.html" target="_blank">IBM Cloud Private documentation</a></li>
+</ul>
+
+<h2 id="ibm-cloud-private-and-terraform">IBM Cloud Private and Terraform</h2>
+
+<p>The following modules are available where you can deploy IBM Cloud Private by using Terraform:</p>
+
+<ul>
+<li>AWS: <a href="https://github.com/ibm-cloud-architecture/terraform-icp-aws" target="_blank">Deploy IBM Cloud Private to AWS</a></li>
+<li>Azure: <a href="https://github.com/ibm-cloud-architecture/terraform-icp-azure" target="_blank">Deploy IBM Cloud Private to Azure</a></li>
+<li>IBM Cloud: <a href="https://github.com/ibm-cloud-architecture/terraform-icp-ibmcloud" target="_blank">Deploy IBM Cloud Private cluster to IBM Cloud</a></li>
+<li>OpenStack: <a href="https://github.com/ibm-cloud-architecture/terraform-icp-openstack" target="_blank">Deploy IBM Cloud Private to OpenStack</a></li>
+<li>Terraform module: <a href="https://github.com/ibm-cloud-architecture/terraform-module-icp-deploy" target="_blank">Deploy IBM Cloud Private on any supported infrastructure vendor</a></li>
+<li>VMware: <a href="https://github.com/ibm-cloud-architecture/terraform-icp-vmware" target="_blank">Deploy IBM Cloud Private to VMware</a></li>
+</ul>
+
+<h2 id="ibm-cloud-private-on-aws">IBM Cloud Private on AWS</h2>
+
+<p>You can deploy an IBM Cloud Private cluster on Amazon Web Services (AWS) by using either AWS CloudFormation or Terraform.</p>
+
+<p>IBM Cloud Private has a Quick Start that automatically deploys IBM Cloud Private into a new virtual private cloud (VPC) on the AWS Cloud. A regular deployment takes about 60 minutes, and a high availability (HA) deployment takes about 75 minutes to complete. The Quick Start includes AWS CloudFormation templates and a deployment guide.</p>
+
+<p>This Quick Start is for users who want to explore application modernization and want to accelerate meeting their digital transformation goals, by using IBM Cloud Private and IBM tooling. The Quick Start helps users rapidly deploy a high availability (HA), production-grade, IBM Cloud Private reference architecture on AWS. For all of the details and the deployment guide, see the <a href="https://aws.amazon.com/quickstart/architecture/ibm-cloud-private/" target="_blank">IBM Cloud Private on AWS Quick Start</a>.</p>
+
+<p>IBM Cloud Private can also run on the AWS cloud platform by using Terraform. To deploy IBM Cloud Private in an AWS EC2 environment, see <a href="https://github.com/ibm-cloud-architecture/refarch-privatecloud/blob/master/Installing_ICp_on_aws.md" target="_blank">Installing IBM Cloud Private on AWS</a>.</p>
+
+<h2 id="ibm-cloud-private-on-azure">IBM Cloud Private on Azure</h2>
+
+<p>You can enable Microsoft Azure as a cloud provider for IBM Cloud Private deployment and take advantage of all the IBM Cloud Private features on the Azure public cloud. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/supported_environments/azure_overview.html" target="_blank">IBM Cloud Private on Azure</a>.</p>
+
+<h2 id="ibm-cloud-private-on-red-hat-openshift">IBM Cloud Private on Red Hat OpenShift</h2>
+
+<p>You can deploy IBM certified software containers that are running on IBM Cloud Private onto Red Hat OpenShift.</p>
+
+<p>Integration capabilities:</p>
+
+<ul>
+<li>Supports Linux® 64-bit platform in offline-only installation mode</li>
+<li>Single-master configuration</li>
+<li>Integrated IBM Cloud Private cluster management console and catalog</li>
+<li>Integrated core platform services, such as monitoring, metering, and logging</li>
+<li>IBM Cloud Private uses the OpenShift image registry</li>
+</ul>
+
+<p>For more information see, <a href="https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/supported_environments/openshift/overview.html" target="_blank">IBM Cloud Private on OpenShift</a>.</p>
+
+<h2 id="ibm-cloud-private-on-virtualbox">IBM Cloud Private on VirtualBox</h2>
+
+<p>To install IBM Cloud Private to a VirtualBox environment, see <a href="https://github.com/ibm-cloud-architecture/refarch-privatecloud-virtualbox" target="_blank">Installing IBM Cloud Private on VirtualBox</a>.</p>
+
+<h2 id="ibm-cloud-private-on-vmware">IBM Cloud Private on VMware</h2>
+
+<p>You can install IBM Cloud Private on VMware with either Ubuntu or RHEL images. For details, see the following projects:</p>
+
+<ul>
+<li><a href="https://github.com/ibm-cloud-architecture/refarch-privatecloud/blob/master/Installing_ICp_on_prem_ubuntu.md" target="_blank">Installing IBM Cloud Private with Ubuntu</a></li>
+<li><a href="https://github.com/ibm-cloud-architecture/refarch-privatecloud/tree/master/icp-on-rhel" target="_blank">Installing IBM Cloud Private with Red Hat Enterprise</a></li>
+</ul>
+
+<p>The IBM Cloud Private Hosted service automatically deploys IBM Cloud Private Hosted on your VMware vCenter Server instances. This service brings the power of microservices and containers to your VMware environment on IBM Cloud. With this service, you can extend the same familiar VMware and IBM Cloud Private operational model and tools from on-premises into the IBM Cloud.</p>
+
+<p>For more information, see <a href="https://cloud.ibm.com/docs/services/vmwaresolutions/vmonic?topic=vmware-solutions-prod_overview#ibm-cloud-private-hosted" target="_blank">IBM Cloud Private Hosted service</a>.</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

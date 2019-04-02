@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -66,6 +68,7 @@ kubelet [flags]  选项     --azure-container-registry-config string   Path to t
 
 <header>
     <a href="/zh/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -100,6 +103,8 @@ kubelet [flags]  选项     --azure-container-registry-config string   Path to t
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -8367,8 +8372,8 @@ HTTP server: The kubelet can also listen for HTTP and respond to a simple API
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/user-guide/kubectl-overview/" title="kubectl概述"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - kubectl概述</a>
-<a class="nav nav-next" href="/zh/docs/reference/access-authn-authz/admission-controllers/" title="使用准入控制插件">Next - 使用准入控制插件 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/zh/docs/user-guide/kubectl-overview/" title="kubectl概述"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - kubectl概述</a>
+<a class="nav nav-next" style="float:right"  href="/zh/docs/reference/access-authn-authz/admission-controllers/" title="使用准入控制插件">Next - 使用准入控制插件 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -8456,24 +8461,173 @@ HTTP server: The kubelet can also listen for HTTP and respond to a simple API
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">100 Words|Read in about 1 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<h2 id="kubelet">kubelet</h2>
+
+<!--
+### Synopsis
+-->
+
+<h3 id="概要">概要</h3>
+
+<!--
+The kubelet is the primary "node agent" that runs on each
+node. The kubelet works in terms of a PodSpec. A PodSpec is a YAML or JSON object
+that describes a pod. The kubelet takes a set of PodSpecs that are provided through
+various mechanisms (primarily through the apiserver) and ensures that the containers
+described in those PodSpecs are running and healthy. The kubelet doesn't manage
+containers which were not created by Kubernetes.
+-->
+
+<p>kubelet 是在每个节点上运行的主要 &ldquo;节点代理&rdquo;。kubelet 以 PodSpec 为单位来运行任务，PodSpec 是一个描述 pod 的 YAML 或 JSON 对象。
+kubelet 运行多种机制（主要通过 apiserver）提供的一组 PodSpec，并确保这些 PodSpecs 中描述的容器健康运行。
+不是 Kubernetes 创建的容器将不在 kubelet 的管理范围。</p>
+
+<!--
+Other than from a PodSpec from the apiserver, there are three ways that a container
+manifest can be provided to the Kubelet.
+
+File: Path passed as a flag on the command line. Files under this path will be monitored
+periodically for updates. The monitoring period is 20s by default and is configurable
+via a flag.
+
+HTTP endpoint: HTTP endpoint passed as a parameter on the command line. This endpoint
+is checked every 20 seconds (also configurable with a flag).
+
+HTTP server: The kubelet can also listen for HTTP and respond to a simple API
+(underspec'd currently) to submit a new manifest.
+-->
+
+<p>除了来自 apiserver 的 PodSpec 之外，还有三种方法可以将容器清单提供给 Kubelet。</p>
+
+<p>文件：通过命令行传入的文件路径。kubelet 将定期监听该路径下的文件以获得更新。监视周期默认为 20 秒，可通过参数进行配置。</p>
+
+<p>HTTP 端点：HTTP 端点以命令行参数传入。每 20 秒检查一次该端点（该时间间隔也是可以通过命令行配置的）。</p>
+
+<p>HTTP 服务：kubelet 还可以监听 HTTP 并响应简单的 API（当前未指定）以提交新的清单。</p>
+
+<pre><code>kubelet [flags]
+</code></pre>
+
+<!--
+### Options
+-->
+
+<h3 id="选项">选项</h3>
+
+<table style="width: 100%; table-layout: fixed;">
+  <colgroup>
+    <col span="1" style="width: 10px;" />
+    <col span="1" />
+  </colgroup>
+  <tbody>
+
+    <tr>
+      <td colspan="2">--azure-container-registry-config string</td>
+    </tr>
+    <tr>
+<!--
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to the file containing Azure container registry configuration information.</td>
+-->
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">包含 Azure 容器注册配置信息的文件路径</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">-h, --help</td>
+    </tr>
+    <tr>
+<!--
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for kubelet</td>
+-->
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">kubelet 的帮助信息</td>
+    </tr>
+
+    <tr>
+<!--
+      <td colspan="2">--log-flush-frequency duration&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: 5s</td>
+-->
+      <td colspan="2">--log-flush-frequency 间隔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认: 5s</td>
+    </tr>
+    <tr>
+<!--
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Maximum number of seconds between log flushes</td>
+-->
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">日志刷新间隔的最大秒数</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">--version version[=true]</td>
+    </tr>
+    <tr>
+<!--
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">Print version information and quit</td>
+-->
+      <td></td><td style="line-height: 130%; word-wrap: break-word;">打印版本信息并退出</td>
+    </tr>
+
+  </tbody>
+</table>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

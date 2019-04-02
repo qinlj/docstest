@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,7 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
 
 <header>
     <a href="/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -88,6 +91,8 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -468,8 +473,8 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/surfaceanalyst/drivecontourspecific/" title="Extract Specified Isolines"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Extract Specified Isolines</a>
-<a class="nav nav-next" href="/docs/surfaceanalyst/findextreme/" title="Find Extremum">Next - Find Extremum <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/surfaceanalyst/drivecontourspecific/" title="Extract Specified Isolines"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Extract Specified Isolines</a>
+<a class="nav nav-next" style="float:right"  href="/docs/surfaceanalyst/findextreme/" title="Find Extremum">Next - Find Extremum <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -551,24 +556,110 @@ Basic steps  In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Sur
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">300 Words|Read in about 2 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>　　Extract a certain amount of isoregions which have one or more special values. You can enter a special value directly, or the system will generate series of characteristic values according to the range and interval you set. Also, you can import specific values through importing the *.txt file where the specific values are saved in.</p>
+
+<h3 id="basic-steps">Basic steps</h3>
+
+<ol>
+<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Extract Isolines&rdquo; &gt; &ldquo;Specified Isoregions&rdquo; to open the &ldquo;Specified Isoregions&rdquo; dialog box.</li>
+
+<li><p>Click <img src="img/Add.png" alt="" /> button to open the &ldquo;Batch Add&rdquo; dialog box where you can set following parameters for extraction of isoregions.</p>
+
+<ul>
+<li>Start Value: The start value for creating isoregions.</li>
+<li>End Value: The maximum value for creating isoregions.</li>
+<li>Interval: Check it to specify the difference in elevation between two adjacent isoregions and then how many isoregions will be calculated by system.</li>
+<li>Classes: Specify how many isoregions in the target dataset when the Interval is not set.</li>
+<li>Auto calculate the end value: After the Interval is set, check the check box, the end value of isoregions will be calculated again as the Start Value and Interval.</li>
+</ul></li>
+
+<li><p>Specify your raster dataset for extracting isoregions, and then the maximum value and minimum value of your data will be shown automatically.</p>
+
+<ul>
+<li>Max Cell Value: The maximum value in the source dataset. It can not be changed.</li>
+<li>Min Cell Value: The minimum value in the source dataset. It can not be changed.</li>
+</ul></li>
+
+<li><p>On the settings of parameters in Parameter Settings area, please refer to <a href="DriveContour.html" target="_blank">Extract isolines and isoregions</a>.</p></li>
+
+<li><p>Click &ldquo;Run&rdquo; image button to perform the operation.</p></li>
+</ol>
+
+<p><img src="img/DriveRegionSpecific.png" alt="" /></p>
+
+<h3 id="related-topics">Related topics</h3>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContour.html" target="_blank">Extract all isolines/isoregions</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContourAll.html" target="_blank">Extract all isolines</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContourSpecific.html" target="_blank">Extract specified isolines</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="ExtractIsoline.html" target="_blank">Extract isoline by points</a></p>
+
+<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveRegionAll.html" target="_blank">Extract all isoregions</a></p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

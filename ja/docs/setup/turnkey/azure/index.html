@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -78,6 +80,7 @@ Tectonic Installer for Azure Guideを参照して、すぐに始めることが�
 
 <header>
     <a href="/ja/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -112,6 +115,8 @@ Tectonic Installer for Azure Guideを参照して、すぐに始めることが�
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -668,8 +673,8 @@ Tectonic Installer for Azure Guideを参照して、すぐに始めることが�
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/ja/docs/setup/turnkey/alibaba-cloud/" title="Alibaba CloudでKubernetesを動かす"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Alibaba CloudでKubernetesを動かす</a>
-<a class="nav nav-next" href="/ja/docs/setup/turnkey/clc/" title="CenturyLink Cloud上でKubernetesを動かす">Next - CenturyLink Cloud上でKubernetesを動かす <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/ja/docs/setup/turnkey/alibaba-cloud/" title="Alibaba CloudでKubernetesを動かす"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Alibaba CloudでKubernetesを動かす</a>
+<a class="nav nav-next" style="float:right"  href="/ja/docs/setup/turnkey/clc/" title="CenturyLink Cloud上でKubernetesを動かす">Next - CenturyLink Cloud上でKubernetesを動かす <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -757,24 +762,97 @@ Tectonic Installer for Azure Guideを参照して、すぐに始めることが�
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">100 Words|Read in about 1 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<h2 id="azure-kubernetes-service-aks">Azure Kubernetes Service (AKS)</h2>
+
+<p><a href="https://azure.microsoft.com/ja-jp/services/kubernetes-service/" target="_blank">Azure Kubernetes Service</a>は、Kubernetesクラスターのためのシンプルなデプロイ機能を提供します。</p>
+
+<p>Azure Kubernetes Serviceを利用してAzure上にKubernetesクラスターをデプロイする例:</p>
+
+<p><strong><a href="https://docs.microsoft.com/ja-jp/azure/aks/intro-kubernetes" target="_blank">Microsoft Azure Kubernetes Service</a></strong></p>
+
+<h2 id="デプロイのカスタマイズ-acs-engine">デプロイのカスタマイズ: ACS-Engine</h2>
+
+<p>Azure Kubernetes Serviceのコア部分は<strong>オープンソース</strong>であり、コミュニティのためにGitHub上で公開され、利用およびコントリビュートすることができます: <strong><a href="https://github.com/Azure/acs-engine" target="_blank">ACS-Engine</a></strong>.</p>
+
+<p>ACS-Engineは、Azure Kubernetes Serviceが公式にサポートしている機能を超えてデプロイをカスタマイズしたい場合に適した選択肢です。
+既存の仮想ネットワークへのデプロイや、複数のagent poolを利用するなどのカスタマイズをすることができます。
+コミュニティによるACS-Engineへのコントリビュートが、Azure Kubernetes Serviceに組み込まれる場合もあります。</p>
+
+<p>ACS-Engineへの入力は、Azure Kubernetes Serviceを使用してクラスターを直接デプロイすることに利用されるARMテンプレートの構文に似ています。
+処理結果はAzure Resource Managerテンプレートとして出力され、ソース管理に組み込んだり、AzureにKubernetesクラスターをデプロイするために使うことができます。</p>
+
+<p><strong><a href="https://github.com/Azure/acs-engine/blob/master/docs/kubernetes.md" target="_blank">ACS-Engine Kubernetes Walkthrough</a></strong> を参照して、すぐに始めることができます。</p>
+
+<h2 id="azure上でcoreos-tectonicを動かす">Azure上でCoreOS Tectonicを動かす</h2>
+
+<p>Azureで利用できるCoreOS Tectonic Installerは<strong>オープンソース</strong>であり、コミュニティのためにGitHub上で公開され、利用およびコントリビュートすることができます: <strong><a href="https://github.com/coreos/tectonic-installer" target="_blank">Tectonic Installer</a></strong>.</p>
+
+<p>Tectonic Installerは、 <a href="https://www.terraform.io/docs/providers/azurerm/" target="_blank">Hashicorp が提供する Terraform</a>のAzure Resource Manager(ARM)プロバイダーを用いてクラスターをカスタマイズしたい場合に適した選択肢です。
+これを利用することにより、Terraformと親和性の高いツールを使用してカスタマイズしたり連携したりすることができます。</p>
+
+<p><a href="https://coreos.com/tectonic/docs/latest/install/azure/azure-terraform.html" target="_blank">Tectonic Installer for Azure Guide</a>を参照して、すぐに始めることができます。</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

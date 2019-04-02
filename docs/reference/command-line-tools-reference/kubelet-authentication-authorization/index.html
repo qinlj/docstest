@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -57,6 +59,7 @@ Kubelet authentication By default, requests to the kubelet&rsquo;s HTTPS endpoin
 
 <header>
     <a href="/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -99,6 +102,8 @@ Kubelet authentication By default, requests to the kubelet&rsquo;s HTTPS endpoin
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -1067,8 +1072,8 @@ flags passed to the apiserver is authorized for the following attributes:</p>
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/reference/command-line-tools-reference/feature-gates/" title="Feature Gates"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Feature Gates</a>
-<a class="nav nav-next" href="/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/" title="TLS bootstrapping">Next - TLS bootstrapping <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/reference/command-line-tools-reference/feature-gates/" title="Feature Gates"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Feature Gates</a>
+<a class="nav nav-next" style="float:right"  href="/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/" title="TLS bootstrapping">Next - TLS bootstrapping <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -1156,24 +1161,231 @@ flags passed to the apiserver is authorized for the following attributes:</p>
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">500 Words|Read in about 3 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#kubelet-authentication">Kubelet authentication</a></li>
+<li><a href="#kubelet-authorization">Kubelet authorization</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="overview">Overview</h2>
+
+<p>A kubelet&rsquo;s HTTPS endpoint exposes APIs which give access to data of varying sensitivity,
+and allow you to perform operations with varying levels of power on the node and within containers.</p>
+
+<p>This document describes how to authenticate and authorize access to the kubelet&rsquo;s HTTPS endpoint.</p>
+
+<h2 id="kubelet-authentication">Kubelet authentication</h2>
+
+<p>By default, requests to the kubelet&rsquo;s HTTPS endpoint that are not rejected by other configured
+authentication methods are treated as anonymous requests, and given a username of <code>system:anonymous</code>
+and a group of <code>system:unauthenticated</code>.</p>
+
+<p>To disable anonymous access and send <code>401 Unauthorized</code> responses to unauthenticated requests:</p>
+
+<ul>
+<li>start the kubelet with the <code>--anonymous-auth=false</code> flag</li>
+</ul>
+
+<p>To enable X509 client certificate authentication to the kubelet&rsquo;s HTTPS endpoint:</p>
+
+<ul>
+<li>start the kubelet with the <code>--client-ca-file</code> flag, providing a CA bundle to verify client certificates with</li>
+<li>start the apiserver with <code>--kubelet-client-certificate</code> and <code>--kubelet-client-key</code> flags</li>
+<li>see the <a href="/docs/reference/access-authn-authz/authentication/#x509-client-certs">apiserver authentication documentation</a> for more details</li>
+</ul>
+
+<p>To enable API bearer tokens (including service account tokens) to be used to authenticate to the kubelet&rsquo;s HTTPS endpoint:</p>
+
+<ul>
+<li>ensure the <code>authentication.k8s.io/v1beta1</code> API group is enabled in the API server</li>
+<li>start the kubelet with the <code>--authentication-token-webhook</code> and <code>--kubeconfig</code> flags</li>
+<li>the kubelet calls the <code>TokenReview</code> API on the configured API server to determine user information from bearer tokens</li>
+</ul>
+
+<h2 id="kubelet-authorization">Kubelet authorization</h2>
+
+<p>Any request that is successfully authenticated (including an anonymous request) is then authorized. The default authorization mode is <code>AlwaysAllow</code>, which allows all requests.</p>
+
+<p>There are many possible reasons to subdivide access to the kubelet API:</p>
+
+<ul>
+<li>anonymous auth is enabled, but anonymous users&rsquo; ability to call the kubelet API should be limited</li>
+<li>bearer token auth is enabled, but arbitrary API users&rsquo; (like service accounts) ability to call the kubelet API should be limited</li>
+<li>client certificate auth is enabled, but only some of the client certificates signed by the configured CA should be allowed to use the kubelet API</li>
+</ul>
+
+<p>To subdivide access to the kubelet API, delegate authorization to the API server:</p>
+
+<ul>
+<li>ensure the <code>authorization.k8s.io/v1beta1</code> API group is enabled in the API server</li>
+<li>start the kubelet with the <code>--authorization-mode=Webhook</code> and the <code>--kubeconfig</code> flags</li>
+<li>the kubelet calls the <code>SubjectAccessReview</code> API on the configured API server to determine whether each request is authorized</li>
+</ul>
+
+<p>The kubelet authorizes API requests using the same <a href="/docs/reference/access-authn-authz/authorization/#review-your-request-attributes">request attributes</a> approach as the apiserver.</p>
+
+<p>The verb is determined from the incoming request&rsquo;s HTTP verb:</p>
+
+<table>
+<thead>
+<tr>
+<th>HTTP verb</th>
+<th>request verb</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>POST</td>
+<td>create</td>
+</tr>
+
+<tr>
+<td>GET, HEAD</td>
+<td>get</td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>update</td>
+</tr>
+
+<tr>
+<td>PATCH</td>
+<td>patch</td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>delete</td>
+</tr>
+</tbody>
+</table>
+
+<p>The resource and subresource is determined from the incoming request&rsquo;s path:</p>
+
+<table>
+<thead>
+<tr>
+<th>Kubelet API</th>
+<th>resource</th>
+<th>subresource</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>/stats/*</td>
+<td>nodes</td>
+<td>stats</td>
+</tr>
+
+<tr>
+<td>/metrics/*</td>
+<td>nodes</td>
+<td>metrics</td>
+</tr>
+
+<tr>
+<td>/logs/*</td>
+<td>nodes</td>
+<td>log</td>
+</tr>
+
+<tr>
+<td>/spec/*</td>
+<td>nodes</td>
+<td>spec</td>
+</tr>
+
+<tr>
+<td><em>all others</em></td>
+<td>nodes</td>
+<td>proxy</td>
+</tr>
+</tbody>
+</table>
+
+<p>The namespace and API group attributes are always an empty string, and
+the resource name is always the name of the kubelet&rsquo;s <code>Node</code> API object.</p>
+
+<p>When running in this mode, ensure the user identified by the <code>--kubelet-client-certificate</code> and <code>--kubelet-client-key</code>
+flags passed to the apiserver is authorized for the following attributes:</p>
+
+<ul>
+<li>verb=*, resource=nodes, subresource=proxy</li>
+<li>verb=*, resource=nodes, subresource=stats</li>
+<li>verb=*, resource=nodes, subresource=log</li>
+<li>verb=*, resource=nodes, subresource=spec</li>
+<li>verb=*, resource=nodes, subresource=metrics</li>
+</ul>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

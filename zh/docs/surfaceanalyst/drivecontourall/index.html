@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -60,6 +62,7 @@
 
 <header>
     <a href="/zh/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -94,6 +97,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -439,8 +444,8 @@
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/surfaceanalyst/cutfill/" title="填挖方"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 填挖方</a>
-<a class="nav nav-next" href="/zh/docs/surfaceanalyst/driveregionall/" title="提取所有等值面">Next - 提取所有等值面 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/zh/docs/surfaceanalyst/cutfill/" title="填挖方"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 填挖方</a>
+<a class="nav nav-next" style="float:right"  href="/zh/docs/surfaceanalyst/driveregionall/" title="提取所有等值面">Next - 提取所有等值面 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -522,24 +527,90 @@
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">100 Words|Read in about 1 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>　　提取所有等值线通过指定参数，提取栅格数据表面模型中所有的符合条件的等值线。用于提取等值线的源数据集必须为 DEM 或 Gird 数据集。</p>
+
+<h3 id="操作说明">操作说明</h3>
+
+<ol>
+<li>在工具箱的“栅格分析”-“表面分析”-“提取等值线/面”选项中，双击“提取所有等值线”，即可弹出“提取所有等值线”对话框。</li>
+<li>设置提取等值面的公共参数，包括源数据、目标数据和参数设置中的基准值、等值距、重采样系数、光滑方法、光滑系数，公共参数的设置请参见<a href="DriveContour.html" target="_blank">提取等值线/面</a>页面。</li>
+
+<li><p><strong>结果信息</strong>： 参数设置完成后，系统会自动计算出结果信息并显示出来。结果信息的说明如下：</p>
+
+<ul>
+<li>栅格最大值：所选源数据集中最大的栅格值，为系统信息，不可更改。</li>
+<li>栅格最小值：所选源数据集中最小的栅格值，为系统信息，不可更改。</li>
+<li>最大等值线：目标数据集中等值线的最大值。</li>
+<li>最小等值线：目标数据集中等值线的最小值。</li>
+<li>等值数：目标数据集中等值线的总数目。</li>
+</ul></li>
+
+<li><p>设置好结果数据集之后，单击“执行”按钮，即可执行提取所有等值线操作，结果如下图所示：</p></li>
+</ol>
+
+<p><img src="/images/img/DriveContourAll.png" alt="" /></p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

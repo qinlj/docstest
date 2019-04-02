@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -60,6 +62,7 @@ kubeadm 通过执行必要的操作来启动和运行一个最小可用的集群
 
 <header>
     <a href="/zh/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -94,6 +97,8 @@ kubeadm 通过执行必要的操作来启动和运行一个最小可用的集群
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -8289,8 +8294,8 @@ Kubeadm 是一个工具，它提供了 <code>kubeadm init</code> 以及 <code>ku
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/home/" title="Kubernetes 文档"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Kubernetes 文档</a>
-<a class="nav nav-next" href="/zh/docs/surfaceanalyst/" title="表面分析">Next - 表面分析 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/zh/docs/home/" title="Kubernetes 文档"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Kubernetes 文档</a>
+<a class="nav nav-next" style="float:right"  href="/zh/docs/surfaceanalyst/" title="表面分析">Next - 表面分析 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -8378,24 +8383,103 @@ Kubeadm 是一个工具，它提供了 <code>kubeadm init</code> 以及 <code>ku
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">100 Words|Read in about 1 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p><img src="https://raw.githubusercontent.com/cncf/artwork/master/kubernetes/certified-kubernetes/versionless/color/certified-kubernetes-color.png" align="right" width="150px">
+<!-- Kubeadm is a tool built to provide `kubeadm init` and `kubeadm join` as best-practice “fast paths” for creating Kubernetes clusters. -->
+Kubeadm 是一个工具，它提供了 <code>kubeadm init</code> 以及 <code>kubeadm join</code> 这两个命令作为快速创建 kubernetes 集群的最佳实践。</p>
+
+<!-- kubeadm performs the actions necessary to get a minimum viable cluster up and running. By design, it cares only about bootstrapping, not about provisioning machines. Likewise, installing various nice-to-have addons, like the Kubernetes Dashboard, monitoring solutions, and cloud-specific addons, is not in scope. -->
+
+<p>kubeadm 通过执行必要的操作来启动和运行一个最小可用的集群。它被故意设计为只关心启动集群，而不是之前的节点准备工作。同样的，诸如安装各种各样值得拥有的插件，例如 Kubernetes Dashboard、监控解决方案以及特定云提供商的插件，这些都不在它负责的范围。</p>
+
+<!-- Instead, we expect higher-level and more tailored tooling to be built on top of kubeadm, and ideally, using kubeadm as the basis of all deployments will make it easier to create conformant clusters. -->
+
+<p>相反，我们期望由一个基于 kubeadm 从更高层设计的更加合适的工具来做这些事情；并且，理想情况下，使用 kubeadm 作为所有部署的基础将会使得创建一个符合期望的集群变得容易。</p>
+
+<!-- ## What's next -->
+
+<h2 id="接下可以做什么">接下可以做什么</h2>
+
+<!-- * [kubeadm init](/docs/reference/setup-tools/kubeadm/kubeadm-init) to bootstrap a Kubernetes master node -->
+
+<ul>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-init">kubeadm init</a> 启动一个 Kubernetes 主节点
+<!-- * [kubeadm join](/docs/reference/setup-tools/kubeadm/kubeadm-join) to bootstrap a Kubernetes worker node and join it to the cluster --></li>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-join">kubeadm join</a> 启动一个 Kubernetes 工作节点并且将其加入到集群
+<!-- * [kubeadm upgrade](/docs/reference/setup-tools/kubeadm/kubeadm-upgrade) to upgrade a Kubernetes cluster to a newer version --></li>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-upgrade">kubeadm upgrade</a> 更新一个 Kubernetes 集群到新版本
+<!-- * [kubeadm config](/docs/reference/setup-tools/kubeadm/kubeadm-config) if you initialized your cluster using kubeadm v1.7.x or lower, to configure your cluster for `kubeadm upgrade` --></li>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-config">kubeadm config</a> 如果使用 v1.7.x 或者更低版本的 kubeadm 初始化集群，您需要对集群做一些配置以便使用 <code>kubeadm upgrade</code> 命令
+<!-- * [kubeadm token](/docs/reference/setup-tools/kubeadm/kubeadm-token) to manage tokens for `kubeadm join` --></li>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-token">kubeadm token</a> 管理 <code>kubeadm join</code> 使用的令牌
+<!-- * [kubeadm reset](/docs/reference/setup-tools/kubeadm/kubeadm-reset) to revert any changes made to this host by `kubeadm init` or `kubeadm join` --></li>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-reset">kubeadm reset</a> 还原 <code>kubeadm init</code> 或者 <code>kubeadm join</code> 对主机所做的任何更改
+<!-- * [kubeadm version](/docs/reference/setup-tools/kubeadm/kubeadm-version) to print the kubeadm version --></li>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-version">kubeadm version</a> 打印 kubeadm 版本
+<!-- * [kubeadm alpha](/docs/reference/setup-tools/kubeadm/kubeadm-alpha) to preview a set of features made available for gathering feedback from the community --></li>
+<li><a href="/docs/reference/setup-tools/kubeadm/kubeadm-alpha">kubeadm alpha</a> 预览一组可用的新功能以便从社区搜集反馈</li>
+</ul>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

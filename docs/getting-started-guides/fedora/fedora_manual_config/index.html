@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,7 @@ This guide will only get ONE node (previously minion) working. Multiple nodes re
 
 <header>
     <a href="/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -96,6 +99,8 @@ This guide will only get ONE node (previously minion) working. Multiple nodes re
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -635,8 +640,8 @@ fed-node        Ready       4h</code></pre></div>
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/" title="Fedora (Multi Node)"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Fedora (Multi Node)</a>
-<a class="nav nav-next" href="/docs/getting-started-guides/ubuntu/" title="Kubernetes on Ubuntu">Next - Kubernetes on Ubuntu <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/getting-started-guides/fedora/flannel_multi_node_cluster/" title="Fedora (Multi Node)"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Fedora (Multi Node)</a>
+<a class="nav nav-next" style="float:right"  href="/docs/getting-started-guides/ubuntu/" title="Kubernetes on Ubuntu">Next - Kubernetes on Ubuntu <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -724,24 +729,240 @@ fed-node        Ready       4h</code></pre></div>
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">700 Words|Read in about 4 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#instructions">Instructions</a></li>
+<li><a href="#support-level">Support Level</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ol>
+<li>You need 2 or more machines with Fedora installed. These can be either bare metal machines or virtual machines.</li>
+</ol>
+
+<h2 id="instructions">Instructions</h2>
+
+<p>This is a getting started guide for Fedora.  It is a manual configuration so you understand all the underlying packages / services / ports, etc&hellip;</p>
+
+<p>This guide will only get ONE node (previously minion) working.  Multiple nodes require a functional <a href="/docs/concepts/cluster-administration/networking/">networking configuration</a> done outside of Kubernetes.  Although the additional Kubernetes configuration requirements should be obvious.</p>
+
+<p>The Kubernetes package provides a few services: kube-apiserver, kube-scheduler, kube-controller-manager, kubelet, kube-proxy.  These services are managed by systemd and the configuration resides in a central location: <code>/etc/kubernetes</code>.  We will break the services up between the hosts.  The first host, fed-master, will be the Kubernetes master.  This host will run the kube-apiserver, kube-controller-manager, and kube-scheduler.  In addition, the master will also run <em>etcd</em> (not needed if <em>etcd</em> runs on a different host but this guide assumes that <em>etcd</em> and Kubernetes master run on the same host).  The remaining host, fed-node will be the node and run kubelet, proxy and docker.</p>
+
+<p><strong>System Information:</strong></p>
+
+<p>Hosts:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">fed-master = 192.168.121.9
+fed-node = 192.168.121.65</code></pre></div>
+<p><strong>Prepare the hosts:</strong></p>
+
+<ul>
+<li>Install Kubernetes on all hosts - fed-{master,node}.  This will also pull in docker. Also install etcd on fed-master.  This guide has been tested with Kubernetes-0.18 and beyond.</li>
+<li>Running on AWS EC2 with RHEL 7.2, you need to enable &ldquo;extras&rdquo; repository for yum by editing <code>/etc/yum.repos.d/redhat-rhui.repo</code> and changing the <code>enable=0</code> to <code>enable=1</code> for extras.</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dnf -y install kubernetes</code></pre></div>
+<ul>
+<li>Install etcd</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dnf -y install etcd</code></pre></div>
+<ul>
+<li>Add master and node to <code>/etc/hosts</code> on all machines (not needed if hostnames already in DNS). Make sure that communication works between fed-master and fed-node by using a utility such as ping.</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#a2f">echo</span> <span style="color:#b44">&#34;192.168.121.9    fed-master
+</span><span style="color:#b44">192.168.121.65    fed-node&#34;</span> &gt;&gt; /etc/hosts</code></pre></div>
+<ul>
+<li>Edit <code>/etc/kubernetes/config</code> (which should be the same on all hosts) to set
+the name of the master server:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># Comma separated list of nodes in the etcd cluster</span>
+<span style="color:#b8860b">KUBE_MASTER</span><span style="color:#666">=</span><span style="color:#b44">&#34;--master=http://fed-master:8080&#34;</span></code></pre></div>
+<ul>
+<li>Disable the firewall on both the master and node, as Docker does not play well with other firewall rule managers.  Please note that iptables.service does not exist on the default Fedora Server install.</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl mask firewalld.service
+systemctl stop firewalld.service
+
+systemctl disable --now iptables.service</code></pre></div>
+<p><strong>Configure the Kubernetes services on the master.</strong></p>
+
+<ul>
+<li>Edit <code>/etc/kubernetes/apiserver</code> to appear as such.  The service-cluster-ip-range IP addresses must be an unused block of addresses, not used anywhere else.  They do not need to be routed or assigned to anything.</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># The address on the local server to listen to.</span>
+<span style="color:#b8860b">KUBE_API_ADDRESS</span><span style="color:#666">=</span><span style="color:#b44">&#34;--address=0.0.0.0&#34;</span>
+
+<span style="color:#080;font-style:italic"># Comma separated list of nodes in the etcd cluster</span>
+<span style="color:#b8860b">KUBE_ETCD_SERVERS</span><span style="color:#666">=</span><span style="color:#b44">&#34;--etcd-servers=http://127.0.0.1:2379&#34;</span>
+
+<span style="color:#080;font-style:italic"># Address range to use for services</span>
+<span style="color:#b8860b">KUBE_SERVICE_ADDRESSES</span><span style="color:#666">=</span><span style="color:#b44">&#34;--service-cluster-ip-range=10.254.0.0/16&#34;</span>
+
+<span style="color:#080;font-style:italic"># Add your own!</span>
+<span style="color:#b8860b">KUBE_API_ARGS</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span></code></pre></div>
+<ul>
+<li>Edit <code>/etc/etcd/etcd.conf</code> to let etcd listen on all available IPs instead of 127.0.0.1. If you have not done this, you might see an error such as &ldquo;connection refused&rdquo;.</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#b8860b">ETCD_LISTEN_CLIENT_URLS</span><span style="color:#666">=</span><span style="color:#b44">&#34;http://0.0.0.0:2379&#34;</span></code></pre></div>
+<ul>
+<li>Start the appropriate services on master:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#a2f;font-weight:bold">for</span> SERVICES in etcd kube-apiserver kube-controller-manager kube-scheduler; <span style="color:#a2f;font-weight:bold">do</span>
+    systemctl <span style="color:#a2f">enable</span> --now <span style="color:#b8860b">$SERVICES</span>
+    systemctl status <span style="color:#b8860b">$SERVICES</span>
+<span style="color:#a2f;font-weight:bold">done</span></code></pre></div>
+<p><strong>Configure the Kubernetes services on the node.</strong></p>
+
+<p><strong><em>We need to configure the kubelet on the node.</em></strong></p>
+
+<ul>
+<li>Edit <code>/etc/kubernetes/kubelet</code> to appear as such:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic">###</span>
+<span style="color:#080;font-style:italic"># Kubernetes kubelet (node) config</span>
+
+<span style="color:#080;font-style:italic"># The address for the info server to serve on (set to 0.0.0.0 or &#34;&#34; for all interfaces)</span>
+<span style="color:#b8860b">KUBELET_ADDRESS</span><span style="color:#666">=</span><span style="color:#b44">&#34;--address=0.0.0.0&#34;</span>
+
+<span style="color:#080;font-style:italic"># You may leave this blank to use the actual hostname</span>
+<span style="color:#b8860b">KUBELET_HOSTNAME</span><span style="color:#666">=</span><span style="color:#b44">&#34;--hostname-override=fed-node&#34;</span>
+
+<span style="color:#080;font-style:italic"># location of the api-server</span>
+<span style="color:#b8860b">KUBELET_ARGS</span><span style="color:#666">=</span><span style="color:#b44">&#34;--cgroup-driver=systemd --kubeconfig=/etc/kubernetes/master-kubeconfig.yaml&#34;</span></code></pre></div>
+<ul>
+<li>Edit <code>/etc/kubernetes/master-kubeconfig.yaml</code> to contain the following information:</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">kind:<span style="color:#bbb"> </span>Config<span style="color:#bbb">
+</span><span style="color:#bbb"></span>clusters:<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>local<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>cluster:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>server:<span style="color:#bbb"> </span>http://fed-master:<span style="color:#666">8080</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>users:<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>kubelet<span style="color:#bbb">
+</span><span style="color:#bbb"></span>contexts:<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>context:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>cluster:<span style="color:#bbb"> </span>local<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>user:<span style="color:#bbb"> </span>kubelet<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>kubelet-context<span style="color:#bbb">
+</span><span style="color:#bbb"></span>current-context:<span style="color:#bbb"> </span>kubelet-context</code></pre></div>
+<ul>
+<li>Start the appropriate services on the node (fed-node).</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#a2f;font-weight:bold">for</span> SERVICES in kube-proxy kubelet docker; <span style="color:#a2f;font-weight:bold">do</span> 
+    systemctl <span style="color:#a2f">enable</span> --now <span style="color:#b8860b">$SERVICES</span>
+    systemctl status <span style="color:#b8860b">$SERVICES</span> 
+<span style="color:#a2f;font-weight:bold">done</span></code></pre></div>
+<ul>
+<li>Check to make sure now the cluster can see the fed-node on fed-master, and its status changes to <em>Ready</em>.</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get nodes
+NAME            STATUS      AGE      VERSION
+fed-node        Ready       4h</code></pre></div>
+<ul>
+<li>Deletion of nodes:</li>
+</ul>
+
+<p>To delete <em>fed-node</em> from your Kubernetes cluster, one should run the following on fed-master (Please do not do it, it is just for information):</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl delete -f ./node.json</code></pre></div>
+<p><em>You should be finished!</em></p>
+
+<p><strong>The cluster should be running! Launch a test pod.</strong></p>
+
+<h2 id="support-level">Support Level</h2>
+
+<table>
+<thead>
+<tr>
+<th>IaaS Provider</th>
+<th>Config. Mgmt</th>
+<th>OS</th>
+<th>Networking</th>
+<th>Docs</th>
+<th>Conforms</th>
+<th>Support Level</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Bare-metal</td>
+<td>custom</td>
+<td>Fedora</td>
+<td><em>none</em></td>
+<td><a href="/docs/getting-started-guides/fedora/fedora_manual_config">docs</a></td>
+<td></td>
+<td>Project</td>
+</tr>
+</tbody>
+</table>
+
+<p>For support level information on all solutions, see the <a href="/docs/getting-started-guides/#table-of-solutions">Table of solutions</a> chart.</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,7 @@
 
 <header>
     <a href="/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -88,6 +91,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -489,8 +494,8 @@
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/surfaceanalyst/aspect/" title="Aspect Analysis"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Aspect Analysis</a>
-<a class="nav nav-next" href="/docs/surfaceanalyst/cutfillregion/" title="Cut Fill with Regions">Next - Cut Fill with Regions <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/surfaceanalyst/aspect/" title="Aspect Analysis"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Aspect Analysis</a>
+<a class="nav nav-next" style="float:right"  href="/docs/surfaceanalyst/cutfillregion/" title="Cut Fill with Regions">Next - Cut Fill with Regions <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -572,24 +577,130 @@
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">600 Words|Read in about 3 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<h3 id="theory">Theory</h3>
+
+<p>　　The objects on a surface may move because of deposition and erosion, and the result is the increasing of surface objects at some region and the reducing of surface objects at other region. In project, the reducing of surface objects is called Cut and the increasing of surface objects is called Fill. The following is a sketch map of cut and fill.</p>
+
+<p><img src="img/CutFill1.png" alt="" /></p>
+
+<p>　　Two raster dataset (before and after) are required for the operation. The value of each cell in the result dataset is the difference between the values of the corresponding cell in the two input datasets. A positive cell value indicates that the surface material at that cell has reduced; a negative cell value indicates the surface material there has increased. The figure below is an illustration of a cut and fill calculation displayed in form of a 4*4 raster data:</p>
+
+<p><img src="img/CutFill2.png" alt="" /></p>
+
+<p>　　It is clearly shown in this figure: Result dataset = Grid dataset before - Grid dataset after.</p>
+
+<p>　　The figure below shows the result after performing the Cut Fill operation. In the source dataset and the reference dataset, the higher the elevation, the more red the raster color; the lower the elevation, the more green the raster color. In the result dataset, the blackish green parts need cutting, the larger the cut amount, the darker the color; the part do not need to fill and cut is represent in white.</p>
+
+<p><img src="img/CutFill3.png" alt="" /></p>
+
+<p>　　The two datasets participating in the Cut Fill operation must have the same coordinate and projection system. Theoretically, the spatial range of the two input datasets should be the same, but for two dataset which have different spatial range, only the result in the overlap region will be calculated; if one of the dataset have a null value at certain cell, the result cell will also be null.</p>
+
+<p>The range of the result dataset is the overlap range of the two dataset.</p>
+
+<p>　　The Cut Fill function is used for calculating volume of surface materials that have beed changed.</p>
+
+<p>　　Through the Cut Fill function, a new raster dataset can be obtained to record the areas where the surface materials have changed.</p>
+
+<h3 id="basic-steps">Basic steps</h3>
+
+<ol>
+<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Terrain Calculate&rdquo; &gt; &ldquo;Cut Fill&rdquo; to open the &ldquo;Cut Fill&rdquo; dialog box.</li>
+
+<li><p>Specify the before dataset and after dataset respectively. You should pay attention to:</p>
+
+<ul>
+<li>Both the before dataset and after dataset must have the dame coordinate and projection system.</li>
+<li>The two input datasets should have the same spatial range (a common origin, the same number of rows and columns of cells, and the same cell size). If not, only the overlaps in the two dataset will be calculated.</li>
+<li>if one of the dataset have a null value at a certain cell, the result will also be null at that cell.
+<br /></li>
+</ul></li>
+
+<li><p>Click &ldquo;Run&rdquo; image button to perform the operation. After this operation is done, it will display the cut and fill result in the output window, including the Fill Volume, Cut Volume, Fill Area, Cut Area, and Left Area five contents. The volume unit is cubic meter, and the area unit is square meter, shown as below:</p></li>
+</ol>
+
+<p>　　<img src="img/CutFillExport.png" alt="" /></p>
+
+<h3 id="related-topics">Related topics</h3>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFill.html" target="_blank">Cut fill</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="InverseCutFill.html" target="_blank">Inverse cut fill</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="FindExtreme.html" target="_blank">Find Extremum value</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CalculateCurvature.html" target="_blank">DEM curvature calculate</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Slope.html" target="_blank">Slope analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Aspect.html" target="_blank">Aspect analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Profile.html" target="_blank">Profile analysis</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="OrthoImage.html" target="_blank">Orthophoto image</a></p>
+
+<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="HillShade.html" target="_blank">3D hillshade map</a></p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

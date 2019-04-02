@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -57,6 +59,7 @@ kubefed version [flags]  Examples  # Print the client and server versions for th
 
 <header>
     <a href="/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -99,6 +102,8 @@ kubefed version [flags]  Examples  # Print the client and server versions for th
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -1000,8 +1005,8 @@ kubefed version [flags]  Examples  # Print the client and server versions for th
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/docs/reference/setup-tools/kubefed/kubefed_unjoin/" title="kubefed unjoin"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - kubefed unjoin</a>
-<a class="nav nav-next" href="/docs/reference/command-line-tools-reference/" title="Command line tools reference">Next - Command line tools reference <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/docs/reference/setup-tools/kubefed/kubefed_unjoin/" title="kubefed unjoin"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - kubefed unjoin</a>
+<a class="nav nav-next" style="float:right"  href="/docs/reference/command-line-tools-reference/" title="Command line tools reference">Next - Command line tools reference <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -1089,24 +1094,141 @@ kubefed version [flags]  Examples  # Print the client and server versions for th
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">600 Words|Read in about 3 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<h2 id="kubefed-version">kubefed version</h2>
+
+<p>Print the client and server version information</p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>Print the client and server version information for the current context</p>
+
+<pre><code>kubefed version [flags]
+</code></pre>
+
+<h3 id="examples">Examples</h3>
+
+<pre><code>  # Print the client and server versions for the current context
+  kubefed version
+</code></pre>
+
+<h3 id="options">Options</h3>
+
+<pre><code>      --client          Client version only (no server required).
+  -h, --help            help for version
+  -o, --output string   One of 'yaml' or 'json'.
+      --short           Print just the version number.
+</code></pre>
+
+<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
+
+<pre><code>      --alsologtostderr                              log to standard error as well as files
+      --as string                                    Username to impersonate for the operation
+      --as-group stringArray                         Group to impersonate for the operation, this flag can be repeated to specify multiple groups.
+      --cache-dir string                             Default HTTP cache directory (default &quot;/Users/tim/.kube/http-cache&quot;)
+      --certificate-authority string                 Path to a cert file for the certificate authority
+      --client-certificate string                    Path to a client certificate file for TLS
+      --client-key string                            Path to a client key file for TLS
+      --cloud-provider-gce-lb-src-cidrs cidrs        CIDRs opened in GCE firewall for LB traffic proxy &amp; health checks (default 130.211.0.0/22,209.85.152.0/22,209.85.204.0/22,35.191.0.0/16)
+      --cluster string                               The name of the kubeconfig cluster to use
+      --context string                               The name of the kubeconfig context to use
+      --default-not-ready-toleration-seconds int     Indicates the tolerationSeconds of the toleration for notReady:NoExecute that is added by default to every pod that does not already have such a toleration. (default 300)
+      --default-unreachable-toleration-seconds int   Indicates the tolerationSeconds of the toleration for unreachable:NoExecute that is added by default to every pod that does not already have such a toleration. (default 300)
+      --insecure-skip-tls-verify                     If true, the server's certificate will not be checked for validity. This will make your HTTPS connections insecure
+      --ir-data-source string                        Data source used by InitialResources. Supported options: influxdb, gcm. (default &quot;influxdb&quot;)
+      --ir-dbname string                             InfluxDB database name which contains metrics required by InitialResources (default &quot;k8s&quot;)
+      --ir-hawkular string                           Hawkular configuration URL
+      --ir-influxdb-host string                      Address of InfluxDB which contains metrics required by InitialResources (default &quot;localhost:8080/api/v1/namespaces/kube-system/services/monitoring-influxdb:api/proxy&quot;)
+      --ir-namespace-only                            Whether the estimation should be made only based on data from the same namespace.
+      --ir-password string                           Password used for connecting to InfluxDB (default &quot;root&quot;)
+      --ir-percentile int                            Which percentile of samples should InitialResources use when estimating resources. For experiment purposes. (default 90)
+      --ir-user string                               User used for connecting to InfluxDB (default &quot;root&quot;)
+      --kubeconfig string                            Path to the kubeconfig file to use for CLI requests.
+      --log-backtrace-at traceLocation               when logging hits line file:N, emit a stack trace (default :0)
+      --log-dir string                               If non-empty, write log files in this directory
+      --log-flush-frequency duration                 Maximum number of seconds between log flushes (default 5s)
+      --logtostderr                                  log to standard error instead of files (default true)
+      --match-server-version                         Require server version to match client version
+  -n, --namespace string                             If present, the namespace scope for this CLI request
+      --password string                              Password for basic authentication to the API server
+      --request-timeout string                       The length of time to wait before giving up on a single server request. Non-zero values should contain a corresponding time unit (e.g. 1s, 2m, 3h). A value of zero means don't timeout requests. (default &quot;0&quot;)
+  -s, --server string                                The address and port of the Kubernetes API server
+      --stderrthreshold severity                     logs at or above this threshold go to stderr (default 2)
+      --token string                                 Bearer token for authentication to the API server
+      --user string                                  The name of the kubeconfig user to use
+      --username string                              Username for basic authentication to the API server
+  -v, --v Level                                      log level for V logs
+      --vmodule moduleSpec                           comma-separated list of pattern=N settings for file-filtered logging
+</code></pre>
+
+<h3 id="see-also">SEE ALSO</h3>
+
+<ul>
+<li><a href="/docs/reference/setup-tools/kubefed/kubefed/">kubefed</a>    - kubefed controls a Kubernetes Cluster Federation</li>
+</ul>
+
+<h6 id="auto-generated-by-spf13-cobra-on-1-dec-2018">Auto generated by spf13/cobra on 1-Dec-2018</h6>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

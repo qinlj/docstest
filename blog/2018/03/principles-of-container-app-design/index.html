@@ -17,6 +17,8 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
@@ -24,36 +26,10 @@
 
 
 
-<meta name="description" content="现如今，几乎所有的的应用程序都可以在容器中运行。但创建云原生应用，通过诸如 Kubernetes 的云原生平台更有效地自动化运行、管理容器化的应用却需要额外的工作。 云原生应用需要考虑故障；即使是在底层架构发生故障时也需要可靠地运行。 为了提供这样的功能，像 Kubernetes 这样的云原生平台需要向运行的应用程序强加一些契约和约束。 这些契约确保应用可以在符合某些约束的条件下运行，从而使得平台可以自动化应用管理。
-我已经为容器化应用如何之为云原生应用概括出了七项原则。
-| &mdash;&ndash; | | | | Container Design Principles |
-这里所述的七项原则涉及到构建时和运行时，两类关注点。
-构建时  单一关注点： 每个容器只解决一个关注点，并且完成的很好。 自包含： 一个容器只依赖Linux内核。额外的库要求可以在构建容器时加入。 镜像不变性： 容器化的应用意味着不变性，一旦构建完成，不需要根据环境的不同而重新构建。  运行时  高可观测性： 每个容器必须实现所有必要的 API 来帮助平台以最好的方式来观测、管理应用。 生命周期一致性： 一个容器必须要能从平台中获取事件信息，并作出相应的反应。 进程易处理性： 容器化应用的寿命一定要尽可能的短暂，这样，可以随时被另一个容器所替换。 运行时限制： 每个容器都必须要声明自己的资源需求，并将资源使用限制在所需要的范围之内。  编译时原则保证了容器拥有合适的粒度，一致性以及结构。运行时原则明确了容器化必须要实现那些功能才能成为云原生函数。遵循这些原则可以帮助你的应用适应 Kubernetes 上的自动化。
-白皮书可以免费下载：
-想要了解更多关于如何面向 Kubernetes 设计云原生应用，可以看看我的 Kubernetes 模式 一书。
-— Bilgin Ibryam, 首席架构师, Red Hat
-Twitter: Blog: http://www.ofbizian.com Linkedin:
-Bilgin Ibryam (@bibryam) 是 Red Hat 的一名首席架构师， ASF 的开源贡献者，博主，作者以及演讲者。 他是 Camel 设计模式、 Kubernetes 模式的作者。在他的日常生活中，他非常享受指导、培训以及帮助各个团队更加成功地使用分布式系统、微服务、容器，以及云原生应用。">
-<meta property="og:description" content="现如今，几乎所有的的应用程序都可以在容器中运行。但创建云原生应用，通过诸如 Kubernetes 的云原生平台更有效地自动化运行、管理容器化的应用却需要额外的工作。 云原生应用需要考虑故障；即使是在底层架构发生故障时也需要可靠地运行。 为了提供这样的功能，像 Kubernetes 这样的云原生平台需要向运行的应用程序强加一些契约和约束。 这些契约确保应用可以在符合某些约束的条件下运行，从而使得平台可以自动化应用管理。
-我已经为容器化应用如何之为云原生应用概括出了七项原则。
-| &mdash;&ndash; | | | | Container Design Principles |
-这里所述的七项原则涉及到构建时和运行时，两类关注点。
-构建时  单一关注点： 每个容器只解决一个关注点，并且完成的很好。 自包含： 一个容器只依赖Linux内核。额外的库要求可以在构建容器时加入。 镜像不变性： 容器化的应用意味着不变性，一旦构建完成，不需要根据环境的不同而重新构建。  运行时  高可观测性： 每个容器必须实现所有必要的 API 来帮助平台以最好的方式来观测、管理应用。 生命周期一致性： 一个容器必须要能从平台中获取事件信息，并作出相应的反应。 进程易处理性： 容器化应用的寿命一定要尽可能的短暂，这样，可以随时被另一个容器所替换。 运行时限制： 每个容器都必须要声明自己的资源需求，并将资源使用限制在所需要的范围之内。  编译时原则保证了容器拥有合适的粒度，一致性以及结构。运行时原则明确了容器化必须要实现那些功能才能成为云原生函数。遵循这些原则可以帮助你的应用适应 Kubernetes 上的自动化。
-白皮书可以免费下载：
-想要了解更多关于如何面向 Kubernetes 设计云原生应用，可以看看我的 Kubernetes 模式 一书。
-— Bilgin Ibryam, 首席架构师, Red Hat
-Twitter: Blog: http://www.ofbizian.com Linkedin:
-Bilgin Ibryam (@bibryam) 是 Red Hat 的一名首席架构师， ASF 的开源贡献者，博主，作者以及演讲者。 他是 Camel 设计模式、 Kubernetes 模式的作者。在他的日常生活中，他非常享受指导、培训以及帮助各个团队更加成功地使用分布式系统、微服务、容器，以及云原生应用。">
-<meta name="twitter:description" content="现如今，几乎所有的的应用程序都可以在容器中运行。但创建云原生应用，通过诸如 Kubernetes 的云原生平台更有效地自动化运行、管理容器化的应用却需要额外的工作。 云原生应用需要考虑故障；即使是在底层架构发生故障时也需要可靠地运行。 为了提供这样的功能，像 Kubernetes 这样的云原生平台需要向运行的应用程序强加一些契约和约束。 这些契约确保应用可以在符合某些约束的条件下运行，从而使得平台可以自动化应用管理。
-我已经为容器化应用如何之为云原生应用概括出了七项原则。
-| &mdash;&ndash; | | | | Container Design Principles |
-这里所述的七项原则涉及到构建时和运行时，两类关注点。
-构建时  单一关注点： 每个容器只解决一个关注点，并且完成的很好。 自包含： 一个容器只依赖Linux内核。额外的库要求可以在构建容器时加入。 镜像不变性： 容器化的应用意味着不变性，一旦构建完成，不需要根据环境的不同而重新构建。  运行时  高可观测性： 每个容器必须实现所有必要的 API 来帮助平台以最好的方式来观测、管理应用。 生命周期一致性： 一个容器必须要能从平台中获取事件信息，并作出相应的反应。 进程易处理性： 容器化应用的寿命一定要尽可能的短暂，这样，可以随时被另一个容器所替换。 运行时限制： 每个容器都必须要声明自己的资源需求，并将资源使用限制在所需要的范围之内。  编译时原则保证了容器拥有合适的粒度，一致性以及结构。运行时原则明确了容器化必须要实现那些功能才能成为云原生函数。遵循这些原则可以帮助你的应用适应 Kubernetes 上的自动化。
-白皮书可以免费下载：
-想要了解更多关于如何面向 Kubernetes 设计云原生应用，可以看看我的 Kubernetes 模式 一书。
-— Bilgin Ibryam, 首席架构师, Red Hat
-Twitter: Blog: http://www.ofbizian.com Linkedin:
-Bilgin Ibryam (@bibryam) 是 Red Hat 的一名首席架构师， ASF 的开源贡献者，博主，作者以及演讲者。 他是 Camel 设计模式、 Kubernetes 模式的作者。在他的日常生活中，他非常享受指导、培训以及帮助各个团队更加成功地使用分布式系统、微服务、容器，以及云原生应用。">
+
+<meta name="description" content="It&rsquo;s possible nowadays to put almost any application in a container and run it. Creating cloud-native applications, however—containerized applications that are automated and orchestrated effectively by a cloud-native platform such as Kubernetes—requires additional effort. Cloud-native applications anticipate failure; they run and scale reliably even when their infrastructure experiences outages. To offer such capabilities, cloud-native platforms like Kubernetes impose a set of contracts and constraints on applications. These contracts ensure that applications they run conform to certain constraints and allow the platform to automate application management.">
+<meta property="og:description" content="It&rsquo;s possible nowadays to put almost any application in a container and run it. Creating cloud-native applications, however—containerized applications that are automated and orchestrated effectively by a cloud-native platform such as Kubernetes—requires additional effort. Cloud-native applications anticipate failure; they run and scale reliably even when their infrastructure experiences outages. To offer such capabilities, cloud-native platforms like Kubernetes impose a set of contracts and constraints on applications. These contracts ensure that applications they run conform to certain constraints and allow the platform to automate application management.">
+<meta name="twitter:description" content="It&rsquo;s possible nowadays to put almost any application in a container and run it. Creating cloud-native applications, however—containerized applications that are automated and orchestrated effectively by a cloud-native platform such as Kubernetes—requires additional effort. Cloud-native applications anticipate failure; they run and scale reliably even when their infrastructure experiences outages. To offer such capabilities, cloud-native platforms like Kubernetes impose a set of contracts and constraints on applications. These contracts ensure that applications they run conform to certain constraints and allow the platform to automate application management.">
 <meta property="og:url" content="https://qinlj.github.io/blog/2018/03/principles-of-container-app-design/">
 <meta property="og:title" content="Principles of Container-based Application Design">
 <meta name="twitter:title" content="Principles of Container-based Application Design">
@@ -82,30 +58,31 @@ Bilgin Ibryam (@bibryam) 是 Red Hat 的一名首席架构师， ASF 的开源�
 		<div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
-    <a href="/zh/" class="logo"></a>
+    <a href="/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
             
-            <li><a href="/zh/docs/">GIS 百科</a></li>
+            <li><a href="/docs/">Documentation</a></li>
             
-            <li><a href="/zh/blog/" class="active">技术专题</a></li>
+            <li><a href="/blog/" class="active">Blog</a></li>
             
+            <li><a href="/partners/">Partners</a></li>
             
+            <li><a href="/community/">Community</a></li>
             
-            
-            
-            <li><a href="/zh/case-studies/">三维技术专题</a></li>
+            <li><a href="/case-studies/">Case Studies</a></li>
             
             
             
              <li>
                 <a href="#">
-                    中文 Chinese <span class="ui-icon ui-icon-carat-1-s"></span>
+                    English <span class="ui-icon ui-icon-carat-1-s"></span>
                 </a>
                 <ul>
                 
-                    <li><a href="/">English</a></li>
+                    <li><a href="/zh/">中文 Chinese</a></li>
                 
                     <li><a href="/ko/">한국어 Korean</a></li>
                 
@@ -126,6 +103,8 @@ Bilgin Ibryam (@bibryam) 是 Red Hat 的一名首席架构师， ASF 的开源�
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
                 
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+                
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
                     <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
@@ -139,7 +118,7 @@ Bilgin Ibryam (@bibryam) 是 Red Hat 的一名首席架构师， ASF 的开源�
         </ul>
 
         <form id="searchBox" action="/search/">
-          <input type="text" id="search" name="q" placeholder="搜索" aria-label="Search">
+          <input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
         </form>
 
     </div>
@@ -148,26 +127,32 @@ Bilgin Ibryam (@bibryam) 是 Red Hat 的一名首席架构师， ASF 的开源�
         <main data-auto-burger="primary">
          
            <div class="nav-box">
-            <h3><a href="/zh/docs/home/">文档</a></h3>
-           <p>通过演练，示例和参考文档了解如何使用 Kubernetes。你甚至可以<a href="/editdocs/" data-auto-burger-exclude>帮助贡献文档</a>！</p>
+            <h3><a href="/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
 
         </div>
          
            <div class="nav-box">
-            <h3><a href="/zh/blog/">技术专题</a></h3>
-           <p>阅读关于 kubernetes 和容器规范的最新信息,以及获取最新的技术。</p>
+            <h3><a href="/docs/home/">Documentation</a></h3>
+           <p>Learn how to use Kubernetes with conceptual, tutorial, and reference documentation. You can even <a href="/editdocs/" data-auto-burger-exclude>help contribute to the docs</a>!</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="/blog/">Blog</a></h3>
+           <p>Read the latest news for Kubernetes and the containers space in general, and get technical how-tos hot off the presses.</p>
 
         </div>
          
         </main>
         <main data-auto-burger="primary">
         <div class="left">
-            <h5 class="github-invite">想要修改 Kubernetes 的核心源代码</h5>
-            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>在 GitHub 上查看</a>
+            <h5 class="github-invite">Interested in hacking on the core Kubernetes code base?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude>View On Github</a>
         </div>
 
         <div class="right">
-            <h5 class="github-invite">了解社区</h5>
+            <h5 class="github-invite">Explore the community</h5>
             <div class="social">
                 <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
                 <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
@@ -189,106 +174,72 @@ Bilgin Ibryam (@bibryam) 是 Red Hat 的一名首席架构师， ASF 的开源�
 			<div class="row">
 				<div class="col-xs-12 col-md-9 text blog-content">
 					
-	<h4 class="date-header">2018.03.15</h4>
+	<h4 class="date-header">Thursday, March 15, 2018</h4>
 <h3 class="post-title entry-title"><a href="https://qinlj.github.io/blog/2018/03/principles-of-container-app-design/">Principles of Container-based Application Design</a></h3>
 
 
-<!-- It's possible nowadays to put almost any application in a container and run it. Creating cloud-native applications, however—containerized applications that are automated and orchestrated effectively by a cloud-native platform such as Kubernetes—requires additional effort. Cloud-native applications anticipate failure; they run and scale reliably even when their infrastructure experiences outages. To offer such capabilities, cloud-native platforms like Kubernetes impose a set of contracts and constraints on applications. These contracts ensure that applications they run conform to certain constraints and allow the platform to automate application management. -->
+<p>It&rsquo;s possible nowadays to put almost any application in a container and run it. Creating cloud-native applications, however—containerized applications that are automated and orchestrated effectively by a cloud-native platform such as Kubernetes—requires additional effort. Cloud-native applications anticipate failure; they run and scale reliably even when their infrastructure experiences outages. To offer such capabilities, cloud-native platforms like Kubernetes impose a set of contracts and constraints on applications. These contracts ensure that applications they run conform to certain constraints and allow the platform to automate application management.</p>
 
-<p>现如今，几乎所有的的应用程序都可以在容器中运行。但创建云原生应用，通过诸如 Kubernetes 的云原生平台更有效地自动化运行、管理容器化的应用却需要额外的工作。
-云原生应用需要考虑故障；即使是在底层架构发生故障时也需要可靠地运行。
-为了提供这样的功能，像 Kubernetes 这样的云原生平台需要向运行的应用程序强加一些契约和约束。
-这些契约确保应用可以在符合某些约束的条件下运行，从而使得平台可以自动化应用管理。</p>
-
-<!-- I've outlined [seven principles][1]for containerized applications to follow in order to be fully cloud-native. -->
-
-<p>我已经为容器化应用如何之为云原生应用概括出了<a href="https://www.redhat.com/en/resources/cloud-native-container-design-whitepaper" target="_blank">七项原则</a>。</p>
+<p>I&rsquo;ve outlined <a href="https://www.redhat.com/en/resources/cloud-native-container-design-whitepaper" target="_blank">seven principles</a>for containerized applications to follow in order to be fully cloud-native.</p>
 
 <p>| &mdash;&ndash; |
 | <img src="https://lh5.googleusercontent.com/1XqojkVC0CET1yKCJqZ3-0VWxJ3W8Q74zPLlqnn6eHSJsjHOiBTB7EGUX5o_BOKumgfkxVdgBeLyoyMfMIXwVm9p2QXkq_RRy2mDJG1qEExJDculYL5PciYcWfPAKxF2-DGIdiLw" alt="" />  |
 | Container Design Principles |</p>
 
-<!-- These seven principles cover both build time and runtime concerns. -->
+<p>These seven principles cover both build time and runtime concerns.</p>
 
-<p>这里所述的七项原则涉及到构建时和运行时，两类关注点。</p>
-
-<!-- ####  Build time -->
-
-<h4 id="构建时">构建时</h4>
-
-<!-- * **Single Concern:** Each container addresses a single concern and does it well.
-* **Self-Containment:** A container relies only on the presence of the Linux kernel. Additional libraries are added when the container is built.
-* **Image Immutability:** Containerized applications are meant to be immutable, and once built are not expected to change between different environments. -->
+<h4 id="build-time">Build time</h4>
 
 <ul>
-<li><strong>单一关注点：</strong> 每个容器只解决一个关注点，并且完成的很好。</li>
-<li><strong>自包含：</strong> 一个容器只依赖Linux内核。额外的库要求可以在构建容器时加入。</li>
-<li><strong>镜像不变性：</strong> 容器化的应用意味着不变性，一旦构建完成，不需要根据环境的不同而重新构建。</li>
+<li><strong>Single Concern:</strong> Each container addresses a single concern and does it well.</li>
+<li><strong>Self-Containment:</strong> A container relies only on the presence of the Linux kernel. Additional libraries are added when the container is built.</li>
+<li><strong>Image Immutability:</strong> Containerized applications are meant to be immutable, and once built are not expected to change between different environments.</li>
 </ul>
 
-<!-- ####  Runtime -->
-
-<h4 id="运行时">运行时</h4>
-
-<!-- * **High Observability:** Every container must implement all necessary APIs to help the platform observe and manage the application in the best way possible.
-* **Lifecycle Conformance:** A container must have a way to read events coming from the platform and conform by reacting to those events.
-* **Process Disposability:** Containerized applications must be as ephemeral as possible and ready to be replaced by another container instance at any point in time.
-* **Runtime Confinement:** Every container must declare its resource requirements and restrict resource use to the requirements indicated. -->
+<h4 id="runtime">Runtime</h4>
 
 <ul>
-<li><strong>高可观测性：</strong> 每个容器必须实现所有必要的 API 来帮助平台以最好的方式来观测、管理应用。</li>
-<li><strong>生命周期一致性：</strong> 一个容器必须要能从平台中获取事件信息，并作出相应的反应。</li>
-<li><strong>进程易处理性：</strong> 容器化应用的寿命一定要尽可能的短暂，这样，可以随时被另一个容器所替换。</li>
-<li><strong>运行时限制：</strong> 每个容器都必须要声明自己的资源需求，并将资源使用限制在所需要的范围之内。</li>
+<li><strong>High Observability:</strong> Every container must implement all necessary APIs to help the platform observe and manage the application in the best way possible.</li>
+<li><strong>Lifecycle Conformance:</strong> A container must have a way to read events coming from the platform and conform by reacting to those events.</li>
+<li><strong>Process Disposability:</strong> Containerized applications must be as ephemeral as possible and ready to be replaced by another container instance at any point in time.</li>
+<li><strong>Runtime Confinement:</strong> Every container must declare its resource requirements and restrict resource use to the requirements indicated.
+The build time principles ensure that containers have the right granularity, consistency, and structure in place. The runtime principles dictate what functionalities must be implemented in order for containerized applications to possess cloud-native function. Adhering to these principles helps ensure that your applications are suitable for automation in Kubernetes.</li>
 </ul>
 
-<!-- The build time principles ensure that containers have the right granularity, consistency, and structure in place. The runtime principles dictate what functionalities must be implemented in order for containerized applications to possess cloud-native function. Adhering to these principles helps ensure that your applications are suitable for automation in Kubernetes. -->
+<p>The white paper is freely available for download:</p>
 
-<p>编译时原则保证了容器拥有合适的粒度，一致性以及结构。运行时原则明确了容器化必须要实现那些功能才能成为云原生函数。遵循这些原则可以帮助你的应用适应 Kubernetes 上的自动化。</p>
+<p>To read more about designing cloud-native applications for Kubernetes, check out my <a href="http://leanpub.com/k8spatterns/" target="_blank">Kubernetes Patterns</a> book.</p>
 
-<!-- The white paper is freely available for download: -->
+<p>— <a href="http://twitter.com/bibryam" target="_blank">Bilgin Ibryam</a>, Principal Architect, Red Hat</p>
 
-<p>白皮书可以免费下载：</p>
-
-<!-- To read more about designing cloud-native applications for Kubernetes, check out my [Kubernetes Patterns][3] book. -->
-
-<p>想要了解更多关于如何面向 Kubernetes 设计云原生应用，可以看看我的 <a href="http://leanpub.com/k8spatterns/" target="_blank">Kubernetes 模式</a> 一书。</p>
-
-<!-- — [Bilgin Ibryam][4], Principal Architect, Red Hat -->
-
-<p>— <a href="http://twitter.com/bibryam" target="_blank">Bilgin Ibryam</a>, 首席架构师, Red Hat</p>
-
-<p>Twitter:  
-Blog: <a href="http://www.ofbizian.com/" target="_blank">http://www.ofbizian.com</a>
+<p>Twitter:  <br />
+Blog: <a href="http://www.ofbizian.com/" target="_blank">http://www.ofbizian.com</a><br />
 Linkedin:</p>
 
-<!-- Bilgin Ibryam (@bibryam) is a principal architect at Red Hat, open source committer at ASF, blogger, author, and speaker. He is the author of Camel Design Patterns and Kubernetes Patterns books. In his day-to-day job, Bilgin enjoys mentoring, training and leading teams to be successful with distributed systems, microservices, containers, and cloud-native applications in general. -->
-
-<p>Bilgin Ibryam (@bibryam) 是 Red Hat 的一名首席架构师， ASF 的开源贡献者，博主，作者以及演讲者。
-他是 Camel 设计模式、 Kubernetes 模式的作者。在他的日常生活中，他非常享受指导、培训以及帮助各个团队更加成功地使用分布式系统、微服务、容器，以及云原生应用。</p>
+<p>Bilgin Ibryam (@bibryam) is a principal architect at Red Hat, open source committer at ASF, blogger, author, and speaker. He is the author of Camel Design Patterns and Kubernetes Patterns books. In his day-to-day job, Bilgin enjoys mentoring, training and leading teams to be successful with distributed systems, microservices, containers, and cloud-native applications in general.</p>
 
 
 	<div class="PageNavigation">
 	 
     <div class="pagerButton left">
-        <h4><a class=" button" href="/zh/blog/1/01/01/"> « Prev </a></h4>
+        <h4><a class=" button" href="/blog/2018/03/expanding-user-support-with-office-hours/"> « Prev </a></h4>
     </div>
     
     
     <div class="pagerButton right">
-        <h4><a class=" button" href="/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/"> Next >></a></h4>
+        <h4><a class=" button" href="/blog/2018/03/26/kubernetes-1.10-stabilizing-storage-security-networking/"> Next >></a></h4>
     </div>
     
  </div>
-<nav class="pagination"><a class="nav nav-prev" href="/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/" title="Airflow在Kubernetes中的使用（第一部分）：一种不同的操作器"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Airflow在Kubernetes中的使用（第一部分）：一种不同的操作器</a>
-<a class="nav nav-next" href="/zh/blog/1/01/01/" title="">Next -  <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/blog/2018/03/26/kubernetes-1.10-stabilizing-storage-security-networking/" title="Kubernetes 1.10: Stabilizing Storage, Security, and Networking "><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Kubernetes 1.10: Stabilizing Storage, Security, and Networking </a>
+<a class="nav nav-next" style="float:right"  href="/blog/2018/03/Expanding-User-Support-With-Office-Hours" title="Expanding User Support with Office Hours">Next - Expanding User Support with Office Hours <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 				</div>
 				<div class="col-xs-12 col-md-3 text">
 					<div class="widget-content">
-						<link rel="alternate" type="application/rss&#43;xml" href="https://qinlj.github.io/zh/feed.xml" title="SuperMap iDesktop .NET">
-						<a class="widget-link" href="https://qinlj.github.io/zh/feed.xml"> <i class="fas fa-rss fab-icon"> </i> RSS Feed </a>
+						<link rel="alternate" type="application/rss&#43;xml" href="https://qinlj.github.io/feed.xml" title="SuperMap iDesktop .NET">
+						<a class="widget-link" href="https://qinlj.github.io/feed.xml"> <i class="fas fa-rss fab-icon"> </i> RSS Feed </a>
 						<a class="widget-link" href="https://twitter.com/kubernetesio"> <i class="fab fa-twitter-square fab-icon"> </i> @Kubernetesio</a>
 						<a class="widget-link" href="https://github.com/kubernetes/kubernetes"> <i class="fab fa-github-square fab-icon"></i> View on Github </a>
 						<a class="widget-link" href="http://slack.k8s.io"><i class="fab fa-slack fab-icon"> </i> #kubernetes-users </a>
@@ -297,14 +248,7 @@ Linkedin:</p>
 						<a class="widget-link" href="http://get.k8s.io/"><i class="fa fa-download fab-icon"></i> Download Kubernetes</a>
 					</div>
 					
-
   
-          
-                
-          
-          
-  
-   
 <div class="panel-group" id="blog-archive">
   
   <div class="panel panel-default">
@@ -319,28 +263,28 @@ Linkedin:</p>
         <ul class="list-group">
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/03/07/raw-block-volume-support-to-beta/" target="_blank" >Raw Block Volume support to Beta</a> <span class="date">Mar 7</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/03/07/raw-block-volume-support-to-beta/">Raw Block Volume support to Beta</a> <span class="date">Mar 7</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/02/28/automate-operations-on-your-cluster-with-operatorhub.io/" target="_blank" >Automate Operations on your Cluster with OperatorHub.io</a> <span class="date">Feb 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/02/28/automate-operations-on-your-cluster-with-operatorhub.io/">Automate Operations on your Cluster with OperatorHub.io</a> <span class="date">Feb 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/02/12/building-a-kubernetes-edge-control-plane-for-envoy-v2/" target="_blank" >Building a Kubernetes Edge (Ingress) Control Plane for Envoy v2</a> <span class="date">Feb 12</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/02/12/building-a-kubernetes-edge-control-plane-for-envoy-v2/">Building a Kubernetes Edge (Ingress) Control Plane for Envoy v2</a> <span class="date">Feb 12</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/02/11/runc-and-cve-2019-5736/" target="_blank" >Runc and CVE-2019-5736</a> <span class="date">Feb 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/02/11/runc-and-cve-2019-5736/">Runc and CVE-2019-5736</a> <span class="date">Feb 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/02/06/poseidon-firmament-scheduler-flow-network-graph-based-scheduler/" target="_blank" >Poseidon-Firmament Scheduler – Flow Network Graph Based Scheduler</a> <span class="date">Feb 6</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/02/06/poseidon-firmament-scheduler-flow-network-graph-based-scheduler/">Poseidon-Firmament Scheduler – Flow Network Graph Based Scheduler</a> <span class="date">Feb 6</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/01/17/update-on-volume-snapshot-alpha-for-kubernetes/" target="_blank" >Update on Volume Snapshot Alpha for Kubernetes</a> <span class="date">Jan 17</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/01/17/update-on-volume-snapshot-alpha-for-kubernetes/">Update on Volume Snapshot Alpha for Kubernetes</a> <span class="date">Jan 17</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/01/15/container-storage-interface-ga/" target="_blank" >Container Storage Interface (CSI) for Kubernetes GA</a> <span class="date">Jan 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/01/15/container-storage-interface-ga/">Container Storage Interface (CSI) for Kubernetes GA</a> <span class="date">Jan 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/" target="_blank" >APIServer dry-run and kubectl diff</a> <span class="date">Jan 14</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/">APIServer dry-run and kubectl diff</a> <span class="date">Jan 14</span></li>
           
         </ul>
       </div>
@@ -359,217 +303,214 @@ Linkedin:</p>
         <ul class="list-group">
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/12/12/kubernetes-federation-evolution/" target="_blank" >Kubernetes Federation Evolution</a> <span class="date">Dec 12</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/12/12/kubernetes-federation-evolution/">Kubernetes Federation Evolution</a> <span class="date">Dec 12</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/12/11/etcd-current-status-and-future-roadmap/" target="_blank" >etcd: Current status and future roadmap</a> <span class="date">Dec 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/12/11/etcd-current-status-and-future-roadmap/">etcd: Current status and future roadmap</a> <span class="date">Dec 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/zh/blog/2018/12/05/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E4%B8%8A%E6%B5%B7%E7%AB%99/">新贡献者工作坊上海站</a> <span class="date">Dec 5</span></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/12/05/new-contributor-workshop-shanghai/">New Contributor Workshop Shanghai</a> <span class="date">Dec 5</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/12/04/production-ready-kubernetes-cluster-creation-with-kubeadm/" target="_blank" >Production-Ready Kubernetes Cluster Creation with kubeadm</a> <span class="date">Dec 4</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/12/04/production-ready-kubernetes-cluster-creation-with-kubeadm/">Production-Ready Kubernetes Cluster Creation with kubeadm</a> <span class="date">Dec 4</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/12/03/kubernetes-1-13-release-announcement/" target="_blank" >Kubernetes 1.13: Simplified Cluster Management with Kubeadm, Container Storage Interface (CSI), and CoreDNS as Default DNS are Now Generally Available</a> <span class="date">Dec 3</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/12/03/kubernetes-1-13-release-announcement/">Kubernetes 1.13: Simplified Cluster Management with Kubeadm, Container Storage Interface (CSI), and CoreDNS as Default DNS are Now Generally Available</a> <span class="date">Dec 3</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/11/08/kubernetes-docs-updates-international-edition/" target="_blank" >Kubernetes Docs Updates, International Edition</a> <span class="date">Nov 8</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/11/08/kubernetes-docs-updates-international-edition/">Kubernetes Docs Updates, International Edition</a> <span class="date">Nov 8</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/" target="_blank" >gRPC Load Balancing on Kubernetes without Tears</a> <span class="date">Nov 7</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/">gRPC Load Balancing on Kubernetes without Tears</a> <span class="date">Nov 7</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/26/tips-for-your-first-kubecon-presentation-part-2/" target="_blank" >Tips for Your First Kubecon Presentation - Part 2</a> <span class="date">Oct 26</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/26/tips-for-your-first-kubecon-presentation-part-2/">Tips for Your First Kubecon Presentation - Part 2</a> <span class="date">Oct 26</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/18/tips-for-your-first-kubecon-presentation-part-1/" target="_blank" >Tips for Your First Kubecon Presentation - Part 1</a> <span class="date">Oct 18</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/18/tips-for-your-first-kubecon-presentation-part-1/">Tips for Your First Kubecon Presentation - Part 1</a> <span class="date">Oct 18</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/16/kubernetes-2018-north-american-contributor-summit/" target="_blank" >Kubernetes 2018 North American Contributor Summit</a> <span class="date">Oct 16</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/16/kubernetes-2018-north-american-contributor-summit/">Kubernetes 2018 North American Contributor Summit</a> <span class="date">Oct 16</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/15/2018-steering-committee-election-results/" target="_blank" >2018 Steering Committee Election Results</a> <span class="date">Oct 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/15/2018-steering-committee-election-results/">2018 Steering Committee Election Results</a> <span class="date">Oct 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/" target="_blank" >Topology-Aware Volume Provisioning in Kubernetes</a> <span class="date">Oct 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/">Topology-Aware Volume Provisioning in Kubernetes</a> <span class="date">Oct 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/10/kubernetes-v1.12-introducing-runtimeclass/" target="_blank" >Kubernetes v1.12: Introducing RuntimeClass</a> <span class="date">Oct 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/10/kubernetes-v1.12-introducing-runtimeclass/">Kubernetes v1.12: Introducing RuntimeClass</a> <span class="date">Oct 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/09/introducing-volume-snapshot-alpha-for-kubernetes/" target="_blank" >Introducing Volume Snapshot Alpha for Kubernetes</a> <span class="date">Oct 9</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/09/introducing-volume-snapshot-alpha-for-kubernetes/">Introducing Volume Snapshot Alpha for Kubernetes</a> <span class="date">Oct 9</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/08/support-for-azure-vmss-cluster-autoscaler-and-user-assigned-identity/" target="_blank" >Support for Azure VMSS,  Cluster-Autoscaler and User Assigned Identity</a> <span class="date">Oct 8</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/08/support-for-azure-vmss-cluster-autoscaler-and-user-assigned-identity/">Support for Azure VMSS,  Cluster-Autoscaler and User Assigned Identity</a> <span class="date">Oct 8</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/04/introducing-the-non-code-contributors-guide/" target="_blank" >Introducing the Non-Code Contributor’s Guide</a> <span class="date">Oct 4</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/04/introducing-the-non-code-contributors-guide/">Introducing the Non-Code Contributor’s Guide</a> <span class="date">Oct 4</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/03/kubedirector-the-easy-way-to-run-complex-stateful-applications-on-kubernetes/" target="_blank" >KubeDirector: The easy way to run complex stateful applications on Kubernetes</a> <span class="date">Oct 3</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/03/kubedirector-the-easy-way-to-run-complex-stateful-applications-on-kubernetes/">KubeDirector: The easy way to run complex stateful applications on Kubernetes</a> <span class="date">Oct 3</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/02/building-a-network-bootable-server-farm-for-kubernetes-with-ltsp/" target="_blank" >Building a Network Bootable Server Farm for Kubernetes with LTSP</a> <span class="date">Oct 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/02/building-a-network-bootable-server-farm-for-kubernetes-with-ltsp/">Building a Network Bootable Server Farm for Kubernetes with LTSP</a> <span class="date">Oct 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/01/health-checking-grpc-servers-on-kubernetes/" target="_blank" >Health checking gRPC servers on Kubernetes</a> <span class="date">Oct 1</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/10/01/health-checking-grpc-servers-on-kubernetes/">Health checking gRPC servers on Kubernetes</a> <span class="date">Oct 1</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/09/27/kubernetes-1.12-kubelet-tls-bootstrap-and-azure-virtual-machine-scale-sets-vmss-move-to-general-availability/" target="_blank" >Kubernetes 1.12: Kubelet TLS Bootstrap and Azure Virtual Machine Scale Sets (VMSS) Move to General Availability</a> <span class="date">Sep 27</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/09/27/kubernetes-1.12-kubelet-tls-bootstrap-and-azure-virtual-machine-scale-sets-vmss-move-to-general-availability/">Kubernetes 1.12: Kubelet TLS Bootstrap and Azure Virtual Machine Scale Sets (VMSS) Move to General Availability</a> <span class="date">Sep 27</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/09/18/hands-on-with-linkerd-2.0/" target="_blank" >Hands On With Linkerd 2.0</a> <span class="date">Sep 18</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/09/18/hands-on-with-linkerd-2.0/">Hands On With Linkerd 2.0</a> <span class="date">Sep 18</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/09/06/2018-steering-committee-election-cycle-kicks-off/" target="_blank" >2018 Steering Committee Election Cycle Kicks Off</a> <span class="date">Sep 6</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/09/06/2018-steering-committee-election-cycle-kicks-off/">2018 Steering Committee Election Cycle Kicks Off</a> <span class="date">Sep 6</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/08/29/the-machines-can-do-the-work-a-story-of-kubernetes-testing-ci-and-automating-the-contributor-experience/" target="_blank" >The Machines Can Do the Work, a Story of Kubernetes Testing, CI, and Automating the Contributor Experience</a> <span class="date">Aug 29</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/08/29/the-machines-can-do-the-work-a-story-of-kubernetes-testing-ci-and-automating-the-contributor-experience/">The Machines Can Do the Work, a Story of Kubernetes Testing, CI, and Automating the Contributor Experience</a> <span class="date">Aug 29</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/08/10/introducing-kubebuilder-an-sdk-for-building-kubernetes-apis-using-crds/" target="_blank" >Introducing Kubebuilder: an SDK for building Kubernetes APIs using CRDs</a> <span class="date">Aug 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/08/10/introducing-kubebuilder-an-sdk-for-building-kubernetes-apis-using-crds/">Introducing Kubebuilder: an SDK for building Kubernetes APIs using CRDs</a> <span class="date">Aug 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/08/03/out-of-the-clouds-onto-the-ground-how-to-make-kubernetes-production-grade-anywhere/" target="_blank" >Out of the Clouds onto the Ground: How to Make Kubernetes Production Grade Anywhere</a> <span class="date">Aug 3</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/08/03/out-of-the-clouds-onto-the-ground-how-to-make-kubernetes-production-grade-anywhere/">Out of the Clouds onto the Ground: How to Make Kubernetes Production Grade Anywhere</a> <span class="date">Aug 3</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/" target="_blank" >Dynamically Expand Volume with CSI and Kubernetes</a> <span class="date">Aug 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/">Dynamically Expand Volume with CSI and Kubernetes</a> <span class="date">Aug 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/27/kubevirt-extending-kubernetes-with-crds-for-virtualized-workloads/" target="_blank" >KubeVirt: Extending Kubernetes with CRDs for Virtualized Workloads</a> <span class="date">Jul 27</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/27/kubevirt-extending-kubernetes-with-crds-for-virtualized-workloads/">KubeVirt: Extending Kubernetes with CRDs for Virtualized Workloads</a> <span class="date">Jul 27</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/24/feature-highlight-cpu-manager/" target="_blank" >Feature Highlight: CPU Manager</a> <span class="date">Jul 24</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/24/feature-highlight-cpu-manager/">Feature Highlight: CPU Manager</a> <span class="date">Jul 24</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/20/the-history-of-kubernetes-the-community-behind-it/" target="_blank" >The History of Kubernetes &amp; the Community Behind It</a> <span class="date">Jul 20</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/20/the-history-of-kubernetes-the-community-behind-it/">The History of Kubernetes &amp; the Community Behind It</a> <span class="date">Jul 20</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/19/kubernetes-wins-2018-oscon-most-impact-award/" target="_blank" >Kubernetes Wins the 2018 OSCON Most Impact Award</a> <span class="date">Jul 19</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/19/kubernetes-wins-2018-oscon-most-impact-award/">Kubernetes Wins the 2018 OSCON Most Impact Award</a> <span class="date">Jul 19</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/18/11-ways-not-to-get-hacked/" target="_blank" >11 Ways (Not) to Get Hacked</a> <span class="date">Jul 18</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/18/11-ways-not-to-get-hacked/">11 Ways (Not) to Get Hacked</a> <span class="date">Jul 18</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/16/how-the-sausage-is-made-the-kubernetes-1.11-release-interview-from-the-kubernetes-podcast/" target="_blank" >How the sausage is made: the Kubernetes 1.11 release interview, from the Kubernetes Podcast</a> <span class="date">Jul 16</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/16/how-the-sausage-is-made-the-kubernetes-1.11-release-interview-from-the-kubernetes-podcast/">How the sausage is made: the Kubernetes 1.11 release interview, from the Kubernetes Podcast</a> <span class="date">Jul 16</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/" target="_blank" >Resizing Persistent Volumes using Kubernetes</a> <span class="date">Jul 12</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/">Resizing Persistent Volumes using Kubernetes</a> <span class="date">Jul 12</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/11/dynamic-kubelet-configuration/" target="_blank" >Dynamic Kubelet Configuration</a> <span class="date">Jul 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/11/dynamic-kubelet-configuration/">Dynamic Kubelet Configuration</a> <span class="date">Jul 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/10/meet-our-contributors-monthly-streaming-youtube-mentoring-series/" target="_blank" >Meet Our Contributors - Monthly Streaming YouTube Mentoring Series</a> <span class="date">Jul 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/10/meet-our-contributors-monthly-streaming-youtube-mentoring-series/">Meet Our Contributors - Monthly Streaming YouTube Mentoring Series</a> <span class="date">Jul 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/10/coredns-ga-for-kubernetes-cluster-dns/" target="_blank" >CoreDNS GA for Kubernetes Cluster DNS</a> <span class="date">Jul 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/10/coredns-ga-for-kubernetes-cluster-dns/">CoreDNS GA for Kubernetes Cluster DNS</a> <span class="date">Jul 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/zh/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/">IPVS-Based In-Cluster Load Balancing Deep Dive</a> <span class="date">Jul 9</span></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/">IPVS-Based In-Cluster Load Balancing Deep Dive</a> <span class="date">Jul 9</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/zh/blog/2018/06/28/airflow%E5%9C%A8kubernetes%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%E4%B8%80%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E5%99%A8/">Airflow在Kubernetes中的使用（第一部分）：一种不同的操作器</a> <span class="date">Jun 28</span></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/06/28/airflow-on-kubernetes-part-1-a-different-kind-of-operator/">Airflow on Kubernetes (Part 1): A Different Kind of Operator</a> <span class="date">Jun 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/06/27/kubernetes-1.11-release-announcement/" target="_blank" >Kubernetes 1.11: In-Cluster Load Balancing and CoreDNS Plugin Graduate to General Availability</a> <span class="date">Jun 27</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/06/27/kubernetes-1.11-release-announcement/">Kubernetes 1.11: In-Cluster Load Balancing and CoreDNS Plugin Graduate to General Availability</a> <span class="date">Jun 27</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/06/07/dynamic-ingress-in-kubernetes/" target="_blank" >Dynamic Ingress in Kubernetes</a> <span class="date">Jun 7</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/06/07/dynamic-ingress-in-kubernetes/">Dynamic Ingress in Kubernetes</a> <span class="date">Jun 7</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/06/06/4-years-of-k8s/" target="_blank" >4 Years of K8s</a> <span class="date">Jun 6</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/06/06/4-years-of-k8s/">4 Years of K8s</a> <span class="date">Jun 6</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/30/say-hello-to-discuss-kubernetes/" target="_blank" >Say Hello to Discuss Kubernetes</a> <span class="date">May 30</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/30/say-hello-to-discuss-kubernetes/">Say Hello to Discuss Kubernetes</a> <span class="date">May 30</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/29/introducing-kustomize-template-free-configuration-customization-for-kubernetes/" target="_blank" >Introducing kustomize; Template-free Configuration Customization for Kubernetes</a> <span class="date">May 29</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/29/introducing-kustomize-template-free-configuration-customization-for-kubernetes/">Introducing kustomize; Template-free Configuration Customization for Kubernetes</a> <span class="date">May 29</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/24/kubernetes-containerd-integration-goes-ga/" target="_blank" >Kubernetes Containerd Integration Goes GA</a> <span class="date">May 24</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/24/kubernetes-containerd-integration-goes-ga/">Kubernetes Containerd Integration Goes GA</a> <span class="date">May 24</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/22/getting-to-know-kubevirt/" target="_blank" >Getting to Know Kubevirt</a> <span class="date">May 22</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/22/getting-to-know-kubevirt/">Getting to Know Kubevirt</a> <span class="date">May 22</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/17/gardener/" target="_blank" >Gardener - The Kubernetes Botanist</a> <span class="date">May 17</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/17/gardener/">Gardener - The Kubernetes Botanist</a> <span class="date">May 17</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/05/hugo-migration/" target="_blank" >Docs are Migrating from Jekyll to Hugo</a> <span class="date">May 5</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/05/hugo-migration/">Docs are Migrating from Jekyll to Hugo</a> <span class="date">May 5</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/04/announcing-kubeflow-0.1/" target="_blank" >Announcing Kubeflow 0.1</a> <span class="date">May 4</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/04/announcing-kubeflow-0.1/">Announcing Kubeflow 0.1</a> <span class="date">May 4</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/02/policy-in-kubernetes/" target="_blank" >Current State of Policy in Kubernetes</a> <span class="date">May 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/02/policy-in-kubernetes/">Current State of Policy in Kubernetes</a> <span class="date">May 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/01/developing-on-kubernetes/" target="_blank" >Developing on Kubernetes</a> <span class="date">May 1</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/05/01/developing-on-kubernetes/">Developing on Kubernetes</a> <span class="date">May 1</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/30/zero-downtime-deployment-kubernetes-jenkins/" target="_blank" >Zero-downtime Deployment in Kubernetes with Jenkins</a> <span class="date">Apr 30</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/30/zero-downtime-deployment-kubernetes-jenkins/">Zero-downtime Deployment in Kubernetes with Jenkins</a> <span class="date">Apr 30</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/25/open-source-charts-2017/" target="_blank" >Kubernetes Community - Top of the Open Source Charts in 2017</a> <span class="date">Apr 25</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/25/open-source-charts-2017/">Kubernetes Community - Top of the Open Source Charts in 2017</a> <span class="date">Apr 25</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/24/kubernetes-application-survey-results-2018/" target="_blank" >Kubernetes Application Survey 2018 Results</a> <span class="date">Apr 24</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/24/kubernetes-application-survey-results-2018/">Kubernetes Application Survey 2018 Results</a> <span class="date">Apr 24</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/13/local-persistent-volumes-beta/" target="_blank" >Local Persistent Volumes for Kubernetes Goes Beta</a> <span class="date">Apr 13</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/13/local-persistent-volumes-beta/">Local Persistent Volumes for Kubernetes Goes Beta</a> <span class="date">Apr 13</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/11/migrating-the-kubernetes-blog/" target="_blank" >Migrating the Kubernetes Blog</a> <span class="date">Apr 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/11/migrating-the-kubernetes-blog/">Migrating the Kubernetes Blog</a> <span class="date">Apr 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/10/container-storage-interface-beta/" target="_blank" >Container Storage Interface (CSI) for Kubernetes Goes Beta</a> <span class="date">Apr 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/10/container-storage-interface-beta/">Container Storage Interface (CSI) for Kubernetes Goes Beta</a> <span class="date">Apr 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/04/fixing-subpath-volume-vulnerability/" target="_blank" >Fixing the Subpath Volume Vulnerability in Kubernetes</a> <span class="date">Apr 4</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/04/04/fixing-subpath-volume-vulnerability/">Fixing the Subpath Volume Vulnerability in Kubernetes</a> <span class="date">Apr 4</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/26/kubernetes-1.10-stabilizing-storage-security-networking/" target="_blank" >Kubernetes 1.10: Stabilizing Storage, Security, and Networking </a> <span class="date">Mar 26</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/26/kubernetes-1.10-stabilizing-storage-security-networking/">Kubernetes 1.10: Stabilizing Storage, Security, and Networking </a> <span class="date">Mar 26</span></li>
           
           
           <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/principles-of-container-app-design/">Principles of Container-based Application Design</a> <span class="date">Mar 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/principles-of-container-app-design/" target="_blank" >Principles of Container-based Application Design</a> <span class="date">Mar 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/expanding-user-support-with-office-hours/">Expanding User Support with Office Hours</a> <span class="date">Mar 14</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/expanding-user-support-with-office-hours/" target="_blank" >Expanding User Support with Office Hours</a> <span class="date">Mar 14</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/how-to-integrate-rollingupdate-strategy/">How to Integrate RollingUpdate Strategy for TPR in Kubernetes</a> <span class="date">Mar 13</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/how-to-integrate-rollingupdate-strategy/" target="_blank" >How to Integrate RollingUpdate Strategy for TPR in Kubernetes</a> <span class="date">Mar 13</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/apache-spark-23-with-native-kubernetes/">Apache Spark 2.3 with Native Kubernetes Support</a> <span class="date">Mar 6</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/apache-spark-23-with-native-kubernetes/" target="_blank" >Apache Spark 2.3 with Native Kubernetes Support</a> <span class="date">Mar 6</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/first-beta-version-of-kubernetes-1-10/">Kubernetes: First Beta Version of Kubernetes 1.10 is Here</a> <span class="date">Mar 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/03/first-beta-version-of-kubernetes-1-10/" target="_blank" >Kubernetes: First Beta Version of Kubernetes 1.10 is Here</a> <span class="date">Mar 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/reporting-errors-using-kubernetes-events/">Reporting Errors from Control Plane to Applications Using Kubernetes Events</a> <span class="date">Jan 25</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/reporting-errors-using-kubernetes-events/" target="_blank" >Reporting Errors from Control Plane to Applications Using Kubernetes Events</a> <span class="date">Jan 25</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/core-workloads-api-ga/">Core Workloads API GA</a> <span class="date">Jan 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/core-workloads-api-ga/" target="_blank" >Core Workloads API GA</a> <span class="date">Jan 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/introducing-client-go-version-6/">Introducing client-go version 6</a> <span class="date">Jan 12</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/introducing-client-go-version-6/" target="_blank" >Introducing client-go version 6</a> <span class="date">Jan 12</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/extensible-admission-is-beta/">Extensible Admission is Beta</a> <span class="date">Jan 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/extensible-admission-is-beta/" target="_blank" >Extensible Admission is Beta</a> <span class="date">Jan 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/introducing-container-storage-interface/"> Introducing Container Storage Interface (CSI) Alpha for Kubernetes </a> <span class="date">Jan 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/introducing-container-storage-interface/" target="_blank" > Introducing Container Storage Interface (CSI) Alpha for Kubernetes </a> <span class="date">Jan 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/kubernetes-v19-beta-windows-support/">Kubernetes v1.9 releases beta support for Windows Server Containers</a> <span class="date">Jan 9</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/kubernetes-v19-beta-windows-support/" target="_blank" >Kubernetes v1.9 releases beta support for Windows Server Containers</a> <span class="date">Jan 9</span> <small>(EN)</small></li>
-          
-          
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/five-days-of-kubernetes-19/" target="_blank" > Five Days of Kubernetes 1.9 </a> <span class="date">Jan 8</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2018/01/five-days-of-kubernetes-19/"> Five Days of Kubernetes 1.9 </a> <span class="date">Jan 8</span></li>
           
         </ul>
       </div>
@@ -588,163 +529,163 @@ Linkedin:</p>
         <ul class="list-group">
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/12/introducing-kubeflow-composable/" target="_blank" > Introducing Kubeflow - A Composable, Portable, Scalable ML Stack Built for Kubernetes </a> <span class="date">Dec 21</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/12/introducing-kubeflow-composable/"> Introducing Kubeflow - A Composable, Portable, Scalable ML Stack Built for Kubernetes </a> <span class="date">Dec 21</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/12/kubernetes-19-workloads-expanded-ecosystem/" target="_blank" > Kubernetes 1.9: Apps Workloads GA and Expanded Ecosystem </a> <span class="date">Dec 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/12/kubernetes-19-workloads-expanded-ecosystem/"> Kubernetes 1.9: Apps Workloads GA and Expanded Ecosystem </a> <span class="date">Dec 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/12/using-ebpf-in-kubernetes/" target="_blank" >Using eBPF in Kubernetes</a> <span class="date">Dec 7</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/12/using-ebpf-in-kubernetes/">Using eBPF in Kubernetes</a> <span class="date">Dec 7</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/12/paddle-paddle-fluid-elastic-learning/" target="_blank" > PaddlePaddle Fluid: Elastic Deep Learning on Kubernetes </a> <span class="date">Dec 6</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/12/paddle-paddle-fluid-elastic-learning/"> PaddlePaddle Fluid: Elastic Deep Learning on Kubernetes </a> <span class="date">Dec 6</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/autoscaling-in-kubernetes/" target="_blank" > Autoscaling in Kubernetes </a> <span class="date">Nov 17</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/autoscaling-in-kubernetes/"> Autoscaling in Kubernetes </a> <span class="date">Nov 17</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/certified-kubernetes-conformance/" target="_blank" > Certified Kubernetes Conformance Program: Launch Celebration Round Up </a> <span class="date">Nov 16</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/certified-kubernetes-conformance/"> Certified Kubernetes Conformance Program: Launch Celebration Round Up </a> <span class="date">Nov 16</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/kubernetes-is-still-hard-for-developers/" target="_blank" > Kubernetes is Still Hard (for Developers) </a> <span class="date">Nov 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/kubernetes-is-still-hard-for-developers/"> Kubernetes is Still Hard (for Developers) </a> <span class="date">Nov 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/securing-software-supply-chain-grafeas/" target="_blank" > Securing Software Supply Chain with Grafeas </a> <span class="date">Nov 3</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/securing-software-supply-chain-grafeas/"> Securing Software Supply Chain with Grafeas </a> <span class="date">Nov 3</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/containerd-container-runtime-options-kubernetes/" target="_blank" >  Containerd Brings More Container Runtime Options for Kubernetes </a> <span class="date">Nov 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/containerd-container-runtime-options-kubernetes/">  Containerd Brings More Container Runtime Options for Kubernetes </a> <span class="date">Nov 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/kubernetes-easy-way/" target="_blank" > Kubernetes the Easy Way </a> <span class="date">Nov 1</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/11/kubernetes-easy-way/"> Kubernetes the Easy Way </a> <span class="date">Nov 1</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/enforcing-network-policies-in-kubernetes/" target="_blank" > Enforcing Network Policies in Kubernetes </a> <span class="date">Oct 30</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/enforcing-network-policies-in-kubernetes/"> Enforcing Network Policies in Kubernetes </a> <span class="date">Oct 30</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/using-rbac-generally-available-18/" target="_blank" > Using RBAC, Generally Available in Kubernetes v1.8 </a> <span class="date">Oct 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/using-rbac-generally-available-18/"> Using RBAC, Generally Available in Kubernetes v1.8 </a> <span class="date">Oct 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/it-takes-village-to-raise-kubernetes/" target="_blank" > It Takes a Village to Raise a Kubernetes </a> <span class="date">Oct 26</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/it-takes-village-to-raise-kubernetes/"> It Takes a Village to Raise a Kubernetes </a> <span class="date">Oct 26</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/kubeadm-v18-released/" target="_blank" >  kubeadm v1.8 Released: Introducing Easy Upgrades for Kubernetes Clusters </a> <span class="date">Oct 25</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/kubeadm-v18-released/">  kubeadm v1.8 Released: Introducing Easy Upgrades for Kubernetes Clusters </a> <span class="date">Oct 25</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/five-days-of-kubernetes-18/" target="_blank" > Five Days of Kubernetes 1.8 </a> <span class="date">Oct 24</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/five-days-of-kubernetes-18/"> Five Days of Kubernetes 1.8 </a> <span class="date">Oct 24</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/software-conformance-certification/" target="_blank" > Introducing Software Certification for Kubernetes </a> <span class="date">Oct 19</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/software-conformance-certification/"> Introducing Software Certification for Kubernetes </a> <span class="date">Oct 19</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/request-routing-and-policy-management/" target="_blank" > Request Routing and Policy Management with the Istio Service Mesh </a> <span class="date">Oct 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/request-routing-and-policy-management/"> Request Routing and Policy Management with the Istio Service Mesh </a> <span class="date">Oct 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/kubernetes-community-steering-committee-election-results/" target="_blank" > Kubernetes Community Steering Committee Election Results </a> <span class="date">Oct 5</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/10/kubernetes-community-steering-committee-election-results/"> Kubernetes Community Steering Committee Election Results </a> <span class="date">Oct 5</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/09/kubernetes-18-security-workloads-and/" target="_blank" > Kubernetes 1.8: Security, Workloads and Feature Depth </a> <span class="date">Sep 29</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/09/kubernetes-18-security-workloads-and/"> Kubernetes 1.8: Security, Workloads and Feature Depth </a> <span class="date">Sep 29</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/09/kubernetes-statefulsets-daemonsets/" target="_blank" > Kubernetes StatefulSets &amp; DaemonSets Updates </a> <span class="date">Sep 27</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/09/kubernetes-statefulsets-daemonsets/"> Kubernetes StatefulSets &amp; DaemonSets Updates </a> <span class="date">Sep 27</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/09/introducing-resource-management-working/" target="_blank" > Introducing the Resource Management Working Group </a> <span class="date">Sep 21</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/09/introducing-resource-management-working/"> Introducing the Resource Management Working Group </a> <span class="date">Sep 21</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/09/windows-networking-at-parity-with-linux/" target="_blank" > Windows Networking at Parity with Linux for Kubernetes </a> <span class="date">Sep 8</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/09/windows-networking-at-parity-with-linux/"> Windows Networking at Parity with Linux for Kubernetes </a> <span class="date">Sep 8</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/08/kubernetes-meets-high-performance/" target="_blank" > Kubernetes Meets High-Performance Computing </a> <span class="date">Aug 22</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/08/kubernetes-meets-high-performance/"> Kubernetes Meets High-Performance Computing </a> <span class="date">Aug 22</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/08/high-performance-networking-with-ec2/" target="_blank" > High Performance Networking with EC2 Virtual Private Clouds </a> <span class="date">Aug 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/08/high-performance-networking-with-ec2/"> High Performance Networking with EC2 Virtual Private Clouds </a> <span class="date">Aug 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/08/kompose-helps-developers-move-docker/" target="_blank" > Kompose Helps Developers Move Docker Compose Files to Kubernetes </a> <span class="date">Aug 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/08/kompose-helps-developers-move-docker/"> Kompose Helps Developers Move Docker Compose Files to Kubernetes </a> <span class="date">Aug 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/07/happy-second-birthday-kubernetes/" target="_blank" > Happy Second Birthday: A Kubernetes Retrospective </a> <span class="date">Jul 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/07/happy-second-birthday-kubernetes/"> Happy Second Birthday: A Kubernetes Retrospective </a> <span class="date">Jul 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/07/how-watson-health-cloud-deploys/" target="_blank" > How Watson Health Cloud Deploys Applications with Kubernetes </a> <span class="date">Jul 14</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/07/how-watson-health-cloud-deploys/"> How Watson Health Cloud Deploys Applications with Kubernetes </a> <span class="date">Jul 14</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/06/kubernetes-1.7-security-hardening-stateful-application-extensibility-updates" target="_blank" > Kubernetes 1.7: Security Hardening, Stateful Application Updates and Extensibility </a> <span class="date">Jun 30</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/06/kubernetes-1.7-security-hardening-stateful-application-extensibility-updates"> Kubernetes 1.7: Security Hardening, Stateful Application Updates and Extensibility </a> <span class="date">Jun 30</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/05/draft-kubernetes-container-development/" target="_blank" > Draft: Kubernetes container development made easy </a> <span class="date">May 31</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/05/draft-kubernetes-container-development/"> Draft: Kubernetes container development made easy </a> <span class="date">May 31</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/05/managing-microservices-with-istio-service-mesh/" target="_blank" >  Managing microservices with the Istio service mesh </a> <span class="date">May 31</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/05/managing-microservices-with-istio-service-mesh/">  Managing microservices with the Istio service mesh </a> <span class="date">May 31</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/05/kubespray-ansible-collaborative-kubernetes-ops/" target="_blank" > Kubespray Ansible Playbooks foster Collaborative Kubernetes Ops </a> <span class="date">May 19</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/05/kubespray-ansible-collaborative-kubernetes-ops/"> Kubespray Ansible Playbooks foster Collaborative Kubernetes Ops </a> <span class="date">May 19</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/05/kubernetes-monitoring-guide/" target="_blank" > Kubernetes: a monitoring guide </a> <span class="date">May 19</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/05/kubernetes-monitoring-guide/"> Kubernetes: a monitoring guide </a> <span class="date">May 19</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/05/kubernetes-security-process-explained/" target="_blank" > Dancing at the Lip of a Volcano: The Kubernetes Security Process - Explained </a> <span class="date">May 18</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/05/kubernetes-security-process-explained/"> Dancing at the Lip of a Volcano: The Kubernetes Security Process - Explained </a> <span class="date">May 18</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/04/multi-stage-canary-deployments-with-kubernetes-in-the-cloud-onprem/" target="_blank" > How Bitmovin is Doing Multi-Stage Canary Deployments with Kubernetes in the Cloud and On-Prem </a> <span class="date">Apr 21</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/04/multi-stage-canary-deployments-with-kubernetes-in-the-cloud-onprem/"> How Bitmovin is Doing Multi-Stage Canary Deployments with Kubernetes in the Cloud and On-Prem </a> <span class="date">Apr 21</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/04/rbac-support-in-kubernetes/" target="_blank" > RBAC Support in Kubernetes </a> <span class="date">Apr 6</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/04/rbac-support-in-kubernetes/"> RBAC Support in Kubernetes </a> <span class="date">Apr 6</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/04/configuring-private-dns-zones-upstream-nameservers-kubernetes/" target="_blank" > Configuring Private DNS Zones and Upstream Nameservers in Kubernetes </a> <span class="date">Apr 4</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/04/configuring-private-dns-zones-upstream-nameservers-kubernetes/"> Configuring Private DNS Zones and Upstream Nameservers in Kubernetes </a> <span class="date">Apr 4</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/advanced-scheduling-in-kubernetes/" target="_blank" > Advanced Scheduling in Kubernetes </a> <span class="date">Mar 31</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/advanced-scheduling-in-kubernetes/"> Advanced Scheduling in Kubernetes </a> <span class="date">Mar 31</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/scalability-updates-in-kubernetes-1.6" target="_blank" > Scalability updates in Kubernetes 1.6: 5,000 node and 150,000 pod clusters </a> <span class="date">Mar 30</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/scalability-updates-in-kubernetes-1.6"> Scalability updates in Kubernetes 1.6: 5,000 node and 150,000 pod clusters </a> <span class="date">Mar 30</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/five-days-of-kubernetes-1.6" target="_blank" > Five Days of Kubernetes 1.6 </a> <span class="date">Mar 29</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/five-days-of-kubernetes-1.6"> Five Days of Kubernetes 1.6 </a> <span class="date">Mar 29</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/dynamic-provisioning-and-storage-classes-kubernetes/" target="_blank" > Dynamic Provisioning and Storage Classes in Kubernetes </a> <span class="date">Mar 29</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/dynamic-provisioning-and-storage-classes-kubernetes/"> Dynamic Provisioning and Storage Classes in Kubernetes </a> <span class="date">Mar 29</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/kubernetes-1.6-multi-user-multi-workloads-at-scale" target="_blank" > Kubernetes 1.6: Multi-user, Multi-workloads at Scale </a> <span class="date">Mar 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/kubernetes-1.6-multi-user-multi-workloads-at-scale"> Kubernetes 1.6: Multi-user, Multi-workloads at Scale </a> <span class="date">Mar 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/k8sport-engaging-the-kubernetes-community/" target="_blank" > The K8sPort: Engaging Kubernetes Community One Activity at a Time </a> <span class="date">Mar 24</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/03/k8sport-engaging-the-kubernetes-community/"> The K8sPort: Engaging Kubernetes Community One Activity at a Time </a> <span class="date">Mar 24</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/02/postgresql-clusters-kubernetes-statefulsets/" target="_blank" > Deploying PostgreSQL Clusters using StatefulSets </a> <span class="date">Feb 24</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/02/postgresql-clusters-kubernetes-statefulsets/"> Deploying PostgreSQL Clusters using StatefulSets </a> <span class="date">Feb 24</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/02/caas-the-foundation-for-next-gen-paas/" target="_blank" > Containers as a Service, the foundation for next generation PaaS </a> <span class="date">Feb 21</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/02/caas-the-foundation-for-next-gen-paas/"> Containers as a Service, the foundation for next generation PaaS </a> <span class="date">Feb 21</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/02/inside-jd-com-shift-to-kubernetes-from-openstack/" target="_blank" > Inside JD.com&#39;s Shift to Kubernetes from OpenStack </a> <span class="date">Feb 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/02/inside-jd-com-shift-to-kubernetes-from-openstack/"> Inside JD.com&#39;s Shift to Kubernetes from OpenStack </a> <span class="date">Feb 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/02/run-deep-learning-with-paddlepaddle-on-kubernetes/" target="_blank" > Run Deep Learning with PaddlePaddle on Kubernetes </a> <span class="date">Feb 8</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/02/run-deep-learning-with-paddlepaddle-on-kubernetes/"> Run Deep Learning with PaddlePaddle on Kubernetes </a> <span class="date">Feb 8</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/02/highly-available-kubernetes-clusters/" target="_blank" > Highly Available Kubernetes Clusters </a> <span class="date">Feb 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/02/highly-available-kubernetes-clusters/"> Highly Available Kubernetes Clusters </a> <span class="date">Feb 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/running-mongodb-on-kubernetes-with-statefulsets/" target="_blank" > Running MongoDB on Kubernetes with StatefulSets </a> <span class="date">Jan 30</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/running-mongodb-on-kubernetes-with-statefulsets/"> Running MongoDB on Kubernetes with StatefulSets </a> <span class="date">Jan 30</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/fission-serverless-functions-as-service-for-kubernetes/" target="_blank" > Fission: Serverless Functions as a Service for Kubernetes </a> <span class="date">Jan 30</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/fission-serverless-functions-as-service-for-kubernetes/"> Fission: Serverless Functions as a Service for Kubernetes </a> <span class="date">Jan 30</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/how-we-run-kubernetes-in-kubernetes-kubeception/" target="_blank" > How we run Kubernetes in Kubernetes aka Kubeception </a> <span class="date">Jan 20</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/how-we-run-kubernetes-in-kubernetes-kubeception/"> How we run Kubernetes in Kubernetes aka Kubeception </a> <span class="date">Jan 20</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/scaling-kubernetes-deployments-with-policy-base-networking/" target="_blank" > Scaling Kubernetes deployments with Policy-Based Networking </a> <span class="date">Jan 19</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/scaling-kubernetes-deployments-with-policy-base-networking/"> Scaling Kubernetes deployments with Policy-Based Networking </a> <span class="date">Jan 19</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/stronger-foundation-for-creating-and-managing-kubernetes-clusters/" target="_blank" > A Stronger Foundation for Creating and Managing Kubernetes Clusters </a> <span class="date">Jan 12</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/stronger-foundation-for-creating-and-managing-kubernetes-clusters/"> A Stronger Foundation for Creating and Managing Kubernetes Clusters </a> <span class="date">Jan 12</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/kubernetes-ux-survey-infographic/" target="_blank" > Kubernetes UX Survey Infographic </a> <span class="date">Jan 9</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2017/01/kubernetes-ux-survey-infographic/"> Kubernetes UX Survey Infographic </a> <span class="date">Jan 9</span></li>
           
         </ul>
       </div>
@@ -763,274 +704,274 @@ Linkedin:</p>
         <ul class="list-group">
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/kubernetes-supports-openapi/" target="_blank" > Kubernetes supports OpenAPI </a> <span class="date">Dec 23</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/kubernetes-supports-openapi/"> Kubernetes supports OpenAPI </a> <span class="date">Dec 23</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/cluster-federation-in-kubernetes-1.5" target="_blank" > Cluster Federation in Kubernetes 1.5 </a> <span class="date">Dec 22</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/cluster-federation-in-kubernetes-1.5"> Cluster Federation in Kubernetes 1.5 </a> <span class="date">Dec 22</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/windows-server-support-kubernetes/" target="_blank" > Windows Server Support Comes to Kubernetes </a> <span class="date">Dec 21</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/windows-server-support-kubernetes/"> Windows Server Support Comes to Kubernetes </a> <span class="date">Dec 21</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/statefulset-run-scale-stateful-applications-in-kubernetes/" target="_blank" > StatefulSet: Run and Scale Stateful Applications Easily in Kubernetes </a> <span class="date">Dec 20</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/statefulset-run-scale-stateful-applications-in-kubernetes/"> StatefulSet: Run and Scale Stateful Applications Easily in Kubernetes </a> <span class="date">Dec 20</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/" target="_blank" > Introducing Container Runtime Interface (CRI) in Kubernetes </a> <span class="date">Dec 19</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/"> Introducing Container Runtime Interface (CRI) in Kubernetes </a> <span class="date">Dec 19</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/five-days-of-kubernetes-1.5" target="_blank" > Five Days of Kubernetes 1.5 </a> <span class="date">Dec 19</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/five-days-of-kubernetes-1.5"> Five Days of Kubernetes 1.5 </a> <span class="date">Dec 19</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/kubernetes-1.5-supporting-production-workloads" target="_blank" > Kubernetes 1.5: Supporting Production Workloads </a> <span class="date">Dec 13</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/kubernetes-1.5-supporting-production-workloads"> Kubernetes 1.5: Supporting Production Workloads </a> <span class="date">Dec 13</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/from-network-policies-to-security-policies/" target="_blank" > From Network Policies to Security Policies </a> <span class="date">Dec 8</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/12/from-network-policies-to-security-policies/"> From Network Policies to Security Policies </a> <span class="date">Dec 8</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/kompose-tool-go-from-docker-compose-to-kubernetes/" target="_blank" > Kompose: a tool to go from Docker-compose to Kubernetes </a> <span class="date">Nov 22</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/kompose-tool-go-from-docker-compose-to-kubernetes/"> Kompose: a tool to go from Docker-compose to Kubernetes </a> <span class="date">Nov 22</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/kubernetes-containers-logging-monitoring-with-sematext/" target="_blank" > Kubernetes Containers Logging and Monitoring with Sematext </a> <span class="date">Nov 18</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/kubernetes-containers-logging-monitoring-with-sematext/"> Kubernetes Containers Logging and Monitoring with Sematext </a> <span class="date">Nov 18</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/visualize-kubelet-performance-with-node-dashboard/" target="_blank" > Visualize Kubelet Performance with Node Dashboard </a> <span class="date">Nov 17</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/visualize-kubelet-performance-with-node-dashboard/"> Visualize Kubelet Performance with Node Dashboard </a> <span class="date">Nov 17</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/kubernetes-certification-training-and-managed-service-provider-program/" target="_blank" > CNCF Partners With The Linux Foundation To Launch New Kubernetes Certification, Training and Managed Service Provider Program </a> <span class="date">Nov 8</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/kubernetes-certification-training-and-managed-service-provider-program/"> CNCF Partners With The Linux Foundation To Launch New Kubernetes Certification, Training and Managed Service Provider Program </a> <span class="date">Nov 8</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/skytap-modernizing-microservice-architecture-with-kubernetes/" target="_blank" > Modernizing the Skytap Cloud Micro-Service Architecture with Kubernetes </a> <span class="date">Nov 7</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/skytap-modernizing-microservice-architecture-with-kubernetes/"> Modernizing the Skytap Cloud Micro-Service Architecture with Kubernetes </a> <span class="date">Nov 7</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/bringing-kubernetes-support-to-azure/" target="_blank" > Bringing Kubernetes Support to Azure Container Service </a> <span class="date">Nov 7</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/11/bringing-kubernetes-support-to-azure/"> Bringing Kubernetes Support to Azure Container Service </a> <span class="date">Nov 7</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/tail-kubernetes-with-stern/" target="_blank" > Tail Kubernetes with Stern </a> <span class="date">Oct 31</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/tail-kubernetes-with-stern/"> Tail Kubernetes with Stern </a> <span class="date">Oct 31</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/kubernetes-service-technology-partners-program/" target="_blank" > Introducing Kubernetes Service Partners program and a redesigned Partners page </a> <span class="date">Oct 31</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/kubernetes-service-technology-partners-program/"> Introducing Kubernetes Service Partners program and a redesigned Partners page </a> <span class="date">Oct 31</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/kubernetes-and-openstack-at-yahoo-japan/" target="_blank" >  How We Architected and Run Kubernetes on OpenStack at Scale at Yahoo! JAPAN </a> <span class="date">Oct 24</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/kubernetes-and-openstack-at-yahoo-japan/">  How We Architected and Run Kubernetes on OpenStack at Scale at Yahoo! JAPAN </a> <span class="date">Oct 24</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/globally-distributed-services-kubernetes-cluster-federation/" target="_blank" > Building Globally Distributed Services using Kubernetes Cluster Federation </a> <span class="date">Oct 14</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/globally-distributed-services-kubernetes-cluster-federation/"> Building Globally Distributed Services using Kubernetes Cluster Federation </a> <span class="date">Oct 14</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/helm-charts-making-it-simple-to-package-and-deploy-apps-on-kubernetes/" target="_blank" > Helm Charts: making it simple to package and deploy common applications on Kubernetes </a> <span class="date">Oct 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/helm-charts-making-it-simple-to-package-and-deploy-apps-on-kubernetes/"> Helm Charts: making it simple to package and deploy common applications on Kubernetes </a> <span class="date">Oct 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/dynamic-provisioning-and-storage-in-kubernetes/" target="_blank" > Dynamic Provisioning and Storage Classes in Kubernetes </a> <span class="date">Oct 7</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/dynamic-provisioning-and-storage-in-kubernetes/"> Dynamic Provisioning and Storage Classes in Kubernetes </a> <span class="date">Oct 7</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/production-kubernetes-dashboard-ui-1.4-improvements_3" target="_blank" > How we improved Kubernetes Dashboard UI in 1.4 for your production needs​ </a> <span class="date">Oct 3</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/10/production-kubernetes-dashboard-ui-1.4-improvements_3"> How we improved Kubernetes Dashboard UI in 1.4 for your production needs​ </a> <span class="date">Oct 3</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/how-we-made-kubernetes-easy-to-install/" target="_blank" > How we made Kubernetes insanely easy to install </a> <span class="date">Sep 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/how-we-made-kubernetes-easy-to-install/"> How we made Kubernetes insanely easy to install </a> <span class="date">Sep 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/how-qbox-saved-50-percent-on-aws-bills/" target="_blank" > How Qbox Saved 50% per Month on AWS Bills Using Kubernetes and Supergiant </a> <span class="date">Sep 27</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/how-qbox-saved-50-percent-on-aws-bills/"> How Qbox Saved 50% per Month on AWS Bills Using Kubernetes and Supergiant </a> <span class="date">Sep 27</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/kubernetes-1.4-making-it-easy-to-run-on-kuberentes-anywhere" target="_blank" > Kubernetes 1.4: Making it easy to run on Kubernetes anywhere </a> <span class="date">Sep 26</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/kubernetes-1.4-making-it-easy-to-run-on-kuberentes-anywhere"> Kubernetes 1.4: Making it easy to run on Kubernetes anywhere </a> <span class="date">Sep 26</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/high-performance-network-policies-kubernetes/" target="_blank" > High performance network policies in Kubernetes clusters </a> <span class="date">Sep 21</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/high-performance-network-policies-kubernetes/"> High performance network policies in Kubernetes clusters </a> <span class="date">Sep 21</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/creating-postgresql-cluster-using-helm/" target="_blank" > Creating a PostgreSQL Cluster using Helm </a> <span class="date">Sep 9</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/creating-postgresql-cluster-using-helm/"> Creating a PostgreSQL Cluster using Helm </a> <span class="date">Sep 9</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/deploying-to-multiple-kubernetes-with-kit/" target="_blank" > Deploying to Multiple Kubernetes Clusters with kit </a> <span class="date">Sep 6</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/deploying-to-multiple-kubernetes-with-kit/"> Deploying to Multiple Kubernetes Clusters with kit </a> <span class="date">Sep 6</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/cloud-native-application-interfaces/" target="_blank" > Cloud Native Application Interfaces </a> <span class="date">Sep 1</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/09/cloud-native-application-interfaces/"> Cloud Native Application Interfaces </a> <span class="date">Sep 1</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/security-best-practices-kubernetes-deployment/" target="_blank" > Security Best Practices for Kubernetes Deployment </a> <span class="date">Aug 31</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/security-best-practices-kubernetes-deployment/"> Security Best Practices for Kubernetes Deployment </a> <span class="date">Aug 31</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/stateful-applications-using-kubernetes-datera/" target="_blank" > Scaling Stateful Applications using Kubernetes Pet Sets and FlexVolumes with Datera Elastic Data Fabric </a> <span class="date">Aug 29</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/stateful-applications-using-kubernetes-datera/"> Scaling Stateful Applications using Kubernetes Pet Sets and FlexVolumes with Datera Elastic Data Fabric </a> <span class="date">Aug 29</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/sig-apps-running-apps-in-kubernetes/" target="_blank" > SIG Apps: build apps for and operate them in Kubernetes </a> <span class="date">Aug 16</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/sig-apps-running-apps-in-kubernetes/"> SIG Apps: build apps for and operate them in Kubernetes </a> <span class="date">Aug 16</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/kubernetes-namespaces-use-cases-insights/" target="_blank" > Kubernetes Namespaces: use cases and insights </a> <span class="date">Aug 16</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/kubernetes-namespaces-use-cases-insights/"> Kubernetes Namespaces: use cases and insights </a> <span class="date">Aug 16</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/create-couchbase-cluster-using-kubernetes/" target="_blank" > Create a Couchbase cluster using Kubernetes </a> <span class="date">Aug 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/create-couchbase-cluster-using-kubernetes/"> Create a Couchbase cluster using Kubernetes </a> <span class="date">Aug 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/challenges-remotely-managed-onpremise-kubernetes-cluster/" target="_blank" > Challenges of a Remotely Managed, On-Premises, Bare-Metal Kubernetes Cluster </a> <span class="date">Aug 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/08/challenges-remotely-managed-onpremise-kubernetes-cluster/"> Challenges of a Remotely Managed, On-Premises, Bare-Metal Kubernetes Cluster </a> <span class="date">Aug 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/openstack-kubernetes-communities/" target="_blank" > Why OpenStack&#39;s embrace of Kubernetes is great for both communities </a> <span class="date">Jul 26</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/openstack-kubernetes-communities/"> Why OpenStack&#39;s embrace of Kubernetes is great for both communities </a> <span class="date">Jul 26</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/the-bet-on-kubernetes/" target="_blank" > The Bet on Kubernetes, a Red Hat Perspective </a> <span class="date">Jul 21</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/the-bet-on-kubernetes/"> The Bet on Kubernetes, a Red Hat Perspective </a> <span class="date">Jul 21</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/oh-the-places-you-will-go/" target="_blank" > Happy Birthday Kubernetes. Oh, the places you’ll go! </a> <span class="date">Jul 21</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/oh-the-places-you-will-go/"> Happy Birthday Kubernetes. Oh, the places you’ll go! </a> <span class="date">Jul 21</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/happy-k8sbday-1/" target="_blank" > A Very Happy Birthday Kubernetes </a> <span class="date">Jul 21</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/happy-k8sbday-1/"> A Very Happy Birthday Kubernetes </a> <span class="date">Jul 21</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/bringing-end-to-end-kubernetes-testing-to-azure-2/" target="_blank" > Bringing End-to-End Kubernetes Testing to Azure (Part 2) </a> <span class="date">Jul 18</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/bringing-end-to-end-kubernetes-testing-to-azure-2/"> Bringing End-to-End Kubernetes Testing to Azure (Part 2) </a> <span class="date">Jul 18</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/automation-platform-at-wercker-with-kubernetes/" target="_blank" > Steering an Automation Platform at Wercker with Kubernetes </a> <span class="date">Jul 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/automation-platform-at-wercker-with-kubernetes/"> Steering an Automation Platform at Wercker with Kubernetes </a> <span class="date">Jul 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/dashboard-web-interface-for-kubernetes/" target="_blank" > Dashboard - Full Featured Web Interface for Kubernetes </a> <span class="date">Jul 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/dashboard-web-interface-for-kubernetes/"> Dashboard - Full Featured Web Interface for Kubernetes </a> <span class="date">Jul 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/cross-cluster-services/" target="_blank" > Cross Cluster Services - Achieving Higher Availability for your Kubernetes Applications </a> <span class="date">Jul 14</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/cross-cluster-services/"> Cross Cluster Services - Achieving Higher Availability for your Kubernetes Applications </a> <span class="date">Jul 14</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/citrix-netscaler-and-kubernetes/" target="_blank" > Citrix &#43; Kubernetes = A Home Run </a> <span class="date">Jul 14</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/citrix-netscaler-and-kubernetes/"> Citrix &#43; Kubernetes = A Home Run </a> <span class="date">Jul 14</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/thousand-instances-of-cassandra-using-kubernetes-pet-set/" target="_blank" > Thousand Instances of Cassandra using Kubernetes Pet Set </a> <span class="date">Jul 13</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/thousand-instances-of-cassandra-using-kubernetes-pet-set/"> Thousand Instances of Cassandra using Kubernetes Pet Set </a> <span class="date">Jul 13</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/stateful-applications-in-containers-kubernetes/" target="_blank" > Stateful Applications in Containers!? Kubernetes 1.3 Says “Yes!” </a> <span class="date">Jul 13</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/stateful-applications-in-containers-kubernetes/"> Stateful Applications in Containers!? Kubernetes 1.3 Says “Yes!” </a> <span class="date">Jul 13</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/kubernetes-in-rancher-further-evolution/" target="_blank" > Kubernetes in Rancher: the further evolution </a> <span class="date">Jul 12</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/kubernetes-in-rancher-further-evolution/"> Kubernetes in Rancher: the further evolution </a> <span class="date">Jul 12</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/autoscaling-in-kubernetes/" target="_blank" > Autoscaling in Kubernetes </a> <span class="date">Jul 12</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/autoscaling-in-kubernetes/"> Autoscaling in Kubernetes </a> <span class="date">Jul 12</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/rktnetes-brings-rkt-container-engine-to-kubernetes/" target="_blank" > rktnetes brings rkt container engine to Kubernetes </a> <span class="date">Jul 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/rktnetes-brings-rkt-container-engine-to-kubernetes/"> rktnetes brings rkt container engine to Kubernetes </a> <span class="date">Jul 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/minikube-easily-run-kubernetes-locally/" target="_blank" > Minikube: easily run Kubernetes locally  </a> <span class="date">Jul 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/minikube-easily-run-kubernetes-locally/"> Minikube: easily run Kubernetes locally  </a> <span class="date">Jul 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/five-days-of-kubernetes-1.3" target="_blank" > Five Days of Kubernetes 1.3 </a> <span class="date">Jul 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/five-days-of-kubernetes-1.3"> Five Days of Kubernetes 1.3 </a> <span class="date">Jul 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/update-on-kubernetes-for-windows-server-containers/" target="_blank" > Updates to Performance and Scalability in Kubernetes 1.3 -- 2,000 node 60,000 pod clusters </a> <span class="date">Jul 7</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/update-on-kubernetes-for-windows-server-containers/"> Updates to Performance and Scalability in Kubernetes 1.3 -- 2,000 node 60,000 pod clusters </a> <span class="date">Jul 7</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/kubernetes-1.3-bridging-cloud-native-and-enterprise-workloads" target="_blank" > Kubernetes 1.3: Bridging Cloud Native and Enterprise Workloads </a> <span class="date">Jul 6</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/07/kubernetes-1.3-bridging-cloud-native-and-enterprise-workloads"> Kubernetes 1.3: Bridging Cloud Native and Enterprise Workloads </a> <span class="date">Jul 6</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/06/container-design-patterns/" target="_blank" > Container Design Patterns </a> <span class="date">Jun 21</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/06/container-design-patterns/"> Container Design Patterns </a> <span class="date">Jun 21</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/06/illustrated-childrens-guide-to-kubernetes/" target="_blank" > The Illustrated Children&#39;s Guide to Kubernetes </a> <span class="date">Jun 9</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/06/illustrated-childrens-guide-to-kubernetes/"> The Illustrated Children&#39;s Guide to Kubernetes </a> <span class="date">Jun 9</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/06/bringing-end-to-end-testing-to-azure/" target="_blank" > Bringing End-to-End Kubernetes Testing to Azure (Part 1) </a> <span class="date">Jun 6</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/06/bringing-end-to-end-testing-to-azure/"> Bringing End-to-End Kubernetes Testing to Azure (Part 1) </a> <span class="date">Jun 6</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/05/hypernetes-security-and-multi-tenancy-in-kubernetes/" target="_blank" > Hypernetes: Bringing Security and Multi-tenancy to Kubernetes </a> <span class="date">May 24</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/05/hypernetes-security-and-multi-tenancy-in-kubernetes/"> Hypernetes: Bringing Security and Multi-tenancy to Kubernetes </a> <span class="date">May 24</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/05/coreosfest2016-kubernetes-community/" target="_blank" > CoreOS Fest 2016: CoreOS and Kubernetes Community meet in Berlin (&amp; San Francisco) </a> <span class="date">May 3</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/05/coreosfest2016-kubernetes-community/"> CoreOS Fest 2016: CoreOS and Kubernetes Community meet in Berlin (&amp; San Francisco) </a> <span class="date">May 3</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/introducing-kubernetes-openstack-sig/" target="_blank" > Introducing the Kubernetes OpenStack Special Interest Group </a> <span class="date">Apr 22</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/introducing-kubernetes-openstack-sig/"> Introducing the Kubernetes OpenStack Special Interest Group </a> <span class="date">Apr 22</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/building-awesome-user-interfaces-for-kubernetes/" target="_blank" > SIG-UI: the place for building awesome user interfaces for Kubernetes </a> <span class="date">Apr 20</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/building-awesome-user-interfaces-for-kubernetes/"> SIG-UI: the place for building awesome user interfaces for Kubernetes </a> <span class="date">Apr 20</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/sig-clusterops-promote-operability-and-interoperability-of-k8s-clusters/" target="_blank" > SIG-ClusterOps: Promote operability and interoperability of Kubernetes clusters </a> <span class="date">Apr 19</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/sig-clusterops-promote-operability-and-interoperability-of-k8s-clusters/"> SIG-ClusterOps: Promote operability and interoperability of Kubernetes clusters </a> <span class="date">Apr 19</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/kubernetes-network-policy-apis/" target="_blank" > SIG-Networking: Kubernetes Network Policy APIs Coming in 1.3 </a> <span class="date">Apr 18</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/kubernetes-network-policy-apis/"> SIG-Networking: Kubernetes Network Policy APIs Coming in 1.3 </a> <span class="date">Apr 18</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/kubernetes-on-aws_15/" target="_blank" > How to deploy secure, auditable, and reproducible Kubernetes clusters on AWS </a> <span class="date">Apr 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/kubernetes-on-aws_15/"> How to deploy secure, auditable, and reproducible Kubernetes clusters on AWS </a> <span class="date">Apr 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/container-survey-results-march-2016/" target="_blank" > Container survey results - March 2016 </a> <span class="date">Apr 8</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/container-survey-results-march-2016/"> Container survey results - March 2016 </a> <span class="date">Apr 8</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/adding-support-for-kubernetes-in-rancher/" target="_blank" > Adding Support for Kubernetes in Rancher </a> <span class="date">Apr 8</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/adding-support-for-kubernetes-in-rancher/"> Adding Support for Kubernetes in Rancher </a> <span class="date">Apr 8</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/configuration-management-with-containers/" target="_blank" > Configuration management with Containers </a> <span class="date">Apr 4</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/configuration-management-with-containers/"> Configuration management with Containers </a> <span class="date">Apr 4</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/using-deployment-objects-with/" target="_blank" > Using Deployment objects with Kubernetes 1.2 </a> <span class="date">Apr 1</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/04/using-deployment-objects-with/"> Using Deployment objects with Kubernetes 1.2 </a> <span class="date">Apr 1</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/kubernetes-1.2-and-simplifying-advanced-networking-with-ingress" target="_blank" > Kubernetes 1.2 and simplifying advanced networking with Ingress </a> <span class="date">Mar 31</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/kubernetes-1.2-and-simplifying-advanced-networking-with-ingress"> Kubernetes 1.2 and simplifying advanced networking with Ingress </a> <span class="date">Mar 31</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/using-spark-and-zeppelin-to-process-big-data-on-kubernetes/" target="_blank" > Using Spark and Zeppelin to process big data on Kubernetes 1.2 </a> <span class="date">Mar 30</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/using-spark-and-zeppelin-to-process-big-data-on-kubernetes/"> Using Spark and Zeppelin to process big data on Kubernetes 1.2 </a> <span class="date">Mar 30</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/building-highly-available-applications-using-kubernetes-new-multi-zone-clusters-a.k.a-ubernetes-lite" target="_blank" > Building highly available applications using Kubernetes new multi-zone clusters (a.k.a. &#39;Ubernetes Lite&#39;) </a> <span class="date">Mar 29</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/building-highly-available-applications-using-kubernetes-new-multi-zone-clusters-a.k.a-ubernetes-lite"> Building highly available applications using Kubernetes new multi-zone clusters (a.k.a. &#39;Ubernetes Lite&#39;) </a> <span class="date">Mar 29</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/appformix-helping-enterprises/" target="_blank" > AppFormix: Helping Enterprises Operationalize Kubernetes </a> <span class="date">Mar 29</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/appformix-helping-enterprises/"> AppFormix: Helping Enterprises Operationalize Kubernetes </a> <span class="date">Mar 29</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/how-container-metadata-changes-your-point-of-view/" target="_blank" > How container metadata changes your point of view </a> <span class="date">Mar 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/how-container-metadata-changes-your-point-of-view/"> How container metadata changes your point of view </a> <span class="date">Mar 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/five-days-of-kubernetes-12/" target="_blank" > Five Days of Kubernetes 1.2 </a> <span class="date">Mar 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/five-days-of-kubernetes-12/"> Five Days of Kubernetes 1.2 </a> <span class="date">Mar 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/1000-nodes-and-beyond-updates-to-kubernetes-performance-and-scalability-in-12/" target="_blank" > 1000 nodes and beyond: updates to Kubernetes performance and scalability in 1.2 </a> <span class="date">Mar 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/1000-nodes-and-beyond-updates-to-kubernetes-performance-and-scalability-in-12/"> 1000 nodes and beyond: updates to Kubernetes performance and scalability in 1.2 </a> <span class="date">Mar 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/scaling-neural-network-image-classification-using-kubernetes-with-tensorflow-serving/" target="_blank" > Scaling neural network image classification using Kubernetes with TensorFlow Serving  </a> <span class="date">Mar 23</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/scaling-neural-network-image-classification-using-kubernetes-with-tensorflow-serving/"> Scaling neural network image classification using Kubernetes with TensorFlow Serving  </a> <span class="date">Mar 23</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/kubernetes-1.2-even-more-performance-upgrades-plus-easier-application-deployment-and-management" target="_blank" > Kubernetes 1.2: Even more performance upgrades, plus easier application deployment and management  </a> <span class="date">Mar 17</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/kubernetes-1.2-even-more-performance-upgrades-plus-easier-application-deployment-and-management"> Kubernetes 1.2: Even more performance upgrades, plus easier application deployment and management  </a> <span class="date">Mar 17</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/kubernetes-in-enterprise-with-fujitsus/" target="_blank" > Kubernetes in the Enterprise with Fujitsu’s Cloud Load Control </a> <span class="date">Mar 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/kubernetes-in-enterprise-with-fujitsus/"> Kubernetes in the Enterprise with Fujitsu’s Cloud Load Control </a> <span class="date">Mar 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/elasticbox-introduces-elastickube-to/" target="_blank" > ElasticBox introduces ElasticKube to help manage Kubernetes within the enterprise </a> <span class="date">Mar 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/elasticbox-introduces-elastickube-to/"> ElasticBox introduces ElasticKube to help manage Kubernetes within the enterprise </a> <span class="date">Mar 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/state-of-container-world-february-2016/" target="_blank" > State of the Container World, February 2016 </a> <span class="date">Mar 1</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/state-of-container-world-february-2016/"> State of the Container World, February 2016 </a> <span class="date">Mar 1</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/kubernetes-community-meeting-notes/" target="_blank" > Kubernetes Community Meeting Notes - 20160225 </a> <span class="date">Mar 1</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/03/kubernetes-community-meeting-notes/"> Kubernetes Community Meeting Notes - 20160225 </a> <span class="date">Mar 1</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/kubecon-eu-2016-kubernetes-community-in/" target="_blank" > KubeCon EU 2016: Kubernetes Community in London </a> <span class="date">Feb 24</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/kubecon-eu-2016-kubernetes-community-in/"> KubeCon EU 2016: Kubernetes Community in London </a> <span class="date">Feb 24</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes_23/" target="_blank" > Kubernetes Community Meeting Notes - 20160218 </a> <span class="date">Feb 23</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes_23/"> Kubernetes Community Meeting Notes - 20160218 </a> <span class="date">Feb 23</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes-20160211/" target="_blank" > Kubernetes Community Meeting Notes - 20160211 </a> <span class="date">Feb 16</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes-20160211/"> Kubernetes Community Meeting Notes - 20160211 </a> <span class="date">Feb 16</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/sharethis-kubernetes-in-production/" target="_blank" > ShareThis: Kubernetes In Production </a> <span class="date">Feb 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/sharethis-kubernetes-in-production/"> ShareThis: Kubernetes In Production </a> <span class="date">Feb 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes/" target="_blank" > Kubernetes Community Meeting Notes - 20160204 </a> <span class="date">Feb 9</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes/"> Kubernetes Community Meeting Notes - 20160204 </a> <span class="date">Feb 9</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes-20160128/" target="_blank" > Kubernetes Community Meeting Notes - 20160128 </a> <span class="date">Feb 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes-20160128/"> Kubernetes Community Meeting Notes - 20160128 </a> <span class="date">Feb 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/state-of-container-world-january-2016/" target="_blank" > State of the Container World, January 2016 </a> <span class="date">Feb 1</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/02/state-of-container-world-january-2016/"> State of the Container World, January 2016 </a> <span class="date">Feb 1</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/01/kubernetes-community-meeting-notes_28/" target="_blank" >Kubernetes Community Meeting Notes - 20160121</a> <span class="date">Jan 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/01/kubernetes-community-meeting-notes_28/">Kubernetes Community Meeting Notes - 20160121</a> <span class="date">Jan 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/01/kubernetes-community-meeting-notes/" target="_blank" > Kubernetes Community Meeting Notes - 20160114 </a> <span class="date">Jan 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/01/kubernetes-community-meeting-notes/"> Kubernetes Community Meeting Notes - 20160114 </a> <span class="date">Jan 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/01/why-kubernetes-doesnt-use-libnetwork/" target="_blank" > Why Kubernetes doesn’t use libnetwork </a> <span class="date">Jan 14</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/01/why-kubernetes-doesnt-use-libnetwork/"> Why Kubernetes doesn’t use libnetwork </a> <span class="date">Jan 14</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/01/simple-leader-election-with-kubernetes/" target="_blank" > Simple leader election with Kubernetes and Docker </a> <span class="date">Jan 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2016/01/simple-leader-election-with-kubernetes/"> Simple leader election with Kubernetes and Docker </a> <span class="date">Jan 11</span></li>
           
         </ul>
       </div>
@@ -1049,158 +990,136 @@ Linkedin:</p>
         <ul class="list-group">
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/12/creating-raspberry-pi-cluster-running/" target="_blank" > Creating a Raspberry Pi cluster running Kubernetes, the installation (Part 2) </a> <span class="date">Dec 22</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/12/creating-raspberry-pi-cluster-running/"> Creating a Raspberry Pi cluster running Kubernetes, the installation (Part 2) </a> <span class="date">Dec 22</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/12/managing-kubernetes-pods-services-and-replication-controllers-with-puppet/" target="_blank" > Managing Kubernetes Pods, Services and Replication Controllers with Puppet </a> <span class="date">Dec 17</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/12/managing-kubernetes-pods-services-and-replication-controllers-with-puppet/"> Managing Kubernetes Pods, Services and Replication Controllers with Puppet </a> <span class="date">Dec 17</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/12/how-weave-built-a-multi-deployment-solution-for-scope-using-kubernetes/" target="_blank" > How Weave built a multi-deployment solution for Scope using Kubernetes </a> <span class="date">Dec 12</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/12/how-weave-built-a-multi-deployment-solution-for-scope-using-kubernetes/"> How Weave built a multi-deployment solution for Scope using Kubernetes </a> <span class="date">Dec 12</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/11/creating-a-raspberry-pi-cluster-running-kubernetes-the-shopping-list-part-1/" target="_blank" > Creating a Raspberry Pi cluster running Kubernetes, the shopping list (Part 1) </a> <span class="date">Nov 25</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/11/creating-a-raspberry-pi-cluster-running-kubernetes-the-shopping-list-part-1/"> Creating a Raspberry Pi cluster running Kubernetes, the shopping list (Part 1) </a> <span class="date">Nov 25</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/11/monitoring-kubernetes-with-sysdig/" target="_blank" > Monitoring Kubernetes with Sysdig </a> <span class="date">Nov 19</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/11/monitoring-kubernetes-with-sysdig/"> Monitoring Kubernetes with Sysdig </a> <span class="date">Nov 19</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/11/one-million-requests-per-second-dependable-and-dynamic-distributed-systems-at-scale/" target="_blank" > One million requests per second: Dependable and dynamic distributed systems at scale </a> <span class="date">Nov 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/11/one-million-requests-per-second-dependable-and-dynamic-distributed-systems-at-scale/"> One million requests per second: Dependable and dynamic distributed systems at scale </a> <span class="date">Nov 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/11/kubernetes-1-1-performance-upgrades-improved-tooling-and-a-growing-community/" target="_blank" > Kubernetes 1.1 Performance upgrades, improved tooling and a growing community  </a> <span class="date">Nov 9</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/11/kubernetes-1-1-performance-upgrades-improved-tooling-and-a-growing-community/"> Kubernetes 1.1 Performance upgrades, improved tooling and a growing community  </a> <span class="date">Nov 9</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/11/kubernetes-as-foundation-for-cloud-native-paas/" target="_blank" > Kubernetes as Foundation for Cloud Native PaaS </a> <span class="date">Nov 3</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/11/kubernetes-as-foundation-for-cloud-native-paas/"> Kubernetes as Foundation for Cloud Native PaaS </a> <span class="date">Nov 3</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/10/some-things-you-didnt-know-about-kubectl_28/" target="_blank" > Some things you didn’t know about kubectl </a> <span class="date">Oct 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/10/some-things-you-didnt-know-about-kubectl_28/"> Some things you didn’t know about kubectl </a> <span class="date">Oct 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/09/kubernetes-performance-measurements-and/" target="_blank" > Kubernetes Performance Measurements and Roadmap </a> <span class="date">Sep 10</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/09/kubernetes-performance-measurements-and/"> Kubernetes Performance Measurements and Roadmap </a> <span class="date">Sep 10</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/08/using-kubernetes-namespaces-to-manage/" target="_blank" > Using Kubernetes Namespaces to Manage Environments </a> <span class="date">Aug 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/08/using-kubernetes-namespaces-to-manage/"> Using Kubernetes Namespaces to Manage Environments </a> <span class="date">Aug 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/08/weekly-kubernetes-community-hangout/" target="_blank" > Weekly Kubernetes Community Hangout Notes - July 31 2015 </a> <span class="date">Aug 4</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/08/weekly-kubernetes-community-hangout/"> Weekly Kubernetes Community Hangout Notes - July 31 2015 </a> <span class="date">Aug 4</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/the-growing-kubernetes-ecosystem/" target="_blank" > The Growing Kubernetes Ecosystem </a> <span class="date">Jul 24</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/the-growing-kubernetes-ecosystem/"> The Growing Kubernetes Ecosystem </a> <span class="date">Jul 24</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/weekly-kubernetes-community-hangout_23/" target="_blank" > Weekly Kubernetes Community Hangout Notes - July 17 2015 </a> <span class="date">Jul 23</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/weekly-kubernetes-community-hangout_23/"> Weekly Kubernetes Community Hangout Notes - July 17 2015 </a> <span class="date">Jul 23</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/strong-simple-ssl-for-kubernetes/" target="_blank" > Strong, Simple SSL for Kubernetes Services </a> <span class="date">Jul 14</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/strong-simple-ssl-for-kubernetes/"> Strong, Simple SSL for Kubernetes Services </a> <span class="date">Jul 14</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/weekly-kubernetes-community-hangout/" target="_blank" > Weekly Kubernetes Community Hangout Notes - July 10 2015 </a> <span class="date">Jul 13</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/weekly-kubernetes-community-hangout/"> Weekly Kubernetes Community Hangout Notes - July 10 2015 </a> <span class="date">Jul 13</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/announcing-first-kubernetes-enterprise/" target="_blank" > Announcing the First Kubernetes Enterprise Training Course </a> <span class="date">Jul 8</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/announcing-first-kubernetes-enterprise/"> Announcing the First Kubernetes Enterprise Training Course </a> <span class="date">Jul 8</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/kubernetes-10-launch-party-at-oscon/" target="_blank" > Kubernetes 1.0 Launch Event at OSCON </a> <span class="date">Jul 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/kubernetes-10-launch-party-at-oscon/"> Kubernetes 1.0 Launch Event at OSCON </a> <span class="date">Jul 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/how-did-quake-demo-from-dockercon-work/" target="_blank" > How did the Quake demo from DockerCon Work? </a> <span class="date">Jul 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/07/how-did-quake-demo-from-dockercon-work/"> How did the Quake demo from DockerCon Work? </a> <span class="date">Jul 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/06/the-distributed-system-toolkit-patterns/" target="_blank" > The Distributed System ToolKit: Patterns for Composite Containers </a> <span class="date">Jun 29</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/06/the-distributed-system-toolkit-patterns/"> The Distributed System ToolKit: Patterns for Composite Containers </a> <span class="date">Jun 29</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/06/slides-cluster-management-with/" target="_blank" > Slides: Cluster Management with Kubernetes, talk given at the University of Edinburgh </a> <span class="date">Jun 26</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/06/slides-cluster-management-with/"> Slides: Cluster Management with Kubernetes, talk given at the University of Edinburgh </a> <span class="date">Jun 26</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/06/cluster-level-logging-with-kubernetes/" target="_blank" > Cluster Level Logging with Kubernetes </a> <span class="date">Jun 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/06/cluster-level-logging-with-kubernetes/"> Cluster Level Logging with Kubernetes </a> <span class="date">Jun 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/06/weekly-kubernetes-community-hangout/" target="_blank" > Weekly Kubernetes Community Hangout Notes - May 22 2015 </a> <span class="date">Jun 2</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/06/weekly-kubernetes-community-hangout/"> Weekly Kubernetes Community Hangout Notes - May 22 2015 </a> <span class="date">Jun 2</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/kubernetes-on-openstack/" target="_blank" > Kubernetes on OpenStack </a> <span class="date">May 19</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/kubernetes-on-openstack/"> Kubernetes on OpenStack </a> <span class="date">May 19</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/weekly-kubernetes-community-hangout_18/" target="_blank" > Weekly Kubernetes Community Hangout Notes - May 15 2015 </a> <span class="date">May 18</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/weekly-kubernetes-community-hangout_18/"> Weekly Kubernetes Community Hangout Notes - May 15 2015 </a> <span class="date">May 18</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/docker-and-kubernetes-and-appc/" target="_blank" > Docker and Kubernetes and AppC  </a> <span class="date">May 18</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/docker-and-kubernetes-and-appc/"> Docker and Kubernetes and AppC  </a> <span class="date">May 18</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/kubernetes-release-0170/" target="_blank" > Kubernetes Release: 0.17.0 </a> <span class="date">May 15</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/kubernetes-release-0170/"> Kubernetes Release: 0.17.0 </a> <span class="date">May 15</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/resource-usage-monitoring-kubernetes/" target="_blank" >Resource Usage Monitoring in Kubernetes</a> <span class="date">May 12</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/resource-usage-monitoring-kubernetes/">Resource Usage Monitoring in Kubernetes</a> <span class="date">May 12</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/weekly-kubernetes-community-hangout/" target="_blank" > Weekly Kubernetes Community Hangout Notes - May 1 2015 </a> <span class="date">May 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/weekly-kubernetes-community-hangout/"> Weekly Kubernetes Community Hangout Notes - May 1 2015 </a> <span class="date">May 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/kubernetes-release-0160/" target="_blank" > Kubernetes Release: 0.16.0 </a> <span class="date">May 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/kubernetes-release-0160/"> Kubernetes Release: 0.16.0 </a> <span class="date">May 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/appc-support-for-kubernetes-through-rkt/" target="_blank" > AppC Support for Kubernetes through RKT </a> <span class="date">May 4</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/05/appc-support-for-kubernetes-through-rkt/"> AppC Support for Kubernetes through RKT </a> <span class="date">May 4</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout_29/" target="_blank" > Weekly Kubernetes Community Hangout Notes - April 24 2015 </a> <span class="date">Apr 30</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout_29/"> Weekly Kubernetes Community Hangout Notes - April 24 2015 </a> <span class="date">Apr 30</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/borg-predecessor-to-kubernetes/" target="_blank" > Borg: The Predecessor to Kubernetes </a> <span class="date">Apr 23</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/borg-predecessor-to-kubernetes/"> Borg: The Predecessor to Kubernetes </a> <span class="date">Apr 23</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/kubernetes-and-mesosphere-dcos/" target="_blank" > Kubernetes and the Mesosphere DCOS </a> <span class="date">Apr 22</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/kubernetes-and-mesosphere-dcos/"> Kubernetes and the Mesosphere DCOS </a> <span class="date">Apr 22</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout_17/" target="_blank" > Weekly Kubernetes Community Hangout Notes - April 17 2015 </a> <span class="date">Apr 17</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout_17/"> Weekly Kubernetes Community Hangout Notes - April 17 2015 </a> <span class="date">Apr 17</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/kubernetes-release-0150/" target="_blank" > Kubernetes Release: 0.15.0 </a> <span class="date">Apr 16</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/kubernetes-release-0150/"> Kubernetes Release: 0.15.0 </a> <span class="date">Apr 16</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/introducing-kubernetes-v1beta3/" target="_blank" > Introducing Kubernetes API Version v1beta3 </a> <span class="date">Apr 16</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/introducing-kubernetes-v1beta3/"> Introducing Kubernetes API Version v1beta3 </a> <span class="date">Apr 16</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout_11/" target="_blank" > Weekly Kubernetes Community Hangout Notes - April 10 2015 </a> <span class="date">Apr 11</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout_11/"> Weekly Kubernetes Community Hangout Notes - April 10 2015 </a> <span class="date">Apr 11</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/faster-than-speeding-latte/" target="_blank" > Faster than a speeding Latte </a> <span class="date">Apr 6</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/faster-than-speeding-latte/"> Faster than a speeding Latte </a> <span class="date">Apr 6</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout/" target="_blank" > Weekly Kubernetes Community Hangout Notes - April 3 2015 </a> <span class="date">Apr 4</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout/"> Weekly Kubernetes Community Hangout Notes - April 3 2015 </a> <span class="date">Apr 4</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/03/participate-in-kubernetes-user/" target="_blank" > Participate in a Kubernetes User Experience Study </a> <span class="date">Mar 31</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/03/participate-in-kubernetes-user/"> Participate in a Kubernetes User Experience Study </a> <span class="date">Mar 31</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/03/weekly-kubernetes-community-hangout/" target="_blank" > Weekly Kubernetes Community Hangout Notes - March 27 2015 </a> <span class="date">Mar 28</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/03/weekly-kubernetes-community-hangout/"> Weekly Kubernetes Community Hangout Notes - March 27 2015 </a> <span class="date">Mar 28</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/03/kubernetes-gathering-videos/" target="_blank" > Kubernetes Gathering Videos </a> <span class="date">Mar 23</span> <small>(EN)</small></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/03/kubernetes-gathering-videos/"> Kubernetes Gathering Videos </a> <span class="date">Mar 23</span></li>
           
           
-          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/03/welcome-to-kubernetes-blog/" target="_blank" >Welcome to the Kubernetes Blog!</a> <span class="date">Mar 20</span> <small>(EN)</small></li>
-          
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#archive" href="#collapse-0001">
-      0001</a>
-      </h4>
-    </div>
-    <div id="collapse-0001" class="panel-collapse collapse">
-      <div class="panel-body">
-        <ul class="list-group">
-          
-          
-          <li class="list-group-item"><a href="https://qinlj.github.io/zh/blog/1/01/01/"></a> <span class="date">Jan 1</span></li>
-          
-          
-          <li class="list-group-item"><a href="https://qinlj.github.io/zh/blog/1/01/01/"></a> <span class="date">Jan 1</span></li>
+          <li class="list-group-item"><a href="https://qinlj.github.io/blog/2015/03/welcome-to-kubernetes-blog/">Welcome to the Kubernetes Blog!</a> <span class="date">Mar 20</span></li>
           
         </ul>
       </div>
@@ -1218,15 +1137,15 @@ Linkedin:</p>
             
             
             
-            <a href="/zh/docs/home/">主页</a>
+            <a href="/docs/home/">Home</a>
             
-            <a href="/zh/blog/">技术专题</a>
+            <a href="/blog/">Blog</a>
             
+            <a href="/partners/">Partners</a>
             
+            <a href="/community/">Community</a>
             
-            
-            
-            <a href="/zh/case-studies/">三维技术专题</a>
+            <a href="/case-studies/">Case Studies</a>
             
         </nav>
         <div class="social">
@@ -1242,7 +1161,7 @@ Linkedin:</p>
             </div>
             <div>
                 
-                <a href="https://git.k8s.io/community/contributors/guide" class="button">贡献</a>
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">Contribute</a>
             </div>
         </div>
         <div id="miceType" class="center">

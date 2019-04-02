@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -66,6 +68,7 @@
 
 <header>
     <a href="/zh/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -108,6 +111,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -797,8 +802,8 @@
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/dataconversion/vctconfig/" title=""><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - </a>
-<a class="nav nav-next" href="/zh/docs/reference/setup-tools/kubeadm/kubeadm-init/" title="kubeadm init">Next - kubeadm init <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/zh/docs/dataconversion/vctconfig/" title=""><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - </a>
+<a class="nav nav-next" style="float:right"  href="/zh/docs/reference/setup-tools/kubeadm/kubeadm-init/" title="kubeadm init">Next - kubeadm init <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -880,24 +885,555 @@
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">700 Words|Read in about 4 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          <p>我们在进行 GIS 处理时，除了使用 SuperMap 自己的数据格式外，还需要对多种外部的数据格式进行操作。数据转换功能提供了不同数据格式之间的互转，很好地支持了多种数据格式。</p>
+<p>下文给出了数据导入和数据导出支持的数据格式列表，方便用户的使用。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1">1. 支持导入的矢量文件格式</a></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2">2. 支持导入的栅格文件格式</a></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#3">3. 支持导入的模型文件格式</a></p>
+<h3><a name="1"></a><img align="absmiddle" src="../../img/read.gif"/>支持导入的矢量文件格式</h3>
+<table class="normaltable">
+<thead>
+<tr class="normaltableTitle">
+<td width="25%">支持导入的矢量文件格式</td>
+<td width="40%">文件说明</td>
+<td width="25%">支持导入为数据集类型</td>
+<td width="10%">是否支持导出</td>
+</tr>
+
+</thead>
+<tr class="normaltablecontent1">
+<td><a href="ImportCAD.htm">AutoCAD Drawing 文件（*.dwg）</a></td>
+<td>DWG 是 AutoCAD 的图形文件，专门用于保存矢量图形的标准文件格式，它是一种基于矢量的二进制文件格式。</td>
+<td>CAD复合数据集、简单数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td><a href="ImportCAD.htm">AutoCAD DXF 文件（*.dxf）</a></td>
+<td>DXF 文件是AutoCAD的一种图形交换文件，用于AutoCAD与其它软件之间进行CAD数据交换，它是一种基于矢量的ASCII文件格式。</td>
+<td>CAD复合数据集、简单数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>ArcInfo Export文件（*.e00）</td>
+<td>E00 文件是 ESRI ArcInfo 的通用交换格式文件。通过 ASCII 明码方式，E00 包含了几乎所有的矢量格式以及属性信息。</td>
+<td>简单数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td><A href="ImportSHP.htm">ArcView Shape 文件（*.shp）</A></td>
+<td>是 ArcView GIS 软件特有的数据格式，用于存储地理要素的空间和属性信息，是常用的一种矢量数据格式。</td>
+<td>简单数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>ESRI GeoDatabase Vector 文件（*.gdb）</td>
+<td>是 ESRI Geodatabase 矢量数据文件，可导入为点、线、面、文本以及纯属性表数据集，导入结果为单个矢量数据集。</td>
+<td>简单数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+
+<tr class="normaltablecontent2">
+<td><a name="6">ArcGIS Personal GeoDatabase 文件（*.mdb）</td>
+<td>是 ArcGIS 个人地理数据库数据文件，可导入为点、线、面、文本以及纯属性表数据集，导入结果为单个矢量数据集。<b>注意</b>：该文件使用了 Microsoft Access 数据文件结构，因此导入该文件时需要安装一个 <b>AccessDatabaseEnge.exe </b>文件，根据 iDesktop 的位数来决定安装的 AccessDatabaseEnge 类型，比如用64位的iDesktop，就需要安装64位的 AccessDatabaseEnge。</td>
+<td>简单数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+
+<tr class="normaltablecontent1">
+<td>MapInfo TAB 文件（*.tab）</td>
+<td>是属性数据的表结构文件，以表的形式存储信息，TAB 文件定义了地图属性数据的表结构</td>
+<td>CAD复合数据集、简单数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td><A href="ImportMif.htm">MapInfo 交换格式（*.mif）</A></td>
+<td>是 MapInfo 用来对外交换数据的一种中间交换文件，保存了 MapInfo 的表结构及对象的空间信息，包括了对象的符号样式、填充模式等风格信息。</td>
+<td>CAD复合数据集、简单数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td><A href="ImportWor.htm">MapInfo WOR 文件（*.wor）</A></td>
+<td>是 MapInfo 工作空间文件。工作空间文件用于保存表、窗口和窗口位置、地图、布局、资源符号、MapInfo 环境设置等信息。</td>
+<td>简单数据集</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="normaltablecontent2">
+<td>MapGIS 交换格式(*.wat; *.wal; *.wap; *.wan)</td>
+<td>是MapGIS的明码文件，其文件结构由文件头和数据区两部分组成。在MAPGIS文件系统中，其工程文件（后缀名为.MPJ）一般包括点文件（*.WT）、线文件（*.WL）、面文件（*.WP）、网络文件（*.WN）。在执行导入功能之前，必须将 MapGIS 的这些图形文件格式转换为 MapGIS 明码格式，之后再进行导入工作。上述四种文件格式，转化为明码格式后，文件名分别为：点明码文件（*.wat）、线明码文件（*.wal）、区明码文件（*.wap）、网络明码文件（*.wan）。</td>
+<td>CAD复合数据集、简单数据集</td>
+<td>   </td>
+</tr>
+<tr class="normaltablecontent1">
+<td><A href="ImportExcel.htm">Microsoft Excel 文件（*.xlsx）</A></td>
+<td>支持 Office 2007 及更新版本文件，即 *.xlsx 格式的文件，通常存储了地理数据的空间和属性信息，可导入为属性表数据。</td>
+<td>属性表数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td><A href="CSVimport.htm">CSV 文本文件（*.csv）</A></td>
+<td>以文本形式记录数据的文件（通常以逗号为分隔符），这种格式经常用来作为不同程序之间的数据交互的格式。</td>
+<td>属性表数据集</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="normaltablecontent1">
+<td><A href="ImportLidar.htm">LIDAR 文件（*.txt）</A></td>
+<td>激光雷达获取到的数据点非常密集，也被称为点云数据。</td>
+<td>二维点数据集、三维点数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>dBASE 文件格式（*.dbf）</td>
+<td>ShapeFile数据的表数据。</td>
+<td>属性表数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>DGN 文件（*.dgn）</td>
+<td>Microstation DGN 文件。</td>
+<td>矢量数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>VCT 文件（*.vct）</td>
+<td>国家标准矢量文件。</td>
+<td>矢量数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>电信 Building Vector 文件</td>
+<td>电信行业数据矢量面数据。</td>
+<td>矢量面数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>电信 Vector 文件</td>
+<td>电信行业数据矢量线数据。</td>
+<td>矢量线数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>GJB 文件夹</td>
+<td>军用标数据是指符合国家标准规定的军用数字地图的数据。</td>
+<td>矢量点、线、面、文本数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>S-57 海图数据文件（*.000）</td>
+<td>符合 S-57 标准海图数据，需要海图模块许可才可导入。</td>
+<td>海图数据集分组</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>GeoJson文件</td>
+<td>GeoJson 是一种对各种地理数据结构进行编码的格式，基于JavaScript对象表示的地理空间信息数据交换格式。</td>
+<td>点、线、面、CAD数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td><A href="ImportSimpleJson.htm">SimpleJson数据文件（*.json）</a></td>
+<td>SimpleJson(*.json) 是SuperMap 软件支持的特有数据格式，SimpleJson 数据包含两个文件：(*.json) 和 (*.meta)。(*.meta )文件中存储数据的元数据信息,(*.json)文件中存储数据中成员信息。</td>
+<td>点、线、面、CAD数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>GPS文件（*.gpx ）</td>
+<td>*.gpx 文件是GPS设备记录下来的GPS轨迹点文件，是一种轻量级的XML数据交换格式。</td>
+<td>点数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>OpenStreetMap 数据文件（*.osm）</td>
+<td>*.osm 文件是 OpenStreetMap 用于保存街道地图的信息创建的矢量数据文件。通过 ASCII 明码方式保存。可导入为点、线、面数据集，但不能导入为 CAD 数据集。</td>
+<td>点、线、面数据集</td>
+<td><font color="#ff0000">&nbsp;  </font></td>
+</tr>
+
+</table>
+<h3><a name="2"></a><img align="absmiddle" src="../../img/read.gif"/>支持导入的栅格文件格式</h3>
+<table class="normaltable">
+<thead>
+<tr class="normaltableTitle">
+<td width="25%">支持导入的栅格文件格式</td>
+<td width="40%">文件说明</td>
+<td width="25%">支持导入为数据集类型</td>
+<td width="10%">是否支持导出</td>
+</tr>
+
+</thead>
+<tr class="normaltablecontent1">
+<td>ArcInfo Grid 文件（*.grd; *.txt）</td>
+<td>grd 格式数据为网格数据，是 ArcInfo Grid 的一种栅格数据存储格式，分块存储着像元的空间位置和像元值信息。</td>
+<td>栅格数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td><A href="ImportIMG.htm">Erdas Image 文件（*.img）</A></td>
+<td>是 ERDAS 平台下用于遥感分析的常见文件格式，可存储影像、栅格、DEM 等多种数据</td>
+<td>影像数据集、栅格数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td><A href="ImportIMG.htm">TIFF 影像数据（*.tif; *.tiff）</A></td>
+<td>TIFF（Tagged Image File   Format）标签图像文件格式，是常见的高位彩色图像格式，GeoTIFF 是一种包含地理信息的TIFF文件格式，其信息编码在 TIFF 文件预留的Tag（标签）之中。</td>
+<td>影像数据集、栅格数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>位图文件（*.bmp）</td>
+<td>是 Windows 操作系统中的标准图像文件格式，没有任何压缩，占用空间大，导入为影像数据。</td>
+<td>影像数据集、栅格数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>PNG 文件（*.png）</td>
+<td>网络图像文件存储格式，对连续像元值的像元有简单压缩。</td>
+<td>影像数据集、栅格数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>GIF 文件（*.gif）</td>
+<td>图像互换格式，对连续像元值的像元有简单压缩。</td>
+<td>影像数据集、栅格数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>JPG 文件（*.jpg; *.jpeg）</td>
+<td>常见的图片格式，采用24位颜色存储单个图像。</td>
+<td>影像数据集、栅格数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>JPEG2000 文件（*.jp2、*.jpk）</td>
+<td>JPEG2000 是基于小波变换的图像压缩标准，压缩比较高。</td>
+<td>影像数据集、栅格数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>ECW 文件（*.ecw）</td>
+<td>ECW 是 Erdas 专有的格式，是基于小波的有损压缩，与 JPEG 2000 类似。</td>
+<td>影像数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>SIT 影像数据（*.sit）</td>
+<td>是 SuperMap 产品自有的栅格及影像文件存储格式，它集成多种影像处理技术，不仅能大幅度压缩影像数据，并能够以极快的速度读取显示。</td>
+<td>影像数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>USGDEM 和 GBDEM 栅格文件（*.dem）</td>
+<td>是空间数据的交换格式，导入为栅格数据。</td>
+<td>栅格数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>BIL 文件（*.bil）</td>
+<td>BIL 为波段按行交叉格式，以扫描行为单位，各波段同一扫描行数据依次记录，图像顺序为第一个像元所有的波段，接着是第二个像元的所有波段，然后是第三个等等。</td>
+<td>栅格数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>BIP 文件（*.bip）</td>
+<td>BIP 为像元波段交叉格式，以一对像元为基本单位进行记录。</td>
+<td>栅格数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>BSQ 文件（*.bsq）</td>
+<td>BSQ 是波段顺序格式，以波段为单位，每个波段所有扫描依次记录，每行数据后面紧接着同一波段的下一行数据。</td>
+<td>栅格数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>RAW 文件（*.raw）</td>
+<td>是数码影像领域的常见格式，它包含了原图片文件在传感器产生后，进入照相机图像处理器之前的一切照片信息，具有压缩损失小、存储空间相对较小的特点。</td>
+<td>影像数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>MrSID 文件（*.sid）</td>
+<td>是一种常见的遥感图像存储格式，经过 MrSID 多分辨率无缝影像数据库的压缩，出错空间和浏览时间较少。</td>
+<td>影像数据集、栅格数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>电信数据栅格文件（*.b，*.bin）</td>
+<td>电信行业数据栅格数据。</td>
+<td>栅格数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>ASCII Grid 文件（*.asc）</td>
+<td>是 ArcGIS for Desktop Advanced 格网交换文件。</td>
+<td>影像数据集、栅格数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr>
+
+<tr class="normaltablecontent1">
+<td>GDAL Virtual 数据格式（*.vrt）</td>
+<td>是由地理空间数据摘要库 (GDAL) 创建的一种文件格式。这种格式允许从 GDAL 可读的其他数据集中获取虚拟数据集。支持多种栅格数据格式，包含：TIFF、IMG、DEM等多种格式。</td>
+<td>影像数据集、栅格数据集</td>
+<td><font color="#ff0000"></font>&nbsp; </td>
+</tr>
+</table>
+
+<h3><a name="3"></a><img align="absmiddle" src="../../img/read.gif"/>支持导入的模型文件格式</h3>
+<table class="normaltable">
+<thead>
+<tr class="normaltableTitle">
+<td width="25%">支持导入的模型文件格式</td>
+<td width="40%">文件说明</td>
+<td width="25%">支持导入为数据集类型</td>
+<td width="10%">是否支持导出</td>
+</tr>
+
+</thead>
+<tr class="normaltablecontent1">
+<td>SketchUp三维模型文件（*.skp）</a></td>
+<td>三维模型数据，可导入为模型数据集。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000"> </font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td><a href="ImportModelData.htm">3DS 三维模型文件（*.3ds）</a></td>
+<td>三维模型数据，可导入为模型数据集。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000"> </font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td><a href="ImportModelData.htm">DXF 三维模型文件（*.dxf）</a></td>
+<td>三维模型数据，可导入为模型数据集。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<!--tr class="normaltablecontent1">
+<td><a href="ImportModelData.htm">FLT 三维模型文件（*.flt）</a></td>
+<td>三维模型数据，可导入为模型数据集。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr-->
+<tr class="normaltablecontent2">
+<td><a href="ImportModelData.htm">DirectX 的三维模型文件（*.x）</a></td>
+<td>三维模型数据，可导入为模型数据集。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td><A href="ImportModelData.htm">倾斜摄影 OSGB 文件（*.osgb，*.osg）</A></td>
+<td>倾斜摄影模型数据，可导入为模型数据集。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr>
+<!--tr class="normaltablecontent2">
+<td>SuperMap 模型缓存文件（*.scv）</td>
+<td>SuperMap 模型缓存文件。</td>
+<td>CAD复合数据集</td>
+<td><font color="#ff0000">&nbsp; </font></td>
+</tr-->
+<tr class="normaltablecontent2">
+<td>Google KML 文件（*.kml）</td>
+<td>Keyhole Markup Language（KML）由Google公司定义，基于XML语言描述，用于描述3D空间数据在Google Earth中的显示。一个KML文件是图形要素（Graphic Elements）、图像（images）和设置信息的集合。</td>
+<td>CAD复合数据集、简单数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>Google KML压缩文件（*.kmz）</td>
+<td>KMZ为KML文件的压缩包。</td>
+<td>CAD复合数据集、简单数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>OBJ模型文件（*.obj）</td>
+<td>Alias 公司基于工作站的3D建模和动画软件Advanced Visualizer 开发的一种标准3D模型文件格式。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>DAE模型文件（*.dae）</td>
+<td>DAE 即 Digital Asset Exchange 也称Collada模型，是Khronos旗下核心的可交换型3D模型格式。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>IFC模型文件（*.ifc）</td>
+<td>IFC 即 Industry Foundation Classes，建筑工程数据交换标准。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>FBX 模型文件（*.fbx）</td>
+<td>AutoDesk的用于跨平台的免费三维数据交换格式。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>3D打印三维模型文件（*.stl,*.off）</td>
+<td>三维模型数据，可导入为模型数据集。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>Geo3DML地质体模型文件（*.xml）</td>
+<td> 地质体模型数据，可导入为模型数据集。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000"></font></td>
+</tr>
+<tr class="normaltablecontent1">
+<td>TIN地形缓存文件（*.tinz）</td>
+<td>地形模型数据，可导入为模型数据集 。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+<tr class="normaltablecontent2">
+<td>TIN地形文件（*.sct）</td>
+<td> 地形模型数据，可导入为模型数据集。</td>
+<td>CAD复合数据集、模型数据集</td>
+<td><font color="#ff0000">√</font></td>
+</tr>
+</table>
+
+
+<!--ul>
+<li><a href="ImportCAD.htm">AutoCAD 图形文件（*.dxf; *.dwg）</a>：DXF 文件是AutoCAD的一种图形交换文件，用于AutoCAD与其它软件之间进行CAD数据交换，它是一种基于矢量的ASCII文件格式；DWG 是 AutoCAD 的图形文件，专门用于保存矢量图形的标准文件格式，它是一种基于矢量的二进制文件格式。</li>
+<li><a href="ImportSHP.htm">ArcView Shape 文件（*.shp）</a>：*.shp 文件是 ArcView GIS 软件特有的数据格式，用于存储地理要素的空间和属性信息，是常用的一种矢量数据格式。</li>
+<li>ArcInfo Grid 文件（*.grd; *.txt）：*.grd 格式数据为网格数据，是 ArcInfo Grid 的一种栅格数据存储格式，分块存储着像元的空间位置和像元值信息；</li>
+<li>ArcInfo Export 文件（*.E00）：E00 文件是 ESRI ArcInfo 的通用交换格式文件。通过 ASCII 明码方式，E00 包含了几乎所有的矢量格式以及属性信息。</li>
+<li>MapInfo TAB 文件（*.tab）：是属性数据的表结构文件，以表的形式存储信息，TAB 文件定义了地图属性数据的表结构，包括字段数、字段名称、字段类型、字段宽度、索引字段及相应图层的一些关键空间信息描述。</li>
+<li><a href="ImportMif.htm">MapInfo 交换格式（*.mif）</a>：是 MapInfo 用来对外交换数据的一种中间交换文件，保存了 MapInfo 的表结构及对象的空间信息，包括了对象的符号样式、填充模式等风格信息。</li>
+<li><a href="ImportWor.htm">MapInfo WOR 文件（*.wor）</a>：是 MapInfo 工作空间文件。工作空间文件用于保存表、窗口和窗口位置、地图、布局、资源符号、MapInfo 环境设置等信息。
+</li>
+<li>MapGIS 交换格式（*.wat; *.wal; *.wap; *.wan）：是MapGIS的明码文件，其文件结构由文件头和数据区两部分组成。在MAPGIS文件系统中，其工程文件（后缀名为.MPJ）一般包括点文件（*.WT）、线文件（*.WL）、面文件（*.WP）、网络文件（*.WN）。在执行导入功能之前，必须将 MapGIS 的这些图形文件格式转换为 MapGIS 明码格式，之后再进行导入工作。上述四种文件格式，转化为明码格式后，文件名分别为：点明码文件（*.wat）、线明码文件（*.wal）、区明码文件（*.wap）、网络明码文件（*.wan）。</li>
+<li><a href="ImportExcel.htm">Microsoft Excel 文件（*.xlsx）</a>：通常存储了地理数据的空间和属性信息，可导入为属性表数据。</li>
+<li><a  href="CSVimport.htm">CSV 文本文件（*.csv）</a>：是以文本形式记录数据的文件（通常以逗号为分隔符），这种格式经常用来作为不同程序之间的数据交互的格式。</li>
+<li>SIT 影像数据（*.sit）：是SuperMap产品自有的栅格及影像文件存储格式，它集成多种影像处理技术，不仅能大幅度压缩影像数据，并能够以极快的速度读取显示。</li>
+<li><a href="ImportIMG.htm">Erdas Image 文件（*.img）</a>：是 ERDAS 平台下用于遥感分析的常见文件格式，可存储影像、栅格、DEM等多种数据。</li>
+<li><a href="ImportIMG.htm">TIFF 影像数据（*.tif; *.tiff）</a>：TIFF（Tagged Image File Format）标签图像文件格式，是常见的高位彩色图像格式，GeoTIFF是一种包含地理信息的TIFF文件格式，其信息编码在TIFF文件预留的Tag（标签）之中。</li>
+<li>位图文件（*.bmp）：是 Windows 操作系统中的标准图像文件格式，没有任何压缩，占用空间大，导入为影像数据。</li>
+<li>PNG 文件（*.png）：网络图像文件存储格式，对连续像元值的像元有简单压缩。</li>
+<li>GIF 文件（*.gif）：图像互换格式，对连续像元值的像元有简单压缩。</li>
+<li>JPG 文件（*.jpg; *.jpeg）：常见的图片格式，采用24位颜色存储单个图像。</li>
+<li>SuperMap 模型缓存文件（*.scv）</li>
+<li><a href="ImportOSG&OSGB.htm">倾斜摄影 OSGB 文件（*.osgb）</a>：通过倾斜摄影技术获取的影像数据。</li>
+<li>三维模型文件（*.3ds; *.dxf; *.flt）：三维模型数据，可导入为模型数据集。</li>
+<!--li>FBX 三维模型文件（*.fbx）：</li>
+<li>DXF 三维模型文件（*.dxf）：</li>
+<li>FLT 三维模型文件（*.flt）：</li>
+<li>DirectX 的三维模型文件（*.x）</li>
+<li>Google KML 文件（*.kml）：Keyhole Markup Language（KML）由Google公司定义，基于XML语言描述，用于描述3D空间数据在Google Earth中的显示。一个KML文件是图形要素（Graphic Elements）、图像（images）和设置信息的集合。</li>
+<li>Google KML压缩文件（*.kmz）：KMZ为KML文件的压缩包。</li>
+<li>USGDEM 和 GBDEM 栅格文件（*.dem）：是空间数据的交换格式，导入为栅格数据。</li>
+<li>栅格文件（*.bil; *.bsq; *.bip）：BIL为波段按行交叉格式，以扫描行为单位，各波段同一扫描行数据依次记录，图像顺序为第一个像元所有的波段，接着是第二个像元的所有波段，然后是第三个等等；BSQ 是波段顺序格式，以波段为单位，每个波段所有扫描依次记录，每行数据后面紧接着同一波段的下一行数据；BIP 为像元波段交叉格式，以一对像元为基本单位进行记录。</li>
+<li>RAW 文件（*.raw）：是数码影像领域的常见格式，它包含了原图片文件在传感器产生后，进入照相机图像处理器之前的一切照片信息，具有压缩损失小、存储空间相对较小的特点。</li>
+<li>MrSID 文件（*.sid）：是一种常见的遥感图像存储格式，经过MrSID多分辨率无缝影像数据库的压缩，出错空间和浏览时间较少。</li>
+<li>电信数据栅格文件（*.b）：电信行业数据栅格数据</li>
+<li><a href="ImportLidar.htm">LIDAR 文件（*.txt）</a>：激光雷达获取到的数据点非常密集，也被称为点云数据。</li>
+<li>电信 Building Vector 文件：电信行业数据矢量面数据。</li>
+<li>电信 Vector 文件:电信行业数据矢量线数据。</li>
+<li>S-57 海图数据文件（*.000）:符合 S-57 标准海图数据，需要海图模块许可才可导入。</li>
+</ul>
+<p><a href="#0">返回首页</a></p>
+
+<p><h3><a name="2"></a><img align="absmiddle" src="../../img/read.gif"/>数据导出支持的数据格式</h3>
+<ul>
+<li>AutoCAD  DXF 文件（<em>.dxf）</li>
+<li>AutoCAD Drawing 文件（</em>.dwg）</li>
+<li>ArcView Shape 文件（<em>.shp）</li>
+<li>ArcInfo Export 文件（</em>.E00）</li>
+<li>MapInfo 交换格式（<em>.mif）</li>
+<li>MapInfo TAB 文件（</em>.tab）</li>
+<li>Google KML 文件（<em>.kml）</li>
+<li>Google KML压缩文件（</em>.kmz）</li>
+<li>电信 Building vector 文件</li>
+<li>电信 Vector 文件</li>
+<li>File GeoDatabase Vector 文件</li>
+<li>3DS 文件夹</li>
+<li>ArcInfo Grid 文件（<em>.grd）</li>
+<li>TIFF 影像数据（</em>.tif）</li>
+<li>SIT 影像数据（<em>.sit）</li>
+<li>Erdas Image 文件（</em>.img）</li>
+<li>JPG 文件（<em>.jpg）</li>
+<li>PNG 文件（</em>.png）</li>
+<li>位图文件（<em>.bmp）</li>
+<li>GIF 文件（</em>.gif）</li>
+<li>电信数据栅格文件（<em>.b）</li>
+<li>X 模型文件（</em>.X）</li>
+<li>Microsoft Excel 文件（<em>.xlsx）</li>
+<li>S-57 海图数据文件（</em>.000）:需要海图模块许可。</li>
+</ul-->
+<p><a href="#0">返回顶部</a></p></p>
+
+<hr />
+
+<p><div align="right">
+<table width="96%">
+<tr>
+<td align="right"><p class="contentLink"><a target="_blank" href="http://www.supermap.com"><font color="#004080"><script>copyright();</script></font></a></p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html></p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

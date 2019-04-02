@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -66,6 +68,7 @@
 
 <header>
     <a href="/zh/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -108,6 +111,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -601,8 +606,8 @@
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/datamanage/objectdraw/" title="对象绘制"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 对象绘制</a>
-<a class="nav nav-next" href="/zh/docs/datamanage/encodetype/" title="数据集压缩编码方式">Next - 数据集压缩编码方式 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/zh/docs/datamanage/objectdraw/" title="对象绘制"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 对象绘制</a>
+<a class="nav nav-next" style="float:right"  href="/zh/docs/datamanage/encodetype/" title="数据集压缩编码方式">Next - 数据集压缩编码方式 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -684,24 +689,250 @@
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">200 Words|Read in about 1 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<p>　　数据源（Datasource）是存储空间数据的场所。所有的空间数据都是存储于数据源而不是工作空间，任何对空间数据的操作都需要打开或获取数据源，用户可以按照数据的用途，将不同的空间数据保存于数据源中，对这些数据统一进行管理和操作。 对不同类型的数据源，需要不同的空间数据引擎来存储和管理。　　
+　　<br />
+　　SuperMap SDX+ 是 SuperMap 的空间引擎技术，它提供了一种通用的访问机制（或模式）来访问存储在不同引擎里的数据。 各种空间几何对象和影像数据都可以通过 SDX+ 引擎，存放到关系型数据库中，形成空间数据和属性数据一体化的空间数据库。<br />
+　　不同类型的空间数据源对应不同的数据引擎。SuperMap 产品中提供了多种数据源类型，分为文件型数据源、数据库型数据源、 Web 数据源以及内存数据源。因此，对应的引擎类型有文件引擎、数据库引擎和 Web 引擎。　</p>
+
+<h3 id="文件型数据源">文件型数据源</h3>
+
+<p>将空间数据和属性数据直接存储到文件中。存储扩展名为 *.udb 的文件。在小数据量情况下使用文件型数据源地图的显示更快，且数据迁移方便。</p>
+
+<p><strong>文件引擎</strong>：包含有三类：SuperMap 自定义的 UDB 引擎（可读写）、影像插件引擎（直接访问一些影像数据）和矢量文件引擎（直接访问外部矢量文件）。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">数据源类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">UDB</td>
+<td align="left">跨平台文件引擎类型，针对 UDB 数据源。</td>
+</tr>
+
+<tr>
+<td align="left">ImagePlugins</td>
+<td align="left">影像只读引擎类型，针对通用影像格式如 BMP，JPG，TIFF，以及超图自定义的影像格式 SIT 等。</td>
+</tr>
+
+<tr>
+<td align="left">矢量文件</td>
+<td align="left">矢量文件引擎类，针对通用矢量格式如 shp，tab，Acad等,支持矢量文件的编辑和保存。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="数据库型数据源">数据库型数据源</h3>
+
+<p>将数据源存储在数据库中，目前桌面产品提供 OraclePlus、Oracle Spatial、SQLPlus、PostgreSQL、DB2、KingBase、MySQL、BeyonDB、HighGoDB、KDB 和 MongoDB 十余种数据库型数据源功能。一般常用于大数据量的数据存储，便于大数据量的管理和访问，且支持并发操作便于修改和数据同步。用户在于访问数据库需要本地配置相关的数据库环境和客户端。</p>
+
+<p><strong>数据库引擎</strong>：SuperMap 空间数据库以大型关系型数据库为存储容器，通过SuperMap SDX+进行管理和操作，将空间数据和属性数据一体化存储到大型关系型数据库中，如Oracle、SQL Server、Sybase 和 DM3 等。如下表所示的空间数据库类型：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">数据源类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">SQLPlus</td>
+<td align="left">SQL Server 引擎类型，针对 SQL Server 数据源。</td>
+</tr>
+
+<tr>
+<td align="left">SQLSpatial</td>
+<td align="left">SQLSpatial 引擎类型。</td>
+</tr>
+
+<tr>
+<td align="left">OraclePlus</td>
+<td align="left">OraclePlus 引擎类型，针对 Oracle 数据源，必须安装客户端。</td>
+</tr>
+
+<tr>
+<td align="left">Oracle Spatial</td>
+<td align="left">Oracle Spatial 引擎类型，针对 Oracle Spatial 数据源，必须安装客户端。</td>
+</tr>
+
+<tr>
+<td align="left">PostgreSQL</td>
+<td align="left">PostgreSQL 引擎类型，针对 PostgreSQL 数据源。</td>
+</tr>
+
+<tr>
+<td align="left">MySQL</td>
+<td align="left">MySQL 引擎类型，目前仅在Window 64位提供该引擎类型，不支持数据集集合。</td>
+</tr>
+
+<tr>
+<td align="left">DB2</td>
+<td align="left">DB2 引擎类型，针对 IBM DB2 数据库的 SDX+ 数据源，必须安装客户端。</td>
+</tr>
+
+<tr>
+<td align="left">Kingbase</td>
+<td align="left">Kingbase 引擎类型，针对 Kingbase 数据源，不支持多波段数据。该引擎目前仅供项目使用。</td>
+</tr>
+
+<tr>
+<td align="left">BeyonDB</td>
+<td align="left">BeyonDB 引擎类型。</td>
+</tr>
+
+<tr>
+<td align="left">PGGIS</td>
+<td align="left">PostgreSQL的空间数据扩展PostGIS 引擎类型。</td>
+</tr>
+
+<tr>
+<td align="left">KDB</td>
+<td align="left">浪潮KDB 引擎类型。</td>
+</tr>
+
+<tr>
+<td align="left">DMPlus</td>
+<td align="left">第三代DM 引擎类型，必须安装客户端。</td>
+</tr>
+
+<tr>
+<td align="left">HighGoDB</td>
+<td align="left">HighGoDB 引擎类型。</td>
+</tr>
+
+<tr>
+<td align="left">GBase</td>
+<td align="left">GBase 引擎类型。</td>
+</tr>
+
+<tr>
+<td align="left">MongoDB</td>
+<td align="left">MongoDB 引擎类型。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="web-数据源">Web 数据源</h3>
+
+<p>将数据源存储在网络服务器中，OGC、GoogleMaps、超图云服务、REST 地图服务和天地图地图服务数据源属于 Web 数据源。</p>
+
+<p><strong>Web 引擎</strong></p>
+
+<p>Web引擎可以直接访问WFS、WMS、WCS等所提供的Web服务，这类引擎就是把网络上符合OGC标准的Web服务器，作为 SuperMap 的数据源来处理，通过它可以把网络发布的地图和数据与 SuperMap 的地图和数据完全结合，将WFS和WMS的应用融入到 SuperMap 的技术体系，拓展了 SuperMap 数据引擎的应用领域。Web引擎为只读引擎。</p>
+
+<table>
+<thead>
+<tr>
+<th>数据集类型</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>OGC</td>
+<td>OGC 引擎类型，针对于 Web 数据源，目前支持的类型有 WMS，WFS，WCS 和 WMTS。</td>
+</tr>
+
+<tr>
+<td>GoogleMaps</td>
+<td>GoogleMaps 引擎类型。针对谷歌电子地图服务。</td>
+</tr>
+
+<tr>
+<td>SuperMapCloud</td>
+<td>SuperMap 云服务引擎类型，针对超图发布的云服务。</td>
+</tr>
+
+<tr>
+<td>iServerRest</td>
+<td>iServer Rest 服务引擎类型，基于 REST 协议发布的地图服务。</td>
+</tr>
+
+<tr>
+<td>OpenStreetMaps</td>
+<td>又称 OSM 引擎类型，是由网络大众共同打造的免费开源的地图服务。</td>
+</tr>
+
+<tr>
+<td>MapWorld</td>
+<td>天地图服务引擎类型，针对天地图发布的地图服务。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="内存数据源">内存数据源</h3>
+
+<p>数据源中的数据都保存在内存中，为临时数据源，不支持保存。一些分析的中间结果可以存储在该数据源中，有利于提高分析的效率，当得到最终数据时可从内存数据源导出为本地数据。<br />
+内存数据源对应的数据引擎为内存引擎。</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

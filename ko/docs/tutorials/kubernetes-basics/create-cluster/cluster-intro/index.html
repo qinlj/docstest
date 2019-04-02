@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -51,6 +53,7 @@
 
 <header>
     <a href="/ko/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -87,6 +90,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -866,8 +871,8 @@
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/ko/docs/tutorials/kubernetes-basics/create-cluster/" title="클러스터 생성하기"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 클러스터 생성하기</a>
-<a class="nav nav-next" href="/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/" title="대화형 튜토리얼 - 클러스터 생성하기">Next - 대화형 튜토리얼 - 클러스터 생성하기 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/ko/docs/tutorials/kubernetes-basics/create-cluster/" title="클러스터 생성하기"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 클러스터 생성하기</a>
+<a class="nav nav-next" style="float:right"  href="/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/" title="대화형 튜토리얼 - 클러스터 생성하기">Next - 대화형 튜토리얼 - 클러스터 생성하기 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -955,24 +960,193 @@
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">400 Words|Read in about 2 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<body>
+
+<link href="/docs/tutorials/kubernetes-basics/public/css/styles.css" rel="stylesheet">
+
+<div class="layout" id="top">
+
+    <main class="content">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <h3>목표</h3>
+                <ul>
+                    <li>쿠버네티스 클러스터가 무엇인지 배운다.</li>
+                    <li>Minikube가 무엇인지 배운다.</li>
+                    <li>온라인 터미널을 사용해서 쿠버네티스 클러스터를 시작한다.</li>
+                </ul>
+            </div>
+
+            <div class="col-md-8">
+                <h3>쿠버네티스 클러스터</h3>
+                <p>
+                    <b>쿠버네티스는 서로 연결되어서 단일 유닛처럼 동작하는 고가용성의 컴퓨터 클러스터를 상호조정한다.</b>
+                    쿠버네티스의 추상화된 개념을 통해 개별 머신에 얽매이지 않고 컨테이너화된 애플리케이션을 클러스터에
+                    배포할 수 있다. 이렇게 새로운 배포 모델을 활용하려면, 애플리케이션을 개별 호스트에 결합되지 않는
+                    방식으로 패키지할 필요가 있다. 즉, 컨테이너화 해야 한다. 컨테이너화된 애플리케이션은 호스트에
+                    매우 깊이 통합된 패키지로써, 특정 머신에 직접 설치되는 예전의 배포 모델보다 유연하고 가용성이 높다.
+                    <b>쿠버네티스는 애플리케이션 컨테이너를 클러스터에 분산시키고 스케줄링하는 일을 보다 효율적으로
+                        자동화한다.</b> 
+                    쿠버네티스는 오픈소스 플랫폼이고 운영 수준의 안정성을 가졌다.
+                </p>
+                <p>쿠버네티스 클러스터는 두 가지 형태의 자원으로 구성된다.
+                <ul>
+                    <li><b>마스터</b>는 클러스터를 상호조정한다</li>
+                    <li><b>노드</b>는 애플리케이션을 구동하는 작업자다</li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <div class="content__box content__box_lined">
+                    <h3>요약:</h3>
+                    <ul>
+                        <li>쿠버네티스 클러스터</li>
+                        <li>Minikube</li>
+                    </ul>
+                </div>
+                <div class="content__box content__box_fill">
+                    <p><i>
+                        쿠버네티스는 컴퓨터 클러스터에 걸쳐서 애플리케이션 컨테이너의 위치(스케줄링)와 실행을 
+                        오케스트레이션하는 운영 수준의 오픈소스 플랫폼이다.
+                    </i></p>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2 style="color: #3771e3;">클러스터 다이어그램</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <p><img src="/docs/tutorials/kubernetes-basics/public/images/module_01_cluster.svg"></p>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-8">
+                <p><b>마스터는 클러스터 관리를 담당한다.</b> 마스터는 애플리케이션을 스케줄링하거나, 애플리케이션의
+                    항상성을 유지하거나, 애플리케이션을 스케일링하고, 새로운 변경사항을 순서대로 반영하는 일과 같은
+                    클러스터 내 모든 활동을 조율한다.</p>
+                <p><b>노드는 쿠버네티스 클러스터 내 워커 머신으로써 동작하는 VM 또는 물리적인 컴퓨터다.</b>
+                    각 노드는 노드를 관리하고 쿠버네티스 마스터와 통신하는 Kubelet이라는 에이전트를 갖는다. 노드는
+                    컨테이너 운영을 담당하는 Docker 또는 rkt와 같은 툴도 갖는다. 운영 트래픽을 처리하는 쿠버네티스
+                    클러스터는 최소 세 대의 노드를 가져야한다.</p>
+
+            </div>
+            <div class="col-md-4">
+                <div class="content__box content__box_fill">
+                    <p><i>마스터는 클러스터를 관리하고 노드는 구동되는 애플리케이션을 수용하는데 사용된다. </i></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <p>애플리케이션을 쿠버네티스에 배포한다는 것은, 마스터에 애플리케이션 컨테이너를 구동하라고 지시하는
+                    것이다. 마스터는 컨테이너를 클러스터의 어느 노드에 구동시킬지를 스케줄한다. <b>노드는 마스터가
+                        제공하는 쿠버네티스 API를 통해서 마스터와 통신한다.</b> 최종 사용자도 쿠버네티스 API를 직접
+                    사용해서 클러스터와 상호작용할 수 있다.</p>
+
+                <p>쿠버네티스 클러스터는 물리 및 가상 머신 모두에 설치될 수 있다. 쿠버네티스 개발을 시작하려면
+                    Minikube를 사용할 수 있다. Minikube는 로컬 머신에 VM을 만들고 하나의 노드로 구성된 간단한 
+                    클러스터를 배포하는 가벼운 쿠버네티스 구현체다. Minikube는 리눅스, 맥, 그리고 윈도우 시스템에서 
+                    구동이 가능하다. Minikube CLI는 클러스터에 대해 시작, 중지, 상태 조회 및 삭제 등의 기본적인 
+                    부트스트래핑 기능을 제공한다. 하지만, 본 튜토리얼에서는 Minikube가 미리 설치된 채로 제공되는 
+                    온라인 터미널을 사용할 것이다.</p>
+
+                <p>이제 쿠버네티스가 무엇인지 알아봤으니, 온라인 튜토리얼로 이동해서 우리의 첫 번째 클러스터를
+                    시작해보자!</p>
+
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <a class="btn btn-lg btn-success" href="/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/"
+                   role="button">대화형 튜토리얼 시작하기 <span class="btn__next">›</span></a>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

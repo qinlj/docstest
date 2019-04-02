@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -57,6 +59,7 @@
 
 <header>
     <a href="/ko/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -93,6 +96,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -783,8 +788,8 @@ reason for the failure, those additional nodes may join later or the cluster may
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/ko/docs/setup/on-premises-vm/" title="온-프레미스 VM"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 온-프레미스 VM</a>
-<a class="nav nav-next" href="/ko/docs/setup/multiple-zones/" title="여러 영역에서 구동">Next - 여러 영역에서 구동 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/ko/docs/setup/on-premises-vm/" title="온-프레미스 VM"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 온-프레미스 VM</a>
+<a class="nav nav-next" style="float:right"  href="/ko/docs/setup/multiple-zones/" title="여러 영역에서 구동">Next - 여러 영역에서 구동 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -872,24 +877,228 @@ reason for the failure, those additional nodes may join later or the cluster may
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">900 Words|Read in about 5 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<h2 id="지원">지원</h2>
+
+<p>v1.13 버전에서, 쿠버네티스는 노드 5000개까지의 클러스터를 지원한다. 보다 정확하게는, 다음 기준을 <em>모두</em> 만족하는 설정을 지원한다.</p>
+
+<ul>
+<li>노드 5000개 이하</li>
+<li>전체 파드 150000개 이하</li>
+<li>전체 컨테이너 300000개 이하</li>
+<li>노드 당 파드 100개 이하</li>
+</ul>
+
+<p><br></p>
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#지원">지원</a></li>
+<li><a href="#설치">설치</a>
+<ul>
+<li><a href="#쿼터-문제">쿼터 문제</a></li>
+<li><a href="#etcd-저장소">Etcd 저장소</a></li>
+<li><a href="#마스터-크기와-마스터-구성-요소">마스터 크기와 마스터 구성 요소</a></li>
+<li><a href="#애드온-자원">애드온 자원</a></li>
+<li><a href="#시작-시-사소한-노드-오류-허용">시작 시 사소한 노드 오류 허용</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="설치">설치</h2>
+
+<p>A cluster is a set of nodes (physical or virtual machines) running Kubernetes agents, managed by a &ldquo;master&rdquo; (the cluster-level control plane).</p>
+
+<p>Normally the number of nodes in a cluster is controlled by the value <code>NUM_NODES</code> in the platform-specific <code>config-default.sh</code> file (for example, see <a href="http://releases.k8s.io/master/cluster/gce/config-default.sh" target="_blank">GCE&rsquo;s <code>config-default.sh</code></a>).</p>
+
+<p>Simply changing that value to something very large, however, may cause the setup script to fail for many cloud providers. A GCE deployment, for example, will run in to quota issues and fail to bring the cluster up.</p>
+
+<p>When setting up a large Kubernetes cluster, the following issues must be considered.</p>
+
+<h3 id="쿼터-문제">쿼터 문제</h3>
+
+<p>To avoid running into cloud provider quota issues, when creating a cluster with many nodes, consider:</p>
+
+<ul>
+<li>Increase the quota for things like CPU, IPs, etc.
+
+<ul>
+<li>In <a href="https://cloud.google.com/compute/docs/resource-quotas" target="_blank">GCE, for example,</a> you&rsquo;ll want to increase the quota for:</li>
+<li>CPUs</li>
+<li>VM instances</li>
+<li>Total persistent disk reserved</li>
+<li>In-use IP addresses</li>
+<li>Firewall Rules</li>
+<li>Forwarding rules</li>
+<li>Routes</li>
+<li>Target pools</li>
+</ul></li>
+<li>Gating the setup script so that it brings up new node VMs in smaller batches with waits in between, because some cloud providers rate limit the creation of VMs.</li>
+</ul>
+
+<h3 id="etcd-저장소">Etcd 저장소</h3>
+
+<p>To improve performance of large clusters, we store events in a separate dedicated etcd instance.</p>
+
+<p>When creating a cluster, existing salt scripts:</p>
+
+<ul>
+<li>start and configure additional etcd instance</li>
+<li>configure api-server to use it for storing events</li>
+</ul>
+
+<h3 id="마스터-크기와-마스터-구성-요소">마스터 크기와 마스터 구성 요소</h3>
+
+<p>On GCE/Google Kubernetes Engine, and AWS, <code>kube-up</code> automatically configures the proper VM size for your master depending on the number of nodes
+in your cluster. On other providers, you will need to configure it manually. For reference, the sizes we use on GCE are</p>
+
+<ul>
+<li>1-5 nodes: n1-standard-1</li>
+<li>6-10 nodes: n1-standard-2</li>
+<li>11-100 nodes: n1-standard-4</li>
+<li>101-250 nodes: n1-standard-8</li>
+<li>251-500 nodes: n1-standard-16</li>
+<li>more than 500 nodes: n1-standard-32</li>
+</ul>
+
+<p>And the sizes we use on AWS are</p>
+
+<ul>
+<li>1-5 nodes: m3.medium</li>
+<li>6-10 nodes: m3.large</li>
+<li>11-100 nodes: m3.xlarge</li>
+<li>101-250 nodes: m3.2xlarge</li>
+<li>251-500 nodes: c4.4xlarge</li>
+<li>more than 500 nodes: c4.8xlarge</li>
+</ul>
+
+<blockquote class="note">
+  <div><strong>참고:</strong> <p>On Google Kubernetes Engine, the size of the master node adjusts automatically based on the size of your cluster. For more information, see <a href="https://cloudplatform.googleblog.com/2017/11/Cutting-Cluster-Management-Fees-on-Google-Kubernetes-Engine.html" target="_blank">this blog post</a>.</p>
+
+<p>On AWS, master node sizes are currently set at cluster startup time and do not change, even if you later scale your cluster up or down by manually removing or adding nodes or using a cluster autoscaler.</p>
+</div>
+</blockquote>
+
+
+<h3 id="애드온-자원">애드온 자원</h3>
+
+<p>To prevent memory leaks or other resource issues in <a href="https://releases.k8s.io/master/cluster/addons" target="_blank">cluster addons</a> from consuming all the resources available on a node, Kubernetes sets resource limits on addon containers to limit the CPU and Memory resources they can consume (See PR <a href="http://pr.k8s.io/10653/files" target="_blank">#10653</a> and <a href="http://pr.k8s.io/10778/files" target="_blank">#10778</a>).</p>
+
+<p>For example:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">  </span>containers:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>fluentd-cloud-logging<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>image:<span style="color:#bbb"> </span>k8s.gcr.io/fluentd-gcp:<span style="color:#666">1.16</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>resources:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>limits:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>cpu:<span style="color:#bbb"> </span>100m<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>memory:<span style="color:#bbb"> </span>200Mi</code></pre></div>
+<p>Except for Heapster, these limits are static and are based on data we collected from addons running on 4-node clusters (see <a href="http://issue.k8s.io/10335#issuecomment-117861225" target="_blank">#10335</a>). The addons consume a lot more resources when running on large deployment clusters (see <a href="http://issue.k8s.io/5880#issuecomment-113984085" target="_blank">#5880</a>). So, if a large cluster is deployed without adjusting these values, the addons may continuously get killed because they keep hitting the limits.</p>
+
+<p>To avoid running into cluster addon resource issues, when creating a cluster with many nodes, consider the following:</p>
+
+<ul>
+<li>Scale memory and CPU limits for each of the following addons, if used, as you scale up the size of cluster (there is one replica of each handling the entire cluster so memory and CPU usage tends to grow proportionally with size/load on cluster):
+
+<ul>
+<li><a href="http://releases.k8s.io/master/cluster/addons/cluster-monitoring/influxdb/influxdb-grafana-controller.yaml" target="_blank">InfluxDB and Grafana</a></li>
+<li><a href="http://releases.k8s.io/master/cluster/addons/dns/kube-dns/kube-dns.yaml.in" target="_blank">kubedns, dnsmasq, and sidecar</a></li>
+<li><a href="http://releases.k8s.io/master/cluster/addons/fluentd-elasticsearch/kibana-deployment.yaml" target="_blank">Kibana</a></li>
+</ul></li>
+<li>Scale number of replicas for the following addons, if used, along with the size of cluster (there are multiple replicas of each so increasing replicas should help handle increased load, but, since load per replica also increases slightly, also consider increasing CPU/memory limits):
+
+<ul>
+<li><a href="http://releases.k8s.io/master/cluster/addons/fluentd-elasticsearch/es-statefulset.yaml" target="_blank">elasticsearch</a></li>
+</ul></li>
+<li>Increase memory and CPU limits slightly for each of the following addons, if used, along with the size of cluster (there is one replica per node but CPU/memory usage increases slightly along with cluster load/size as well):
+
+<ul>
+<li><a href="http://releases.k8s.io/master/cluster/addons/fluentd-elasticsearch/fluentd-es-ds.yaml" target="_blank">FluentD with ElasticSearch Plugin</a></li>
+<li><a href="http://releases.k8s.io/master/cluster/addons/fluentd-gcp/fluentd-gcp-ds.yaml" target="_blank">FluentD with GCP Plugin</a></li>
+</ul></li>
+</ul>
+
+<p>Heapster&rsquo;s resource limits are set dynamically based on the initial size of your cluster (see <a href="http://issue.k8s.io/16185" target="_blank">#16185</a>
+and <a href="http://issue.k8s.io/22940" target="_blank">#22940</a>). If you find that Heapster is running
+out of resources, you should adjust the formulas that compute heapster memory request (see those PRs for details).</p>
+
+<p>For directions on how to detect if addon containers are hitting resource limits, see the <a href="/docs/concepts/configuration/manage-compute-resources-container/#troubleshooting">Troubleshooting section of Compute Resources</a>.</p>
+
+<p>In the <a href="http://issue.k8s.io/13048" target="_blank">future</a>, we anticipate to set all cluster addon resource limits based on cluster size, and to dynamically adjust them if you grow or shrink your cluster.
+We welcome PRs that implement those features.</p>
+
+<h3 id="시작-시-사소한-노드-오류-허용">시작 시 사소한 노드 오류 허용</h3>
+
+<p>For various reasons (see <a href="https://github.com/kubernetes/kubernetes/issues/18969" target="_blank">#18969</a> for more details) running
+<code>kube-up.sh</code> with a very large <code>NUM_NODES</code> may fail due to a very small number of nodes not coming up properly.
+Currently you have two choices: restart the cluster (<code>kube-down.sh</code> and then <code>kube-up.sh</code> again), or before
+running <code>kube-up.sh</code> set the environment variable <code>ALLOWED_NOTREADY_NODES</code> to whatever value you feel comfortable
+with. This will allow <code>kube-up.sh</code> to succeed with fewer than <code>NUM_NODES</code> coming up. Depending on the
+reason for the failure, those additional nodes may join later or the cluster may remain at a size of
+<code>NUM_NODES - ALLOWED_NOTREADY_NODES</code>.</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

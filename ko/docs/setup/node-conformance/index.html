@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -54,6 +56,7 @@
 
 <header>
     <a href="/ko/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -90,6 +93,8 @@
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -732,8 +737,8 @@ sudo docker run -it --rm --privileged --net<span style="color:#666">=</span>host
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/ko/docs/setup/certificates/" title="PKI 인증서 및 요구 조건"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - PKI 인증서 및 요구 조건</a>
-<a class="nav nav-next" href="/ko/docs/setup/scratch/" title="맨 처음부터 사용자 지정 클러스터 생성">Next - 맨 처음부터 사용자 지정 클러스터 생성 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/ko/docs/setup/certificates/" title="PKI 인증서 및 요구 조건"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - PKI 인증서 및 요구 조건</a>
+<a class="nav nav-next" style="float:right"  href="/ko/docs/setup/scratch/" title="맨 처음부터 사용자 지정 클러스터 생성">Next - 맨 처음부터 사용자 지정 클러스터 생성 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -821,24 +826,180 @@ sudo docker run -it --rm --privileged --net<span style="color:#666">=</span>host
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">400 Words|Read in about 2 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#노드-적합성-테스트">노드 적합성 테스트</a></li>
+<li><a href="#제한-사항">제한 사항</a></li>
+<li><a href="#노드-필수-구성-요소">노드 필수 구성 요소</a></li>
+<li><a href="#노드-적합성-테스트-실행">노드 적합성 테스트 실행</a></li>
+<li><a href="#다른-아키텍처에서-노드-적합성-테스트-실행">다른 아키텍처에서 노드 적합성 테스트 실행</a></li>
+<li><a href="#선택된-테스트-실행">선택된 테스트 실행</a></li>
+<li><a href="#주의-사항">주의 사항</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="노드-적합성-테스트">노드 적합성 테스트</h2>
+
+<p><em>노드 적합성 테스트</em> 는 노드의 시스템 검증과 기능 테스트를 제공하기 위해 컨테이너화된 테스트 프레임워크이다.
+테스트는 노드가 쿠버네티스를 위한 최소 요구조건을 만족하는지를 검증한다. 그리고 테스트를 통과한 노드는 쿠버네티스 클러스터에 참
+여할 자격이 주어진다.</p>
+
+<h2 id="제한-사항">제한 사항</h2>
+
+<p>쿠버네티스 1.5에서는 노드 적합성 테스트가 아래의 제약이 있다.</p>
+
+<ul>
+<li>노드 적합성 테스트는 컨테이너 런타임으로 Docker만 지원한다.</li>
+</ul>
+
+<h2 id="노드-필수-구성-요소">노드 필수 구성 요소</h2>
+
+<p>노드 적합성 테스트를 실행하기 위해서는, 해당 노드는 표준 쿠버네티스 노드로서 동일한 전제조건을 만족해야 한다.
+노드는 최소한 아래 데몬들이 설치되어 있어야 한다.</p>
+
+<ul>
+<li>컨테이너 런타임 (Docker)</li>
+<li>Kubelet</li>
+</ul>
+
+<h2 id="노드-적합성-테스트-실행">노드 적합성 테스트 실행</h2>
+
+<p>노드 적합성 테스트는 다음 순서로 진행된다.</p>
+
+<ol>
+<li><p>테스트 프레임워크는 Kublet을 테스트하기 위해 로컬 마스터를 시작하기 때문에, Kublet이 localhost를 가르키도록 <code>--api-servers=&quot;http://localhost:8080&quot;</code>를 사용한다. 고려해야 할 다른 Kubelet 플래그들은 다음과 같다.</p>
+
+<ul>
+<li><code>--pod-cidr</code>: <code>kubenet</code>을 사용 중이라면, 임의의 CIDR을 Kubelet에 지정해주어야 한다. 예) <code>--pod-cidr=10.180.0.0/24</code>.</li>
+<li><code>--cloud-provider</code>: <code>--cloud-provider=gce</code>를 사용 중이라면, 테스트 실행 시에는 제거해야 한다.</li>
+</ul></li>
+
+<li><p>다음 커맨드로 노드 적합성 테스트를 실행한다.</p></li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># $CONFIG_DIR는 Kublet의 파드 매니페스트 경로이다.</span>
+<span style="color:#080;font-style:italic"># $LOG_DIR는 테스트 출력 경로이다.</span>
+sudo docker run -it --rm --privileged --net<span style="color:#666">=</span>host <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -v /:/rootfs -v <span style="color:#b8860b">$CONFIG_DIR</span>:<span style="color:#b8860b">$CONFIG_DIR</span> -v <span style="color:#b8860b">$LOG_DIR</span>:/var/result <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  k8s.gcr.io/node-test:0.2</code></pre></div>
+<h2 id="다른-아키텍처에서-노드-적합성-테스트-실행">다른 아키텍처에서 노드 적합성 테스트 실행</h2>
+
+<p>쿠버네티스는 다른 아키텍쳐용 노드 적합성 테스트 Docker 이미지도 제공한다.</p>
+
+<table>
+<thead>
+<tr>
+<th>Arch</th>
+<th align="center">Image</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>amd64</td>
+<td align="center">node-test-amd64</td>
+</tr>
+
+<tr>
+<td>arm</td>
+<td align="center">node-test-arm</td>
+</tr>
+
+<tr>
+<td>arm64</td>
+<td align="center">node-test-arm64</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="선택된-테스트-실행">선택된 테스트 실행</h2>
+
+<p>특정 테스트만 실행하기 위해서는 환경 변수 <code>FOCUS</code>에 테스트하고자 하는 테스트를 정규식으로 지정한다.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo docker run -it --rm --privileged --net<span style="color:#666">=</span>host <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -v /:/rootfs:ro -v <span style="color:#b8860b">$CONFIG_DIR</span>:<span style="color:#b8860b">$CONFIG_DIR</span> -v <span style="color:#b8860b">$LOG_DIR</span>:/var/result <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -e <span style="color:#b8860b">FOCUS</span><span style="color:#666">=</span>MirrorPod <span style="color:#b62;font-weight:bold">\ </span><span style="color:#080;font-style:italic"># MirrorPod 테스트만 실행</span>
+  k8s.gcr.io/node-test:0.2</code></pre></div>
+<p>특정 테스트를 건너뛰기 위해서는, 환경 변수 <code>SKIP</code>에 건너뛰고자 하는 테스트를 정규식으로 지정한다.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo docker run -it --rm --privileged --net<span style="color:#666">=</span>host <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -v /:/rootfs:ro -v <span style="color:#b8860b">$CONFIG_DIR</span>:<span style="color:#b8860b">$CONFIG_DIR</span> -v <span style="color:#b8860b">$LOG_DIR</span>:/var/result <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -e <span style="color:#b8860b">SKIP</span><span style="color:#666">=</span>MirrorPod <span style="color:#b62;font-weight:bold">\ </span><span style="color:#080;font-style:italic"># MirrorPod 테스트만 건너뛰고 모든 적합성 테스트를 실행한다</span>
+  k8s.gcr.io/node-test:0.2</code></pre></div>
+<p>노드 적합성 테스트는 <a href="https://github.com/kubernetes/community/blob/master/contributors/devel/e2e-node-tests.md" target="_blank">노드 e2e 테스트</a>를 컨테이너화한 버전이다.
+기본적으로, 모든 적합성 테스트를 실행한다.</p>
+
+<p>이론적으로, 컨테이너와 필요한 볼륨을 적절히 설정했다면 어떤 노드 e2e 테스트도 수행할 수 있다.
+하지만, 적합성 테스트가 아닌 테스트들은 훨씬 복잡한 설정이 필요하기 때문에 <strong>적합성 테스트만 실행하기를 강하게 추천한다.</strong></p>
+
+<h2 id="주의-사항">주의 사항</h2>
+
+<ul>
+<li>테스트 후, 노드 적합성 테스트 이미지 및 기능 테스트에 사용된 이미지들을 포함하여 몇 개의 Docker 이미지들이 노드에 남는다.</li>
+<li>테스트 후, 노드에 죽은 컨테이너가 남는다. 기능 테스트 도중에 생성된 컨테이너들이다.</li>
+</ul>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -63,6 +65,7 @@ docker网桥被brctl生成的Linux网桥(kbr0)所代替，kbr0是具有256个地
 
 <header>
     <a href="/zh/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -105,6 +108,8 @@ docker网桥被brctl生成的Linux网桥(kbr0)所代替，kbr0是具有256个地
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -436,8 +441,8 @@ docker网桥被brctl生成的Linux网桥(kbr0)所代替，kbr0是具有256个地
 
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/admin/accessing-the-api/" title="Kubernetes API访问控制"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Kubernetes API访问控制</a>
-<a class="nav nav-next" href="/zh/docs/admin/kubelet-tls-bootstrapping/" title="TLS bootstrapping">Next - TLS bootstrapping <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/zh/docs/admin/accessing-the-api/" title="Kubernetes API访问控制"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Kubernetes API访问控制</a>
+<a class="nav nav-next" style="float:right"  href="/zh/docs/admin/kubelet-tls-bootstrapping/" title="TLS bootstrapping">Next - TLS bootstrapping <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -525,24 +530,78 @@ docker网桥被brctl生成的Linux网桥(kbr0)所代替，kbr0是具有256个地
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">100 Words|Read in about 1 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          <p>本文档介绍了如何使用OpenVSwitch，在跨nodes的pods之间设置网络。
+隧道类型可以是GRE或者是VxLAN。如需在网络内执行大规模隔离时，最好使用VxLAN。</p>
+
+<p><img src="/images/docs/ovs-networking.png" alt="OVS Networking" /></p>
+
+<p>Kubernetes中Vagrant的设置如下：</p>
+
+<p>docker网桥被brctl生成的Linux网桥(kbr0)所代替，kbr0是具有256个地址空间的子网。总的来说，node会得到10.244.x.0/24的子网，docker上配置使用的网桥会代替默认docker0的网桥。</p>
+
+<p>另外，OVS网桥创建(obr0)，并将其作为端口添加到kbr0的网桥中。所有OVS网桥通过GRE隧道连接所有的nodes。因此，每个node都有一个到其他nodes的出站GRE隧道。这个隧道没有必要是一个完整的网状物，但是越像网状结构越好。在网桥上开启STP(生成树)模式以防止环路的发生。</p>
+
+<p>路由规则允许任何10.244.0.0/16通过与隧道相连的OVS网桥到达目标。</p>
+
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

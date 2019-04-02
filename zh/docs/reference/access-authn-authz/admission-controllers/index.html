@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 
 
 
@@ -84,6 +86,7 @@ DenyEscalatingExec 这个插件将拒绝在拥有衍生特权而具备访问宿�
 
 <header>
     <a href="/zh/" class="logo"></a>
+
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -118,6 +121,8 @@ DenyEscalatingExec 这个插件将拒绝在拥有衍生特权而具备访问宿�
                 <ul>
                 
                     <li><a href="https://kubernetes.io">v1.13</a></li>
+                
+                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
                 
                     <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
                 
@@ -8898,8 +8903,8 @@ For Kubernetes >= 1.0.0, we strongly recommend running the following set of admi
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">--admission-control<span style="color:#666">=</span>NamespaceLifecycle,LimitRanger,SecurityContextDeny,ServiceAccount,PersistentVolumeLabel,ResourceQuota</code></pre></div>
 
 
-<nav class="pagination"><a class="nav nav-prev" href="/zh/docs/reference/command-line-tools-reference/kubelet/" title="kubelet"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - kubelet</a>
-<a class="nav nav-next" href="/zh/docs/reference/labels-annotations-taints/" title="知名标签（Label）、注解（Annotation）和 Taints">Next - 知名标签（Label）、注解（Annotation）和 Taints <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<nav class="pagination" style="font-size: 16px; font-weight: bold"><a class="nav nav-prev" href="/zh/docs/reference/command-line-tools-reference/kubelet/" title="kubelet"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - kubelet</a>
+<a class="nav nav-next" style="float:right"  href="/zh/docs/reference/labels-annotations-taints/" title="知名标签（Label）、注解（Annotation）和 Taints">Next - 知名标签（Label）、注解（Annotation）和 Taints <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav>
 
 
@@ -8987,24 +8992,657 @@ For Kubernetes >= 1.0.0, we strongly recommend running the following set of admi
     
     
 
-<div id="vcomments"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<script type="text/javascript">
-    new Valine({
-        el: '#vcomments' ,
-        appId: 'BKVEHk6tElIcscdmyQlg0U3l-gzGzoHsz',
-        appKey: 'RPl3UVDsJQlSv1olxy01A3pO',
-        notify: 'false',
-        verify: 'false',
-        avatar:'SuperMap',
-        placeholder: '说点什么吧...',
-        visitor: 'true'
-    });
-</script>
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQxMi8xOTk1Mw==">
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
 
   </div>
+  
+  <div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+        
+<div>
+  <section id="datecount">
+    <h4 id="date"> Mon Jan 1, 0001</h4>
+  </section>
+  <h5 id="wc">700 Words|Read in about 4 Min</h5>
+  <h5 id="tags">Tags: 
+  </h5>
+</div>
+        
+        <article role="main" class="blog-post" itemprop="articleBody" id="content">
+          ...
+          
+
+<!--
+---
+assignees:
+- bprashanth
+- davidopp
+- derekwaynecarr
+- erictune
+- janetkuo
+- thockin
+title: Using Admission Controllers
+---
+-->
+
+<ul>
+<li>TOC
+{:toc}</li>
+</ul>
+
+<!--
+## What are they?
+-->
+
+<h2 id="什么是准入控制插件">什么是准入控制插件？</h2>
+
+<!--
+An admission control plug-in is a piece of code that intercepts requests to the Kubernetes
+API server prior to persistence of the object, but after the request is authenticated
+and authorized.  The plug-in code is in the API server process
+and must be compiled into the binary in order to be used at this time.
+-->
+
+<p>一个准入控制插件是一段代码，它会在请求通过认证和授权之后、对象被持久化之前拦截到达 API server 的请求。插件代码运行在 API server 进程中，必须将其编译为二进制文件，以便在此时使用。</p>
+
+<!--
+Each admission control plug-in is run in sequence before a request is accepted into the cluster.  If
+any of the plug-ins in the sequence reject the request, the entire request is rejected immediately
+and an error is returned to the end-user.
+-->
+
+<p>在每个请求被集群接受之前，准入控制插件依次执行。如果插件序列中任何一个拒绝了该请求，则整个请求将立即被拒绝并且返回一个错误给终端用户。</p>
+
+<!--
+Admission control plug-ins may mutate the incoming object in some cases to apply system configured
+defaults.  In addition, admission control plug-ins may mutate related resources as part of request
+processing to do things like increment quota usage.
+-->
+
+<p>准入控制插件可能会在某些情况下改变传入的对象，从而应用系统配置的默认值。另外，作为请求处理的一部分，准入控制插件可能会对相关的资源进行变更，以实现类似增加配额使用量这样的功能。</p>
+
+<!--
+## Why do I need them?
+-->
+
+<h2 id="为什么需要准入控制插件">为什么需要准入控制插件？</h2>
+
+<!--
+Many advanced features in Kubernetes require an admission control plug-in to be enabled in order
+to properly support the feature.  As a result, a Kubernetes API server that is not properly
+configured with the right set of admission control plug-ins is an incomplete server and will not
+support all the features you expect.
+-->
+
+<p>Kubernetes 的许多高级功能都要求启用一个准入控制插件，以便正确地支持该特性。因此，一个没有正确配置准入控制插件的 Kubernetes API server 是不完整的，它不会支持您所期望的所有特性。</p>
+
+<!--
+## How do I turn on an admission control plug-in?
+-->
+
+<h2 id="如何启用一个准入控制插件">如何启用一个准入控制插件？</h2>
+
+<!--
+The Kubernetes API server supports a flag, `admission-control` that takes a comma-delimited,
+ordered list of admission control choices to invoke prior to modifying objects in the cluster.
+-->
+
+<p>Kubernetes API server 支持一个标志参数 <code>admission-control</code> ，它指定了一个用于在集群修改对象之前调用的以逗号分隔的准入控制插件顺序列表。</p>
+
+<!--
+## What does each plug-in do?
+-->
+
+<h2 id="每个插件的功能是什么">每个插件的功能是什么？</h2>
+
+<h3 id="alwaysadmit">AlwaysAdmit</h3>
+
+<!--
+Use this plugin by itself to pass-through all requests.
+-->
+
+<p>使用这个插件自行通过所有的请求。</p>
+
+<h3 id="alwayspullimages">AlwaysPullImages</h3>
+
+<!--
+This plug-in modifies every new Pod to force the image pull policy to Always. This is useful in a
+multitenant cluster so that users can be assured that their private images can only be used by those
+who have the credentials to pull them. Without this plug-in, once an image has been pulled to a
+node, any pod from any user can use it simply by knowing the image's name (assuming the Pod is
+scheduled onto the right node), without any authorization check against the image. When this plug-in
+is enabled, images are always pulled prior to starting containers, which means valid credentials are
+required.
+-->
+
+<p>这个插件修改每一个新创建的 Pod 的镜像拉取策略为 Always 。这在多租户集群中是有用的，这样用户就可以放心，他们的私有镜像只能被那些有凭证的人使用。没有这个插件，一旦镜像被拉取到节点上，任何用户的 pod 都可以通过已了解到的镜像的名称（假设 pod 被调度到正确的节点上）来使用它，而不需要对镜像进行任何授权检查。当启用这个插件时，总是在启动容器之前拉取镜像，这意味着需要有效的凭证。</p>
+
+<h3 id="alwaysdeny">AlwaysDeny</h3>
+
+<!--
+Rejects all requests.  Used for testing.
+-->
+
+<p>拒绝所有的请求。用于测试。</p>
+
+<!--
+### DenyExecOnPrivileged (deprecated)
+-->
+
+<h3 id="denyexeconprivileged-已废弃">DenyExecOnPrivileged （已废弃）</h3>
+
+<!--
+This plug-in will intercept all requests to exec a command in a pod if that pod has a privileged container.
+-->
+
+<p>如果一个 pod 拥有一个特权容器，这个插件将拦截所有在该 pod 中执行 exec 命令的请求。</p>
+
+<!--
+If your cluster supports privileged containers, and you want to restrict the ability of end-users to exec
+commands in those containers, we strongly encourage enabling this plug-in.
+-->
+
+<p>如果集群支持特权容器，并且希望限制最终用户在这些容器中执行 exec 命令的能力，我们强烈建议启用这个插件。</p>
+
+<!--
+This functionality has been merged into [DenyEscalatingExec](#denyescalatingexec).
+-->
+
+<p>此功能已合并到 <a href="#denyescalatingexec">DenyEscalatingExec</a>。</p>
+
+<h3 id="denyescalatingexec">DenyEscalatingExec</h3>
+
+<!--
+This plug-in will deny exec and attach commands to pods that run with escalated privileges that
+allow host access.  This includes pods that run as privileged, have access to the host IPC namespace, and
+have access to the host PID namespace.
+-->
+
+<p>这个插件将拒绝在拥有衍生特权而具备访问宿主机能力的 pod 中执行 exec 和 attach 命令。这包括在特权模式运行的 pod ，可以访问主机 IPC 命名空间的 pod ，和访问主机 PID 命名空间的 pod 。</p>
+
+<!--
+If your cluster supports containers that run with escalated privileges, and you want to
+restrict the ability of end-users to exec commands in those containers, we strongly encourage
+enabling this plug-in.
+-->
+
+<p>如果集群支持使用以衍生特权运行的容器，并且希望限制最终用户在这些容器中执行 exec 命令的能力，我们强烈建议启用这个插件。</p>
+
+<h3 id="imagepolicywebhook">ImagePolicyWebhook</h3>
+
+<!--
+The ImagePolicyWebhook plug-in allows a backend webhook to make admission decisions. You enable this plug-in by setting the admission-control option as follows:
+-->
+
+<p>ImagePolicyWebhook 插件允许使用一个后端的 webhook 做出准入决策。您可以按照如下配置 admission-control 选项来启用这个插件:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">--admission-control<span style="color:#666">=</span>ImagePolicyWebhook</code></pre></div>
+<!--
+#### Configuration File Format
+-->
+
+<h4 id="配置文件格式">配置文件格式</h4>
+
+<!--
+ImagePolicyWebhook uses the admission config file `--admission-control-config-file` to set configuration options for the behavior of the backend. This file may be json or yaml and has the following format:
+-->
+
+<p>ImagePolicyWebhook 插件使用了admission config 文件 <code>--admission-control-config-file</code> 来为后端行为设置配置选项。该文件可以是 json 或 yaml ，并具有以下格式:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+  <span style="color:#b44">&#34;imagePolicy&#34;</span><span style="color:#666">:</span> {
+     <span style="color:#b44">&#34;kubeConfigFile&#34;</span><span style="color:#666">:</span> <span style="color:#b44">&#34;path/to/kubeconfig/for/backend&#34;</span>,
+     <span style="color:#b44">&#34;allowTTL&#34;</span><span style="color:#666">:</span> <span style="color:#666">50</span>,           <span style="color:#080;font-style:italic">// time in s to cache approval
+</span><span style="color:#080;font-style:italic"></span>     <span style="color:#b44">&#34;denyTTL&#34;</span><span style="color:#666">:</span> <span style="color:#666">50</span>,            <span style="color:#080;font-style:italic">// time in s to cache denial
+</span><span style="color:#080;font-style:italic"></span>     <span style="color:#b44">&#34;retryBackoff&#34;</span><span style="color:#666">:</span> <span style="color:#666">500</span>,      <span style="color:#080;font-style:italic">// time in ms to wait between retries
+</span><span style="color:#080;font-style:italic"></span>     <span style="color:#b44">&#34;defaultAllow&#34;</span><span style="color:#666">:</span> <span style="color:#a2f;font-weight:bold">true</span>      <span style="color:#080;font-style:italic">// determines behavior if the webhook backend fails
+</span><span style="color:#080;font-style:italic"></span>  }
+}
+</code></pre></div>
+<!--
+The config file must reference a [kubeconfig](/docs/concepts/cluster-administration/authenticate-across-clusters-kubeconfig/) formatted file which sets up the connection to the backend. It is required that the backend communicate over TLS.
+-->
+
+<p>这个配置文件必须引用一个 <a href="/docs/concepts/cluster-administration/authenticate-across-clusters-kubeconfig/">kubeconfig</a> 格式的文件，并在其中配置指向后端的连接。且需要在 TLS 上与后端进行通信。</p>
+
+<!--
+The kubeconfig file's cluster field must point to the remote service, and the user field must contain the returned authorizer.
+-->
+
+<p>kubeconfig 文件的 cluster 字段需要指向远端服务，user 字段需要包含已返回的授权者。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#080;font-style:italic"># clusters refers to the remote service.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>clusters:<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>name-of-remote-imagepolicy-service<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>cluster:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>certificate-authority:<span style="color:#bbb"> </span>/path/to/ca.pem<span style="color:#bbb">    </span><span style="color:#080;font-style:italic"># CA for verifying the remote service.</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>server:<span style="color:#bbb"> </span>https://images.example.com/policy<span style="color:#bbb"> </span><span style="color:#080;font-style:italic"># URL of remote service to query. Must use &#39;https&#39;.</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#080;font-style:italic"># users refers to the API server&#39;s webhook configuration.</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span>users:<span style="color:#bbb">
+</span><span style="color:#bbb"></span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>name-of-api-server<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>user:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>client-certificate:<span style="color:#bbb"> </span>/path/to/cert.pem<span style="color:#bbb"> </span><span style="color:#080;font-style:italic"># cert for the webhook plugin to use</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>client-key:<span style="color:#bbb"> </span>/path/to/key.pem<span style="color:#bbb">          </span><span style="color:#080;font-style:italic"># key matching the cert</span></code></pre></div>
+<!--
+For additional HTTP configuration, refer to the [kubeconfig](/docs/concepts/cluster-administration/authenticate-across-clusters-kubeconfig/) documentation.
+-->
+
+<p>对于更多的 HTTP 配置，请参阅 <a href="/docs/concepts/cluster-administration/authenticate-across-clusters-kubeconfig/">kubeconfig</a> 文档。</p>
+
+<!--
+#### Request Payloads
+-->
+
+<h4 id="请求载荷">请求载荷</h4>
+
+<!--
+When faced with an admission decision, the API Server POSTs a JSON serialized api.imagepolicy.v1alpha1.ImageReview object describing the action. This object contains fields describing the containers being admitted, as well as any pod annotations that match `*.image-policy.k8s.io/*`.
+-->
+
+<p>当面对一个准入决策时，API server 发送一个描述操作的 JSON 序列化的 api.imagepolicy.v1alpha1.ImageReview 对象。该对象包含描述被审核容器的字段，以及所有匹配 <code>*.image-policy.k8s.io/*</code> 的 pod 注释。</p>
+
+<!--
+Note that webhook API objects are subject to the same versioning compatibility rules as other Kubernetes API objects. Implementers should be aware of looser compatibility promises for alpha objects and check the "apiVersion" field of the request to ensure correct deserialization. Additionally, the API Server must enable the imagepolicy.k8s.io/v1alpha1 API extensions group (`--runtime-config=imagepolicy.k8s.io/v1alpha1=true`).
+-->
+
+<p>注意，webhook API 对象与其他 Kubernetes API 对象一样受制于相同的版本控制兼容性规则。实现者应该知道对 alpha 对象的更宽松的兼容性，并检查请求的 &ldquo;apiVersion&rdquo; 字段，以确保正确的反序列化。此外，API server 必须启用 imagepolicy.k8s.io/v1alpha1 API 扩展组 (<code>--runtime-config=imagepolicy.k8s.io/v1alpha1=true</code>)。</p>
+
+<!--
+An example request body:
+-->
+
+<p>请求载荷例子：</p>
+
+<pre><code>{  
+  &quot;apiVersion&quot;:&quot;imagepolicy.k8s.io/v1alpha1&quot;,
+  &quot;kind&quot;:&quot;ImageReview&quot;,
+  &quot;spec&quot;:{  
+    &quot;containers&quot;:[  
+      {  
+        &quot;image&quot;:&quot;myrepo/myimage:v1&quot;
+      },
+      {  
+        &quot;image&quot;:&quot;myrepo/myimage@sha256:beb6bd6a68f114c1dc2ea4b28db81bdf91de202a9014972bec5e4d9171d90ed&quot;
+      }
+    ],
+    &quot;annotations&quot;:[  
+      &quot;mycluster.image-policy.k8s.io/ticket-1234&quot;: &quot;break-glass&quot;
+    ],
+    &quot;namespace&quot;:&quot;mynamespace&quot;
+  }
+}
+</code></pre>
+
+<!--
+The remote service is expected to fill the ImageReviewStatus field of the request and respond to either allow or disallow access. The response body's "spec" field is ignored and may be omitted. A permissive response would return:
+-->
+
+<p>远程服务将填充请求的 ImageReviewStatus 字段，并返回允许或不允许访问。响应主体的 &ldquo;spec&rdquo; 字段会被忽略，并且可以省略。一个允许访问应答会返回：</p>
+
+<pre><code>{
+  &quot;apiVersion&quot;: &quot;imagepolicy.k8s.io/v1alpha1&quot;,
+  &quot;kind&quot;: &quot;ImageReview&quot;,
+  &quot;status&quot;: {
+    &quot;allowed&quot;: true
+  }
+}
+</code></pre>
+
+<!--
+To disallow access, the service would return:
+-->
+
+<p>不允许访问，服务将返回：</p>
+
+<pre><code>{
+  &quot;apiVersion&quot;: &quot;imagepolicy.k8s.io/v1alpha1&quot;,
+  &quot;kind&quot;: &quot;ImageReview&quot;,
+  &quot;status&quot;: {
+    &quot;allowed&quot;: false,
+    &quot;reason&quot;: &quot;image currently blacklisted&quot;
+  }
+}
+</code></pre>
+
+<!--
+For further documentation refer to the `imagepolicy.v1alpha1` API objects and `plugin/pkg/admission/imagepolicy/admission.go`.
+-->
+
+<p>更多的文档，请参阅 <code>imagepolicy.v1alpha1</code> API 对象 和 <code>plugin/pkg/admission/imagepolicy/admission.go</code>。</p>
+
+<!--
+#### Extending with Annotations
+-->
+
+<p>使用注解进行扩展</p>
+
+<!--
+All annotations on a Pod that match `*.image-policy.k8s.io/*` are sent to the webhook. Sending annotations allows users who are aware of the image policy backend to send extra information to it, and for different backends implementations to accept different information.
+-->
+
+<p>一个 pod 中匹配 <code>*.image-policy.k8s.io/*</code> 的注解都会被发送给 webhook。这允许了解镜像策略后端的用户向它发送额外的信息，并为不同的后端实现接收不同的信息。</p>
+
+<!--
+Examples of information you might put here are:
+-->
+
+<p>您可以在这里输入的信息有：</p>
+
+<!--
+ * request to "break glass" to override a policy, in case of emergency.
+-->
+
+<ul>
+<li>在紧急情况下，请求 &ldquo;break glass&rdquo; 覆盖一个策略。
+&lt;!&ndash;</li>
+<li>a ticket number from a ticket system that documents the break-glass request
+&ndash;&gt;</li>
+<li>从一个记录了 break-glass 的请求的票证系统得到的一个票证编号
+&lt;!&ndash;</li>
+<li>provide a hint to the policy server as to the imageID of the image being provided, to save it a lookup
+&ndash;&gt;</li>
+<li>向策略服务器提供一个提示，用于提供镜像的 imageID，以方便它进行查找</li>
+</ul>
+
+<!--
+In any case, the annotations are provided by the user and are not validated by Kubernetes in any way. In the future, if an annotation is determined to be widely useful, it may be promoted to a named field of ImageReviewSpec.
+-->
+
+<p>在任何情况下，注解都是由用户提供的，并不会被 Kubernetes 以任何方式进行验证。在将来，如果一个注解确定将被广泛使用，它可能会被提升为  ImageReviewSpec 的一个命名字段。</p>
+
+<h3 id="serviceaccount">ServiceAccount</h3>
+
+<!--
+This plug-in implements automation for [serviceAccounts](/docs/user-guide/service-accounts).
+We strongly recommend using this plug-in if you intend to make use of Kubernetes `ServiceAccount` objects.
+-->
+
+<p>这个插件实现了 <a href="/docs/user-guide/service-accounts">serviceAccounts</a> 的自动化。
+如果您打算使用 Kubernetes 的 ServiceAccount 对象，我们强烈建议您使用这个插件。</p>
+
+<h3 id="securitycontextdeny">SecurityContextDeny</h3>
+
+<!--
+This plug-in will deny any pod that attempts to set certain escalating [SecurityContext](/docs/user-guide/security-context) fields. This should be enabled if a cluster doesn't utilize [pod security policies](/docs/user-guide/pod-security-policy) to restrict the set of values a security context can take.
+-->
+
+<p>该插件将拒绝任何试图设置特定扩展 <a href="/docs/user-guide/security-context">SecurityContext</a> 字段的 pod。如果集群没有使用 <a href="/docs/user-guide/pod-security-policy"> pod 安全策略</a>  来限制安全上下文所能获取的值集，那么应该启用这个功能。</p>
+
+<h3 id="resourcequota">ResourceQuota</h3>
+
+<!--
+This plug-in will observe the incoming request and ensure that it does not violate any of the constraints
+enumerated in the `ResourceQuota` object in a `Namespace`.  If you are using `ResourceQuota`
+objects in your Kubernetes deployment, you MUST use this plug-in to enforce quota constraints.
+-->
+
+<p>此插件将观察传入的请求，并确保它不违反任何一个 <code>Namespace</code> 中的 <code>ResourceQuota</code> 对象中枚举出来的约束。如果您在 Kubernetes 部署中使用了 <code>ResourceQuota</code>
+，您必须使用这个插件来强制执行配额限制。</p>
+
+<!--
+See the [resourceQuota design doc](https://git.k8s.io/community/contributors/design-proposals/admission_control_resource_quota.md) and the [example of Resource Quota](/docs/concepts/policy/resource-quotas/) for more details.
+-->
+
+<p>请查看 <a href="https://git.k8s.io/community/contributors/design-proposals/admission_control_resource_quota.md" target="_blank">resourceQuota 设计文档</a> 和 <a href="/docs/concepts/policy/resource-quotas/">Resource Quota 例子</a> 了解更多细节。</p>
+
+<!--
+It is strongly encouraged that this plug-in is configured last in the sequence of admission control plug-ins.  This is
+so that quota is not prematurely incremented only for the request to be rejected later in admission control.
+-->
+
+<p>强烈建议将这个插件配置在准入控制插件序列的末尾。这样配额就不会过早地增加，只会在稍后的准入控制中被拒绝。</p>
+
+<h3 id="limitranger">LimitRanger</h3>
+
+<!--
+This plug-in will observe the incoming request and ensure that it does not violate any of the constraints
+enumerated in the `LimitRange` object in a `Namespace`.  If you are using `LimitRange` objects in
+your Kubernetes deployment, you MUST use this plug-in to enforce those constraints. LimitRanger can also
+be used to apply default resource requests to Pods that don't specify any; currently, the default LimitRanger
+applies a 0.1 CPU requirement to all Pods in the `default` namespace.
+-->
+
+<p>这个插件将观察传入的请求，并确保它不会违反 <code>Namespace</code> 中 <code>LimitRange</code> 对象枚举的任何约束。如果您在 Kubernetes 部署中使用了 <code>LimitRange</code> 对象，则必须使用此插件来执行这些约束。LimitRanger 插件还可以用于将默认资源请求应用到没有指定任何内容的 Pod ；当前，默认的 LimitRanger 对 <code>default</code> 命名空间中的所有 pod 应用了0.1 CPU 的需求。</p>
+
+<!--
+See the [limitRange design doc](https://git.k8s.io/community/contributors/design-proposals/admission_control_limit_range.md) and the [example of Limit Range](/docs/tasks/configure-pod-container/limit-range/) for more details.
+-->
+
+<p>请查看 <a href="https://git.k8s.io/community/contributors/design-proposals/admission_control_limit_range.md" target="_blank">limitRange 设计文档</a> 和 <a href="/docs/tasks/configure-pod-container/limit-range/">Limit Range 例子</a> 了解更多细节。</p>
+
+<!--
+### InitialResources (experimental)
+-->
+
+<h3 id="initialresources-试验">InitialResources （试验）</h3>
+
+<!--
+This plug-in observes pod creation requests. If a container omits compute resource requests and limits,
+then the plug-in auto-populates a compute resource request based on historical usage of containers running the same image.
+If there is not enough data to make a decision the Request is left unchanged.
+When the plug-in sets a compute resource request, it annotates the pod with information on what compute resources it auto-populated.
+-->
+
+<p>此插件观察 pod 创建请求。如果容器忽略了 requests 和 limits 计算资源，那么插件就会根据运行相同镜像的容器的历史使用记录来自动填充计算资源请求。如果没有足够的数据进行决策，则请求将保持不变。当插件设置了一个计算资源请求时，它会用它自动填充的计算资源对 pod 进行注解。</p>
+
+<!--
+See the [InitialResouces proposal](https://git.k8s.io/community/contributors/design-proposals/initial-resources.md) for more details.
+-->
+
+<p>请查看 <a href="https://git.k8s.io/community/contributors/design-proposals/initial-resources.md" target="_blank">InitialResouces 建议书</a> 了解更多细节。</p>
+
+<h3 id="namespacelifecycle">NamespaceLifecycle</h3>
+
+<!--
+This plug-in enforces that a `Namespace` that is undergoing termination cannot have new objects created in it,
+and ensures that requests in a non-existent `Namespace` are rejected.
+-->
+
+<p>这个插件强制不能在一个正在被终止的 <code>Namespace</code> 中创建新对象，和确保使用不存在 <code>Namespace</code> 的请求被拒绝。</p>
+
+<!--
+A `Namespace` deletion kicks off a sequence of operations that remove all objects (pods, services, etc.) in that
+namespace.  In order to enforce integrity of that process, we strongly recommend running this plug-in.
+-->
+
+<p>删除 <code>Namespace</code> 触发了在该命名空间中删除所有对象（ pod 、 services 等）的一系列操作。为了确保这个过程的完整性，我们强烈建议启用这个插件。</p>
+
+<h3 id="defaultstorageclass">DefaultStorageClass</h3>
+
+<!--
+This plug-in observes creation of `PersistentVolumeClaim` objects that do not request any specific storage class
+and automatically adds a default storage class to them.
+This way, users that do not request any special storage class do no need to care about them at all and they
+will get the default one.
+-->
+
+<p>这个插件观察不指定 storage class 字段的 <code>PersistentVolumeClaim</code> 对象的创建，并自动向它们添加默认的 storage class 。这样，不指定 storage class 字段的用户根本无需关心它们，它们将得到默认的 storage class 。</p>
+
+<!--
+This plug-in does not do anything when no default storage class is configured. When more than one storage
+class is marked as default, it rejects any creation of `PersistentVolumeClaim` with an error and administrator
+must revisit `StorageClass` objects and mark only one as default.
+This plugin ignores any `PersistentVolumeClaim` updates, it acts only on creation.
+-->
+
+<p>当没有配置默认 storage class 时，这个插件不会执行任何操作。当一个以上的 storage class 被标记为默认时，它拒绝 <code>PersistentVolumeClaim</code> 创建并返回一个错误，管理员必须重新检查 <code>StorageClass</code> 对象，并且只标记一个作为默认值。这个插件忽略了任何 <code>PersistentVolumeClaim</code> 更新，它只对创建起作用。</p>
+
+<!--
+See [persistent volume](/docs/user-guide/persistent-volumes) documentation about persistent volume claims and
+storage classes and how to mark a storage class as default.
+-->
+
+<p>查看 <a href="/docs/user-guide/persistent-volumes">persistent volume</a> 文档了解 persistent volume claims 和 storage classes 并了解如何将一个 storage classes 标志为默认。</p>
+
+<h3 id="defaulttolerationseconds">DefaultTolerationSeconds</h3>
+
+<!--
+This plug-in sets the default forgiveness toleration for pods, which have no forgiveness tolerations, to tolerate
+the taints `notready:NoExecute` and `unreachable:NoExecute` for 5 minutes.
+-->
+
+<p>这个插件设置了 pod 默认的宽恕容忍时间，对于那些没有设置宽恕容忍时间的 pod ，可以容忍 <code>notready:NoExecute</code> 和 <code>unreachable:NoExecute</code> 这些 taint 5分钟。</p>
+
+<h3 id="podnodeselector">PodNodeSelector</h3>
+
+<!--
+This plug-in defaults and limits what node selectors may be used within a namespace by reading a namespace annotation and a global configuration.
+-->
+
+<p>通过读取命名空间注释和全局配置,这个插件默认并限制了在一个命名空间中使用什么节点选择器。</p>
+
+<!--
+#### Configuration File Format
+-->
+
+<h4 id="配置文件格式-1">配置文件格式</h4>
+
+<!--
+PodNodeSelector uses the admission config file `--admission-control-config-file` to set configuration options for the behavior of the backend.
+-->
+
+<p>PodNodeSelector 插件使用准入配置文件 <code>--admission-control-config-file</code> 来设置后端行为的配置选项。</p>
+
+<!--
+Note that the configuration file format will move to a versioned file in a future release.
+-->
+
+<p>请注意，配置文件格式将在未来版本中移至版本化文件。</p>
+
+<!--
+This file may be json or yaml and has the following format:
+-->
+
+<p>这个文件可能是 json 或 yaml ，格式如下：</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">podNodeSelectorPluginConfig:<span style="color:#bbb">
+</span><span style="color:#bbb"> </span>clusterDefaultNodeSelector:<span style="color:#bbb"> </span>&lt;node-selectors-labels<span style="color:#b44;font-style:italic">&gt;
+</span><span style="color:#b44;font-style:italic"> namespace1: &lt;node-selectors-labels&gt;</span><span style="color:#bbb">
+</span><span style="color:#bbb"> </span>namespace2:<span style="color:#bbb"> </span>&lt;node-selectors-labels&gt;</code></pre></div>
+<!--
+#### Configuration Annotation Format
+-->
+
+<h4 id="配置注解格式">配置注解格式</h4>
+
+<!--
+PodNodeSelector uses the annotation key `scheduler.alpha.kubernetes.io/node-selector` to assign node selectors to namespaces.
+-->
+
+<p>PodNodeSelector 插件使用键为 <code>scheduler.alpha.kubernetes.io/node-selector</code> 的注解将节点选择器分配给 namespace 。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Namespace<span style="color:#bbb">
+</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span>annotations:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>scheduler.alpha.kubernetes.io/node-selector:<span style="color:#bbb"> </span>&lt;node-selectors-labels<span style="color:#b44;font-style:italic">&gt;
+</span><span style="color:#b44;font-style:italic">  name: namespace3</span></code></pre></div>
+<h3 id="podsecuritypolicy">PodSecurityPolicy</h3>
+
+<!--
+This plug-in acts on creation and modification of the pod and determines if it should be admitted
+based on the requested security context and the available Pod Security Policies.
+-->
+
+<p>此插件负责在创建和修改 pod 时根据请求的安全上下文和可用的 pod 安全策略确定是否应该通过 pod。</p>
+
+<!--
+For Kubernetes < 1.6.0, the API Server must enable the extensions/v1beta1/podsecuritypolicy API
+extensions group (`--runtime-config=extensions/v1beta1/podsecuritypolicy=true`).
+-->
+
+<p>对于 Kubernetes &lt; 1.6.0 的版本，API Server 必须启用 extensions/v1beta1/podsecuritypolicy API 扩展组 (<code>--runtime-config=extensions/v1beta1/podsecuritypolicy=true</code>)。</p>
+
+<!--
+See also [Pod Security Policy documentation](/docs/concepts/policy/pod-security-policy/)
+for more information.
+-->
+
+<p>查看 <a href="/docs/concepts/policy/pod-security-policy/">Pod 安全策略文档</a> 了解更多细节。</p>
+
+<h3 id="noderestriction">NodeRestriction</h3>
+
+<!--
+This plug-in limits the `Node` and `Pod` objects a kubelet can modify. In order to be limited by this admission plugin,
+kubelets must use credentials in the `system:nodes` group, with a username in the form `system:node:<nodeName>`. 
+Such kubelets will only be allowed to modify their own `Node` API object, and only modify `Pod` API objects that are bound to their node.
+-->
+
+<p>这个插件限制了 kubelet 可以修改的 <code>Node</code> 和 <code>Pod</code> 对象。 为了受到这个入场插件的限制，kubelet 必须在 <code>system：nodes</code> 组中使用凭证，并使用 <code>system：node：&lt;nodeName&gt;</code> 形式的用户名。这样的 kubelet 只允许修改自己的 <code>Node</code> API 对象，只能修改绑定到节点本身的 <code>Pod</code> 对象。
+<!--
+Future versions may add additional restrictions to ensure kubelets have the minimal set of permissions required to operate correctly.
+-->
+未来的版本可能会添加额外的限制，以确保 kubelet 具有正确操作所需的最小权限集。</p>
+
+<!--
+## Is there a recommended set of plug-ins to use?
+-->
+
+<h2 id="是否有推荐的一组插件可供使用">是否有推荐的一组插件可供使用？</h2>
+
+<!--
+Yes.
+For Kubernetes >= 1.6.0, we strongly recommend running the following set of admission control plug-ins (order matters):
+-->
+
+<p>有。
+对于 Kubernetes &gt;= 1.6.0 版本，我们强烈建议运行以下一系列准入控制插件（顺序也很重要）</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">--admission-control<span style="color:#666">=</span>NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,ResourceQuota,DefaultTolerationSeconds</code></pre></div>
+<!--
+For Kubernetes >= 1.4.0, we strongly recommend running the following set of admission control plug-ins (order matters):
+-->
+
+<p>对于 Kubernetes &gt;= 1.4.0 版本，我们强烈建议运行以下一系列准入控制插件（顺序也很重要）</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">--admission-control<span style="color:#666">=</span>NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,ResourceQuota</code></pre></div>
+<!--
+For Kubernetes >= 1.2.0, we strongly recommend running the following set of admission control plug-ins (order matters):
+-->
+
+<p>对于 Kubernetes &gt;= 1.2.0 版本，我们强烈建议运行以下一系列准入控制插件（顺序也很重要）</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">--admission-control<span style="color:#666">=</span>NamespaceLifecycle,LimitRanger,ServiceAccount,ResourceQuota</code></pre></div>
+<!--
+For Kubernetes >= 1.0.0, we strongly recommend running the following set of admission control plug-ins (order matters):
+-->
+
+<p>对于 Kubernetes &gt;= 1.0.0 版本，我们强烈建议运行以下一系列准入控制插件（顺序也很重要）</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">--admission-control<span style="color:#666">=</span>NamespaceLifecycle,LimitRanger,SecurityContextDeny,ServiceAccount,PersistentVolumeLabel,ResourceQuota</code></pre></div>
+          
+          <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
+  <center>
+    <font style="font-size:18px;color:darkcyan;">分享到：</font>
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-wechat"></a>
+    <a href="#" class="social-share-icon icon-twitter"></a>
+    <a href="#" class="social-share-icon icon-linkedin"></a>
+    <a href="#" class="social-share-icon icon-facebook"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
+  </center>
+</div>
+
+
+<script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
+          
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
