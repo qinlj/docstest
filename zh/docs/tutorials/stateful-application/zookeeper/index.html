@@ -50,11 +50,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/zh/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -82,26 +106,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -1191,14 +1196,14 @@
     </tbody>
 </table>
 
-<p>打开一个命令行终端，使用 <a href="/docs/user-guide/kubectl/v1.13/#create"><code>kubectl create</code></a> 创建这个清单。</p>
+<p>打开一个命令行终端，使用 <a href="/docs/user-guide/kubectl/iDesktop Java/#create"><code>kubectl create</code></a> 创建这个清单。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl create -f https://k8s.io/docs/tutorials/stateful-application/zookeeper.yaml</code></pre></div>
 <p>这个操作创建了 <code>zk-headless</code> Headless Service、<code>zk-config</code> ConfigMap、<code>zk-budget</code> PodDisruptionBudget 和 <code>zk</code> StatefulSet。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">service <span style="color:#b44">&#34;zk-headless&#34;</span> created
 configmap <span style="color:#b44">&#34;zk-config&#34;</span> created
 poddisruptionbudget <span style="color:#b44">&#34;zk-budget&#34;</span> created
 statefulset <span style="color:#b44">&#34;zk&#34;</span> created</code></pre></div>
-<p>使用 <a href="/docs/user-guide/kubectl/v1.13/#get"><code>kubectl get</code></a> 查看 StatefulSet 控制器创建的 Pods。</p>
+<p>使用 <a href="/docs/user-guide/kubectl/iDesktop Java/#get"><code>kubectl get</code></a> 查看 StatefulSet 控制器创建的 Pods。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get pods -w -l <span style="color:#b8860b">app</span><span style="color:#666">=</span>zk</code></pre></div>
 <p>一旦  <code>zk-2</code> Pod 变成 Running 和 Ready 状态，使用 <code>CRTL-C</code> 结束 kubectl。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">NAME      READY     STATUS    RESTARTS   AGE
@@ -1223,7 +1228,7 @@ zk-2      <span style="color:#666">1</span>/1       Running   <span style="color
 
 <p>由于在匿名网络中没有用于选举 leader 的终止算法，Zab 要求显式的进行成员关系配置，以执行 leader 选举。Ensemble 中的每个服务都需要具有一个独一无二的标识符，所有的服务均需要知道标识符的全集，并且每个标志都需要和一个网络地址相关联。</p>
 
-<p>使用 <a href="/docs/user-guide/kubectl/v1.13/#exec"><code>kubectl exec</code></a> 获取 <code>zk</code> StatefulSet 中 Pods 的主机名。</p>
+<p>使用 <a href="/docs/user-guide/kubectl/iDesktop Java/#exec"><code>kubectl exec</code></a> 获取 <code>zk</code> StatefulSet 中 Pods 的主机名。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#a2f;font-weight:bold">for</span> i in <span style="color:#666">0</span> <span style="color:#666">1</span> <span style="color:#666">2</span>; <span style="color:#a2f;font-weight:bold">do</span> kubectl <span style="color:#a2f">exec</span> zk-<span style="color:#b8860b">$i</span> -- hostname; <span style="color:#a2f;font-weight:bold">done</span></code></pre></div>
 <p>StatefulSet 控制器基于每个 Pod 的序号索引为它们各自提供一个唯一的主机名。主机名采用 <code>&lt;statefulset name&gt;-&lt;ordinal index&gt;</code> 的形式。由于 <code>zk</code> StatefulSet 的 <code>replicas</code> 字段设置为3，这个 Set 的控制器将创建3个 Pods，主机名为：<code>zk-0</code>、<code>zk-1</code> 和 <code>zk-2</code>。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">zk-0
@@ -1333,7 +1338,7 @@ world
 
 <p>如同在 <a href="#zookeeper-basics">ZooKeeper 基础</a> 一节所提到的，ZooKeeper 提交所有的条目到一个持久 WAL，并周期性的将内存快照写入存储介质。对于使用一致性协议实现一个复制状态机的应用来说，使用 WALs 提供持久化是一种常用的技术，对于普通的存储应用也是如此。</p>
 
-<p>使用 <a href="/docs/user-guide/kubectl/v1.13/#delete"><code>kubectl delete</code></a> 删除 <code>zk</code> StatefulSet。</p>
+<p>使用 <a href="/docs/user-guide/kubectl/iDesktop Java/#delete"><code>kubectl delete</code></a> 删除 <code>zk</code> StatefulSet。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl delete statefulset zk
 statefulset <span style="color:#b44">&#34;zk&#34;</span> deleted</code></pre></div>
 <p>观察 StatefulSet 中的 Pods 变为终止状态。</p>
@@ -1549,7 +1554,7 @@ log4j.appender.CONSOLE.layout<span style="color:#666">=</span>org.apache.log4j.P
 log4j.appender.CONSOLE.layout.ConversionPattern<span style="color:#666">=</span>%d<span style="color:#666">{</span>ISO8601<span style="color:#666">}</span> <span style="color:#666">[</span>myid:%X<span style="color:#666">{</span>myid<span style="color:#666">}]</span> - %-5p <span style="color:#666">[</span>%t:%C<span style="color:#666">{</span><span style="color:#666">1</span><span style="color:#666">}</span>@%L<span style="color:#666">]</span> - %m%n</code></pre></div>
 <p>这是在容器里安全记录日志的最简单的方法。由于应用的日志被写入标准输出，Kubernetes 将会为你处理日志轮转。Kubernetes 还实现了一个智能保存策略，保证写入标准输出和标准错误流的应用日志不会耗尽本地存储媒介。</p>
 
-<p>使用 <a href="/docs/user-guide/kubectl/v1.13/#logs"><code>kubectl logs</code></a> 从一个 Pod 中取回最后几行日志。</p>
+<p>使用 <a href="/docs/user-guide/kubectl/iDesktop Java/#logs"><code>kubectl logs</code></a> 从一个 Pod 中取回最后几行日志。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl logs zk-0 --tail <span style="color:#666">20</span></code></pre></div>
 <p>使用 <code>kubectl logs</code> 或者从 Kubernetes Dashboard 可以查看写入到标准输出和标准错误流中的应用日志。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">2016</span>-12-06 <span style="color:#666">19</span>:34:16,236 <span style="color:#666">[</span>myid:1<span style="color:#666">]</span> - INFO  <span style="color:#666">[</span>NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@827<span style="color:#666">]</span> - Processing ruok <span style="color:#a2f">command</span> from /127.0.0.1:52740
@@ -1708,7 +1713,7 @@ kubernetes-minion-group-2g2d</code></pre></div>
 
 <p>获取你集群中的节点。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get nodes</code></pre></div>
-<p>使用 <a href="/docs/user-guide/kubectl/v1.13/#cordon"><code>kubectl cordon</code></a> cordon 你的集群中除4个节点以外的所有节点。</p>
+<p>使用 <a href="/docs/user-guide/kubectl/iDesktop Java/#cordon"><code>kubectl cordon</code></a> cordon 你的集群中除4个节点以外的所有节点。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl cordon &lt; node name &gt;</code></pre></div>
 <p>获取 <code>zk-budget</code> PodDisruptionBudget。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get poddisruptionbudget zk-budget</code></pre></div>
@@ -1722,7 +1727,7 @@ kubernetes-minion-group-2g2d</code></pre></div>
 kubernetes-minion-group-pb41
 kubernetes-minion-group-ixsl
 kubernetes-minion-group-i4c4</code></pre></div>
-<p>使用 <a href="/docs/user-guide/kubectl/v1.13/#drain"><code>kubectl drain</code></a> 来 cordon 和 drain <code>zk-0</code> Pod 调度的节点。</p>
+<p>使用 <a href="/docs/user-guide/kubectl/iDesktop Java/#drain"><code>kubectl drain</code></a> 来 cordon 和 drain <code>zk-0</code> Pod 调度的节点。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl drain <span style="color:#a2f;font-weight:bold">$(</span>kubectl get pod zk-0 --template <span style="color:#666">{{</span>.spec.nodeName<span style="color:#666">}}</span><span style="color:#a2f;font-weight:bold">)</span> --ignore-daemonsets --force --delete-local-data
 node <span style="color:#b44">&#34;kubernetes-minion-group-pb41&#34;</span> cordoned
 WARNING: Deleting pods not managed by ReplicationController, ReplicaSet, Job, or DaemonSet: fluentd-cloud-logging-kubernetes-minion-group-pb41, kube-proxy-kubernetes-minion-group-pb41; Ignoring DaemonSet-managed pods: node-problem-detector-v0.1-o5elz
@@ -1803,7 +1808,7 @@ dataLength = 5
 numChildren = 0
 </code></pre>
 
-<p>使用 <a href="/docs/user-guide/kubectl/v1.13/#uncordon"><code>kubectl uncordon</code></a> 来取消对第一个节点的隔离。</p>
+<p>使用 <a href="/docs/user-guide/kubectl/iDesktop Java/#uncordon"><code>kubectl uncordon</code></a> 来取消对第一个节点的隔离。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl uncordon kubernetes-minion-group-pb41
 node <span style="color:#b44">&#34;kubernetes-minion-group-pb41&#34;</span> uncordoned</code></pre></div>
 <p><code>zk-1</code> 被重新调度到了这个节点。等待 <code>zk-1</code> 变为 Running 和 Ready 状态。</p>

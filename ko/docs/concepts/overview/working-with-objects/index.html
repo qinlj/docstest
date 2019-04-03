@@ -50,11 +50,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/ko/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -82,26 +106,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -1302,7 +1307,7 @@
 <li><code>metadata</code> - <code>이름</code> 문자열, UID, 그리고 선택적인 <code>네임스페이스</code> 를 포함하여 오브젝트를 유일하게 구분지어 줄 데이터</li>
 </ul>
 
-<p>여러분은 또한 오브젝트 <code>spec</code> 필드를 제공해야만 할 것이다. 오브젝트 <code>spec</code>에 대한 정확한 포맷은 모든 쿠버네티스 오브젝트마다 다르고, 그 오브젝트 특유의 중첩된 필드를 포함한다. <a href="/docs/reference/generated/kubernetes-api/v1.13/">Kubernetes API Reference</a> 는 쿠버네티스를 이용하여 생성할 수 있는 오브젝트에 대한 모든 spec 포맷을 살펴볼 수 있도록 해준다. 예를 들어, <code>파드</code> 오브젝트에 대한 <code>spec</code> 포맷은 <a href="/docs/reference/generated/kubernetes-api/v1.13/#podspec-v1-core">여기</a>에서 확인할 수 있고, <code>디플로이먼트</code> 오브젝트에 대한 <code>spec</code> 포맷은 <a href="/docs/reference/generated/kubernetes-api/v1.13/#deploymentspec-v1-apps">여기</a>에서 확인할 수 있다.</p>
+<p>여러분은 또한 오브젝트 <code>spec</code> 필드를 제공해야만 할 것이다. 오브젝트 <code>spec</code>에 대한 정확한 포맷은 모든 쿠버네티스 오브젝트마다 다르고, 그 오브젝트 특유의 중첩된 필드를 포함한다. <a href="/docs/reference/generated/kubernetes-api/iDesktop Java/">Kubernetes API Reference</a> 는 쿠버네티스를 이용하여 생성할 수 있는 오브젝트에 대한 모든 spec 포맷을 살펴볼 수 있도록 해준다. 예를 들어, <code>파드</code> 오브젝트에 대한 <code>spec</code> 포맷은 <a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#podspec-v1-core">여기</a>에서 확인할 수 있고, <code>디플로이먼트</code> 오브젝트에 대한 <code>spec</code> 포맷은 <a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#deploymentspec-v1-apps">여기</a>에서 확인할 수 있다.</p>
 
 
 

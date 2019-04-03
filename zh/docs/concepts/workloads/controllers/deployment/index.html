@@ -50,11 +50,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/zh/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -82,26 +106,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -1799,7 +1804,7 @@ deployment <span style="color:#b44">&#34;nginx-deployment&#34;</span> rolled bac
 <p>Alternatively, you can rollback to a specific revision by specifying it with <code>--to-revision</code>:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl rollout undo deployment/nginx-deployment --to-revision<span style="color:#666">=</span><span style="color:#666">2</span>
 deployment <span style="color:#b44">&#34;nginx-deployment&#34;</span> rolled back</code></pre></div>
-<p>For more details about rollout related commands, read <a href="/docs/user-guide/kubectl/v1.13/#rollout"><code>kubectl rollout</code></a>.</p>
+<p>For more details about rollout related commands, read <a href="/docs/user-guide/kubectl/iDesktop Java/#rollout"><code>kubectl rollout</code></a>.</p>
 
 <p>The Deployment is now rolled back to a previous stable revision. As you can see, a <code>DeploymentRollback</code> event
 for rolling back to revision 2 is generated from Deployment controller.</p>
@@ -2270,7 +2275,7 @@ it is created.</p>
 
 <h3 id="kubectl-rolling-update">kubectl rolling update</h3>
 
-<p><a href="/docs/user-guide/kubectl/v1.13/#rolling-update">Kubectl rolling update</a> updates Pods and ReplicationControllers
+<p><a href="/docs/user-guide/kubectl/iDesktop Java/#rolling-update">Kubectl rolling update</a> updates Pods and ReplicationControllers
 in a similar fashion. But Deployments are recommended, since they are declarative, server side, and have
 additional features, such as rolling back to any previous revision even after the rolling update is done.</p>
 

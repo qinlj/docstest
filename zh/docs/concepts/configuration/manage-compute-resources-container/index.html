@@ -50,11 +50,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/zh/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -82,26 +106,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -1604,7 +1609,7 @@ Allocated resources:
 
 <p>通过查看 <code>Pods</code> 部分，您将看到哪些 Pod 占用的节点上的资源。</p>
 
-<p>Pod 可用的资源量小于节点容量，因为系统守护程序使用一部分可用资源。 <a href="/docs/resources-reference/v1.13/#nodestatus-v1-core">NodeStatus</a>  的 <code>allocatable</code> 字段给出了可用于 Pod 的资源量。有关更多信息，请参阅 <a href="https://git.k8s.io/community/contributors/design-proposals/node-allocatable.md" target="_blank">节点可分配资源</a>。</p>
+<p>Pod 可用的资源量小于节点容量，因为系统守护程序使用一部分可用资源。 <a href="/docs/resources-reference/iDesktop Java/#nodestatus-v1-core">NodeStatus</a>  的 <code>allocatable</code> 字段给出了可用于 Pod 的资源量。有关更多信息，请参阅 <a href="https://git.k8s.io/community/contributors/design-proposals/node-allocatable.md" target="_blank">节点可分配资源</a>。</p>
 
 <p>可以将 <a href="/docs/concepts/policy/resource-quotas/">资源配额</a> 功能配置为限制可以使用的资源总量。如果与 namespace 配合一起使用，就可以防止一个团队占用所有资源。</p>
 
@@ -1723,8 +1728,8 @@ Host<span style="color:#666">:</span> k8s-master:8080
 <h2 id="接下来">接下来</h2>
 <ul>
 <li>获取将 <a href="/docs/tasks/configure-pod-container/assign-cpu-ram-container/">CPU 和内存资源分配给容器</a> 的实践经验</li>
-<li><a href="/docs/api-reference/v1.13/#container-v1-core">容器</a></li>
-<li><a href="/docs/resources-reference/v1.13/#resourcerequirements-v1-core">ResourceRequirements</a></li>
+<li><a href="/docs/api-reference/iDesktop Java/#container-v1-core">容器</a></li>
+<li><a href="/docs/resources-reference/iDesktop Java/#resourcerequirements-v1-core">ResourceRequirements</a></li>
 </ul>
 
 

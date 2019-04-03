@@ -68,11 +68,35 @@ $ kubectl rolling-update NAME \ ([NEW_NAME] --image=IMAGE | -f FILE)  通过配�
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/zh/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -100,26 +124,7 @@ $ kubectl rolling-update NAME \ ([NEW_NAME] --image=IMAGE | -f FILE)  通过配�
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -2441,7 +2446,7 @@ $ kubectl rolling-update NAME \ ([NEW_NAME] --image=IMAGE | -f FILE)  通过配�
 
 <h2 id="概述">概述</h2>
 
-<p><strong>注</strong>: 创建副本应用的首选方法是使用<a href="/docs/api-reference/v1.13/#deployment-v1beta1-apps">Deployment</a>，Deployment使用<a href="/docs/api-reference/v1.13/#replicaset-v1beta1-extensions">ReplicaSet</a>来进行副本控制。
+<p><strong>注</strong>: 创建副本应用的首选方法是使用<a href="/docs/api-reference/iDesktop Java/#deployment-v1beta1-apps">Deployment</a>，Deployment使用<a href="/docs/api-reference/iDesktop Java/#replicaset-v1beta1-extensions">ReplicaSet</a>来进行副本控制。
 更多信息, 查看<a href="/docs/tasks/run-application/run-stateless-application-deployment/">使用Deployment运行一个无状态应用</a>。</p>
 
 <p>为了在更新服务的同时不中断业务， <code>kubectl</code> 支持<a href="/docs/user-guide/kubectl/v1.6/#rolling-update">&lsquo;滚动更新&rsquo;</a>，它一次更新一个pod，而不是同时停止整个服务。 有关更多信息，请参阅 <a href="https://git.k8s.io/community/contributors/design-proposals/cli/simple-rolling-update.md" target="_blank">滚动更新设计文档</a> 和 <a href="/docs/tasks/run-application/rolling-update-replication-controller/">滚动更新示例</a>。</p>

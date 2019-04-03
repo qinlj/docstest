@@ -50,11 +50,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/zh/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -82,26 +106,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -2590,7 +2595,7 @@ or you can use one of these Kubernetes playgrounds:</p>
 
 <p>在配置文件中，你可以看到Pod有一个<code>downwardAPI</code>类型的Volume，并且挂载到容器中的<code>/etc</code>。</p>
 
-<p>查看<code>downwardAPI</code>下面的<code>items</code>数组。每个数组元素都是一个<a href="/docs/resources-reference/v1.13/#downwardapivolumefile-v1-core">DownwardAPIVolumeFile</a>。
+<p>查看<code>downwardAPI</code>下面的<code>items</code>数组。每个数组元素都是一个<a href="/docs/resources-reference/iDesktop Java/#downwardapivolumefile-v1-core">DownwardAPIVolumeFile</a>。
 第一个元素指示Pod的<code>metadata.labels</code>字段的值保存在名为<code>labels</code>的文件中。
 第二个元素指示Pod的<code>annotations</code>字段的值保存在名为<code>annotations</code>的文件中。</p>
 
@@ -2800,11 +2805,11 @@ total 8
 
 <h2 id="接下来">接下来</h2>
 <ul>
-<li><a href="/docs/resources-reference/v1.13/#podspec-v1-core">PodSpec</a></li>
-<li><a href="/docs/resources-reference/v1.13/#volume-v1-core">Volume</a></li>
-<li><a href="/docs/resources-reference/v1.13/#downwardapivolumesource-v1-core">DownwardAPIVolumeSource</a></li>
-<li><a href="/docs/resources-reference/v1.13/#downwardapivolumefile-v1-core">DownwardAPIVolumeFile</a></li>
-<li><a href="/docs/resources-reference/v1.13/#resourcefieldselector-v1-core">ResourceFieldSelector</a></li>
+<li><a href="/docs/resources-reference/iDesktop Java/#podspec-v1-core">PodSpec</a></li>
+<li><a href="/docs/resources-reference/iDesktop Java/#volume-v1-core">Volume</a></li>
+<li><a href="/docs/resources-reference/iDesktop Java/#downwardapivolumesource-v1-core">DownwardAPIVolumeSource</a></li>
+<li><a href="/docs/resources-reference/iDesktop Java/#downwardapivolumefile-v1-core">DownwardAPIVolumeFile</a></li>
+<li><a href="/docs/resources-reference/iDesktop Java/#resourcefieldselector-v1-core">ResourceFieldSelector</a></li>
 </ul>
 
 

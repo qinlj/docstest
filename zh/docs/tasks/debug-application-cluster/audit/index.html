@@ -50,11 +50,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/zh/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -82,26 +106,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -2403,7 +2408,7 @@
 
 
 
-<b>FEATURE STATE:</b> <code>Kubernetes v1.13</code>
+<b>FEATURE STATE:</b> <code>Kubernetes iDesktop Java</code>
 
 
 
@@ -2415,15 +2420,15 @@
     
 <a href="#" id="feature-state-dialog-link" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>feature-state-beta.txt</a>
 <div id="feature-state-dialog" class="ui-dialog-content" title="feature-state-beta.txt">
-Cette fonctionnalité est actuellement dans un état <em>beta</em>, c&rsquo;est-à-dire :</p>
+This feature is currently in a <em>beta</em> state, meaning:</p>
 
 <ul>
-<li>Les noms de version contiennent: beta (par ex. v2beta3).</li>
-<li>Le code est bien testé. L&rsquo;activation de cette fonctionnalité est considérée comme sûre. Elle est activée par défaut.</li>
-<li>La prise en charge de l&rsquo;ensemble de la fonctionnalité ne sera pas supprimée, bien que des détails puissent changer.</li>
-<li>Le schéma et/ou la sémantique des objets peuvent changer de manière incompatible dans une version bêta ou stable ultérieure. Lorsque cela se produira, nous vous fournirons des instructions pour migrer vers la prochaine version. Cela peut nécessiter la suppression, l&rsquo;édition et la recréation d&rsquo;objets API. Le processus de changement de version peut nécessiter une certaine réflexion. Cela peut aussi nécessiter une interruption de service pour les applications qui s&rsquo;appuient sur cette fonctionnalité.</li>
-<li>Recommandé uniquement pour les utilisations non critiques en raison du risque de changements incompatibles dans les versions ultérieures. Si vous avez plusieurs clusters qui peuvent être mis à niveau indépendamment, vous pouvez assouplir cette restriction.</li>
-<li>Donnez votre avis sur cette fonctionnalité bêta ! Une fois qu&rsquo;elle aura quitté la version bêta, ce sera probablement moins évident pour nous d&rsquo;apporter d&rsquo;autres changements.</li>
+<li>The version names contain beta (e.g. v2beta3).</li>
+<li>Code is well tested. Enabling the feature is considered safe. Enabled by default.</li>
+<li>Support for the overall feature will not be dropped, though details may change.</li>
+<li>The schema and/or semantics of objects may change in incompatible ways in a subsequent beta or stable release. When this happens, we will provide instructions for migrating to the next version. This may require deleting, editing, and re-creating API objects. The editing process may require some thought. This may require downtime for applications that rely on the feature.</li>
+<li>Recommended for only non-business-critical uses because of potential for incompatible changes in subsequent releases. If you have multiple clusters that can be upgraded independently, you may be able to relax this restriction.</li>
+<li><strong>Please do try our beta features and give feedback on them! After they exit beta, it may not be practical for us to make more changes.</strong></li>
 </ul>
 
 </div>

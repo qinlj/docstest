@@ -50,11 +50,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -84,26 +108,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -1185,7 +1190,7 @@
 <h2 id="pod-phase">Pod phase</h2>
 
 <p>A Pod&rsquo;s <code>status</code> field is a
-<a href="/docs/reference/generated/kubernetes-api/v1.13/#podstatus-v1-core">PodStatus</a>
+<a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#podstatus-v1-core">PodStatus</a>
 object, which has a <code>phase</code> field.</p>
 
 <p>The phase of a Pod is a simple, high-level summary of where the Pod is in its
@@ -1247,7 +1252,7 @@ have a given <code>phase</code> value.</p>
 <h2 id="pod-conditions">Pod conditions</h2>
 
 <p>A Pod has a PodStatus, which has an array of
-<a href="/docs/reference/generated/kubernetes-api/v1.13/#podcondition-v1-core">PodConditions</a>
+<a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#podcondition-v1-core">PodConditions</a>
 through which the Pod has or has not passed. Each element of the PodCondition
 array has six possible fields:</p>
 
@@ -1281,7 +1286,7 @@ due to lacking of resources or other constraints;</li>
 
 <h2 id="container-probes">Container probes</h2>
 
-<p>A <a href="/docs/reference/generated/kubernetes-api/v1.13/#probe-v1-core">Probe</a> is a diagnostic
+<p>A <a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#probe-v1-core">Probe</a> is a diagnostic
 performed periodically by the <a href="/docs/admin/kubelet/">kubelet</a>
 on a Container. To perform a diagnostic,
 the kubelet calls a
@@ -1289,15 +1294,15 @@ the kubelet calls a
 the Container. There are three types of handlers:</p>
 
 <ul>
-<li><p><a href="/docs/reference/generated/kubernetes-api/v1.13/#execaction-v1-core">ExecAction</a>:
+<li><p><a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#execaction-v1-core">ExecAction</a>:
 Executes a specified command inside the Container. The diagnostic
 is considered successful if the command exits with a status code of 0.</p></li>
 
-<li><p><a href="/docs/reference/generated/kubernetes-api/v1.13/#tcpsocketaction-v1-core">TCPSocketAction</a>:
+<li><p><a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#tcpsocketaction-v1-core">TCPSocketAction</a>:
 Performs a TCP check against the Container&rsquo;s IP address on
 a specified port. The diagnostic is considered successful if the port is open.</p></li>
 
-<li><p><a href="/docs/reference/generated/kubernetes-api/v1.13/#httpgetaction-v1-core">HTTPGetAction</a>:
+<li><p><a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#httpgetaction-v1-core">HTTPGetAction</a>:
 Performs an HTTP Get request against the Container&rsquo;s IP
 address on a specified port and path. The diagnostic is considered successful
 if the response has a status code greater than or equal to 200 and less than 400.</p></li>
@@ -1360,11 +1365,11 @@ to stop.</p>
 <h2 id="pod-and-container-status">Pod and Container status</h2>
 
 <p>For detailed information about Pod Container status, see
-<a href="/docs/reference/generated/kubernetes-api/v1.13/#podstatus-v1-core">PodStatus</a>
+<a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#podstatus-v1-core">PodStatus</a>
 and
-<a href="/docs/reference/generated/kubernetes-api/v1.13/#containerstatus-v1-core">ContainerStatus</a>.
+<a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#containerstatus-v1-core">ContainerStatus</a>.
 Note that the information reported as Pod status depends on the current
-<a href="/docs/reference/generated/kubernetes-api/v1.13/#containerstatus-v1-core">ContainerState</a>.</p>
+<a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#containerstatus-v1-core">ContainerState</a>.</p>
 
 <h2 id="container-states">Container States</h2>
 

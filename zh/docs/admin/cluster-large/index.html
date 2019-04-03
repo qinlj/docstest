@@ -27,7 +27,7 @@
 
 
 
-<meta name="description" content="支持规格 在 v1.13，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 所有 标准的配置：
+<meta name="description" content="支持规格 在 iDesktop Java，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 所有 标准的配置：
  不超过5000节点 总共不超过15000个pod 总共不超过300000个容器 每个节点不超过100个pod  
  TOC    支持规格 创建  配额问题 Etcd存储 管理节点和组件的规格 插件的资源占用 启动时允许部分失败      创建 集群是一组运行Kubernetes代理组件的节点(物理或虚拟机)，它们被 &ldquo;master&rdquo; (集群管理平面)所管理。
 一般来说，集群的节点数量通过平台相关的 config-default.sh 文件中的 NUM_NODES 值来控制，(例如，详见 GCE&rsquo;s config-default.sh)。
@@ -37,7 +37,7 @@
  提高相关配额，如CPU，IP等。  如，在 GCE中，你可能需要提高以下资源的配额： CPU 虚机实例 磁盘 使用的IP地址 防火墙规则 转发规则 路由 对象池  设置创建脚本，使其以较小的规模分批次拉起新的节点，并在其间设置一定的等待时间，因为一些云供应商可能对虚机的创建速率进行了限制。  Etcd存储 为了提升大规模集群的性能，我们将事件对象存储到独立的etcd实例中。
 创建集群时，当前的salt脚本：
  启动并配置额外的etcd实例 配置api-server，将该etcd实例用于事件对象的存储  管理节点和组件的规格 在 GCE/Google Kubernetes Engine 或 AWS平台中， kube-up 会根据集群的节点规模合理地设置管理节点的规格。 在其他云平台上，用户需要手动配置。 作为参考，GCE使用的规格为：">
-<meta property="og:description" content="支持规格 在 v1.13，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 所有 标准的配置：
+<meta property="og:description" content="支持规格 在 iDesktop Java，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 所有 标准的配置：
  不超过5000节点 总共不超过15000个pod 总共不超过300000个容器 每个节点不超过100个pod  
  TOC    支持规格 创建  配额问题 Etcd存储 管理节点和组件的规格 插件的资源占用 启动时允许部分失败      创建 集群是一组运行Kubernetes代理组件的节点(物理或虚拟机)，它们被 &ldquo;master&rdquo; (集群管理平面)所管理。
 一般来说，集群的节点数量通过平台相关的 config-default.sh 文件中的 NUM_NODES 值来控制，(例如，详见 GCE&rsquo;s config-default.sh)。
@@ -47,7 +47,7 @@
  提高相关配额，如CPU，IP等。  如，在 GCE中，你可能需要提高以下资源的配额： CPU 虚机实例 磁盘 使用的IP地址 防火墙规则 转发规则 路由 对象池  设置创建脚本，使其以较小的规模分批次拉起新的节点，并在其间设置一定的等待时间，因为一些云供应商可能对虚机的创建速率进行了限制。  Etcd存储 为了提升大规模集群的性能，我们将事件对象存储到独立的etcd实例中。
 创建集群时，当前的salt脚本：
  启动并配置额外的etcd实例 配置api-server，将该etcd实例用于事件对象的存储  管理节点和组件的规格 在 GCE/Google Kubernetes Engine 或 AWS平台中， kube-up 会根据集群的节点规模合理地设置管理节点的规格。 在其他云平台上，用户需要手动配置。 作为参考，GCE使用的规格为：">
-<meta name="twitter:description" content="支持规格 在 v1.13，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 所有 标准的配置：
+<meta name="twitter:description" content="支持规格 在 iDesktop Java，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 所有 标准的配置：
  不超过5000节点 总共不超过15000个pod 总共不超过300000个容器 每个节点不超过100个pod  
  TOC    支持规格 创建  配额问题 Etcd存储 管理节点和组件的规格 插件的资源占用 启动时允许部分失败      创建 集群是一组运行Kubernetes代理组件的节点(物理或虚拟机)，它们被 &ldquo;master&rdquo; (集群管理平面)所管理。
 一般来说，集群的节点数量通过平台相关的 config-default.sh 文件中的 NUM_NODES 值来控制，(例如，详见 GCE&rsquo;s config-default.sh)。
@@ -77,11 +77,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/zh/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -117,26 +141,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -444,7 +449,7 @@
 
 <h2 id="支持规格">支持规格</h2>
 
-<p>在 v1.13，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 <em>所有</em> 标准的配置：</p>
+<p>在 iDesktop Java，Kubernetes支持最多5000节点规模的集群。 更具体地说，我们支持满足以下 <em>所有</em> 标准的配置：</p>
 
 <ul>
 <li>不超过5000节点</li>

@@ -50,11 +50,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/ko/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -84,26 +108,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -1262,7 +1267,7 @@
 
 <h2 id="파드의-단계-phase">파드의 단계(phase)</h2>
 
-<p>파드의 <code>status</code> 필드는 <code>phase</code> 필드를 포함하는 <a href="/docs/reference/generated/kubernetes-api/v1.13/#podstatus-v1-core">PodStatus</a> 오브젝트로 정의된다.</p>
+<p>파드의 <code>status</code> 필드는 <code>phase</code> 필드를 포함하는 <a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#podstatus-v1-core">PodStatus</a> 오브젝트로 정의된다.</p>
 
 <p>파드의 phase는 파드가 라이프사이클 중 어느 단계에 해당하는지 표현하는 간단한
 고수준의 요약이다. Phase는 컨테이너나 파드의 관측 정보에 대한 포괄적인
@@ -1322,7 +1327,7 @@
 
 <h2 id="파드의-조건-condition">파드의 조건(condition)</h2>
 
-<p>파드는 하나의 PodStatus를 가지며, 그것은 파드가 통과했거나 통과하지 못한 조건에 대한 <a href="/docs/reference/generated/kubernetes-api/v1.13/#podcondition-v1-core">PodConditions</a> 배열을 가진다. PodCondition
+<p>파드는 하나의 PodStatus를 가지며, 그것은 파드가 통과했거나 통과하지 못한 조건에 대한 <a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#podcondition-v1-core">PodConditions</a> 배열을 가진다. PodCondition
 배열의 각 요소는 다음 여섯 가지 필드를 가질 수 있다.</p>
 
 <ul>
@@ -1349,21 +1354,21 @@
 
 <h2 id="컨테이너-프로브-probe">컨테이너 프로브(probe)</h2>
 
-<p><a href="/docs/reference/generated/kubernetes-api/v1.13/#probe-v1-core">프로브</a>는 컨테이너에서 <a href="/docs/admin/kubelet/">kubelet</a>에 의해 주기적으로 수행되는 진단(diagnostic)이다. 진단을 수행하기 위해서,
+<p><a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#probe-v1-core">프로브</a>는 컨테이너에서 <a href="/docs/admin/kubelet/">kubelet</a>에 의해 주기적으로 수행되는 진단(diagnostic)이다. 진단을 수행하기 위해서,
 kubelet은 컨테이너에 의해서 구현된
 <a href="https://godoc.org/k8s.io/kubernetes/pkg/api/v1#Handler" target="_blank">핸들러</a>를 호출한다.
 핸들러에는 다음과 같이 세 가지 타입이 있다.</p>
 
 <ul>
-<li><p><a href="/docs/reference/generated/kubernetes-api/v1.13/#execaction-v1-core">ExecAction</a>
+<li><p><a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#execaction-v1-core">ExecAction</a>
 은 컨테이너 내에서 지정된 명령어를 실행한다.
 명령어가 상태 코드 0으로 종료되면 진단이 성공한 것으로 간주한다.</p></li>
 
-<li><p><a href="/docs/reference/generated/kubernetes-api/v1.13/#tcpsocketaction-v1-core">TCPSocketAction</a>
+<li><p><a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#tcpsocketaction-v1-core">TCPSocketAction</a>
 은 지정된 포트에서 컨테이너의 IP주소에 대해 TCP 검사를 수행한다.
 포트가 활성화되어 있다면 진단이 성공한 것으로 간주한다.</p></li>
 
-<li><p><a href="/docs/reference/generated/kubernetes-api/v1.13/#httpgetaction-v1-core">HTTPGetAction</a>
+<li><p><a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#httpgetaction-v1-core">HTTPGetAction</a>
 은 지정한 포트 및 경로에서 컨테이너의 IP주소에
 대한 HTTP Get 요청을 수행한다. 응답의 상태 코드가 200보다 크고 400보다 작으면
 진단이 성공한 것으로 간주한다.</p></li>
@@ -1427,11 +1432,11 @@ kubelet은 컨테이너에 의해서 구현된
 
 <h2 id="파드-및-컨테이너-상태">파드 및 컨테이너 상태</h2>
 
-<p>파드 및 컨테이너 상태에 대한 자세한 정보는, <a href="/docs/reference/generated/kubernetes-api/v1.13/#podstatus-v1-core">PodStatus</a>
+<p>파드 및 컨테이너 상태에 대한 자세한 정보는, <a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#podstatus-v1-core">PodStatus</a>
 및
-<a href="/docs/reference/generated/kubernetes-api/v1.13/#containerstatus-v1-core">ContainerStatus</a>를 참조하면 된다.
+<a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#containerstatus-v1-core">ContainerStatus</a>를 참조하면 된다.
 파드의 상태로서 보고되는 정보는 현재의
-<a href="/docs/reference/generated/kubernetes-api/v1.13/#containerstatus-v1-core">ContainerState</a>에 의존적이라는 점에 유의하길 바란다.</p>
+<a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#containerstatus-v1-core">ContainerState</a>에 의존적이라는 점에 유의하길 바란다.</p>
 
 <h2 id="컨테이너-상태">컨테이너 상태</h2>
 

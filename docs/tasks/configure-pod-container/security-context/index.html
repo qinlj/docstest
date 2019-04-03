@@ -50,11 +50,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -90,26 +114,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -1783,7 +1788,7 @@ or you can use one of these Kubernetes playgrounds:</p>
 
 <p>To specify security settings for a Pod, include the <code>securityContext</code> field
 in the Pod specification. The <code>securityContext</code> field is a
-<a href="/docs/reference/generated/kubernetes-api/v1.13/#podsecuritycontext-v1-core">PodSecurityContext</a> object.
+<a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#podsecuritycontext-v1-core">PodSecurityContext</a> object.
 The security settings that you specify for a Pod apply to all Containers in the Pod.
 Here is a configuration file for a Pod that has a <code>securityContext</code> and an <code>emptyDir</code> volume:</p>
 
@@ -1862,7 +1867,7 @@ the value of <code>fsGroup</code>.</p>
 
 <p>To specify security settings for a Container, include the <code>securityContext</code> field
 in the Container manifest. The <code>securityContext</code> field is a
-<a href="/docs/reference/generated/kubernetes-api/v1.13/#securitycontext-v1-core">SecurityContext</a> object.
+<a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#securitycontext-v1-core">SecurityContext</a> object.
 Security settings that you specify for a Container apply only to
 the individual Container, and they override settings made at the Pod level when
 there is overlap. Container settings do not affect the Pod&rsquo;s Volumes.</p>
@@ -2055,7 +2060,7 @@ for definitions of the capability constants.</p>
 <p>To assign SELinux labels to a Container, include the <code>seLinuxOptions</code> field in
 the <code>securityContext</code> section of your Pod or Container manifest. The
 <code>seLinuxOptions</code> field is an
-<a href="/docs/reference/generated/kubernetes-api/v1.13/#selinuxoptions-v1-core">SELinuxOptions</a>
+<a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#selinuxoptions-v1-core">SELinuxOptions</a>
 object. Here&rsquo;s an example that applies an SELinux level:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">...<span style="color:#bbb">
 </span><span style="color:#bbb"></span>securityContext:<span style="color:#bbb">
@@ -2106,8 +2111,8 @@ label given to all Containers in the Pod as well as the Volumes.</p></li>
 
 <h2 id="what-s-next">What&#39;s next</h2>
 <ul>
-<li><a href="/docs/reference/generated/kubernetes-api/v1.13/#podsecuritycontext-v1-core">PodSecurityContext</a></li>
-<li><a href="/docs/reference/generated/kubernetes-api/v1.13/#securitycontext-v1-core">SecurityContext</a></li>
+<li><a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#podsecuritycontext-v1-core">PodSecurityContext</a></li>
+<li><a href="/docs/reference/generated/kubernetes-api/iDesktop Java/#securitycontext-v1-core">SecurityContext</a></li>
 <li><a href="https://opensource.com/business/15/3/docker-security-tuning" target="_blank">Tuning Docker with the newest security enhancements</a></li>
 <li><a href="https://git.k8s.io/community/contributors/design-proposals/auth/security_context.md" target="_blank">Security Contexts design document</a></li>
 <li><a href="https://git.k8s.io/community/contributors/design-proposals/storage/volume-ownership-management.md" target="_blank">Ownership Management design document</a></li>

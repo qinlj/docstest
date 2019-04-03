@@ -71,11 +71,35 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/zh/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -111,26 +135,7 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -1446,7 +1451,7 @@ $ sudo sysctl -a  命名空间级vs.节点级Sysctls 在今天的Linux内核系�
 
 <p>Sysctls中非命名空间级的被称为 <em>节点级</em> ，其必须由集群管理员手动设置，要么通过节点的底层Linux分布方式(例如，通过 <code>/etc/sysctls.conf</code>)，亦或在特权容器中使用Daemonset。</p>
 
-<p><strong>注意</strong>: 这是很好的做法，考虑在一个集群里给有特殊sysctl的节点设置为 <em>污点</em> ，并且给他们安排仅需要这些sysctl设置的pods。 建议采用Kubernetes <a href="/docs/user-guide/kubectl/v1.13/#taint"><em>污点和容点</em>
+<p><strong>注意</strong>: 这是很好的做法，考虑在一个集群里给有特殊sysctl的节点设置为 <em>污点</em> ，并且给他们安排仅需要这些sysctl设置的pods。 建议采用Kubernetes <a href="/docs/user-guide/kubectl/iDesktop Java/#taint"><em>污点和容点</em>
 特征</a> 来实现。</p>
 
 <h2 id="安全的-vs-不安全的-sysctls">安全的 vs. 不安全的 Sysctls</h2>

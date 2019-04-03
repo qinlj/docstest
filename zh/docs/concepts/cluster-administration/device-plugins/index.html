@@ -50,11 +50,35 @@
 
 </head>
 <body>
+
 <div id="cellophane" onclick="kub.toggleMenu()"></div>
 
 <header>
     <a href="/zh/" class="logo"></a>
-
+ <div class="left-buttons" data-auto-burger="primary">
+   <ul class="global-nav" style="float: left;  height: 80px;line-height: 80px; display: inline-block; text-align: center; position: relative;">
+   <li>
+        <a href="#">
+          iDesktop Java <span class="ui-icon ui-icon-carat-1-s"></span>
+        </a>
+        <ul>
+          
+          <li><a href="https://qinlj.github.io/zh/">iDesktop Java</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iObject</a></li>
+          
+          <li><a href="https://supermaphehh.github.io/zh/">iServer</a></li>
+          
+          <li><a href="https://v1-10.docs.kubernetes.io">iPortal</a></li>
+          
+          <li><a href="https://v1-9.docs.kubernetes.io">iClent</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
     <div class="nav-buttons" data-auto-burger="primary">
         <ul class="global-nav">
             
@@ -90,26 +114,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#">
-                    v1.13 <span class="ui-icon ui-icon-carat-1-s"></span>
-                </a>
-                <ul>
-                
-                    <li><a href="https://kubernetes.io">v1.13</a></li>
-                
-                    <li><a href="https://supermaphehh.github.io/zh/">iDesktop .NET</a></li>
-                
-                    <li><a href="https://v1-12.docs.kubernetes.io">v1.12</a></li>
-                
-                    <li><a href="https://v1-11.docs.kubernetes.io">v1.11</a></li>
-                
-                    <li><a href="https://v1-10.docs.kubernetes.io">v1.10</a></li>
-                
-                    <li><a href="https://v1-9.docs.kubernetes.io">v1.9</a></li>
-                
-                </ul>
-            </li>
+           
         </ul>
 
         <form id="searchBox" action="/search/">
@@ -1462,7 +1467,7 @@
 例如， 设备插件注册 <code>vendor-domain/foo</code> 到 kubelet ，
 并上报了节点上的两个健康的设备后，节点状态将更新， 发布2个 <code>vendor-domain/foo</code> 。</p>
 
-<p>然后，开发者可以在 <a href="/docs/api-reference/v1.13/#container-v1-core">容器</a>
+<p>然后，开发者可以在 <a href="/docs/api-reference/iDesktop Java/#container-v1-core">容器</a>
 规格中通过使用与
 <a href="/docs/tasks/configure-pod-container/opaque-integer-resource/">不透明整数型资源</a>
 中同样的流程来请求使用设备。
@@ -1505,7 +1510,7 @@ Kubernetes能够重新启动 Pods 。 否则就需要额外的设备插件故障
 目录 <code>/var/lib/kubelet/device-plugins</code> 需要访问特权，
 所以设备插件必须在特权的安全上下文环境下运行。
 如果设备插件以 DaemonSet 形式运行， <code>/var/lib/kubelet/device-plugins</code>
-目录必须在插件的 <a href="/docs/api-reference/v1.13/#podspec-v1-core">PodSpec</a> 中以 <a href="/docs/api-reference/v1.13/#volume-v1-core">Volume</a> 的形式挂载。</p>
+目录必须在插件的 <a href="/docs/api-reference/iDesktop Java/#podspec-v1-core">PodSpec</a> 中以 <a href="/docs/api-reference/iDesktop Java/#volume-v1-core">Volume</a> 的形式挂载。</p>
 
 <h2 id="示例">示例</h2>
 
@@ -1524,7 +1529,7 @@ Kubernetes能够重新启动 Pods 。 否则就需要额外的设备插件故障
 
 
 
-<b>FEATURE STATE:</b> <code>Kubernetes v1.13</code>
+<b>FEATURE STATE:</b> <code>Kubernetes iDesktop Java</code>
 
 
 
