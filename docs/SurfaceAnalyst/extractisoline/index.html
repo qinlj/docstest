@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -553,8 +554,8 @@
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -586,62 +587,13 @@
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">600 Words|Read in about 3 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<p>　　To extract isolines from point dataset, you need to perform interpolation analysis on the point dataset first resulting in a raster dataset, then join the adjacent points of equal elevation in the raster dataset.</p>
-
-<p>　　SuperMap desktop product supports extracting isolines from 2D point dataset, 3D point collection. 2D point dataset employs a certain field to store property information such as elevation, temperature, etc. for isoline extraction. 3D point collection stores the third dimensional information besides coordinate information of points. The theory of extracting isolines from point data is: an interpolation analysis is performed on a 2D point dataset or 3D point collection to get a raster dataset then extract isolines from the raster dataset.</p>
-
-<p>　　Dispersed points in the point dataset can exactly represent the position but other property information. For instance, you have large numbers of sampling points with the elevation information, the distribution of these sampling points is as shown below. You can not see any trend on terrain from the left figure. However, if you use the isolines to display the underlying information of these points, namely connecting the neighboring points of equal values and gaining the contours as shown in the 2nd figure below, you will see the information in a more obvious way. Extracting isolines from points is not limit to extracting contours, if the points have the attribute values such as temperature, precipitation, you can generate isolines for temperature, precipitation information or others.</p>
-
-<h3 id="basic-steps">Basic steps</h3>
-
-<ol>
-<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Extract Isolines&rdquo; &gt; &ldquo;Extract Isolines by Points&rdquo; to open the &ldquo;Extract Isolines by Points&rdquo; dialog box.</li>
-<li>Specify your 2D or 3D point dataset for extraction isolines.</li>
-<li><strong>Field Name</strong>: The attribute field for interpolation analysis. It is often set to elevation field. While extracting isolines, the field will be employed for interpolation analysis on the point data.</li>
-
-<li><p><strong>Interpolate Type</strong>: If the source dataset is a 3D point dataset, IDW, Kriging, or TIN can be employed for interpolation.</p>
-
-<ul>
-<li><strong>IDW</strong>: Estimates the cell value by calculating the average value of discrete point group in the neighboring area. It is a simple and effective data interpolation method, and the computing speed is fast.</li>
-<li><strong>Kriging</strong>: The idea of the Kriging method is the same with ordinary kriging interpolation method, the data structure is simple, very suitable for the construction of large area macro topography.</li>
-<li><strong>TIN</strong>: The TIN method creates a TIN model for the given line dataset, then create terrain as the given extreme point information (optional), and lake information (optional). TIN model can reflect the terrain features, but the data structure is complex, and it is suitable for small area terrain calculating.</li>
-</ul></li>
-
-<li><p><strong>Resolution</strong>: The resolution of the intermediate result (grid dataset) for point dataset. If the interpolation type is TIN, the resolution is not necessary to be specified.</p></li>
-
-<li><p>On the settings of common parameters in Parameter Settings area, please refer to <a href="DriveContour.html" target="_blank">Extract isolines and isoregions</a>.</p></li>
-
-<li><p>Set a name for the result dataset and the max isoline, min isoline and number of isolines will be shown automatically according to the parameters you set.</p></li>
-
-<li><p>Click &ldquo;Run&rdquo; image button to perform the operation.</p></li>
-</ol>
-
-<p><img src="img/ExtractIsoline.png" alt="" /></p>
-
-<h3 id="related-topics">Related topics</h3>
-
-<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContour.html" target="_blank">Extract all isolines/isoregions</a></p>
-
-<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContourAll.html" target="_blank">Extract all isolines</a></p>
-
-<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContourSpecific.html" target="_blank">Extract specified isolines</a></p>
-
-<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveRegionAll.html" target="_blank">Extract all isoregions</a></p>
-
-<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveRegionSpecific.html" target="_blank">Extract specified isoregion</a></p>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

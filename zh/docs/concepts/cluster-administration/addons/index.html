@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -1510,8 +1511,8 @@
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -1543,52 +1544,13 @@
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">200 Words|Read in about 1 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<h2 id="概览">概览</h2>
-
-<p>Add-ons 扩展了 Kubernetes 的功能。</p>
-
-<p>本文列举了一些可用的 add-ons 以及到它们各自安装说明的链接。</p>
-
-<p>每个 add-ons 按字母顺序排序 - 顺序不代表任何优先地位。</p>
-
-<h2 id="网络和网络策略">网络和网络策略</h2>
-
-<ul>
-<li><a href="http://docs.projectcalico.org/latest/getting-started/kubernetes/installation/hosted/" target="_blank">Calico</a>  是一个安全的 L3 网络和网络策略提供者。</li>
-<li><a href="https://github.com/tigera/canal/tree/master/k8s-install" target="_blank">Canal</a>  结合 Flannel 和 Calico， 提供网络和网络策略。</li>
-<li><a href="https://github.com/cilium/cilium" target="_blank">Cilium</a> 是一个 L3 网络和网络策略插件， 能够透明的实施  HTTP/API/L7 策略。 同时支持路由（routing）和叠加/封装（ overlay/encapsulation）模式。</li>
-<li><a href="http://contiv.github.io" target="_blank">Contiv</a> 为多种用例提供可配置网络（使用 BGP 的原生 L3，使用 vxlan 的 overlay，经典 L2 和  Cisco-SDN/ACI）和丰富的策略框架。Contiv 项目完全<a href="http://github.com/contiv" target="_blank">开源</a>。<a href="http://github.com/contiv/install" target="_blank">安装工具</a>同时提供基于和不基于 kubeadm 的安装选项。</li>
-<li><a href="https://github.com/coreos/flannel/blob/master/Documentation/kube-flannel.yml" target="_blank">Flannel</a> 是一个可以用于 Kubernetes 的 overlay 网络提供者。</li>
-<li><a href="http://romana.io" target="_blank">Romana</a> 是一个 pod 网络的层 3 解决方案，并且支持  <a href="/docs/concepts/services-networking/network-policies/">NetworkPolicy API</a>。Kubeadm add-on 安装细节可以在<a href="https://github.com/romana/romana/tree/master/containerize" target="_blank">这里</a>找到。</li>
-<li><a href="https://www.weave.works/docs/net/latest/kube-addon/" target="_blank">Weave Net</a>  提供了在网络分组两端参与工作的网络和网络策略，并且不需要额外的数据库。</li>
-<li><a href="https://github.com/Huawei-PaaS/CNI-Genie" target="_blank">CNI-Genie</a>  使 Kubernetes 无缝连接到一种 CNI 插件，例如：Flannel、Calico、Canal、Romana 或者 Weave。</li>
-</ul>
-
-<h2 id="可视化管理">可视化管理</h2>
-
-<ul>
-<li><a href="https://github.com/kubernetes/dashboard#kubernetes-dashboard" target="_blank">Dashboard</a> 是一个 Kubernetes 的 web 控制台界面。</li>
-<li><a href="https://www.weave.works/documentation/scope-latest-installing/#k8s" target="_blank">Weave Scope</a> 是一个图形化工具，用于查看你的 containers、 pods、services等。 请和一个  <a href="https://cloud.weave.works/" target="_blank">Weave Cloud account</a> 一起使用，或者自己运行 UI。</li>
-</ul>
-
-<h2 id="遗留-add-ons">遗留 Add-ons</h2>
-
-<p>还有一些其它 add-ons 归档在已废弃的  <a href="https://git.k8s.io/kubernetes/cluster/addons" target="_blank">cluster/addons</a> 路径中。</p>
-
-<p>维护完善的 add-ons 应该被链接到这里。欢迎提出 PRs！</p>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

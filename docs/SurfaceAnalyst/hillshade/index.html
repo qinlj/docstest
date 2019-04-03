@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -559,8 +560,8 @@
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -592,71 +593,13 @@
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">700 Words|Read in about 4 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<p>　　Hillshade is a raster map that simulates the shadow of the practical surface so as to show ups-and-downs of the terrain. By using an imaginary light source to shine the map and the aspect and slope information generated from the raster data, you can get the grayscale value of each cell. The hill facing the light has higher grayscale value, while the hill back to the light has lower gray value which is called the shaded area. This mountain shadow map generated from raster calculation has a very realistic 3D effect, so it is also called hillshade.</p>
-
-<p>　　3D hillshade map has significant value in the description of 3D situation and analysis of terrain. Overlaying other information on a 3D hillshade map can enhance its application value and intuitive effect greatly.</p>
-
-<p>　　Hillshade is mainly used for display. If you overlay the raster map with the hillshade map, and after that, set the transparency of the raster layer, then you can easily create a beautifully fine 3D geomorphological map. You need to constantly adjust the parameters for different application scenarios in order to achieve the best effect for the mapping such as the transparency and brightness of the raster layer. Then you can continue to add other layers on it such as the maps of land use, road and river so as to further enrich the map information.</p>
-
-<h3 id="theory">Theory</h3>
-
-<p>　　To create a 3D hillshade map, you need to specify the position of unrealistic light through following two parameters.</p>
-
-<ul>
-<li><strong>Azimuth</strong>: Determines the direction of the light source, which is denoted by degree. As shown in the figure below, the azimuth is clockwise measured with the due north (0 degrees) as the reference direction, which is assigned the value from 0 degrees to 360 degrees, so the due north is also 360 degrees. The due east is 90 degrees, the due north is 180 degrees, and the due west is 270 degrees. The default value of the azimuth is 315 degrees.</li>
-</ul>
-
-<p><img src="/images/img/Azimuth.png" alt="" /></p>
-
-<ul>
-<li><strong>Altitude Angle</strong>: The angle of inclination of the light source ranges from 0 degrees to 90 degrees. As shown in the figure below, when the altitude angle is 90 degrees, the light source vertically shines the earth surface. The default value of the altitude angle is 45 degrees.</li>
-</ul>
-
-<p><img src="/images/img/AltitudeAngle.png" alt="" /></p>
-
-<p>　　When the Azimuth is 315 degree and the Altitude Angle is 45 degree, the position of the sun relative to the surface is:</p>
-
-<p><img src="/images/img/DefaultHillShad.png" alt="" /></p>
-
-<h3 id="basic-steps">Basic steps</h3>
-
-<ol>
-<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Terrain Calculate&rdquo; &gt; &ldquo;3D Hillshade Map&rdquo; to open the &ldquo;3D Hillshade Map&rdquo; dialog box.</li>
-<li>Specify your raster dataset at the Source Dataset area to create a 3D hillshade map.</li>
-<li><strong>Azimuth</strong>: Denoted by a positive degree within [0,360]. It is clockwise measured with the north as the reference direction.</li>
-<li><strong>Altitude Angle</strong>: The altitude angle above the horizon. It is denoted by a positive degree, 0 degree denotes the horizon, and 90 degree denotes the positive direction above the head.</li>
-<li><strong>Shadow Mode</strong>: There are three modes supported, including Illumination and Shadow, Shadow, and Illumination.
-
-<ul>
-<li><strong>Illumination and Shadow</strong>: Takes both the azimuth and shadow into consideration.</li>
-<li><strong>Shadow</strong>: Only takes whether the current area is within the shadow in consideration.</li>
-<li><strong>Illumination</strong>: Only considers the azimuth of current position.</li>
-</ul></li>
-
-<li><p><strong>Z Factor</strong>: When the unit at Z direction is different from it at X, Y direction, you can adjust the unit at Z direction with the Z Factor.</p>
-
-<ul>
-<li>If their units are the same, the Z Factor is 1.</li>
-<li>If their units are different, an appropriate factor is required. For example, the unit at X, Y direction is meter, but feet at Z direction, so the Z Factor should be 0.3048 because of 1 feet is 0.3408 meter.</li>
-</ul></li>
-
-<li><p>Set a name for the result dataset and specify a datasource to save it. Click &ldquo;Run&rdquo; image button to perform the operation. As following pictures show, the left one is original raster data and the middle one is a 3D hillshade map. The right one is obtained by overlaying the hillshade map with a raster layer (transparency is 40%).</p></li>
-</ol>
-
-<p>　　 <img src="/images/img/HillShade.png" alt="" /></p>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

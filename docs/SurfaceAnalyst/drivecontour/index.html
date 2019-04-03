@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -581,8 +582,8 @@
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -614,88 +615,13 @@
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">900 Words|Read in about 5 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<h3 id="extract-isolines">Extract isolines</h3>
-
-<p>　　Isoline is the mostly-commonly used method to represent a surface on a map. An isoline is a smooth curve formed by connecting adjacent points of equal values. Common isolines include: contours, depth contours, isotherms, isobars, and isohyet lines.</p>
-
-<p>　　The distribution of isolines reflects the change of values on surface. A dense isoline distribution indicates a dramatic change of values on surface like the steepness of slopes. A sparse isoline distribution indicates a mild change of values on surface like the gentleness of slopes. Therefore, locations with the same elevations, temperatures, precipitations, etc., can be found through isoline extraction.</p>
-
-<p>　　The value of each cell in a raster dataset represents the attribute value of feature like the land type, or temperature, etc. which leads to the elevation information at every location on surface can be reflected exactly. However, if you extract contour lines from a raster dataset and turn the dataset into a vector dataset, data details can be highlighted. For example, according to the contour line data, you can distinct the steepness and gentleness of slopes thereby find out hills and valleys.</p>
-
-<p>　　You can extract contour lines through the surface analysis function provided by SuperMap. Three extraction methods are provided:</p>
-
-<ul>
-<li>Extract all isolines: All isolines that meet a certain condition are extracted from a surface model according to specified parameters. Datum Value and Interval are used to control the extracted isolines.<br /></li>
-
-<li><p>Extract specified isolines: A certain number of isolines with specific values are extracted as needed. You can either directly input the isoline values or automatically generate a series of altitudes according to a specified range and interval.</p></li>
-
-<li><p>Extract isoline by points: Isolines are selected by clicking on the raster model. The output result would be the isolines whose altitudes are equal to that of selected points. Note that they are not only the isolines that join the selected point.</p></li>
-</ul>
-
-<h3 id="extract-isoregions">Extract isoregions</h3>
-
-<p>　　The isoregion is produced by closing the two neighboring isolines. The isoregion can display the change of the neighboring isolines. The isoregion has the same effect when representing the distribution of the surface. The areas where the isoregions are dense indicate the values here rise or fall rapidly; the areas where the isoregions are sparse indicate the values seldom change. Other, if the isoregion is narrower, the values here change sharply; if the isoregion is wider, the values change gently.</p>
-
-<p>　　SuperMap surface analysis supports two methods to extract isoregions: Extract All Isoregions; Specified Isoregions.</p>
-
-<ul>
-<li>Extract All Isoregions: All the isoregions satisfying the condition are extracted from a surface model according to specified parameters. Usually Datum Value and Interval are used to control the extracted isoregions. The datum value is the start value for generating isoregions, and the interval is the difference in elevation between successive contour lines. With these two parameters how many isoregions are extracted can be determined. For example, if the datum value is 0 and the interval is 50, 17 isoregions would be extracted from a DEM grid dataset whose elevation values range from 120 to 999 and the minimum elevation is 150 and the maximum elevation is 950 in the result. To generate isoregions, the original grid data is first interpolated, and the points with the same values are then connected, and finally adjacent isolines are closed to form isoregions. The result would be angular polygons. Thus the polygons need to be smoothed to realistically simulate true isoregions. The smooth methods for isoregions are the same as those for isolines. SuperMap also supports two smooth methods: B Spline and Polish</li>
-<li>Specified Isoregions: A certain number of isoregions with specific values are extracted as needed. You can either directly input specific values or let the system automatically generate a series of altitudes according to a specified range and interval.</li>
-</ul>
-
-<h3 id="common-parameters">Common Parameters</h3>
-
-<p><strong>Datum value and interval</strong></p>
-
-<ul>
-<li><strong>Datum Value</strong>The start value for generating contours. The datum value can be any number.</li>
-<li><strong>Interval</strong>: The difference in elevation between successive contour lines. Together with the datum value, determines which contour line will be extracted.</li>
-</ul>
-
-<p><strong>Smoothness coefficient and Smoothness way</strong></p>
-
-<ul>
-<li><strong>Smoothness Coefficient</strong>: Its value range is [0,5]. 0 or 1 means no smoothing. The greater the value, the smoother the contour lines will be. The recommended value is 3.</li>
-<li><strong>Smoothness</strong>: Two methods are provided by SuperMap: B-Spline, Polish. Both the two methods can make the extracted contour lines smoother with bigger smoothness coefficient meanwhile more time and space are required.</li>
-</ul>
-
-<p><strong>Resample coefficient</strong></p>
-
-<p>　　Resampling distance tolerance can be obtained by multiplying resolution of original raster data with the coefficient for extracting isolines or isoregions. The resampling distance tolerance has an effect on the extracted isolines or isoregions. The recommended value is 0~1.</p>
-
-<p>　　The resample coefficient is 1 by default. The greater the coefficient is, the less control points of isolines, hence, intersection between contour lines may appear. It is recommended that using default value to extract isolines or isoregions.</p>
-
-<p><strong>Source data and target data</strong></p>
-
-<ul>
-<li><strong>Source Dataset</strong>: A raster dataset (DEM or Grid data) for extracting isolines.</li>
-<li><strong>Target Dataset</strong>: The result dataset and specify a datasource to save it.</li>
-</ul>
-
-<h3 id="related-topics">Related topics</h3>
-
-<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContourAll.html" target="_blank">Extract all isolines</a></p>
-
-<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveContourSpecific.html" target="_blank">Extract specified isolines</a></p>
-
-<p><img src="../img/smalltitle.png" alt="" /> <a href="ExtractIsoline.html" target="_blank">Extract isoline by points</a></p>
-
-<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveRegionAll.html" target="_blank">Extract all isoregions</a></p>
-
-<p><img src="../img/smalltitle.png" alt="" /> <a href="DriveRegionSpecific.html" target="_blank">Extract specified isoregion</a></p>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

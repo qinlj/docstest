@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -560,8 +561,8 @@ Analysis theory 　The aspect of one point on a surface is the aspect of the slo
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -593,67 +594,13 @@ Analysis theory 　The aspect of one point on a surface is the aspect of the slo
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">500 Words|Read in about 3 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<p>　　Calculates the aspect (the direction of slope) of every cell in a raster dataset (DEM data). The flat slope has no direction so is assigned -1. The calculated range is from 0 (north) to 360 degree moving clockwise.</p>
-
-<h3 id="analysis-theory">Analysis theory</h3>
-
-<p>　　The aspect of one point on a surface is the aspect of the slope at that point. In terrain analysis, aspect is the angle between the the projection of the normal of the tangent plane at the point and the due north direction. The aspect is the direction that has the maximum the elevation change.</p>
-
-<p>　　Aspect is represented in degrees, the range of aspect analysis result is 0 to 360. Starts form due north 0 degree and moves clockwise and ends at 360 degree. The value of each cell in the aspect map represents the direction of slope, flat slope has no direction and the value is -1.</p>
-
-<p>　　Since the measurement of aspect forms a circle, 10 degree is closer to 360 degree than 30 degree. So you need to convert the aspect before the analysis, and divide aspect into four basic directions: East, West, South and North (or eight basic directions: East, West, South, North, Southeast, Southwest, Northeast and Northwest). The conversion can be done with the raster reclassify functionality.</p>
-
-<h3 id="application-scenery">Application scenery</h3>
-
-<p>　　The aspect analysis has important implications in fields like plant analysis and environmental assessment.
-  - In biology, the plant on the north slope of a mountain is dramatically different from the ones on the south side. The difference is mainly because the sunny situations required by the plants are various.
-  - When building wind power station, it is necessary to build them on the slope facing wind.
-  - Geologist always want to know about the slope of the fault or the outcrop fold to analyze the change process of the geology.
-  - When locating the residential area that may be destroyed by the snow melt water, it is needed to identify the location of the south slope to get the location where the snow melt first.</p>
-
-<h3 id="basic-steps">Basic steps</h3>
-
-<ol>
-<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Terrain Calculate&rdquo; &gt; &ldquo;Aspect Analysis&rdquo; to open the &ldquo;Aspect Analysis&rdquo; dialog box.</li>
-<li>Specify your dataset to perform the operation.</li>
-<li>Enter a name for the result dataset and specify a datasource to save it. The result dataset has the same size and resolution with the source dataset.</li>
-<li>Click &ldquo;Run&rdquo; image button to perform the operation.</li>
-</ol>
-
-<p>　　<img src="/images/img/AspectResult.png" alt="" /></p>
-
-<h3 id="related-topics">Related topics</h3>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFill.html" target="_blank">Cut fill</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFillRegion.html" target="_blank">Cut fill with region</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="InverseCutFill.html" target="_blank">Inverse cut fill</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="FindExtreme.html" target="_blank">Find Extremum value</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CalculateCurvature.html" target="_blank">DEM curvature calculate</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Slope.html" target="_blank">Slope analysis</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Profile.html" target="_blank">Profile analysis</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="OrthoImage.html" target="_blank">Orthophoto image</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="HillShade.html" target="_blank">3D hillshade map</a></p>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

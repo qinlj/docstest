@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -1094,8 +1095,8 @@ source &lt;(kubeadm completion zsh)
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -1127,101 +1128,13 @@ source &lt;(kubeadm completion zsh)
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">300 Words|Read in about 2 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<p>Output shell completion code for the specified shell (bash or zsh).</p>
-
-<h3 id="synopsis">Synopsis</h3>
-
-<p>Output shell completion code for the specified shell (bash or zsh).
-The shell code must be evaluated to provide interactive
-completion of kubeadm commands. This can be done by sourcing it from
-the .bash_profile.</p>
-
-<p>Note: this requires the bash-completion framework.</p>
-
-<p>To install it on Mac use homebrew:
-    $ brew install bash-completion
-Once installed, bash_completion must be evaluated. This can be done by adding the
-following line to the .bash_profile
-    $ source $(brew &ndash;prefix)/etc/bash_completion</p>
-
-<p>If bash-completion is not installed on Linux, please install the &lsquo;bash-completion&rsquo; package
-via your distribution&rsquo;s package manager.</p>
-
-<p>Note for zsh users: [1] zsh completions are only supported in versions of zsh &gt;= 5.2</p>
-
-<pre><code>kubeadm completion SHELL [flags]
-</code></pre>
-
-<h3 id="examples">Examples</h3>
-
-<pre><code>
-# Install bash completion on a Mac using homebrew
-brew install bash-completion
-printf &quot;\n# Bash completion support\nsource $(brew --prefix)/etc/bash_completion\n&quot; &gt;&gt; $HOME/.bash_profile
-source $HOME/.bash_profile
-
-# Load the kubeadm completion code for bash into the current shell
-source &lt;(kubeadm completion bash)
-
-# Write bash completion code to a file and source if from .bash_profile
-kubeadm completion bash &gt; ~/.kube/kubeadm_completion.bash.inc
-printf &quot;\n# Kubeadm shell completion\nsource '$HOME/.kube/kubeadm_completion.bash.inc'\n&quot; &gt;&gt; $HOME/.bash_profile
-source $HOME/.bash_profile
-
-# Load the kubeadm completion code for zsh[1] into the current shell
-source &lt;(kubeadm completion zsh)
-</code></pre>
-
-<h3 id="options">Options</h3>
-
-<table style="width: 100%; table-layout: fixed;">
-  <colgroup>
-    <col span="1" style="width: 10px;" />
-    <col span="1" />
-  </colgroup>
-  <tbody>
-
-    <tr>
-      <td colspan="2">-h, --help</td>
-    </tr>
-    <tr>
-      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for completion</td>
-    </tr>
-
-  </tbody>
-</table>
-
-<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
-
-<table style="width: 100%; table-layout: fixed;">
-  <colgroup>
-    <col span="1" style="width: 10px;" />
-    <col span="1" />
-  </colgroup>
-  <tbody>
-
-    <tr>
-      <td colspan="2">--rootfs string</td>
-    </tr>
-    <tr>
-      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
-    </tr>
-
-  </tbody>
-</table>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

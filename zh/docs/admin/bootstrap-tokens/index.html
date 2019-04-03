@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -657,8 +658,8 @@ TokenCleaner 控制器会删除过期的令牌。</p>
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -690,156 +691,13 @@ TokenCleaner 控制器会删除过期的令牌。</p>
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">300 Words|Read in about 2 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#概述">概述</a></li>
-<li><a href="#令牌格式">令牌格式</a></li>
-<li><a href="#启用启动引导令牌">启用启动引导令牌</a></li>
-<li><a href="#启动引导令牌的密文格式">启动引导令牌的密文格式</a></li>
-<li><a href="#使用-kubeadm-管理令牌">使用 <code>kubeadm</code> 管理令牌</a>
-<ul>
-<li><a href="#configmap签名">ConfigMap签名</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-
-<h2 id="概述">概述</h2>
-
-<p>启动引导令牌是一种简单的持有者令牌（Bearer Token），这种令牌是在新建集群或者在现有集群中添加新节点时使用的。
-它被设计成能够支持 <a href="/docs/admin/kubeadm/"><code>kubeadm</code></a>，但是也可以被用在其他的案例中以便用户在
-不使用 <code>kubeadm</code> 的情况下启动集群。它也被设计成可以通过 RBAC 策略，结合 <a href="/docs/admin/kubelet-tls-bootstrapping/">Kubelet TLS
-Bootstrapping</a> 系统进行工作。</p>
-
-<p>启动引导令牌被定义成一个特定类型的 secrets(<code>bootstrap.kubernetes.io/token</code>)，并存在于
-<code>kube-system</code> 命名空间中。然后这些 secrets 会被 API 服务器上的启动引导的认证器读取。
-控制器管理器中的控制器TokenCleaner能够删除过期的令牌。在节点发现的过程中Kubernetes会使用特殊的ConfigMap对象。
-控制器管理器中的BootstrapSigner控制器也会使用启动引导令牌为这类对象生成签名信息。</p>
-
-<p>目前，启动引导令牌处于 <strong>alpha</strong> 阶段，但是预期也不会有大的突破性变化。</p>
-
-<h2 id="令牌格式">令牌格式</h2>
-
-<p>启动引导令牌使用 <code>abcdef.0123456789abcdef</code> 的形式。
-更加规范地说，它们必须符合正则表达式 <code>[a-z0-9]{6}\.[a-z0-9]{16}</code>。</p>
-
-<p>令牌的第一部分是 &ldquo;Token ID&rdquo; ，它是公共信息。用于引用某个令牌，并确保不会泄露认证所使用的秘密信息。
-第二部分是 &ldquo;令牌秘密（Token Secret）&rdquo;，它应该被共享给收信的第三方。</p>
-
-<h2 id="启用启动引导令牌">启用启动引导令牌</h2>
-
-<p>所有与启动引导令牌相关的特性在 Kubernetes v1.6 版本中默认都是禁用的。</p>
-
-<p>你可以在 API 服务器上通过 <code>--enable-bootstrap-token-auth</code> 参数启用启动引导令牌。
-你可以设置控制管理器的 <code>--controllers</code> 参数来启用启动引导令牌相关的控制器，例如 <code>--controllers=*,tokencleaner,bootstrapsigner</code> 。
-在使用 <code>kubeadm</code> 时，这是自动完成的。</p>
-
-<p>HTTPS 调用中的令牌是这样使用的：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="">Authorization: Bearer 07401b.f395accd246ae52d</span></code></pre></div>
-<h2 id="启动引导令牌的密文格式">启动引导令牌的密文格式</h2>
-
-<p>每个合法的令牌背后对应着 <code>kube-system</code> 命名空间中的某个 Secret 对象。
-你可以从 <a href="https://git.k8s.io/community/contributors/design-proposals/bootstrap-discovery.md" target="_blank">这里</a> 找到完整设计文档。</p>
-
-<p>这是 secret 看起来的样子。注意，<code>base64(string)</code> 表示应该通过 base64 对值进行编码。
-这里使用的是未解码的版本以便于阅读。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
-</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Secret<span style="color:#bbb">
-</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>bootstrap-token-07401b<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>namespace:<span style="color:#bbb"> </span>kube-system<span style="color:#bbb">
-</span><span style="color:#bbb"></span>type:<span style="color:#bbb"> </span>bootstrap.kubernetes.io/token<span style="color:#bbb">
-</span><span style="color:#bbb"></span>data:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>description:<span style="color:#bbb"> </span>base64(The<span style="color:#bbb"> </span>default<span style="color:#bbb"> </span>bootstrap<span style="color:#bbb"> </span>token<span style="color:#bbb"> </span>generated<span style="color:#bbb"> </span>by<span style="color:#bbb"> </span><span style="color:#b44">&#39;kubeadm init&#39;</span>.)<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>token-id:<span style="color:#bbb"> </span>base64(07401b)<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>token-secret:<span style="color:#bbb"> </span>base64(f395accd246ae52d)<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>expiration:<span style="color:#bbb"> </span>base64(2017-03-10T03:22:11Z)<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>usage-bootstrap-authentication:<span style="color:#bbb"> </span>base64(<span style="color:#a2f;font-weight:bold">true</span>)<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>usage-bootstrap-signing:<span style="color:#bbb"> </span>base64(<span style="color:#a2f;font-weight:bold">true</span>)</code></pre></div>
-<p>secret 的类型必须是 <code>bootstrap.kubernetes.io/token</code> ，而且名字必须是 <code>bootstrap-token-&lt;token id&gt;</code>。
-<code>description</code> 是人类可读的描述，而不应该是机器可读的信息。令牌 ID 和 Secret 是包含在数据字典中的。</p>
-
-<p><code>usage-bootstrap-*</code> 成员表示这个 secret 的用途。启用时，值必须设置为 <code>true</code>。</p>
-
-<p><code>usage-bootstrap-authentication</code> 表示令牌可以用于 API 服务器的认证。认证器会以
-<code>system:bootstrap:&lt;Token ID&gt;</code> 认证。它被包含在 <code>system:bootstrappers</code> 组中。
-命名和组是故意受限制的，以防止用户在启动引导后再使用这些令牌。</p>
-
-<p><code>usage-bootstrap-signing</code> 表示令牌应该被用于 <code>cluster-info</code> ConfigMap 的签名，就像下面描述的那样。</p>
-
-<p><code>expiration</code> 数据成员显示了令牌在失效后到现在的时间。这是遵循 RFC3339 进行编码的 UTC 时间。
-TokenCleaner 控制器会删除过期的令牌。</p>
-
-<h2 id="使用-kubeadm-管理令牌">使用 <code>kubeadm</code> 管理令牌</h2>
-
-<p>你可以使用 <code>kubeadm</code> 工具管理正在运行集群的令牌。它会从 <code>kubeadm</code> 创建的集群(<code>/etc/kubernetes/admin.conf</code>)
-自动抓取默认管理员密码。你可以通过参数 <code>--kubeconfig</code> 对下面命令指定一个另外的 kubeconfig 文件抓取密码。</p>
-
-<ul>
-<li><code>kubeadm token list</code> 列举了令牌，同时显示了它们的过期时间和用途。</li>
-<li><code>kubeadm token create</code> 创建一个新令牌。
-
-<ul>
-<li><code>--description</code> 设置新令牌的描述。</li>
-<li><code>--ttl duration</code> 设置令牌从 &ldquo;现在&rdquo; 起到过期时间的差值。
-默认是 0 ，也就是不过期。</li>
-<li><code>--usages</code> 设置令牌被使用的方式。默认是 <code>signing,authentication</code>。用途在上面已经描述。</li>
-</ul></li>
-<li><code>kubeadm token delete &lt;token id&gt;|&lt;token id&gt;.&lt;token secret&gt;</code> 删除令牌。
-令牌可以只用 ID 来确认，也可以用整个令牌的值。如果只用 ID 的情况下，密文不匹配的令牌也会被删除。</li>
-</ul>
-
-<h3 id="configmap签名">ConfigMap签名</h3>
-
-<p>除了认证之外，令牌可以用于签名 ConfigMap。这在集群启动过程的早期，在客户端信任 API 服务器之前被使用。
-被签名的 ConfigMap 可以通过共享令牌被认证。</p>
-
-<p>被签名的 ConfigMap 是 <code>cluster-info</code>，存在于 <code>kube-public</code> 命名空间中。
-典型的工作流中，客户端在未经认证和忽略 TLS 报错的状态下读取这个 ConfigMap。
-通过 ConfigMap 中嵌入的签名校验 ConfigMap 的载荷。</p>
-
-<p>ConfigMap 会是这个样子的：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
-</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>ConfigMap<span style="color:#bbb">
-</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>cluster-info<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>namespace:<span style="color:#bbb"> </span>kube-public<span style="color:#bbb">
-</span><span style="color:#bbb"></span>data:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>jws-kubeconfig-07401b:<span style="color:#bbb"> </span>eyJhbGciOiJIUzI1NiIsImtpZCI6IjA3NDAxYiJ9..tYEfbo6zDNo40MQE07aZcQX2m3EB2rO3NuXtxVMYm9U<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>kubeconfig:<span style="color:#bbb"> </span><span style="color:#b44;font-style:italic">|
-</span><span style="color:#b44;font-style:italic">    apiVersion: v1</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>clusters:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>cluster:<span style="color:#bbb">
-</span><span style="color:#bbb">        </span>certificate-authority-data:<span style="color:#bbb"> </span>&lt;really<span style="color:#bbb"> </span>long<span style="color:#bbb"> </span>certificate<span style="color:#bbb"> </span>data<span style="color:#b44;font-style:italic">&gt;
-</span><span style="color:#b44;font-style:italic">        server: https://10.138.0.2:6443</span><span style="color:#bbb">
-</span><span style="color:#bbb">      </span>name:<span style="color:#bbb"> </span><span style="color:#b44">&#34;&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>contexts:<span style="color:#bbb"> </span>[]<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>current-context:<span style="color:#bbb"> </span><span style="color:#b44">&#34;&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>kind:<span style="color:#bbb"> </span>Config<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>preferences:<span style="color:#bbb"> </span>{}<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>users:<span style="color:#bbb"> </span>[]</code></pre></div>
-<p>ConfigMap 的 <code>kubeconfig</code> 成员是一个填好了集群信息的配置文件。
-这里主要交换的信息是 <code>certificate-authority-data</code>。在将来可能会有扩展。</p>
-
-<p>签名是一个 JWS 签名，使用了 &ldquo;detached&rdquo; 模式。为了检验签名，用户应该按照 JWS 规则
-(base64 编码而忽略结尾的 <code>=</code>)对 <code>kubeconfig</code> 的载荷进行编码。完成编码的载荷会被通过插入 JWS 并存在于两个点的中间
-，用于形成一个完整的 JWS。可以使用令牌的完整信息（比如 <code>07401b.f395accd246ae52d</code>）作为共享密钥，
-通过 <code>HS256</code> 方式 (HMAC-SHA256) 对 JWS 进行校验。 用户 <em>必须</em> 确保使用了 HS256。</p>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

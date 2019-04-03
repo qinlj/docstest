@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -2145,8 +2146,8 @@ This command is idempotent and eventually makes sure that the actual state is th
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -2178,50 +2179,13 @@ This command is idempotent and eventually makes sure that the actual state is th
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">200 Words|Read in about 1 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-
-
-
-
-
-
-<h2 id="recovering-from-a-failure-state">Recovering from a failure state</h2>
-
-<p>If <code>kubeadm upgrade</code> fails and does not roll back, for example because of an unexpected shutdown during execution, you can run <code>kubeadm upgrade</code> again.
-This command is idempotent and eventually makes sure that the actual state is the desired state you declare.</p>
-
-<p>To recover from a bad state, you can also run <code>kubeadm upgrade --force</code> without changing the version that your cluster is running.</p>
-
-<h2 id="how-it-works">How it works</h2>
-
-<p><code>kubeadm upgrade apply</code> does the following:</p>
-
-<ul>
-<li>Checks that your cluster is in an upgradeable state:
-
-<ul>
-<li>The API server is reachable</li>
-<li>All nodes are in the <code>Ready</code> state</li>
-<li>The control plane is healthy</li>
-</ul></li>
-<li>Enforces the version skew policies.</li>
-<li>Makes sure the control plane images are available or available to pull to the machine.</li>
-<li>Upgrades the control plane components or rollbacks if any of them fails to come up.</li>
-<li>Applies the new <code>kube-dns</code> and <code>kube-proxy</code> manifests and enforces that all necessary RBAC rules are created.</li>
-<li>Creates new certificate and key files of the API server and backs up old files if they&rsquo;re about to expire in 180 days.</li>
-</ul>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

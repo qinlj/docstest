@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -1241,8 +1242,8 @@ kubectl get pods --field-selector <span style="color:#b44">&#34;&#34;</span></co
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -1274,54 +1275,13 @@ kubectl get pods --field-selector <span style="color:#b44">&#34;&#34;</span></co
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">300 Words|Read in about 2 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<p><em>Field selectors</em> let you <a href="/docs/concepts/overview/working-with-objects/kubernetes-objects">select Kubernetes resources</a> based on the value of one or more resource fields. Here are some example field selector queries:</p>
-
-<ul>
-<li><code>metadata.name=my-service</code></li>
-<li><code>metadata.namespace!=default</code></li>
-<li><code>status.phase=Pending</code></li>
-</ul>
-
-<p>This <code>kubectl</code> command selects all Pods for which the value of the <a href="/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase"><code>status.phase</code></a> field is <code>Running</code>:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get pods --field-selector status.phase<span style="color:#666">=</span>Running</code></pre></div>
-<blockquote class="note">
-  <div><strong>Note:</strong> <p>Field selectors are essentially resource <em>filters</em>. By default, no selectors/filters are applied, meaning that all resources of the specified type are selected. This makes the following <code>kubectl</code> queries equivalent:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get pods
-kubectl get pods --field-selector <span style="color:#b44">&#34;&#34;</span></code></pre></div></div>
-</blockquote>
-
-
-<h2 id="supported-fields">Supported fields</h2>
-
-<p>Supported field selectors vary by Kubernetes resource type. All resource types support the <code>metadata.name</code> and <code>metadata.namespace</code> fields. Using unsupported field selectors produces an error. For example:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get ingress --field-selector foo.bar<span style="color:#666">=</span>baz</code></pre></div>
-<pre><code>Error from server (BadRequest): Unable to find &quot;ingresses&quot; that match label selector &quot;&quot;, field selector &quot;foo.bar=baz&quot;: &quot;foo.bar&quot; is not a known field selector: only &quot;metadata.name&quot;, &quot;metadata.namespace&quot;
-</code></pre>
-
-<h2 id="supported-operators">Supported operators</h2>
-
-<p>You can use the <code>=</code>, <code>==</code>, and <code>!=</code> operators with field selectors (<code>=</code> and <code>==</code> mean the same thing). This <code>kubectl</code> command, for example, selects all Kubernetes Services that aren&rsquo;t in the <code>default</code> namespace:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get services --field-selector metadata.namespace!<span style="color:#666">=</span>default</code></pre></div>
-<h2 id="chained-selectors">Chained selectors</h2>
-
-<p>As with <a href="/docs/concepts/overview/working-with-objects/labels">label</a> and other selectors, field selectors can be chained together as a comma-separated list. This <code>kubectl</code> command selects all Pods for which the <code>status.phase</code> does not equal <code>Running</code> and the <code>spec.restartPolicy</code> field equals <code>Always</code>:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get pods --field-selector<span style="color:#666">=</span>status.phase!<span style="color:#666">=</span>Running,spec.restartPolicy<span style="color:#666">=</span>Always</code></pre></div>
-<h2 id="multiple-resource-types">Multiple resource types</h2>
-
-<p>You use field selectors across multiple resource types. This <code>kubectl</code> command selects all Statefulsets and Services that are not in the <code>default</code> namespace:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl get statefulsets,services --field-selector metadata.namespace!<span style="color:#666">=</span>default</code></pre></div>
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

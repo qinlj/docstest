@@ -1,2 +1,1 @@
-
-この機能は、現在 *非推奨* の状態です。詳細については、[Kubernetes Deprecation Policy](/docs/reference/deprecation-policy/)を参照してください。
+Cette fonctionnalité est *obsolète*. Pour plus d'informations sur cet état, voir la [Politique d'obsolescence de Kubernetes](/docs/reference/deprecation-policy/).

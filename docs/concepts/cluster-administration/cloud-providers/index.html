@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -1700,8 +1701,8 @@ Note that the Kubernetes Node name must match the Baidu VM private IP.</p>
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -1733,69 +1734,13 @@ Note that the Kubernetes Node name must match the Baidu VM private IP.</p>
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">500 Words|Read in about 2 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-
-
-
-
-<h2 id="ovirt">OVirt</h2>
-
-<h3 id="node-name">Node Name</h3>
-
-<p>The OVirt cloud provider uses the hostname of the node (as determined by the kubelet or overridden with <code>--hostname-override</code>) as the name of the Kubernetes Node object.
-Note that the Kubernetes Node name must match the VM FQDN (reported by OVirt under <code>&lt;vm&gt;&lt;guest_info&gt;&lt;fqdn&gt;...&lt;/fqdn&gt;&lt;/guest_info&gt;&lt;/vm&gt;</code>)</p>
-
-<h2 id="photon">Photon</h2>
-
-<h3 id="node-name-1">Node Name</h3>
-
-<p>The Photon cloud provider uses the hostname of the node (as determined by the kubelet or overridden with <code>--hostname-override</code>) as the name of the Kubernetes Node object.
-Note that the Kubernetes Node name must match the Photon VM name (or if <code>overrideIP</code> is set to true in the <code>--cloud-config</code>, the Kubernetes Node name must match the Photon VM IP address).</p>
-
-<h2 id="vsphere">VSphere</h2>
-
-<h3 id="node-name-2">Node Name</h3>
-
-<p>The VSphere cloud provider uses the detected hostname of the node (as determined by the kubelet) as the name of the Kubernetes Node object.</p>
-
-<p>The <code>--hostname-override</code> parameter is ignored by the VSphere cloud provider.</p>
-
-<h2 id="ibm-cloud-kubernetes-service">IBM Cloud Kubernetes Service</h2>
-
-<h3 id="compute-nodes">Compute nodes</h3>
-
-<p>By using the IBM Cloud Kubernetes Service provider, you can create clusters with a mixture of virtual and physical (bare metal) nodes in a single zone or across multiple zones in a region. For more information, see <a href="https://cloud.ibm.com/docs/containers?topic=containers-plan_clusters#plan_clusters" target="_blank">Planning your cluster and worker node setup</a>.</p>
-
-<p>The name of the Kubernetes Node object is the private IP address of the IBM Cloud Kubernetes Service worker node instance.</p>
-
-<h3 id="networking">Networking</h3>
-
-<p>The IBM Cloud Kubernetes Service provider provides VLANs for quality network performance and network isolation for nodes. You can set up custom firewalls and Calico network policies to add an extra layer of security for your cluster, or connect your cluster to your on-prem data center via VPN. For more information, see <a href="https://cloud.ibm.com/docs/containers?topic=containers-cs_network_cluster#cs_network_cluster" target="_blank">Planning in-cluster and private networking</a>.</p>
-
-<p>To expose apps to the public or within the cluster, you can leverage NodePort, LoadBalancer, or Ingress services. You can also customize the Ingress application load balancer with annotations. For more information, see <a href="https://cloud.ibm.com/docs/containers?topic=containers-cs_network_planning#cs_network_planning" target="_blank">Planning to expose your apps with external networking</a>.</p>
-
-<h3 id="storage">Storage</h3>
-
-<p>The IBM Cloud Kubernetes Service provider leverages Kubernetes-native persistent volumes to enable users to mount file, block, and cloud object storage to their apps. You can also use database-as-a-service and third-party add-ons for persistent storage of your data. For more information, see <a href="https://cloud.ibm.com/docs/containers?topic=containers-storage_planning#storage_planning" target="_blank">Planning highly available persistent storage</a>.</p>
-
-<h2 id="baidu-cloud-container-engine">Baidu Cloud Container Engine</h2>
-
-<h3 id="node-name-3">Node Name</h3>
-
-<p>The Baidu cloud provider uses the private IP address of the node (as determined by the kubelet or overridden with <code>--hostname-override</code>) as the name of the Kubernetes Node object.
-Note that the Kubernetes Node name must match the Baidu VM private IP.</p>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -1828,8 +1829,8 @@ kubedns 进程监视 Kubernetes master 对 Service 和 Endpoint 操作的变更�
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -1861,338 +1862,13 @@ kubedns 进程监视 Kubernetes master 对 Service 和 Endpoint 操作的变更�
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">900 Words|Read in about 5 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<h2 id="介绍">介绍</h2>
-
-<p>Kubernetes 从 1.3 版本起， DNS 是内置的服务，通过插件管理器 <a href="http://releases.k8s.io/master/cluster/addons/README.md" target="_blank">集群插件</a> 自动被启动。</p>
-
-<p>Kubernetes DNS 在集群中调度 DNS Pod 和 Service ，配置 kubelet 以通知个别容器使用 DNS Service 的 IP 解析 DNS 名字。</p>
-
-<h2 id="怎样获取-dns-名字">怎样获取 DNS 名字?</h2>
-
-<p>在集群中定义的每个 Service（包括 DNS 服务器自身）都会被指派一个 DNS 名称。
-默认，一个客户端 Pod 的 DNS 搜索列表将包含该 Pod 自己的 Namespace 和集群默认域。
-通过如下示例可以很好地说明：</p>
-
-<p>假设在 Kubernetes 集群的 Namespace <code>bar</code> 中，定义了一个Service <code>foo</code>。
-运行在Namespace <code>bar</code> 中的一个 Pod，可以简单地通过 DNS 查询 <code>foo</code> 来找到该 Service。
-运行在 Namespace <code>quux</code> 中的一个 Pod 可以通过 DNS 查询 <code>foo.bar</code> 找到该 Service。</p>
-
-<h2 id="支持的-dns-模式">支持的 DNS 模式</h2>
-
-<p>下面各段详细说明支持的记录类型和布局。
-如果任何其它的布局、名称或查询，碰巧也能够使用，这就需要研究下它们的实现细节，以免后续修改它们又不能使用了。</p>
-
-<h3 id="service">Service</h3>
-
-<h4 id="a-记录">A 记录</h4>
-
-<p>“正常” Service（除了 Headless Service）会以 <code>my-svc.my-namespace.svc.cluster.local</code> 这种名字的形式被指派一个 DNS A 记录。这会解析成该 Service 的 Cluster IP。</p>
-
-<p>“Headless” Service（没有Cluster IP）也会以 <code>my-svc.my-namespace.svc.cluster.local</code> 这种名字的形式被指派一个 DNS A 记录。
-不像正常 Service，它会解析成该 Service 选择的一组 Pod 的 IP。
-希望客户端能够使用这一组 IP，否则就使用标准的 round-robin 策略从这一组 IP 中进行选择。</p>
-
-<h4 id="srv-记录">SRV 记录</h4>
-
-<p>命名端口需要创建 SRV 记录，这些端口是正常 Service或 <a href="/docs/concepts/services-networking/service/#headless-services">Headless
-Services</a> 的一部分。
-对每个命名端口，SRV 记录具有 <code>_my-port-name._my-port-protocol.my-svc.my-namespace.svc.cluster.local</code> 这种形式。
-对普通 Service，这会被解析成端口号和 CNAME：<code>my-svc.my-namespace.svc.cluster.local</code>。
-对 Headless Service，这会被解析成多个结果，Service 对应的每个 backend Pod 各一个，包含 <code>auto-generated-name.my-svc.my-namespace.svc.cluster.local</code> 这种形式 Pod 的端口号和 CNAME。</p>
-
-<h4 id="后向兼容性">后向兼容性</h4>
-
-<p>上一版本的 kube-dns 使用 <code>my-svc.my-namespace.cluster.local</code> 这种形式的名字（后续会增加 &lsquo;svc&rsquo; 这一级），以后这将不再被支持。</p>
-
-<h3 id="pod">Pod</h3>
-
-<h4 id="a-记录-1">A 记录</h4>
-
-<p>如果启用，Pod 会以 <code>pod-ip-address.my-namespace.pod.cluster.local</code> 这种形式被指派一个 DNS A 记录。</p>
-
-<p>例如，<code>default</code> Namespace 具有 DNS 名字  <code>cluster.local</code>，在该 Namespace 中一个 IP 为 <code>1.2.3.4</code> 的 Pod 将具有一个条目：<code>1-2-3-4.default.pod.cluster.local</code>。</p>
-
-<h4 id="基于-pod-hostname-subdomain-字段的-a-记录和主机名">基于 Pod hostname、subdomain 字段的 A 记录和主机名</h4>
-
-<p>当前，创建 Pod 后，它的主机名是该 Pod 的 <code>metadata.name</code> 值。</p>
-
-<p>在 v1.2 版本中，用户可以配置 Pod annotation， 通过 <code>pod.beta.kubernetes.io/hostname</code> 来设置 Pod 的主机名。
-如果为 Pod 配置了 annotation，会优先使用 Pod 的名称作为主机名。
-例如，给定一个 Pod，它具有 annotation <code>pod.beta.kubernetes.io/hostname: my-pod-name</code>，该 Pod 的主机名被设置为 “my-pod-name”。</p>
-
-<p>在 v1.3 版本中，PodSpec 具有 <code>hostname</code> 字段，可以用来指定 Pod 的主机名。这个字段的值优先于 annotation <code>pod.beta.kubernetes.io/hostname</code>。
-在 v1.2 版本中引入了 beta 特性，用户可以为 Pod 指定 annotation，其中 <code>pod.beta.kubernetes.io/subdomain</code> 指定了 Pod 的子域名。
-最终的域名将是 “<hostname>.<subdomain>.<pod namespace>.svc.<cluster domain>”。
-举个例子，Pod 的主机名 annotation 设置为 “foo”，子域名 annotation 设置为 “bar”，在 Namespace “my-namespace” 中对应的 FQDN 为 “foo.bar.my-namespace.svc.cluster.local”。</p>
-
-<p>在 v1.3 版本中，PodSpec 具有 <code>subdomain</code> 字段，可以用来指定 Pod 的子域名。
-这个字段的值优先于 annotation <code>pod.beta.kubernetes.io/subdomain</code> 的值。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
-</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>default-subdomain<span style="color:#bbb">
-</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>selector:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>name:<span style="color:#bbb"> </span>busybox<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>clusterIP:<span style="color:#bbb"> </span>None<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>ports:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>foo<span style="color:#bbb"> </span><span style="color:#080;font-style:italic"># Actually, no port is needed.</span><span style="color:#bbb">
-</span><span style="color:#bbb">      </span>port:<span style="color:#bbb"> </span><span style="color:#666">1234</span><span style="color:#bbb"> 
-</span><span style="color:#bbb">      </span>targetPort:<span style="color:#bbb"> </span><span style="color:#666">1234</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span>---<span style="color:#bbb">
-</span><span style="color:#bbb"></span>apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
-</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Pod<span style="color:#bbb">
-</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>busybox1<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>labels:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>name:<span style="color:#bbb"> </span>busybox<span style="color:#bbb">
-</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>hostname:<span style="color:#bbb"> </span>busybox-<span style="color:#666">1</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span>subdomain:<span style="color:#bbb"> </span>default-subdomain<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>containers:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>-<span style="color:#bbb"> </span>image:<span style="color:#bbb"> </span>busybox<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>command:<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>-<span style="color:#bbb"> </span>sleep<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>-<span style="color:#bbb"> </span><span style="color:#b44">&#34;3600&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>name:<span style="color:#bbb"> </span>busybox<span style="color:#bbb">
-</span><span style="color:#bbb"></span>---<span style="color:#bbb">
-</span><span style="color:#bbb"></span>apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
-</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Pod<span style="color:#bbb">
-</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>busybox2<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>labels:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>name:<span style="color:#bbb"> </span>busybox<span style="color:#bbb">
-</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>hostname:<span style="color:#bbb"> </span>busybox-<span style="color:#666">2</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span>subdomain:<span style="color:#bbb"> </span>default-subdomain<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>containers:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>-<span style="color:#bbb"> </span>image:<span style="color:#bbb"> </span>busybox<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>command:<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>-<span style="color:#bbb"> </span>sleep<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>-<span style="color:#bbb"> </span><span style="color:#b44">&#34;3600&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>name:<span style="color:#bbb"> </span>busybox</code></pre></div>
-<p>如果 Headless Service 与 Pod 在同一个 Namespace 中，它们具有相同的子域名，集群的 KubeDNS 服务器也会为该 Pod 的完整合法主机名返回 A 记录。
-在同一个 Namespace 中，给定一个主机名为 “busybox-1” 的 Pod，子域名设置为 “default-subdomain”，名称为 “default-subdomain” 的 Headless Service ，Pod 将看到自己的 FQDN 为 “busybox-1.default-subdomain.my-namespace.svc.cluster.local”。
-DNS 会为那个名字提供一个 A 记录，指向该 Pod 的 IP。
-“busybox1” 和 “busybox2” 这两个 Pod 分别具有它们自己的 A 记录。</p>
-
-<p>在Kubernetes v1.2 版本中，<code>Endpoints</code> 对象也具有 annotation <code>endpoints.beta.kubernetes.io/hostnames-map</code>。
-它的值是 map[string(IP)][endpoints.HostRecord] 的 JSON 格式，例如： &lsquo;{&ldquo;10.245.1.6&rdquo;:{HostName: &ldquo;my-webserver&rdquo;}}&lsquo;。</p>
-
-<p>如果是 Headless Service 的 <code>Endpoints</code>，会以  <hostname>.<service name>.<pod namespace>.svc.<cluster domain> 的格式创建 A 记录。
-对示例中的 JSON 字符串，如果 <code>Endpoints</code> 是为名称为 “bar” 的 Headless Service 而创建的，其中一个 <code>Endpoints</code>  的 IP 是 “10.245.1.6”，则会创建一个名称为 “my-webserver.bar.my-namespace.svc.cluster.local” 的 A 记录，该 A 记录查询将返回 “10.245.1.6”。</p>
-
-<p><code>Endpoints</code> annotation 通常没必要由最终用户指定，但可以被内部的 Service Controller 用来提供上述功能。</p>
-
-<p>在 v1.3 版本中，<code>Endpoints</code> 对象可以为任何 endpoint 指定 <code>hostname</code> 和 IP。
-<code>hostname</code> 字段优先于通过 <code>endpoints.beta.kubernetes.io/hostnames-map</code> annotation 指定的主机名。</p>
-
-<p>在 v1.3 版本中，下面的 annotation 是过时的：<code>pod.beta.kubernetes.io/hostname</code>、<code>pod.beta.kubernetes.io/subdomain</code>、<code>endpoints.beta.kubernetes.io/hostnames-map</code>。</p>
-
-<h2 id="如何测试它是否可以使用">如何测试它是否可以使用?</h2>
-
-<h3 id="创建一个简单的-pod-作为测试环境">创建一个简单的 Pod 作为测试环境</h3>
-
-<p>创建 <code>busybox.yaml</code> 文件，内容如下：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
-</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Pod<span style="color:#bbb">
-</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>busybox<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>namespace:<span style="color:#bbb"> </span>default<span style="color:#bbb">
-</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>containers:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>-<span style="color:#bbb"> </span>image:<span style="color:#bbb"> </span>busybox<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>command:<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>-<span style="color:#bbb"> </span>sleep<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>-<span style="color:#bbb"> </span><span style="color:#b44">&#34;3600&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>imagePullPolicy:<span style="color:#bbb"> </span>IfNotPresent<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>name:<span style="color:#bbb"> </span>busybox<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>restartPolicy:<span style="color:#bbb"> </span>Always</code></pre></div>
-<p>然后，用该文件创建一个 Pod：</p>
-
-<pre><code>kubectl create -f busybox.yaml
-</code></pre>
-
-<h3 id="等待这个-pod-变成运行状态">等待这个 Pod 变成运行状态</h3>
-
-<p>获取它的状态，执行如下命令：</p>
-
-<pre><code>kubectl get pods busybox
-</code></pre>
-
-<p>可以看到如下内容：</p>
-
-<pre><code>NAME      READY     STATUS    RESTARTS   AGE
-busybox   1/1       Running   0          &lt;some-time&gt;
-</code></pre>
-
-<h3 id="验证-dns-已经生效">验证 DNS 已经生效</h3>
-
-<p>一旦 Pod 处于运行中状态，可以在测试环境中执行如下 nslookup 查询：</p>
-
-<pre><code>kubectl exec -ti busybox -- nslookup kubernetes.default
-</code></pre>
-
-<p>可以看到类似如下的内容：</p>
-
-<pre><code>Server:    10.0.0.10
-Address 1: 10.0.0.10
-
-Name:      kubernetes.default
-Address 1: 10.0.0.1
-</code></pre>
-
-<p>如果看到了，说明 DNS 已经可以正确工作了。</p>
-
-<h3 id="问题排查技巧">问题排查技巧</h3>
-
-<p>如果执行 nslookup 命令失败，检查如下内容：</p>
-
-<h4 id="先检查本地-dns-配置">先检查本地 DNS 配置</h4>
-
-<p>查看配置文件 resolv.conf。（关于更多信息，参考下面的 “从 Node 继承 DNS” 和 “已知问题”。）</p>
-
-<pre><code>kubectl exec busybox cat /etc/resolv.conf
-</code></pre>
-
-<p>按照如下方法（注意搜索路径可能会因为云提供商不同而变化）验证搜索路径和 Name Server 的建立：</p>
-
-<pre><code>search default.svc.cluster.local svc.cluster.local cluster.local google.internal c.gce_project_id.internal
-nameserver 10.0.0.10
-options ndots:5
-</code></pre>
-
-<h4 id="快速诊断">快速诊断</h4>
-
-<p>出现类似如下指示的错误，说明 kube-dns 插件或相关 Service 存在问题：</p>
-
-<pre><code>$ kubectl exec -ti busybox -- nslookup kubernetes.default
-Server:    10.0.0.10
-Address 1: 10.0.0.10
-
-nslookup: can't resolve 'kubernetes.default'
-</code></pre>
-
-<p>或者</p>
-
-<pre><code>$ kubectl exec -ti busybox -- nslookup kubernetes.default
-Server:    10.0.0.10
-Address 1: 10.0.0.10 kube-dns.kube-system.svc.cluster.local
-
-nslookup: can't resolve 'kubernetes.default'
-</code></pre>
-
-<h4 id="检查是否-dns-pod-正在运行">检查是否 DNS Pod 正在运行</h4>
-
-<p>使用 <code>kubectl get pods</code> 命令验证 DNS Pod 正在运行：</p>
-
-<pre><code>kubectl get pods --namespace=kube-system -l k8s-app=kube-dns
-</code></pre>
-
-<p>应该能够看到类似如下信息：</p>
-
-<pre><code>NAME                                                       READY     STATUS    RESTARTS   AGE
-...
-kube-dns-v19-ezo1y                                         3/3       Running   0           1h
-...
-</code></pre>
-
-<p>如果看到没有 Pod 运行，或 Pod 失败/结束，DNS 插件不能默认部署到当前的环境，必须手动部署。</p>
-
-<h4 id="检查-dns-pod-中的错误信息">检查 DNS Pod 中的错误信息</h4>
-
-<p>使用 <code>kubectl logs</code> 命令查看 DNS 后台进程的日志：</p>
-
-<pre><code>kubectl logs --namespace=kube-system $(kubectl get pods --namespace=kube-system -l k8s-app=kube-dns -o name) -c kubedns
-kubectl logs --namespace=kube-system $(kubectl get pods --namespace=kube-system -l k8s-app=kube-dns -o name) -c dnsmasq
-kubectl logs --namespace=kube-system $(kubectl get pods --namespace=kube-system -l k8s-app=kube-dns -o name) -c healthz
-</code></pre>
-
-<p>查看是否有任何可疑的日志。在行开头的字母 W、E、F 分别表示 警告、错误、失败。请搜索具有这些日志级别的日志行，通过  <a href="https://github.com/kubernetes/kubernetes/issues" target="_blank">Kubernetes 问题</a> 报告意外的错误。</p>
-
-<h4 id="dns-服务是否运行">DNS 服务是否运行?</h4>
-
-<p>通过使用 <code>kubectl get service</code> 命令，验证 DNS 服务是否运行：</p>
-
-<pre><code>kubectl get svc --namespace=kube-system
-</code></pre>
-
-<p>应该能够看到：</p>
-
-<pre><code>NAME                    CLUSTER-IP     EXTERNAL-IP   PORT(S)             AGE
-...
-kube-dns                10.0.0.10      &lt;none&gt;        53/UDP,53/TCP        1h
-...
-</code></pre>
-
-<p>如果服务已经创建，或在这个例子中默认被创建，但是并没有看到，可以查看 <a href="/docs/tasks/debug-application-cluster/debug-service/">调试 Service 页面</a> 获取更多信息。</p>
-
-<pre><code>kubectl get ep kube-dns --namespace=kube-system
-</code></pre>
-
-<p>应该能够看到类似如下信息：</p>
-
-<pre><code>NAME       ENDPOINTS                       AGE
-kube-dns   10.180.3.17:53,10.180.3.17:53    1h
-</code></pre>
-
-<p>如果没有看到 Endpoint，查看 <a href="/docs/tasks/debug-application-cluster/debug-service/">调试 Service 文档</a> 中的 Endpoint 段内容。</p>
-
-<p>关于更多 Kubernetes DNS 的示例，参考 Kubernetes GitHub 仓库中 <a href="https://git.k8s.io/kubernetes/examples/cluster-dns" target="_blank">集群 DNS 示例</a>。</p>
-
-<h2 id="kubernetes-federation-多-zone-支持">Kubernetes Federation（多 Zone 支持)</h2>
-
-<p>在1.3 发行版本中，为多站点 Kubernetes 安装引入了集群 Federation 支持。这需要对 Kubernetes 集群 DNS 服务器处理 DNS 查询的方式，做出一些微小（后向兼容）改变，从而便利了对联合 Service 的查询（跨多个 Kubernetes 集群）。参考 <a href="/docs/concepts/cluster-administration/federation/">集群 Federation 管理员指南</a> 获取更多关于集群 Federation 和多站点支持的细节。</p>
-
-<h2 id="工作原理">工作原理</h2>
-
-<p>运行的 Kubernetes DNS Pod 包含 3 个容器 —— kubedns、dnsmasq 和负责健康检查的 healthz。
-kubedns 进程监视 Kubernetes master 对 Service 和 Endpoint 操作的变更，并维护一个内存查询结构去处理 DNS 请求。dnsmasq 容器增加了一个 DNS 缓存来改善性能。为执行对 dnsmasq 和 kubedns 的健康检查，healthz 容器提供了一个单独的健康检查 Endpoint。</p>
-
-<p>DNS Pod 通过一个静态 IP 暴露为一个 Service。一旦 IP 被分配，kubelet 会通过 <code>--cluster-dns=10.0.0.10</code> 标志将配置的 DNS 传递给每一个容器。</p>
-
-<p>DNS 名字也需要域名，本地域名是可配置的，在 kubelet 中使用 <code>--cluster-domain=&lt;default local domain&gt;</code> 标志。</p>
-
-<p>Kubernetes 集群 DNS 服务器（根据 <a href="https://github.com/skynetservices/skydns" target="_blank">SkyDNS</a> 库）支持正向查询（A 记录），Service 查询（SRV 记录）和反向 IP 地址查询（PTR 记录）。</p>
-
-<h2 id="从-node-继承-dns">从 Node 继承 DNS</h2>
-
-<p>当运行 Pod 时，kubelet 将集群 DNS 服务器和搜索路径追加到 Node 自己的 DNS 设置中。如果 Node 能够在大型环境中解析 DNS 名字，Pod 也应该没问题。参考下面 &ldquo;已知问题” 中给出的更多说明。</p>
-
-<p>如果不想这样，或者希望 Pod 有一个不同的 DNS 配置，可以使用 kubelet 的 <code>--resolv-conf</code> 标志。设置为 &ldquo;&rdquo; 表示 Pod 将不继承自 DNS。设置为一个合法的文件路径，表示 kubelet 将使用这个文件而不是 <code>/etc/resolv.conf</code> 。</p>
-
-<h2 id="已知问题">已知问题</h2>
-
-<p>Kubernetes 安装但并不配置 Node 的 resolv.conf 文件，而是默认使用集群 DNS的，因为那个过程本质上就是和特定的发行版本相关的。最终应该会被实现。</p>
-
-<p>Linux libc 在限制为3个 DNS <code>nameserver</code> 记录和3个 DNS <code>search</code> 记录是不可能卡住的（<a href="https://bugzilla.redhat.com/show_bug.cgi?id=168253" target="_blank">查看 2005 年的一个 Bug</a>）。Kubernetes 需要使用1个  <code>nameserver</code>  记录和3个 <code>search</code> 记录。这意味着如果本地安装已经使用了3个 <code>nameserver</code> 或使用了3个以上 <code>search</code>，那些设置将会丢失。作为部分解决方法， Node 可以运行 <code>dnsmasq</code> ，它能提供更多 <code>nameserver</code> 条目，但不能运行更多 <code>search</code> 条目。可以使用 kubelet 的 <code>--resolv-conf</code> 标志。</p>
-
-<p>如果使用 3.3 版本的 Alpine 或更早版本作为 base 镜像，由于 Alpine 的一个已知问题，DNS 可能不会正确工作。查看 <a href="https://github.com/kubernetes/kubernetes/issues/30215" target="_blank">这里</a> 获取更多信息。</p>
-
-<h2 id="参考">参考</h2>
-
-<ul>
-<li><a href="http://releases.k8s.io/master/cluster/addons/dns/README.md" target="_blank">DNS 集群插件文档</a></li>
-</ul>
-
-<h2 id="下一步">下一步</h2>
-
-<ul>
-<li><a href="/docs/tasks/administer-cluster/dns-horizontal-autoscaling/">集群中 DNS Service 自动伸缩</a></li>
-</ul>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

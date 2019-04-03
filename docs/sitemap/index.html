@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -4525,8 +4526,8 @@ Filter by Command: <span id="commandFilter" />
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -4558,129 +4559,13 @@ Filter by Command: <span id="commandFilter" />
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">300 Words|Read in about 2 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
-          <p><script language="JavaScript">
-var dropDownsPopulated = false;
-$( document ).ready(function() {
-  // When the document loads, get the metadata JSON, and kick off tbl render
-  $.get(&ldquo;/metadata.txt&rdquo;, function(data, status) {
-    metadata = $.parseJSON(data);
-    metadata.pages.sort(dynamicSort(&ldquo;t&rdquo;));
-    mainLogic()
-    $(window).bind( &lsquo;hashchange&rsquo;, function(e) {
-      mainLogic();
-    });
-  });
-});
-function mainLogic()
-{
-  // If there&rsquo;s a tag filter, change the table/drop down output
-  if (!dropDownsPopulated) populateDropdowns();
-  var tag=window.location.hash.replace(&ldquo;#&rdquo;,&ldquo;&rdquo;);
-  if(tag) {
-    tag = $.trim(tag);
-    for (i=0;i<tagName.length;i++) {
-      querystringTag = tagName[i] + "=";
-      if (tag.indexOf(querystringTag) > -1)
-      {
-        console.log(&ldquo;in mainLog: querystringTag of &ldquo; + querystringTag + &rdquo; matches tag of &ldquo; + tag);
-        tag = tag.replace(querystringTag,&ldquo;&rdquo;);
-        selectDropDown(tagName[i],tag);
-        topicsFilter(tagName[i],tag,&ldquo;output&rdquo;);
-      }
-    }
-  } else {
-    currentTopics = metadata.pages;
-  }
-  renderTable(currentTopics,&ldquo;output&rdquo;);</p>
-
-<p>}
-function populateDropdowns()
-{
-  // Keeping mainLogic() brief by functionalizing the initialization of the
-  // drop-down filter boxes</p>
-
-<p>for(i=0;i<metadata.pages.length;i++)
-  {
-    var metadataArrays = [metadata.pages[i].cr,metadata.pages[i].or,metadata.pages[i].mr];
-    for(j=0;j<metadataArrays.length;j++)
-    {
-      if (metadataArrays[j]) {
-        for (k=0;k<metadataArrays[j].length;k++) {
-          if (typeof storedTagsArrays[j] == 'undefined') storedTagsArrays[j] = new Array();
-          storedTagsArrays[j][metadataArrays[j][k][tagName[j]]] = true;
-          // ^ conceptList[metadata.pages[i].cr[k].concept] = true; (if rolling through concepts)
-          // ^ conceptList['container'] = true; (ultimate result)
-          // ^ objectList[metadata.pages[i].or[k].object] = true; (if rolling through objects)
-          // ^ objectList['restartPolicy'] = true; (ultimate result)
-        }
-      }
-    }
-  }
-  var output = new Array();
-  for(i=0;i<tagName.length;i++)
-  {
-    // Phew! All tags in conceptList, objectList, and commandList!
-    // Loop through them and populate those drop-downs through html() injection
-    output = [];
-    output.push("<select id='" + tagName[i] + "' onchange='dropFilter(this)'>&rdquo;);
-    output.push(&rdquo;<option>&mdash;</option>&rdquo;);
-    Object.keys(storedTagsArrays[i]).sort().forEach(function (key) {
-      output.push(&rdquo;<option>&rdquo; + key + &ldquo;</option>&rdquo;);
-    });
-    output.push(&rdquo;</select>&rdquo;)
-    $(dropDowns[i]).html(output.join(&ldquo;&rdquo;));
-  }
-  dropDownsPopulated = true;
-}
-function dropFilter(srcobj)
-{
-  // process the change of a drop-down value
-  // the ID of the drop down is either command, object, or concept
-  // these exact values are what topicsFilter() expects, plus a filter val
-  // which we get from .text() of :selected
-  console.log(&ldquo;dropFilter:&rdquo; + $(srcobj).attr(&lsquo;id&rsquo;) + &ldquo;:&rdquo; + $(srcobj).find(&rdquo;:selected&rdquo;).text());
-  topicsFilter($(srcobj).attr(&lsquo;id&rsquo;).replace(&ldquo;#&rdquo;,&ldquo;&rdquo;),$(srcobj).find(&rdquo;:selected&rdquo;).text(),&ldquo;output&rdquo;);
-  for(i=0;i<tagName.length;i++)
-  {
-    if($(srcobj).attr('id')!=tagName[i]) selectDropDown(tagName[i],"---");
-  }
-}
-function selectDropDown(type,tag)
-{
-  // change drop-down selection w/o filtering
-  $("#" + type).val(tag);
-}
-</script>
-<style>
-#filters select{
-  font-size: 14px;
-  border: 1px #000 solid;
-}
-#filters {
-  padding-top: 20px;
-}
-</style></p>
-
-<p>Click tags or use the drop downs to filter. Click table headers to sort or reverse sort.</p>
-
-<p id="filters">
-Filter by Concept: <span id="conceptFilter" /><br/>
-Filter by Object: <span id="objectFilter" /><br/>
-Filter by Command: <span id="commandFilter" />
-</p>
-
-<p><div id="output" /></p>
-
+          
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

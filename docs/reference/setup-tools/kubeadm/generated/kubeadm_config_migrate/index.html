@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -1087,8 +1088,8 @@ submitted this file to &ldquo;kubeadm init&rdquo;</p>
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -1120,98 +1121,13 @@ submitted this file to &ldquo;kubeadm init&rdquo;</p>
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">300 Words|Read in about 2 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<p>Read an older version of the kubeadm configuration API types from a file, and output the similar config object for the newer version.</p>
-
-<h3 id="synopsis">Synopsis</h3>
-
-<p>This command lets you convert configuration objects of older versions to the latest supported version,
-locally in the CLI tool without ever touching anything in the cluster.
-In this version of kubeadm, the following API versions are supported:
-- kubeadm.k8s.io/v1alpha3
-- kubeadm.k8s.io/v1beta1</p>
-
-<p>Further, kubeadm can only write out config of version &ldquo;kubeadm.k8s.io/v1beta1&rdquo;, but read both types.
-So regardless of what version you pass to the &ndash;old-config parameter here, the API object will be
-read, deserialized, defaulted, converted, validated, and re-serialized when written to stdout or
-&ndash;new-config if specified.</p>
-
-<p>In other words, the output of this command is what kubeadm actually would read internally if you
-submitted this file to &ldquo;kubeadm init&rdquo;</p>
-
-<pre><code>kubeadm config migrate [flags]
-</code></pre>
-
-<h3 id="options">Options</h3>
-
-<table style="width: 100%; table-layout: fixed;">
-  <colgroup>
-    <col span="1" style="width: 10px;" />
-    <col span="1" />
-  </colgroup>
-  <tbody>
-
-    <tr>
-      <td colspan="2">-h, --help</td>
-    </tr>
-    <tr>
-      <td></td><td style="line-height: 130%; word-wrap: break-word;">help for migrate</td>
-    </tr>
-
-    <tr>
-      <td colspan="2">--new-config string</td>
-    </tr>
-    <tr>
-      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to the resulting equivalent kubeadm config file using the new API version. Optional, if not specified output will be sent to STDOUT.</td>
-    </tr>
-
-    <tr>
-      <td colspan="2">--old-config string</td>
-    </tr>
-    <tr>
-      <td></td><td style="line-height: 130%; word-wrap: break-word;">Path to the kubeadm config file that is using an old API version and should be converted. This flag is mandatory.</td>
-    </tr>
-
-  </tbody>
-</table>
-
-<h3 id="options-inherited-from-parent-commands">Options inherited from parent commands</h3>
-
-<table style="width: 100%; table-layout: fixed;">
-  <colgroup>
-    <col span="1" style="width: 10px;" />
-    <col span="1" />
-  </colgroup>
-  <tbody>
-
-    <tr>
-      <td colspan="2">--kubeconfig string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: "/etc/kubernetes/admin.conf"</td>
-    </tr>
-    <tr>
-      <td></td><td style="line-height: 130%; word-wrap: break-word;">The kubeconfig file to use when talking to the cluster. If the flag is not set, a set of standard locations are searched for an existing KubeConfig file.</td>
-    </tr>
-
-    <tr>
-      <td colspan="2">--rootfs string</td>
-    </tr>
-    <tr>
-      <td></td><td style="line-height: 130%; word-wrap: break-word;">[EXPERIMENTAL] The path to the 'real' host root filesystem.</td>
-    </tr>
-
-  </tbody>
-</table>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

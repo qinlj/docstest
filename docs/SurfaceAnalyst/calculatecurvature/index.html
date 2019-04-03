@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -557,8 +558,8 @@
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -590,65 +591,13 @@
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">600 Words|Read in about 3 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<p>　　Calculates the surface curvature of a DEM raster, including mean curvature, profile curvature, and plan curvature. Curvature is the second derivative of a surface, or the slope of the slope. The primary output is the curvature of the surface on a cell-by-cell basis, as fitted through that cell and its eight surrounding neighbors.</p>
-
-<p>　　The output is a raster dataset. Three types of curvature can be calculated: mean curvature, profile curvature, and plan curvature. The profile curvature is in the direction of the maximum slope, and the plan curvature is perpendicular to the direction of the maximum slope.</p>
-
-<ul>
-<li>The output curvature raster is of the same extent and resolution with the source dataset.</li>
-<li>A positive curvature indicates the surface is upwardly convex at that cell. A negative curvature indicates the surface is upwardly concave at that cell. A value of zero indicates the surface is flat.</li>
-<li>Units of the curvature output raster are one over 100 z units, or 1/100(z units). The reasonably expected values of all three output rasters for a hilly area (moderate relief) can vary from -0.5 to 0.5; while for steep, rugged mountains (extreme relief), the values can vary between -4 and 4.</li>
-</ul>
-
-<h3 id="basic-steps">Basic steps</h3>
-
-<ol>
-<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Terrain Calculate&rdquo; &gt; &ldquo;DEM Curvature Calculate&rdquo; to open the &ldquo;DEM Curvature Calculate&rdquo; dialog box.</li>
-<li>Specify your dataset to perform the DEM Curvature Calculate operation.</li>
-<li><strong>Altitude zoom parameter</strong>: When calculating the curvature, altitude values should multiply a coefficient to make the altitude unit consistent with the unit of coordinate x, y. For example, if the unit is meter in x, y direction but feet in z direction, you need to specify the parameter value is 0.3408 meter because of 1 feet is 0.3048 meter.</li>
-<li>Set names for the three result dataset and specify a datasource to save them.</li>
-<li>Click &ldquo;Run&rdquo; image button to perform the operation. A positive curvature represents a convex at that cell, A negative curvature represents a concave surface. If the curvature is 0 meaning the surface at that cell is flat.</li>
-</ol>
-
-<h3 id="note">Note</h3>
-
-<ul>
-<li>Note that if the elevation unit and the coordinate unit can not be converted into a same unit, then you need to use the other ways to do it. One of the most common situation is that the DEM unit is degree when it uses the geographic coordinate system, and the elevation unit is meter, then you can do projection transformation for the DEM data, and make its (x, y) coordinate into the planar coordinate.</li>
-<li>If the calculating cell is no-value, then its result is also no-value. Note: for the cells located at the edge of the raster dataset, its 3 * 3 neighbour region includes the cells outside the range of the dataset, then these cells will be calculated by the elevation of the calculating cell, so the result of the slope may be less than the practical value. The surrounding no-value cells can be dealt with the same way.</li>
-</ul>
-
-<h3 id="related-topics">Related topics</h3>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFill.html" target="_blank">Cut fill</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFillRegion.html" target="_blank">Cut fill with region</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="InverseCutFill.html" target="_blank">Inverse cut fill</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="FindExtreme.html" target="_blank">Find Extremum value</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Slope.html" target="_blank">Slope analysis</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Aspect.html" target="_blank">Aspect analysis</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Profile.html" target="_blank">Profile analysis</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="OrthoImage.html" target="_blank">Orthophoto image</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="HillShade.html" target="_blank">3D hillshade map</a></p>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

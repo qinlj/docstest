@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -8554,8 +8555,8 @@ InfluxDB is running at https://108.59.85.141/api/v1/namespaces/kube-system/servi
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -8587,230 +8588,13 @@ InfluxDB is running at https://108.59.85.141/api/v1/namespaces/kube-system/servi
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">900 Words|Read in about 4 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<p>在本文中，我们将向 docker-cli 用户介绍 Kubernetes 命令行如何与 api 进行交互。该命令行工具——kubectl，被设计成 docker-cli 用户所熟悉的样子，但是它们之间又存在一些必要的差异。该文档将向您展示每个 docker 子命令和 kubectl 与其等效的命令。</p>
-
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#docker-run">docker run</a></li>
-<li><a href="#docker-ps">docker ps</a></li>
-<li><a href="#docker-attach">docker attach</a></li>
-<li><a href="#docker-exec">docker exec</a></li>
-<li><a href="#docker-logs">docker logs</a></li>
-<li><a href="#docker-stop-和-docker-rm">docker stop 和 docker rm</a></li>
-<li><a href="#docker-login">docker login</a></li>
-<li><a href="#docker-version">docker version</a></li>
-<li><a href="#docker-info">docker info</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-
-<h4 id="docker-run">docker run</h4>
-
-<p>如何运行一个 nginx Deployment 并将其暴露出来？ 查看 <a href="/docs/reference/generated/kubectl/kubectl-commands/#run">kubectl run</a> 。</p>
-
-<p>使用 docker 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker run -d --restart<span style="color:#666">=</span>always -e <span style="color:#b8860b">DOMAIN</span><span style="color:#666">=</span>cluster --name nginx-app -p <span style="color:#666">80</span>:80 nginx
-a9ec34d9878748d2f33dc20cb25c714ff21da8d40558b45bfaec9955859075d0
-$ docker ps
-CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                         NAMES
-a9ec34d98787        nginx               <span style="color:#b44">&#34;nginx -g &#39;daemon of   2 seconds ago       Up 2 seconds        0.0.0.0:80-&gt;80/tcp, 443/tcp   nginx-app </span></code></pre></div>
-<p>使用 kubectl 命令：</p>
-
-<!--
-# start the pod running nginx
--->
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># 启动运行 nginx 的 pod</span>
-$ kubectl run --image<span style="color:#666">=</span>nginx nginx-app --port<span style="color:#666">=</span><span style="color:#666">80</span> --env<span style="color:#666">=</span><span style="color:#b44">&#34;DOMAIN=cluster&#34;</span>
-deployment <span style="color:#b44">&#34;nginx-app&#34;</span> created</code></pre></div>
-<p>在 1.2 及以上版本的 Kubernetes 集群中，使用<code>kubectl run</code> 命令将创建一个名为 &ldquo;nginx-app&rdquo; 的 Deployment。如果您运行的是老版本，将会创建一个 replication controller。
-如果您想沿用旧的行为，使用 <code>--generation=run/v1</code> 参数，这样就会创建 replication controller。查看 <a href="/docs/reference/generated/kubectl/kubectl-commands/#run"><code>kubectl run</code></a> 获取更多详细信息。</p>
-
-<!--
-# expose a port through with a service
--->
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># 通过服务暴露端口</span>
-$ kubectl expose deployment nginx-app --port<span style="color:#666">=</span><span style="color:#666">80</span> --name<span style="color:#666">=</span>nginx-http
-service <span style="color:#b44">&#34;nginx-http&#34;</span> exposed</code></pre></div>
-<p>在 kubectl 命令中，我们创建了一个 <a href="/docs/concepts/workloads/controllers/deployment/">Deployment</a>，这将保证有 N 个运行 nginx 的 pod（N 代表 spec 中声明的 replica 数，默认为 1）。我们还创建了一个 <a href="/docs/user-guide/services">service</a>，使用  selector 匹配具有相应的 selector 的 Deployment。查看<a href="/docs/user-guide/quick-start">快速开始</a>获取更多信息。</p>
-
-<p>默认情况下镜像会在后台运行，与<code>docker run -d ...</code> 类似，如果您想在前台运行，使用：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl run <span style="color:#666">[</span>-i<span style="color:#666">]</span> <span style="color:#666">[</span>--tty<span style="color:#666">]</span> --attach &lt;name&gt; --image<span style="color:#666">=</span>&lt;image&gt;</code></pre></div>
-<p>与 <code>docker run ...</code> 不同的是，如果指定了 <code>--attach</code> ，我们将连接到 <code>stdin</code>，<code>stdout</code> 和 <code>stderr</code>，而不能控制具体连接到哪个输出流（<code>docker -a ...</code>）。</p>
-
-<p>因为我们使用 Deployment 启动了容器，如果您终止了连接到的进程（例如 <code>ctrl-c</code>），容器将会重启，这跟 <code>docker run -it</code> 不同。
-如果想销毁该 Deployment（和它的 pod），您需要运行 <code>kubectl delete deployment &lt;name&gt;</code>。</p>
-
-<h4 id="docker-ps">docker ps</h4>
-
-<p>如何列出哪些正在运行？查看 <a href="/docs/reference/generated/kubectl/kubectl-commands/#get">kubectl get</a>。</p>
-
-<p>使用 docker 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker ps
-CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                         NAMES
-a9ec34d98787        nginx               <span style="color:#b44">&#34;nginx -g &#39;daemon of   About an hour ago   Up About an hour    0.0.0.0:80-&gt;80/tcp, 443/tcp   nginx-app</span></code></pre></div>
-<p>使用 kubectl 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl get po
-NAME              READY     STATUS    RESTARTS   AGE
-nginx-app-5jyvm   <span style="color:#666">1</span>/1       Running   <span style="color:#666">0</span>          1h</code></pre></div>
-<h4 id="docker-attach">docker attach</h4>
-
-<p>如何连接到已经运行在容器中的进程？查看 <a href="/docs/reference/generated/kubectl/kubectl-commands/#attach">kubectl attach</a>。</p>
-
-<p>使用 docker 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker ps
-CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                         NAMES
-a9ec34d98787        nginx               <span style="color:#b44">&#34;nginx -g &#39;daemon of   8 minutes ago       Up 8 minutes        0.0.0.0:80-&gt;80/tcp, 443/tcp   nginx-app
-</span><span style="color:#b44"></span>$<span style="color:#b44"> docker attach a9ec34d98787
-</span><span style="color:#b44">...</span></code></pre></div>
-<p>使用 kubectl 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl get pods
-NAME              READY     STATUS    RESTARTS   AGE
-nginx-app-5jyvm   <span style="color:#666">1</span>/1       Running   <span style="color:#666">0</span>          10m
-$ kubectl attach -it nginx-app-5jyvm
-...</code></pre></div>
-<h4 id="docker-exec">docker exec</h4>
-
-<p>如何在容器中执行命令？查看 <a href="/docs/reference/generated/kubectl/kubectl-commands/#exec">kubectl exec</a>。</p>
-
-<p>使用 docker 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker ps
-CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                         NAMES
-a9ec34d98787        nginx               <span style="color:#b44">&#34;nginx -g &#39;daemon of   8 minutes ago       Up 8 minutes        0.0.0.0:80-&gt;80/tcp, 443/tcp   nginx-app
-</span><span style="color:#b44"></span>$<span style="color:#b44"> docker exec a9ec34d98787 cat /etc/hostname
-</span><span style="color:#b44">a9ec34d98787</span></code></pre></div>
-<p>使用 kubectl 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl get po
-NAME              READY     STATUS    RESTARTS   AGE
-nginx-app-5jyvm   <span style="color:#666">1</span>/1       Running   <span style="color:#666">0</span>          10m
-$ kubectl <span style="color:#a2f">exec</span> nginx-app-5jyvm -- cat /etc/hostname
-nginx-app-5jyvm</code></pre></div>
-<p>执行交互式命令怎么办？</p>
-
-<p>使用 docker 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker <span style="color:#a2f">exec</span> -ti a9ec34d98787 /bin/sh
-<span style="color:#080;font-style:italic"># exit</span></code></pre></div>
-<p>使用 kubectl 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl <span style="color:#a2f">exec</span> -ti nginx-app-5jyvm -- /bin/sh      
-<span style="color:#080;font-style:italic"># exit</span></code></pre></div>
-<p>更多信息请查看<a href="/docs/tasks/kubectl/get-shell-running-container/">获取运行中容器的 Shell 环境</a>。</p>
-
-<h4 id="docker-logs">docker logs</h4>
-
-<p>如何查看运行中进程的 stdout/stderr？查看 <a href="/docs/reference/generated/kubectl/kubectl-commands/#logs">kubectl logs</a>。</p>
-
-<p>使用 docker 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker logs -f a9e
-<span style="color:#666">192</span>.168.9.1 - - <span style="color:#666">[</span><span style="color:#666">14</span>/Jul/2015:01:04:02 +0000<span style="color:#666">]</span> <span style="color:#b44">&#34;GET / HTTP/1.1&#34;</span> <span style="color:#666">200</span> <span style="color:#666">612</span> <span style="color:#b44">&#34;-&#34;</span> <span style="color:#b44">&#34;curl/7.35.0&#34;</span> <span style="color:#b44">&#34;-&#34;</span>
-<span style="color:#666">192</span>.168.9.1 - - <span style="color:#666">[</span><span style="color:#666">14</span>/Jul/2015:01:04:03 +0000<span style="color:#666">]</span> <span style="color:#b44">&#34;GET / HTTP/1.1&#34;</span> <span style="color:#666">200</span> <span style="color:#666">612</span> <span style="color:#b44">&#34;-&#34;</span> <span style="color:#b44">&#34;curl/7.35.0&#34;</span> <span style="color:#b44">&#34;-&#34;</span></code></pre></div>
-<p>使用 kubectl 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl logs -f nginx-app-zibvs
-<span style="color:#666">10</span>.240.63.110 - - <span style="color:#666">[</span><span style="color:#666">14</span>/Jul/2015:01:09:01 +0000<span style="color:#666">]</span> <span style="color:#b44">&#34;GET / HTTP/1.1&#34;</span> <span style="color:#666">200</span> <span style="color:#666">612</span> <span style="color:#b44">&#34;-&#34;</span> <span style="color:#b44">&#34;curl/7.26.0&#34;</span> <span style="color:#b44">&#34;-&#34;</span>
-<span style="color:#666">10</span>.240.63.110 - - <span style="color:#666">[</span><span style="color:#666">14</span>/Jul/2015:01:09:02 +0000<span style="color:#666">]</span> <span style="color:#b44">&#34;GET / HTTP/1.1&#34;</span> <span style="color:#666">200</span> <span style="color:#666">612</span> <span style="color:#b44">&#34;-&#34;</span> <span style="color:#b44">&#34;curl/7.26.0&#34;</span> <span style="color:#b44">&#34;-&#34;</span></code></pre></div>
-<p>现在是时候提一下 pod 和容器之间的细微差别了；默认情况下如果 pod 中的进程退出 pod 也不会终止，相反它将会重启该进程。这类似于 docker run 时的 <code>--restart=always</code> 选项， 这是主要差别。在 docker 中，进程的每个调用的输出都是被连接起来的，但是对于 kubernetes，每个调用都是分开的。要查看以前在 kubernetes 中执行的输出，请执行以下操作：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl logs --previous nginx-app-zibvs
-<span style="color:#666">10</span>.240.63.110 - - <span style="color:#666">[</span><span style="color:#666">14</span>/Jul/2015:01:09:01 +0000<span style="color:#666">]</span> <span style="color:#b44">&#34;GET / HTTP/1.1&#34;</span> <span style="color:#666">200</span> <span style="color:#666">612</span> <span style="color:#b44">&#34;-&#34;</span> <span style="color:#b44">&#34;curl/7.26.0&#34;</span> <span style="color:#b44">&#34;-&#34;</span>
-<span style="color:#666">10</span>.240.63.110 - - <span style="color:#666">[</span><span style="color:#666">14</span>/Jul/2015:01:09:02 +0000<span style="color:#666">]</span> <span style="color:#b44">&#34;GET / HTTP/1.1&#34;</span> <span style="color:#666">200</span> <span style="color:#666">612</span> <span style="color:#b44">&#34;-&#34;</span> <span style="color:#b44">&#34;curl/7.26.0&#34;</span> <span style="color:#b44">&#34;-&#34;</span></code></pre></div>
-<p>查看<a href="/docs/concepts/cluster-administration/logging/">记录和监控集群活动</a>获取更多信息。</p>
-
-<h4 id="docker-stop-和-docker-rm">docker stop 和 docker rm</h4>
-
-<p>如何停止和删除运行中的进程？查看 <a href="/docs/reference/generated/kubectl/kubectl-commands/#delete">kubectl delete</a>。</p>
-
-<p>使用 docker 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker ps
-CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                         NAMES
-a9ec34d98787        nginx               <span style="color:#b44">&#34;nginx -g &#39;daemon of   22 hours ago        Up 22 hours         0.0.0.0:80-&gt;80/tcp, 443/tcp   nginx-app
-</span><span style="color:#b44"></span>$<span style="color:#b44"> docker stop a9ec34d98787
-</span><span style="color:#b44">a9ec34d98787
-</span><span style="color:#b44"></span>$<span style="color:#b44"> docker rm a9ec34d98787
-</span><span style="color:#b44">a9ec34d98787</span></code></pre></div>
-<p>使用 kubectl 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl get deployment nginx-app
-NAME        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-nginx-app   <span style="color:#666">1</span>         <span style="color:#666">1</span>         <span style="color:#666">1</span>            <span style="color:#666">1</span>           2m
-$ kubectl get po -l <span style="color:#b8860b">run</span><span style="color:#666">=</span>nginx-app
-NAME                         READY     STATUS    RESTARTS   AGE
-nginx-app-2883164633-aklf7   <span style="color:#666">1</span>/1       Running   <span style="color:#666">0</span>          2m
-$ kubectl delete deployment nginx-app
-deployment <span style="color:#b44">&#34;nginx-app&#34;</span> deleted
-$ kubectl get po -l <span style="color:#b8860b">run</span><span style="color:#666">=</span>nginx-app
-<span style="color:#080;font-style:italic"># Return nothing</span></code></pre></div>
-<p>请注意，我们不直接删除 pod。使用 kubectl 命令，我们要删除拥有该 pod 的 Deployment。如果我们直接删除 pod，Deployment 将会重新创建该 pod。</p>
-
-<h4 id="docker-login">docker login</h4>
-
-<p>在 kubectl 中没有对 <code>docker login</code> 的直接模拟。如果您有兴趣在私有镜像仓库中使用 Kubernetes，请参阅<a href="/docs/concepts/containers/images/#using-a-private-registry">使用私有镜像仓库</a>。</p>
-
-<h4 id="docker-version">docker version</h4>
-
-<p>如何查看客户端和服务端的版本？查看  <a href="/docs/reference/generated/kubectl/kubectl-commands/#version">kubectl version</a>。</p>
-
-<p>使用 docker 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker version
-Client version: <span style="color:#666">1</span>.7.0
-Client API version: <span style="color:#666">1</span>.19
-Go version <span style="color:#666">(</span>client<span style="color:#666">)</span>: go1.4.2
-Git commit <span style="color:#666">(</span>client<span style="color:#666">)</span>: 0baf609
-OS/Arch <span style="color:#666">(</span>client<span style="color:#666">)</span>: linux/amd64
-Server version: <span style="color:#666">1</span>.7.0
-Server API version: <span style="color:#666">1</span>.19
-Go version <span style="color:#666">(</span>server<span style="color:#666">)</span>: go1.4.2
-Git commit <span style="color:#666">(</span>server<span style="color:#666">)</span>: 0baf609
-OS/Arch <span style="color:#666">(</span>server<span style="color:#666">)</span>: linux/amd64</code></pre></div>
-<p>使用 kubectl 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl version
-Client Version: version.Info<span style="color:#666">{</span>Major:<span style="color:#b44">&#34;1&#34;</span>, Minor:<span style="color:#b44">&#34;6&#34;</span>, GitVersion:<span style="color:#b44">&#34;v1.6.9+a3d1dfa6f4335&#34;</span>, GitCommit:<span style="color:#b44">&#34;9b77fed11a9843ce3780f70dd251e92901c43072&#34;</span>, GitTreeState:<span style="color:#b44">&#34;dirty&#34;</span>, BuildDate:<span style="color:#b44">&#34;2017-08-29T20:32:58Z&#34;</span>, OpenPaasKubernetesVersion:<span style="color:#b44">&#34;v1.03.02&#34;</span>, GoVersion:<span style="color:#b44">&#34;go1.7.5&#34;</span>, Compiler:<span style="color:#b44">&#34;gc&#34;</span>, Platform:<span style="color:#b44">&#34;linux/amd64&#34;</span><span style="color:#666">}</span>
-Server Version: version.Info<span style="color:#666">{</span>Major:<span style="color:#b44">&#34;1&#34;</span>, Minor:<span style="color:#b44">&#34;6&#34;</span>, GitVersion:<span style="color:#b44">&#34;v1.6.9+a3d1dfa6f4335&#34;</span>, GitCommit:<span style="color:#b44">&#34;9b77fed11a9843ce3780f70dd251e92901c43072&#34;</span>, GitTreeState:<span style="color:#b44">&#34;dirty&#34;</span>, BuildDate:<span style="color:#b44">&#34;2017-08-29T20:32:58Z&#34;</span>, OpenPaasKubernetesVersion:<span style="color:#b44">&#34;v1.03.02&#34;</span>, GoVersion:<span style="color:#b44">&#34;go1.7.5&#34;</span>, Compiler:<span style="color:#b44">&#34;gc&#34;</span>, Platform:<span style="color:#b44">&#34;linux/amd64&#34;</span><span style="color:#666">}</span></code></pre></div>
-<h4 id="docker-info">docker info</h4>
-
-<p>如何获取有关环境和配置的各种信息？查看  <a href="/docs/reference/generated/kubectl/kubectl-commands/#cluster-info">kubectl cluster-info</a>。</p>
-
-<p>使用 docker 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker info
-Containers: <span style="color:#666">40</span>
-Images: <span style="color:#666">168</span>
-Storage Driver: aufs
- Root Dir: /usr/local/google/docker/aufs
- Backing Filesystem: extfs
- Dirs: <span style="color:#666">248</span>
- Dirperm1 Supported: <span style="color:#a2f">false</span>
-Execution Driver: native-0.2
-Logging Driver: json-file
-Kernel Version: <span style="color:#666">3</span>.13.0-53-generic
-Operating System: Ubuntu <span style="color:#666">14</span>.04.2 LTS
-CPUs: <span style="color:#666">12</span>
-Total Memory: <span style="color:#666">31</span>.32 GiB
-Name: k8s-is-fun.mtv.corp.google.com
-ID: ADUV:GCYR:B3VJ:HMPO:LNPQ:KD5S:YKFQ:76VN:IANZ:7TFV:ZBF4:BYJO
-WARNING: No swap limit support</code></pre></div>
-<p>使用 kubectl 命令：</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ kubectl cluster-info
-Kubernetes master is running at https://108.59.85.141
-KubeDNS is running at https://108.59.85.141/api/v1/namespaces/kube-system/services/kube-dns/proxy
-kubernetes-dashboard is running at https://108.59.85.141/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy
-Grafana is running at https://108.59.85.141/api/v1/namespaces/kube-system/services/monitoring-grafana/proxy
-Heapster is running at https://108.59.85.141/api/v1/namespaces/kube-system/services/monitoring-heapster/proxy
-InfluxDB is running at https://108.59.85.141/api/v1/namespaces/kube-system/services/monitoring-influxdb/proxy</code></pre></div>
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>

@@ -17,12 +17,13 @@
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 <link rel="stylesheet" href="/css/base_fonts.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
+<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
 <link rel="stylesheet" href="/css/jquery-ui.min.css">
 <link rel="stylesheet" href="/css/sweetalert.min.css">
 <link rel="stylesheet" href="/css/callouts.css">
 <link rel="stylesheet" href="/css/custom-jekyll/tags.css">
-<link rel="stylesheet" href="https://qinlj.github.io/css/main.css" />
-<link rel="stylesheet" href="https://qinlj.github.io/css/share.min.css" />
+
 
 
 
@@ -567,8 +568,8 @@ Theory 　The slope of a point on the ground surface denotes the amount of the t
   
 </div>
 
+  
   <div class="post-comment">
-    
     
 
 
@@ -600,74 +601,13 @@ Theory 　The slope of a point on the ground surface denotes the amount of the t
         
         
 <div>
-  <section id="datecount">
-    <h4 id="date"> Mon Jan 1, 0001</h4>
-  </section>
-  <h5 id="wc">600 Words|Read in about 3 Min</h5>
-  <h5 id="tags">Tags: 
+
+  <h5 id="tags">
   </h5>
 </div>
         
         <article role="main" class="blog-post" itemprop="articleBody" id="content">
-          ...
           
-
-<p>　　Slope and Aspect are two important terrain factors, playing an important role on terrain surface analysis, of which slope denotes the measurement of rate of height change at a certain location on the earth surface.</p>
-
-<h3 id="theory">Theory</h3>
-
-<p>　　The slope of a point on the ground surface denotes the amount of the tilt degree of the point, which is a vector with both size and direction. In terrain analysis, the slope represents the included angle of the tangent plane and horizontal plane across a certain ground point. According to slope maps, we can learn about the steepness of terrain at each position in the region. In the slope maps, every cell has a slope value, the bigger the value, the steeper the terrain; on the contrary, the smaller the value, the flatter the terrain.</p>
-
-<p>　　The slope can be expressed by degree or percentage. Degree Slope is the arctan value of the ratio of vertical increment and the horizontal increment, and Percentage Slope is the ratio between vertical increment and the horizontal increment multiplied by 100. In Supermap, three expression ways are provided for slope calculation including degree, radian and percentage. Set the slope of the vertical increment as H, the horizontal increment as L, then the angle in degree is θ=arctan(H/L), in radian: R = θ*π/180, in percentage: P= (H/L)*100, as the following figure shows.</p>
-
-<p>　　<img src="img/Slope.png" alt="" /></p>
-
-<p>　　The analysis results of Degree Slope ranges from 0 to 90, 0 denotes the ground surface is horizontal, 90 denotes the ground is the steep surface perpendicular to the horizontal plane. The range of the analysis results of Percentage Slope is 0 to infinity, when the result is less than 1, indicating that the altitude increment is less than the horizontal increment where the slope is pretty gentler; when the result is 1, indicating that the altitude increment is equal to horizontal increment where the slope degree is 45; when the result is greater than 1, indicating the altitude increment is larger than the horizontal increment where the slope becomes steeper.</p>
-
-<p>　　The pixel value of the grid dataset is the value of the center point, when calculating the slope and aspect, the elevation of each point can be obtained by interpolation, and then calculate the slope and aspect at each point. Because of the calculation of the slope and aspect of point is no practical significance, the method calculates the mean value of the slope for each pixel plane in a raster dataset.</p>
-
-<h3 id="application-scenery">Application scenery</h3>
-
-<ul>
-<li>Find out relatively flat areas to build houses.</li>
-<li>Select ramps of different slopes for creating different levels of ski runs.</li>
-<li>Find out relatively flat areas for planes landing.</li>
-<li>Determine whether a wasteland can be used to grow plants according to its slope angle.</li>
-</ul>
-
-<h3 id="basic-steps">Basic steps</h3>
-
-<ol>
-<li>In the toolbox, click &ldquo;Raster Analysis&rdquo; &gt; &ldquo;Surface Analysis&rdquo; &gt; &ldquo;Terrain Calculate&rdquo; &gt; &ldquo;Slope Analysis&rdquo; to open the &ldquo;Slope Analysis&rdquo; dialog box.</li>
-<li>Specify your raster dataset to perform the Slope Analysis. In general, selecting a DEM data with elevation value is better.</li>
-<li><strong>Slope Unit</strong>: Choose a proper unit from degree, percent, rad.</li>
-<li><strong>Z Factor</strong>: Set how many multiples the elevation will be stretched.</li>
-<li>Set a name for the result dataset and specify a datasource to save it. The slope dataset has the same size and resolution with the source dataset.</li>
-<li>Click &ldquo;Run&rdquo; image button to perform the operation.</li>
-</ol>
-
-<p>　　<img src="img/SlopeRsult.png" alt="" /></p>
-
-<h3 id="related-topics">Related topics</h3>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFill.html" target="_blank">Cut fill</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CutFillRegion.html" target="_blank">Cut fill with region</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="InverseCutFill.html" target="_blank">Inverse cut fill</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="FindExtreme.html" target="_blank">Find Extremum value</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="CalculateCurvature.html" target="_blank">DEM curvature calculate</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Aspect.html" target="_blank">Aspect analysis</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="Profile.html" target="_blank">Profile analysis</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="OrthoImage.html" target="_blank">Orthophoto image</a></p>
-
-<p>　　<img src="../img/smalltitle.png" alt="" /> <a href="HillShade.html" target="_blank">3D hillshade map</a></p>
-
           
           <div class="social-share" data-initialized="true" data-wechat-qrcode-title="不扫别后悔">
   <center>
