@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/ibm/</loc>
-    <lastmod>2018-10-30T17:35:44-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/naic/</loc>
-    <lastmod>2018-09-20T17:03:59-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -34,7 +34,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/ocado/</loc>
-    <lastmod>2018-09-20T17:03:59-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -49,12 +49,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/controlling-access/</loc>
-    <lastmod>2018-07-18T18:54:21-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/hello-minikube/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -79,7 +79,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/glossary/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -94,22 +94,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/kubeadm/</loc>
-    <lastmod>2018-06-13T13:23:29-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/assign-memory-resource/</loc>
-    <lastmod>2019-03-12T18:30:42+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/authentication/</loc>
-    <lastmod>2019-03-07T17:54:07-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/cluster-administration-overview/</loc>
-    <lastmod>2018-09-21T22:54:03+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -129,12 +129,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/configuration/overview/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/</loc>
-    <lastmod>2018-10-23T02:25:26+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -149,12 +149,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-kubernetes-api/configure-aggregation-layer/</loc>
-    <lastmod>2019-02-18T04:16:00+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/create-cluster/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -174,7 +174,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/inject-data-application/define-command-argument-container/</loc>
-    <lastmod>2019-01-14T03:14:44+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -189,7 +189,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/stateless-application/expose-external-ip-address/</loc>
-    <lastmod>2018-08-15T15:08:06+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -204,22 +204,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/</loc>
-    <lastmod>2018-05-16T12:26:52-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/extend-kubernetes/extend-cluster/</loc>
-    <lastmod>2018-10-09T21:04:03-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/feature-gates/</loc>
-    <lastmod>2019-03-08T07:56:04+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/home/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -249,7 +249,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/containers/images/</loc>
-    <lastmod>2019-02-28T04:21:48+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -269,7 +269,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/tools/</loc>
-    <lastmod>2018-05-19T21:43:52-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -284,37 +284,37 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/tools/install-kubectl/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/</loc>
-    <lastmod>2018-05-08T12:08:53-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/generated/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/using-api/api-overview/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/issues-security/issues/</loc>
-    <lastmod>2018-05-23T13:58:32-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/issues-security/</loc>
-    <lastmod>2018-05-23T13:58:32-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/object-management-kubectl/overview/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -329,7 +329,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -354,12 +354,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/</loc>
-    <lastmod>2018-10-26T02:02:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/architecture/nodes/</loc>
-    <lastmod>2019-01-16T09:37:27+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -384,7 +384,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/kubeadm/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -399,7 +399,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/update/update-intro/</loc>
-    <lastmod>2018-11-14T10:36:06+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -419,7 +419,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/pick-right-solution/</loc>
-    <lastmod>2019-03-13T11:01:37-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -444,7 +444,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/pods/pod-overview/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -459,7 +459,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/pods/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -479,7 +479,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/controllers/replicaset/</loc>
-    <lastmod>2019-02-16T18:20:03+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
@@ -499,7 +499,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/run-stateless-application-deployment/</loc>
-    <lastmod>2018-08-21T01:09:55+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -514,7 +514,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/job/automated-tasks-with-cron-jobs/</loc>
-    <lastmod>2019-03-13T02:24:42+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -529,7 +529,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/scale/scale-intro/</loc>
-    <lastmod>2018-11-14T10:36:06+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -554,7 +554,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/services-networking/service/</loc>
-    <lastmod>2019-02-28T04:25:24+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -569,12 +569,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/start/</loc>
-    <lastmod>2019-02-28T23:31:51-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/stateful-application/basic-stateful-set/</loc>
-    <lastmod>2019-03-12T17:50:50+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -589,11 +589,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/style/style-guide/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -608,7 +609,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/working-with-objects/kubernetes-objects/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -628,7 +629,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/</loc>
-    <lastmod>2018-05-19T20:54:51-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -643,12 +644,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-kubernetes-api/custom-resources/</loc>
-    <lastmod>2018-06-27T15:26:18-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/</loc>
-    <lastmod>2018-12-06T18:36:02-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -668,7 +669,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/expose/expose-intro/</loc>
-    <lastmod>2019-01-15T02:28:04+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -688,7 +689,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/</loc>
-    <lastmod>2019-03-08T03:24:16+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -708,12 +709,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/using-api/</loc>
-    <lastmod>2018-05-23T13:58:32-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/explore/explore-intro/</loc>
-    <lastmod>2018-11-14T10:36:06+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -733,22 +734,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/storage/volumes/</loc>
-    <lastmod>2019-03-12T12:54:44-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/web-ui-dashboard/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubernetes-api/labels-annotations-taints/</loc>
-    <lastmod>2018-07-19T07:17:22+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/what-is-kubernetes/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -783,12 +784,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubefed/kubefed/</loc>
-    <lastmod>2019-01-13T19:33:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-kubernetes-api/setup-extension-api-server/</loc>
-    <lastmod>2018-10-11T21:21:04+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -803,7 +804,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/access-cluster/</loc>
-    <lastmod>2019-01-28T18:40:34-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -818,12 +819,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/</loc>
-    <lastmod>2018-05-23T13:58:32-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/</loc>
-    <lastmod>2018-05-19T20:54:51-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -838,17 +839,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/assign-cpu-resource/</loc>
-    <lastmod>2019-03-13T16:33:39+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/bootstrap-tokens/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/certificates/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -868,7 +869,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/</loc>
-    <lastmod>2018-10-23T02:25:26+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -883,7 +884,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/</loc>
-    <lastmod>2018-05-19T21:43:52-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -898,7 +899,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/containers/container-environment-variables/</loc>
-    <lastmod>2018-10-26T02:02:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -923,7 +924,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/controllers/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -938,12 +939,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/</loc>
-    <lastmod>2019-03-08T01:12:09+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/services-networking/dns-pod-service/</loc>
-    <lastmod>2019-02-21T17:34:40+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -958,7 +959,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/inject-data-application/define-environment-variable-container/</loc>
-    <lastmod>2019-01-14T03:14:44+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -973,7 +974,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/deploy-app/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -993,12 +994,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/release/</loc>
-    <lastmod>2018-08-20T11:31:27-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1023,7 +1024,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/stateless-application/guestbook/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1038,7 +1039,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1053,17 +1054,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/</loc>
-    <lastmod>2019-02-01T06:54:18+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/extend-kubernetes/api-extension/</loc>
-    <lastmod>2018-05-16T12:26:52-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/tools/install-minikube/</loc>
-    <lastmod>2019-03-09T01:00:55+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1078,7 +1079,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/independent/install-kubeadm/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1103,7 +1104,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/</loc>
-    <lastmod>2018-11-14T10:36:06+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1123,7 +1124,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-interactive/</loc>
-    <lastmod>2018-11-14T10:36:06+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1143,7 +1144,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/explore/explore-interactive/</loc>
-    <lastmod>2018-11-14T10:36:06+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1163,7 +1164,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/expose/expose-interactive/</loc>
-    <lastmod>2018-11-14T10:36:06+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1183,7 +1184,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/scale/scale-interactive/</loc>
-    <lastmod>2018-11-14T10:36:06+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1203,7 +1204,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/update/update-interactive/</loc>
-    <lastmod>2018-09-19T10:45:46-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1223,17 +1224,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/intermediate/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/using-api/api-concepts/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/components/</loc>
-    <lastmod>2019-03-08T12:38:06+13:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1253,12 +1254,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/issues-security/security/</loc>
-    <lastmod>2018-11-02T02:12:44+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/manage-resources/</loc>
-    <lastmod>2018-05-19T20:35:51-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1273,7 +1274,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/configuration/manage-compute-resources-container/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1288,12 +1289,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/object-management-kubectl/imperative-command/</loc>
-    <lastmod>2019-02-13T17:06:11+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/architecture/master-node-communication/</loc>
-    <lastmod>2019-02-28T00:18:39-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1318,7 +1319,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/working-with-objects/names/</loc>
-    <lastmod>2018-10-26T02:02:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1333,7 +1334,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/online-training/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1348,7 +1349,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1373,7 +1374,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubectl/overview/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -1388,17 +1389,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/job/parallel-processing-expansion/</loc>
-    <lastmod>2019-02-28T05:07:48+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/storage/persistent-volumes/</loc>
-    <lastmod>2019-01-16T17:16:04+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/policy/pod-security-policy/</loc>
-    <lastmod>2019-03-07T22:16:07+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1413,17 +1414,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/pods/pod/</loc>
-    <lastmod>2019-01-08T15:08:23+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/controllers/replicationcontroller/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/run-single-instance-stateful-application/</loc>
-    <lastmod>2018-07-03T02:15:20+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1438,7 +1439,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/containers/runtime-class/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1458,7 +1459,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1473,17 +1474,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/storage/volume-snapshots/</loc>
-    <lastmod>2018-10-26T02:02:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/style/write-new-topic/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/kubeadm-init/</loc>
-    <lastmod>2019-03-13T02:04:43+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1498,17 +1499,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubefed/</loc>
-    <lastmod>2018-05-08T12:08:53-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubefed/kubefed_options/</loc>
-    <lastmod>2019-01-26T05:41:31+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubectl/jsonpath/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -1523,22 +1524,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubernetes-api/</loc>
-    <lastmod>2018-05-08T22:30:52-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/advanced/</loc>
-    <lastmod>2019-01-17T09:48:36-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/configuration/assign-pod-node/</loc>
-    <lastmod>2019-01-24T07:22:28-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/independent/</loc>
-    <lastmod>2018-08-20T11:31:27-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1563,12 +1564,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/using-api/client-libraries/</loc>
-    <lastmod>2018-12-27T14:28:15-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/cloud-providers/</loc>
-    <lastmod>2019-02-24T08:28:25-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1583,17 +1584,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/job/coarse-parallel-processing-work-queue/</loc>
-    <lastmod>2019-03-08T07:30:11+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/extend-kubernetes/compute-storage-net/</loc>
-    <lastmod>2018-05-16T12:26:52-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/architecture/cloud-controller/</loc>
-    <lastmod>2019-03-08T12:29:26-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1613,7 +1614,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/configuration/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1628,7 +1629,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/</loc>
-    <lastmod>2019-03-08T06:50:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1643,7 +1644,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/</loc>
-    <lastmod>2018-10-09T20:15:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1658,12 +1659,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/quality-service-pod/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/services-networking/connect-applications-service/</loc>
-    <lastmod>2019-03-07T17:30:06-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1678,7 +1679,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/containers/container-lifecycle-hooks/</loc>
-    <lastmod>2019-02-17T21:03:51+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1693,7 +1694,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/independent/create-cluster-kubeadm/</loc>
-    <lastmod>2019-03-08T01:58:04+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1718,7 +1719,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/controllers/deployment/</loc>
-    <lastmod>2019-03-13T00:58:42+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1733,7 +1734,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/stateful-application/cassandra/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1748,7 +1749,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/explore/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1768,7 +1769,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/</loc>
-    <lastmod>2019-01-14T03:14:44+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1783,12 +1784,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/object-management-kubectl/imperative-config/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/inject-data-application/</loc>
-    <lastmod>2018-05-17T16:46:49-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1803,7 +1804,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/network-policy-provider/</loc>
-    <lastmod>2018-05-19T20:54:51-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1818,7 +1819,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/architecture/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1838,7 +1839,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/working-with-objects/namespaces/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1853,7 +1854,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/pinterest/</loc>
-    <lastmod>2018-09-05T15:09:14-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1868,7 +1869,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/pods/pod-lifecycle/</loc>
-    <lastmod>2019-02-08T23:32:02+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1888,12 +1889,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/run-replicated-stateful-application/</loc>
-    <lastmod>2018-07-03T02:15:20+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/</loc>
-    <lastmod>2018-10-04T03:37:52+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -1918,12 +1919,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/storage/storage-classes/</loc>
-    <lastmod>2019-01-08T17:23:18+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/kubernetes-api/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1943,7 +1944,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/</loc>
-    <lastmod>2018-06-02T05:08:56+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1958,7 +1959,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/admission-controllers/</loc>
-    <lastmod>2019-03-11T17:32:38-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -1973,37 +1974,37 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/style/page-templates/</loc>
-    <lastmod>2019-02-22T09:13:04+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definition-versioning/</loc>
-    <lastmod>2019-02-17T10:36:11-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/storage/volume-snapshot-classes/</loc>
-    <lastmod>2018-10-26T02:02:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/kubeadm-join/</loc>
-    <lastmod>2019-01-10T03:35:09+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubefed/kubefed_init/</loc>
-    <lastmod>2019-01-26T05:41:31+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/extended-resource/</loc>
-    <lastmod>2018-08-04T00:41:54+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/</loc>
-    <lastmod>2018-07-11T06:36:25+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2033,7 +2034,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2048,7 +2049,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/containers/</loc>
-    <lastmod>2018-11-20T05:05:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2068,12 +2069,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/style/content-organization/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/independent/control-plane-flags/</loc>
-    <lastmod>2019-01-08T21:30:13-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -2093,22 +2094,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/object-management-kubectl/declarative-config/</loc>
-    <lastmod>2018-12-19T21:17:40-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/extensible-admission-controllers/</loc>
-    <lastmod>2019-01-18T00:46:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/storage/dynamic-provisioning/</loc>
-    <lastmod>2018-10-26T02:02:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/</loc>
-    <lastmod>2019-01-14T03:14:44+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2123,7 +2124,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/expose/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2143,12 +2144,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/federation/</loc>
-    <lastmod>2018-05-08T22:29:52-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/job/fine-parallel-processing-work-queue/</loc>
-    <lastmod>2019-02-28T05:14:58+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2163,17 +2164,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/services-networking/ingress/</loc>
-    <lastmod>2019-03-06T01:46:39+11:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/services-networking/ingress-controllers/</loc>
-    <lastmod>2019-02-27T15:15:30-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/pods/init-containers/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2193,22 +2194,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/using-api/deprecation-policy/</loc>
-    <lastmod>2018-12-07T19:06:31-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/working-with-objects/labels/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/manage-deployment/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/</loc>
-    <lastmod>2018-11-20T23:10:46+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2223,7 +2224,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/</loc>
-    <lastmod>2018-05-19T21:52:49-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2238,7 +2239,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/stateful-application/zookeeper/</loc>
-    <lastmod>2019-02-01T01:32:10+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2253,17 +2254,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/extend-kubernetes/service-catalog/</loc>
-    <lastmod>2018-11-27T17:29:22+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/controllers/statefulset/</loc>
-    <lastmod>2019-02-13T05:00:51-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/stateless-application/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2278,7 +2279,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/configuration/taint-and-toleration/</loc>
-    <lastmod>2018-12-07T11:11:10-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2293,7 +2294,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/turnkey/</loc>
-    <lastmod>2018-08-20T11:31:27-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2313,12 +2314,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/update-api-object-kubectl-patch/</loc>
-    <lastmod>2018-07-03T02:15:20+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2333,12 +2334,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-kubernetes-api/http-proxy-access-api/</loc>
-    <lastmod>2019-01-08T02:31:15-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/working-with-objects/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2353,17 +2354,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubefed/kubefed_join/</loc>
-    <lastmod>2019-01-26T05:41:31+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/adform/</loc>
-    <lastmod>2018-09-05T15:09:14-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2378,7 +2379,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/ygrene/</loc>
-    <lastmod>2018-09-05T15:09:14-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2393,7 +2394,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/slingtv/</loc>
-    <lastmod>2018-09-05T15:09:14-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2408,17 +2409,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/working-with-objects/annotations/</loc>
-    <lastmod>2018-12-19T22:39:39-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/networking/</loc>
-    <lastmod>2019-02-17T17:34:50-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/</loc>
-    <lastmod>2018-07-04T04:39:21+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2433,12 +2434,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/configure-volume-storage/</loc>
-    <lastmod>2018-08-22T13:37:45-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/custom-cloud/</loc>
-    <lastmod>2018-08-20T11:31:27-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2463,7 +2464,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/controllers/daemonset/</loc>
-    <lastmod>2019-03-13T16:37:42+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2478,7 +2479,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/inject-data-application/distribute-credentials-secure/</loc>
-    <lastmod>2019-01-14T03:14:44+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2493,7 +2494,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/ing/</loc>
-    <lastmod>2018-09-05T15:09:14-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2508,7 +2509,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2523,12 +2524,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/service-accounts-admin/</loc>
-    <lastmod>2018-12-17T12:42:45+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/services-networking/network-policies/</loc>
-    <lastmod>2019-02-13T15:10:50+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2543,7 +2544,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/object-management-kubectl/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2558,7 +2559,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/independent/ha-topology/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -2578,7 +2579,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/pods/podpreset/</loc>
-    <lastmod>2019-01-29T02:00:18+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2598,7 +2599,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/job/</loc>
-    <lastmod>2018-07-03T04:54:18+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2613,7 +2614,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/scale/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2633,7 +2634,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/scale-stateful-set/</loc>
-    <lastmod>2018-10-24T21:26:08+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2648,7 +2649,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/configuration/secret/</loc>
-    <lastmod>2019-03-09T07:05:28+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2663,17 +2664,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/</loc>
-    <lastmod>2018-05-08T12:08:53-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/stateful-application/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/</loc>
-    <lastmod>2018-06-11T20:58:27+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2693,7 +2694,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/</loc>
-    <lastmod>2018-09-25T05:50:39+07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2708,7 +2709,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/</loc>
-    <lastmod>2018-11-20T05:05:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2728,22 +2729,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/kubeadm-config/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubefed/kubefed_unjoin/</loc>
-    <lastmod>2019-01-26T05:41:31+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/</loc>
-    <lastmod>2018-05-19T20:40:51-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/</loc>
-    <lastmod>2019-01-29T17:35:06-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2758,7 +2759,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/authorization/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2773,7 +2774,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/fedora/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2788,27 +2789,27 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/clusters/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/</loc>
-    <lastmod>2018-05-11T10:21:25-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/manage-resources/quota-pod-namespace/</loc>
-    <lastmod>2018-07-04T04:39:21+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/independent/high-availability/</loc>
-    <lastmod>2019-02-26T00:40:20+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -2828,7 +2829,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/delete-stateful-set/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2843,17 +2844,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/pods/disruptions/</loc>
-    <lastmod>2019-02-17T10:27:11-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/working-with-objects/field-selectors/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/controllers/garbage-collection/</loc>
-    <lastmod>2019-02-13T05:03:42-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2868,7 +2869,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/inject-data-application/podpreset/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2883,12 +2884,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/logging/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/on-premises-vm/</loc>
-    <lastmod>2018-08-20T11:31:27-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2908,17 +2909,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/</loc>
-    <lastmod>2019-01-07T23:31:44+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/services-networking/</loc>
-    <lastmod>2018-11-20T05:05:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/</loc>
-    <lastmod>2018-07-21T08:06:09+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2943,7 +2944,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/kubernetes-basics/update/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -2963,7 +2964,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/service-access-application-cluster/</loc>
-    <lastmod>2018-06-06T14:52:26-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -2978,12 +2979,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/kubeadm-reset/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubectl/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -2998,27 +2999,27 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubefed/kubefed_version/</loc>
-    <lastmod>2019-01-26T05:41:31+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/controllers/ttlafterfinished/</loc>
-    <lastmod>2018-10-26T02:02:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/configure-projected-volume-storage/</loc>
-    <lastmod>2019-02-04T15:16:39-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/kubelet-garbage-collection/</loc>
-    <lastmod>2018-11-02T06:03:26+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/connecting-frontend-backend/</loc>
-    <lastmod>2019-02-28T05:11:22+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3033,27 +3034,27 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/force-delete-stateful-set-pod/</loc>
-    <lastmod>2018-09-19T23:32:20-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/controllers/jobs-run-to-completion/</loc>
-    <lastmod>2019-03-07T14:34:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/version-skew-policy/</loc>
-    <lastmod>2018-12-07T19:06:31-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/configuration/pod-priority-preemption/</loc>
-    <lastmod>2019-03-08T21:49:31-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/</loc>
-    <lastmod>2018-12-20T19:28:26-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -3073,7 +3074,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/configuration/scheduler-perf-tuning/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -3088,12 +3089,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/services/</loc>
-    <lastmod>2018-05-15T15:29:27-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/independent/setup-ha-etcd-with-kubeadm/</loc>
-    <lastmod>2019-02-11T01:35:21+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -3113,7 +3114,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/storage/</loc>
-    <lastmod>2018-11-20T05:05:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3128,17 +3129,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/rbac/</loc>
-    <lastmod>2019-03-13T03:20:40+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/kubeadm-token/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/cluster-large/</loc>
-    <lastmod>2018-08-20T11:31:27-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -3158,7 +3159,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/configuration/</loc>
-    <lastmod>2018-11-20T05:05:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -3173,12 +3174,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/security-context/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/independent/kubelet-integration/</loc>
-    <lastmod>2019-02-27T19:49:13+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -3198,7 +3199,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/</loc>
-    <lastmod>2018-11-16T20:30:23+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -3213,7 +3214,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/create-external-load-balancer/</loc>
-    <lastmod>2019-03-07T23:48:06+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3228,7 +3229,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/workloads/controllers/cron-jobs/</loc>
-    <lastmod>2019-02-17T18:34:32-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3243,12 +3244,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/style/</loc>
-    <lastmod>2018-08-06T16:15:57-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/federation/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3263,7 +3264,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3278,7 +3279,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/rolling-update-replication-controller/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3293,32 +3294,32 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/extend-kubernetes/poseidon-firmament-alternate-scheduler/</loc>
-    <lastmod>2019-01-23T04:13:08+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/generate-ref-docs/</loc>
-    <lastmod>2018-08-06T16:15:57-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/abac/</loc>
-    <lastmod>2019-01-19T05:49:49-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/kubeadm-version/</loc>
-    <lastmod>2018-05-21T23:55:51+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/configure-service-account/</loc>
-    <lastmod>2019-03-12T19:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/</loc>
-    <lastmod>2019-01-23T10:55:05-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3333,12 +3334,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-kubernetes-api/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/horizontal-pod-autoscale/</loc>
-    <lastmod>2019-02-17T15:32:26+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -3353,12 +3354,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/policy/</loc>
-    <lastmod>2018-11-20T05:05:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/proxies/</loc>
-    <lastmod>2018-09-27T18:41:39-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3373,7 +3374,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/multiple-zones/</loc>
-    <lastmod>2019-02-28T13:42:57+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -3393,7 +3394,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/independent/troubleshooting-kubeadm/</loc>
-    <lastmod>2019-03-13T01:56:38+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -3413,27 +3414,27 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/node/</loc>
-    <lastmod>2019-01-29T03:40:43+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/kubeadm-alpha/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/kubeadm-init-phase/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/access-authn-authz/webhook/</loc>
-    <lastmod>2018-10-01T15:59:15-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/cri/</loc>
-    <lastmod>2019-02-25T16:37:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -3453,7 +3454,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/</loc>
-    <lastmod>2018-11-20T05:05:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -3468,12 +3469,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/controller-metrics/</loc>
-    <lastmod>2018-06-07T08:51:26+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -3488,12 +3489,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/setup-tools/kubeadm/implementation-details/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/list-all-running-container-images/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3508,22 +3509,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/pull-image-private-registry/</loc>
-    <lastmod>2019-02-28T04:21:48+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/ingress-minikube/</loc>
-    <lastmod>2019-02-27T15:15:30-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/tls/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/</loc>
-    <lastmod>2018-07-04T14:19:23+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3538,22 +3539,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/</loc>
-    <lastmod>2019-01-03T16:10:35+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/extend-kubernetes/</loc>
-    <lastmod>2018-11-20T05:05:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/run-application/configure-pdb/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/assign-pods-nodes/</loc>
-    <lastmod>2019-02-28T13:22:19+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3568,7 +3569,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/access-application-cluster/configure-dns-cluster/</loc>
-    <lastmod>2018-08-17T22:13:00-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3583,7 +3584,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3598,117 +3599,117 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/set-up-cluster-federation-kubefed/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/configure-pod-initialization/</loc>
-    <lastmod>2018-07-04T04:31:20+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/manage-daemon/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/set-up-coredns-provider-federation/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/set-up-placement-policies-federation/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/federation-service-discovery/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/configure-pod-configmap/</loc>
-    <lastmod>2019-03-13T20:59:42+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/service-catalog/</loc>
-    <lastmod>2018-06-09T00:05:52+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/share-process-namespace/</loc>
-    <lastmod>2018-09-27T18:41:39-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/configure-pod-container/translate-compose-kubernetes/</loc>
-    <lastmod>2019-01-14T03:26:49+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2019/03/07/raw-block-volume-support-to-beta/</loc>
-    <lastmod>2019-03-07T08:12:59-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2019/02/28/automate-operations-on-your-cluster-with-operatorhub.io/</loc>
-    <lastmod>2019-02-28T11:10:55-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2019/02/12/building-a-kubernetes-edge-control-plane-for-envoy-v2/</loc>
-    <lastmod>2019-02-12T23:18:24-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2019/02/11/runc-and-cve-2019-5736/</loc>
-    <lastmod>2019-03-04T18:53:00-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2019/02/06/poseidon-firmament-scheduler-flow-network-graph-based-scheduler/</loc>
-    <lastmod>2019-02-06T21:54:58+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2019/01/17/update-on-volume-snapshot-alpha-for-kubernetes/</loc>
-    <lastmod>2019-01-18T08:50:06-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2019/01/15/container-storage-interface-ga/</loc>
-    <lastmod>2019-01-16T08:59:08-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/</loc>
-    <lastmod>2019-01-16T08:59:08-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/12/12/kubernetes-federation-evolution/</loc>
-    <lastmod>2019-02-01T22:40:16+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/12/11/etcd-current-status-and-future-roadmap/</loc>
-    <lastmod>2019-01-23T17:38:20+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/12/05/new-contributor-workshop-shanghai/</loc>
-    <lastmod>2018-12-07T00:02:26+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3723,172 +3724,172 @@
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/12/04/production-ready-kubernetes-cluster-creation-with-kubeadm/</loc>
-    <lastmod>2018-12-04T18:44:17+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/12/03/kubernetes-1-13-release-announcement/</loc>
-    <lastmod>2018-12-03T17:24:11-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/11/08/kubernetes-docs-updates-international-edition/</loc>
-    <lastmod>2018-11-08T10:51:39-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/</loc>
-    <lastmod>2018-12-05T09:35:24-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/26/tips-for-your-first-kubecon-presentation-part-2/</loc>
-    <lastmod>2018-10-26T18:33:38+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/18/tips-for-your-first-kubecon-presentation-part-1/</loc>
-    <lastmod>2018-10-18T13:56:30-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/16/kubernetes-2018-north-american-contributor-summit/</loc>
-    <lastmod>2018-10-16T16:29:04-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/15/2018-steering-committee-election-results/</loc>
-    <lastmod>2018-10-15T09:08:44-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/</loc>
-    <lastmod>2018-10-11T10:41:10-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/10/kubernetes-v1.12-introducing-runtimeclass/</loc>
-    <lastmod>2018-10-10T08:56:28-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/09/introducing-volume-snapshot-alpha-for-kubernetes/</loc>
-    <lastmod>2018-10-09T11:05:19-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/08/support-for-azure-vmss-cluster-autoscaler-and-user-assigned-identity/</loc>
-    <lastmod>2018-10-24T06:06:24+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/04/introducing-the-non-code-contributors-guide/</loc>
-    <lastmod>2018-10-05T16:28:30+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/03/kubedirector-the-easy-way-to-run-complex-stateful-applications-on-kubernetes/</loc>
-    <lastmod>2018-10-09T02:40:12-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/02/building-a-network-bootable-server-farm-for-kubernetes-with-ltsp/</loc>
-    <lastmod>2018-10-27T18:57:14+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/10/01/health-checking-grpc-servers-on-kubernetes/</loc>
-    <lastmod>2018-10-01T09:33:49-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/09/27/kubernetes-1.12-kubelet-tls-bootstrap-and-azure-virtual-machine-scale-sets-vmss-move-to-general-availability/</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/09/18/hands-on-with-linkerd-2.0/</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/09/06/2018-steering-committee-election-cycle-kicks-off/</loc>
-    <lastmod>2018-09-06T13:25:40-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/08/29/the-machines-can-do-the-work-a-story-of-kubernetes-testing-ci-and-automating-the-contributor-experience/</loc>
-    <lastmod>2018-08-30T00:06:09+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/08/10/introducing-kubebuilder-an-sdk-for-building-kubernetes-apis-using-crds/</loc>
-    <lastmod>2018-08-30T08:40:44-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/08/03/out-of-the-clouds-onto-the-ground-how-to-make-kubernetes-production-grade-anywhere/</loc>
-    <lastmod>2018-08-03T09:31:38-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/</loc>
-    <lastmod>2018-08-03T09:14:18-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/27/kubevirt-extending-kubernetes-with-crds-for-virtualized-workloads/</loc>
-    <lastmod>2018-10-05T16:24:45+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/24/feature-highlight-cpu-manager/</loc>
-    <lastmod>2018-07-24T16:29:55-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/20/the-history-of-kubernetes-the-community-behind-it/</loc>
-    <lastmod>2018-07-20T09:49:53-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/19/kubernetes-wins-2018-oscon-most-impact-award/</loc>
-    <lastmod>2018-07-19T10:37:17-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/18/11-ways-not-to-get-hacked/</loc>
-    <lastmod>2018-11-14T18:01:44-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/16/how-the-sausage-is-made-the-kubernetes-1.11-release-interview-from-the-kubernetes-podcast/</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/</loc>
-    <lastmod>2018-07-13T08:29:26-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/11/dynamic-kubelet-configuration/</loc>
-    <lastmod>2018-07-11T10:52:25-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/10/coredns-ga-for-kubernetes-cluster-dns/</loc>
-    <lastmod>2018-10-25T17:55:54-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/10/meet-our-contributors-monthly-streaming-youtube-mentoring-series/</loc>
-    <lastmod>2018-07-10T10:21:25-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/</loc>
-    <lastmod>2018-07-09T11:20:17-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3903,7 +3904,7 @@
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/06/28/airflow-on-kubernetes-part-1-a-different-kind-of-operator/</loc>
-    <lastmod>2018-10-24T06:06:24+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -3918,1097 +3919,1097 @@
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/06/27/kubernetes-1.11-release-announcement/</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/06/07/dynamic-ingress-in-kubernetes/</loc>
-    <lastmod>2018-10-24T06:06:24+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/06/06/4-years-of-k8s/</loc>
-    <lastmod>2018-10-24T06:06:24+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/05/30/say-hello-to-discuss-kubernetes/</loc>
-    <lastmod>2018-06-05T09:12:55+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/05/29/introducing-kustomize-template-free-configuration-customization-for-kubernetes/</loc>
-    <lastmod>2018-10-29T02:36:15+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/05/24/kubernetes-containerd-integration-goes-ga/</loc>
-    <lastmod>2019-01-14T03:26:49+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/05/22/getting-to-know-kubevirt/</loc>
-    <lastmod>2018-05-23T07:34:31-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/05/17/gardener/</loc>
-    <lastmod>2018-06-07T03:16:23+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/05/05/hugo-migration/</loc>
-    <lastmod>2018-10-24T06:06:24+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/05/04/announcing-kubeflow-0.1/</loc>
-    <lastmod>2019-02-26T10:17:28-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/05/02/policy-in-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/05/01/developing-on-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/04/30/zero-downtime-deployment-kubernetes-jenkins/</loc>
-    <lastmod>2018-06-26T18:26:51+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/04/25/open-source-charts-2017/</loc>
-    <lastmod>2018-06-26T04:22:21+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/04/24/kubernetes-application-survey-results-2018/</loc>
-    <lastmod>2018-07-18T15:12:16-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/04/13/local-persistent-volumes-beta/</loc>
-    <lastmod>2018-05-29T10:18:33-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/04/11/migrating-the-kubernetes-blog/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/04/10/container-storage-interface-beta/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/04/04/fixing-subpath-volume-vulnerability/</loc>
-    <lastmod>2018-11-12T09:21:29+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/03/26/kubernetes-1.10-stabilizing-storage-security-networking/</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/03/principles-of-container-app-design/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/03/expanding-user-support-with-office-hours/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/03/how-to-integrate-rollingupdate-strategy/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/03/apache-spark-23-with-native-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/03/first-beta-version-of-kubernetes-1-10/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/01/reporting-errors-using-kubernetes-events/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/01/core-workloads-api-ga/</loc>
-    <lastmod>2018-06-05T05:35:55+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/01/introducing-client-go-version-6/</loc>
-    <lastmod>2018-07-18T17:10:28-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/01/extensible-admission-is-beta/</loc>
-    <lastmod>2018-11-05T19:35:37+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/01/introducing-container-storage-interface/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/01/kubernetes-v19-beta-windows-support/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2018/01/five-days-of-kubernetes-19/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/12/introducing-kubeflow-composable/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/12/kubernetes-19-workloads-expanded-ecosystem/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/12/using-ebpf-in-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/12/paddle-paddle-fluid-elastic-learning/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/11/autoscaling-in-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/11/certified-kubernetes-conformance/</loc>
-    <lastmod>2018-07-27T17:12:57-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/11/kubernetes-is-still-hard-for-developers/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/11/securing-software-supply-chain-grafeas/</loc>
-    <lastmod>2018-07-27T17:12:57-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/11/containerd-container-runtime-options-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/11/kubernetes-easy-way/</loc>
-    <lastmod>2018-07-09T23:14:18+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/10/enforcing-network-policies-in-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/10/using-rbac-generally-available-18/</loc>
-    <lastmod>2018-07-18T18:32:04-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/10/it-takes-village-to-raise-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/10/kubeadm-v18-released/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/10/five-days-of-kubernetes-18/</loc>
-    <lastmod>2018-11-05T19:35:37+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/10/software-conformance-certification/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/10/request-routing-and-policy-management/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/10/kubernetes-community-steering-committee-election-results/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/09/kubernetes-18-security-workloads-and/</loc>
-    <lastmod>2018-07-18T18:32:04-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/09/kubernetes-statefulsets-daemonsets/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/09/introducing-resource-management-working/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/09/windows-networking-at-parity-with-linux/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/08/kubernetes-meets-high-performance/</loc>
-    <lastmod>2018-11-06T19:01:52+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/08/high-performance-networking-with-ec2/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/08/kompose-helps-developers-move-docker/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/07/happy-second-birthday-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/07/how-watson-health-cloud-deploys/</loc>
-    <lastmod>2019-02-26T10:17:28-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/06/kubernetes-1.7-security-hardening-stateful-application-extensibility-updates</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/05/managing-microservices-with-istio-service-mesh/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/05/draft-kubernetes-container-development/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/05/kubernetes-monitoring-guide/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/05/kubespray-ansible-collaborative-kubernetes-ops/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/05/kubernetes-security-process-explained/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/04/multi-stage-canary-deployments-with-kubernetes-in-the-cloud-onprem/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/04/rbac-support-in-kubernetes/</loc>
-    <lastmod>2018-10-24T06:06:24+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/04/configuring-private-dns-zones-upstream-nameservers-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/03/advanced-scheduling-in-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/03/scalability-updates-in-kubernetes-1.6</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/03/dynamic-provisioning-and-storage-classes-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/03/five-days-of-kubernetes-1.6</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/03/kubernetes-1.6-multi-user-multi-workloads-at-scale</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/03/k8sport-engaging-the-kubernetes-community/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/02/postgresql-clusters-kubernetes-statefulsets/</loc>
-    <lastmod>2018-09-28T23:37:45+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/02/caas-the-foundation-for-next-gen-paas/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/02/inside-jd-com-shift-to-kubernetes-from-openstack/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/02/run-deep-learning-with-paddlepaddle-on-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/02/highly-available-kubernetes-clusters/</loc>
-    <lastmod>2018-06-25T22:18:52-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/01/fission-serverless-functions-as-service-for-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/01/running-mongodb-on-kubernetes-with-statefulsets/</loc>
-    <lastmod>2018-10-16T09:38:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/01/how-we-run-kubernetes-in-kubernetes-kubeception/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/01/scaling-kubernetes-deployments-with-policy-base-networking/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/01/stronger-foundation-for-creating-and-managing-kubernetes-clusters/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2017/01/kubernetes-ux-survey-infographic/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/12/kubernetes-supports-openapi/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/12/cluster-federation-in-kubernetes-1.5</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/12/windows-server-support-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/12/statefulset-run-scale-stateful-applications-in-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/12/five-days-of-kubernetes-1.5</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/12/kubernetes-1.5-supporting-production-workloads</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/12/from-network-policies-to-security-policies/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/11/kompose-tool-go-from-docker-compose-to-kubernetes/</loc>
-    <lastmod>2019-01-14T03:26:49+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/11/kubernetes-containers-logging-monitoring-with-sematext/</loc>
-    <lastmod>2018-06-05T03:34:54+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/11/visualize-kubelet-performance-with-node-dashboard/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/11/kubernetes-certification-training-and-managed-service-provider-program/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/11/bringing-kubernetes-support-to-azure/</loc>
-    <lastmod>2018-11-18T10:20:40+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/11/skytap-modernizing-microservice-architecture-with-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/10/kubernetes-service-technology-partners-program/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/10/tail-kubernetes-with-stern/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/10/kubernetes-and-openstack-at-yahoo-japan/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/10/globally-distributed-services-kubernetes-cluster-federation/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/10/helm-charts-making-it-simple-to-package-and-deploy-apps-on-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/10/dynamic-provisioning-and-storage-in-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/10/production-kubernetes-dashboard-ui-1.4-improvements_3</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/09/how-we-made-kubernetes-easy-to-install/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/09/how-qbox-saved-50-percent-on-aws-bills/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/09/kubernetes-1.4-making-it-easy-to-run-on-kuberentes-anywhere</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/09/high-performance-network-policies-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/09/creating-postgresql-cluster-using-helm/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/09/deploying-to-multiple-kubernetes-with-kit/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/09/cloud-native-application-interfaces/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/08/security-best-practices-kubernetes-deployment/</loc>
-    <lastmod>2019-02-17T11:07:05-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/08/stateful-applications-using-kubernetes-datera/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/08/kubernetes-namespaces-use-cases-insights/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/08/sig-apps-running-apps-in-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/08/create-couchbase-cluster-using-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/08/challenges-remotely-managed-onpremise-kubernetes-cluster/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/openstack-kubernetes-communities/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/happy-k8sbday-1/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/oh-the-places-you-will-go/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/the-bet-on-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/bringing-end-to-end-kubernetes-testing-to-azure-2/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/dashboard-web-interface-for-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/automation-platform-at-wercker-with-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/citrix-netscaler-and-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/cross-cluster-services/</loc>
-    <lastmod>2018-11-15T07:00:36-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/stateful-applications-in-containers-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/thousand-instances-of-cassandra-using-kubernetes-pet-set/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/autoscaling-in-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/kubernetes-in-rancher-further-evolution/</loc>
-    <lastmod>2018-12-12T07:58:03+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/five-days-of-kubernetes-1.3</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/minikube-easily-run-kubernetes-locally/</loc>
-    <lastmod>2018-07-18T15:12:16-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/rktnetes-brings-rkt-container-engine-to-kubernetes/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/update-on-kubernetes-for-windows-server-containers/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/07/kubernetes-1.3-bridging-cloud-native-and-enterprise-workloads</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/06/container-design-patterns/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/06/illustrated-childrens-guide-to-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/06/bringing-end-to-end-testing-to-azure/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/05/hypernetes-security-and-multi-tenancy-in-kubernetes/</loc>
-    <lastmod>2018-10-05T16:23:28+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/05/coreosfest2016-kubernetes-community/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/04/introducing-kubernetes-openstack-sig/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/04/building-awesome-user-interfaces-for-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/04/sig-clusterops-promote-operability-and-interoperability-of-k8s-clusters/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/04/kubernetes-network-policy-apis/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/04/kubernetes-on-aws_15/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/04/adding-support-for-kubernetes-in-rancher/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/04/container-survey-results-march-2016/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/04/configuration-management-with-containers/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/04/using-deployment-objects-with/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/kubernetes-1.2-and-simplifying-advanced-networking-with-ingress</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/using-spark-and-zeppelin-to-process-big-data-on-kubernetes/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/appformix-helping-enterprises/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/building-highly-available-applications-using-kubernetes-new-multi-zone-clusters-a.k.a-ubernetes-lite</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/1000-nodes-and-beyond-updates-to-kubernetes-performance-and-scalability-in-12/</loc>
-    <lastmod>2018-07-19T05:08:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/five-days-of-kubernetes-12/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/how-container-metadata-changes-your-point-of-view/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/scaling-neural-network-image-classification-using-kubernetes-with-tensorflow-serving/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/kubernetes-1.2-even-more-performance-upgrades-plus-easier-application-deployment-and-management</loc>
-    <lastmod>2018-11-17T06:12:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/elasticbox-introduces-elastickube-to/</loc>
-    <lastmod>2018-07-27T17:12:57-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/kubernetes-in-enterprise-with-fujitsus/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/kubernetes-community-meeting-notes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/03/state-of-container-world-february-2016/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/02/kubecon-eu-2016-kubernetes-community-in/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes_23/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes-20160211/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/02/sharethis-kubernetes-in-production/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/02/kubernetes-community-meeting-notes-20160128/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/02/state-of-container-world-january-2016/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/01/kubernetes-community-meeting-notes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/01/kubernetes-community-meeting-notes_28/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/01/why-kubernetes-doesnt-use-libnetwork/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2016/01/simple-leader-election-with-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/12/creating-raspberry-pi-cluster-running/</loc>
-    <lastmod>2018-11-27T12:34:10+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/12/managing-kubernetes-pods-services-and-replication-controllers-with-puppet/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/12/how-weave-built-a-multi-deployment-solution-for-scope-using-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/11/creating-a-raspberry-pi-cluster-running-kubernetes-the-shopping-list-part-1/</loc>
-    <lastmod>2018-07-19T05:08:13+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/11/monitoring-kubernetes-with-sysdig/</loc>
-    <lastmod>2018-07-27T17:12:57-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/11/one-million-requests-per-second-dependable-and-dynamic-distributed-systems-at-scale/</loc>
-    <lastmod>2018-07-27T17:12:57-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/11/kubernetes-1-1-performance-upgrades-improved-tooling-and-a-growing-community/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/11/kubernetes-as-foundation-for-cloud-native-paas/</loc>
-    <lastmod>2018-07-27T17:12:57-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/10/some-things-you-didnt-know-about-kubectl_28/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/09/kubernetes-performance-measurements-and/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/08/using-kubernetes-namespaces-to-manage/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/08/weekly-kubernetes-community-hangout/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/07/the-growing-kubernetes-ecosystem/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/07/weekly-kubernetes-community-hangout_23/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/07/strong-simple-ssl-for-kubernetes/</loc>
-    <lastmod>2018-07-27T17:12:57-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/07/weekly-kubernetes-community-hangout/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/07/announcing-first-kubernetes-enterprise/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/07/how-did-quake-demo-from-dockercon-work/</loc>
-    <lastmod>2018-09-10T13:06:51+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/07/kubernetes-10-launch-party-at-oscon/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/06/the-distributed-system-toolkit-patterns/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/06/slides-cluster-management-with/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/06/cluster-level-logging-with-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/06/weekly-kubernetes-community-hangout/</loc>
-    <lastmod>2019-01-14T03:26:49+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/05/kubernetes-on-openstack/</loc>
-    <lastmod>2018-07-27T17:12:57-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/05/docker-and-kubernetes-and-appc/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/05/weekly-kubernetes-community-hangout_18/</loc>
-    <lastmod>2018-12-12T08:26:37+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/05/kubernetes-release-0170/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/05/resource-usage-monitoring-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/05/kubernetes-release-0160/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/05/weekly-kubernetes-community-hangout/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/05/appc-support-for-kubernetes-through-rkt/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout_29/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/04/borg-predecessor-to-kubernetes/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/04/kubernetes-and-mesosphere-dcos/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout_17/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/04/introducing-kubernetes-v1beta3/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/04/kubernetes-release-0150/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout_11/</loc>
-    <lastmod>2018-11-20T05:03:29+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/04/faster-than-speeding-latte/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/04/weekly-kubernetes-community-hangout/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/03/participate-in-kubernetes-user/</loc>
-    <lastmod>2018-11-17T02:31:17+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/03/weekly-kubernetes-community-hangout/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/03/kubernetes-gathering-videos/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/blog/2015/03/welcome-to-kubernetes-blog/</loc>
-    <lastmod>2018-06-16T02:19:29+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
@@ -5423,7 +5424,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/sitemap/</loc>
-    <lastmod>2018-11-09T03:18:30+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
@@ -5442,6 +5443,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/hillshade/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5456,12 +5458,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/access-cluster-api/</loc>
-    <lastmod>2019-03-07T16:12:14-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/access-cluster-services/</loc>
-    <lastmod>2019-01-23T18:06:28+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5476,22 +5478,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/user-journeys/users/application-developer/advanced/</loc>
-    <lastmod>2018-06-02T04:58:57+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/user-journeys/users/cluster-operator/_advanced/</loc>
-    <lastmod>2018-05-19T09:17:50+10:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/extended-resource-node/</loc>
-    <lastmod>2018-11-20T23:10:46+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/amadeus/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -5506,7 +5508,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/ancestry/</loc>
-    <lastmod>2018-10-16T10:55:19+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -5521,16 +5523,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/clusters/apparmor/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/debug-application-introspection/</loc>
-    <lastmod>2018-12-23T10:18:36+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/aspect/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5545,7 +5548,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/audit/</loc>
-    <lastmod>2019-02-13T20:42:24+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5560,17 +5563,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/dns-horizontal-autoscaling/</loc>
-    <lastmod>2019-03-12T15:28:39-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/backups/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/blablacar/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -5585,7 +5588,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/blackrock/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -5600,7 +5603,7 @@
   
   <url>
     <loc>https://qinlj.github.io/blog/</loc>
-    <lastmod>2018-09-14T23:47:24+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5620,7 +5623,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/box/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -5635,7 +5638,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/buffer/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -5650,7 +5653,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/release/building-from-source/</loc>
-    <lastmod>2019-03-08T05:04:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -5675,7 +5678,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/ccp-games/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -5690,7 +5693,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/capital-one/</loc>
-    <lastmod>2018-10-05T16:32:15+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -5705,7 +5708,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/</loc>
-    <lastmod>2018-09-14T23:47:24+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5740,12 +5743,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/</loc>
-    <lastmod>2019-03-13T23:31:41+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/tls/certificate-rotation/</loc>
-    <lastmod>2018-10-03T19:16:34-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5760,7 +5763,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/change-pv-reclaim-policy/</loc>
-    <lastmod>2018-10-30T17:44:40+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5775,7 +5778,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/change-default-storage-class/</loc>
-    <lastmod>2018-09-05T13:44:32+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5790,7 +5793,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/on-premises-vm/cloudstack/</loc>
-    <lastmod>2018-07-19T06:04:46+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -5805,7 +5808,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/cluster-management/</loc>
-    <lastmod>2019-03-12T13:40:39-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5820,7 +5823,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/comcast/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5845,7 +5848,7 @@
   
   <url>
     <loc>https://qinlj.github.io/community/</loc>
-    <lastmod>2018-11-26T10:56:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
@@ -5860,7 +5863,7 @@
   
   <url>
     <loc>https://qinlj.github.io/community/code-of-conduct/</loc>
-    <lastmod>2018-12-05T17:35:21-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
@@ -5875,7 +5878,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/concur/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5895,22 +5898,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/configure-multiple-schedulers/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/out-of-resource/</loc>
-    <lastmod>2019-03-13T01:14:39+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/quota-api-object/</loc>
-    <lastmod>2018-07-04T04:39:21+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/configuration/configure-redis-using-configmap/</loc>
-    <lastmod>2018-08-21T05:39:33+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5930,7 +5933,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/cpu-management-policies/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5945,12 +5948,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/crowdfire/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -5965,12 +5968,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/style/hugo-shortcodes/</loc>
-    <lastmod>2018-11-16T20:01:12+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/dns-custom-nameservers/</loc>
-    <lastmod>2018-11-20T23:10:46+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5985,6 +5988,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/cutfill/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -5999,6 +6003,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/cutfillregion/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6013,6 +6018,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/calculatecurvature/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6027,12 +6033,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/debug-init-containers/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/debug-pod-replication-controller/</loc>
-    <lastmod>2019-03-07T22:24:12+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6047,12 +6053,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/debug-service/</loc>
-    <lastmod>2019-02-28T02:07:46+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/debug-stateful-set/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6067,17 +6073,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/dns-debugging-resolution/</loc>
-    <lastmod>2019-01-08T20:08:18+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/crictl/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/declare-network-policy/</loc>
-    <lastmod>2018-12-23T10:20:33+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6092,37 +6098,37 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/decommissioning/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/alternatives/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/determine-reason-pod-failure/</loc>
-    <lastmod>2018-07-03T02:17:19+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/developing-cloud-controller-manager/</loc>
-    <lastmod>2019-02-08T22:49:53+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/local-debugging/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/test/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/</loc>
-    <lastmod>2018-08-20T11:33:42-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6157,7 +6163,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/ebay/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6177,7 +6183,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/encrypt-data/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6192,12 +6198,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/events-stackdriver/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/example-concept-template/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6212,7 +6218,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/example-task-template/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
@@ -6232,11 +6238,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/extend-kubectl/kubectl-plugins/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/drivecontourall/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6251,6 +6258,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/driveregionall/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6265,6 +6273,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/extractisoline/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6279,6 +6288,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/drivecontour/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6293,6 +6303,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/drivecontourspecific/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6307,6 +6318,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/driveregionspecific/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6321,71 +6333,72 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/cluster/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/configmap/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/daemonset/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/deployment/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/events/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/hpa/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/ingress/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/job/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/namespaces/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/replicaset/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/federation/administer-federation/secret/</loc>
-    <lastmod>2019-03-12T20:38:39+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/fedora/flannel_multi_node_cluster/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/fedora/fedora_manual_config/</loc>
-    <lastmod>2019-01-29T02:18:36+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/findextreme/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6400,47 +6413,47 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/user-journeys/users/application-developer/foundational/</loc>
-    <lastmod>2019-01-17T01:27:45+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/user-journeys/users/cluster-operator/foundational/</loc>
-    <lastmod>2018-12-07T19:06:31-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/generate-ref-docs/federation-api/</loc>
-    <lastmod>2018-08-23T11:45:42-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/generate-ref-docs/kubectl/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/generate-ref-docs/kubernetes-api/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/generate-ref-docs/kubernetes-components/</loc>
-    <lastmod>2018-11-19T20:54:07-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/get-shell-running-container/</loc>
-    <lastmod>2018-10-30T18:50:44+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/glossary/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/goldman-sachs/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6455,7 +6468,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/golfnow/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6470,7 +6483,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/</loc>
-    <lastmod>2018-10-30T13:17:58-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6485,7 +6498,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/haufegroup/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6500,7 +6513,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/homeoffice/</loc>
-    <lastmod>2018-09-05T15:09:14-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6520,7 +6533,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/huawei/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6535,22 +6548,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/ip-masq-agent/</loc>
-    <lastmod>2018-11-16T20:27:50+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/service-catalog/install-service-catalog-using-helm/</loc>
-    <lastmod>2019-02-27T17:10:29+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/service-catalog/install-service-catalog-using-sc/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/cluster-administration/addons/</loc>
-    <lastmod>2019-01-14T03:26:49+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6565,7 +6578,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/custom-cloud/kubespray/</loc>
-    <lastmod>2018-11-16T17:05:11+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -6585,7 +6598,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/custom-cloud/kops/</loc>
-    <lastmod>2018-08-21T23:44:57+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6610,7 +6623,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/on-premises-metal/krib/</loc>
-    <lastmod>2019-02-12T13:45:15+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -6625,16 +6638,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/user-journeys/users/application-developer/intermediate/</loc>
-    <lastmod>2018-11-20T23:10:46+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/user-journeys/users/cluster-operator/intermediate/</loc>
-    <lastmod>2018-07-18T18:54:21-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/inversecutfill/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6649,7 +6663,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/jd/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6669,17 +6683,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/</loc>
-    <lastmod>2018-07-18T18:07:24-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/running-cloud-controller/</loc>
-    <lastmod>2019-02-17T11:26:48-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/on-premises-vm/dcos/</loc>
-    <lastmod>2018-07-19T07:25:24+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -6694,17 +6708,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/</loc>
-    <lastmod>2019-02-13T10:06:56+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/limit-storage-consumption/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/liveperson/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6719,32 +6733,32 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/local/</loc>
-    <lastmod>2018-12-20T21:46:01-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/localization/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/logging/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/logging-stackdriver/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/manage-hugepages/scheduling-hugepages/</loc>
-    <lastmod>2018-11-18T18:38:22-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6759,22 +6773,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/tls/managing-tls-in-a-cluster/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/monitor-node-health/</loc>
-    <lastmod>2019-01-14T03:26:49+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/monitoring/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/monzo/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6789,22 +6803,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/namespaces-walkthrough/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/netease/</loc>
-    <lastmod>2019-03-12T18:36:38-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/networking/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/newyorktimes/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6819,12 +6833,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/storage/storage-limits/</loc>
-    <lastmod>2018-09-27T18:41:39-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/nordstrom/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6839,7 +6853,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/northwestern-mutual/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6854,7 +6868,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/openai/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6869,16 +6883,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/configure-upgrade-etcd/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/operational-considerations/</loc>
-    <lastmod>2019-01-14T03:26:49+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/orthoimage/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6893,7 +6908,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/online-training/overview/</loc>
-    <lastmod>2019-03-12T18:38:38-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6908,7 +6923,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/certificates/</loc>
-    <lastmod>2019-01-29T03:40:43+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6928,17 +6943,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/contribute/participating/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/partners/</loc>
-    <lastmod>2019-02-06T11:35:02-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/peardeck/</loc>
-    <lastmod>2018-10-05T16:32:15+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6953,7 +6968,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/pearson/</loc>
-    <lastmod>2018-09-05T15:09:14-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -6968,7 +6983,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/manage-daemon/rollback-daemon-set/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -6983,12 +6998,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/manage-daemon/update-daemon-set/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/philips/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7003,7 +7018,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/pokemon-go/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7018,7 +7033,7 @@
   
   <url>
     <loc>https://qinlj.github.io/</loc>
-    <lastmod>2019-03-07T15:46:10-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7053,6 +7068,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/profile/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7067,27 +7083,27 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/rancher/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/concepts/overview/working-with-objects/common-labels/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/reconfigure-kubelet/</loc>
-    <lastmod>2018-12-13T19:09:04+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/reserve-compute-resources/</loc>
-    <lastmod>2019-03-07T14:42:07-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/minikube/</loc>
-    <lastmod>2019-03-13T23:35:39+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7107,7 +7123,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/turnkey/aws/</loc>
-    <lastmod>2018-08-21T23:37:18+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -7122,7 +7138,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/turnkey/alibaba-cloud/</loc>
-    <lastmod>2019-01-24T02:03:14+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -7137,7 +7153,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/turnkey/azure/</loc>
-    <lastmod>2019-02-28T05:04:10+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -7152,7 +7168,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/turnkey/clc/</loc>
-    <lastmod>2019-01-14T03:26:49+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -7167,7 +7183,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/turnkey/gce/</loc>
-    <lastmod>2018-12-17T12:02:06+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -7182,12 +7198,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/turnkey/icp/</loc>
-    <lastmod>2019-02-24T08:28:25-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/turnkey/stackpoint/</loc>
-    <lastmod>2018-07-18T16:26:54-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -7202,7 +7218,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/sap/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7222,12 +7238,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/safely-drain-node/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/samsung-sds/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7242,12 +7258,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/scaling/</loc>
-    <lastmod>2019-02-06T12:25:25+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/manage-gpus/scheduling-gpus/</loc>
-    <lastmod>2019-02-17T22:47:53-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7262,17 +7278,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/search/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/securing-a-cluster/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/security/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7287,7 +7303,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/kubelet-config-file/</loc>
-    <lastmod>2018-09-09T21:35:41-04:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7302,21 +7318,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/highly-available-master/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/installation/</loc>
-    <lastmod>2018-07-18T15:12:16-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/namespaces/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/slope/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7331,7 +7348,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/soundcloud/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7346,6 +7363,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/terrainbuilderclip/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7360,7 +7378,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/squarespace/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7375,7 +7393,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/static-pod/</loc>
-    <lastmod>2019-01-07T22:59:47+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7390,17 +7408,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/storage/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/storage-object-in-use-protection/</loc>
-    <lastmod>2018-10-31T00:45:56+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/home/supported-doc-versions/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -7420,16 +7438,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/surfaceanalyst/surfaceanalyst/</loc>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/</loc>
-    <lastmod>2018-12-06T02:18:50+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/tools/</loc>
-    <lastmod>2018-07-20T01:07:52+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7444,12 +7463,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/</loc>
-    <lastmod>2018-12-17T13:28:43+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/debug-application/</loc>
-    <lastmod>2019-03-07T15:01:05+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7464,7 +7483,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/debug-cluster/</loc>
-    <lastmod>2018-10-26T02:02:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7479,52 +7498,52 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/troubleshooting/</loc>
-    <lastmod>2018-05-05T18:00:51+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/debug-application-cluster/troubleshooting/</loc>
-    <lastmod>2018-10-26T02:02:31+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/upgrades/</loc>
-    <lastmod>2019-03-08T20:47:30-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-12/</loc>
-    <lastmod>2019-01-14T03:26:49+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-13/</loc>
-    <lastmod>2018-12-06T00:42:00+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-11/</loc>
-    <lastmod>2018-08-08T17:44:06-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-12/</loc>
-    <lastmod>2019-02-24T22:14:42-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-13/</loc>
-    <lastmod>2019-01-10T03:48:39+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/coredns/</loc>
-    <lastmod>2018-12-04T23:37:44+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tutorials/services/source-ip/</loc>
-    <lastmod>2019-03-08T03:28:13+05:30</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7539,17 +7558,17 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/windows/</loc>
-    <lastmod>2019-02-08T17:33:01+01:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/kms-provider/</loc>
-    <lastmod>2019-03-08T08:04:10+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/tasks/administer-cluster/sysctl-cluster/</loc>
-    <lastmod>2019-03-15T09:58:57+00:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7564,7 +7583,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/node-conformance/</loc>
-    <lastmod>2018-06-19T11:37:32-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7584,12 +7603,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/getting-started-guides/ubuntu/validation/</loc>
-    <lastmod>2018-11-06T11:33:04-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/case-studies/wepay/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7604,7 +7623,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/wikimedia/</loc>
-    <lastmod>2018-08-24T11:14:07+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7619,7 +7638,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/wink/</loc>
-    <lastmod>2018-10-05T16:32:15+08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7634,7 +7653,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/yahoo-japan/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7649,7 +7668,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/zalando/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -7664,7 +7683,7 @@
   
   <url>
     <loc>https://qinlj.github.io/case-studies/zulily/</loc>
-    <lastmod>2018-08-20T21:07:54+02:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7684,52 +7703,52 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/cloud-controller-manager/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/federation/extensions/v1beta1/definitions/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/federation/extensions/v1beta1/operations/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/federation-apiserver/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/federation-controller-manager/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/federation/federation/v1beta1/definitions/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/federation/federation/v1beta1/operations/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/kube-apiserver/</loc>
-    <lastmod>2019-01-31T11:10:12-08:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/kube-controller-manager/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/kube-proxy/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7744,7 +7763,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/kube-scheduler/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7759,7 +7778,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubectl/kubectl/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7779,7 +7798,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubectl/cheatsheet/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -7794,7 +7813,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubectl/kubectl-cmds/</loc>
-    <lastmod>2018-05-11T10:14:28-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -7809,7 +7828,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubectl/conventions/</loc>
-    <lastmod>2018-11-14T17:59:56-05:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -7824,12 +7843,12 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubectl/docker-cli-to-kubectl/</loc>
-    <lastmod>2019-03-13T10:10:39+11:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/command-line-tools-reference/kubelet/</loc>
-    <lastmod>2018-12-17T12:03:49+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -7844,7 +7863,7 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/on-premises-vm/ovirt/</loc>
-    <lastmod>2018-08-08T16:22:03-07:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -7859,22 +7878,22 @@
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/federation/v1/definitions/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/federation/v1/operations/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/reference/kubernetes-api/</loc>
-    <lastmod>2018-12-03T19:21:11-06:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://qinlj.github.io/docs/setup/release/notes/</loc>
-    <lastmod>2019-02-22T01:24:20+09:00</lastmod>
+    <lastmod>2019-04-03T15:57:36+08:00</lastmod>
   </url>
   
 </urlset>
